@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 6: Störningar och EMC - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel" class="active">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="chapter-page">
+        <div class="chapter-content">
+            <!-- Kapitel Hero -->
+            <div class="chapter-hero">
+                <div class="chapter-badge">Kapitel 6</div>
+                <h1>Störningar och EMC</h1>
+                <p>Förstå, förebygg och åtgärda elektromagnetiska störningar</p>
+                <div class="chapter-meta">
+                    <span>⏱️ 2-3 timmar</span>
+                    <span>📝 35 frågor</span>
+                    <span id="chapterProgress">📊 0% genomfört</span>
+                </div>
+            </div>
+
+            <!-- Innehållsförteckning -->
+            <div class="content-section toc">
+                <h2>📑 Innehåll</h2>
+                <ol class="toc-list">
+                    <li><a href="#emc-grunder">EMC-grundbegrepp</a></li>
+                    <li><a href="#storningskallor">Störningskällor</a></li>
+                    <li><a href="#sandare-storningar">Störningar från sändare</a></li>
+                    <li><a href="#mottagare-storningar">Störningar på mottagare</a></li>
+                    <li><a href="#atgarder">Förebyggande och åtgärder</a></li>
+                    <li><a href="#filter">Filter och skärmning</a></li>
+                </ol>
+            </div>
+
+            <!-- Sektion 1: EMC-grundbegrepp -->
+            <div class="content-section" id="emc-grunder">
+                <h2>6.1 EMC-grundbegrepp</h2>
+                
+                <h3>Vad är EMC?</h3>
+                <p><strong>EMC = Electromagnetic Compatibility</strong> (elektromagnetisk kompatibilitet)</p>
+                <p>EMC handlar om att elektronisk utrustning ska:</p>
+                <ol>
+                    <li>Fungera utan att störa annan utrustning</li>
+                    <li>Fungera utan att störas av annan utrustning eller omgivningen</li>
+                </ol>
+                
+                <h3>Grundläggande begrepp</h3>
+                <ul>
+                    <li><strong>Emission:</strong> Störningar som sänds ut (oavsiktlig strålning)</li>
+                    <li><strong>Immunitet/Tålighet:</strong> Förmåga att motstå yttre störningar</li>
+                    <li><strong>Störkälla:</strong> Det som orsakar störningen</li>
+                    <li><strong>Störobjekt:</strong> Det som blir stört</li>
+                    <li><strong>Kopplingsväg:</strong> Hur störningen når störobjektet</li>
+                </ul>
+                
+                <h3>Kopplingsvägar för störningar</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Kopplingstyp</th>
+                            <th>Beskrivning</th>
+                            <th>Åtgärd</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ledningsburen</strong></td>
+                            <td>Via kablar och ledningar</td>
+                            <td>Filter, avkoppling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Strålad</strong></td>
+                            <td>Via elektromagnetiskt fält</td>
+                            <td>Skärmning, avstånd</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kapacitiv</strong></td>
+                            <td>Via elektriskt fält mellan ledare</td>
+                            <td>Skärmning, avstånd</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Induktiv</strong></td>
+                            <td>Via magnetfält mellan ledare</td>
+                            <td>Tvinning, avstånd, skärmning</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>CE-märkning</h3>
+                <p>Utrustning som säljs inom EU ska uppfylla EMC-direktivet och CE-märkas. Detta gäller dock inte egentillverkad amatörutrustning, som du själv ansvarar för.</p>
+            </div>
+
+            <!-- Sektion 2: Störningskällor -->
+            <div class="content-section" id="storningskallor">
+                <h2>6.2 Störningskällor</h2>
+                
+                <h3>Naturliga störningar</h3>
+                <ul>
+                    <li><strong>Atmosfäriskt brus:</strong> Blixtar, elektrostatiska urladdningar</li>
+                    <li><strong>Kosmiskt brus:</strong> Från solen och rymden</li>
+                    <li><strong>Termiskt brus:</strong> Genereras i alla elektronikkomponenter</li>
+                </ul>
+                
+                <h3>Artificiella störningar</h3>
+                
+                <h4>Pulsstörningar</h4>
+                <ul>
+                    <li>Tändsystem i bilar</li>
+                    <li>Elmotorer med borstar (dammsugare, mixer, elverktyg)</li>
+                    <li>Termostater</li>
+                    <li>Strömbrytare och reläer</li>
+                </ul>
+                
+                <h4>Kontinuerliga störningar</h4>
+                <ul>
+                    <li><strong>Switchade nätaggregat (SMPS):</strong> Finns i datorer, TV, laddare</li>
+                    <li><strong>LED-lampor:</strong> Ofta dåligt skärmade drivdon</li>
+                    <li><strong>Solcellsväxelriktare:</strong> Kan ge breddstört brus på HF</li>
+                    <li><strong>PLC (Power Line Communication):</strong> Internet via elnätet</li>
+                    <li><strong>Datorer och nätverk:</strong> Klocksignaler, switchar</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Växande problem:</strong> Moderna elektroniska produkter använder ofta switchade nätaggregat och digitala kretsar som kan ge betydande störningar på HF-banden. Billiga importprodukter uppfyller inte alltid EMC-kraven.
+                </div>
+                
+                <h3>Identifiera störkällan</h3>
+                <ul>
+                    <li><strong>Lyssna på störningens karaktär:</strong> Pulser, brum, brus?</li>
+                    <li><strong>Tidsberoende:</strong> När uppträder störningen?</li>
+                    <li><strong>Frekvensberoende:</strong> Vilka band påverkas?</li>
+                    <li><strong>Slå av huvudbrytare:</strong> Försvinner störningen?</li>
+                    <li><strong>Använd portabel mottagare:</strong> Pejla in källan</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 3: Störningar från sändare -->
+            <div class="content-section" id="sandare-storningar">
+                <h2>6.3 Störningar från Sändare</h2>
+                
+                <h3>Typer av sändarstörningar</h3>
+                
+                <h4>Övertoner (Harmoniska)</h4>
+                <p>Signaler på 2×, 3×, 4× etc. av sändarfrekvensen.</p>
+                <ul>
+                    <li><strong>Orsak:</strong> Icke-linjäritet i slutsteget</li>
+                    <li><strong>Problem:</strong> Kan hamna på andra tjänsters frekvenser</li>
+                    <li><strong>Åtgärd:</strong> Lågpassfilter efter sändaren</li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> En 7 MHz-sändare kan ha övertoner på 14, 21, 28, 35, 42 MHz osv. 35 MHz ligger mitt i flygbandet!
+                </div>
+                
+                <h4>Spurioser</h4>
+                <p>Oönskade signaler som inte är harmoniska, t.ex. från blandningsprodukter eller parasitsvängningar.</p>
+                
+                <h4>Fasbrus (Phase noise)</h4>
+                <p>Brus runt bärvågen som "läcker ut" på närliggande frekvenser. Problem vid DX när starka lokala stationer hörs långt utanför sin kanal.</p>
+                
+                <h4>Sidband från övermodulation</h4>
+                <p>För hög modulationsgrad skapar breda sidband som stör grannkanaler.</p>
+                
+                <h3>Störning av hemelektronik</h3>
+                <p>Vanliga problem från amatörsändare:</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Störobjekt</th>
+                            <th>Symptom</th>
+                            <th>Vanlig orsak</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TV/Datorskärm</td>
+                            <td>Ränder, förvrängning</td>
+                            <td>RF in via antenn eller kablar</td>
+                        </tr>
+                        <tr>
+                            <td>Stereoanläggning</td>
+                            <td>Din röst hörs i högtalarna</td>
+                            <td>RF-instrålning, detektion i förstärkaren</td>
+                        </tr>
+                        <tr>
+                            <td>Telefon</td>
+                            <td>Ljud av sändningen</td>
+                            <td>RF via telefonkabel</td>
+                        </tr>
+                        <tr>
+                            <td>Datornätverk</td>
+                            <td>Avbrott, långsamt</td>
+                            <td>RF på nätverkskablar</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box important">
+                    <strong>🎯 Viktigt:</strong> I många fall är problemet bristande immunitet hos störobjektet snarare än felaktig sändare. Men som radioamatör bör du ändå hjälpa till att lösa problemet!
+                </div>
+            </div>
+
+            <!-- Sektion 4: Störningar på mottagare -->
+            <div class="content-section" id="mottagare-storningar">
+                <h2>6.4 Störningar på Mottagare</h2>
+                
+                <h3>Överbelastning (Overload)</h3>
+                <p>Starka signaler utanför det önskade frekvensområdet driver RF-förstärkaren eller blandaren utanför sitt linjära område.</p>
+                <ul>
+                    <li><strong>Symptom:</strong> Förvrängning, många "falska" signaler</li>
+                    <li><strong>Åtgärd:</strong> Dämpare, bättre preselektion, koppla ur RF-förstärkaren</li>
+                </ul>
+                
+                <h3>Blockering (Blocking)</h3>
+                <p>En stark signal i närheten av önskad signal minskar mottagarens känslighet.</p>
+                <ul>
+                    <li><strong>Symptom:</strong> Svaga signaler försvinner när stark signal finns</li>
+                    <li><strong>Åtgärd:</strong> Bättre mottagare med högre dynamik, filter</li>
+                </ul>
+                
+                <h3>Intermodulation</h3>
+                <p>Två eller flera starka signaler blandas i mottagarens ingång och skapar nya signaler.</p>
+                
+                <div class="formula-box">
+                    <strong>Tredje ordningens intermodulation:</strong><br>
+                    f<sub>IM3</sub> = 2×f₁ - f₂<br>
+                    f<sub>IM3</sub> = 2×f₂ - f₁
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> Två starka signaler på 14,200 och 14,250 MHz kan skapa intermodulation på:
+                    <br>2×14,200 - 14,250 = <strong>14,150 MHz</strong>
+                    <br>2×14,250 - 14,200 = <strong>14,300 MHz</strong>
+                </div>
+                
+                <h3>Spegelfrekvens (Image)</h3>
+                <p>Signaler på spegelfrekvensen passerar genom blandaren och kommer ut på samma mellanfrekvens som önskad signal.</p>
+                <ul>
+                    <li><strong>Åtgärd:</strong> Bättre ingångsfilter (preselektor)</li>
+                </ul>
+                
+                <h3>Korsmodulation</h3>
+                <p>En stark AM-modulerad signal "överför" sin modulation till önskad signal.</p>
+                <ul>
+                    <li><strong>Symptom:</strong> Rundsändningstal hörs ovanpå amatörsignal</li>
+                    <li><strong>Åtgärd:</strong> Dämpare, filter mot rundsändningsbandet</li>
+                </ul>
+                
+                <h3>IP3 - Intercept Point</h3>
+                <p>Ett mått på mottagarens dynamiska egenskaper. Högre IP3 = bättre klarar den starka signaler utan intermodulation.</p>
+            </div>
+
+            <!-- Sektion 5: Åtgärder -->
+            <div class="content-section" id="atgarder">
+                <h2>6.5 Förebyggande och Åtgärder</h2>
+                
+                <h3>Grundprinciper</h3>
+                <ol>
+                    <li><strong>Minska utsläppen vid källan</strong></li>
+                    <li><strong>Förläng avståndet</strong> (fältstyrkan minskar snabbt)</li>
+                    <li><strong>Skärma</strong> källa eller störobjekt</li>
+                    <li><strong>Filtrera</strong> ledningar som kan föra störningar</li>
+                </ol>
+                
+                <h3>Åtgärder vid sändaren</h3>
+                
+                <h4>Lågpassfilter</h4>
+                <p>Placeras mellan sändare och antenn. Släpper igenom grundfrekvensen men dämpar övertoner.</p>
+                <ul>
+                    <li>Välj filter med gränsfrekvens strax över ditt högsta band</li>
+                    <li>Typiskt 30-40 dB dämpning av övertoner</li>
+                    <li>Se till att det tål din effekt!</li>
+                </ul>
+                
+                <h4>Rätt bandbredd och modulationsgrad</h4>
+                <ul>
+                    <li>Undvik övermodulation (ALC ska inte slå)</li>
+                    <li>Använd inte mer bandbredd än nödvändigt</li>
+                </ul>
+                
+                <h4>Balun och mantelströmsfilter</h4>
+                <ul>
+                    <li>Förhindrar att koaxens utsida strålar</li>
+                    <li>Minskar RF i shacket</li>
+                </ul>
+                
+                <h3>Åtgärder vid störobjektet</h3>
+                
+                <h4>Ferritfilter</h4>
+                <p>Klämmor eller ringar av ferritmaterial som sätts runt kablar.</p>
+                <ul>
+                    <li>Flera varv genom ferritkärnan ökar effekten</li>
+                    <li>Välj rätt ferrit för frekvensområdet</li>
+                    <li>Placera nära störobjektet (där RF ska stoppas)</li>
+                </ul>
+                
+                <h4>Nätfilter</h4>
+                <p>Filter i nätanslutningen som stoppar RF från att komma in/ut via elnätet.</p>
+                
+                <h4>Skärmade kablar</h4>
+                <p>Byt oskärmade kablar mot skärmade där det behövs.</p>
+                
+                <h3>Dokumentation</h3>
+                <p>Vid störningsproblem, dokumentera:</p>
+                <ul>
+                    <li>Vilken frekvens och trafiksätt</li>
+                    <li>Vilken effekt</li>
+                    <li>Vilken utrustning som störs</li>
+                    <li>Symptomen</li>
+                    <li>Vilka åtgärder som provats</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 6: Filter och skärmning -->
+            <div class="content-section" id="filter">
+                <h2>6.6 Filter och Skärmning</h2>
+                
+                <h3>Filtertyper för EMC</h3>
+                
+                <h4>Lågpassfilter</h4>
+                <p>Släpper igenom låga frekvenser, dämpar höga.</p>
+                <ul>
+                    <li>Efter sändare för övertonsdämpning</li>
+                    <li>I audioledningar för att hindra RF</li>
+                </ul>
+                
+                <h4>Högpassfilter</h4>
+                <p>Släpper igenom höga frekvenser, dämpar låga.</p>
+                <ul>
+                    <li>Vid TV-antennintag för att blockera HF-signaler</li>
+                    <li>Före VHF/UHF-mottagare för att dämpa HF-störningar</li>
+                    <li>Typisk gränsfrekvens för TV: 40-50 MHz</li>
+                </ul>
+                
+                <h4>Bandspärrfilter (Notchfilter)</h4>
+                <p>Dämpar ett smalt frekvensband, släpper igenom allt annat.</p>
+                <ul>
+                    <li>Eliminera en specifik störfrekvens</li>
+                    <li>T.ex. "sug bort" en stark närliggande sändare</li>
+                </ul>
+                
+                <h4>Ferritfilter (Common-mode choke)</h4>
+                <p>Dämpar mantelströmmar (common-mode) utan att påverka signalströmmar (differential-mode).</p>
+                <ul>
+                    <li>Klämmor som sätts runt kablar</li>
+                    <li>Flera varv genom ferritring ökar dämpningen</li>
+                    <li>Välj rätt ferritmaterial för frekvensen</li>
+                </ul>
+                
+                <h3>Ferritmaterial</h3>
+                <p>Ferrit är ett keramiskt magnetiskt material som omvandlar RF-energi till värme.</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Material/Mix</th>
+                            <th>Frekvensområde</th>
+                            <th>Användning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mix 31</td>
+                            <td>1-300 MHz</td>
+                            <td>Bäst för HF, bra allround</td>
+                        </tr>
+                        <tr>
+                            <td>Mix 43</td>
+                            <td>10-500 MHz</td>
+                            <td>HF/VHF, vanlig i klämmor</td>
+                        </tr>
+                        <tr>
+                            <td>Mix 61</td>
+                            <td>200 MHz - 2 GHz</td>
+                            <td>VHF/UHF</td>
+                        </tr>
+                        <tr>
+                            <td>Mix 75/76</td>
+                            <td>0,5-20 MHz</td>
+                            <td>Nedre HF, transformatorer</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box tip">
+                    <strong>💡 Praktiskt tips:</strong> Fair-Rite 31-material är ofta bäst för HF-mantelströmmar. Använd klämma eller linda 5-10 varv genom en FT240-31 toroid.
+                </div>
+                
+                <h3>Skärmning</h3>
+                <p>Skärmning hindrar elektromagnetisk strålning från att komma in i eller ut ur ett utrymme.</p>
+                
+                <h4>Skärmningsprinciper</h4>
+                <ul>
+                    <li><strong>Ledande hölje:</strong> Metall reflekterar och absorberar RF</li>
+                    <li><strong>Kontinuitet:</strong> Inga glipor eller hål</li>
+                    <li><strong>Jordning:</strong> Skärmen ska vara jordad</li>
+                </ul>
+                
+                <h4>Öppningar och hål</h4>
+                <p>Hål fungerar som slitsantenner vid höga frekvenser:</p>
+                <ul>
+                    <li>Max hålstorlek bör vara &lt; λ/20</li>
+                    <li>Vid 300 MHz (λ=1m): max 5 cm hål</li>
+                    <li>Många små hål bättre än ett stort</li>
+                    <li>Ventilationsgaller med honeycomb-mönster</li>
+                </ul>
+                
+                <h4>Skärmningsmaterial</h4>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Effektivitet</th>
+                            <th>Kommentar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Koppar</td>
+                            <td>Utmärkt</td>
+                            <td>Dyr, god ledningsförmåga</td>
+                        </tr>
+                        <tr>
+                            <td>Aluminium</td>
+                            <td>Mycket bra</td>
+                            <td>Lättare, billigare, svår att löda</td>
+                        </tr>
+                        <tr>
+                            <td>Stål</td>
+                            <td>Bra</td>
+                            <td>Magnetisk skärmning också</td>
+                        </tr>
+                        <tr>
+                            <td>Ledande färg</td>
+                            <td>Måttlig</td>
+                            <td>För plastlådor, 20-40 dB</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Jordning för EMC</h3>
+                <p>Korrekt jordning är avgörande för att filter och skärmning ska fungera.</p>
+                
+                <h4>Principer:</h4>
+                <ul>
+                    <li><strong>Stjärnjord:</strong> Alla jordledare till en gemensam punkt</li>
+                    <li><strong>Korta jordledare:</strong> Induktansen ökar med längden</li>
+                    <li><strong>Breda jordledare:</strong> Platt band bättre än rundtråd för RF</li>
+                    <li><strong>Gemensam referens:</strong> Radio, dator och annan utrustning till samma jordpunkt</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Jordslingor:</strong> Undvik att ha flera jordvägar som bildar en loop - detta kan fånga upp störningar induktivt.
+                </div>
+            </div>
+
+            <!-- Sammanfattning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning Kapitel 6</h2>
+                
+                <div class="key-points">
+                    <h3>EMC-grunderna:</h3>
+                    <ul>
+                        <li><strong>Emission:</strong> Störningar som skickas ut</li>
+                        <li><strong>Immunitet:</strong> Tålighet mot yttre störningar</li>
+                        <li><strong>Kopplingsvägar:</strong> Ledningsburen, strålad, kapacitiv, induktiv</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Sändarstörningar:</h3>
+                    <ul>
+                        <li><strong>Övertoner:</strong> Dämpa med lågpassfilter</li>
+                        <li><strong>Spurioser:</strong> Kontrollera sändarens renhet</li>
+                        <li><strong>Mantelströmmar:</strong> Åtgärda med balun/ferrit</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Mottagarproblem:</h3>
+                    <ul>
+                        <li><strong>Överbelastning:</strong> Använd dämpare/preselektor</li>
+                        <li><strong>Intermodulation:</strong> Bättre mottagare, filter</li>
+                        <li><strong>Spegelfrekvens:</strong> Bättre ingångsfilter</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Åtgärder vid störobjekt:</h3>
+                    <ul>
+                        <li><strong>Ferritklämmor</strong> på alla kablar</li>
+                        <li><strong>Nätfilter</strong> i eluttaget</li>
+                        <li><strong>Skärmning</strong> om möjligt</li>
+                        <li><strong>Flytta/orientera</strong> utrustning och kablar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="kapitel-5-matinstrument.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Kapitel 5: Mätinstrument</span>
+                </a>
+                <a href="../test/ovning.html?chapter=6" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 6</span>
+                </a>
+                <a href="kapitel-7-regler-bestammelser.html" class="nav-button next">
+                    <span class="label">Kapitel 7: Regler</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(6);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

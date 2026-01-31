@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 2: Radioteknik - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel" class="active">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="chapter-page">
+        <div class="chapter-content">
+            <!-- Kapitel Hero -->
+            <div class="chapter-hero">
+                <div class="chapter-badge">Kapitel 2</div>
+                <h1>Radioteknik</h1>
+                <p>Förstå hur sändare och mottagare fungerar - hjärtat i radiokommunikation</p>
+                <div class="chapter-meta">
+                    <span>⏱️ 4-5 timmar</span>
+                    <span>📝 50 frågor</span>
+                    <span id="chapterProgress">📊 0% genomfört</span>
+                </div>
+            </div>
+
+            <!-- Innehållsförteckning -->
+            <div class="content-section toc">
+                <h2>📑 Innehåll</h2>
+                <ol class="toc-list">
+                    <li><a href="#signaler">Signaler och modulation</a></li>
+                    <li><a href="#sandare">Sändarens uppbyggnad</a></li>
+                    <li><a href="#mottagare">Mottagarens uppbyggnad</a></li>
+                    <li><a href="#transceiver">Transceiver - kombinerad sändare/mottagare</a></li>
+                    <li><a href="#halvledare">Halvledare och komponenter</a></li>
+                    <li><a href="#oscillatorer">Oscillatorer</a></li>
+                    <li><a href="#blandare">Blandare och frekvensomvandling</a></li>
+                    <li><a href="#forstarkare">Förstärkare</a></li>
+                </ol>
+            </div>
+
+            <!-- Sektion 1: Signaler och modulation -->
+            <div class="content-section" id="signaler">
+                <h2>2.1 Signaler och Modulation</h2>
+                
+                <h3>Vad är modulation?</h3>
+                <p>Modulation är processen att "skriva på" information på en radiobärvåg. Bärvågen är en högfrekvent signal som kan färdas långt, och modulationen lägger till vår röst, data eller annan information.</p>
+                
+                <div class="info-box tip">
+                    <strong>💡 Tänk så här:</strong> Bärvågen är som ett pappersark - modulationen är det du skriver på det.
+                </div>
+                
+                <h3>Huvudtyper av modulation</h3>
+                
+                <h4>Amplitudmodulation (AM)</h4>
+                <p>Bärvågens styrka (amplitud) varieras i takt med signalen. Används för:</p>
+                <ul>
+                    <li>Rundradio på mellanvåg och långvåg</li>
+                    <li>Flygradio</li>
+                </ul>
+                <p><strong>Fördelar:</strong> Enkel teknik<br>
+                <strong>Nackdelar:</strong> Känslig för störningar, ineffektiv effektanvändning</p>
+                
+                <h4>Frekvensmodulation (FM)</h4>
+                <p>Bärvågens frekvens varieras i takt med signalen medan amplituden hålls konstant. Används för:</p>
+                <ul>
+                    <li>FM-rundradio (88-108 MHz)</li>
+                    <li>Amatörradio på VHF/UHF (t.ex. 2m, 70cm)</li>
+                    <li>PMR-radio</li>
+                </ul>
+                <p><strong>Fördelar:</strong> Störningstålig, bra ljudkvalitet<br>
+                <strong>Nackdelar:</strong> Kräver större bandbredd</p>
+                
+                <h4>Enkelt sidband (SSB - Single Sideband)</h4>
+                <p>En vidareutveckling av AM där bärvågen och ett sidband tas bort. Används för:</p>
+                <ul>
+                    <li>Amatörradio på HF (kortvåg)</li>
+                    <li>Marinradio</li>
+                    <li>Militär kommunikation</li>
+                </ul>
+                <p><strong>Fördelar:</strong> Effektiv effektanvändning, smal bandbredd<br>
+                <strong>Nackdelar:</strong> Kräver noggrann avstämning</p>
+                
+                <div class="info-box important">
+                    <strong>🎯 SSB på amatörbanden:</strong>
+                    <br>• <strong>LSB</strong> (Lower Sideband): Används under 10 MHz
+                    <br>• <strong>USB</strong> (Upper Sideband): Används på 10 MHz och högre
+                </div>
+                
+                <h4>CW (Continuous Wave) - Telegrafi</h4>
+                <p>Bärvågen slås på och av för att bilda morsekod. Den äldsta och enklaste formen av radiomodulation.</p>
+                <p><strong>Fördelar:</strong> Mycket smal bandbredd, går igenom när inget annat gör det<br>
+                <strong>Nackdelar:</strong> Kräver kunskap i morsekod</p>
+                
+                <h4>Digitala trafiksätt</h4>
+                <ul>
+                    <li><strong>FT8:</strong> Populärt för DX, fungerar med svaga signaler</li>
+                    <li><strong>PSK31:</strong> Tangentbordskommunikation</li>
+                    <li><strong>RTTY:</strong> Radioteletype, äldre digital standard</li>
+                    <li><strong>Paketradio:</strong> Digital dataöverföring</li>
+                </ul>
+                
+                <h3>Bandbredd</h3>
+                <p>Olika trafiksätt kräver olika bandbredd:</p>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Trafiksätt</th>
+                            <th>Typisk bandbredd</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CW</td>
+                            <td>100-500 Hz</td>
+                        </tr>
+                        <tr>
+                            <td>SSB</td>
+                            <td>2,4-3 kHz</td>
+                        </tr>
+                        <tr>
+                            <td>AM</td>
+                            <td>6-9 kHz</td>
+                        </tr>
+                        <tr>
+                            <td>FM (smalband)</td>
+                            <td>12-16 kHz</td>
+                        </tr>
+                        <tr>
+                            <td>FM (bredband)</td>
+                            <td>~200 kHz</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sektion 2: Sändaren -->
+            <div class="content-section" id="sandare">
+                <h2>2.2 Sändarens Uppbyggnad</h2>
+                
+                <h3>Grundläggande block i en sändare</h3>
+                <ol>
+                    <li><strong>Oscillator</strong> - Genererar bärvågen på rätt frekvens</li>
+                    <li><strong>Modulator</strong> - Lägger information på bärvågen</li>
+                    <li><strong>Drivsteg</strong> - Förstärker signalen till mellannivå</li>
+                    <li><strong>Slutsteg (PA)</strong> - Förstärker till full uteffekt</li>
+                    <li><strong>Lågpassfilter</strong> - Tar bort övertoner</li>
+                    <li><strong>Antennanpassning</strong> - Matchar till antennen</li>
+                </ol>
+                
+                <h3>Oscillator</h3>
+                <p>Oscillatorn genererar en stabil signal på önskad frekvens. Moderna sändare använder ofta:</p>
+                <ul>
+                    <li><strong>VFO</strong> (Variable Frequency Oscillator): Justerbar frekvens</li>
+                    <li><strong>PLL</strong> (Phase-Locked Loop): Stabil, digital styrning</li>
+                    <li><strong>DDS</strong> (Direct Digital Synthesis): Mycket flexibel, datorbaserad</li>
+                </ul>
+                
+                <h3>Slutsteg (PA - Power Amplifier)</h3>
+                <p>Slutsteget förstärker signalen till önskad uteffekt. Viktiga egenskaper:</p>
+                <ul>
+                    <li><strong>Linjäritet</strong> - Speciellt viktigt för SSB</li>
+                    <li><strong>Verkningsgrad</strong> - Hur mycket av ineffekten som blir radiosignal</li>
+                    <li><strong>Stabilitet</strong> - Ska inte självsvinga</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Viktigt:</strong> Sändaren ska alltid vara ansluten till en antenn eller dummyload när den sänder! En sändare utan last kan skadas.
+                </div>
+                
+                <h3>Lågpassfilter efter sändaren</h3>
+                <p>Alla sändare genererar oönskade övertoner (signaler på 2×, 3×, 4× grundfrekvensen). Lågpassfiltret dämp dessa för att undvika störningar.</p>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> En sändare på 7 MHz genererar övertoner på 14 MHz, 21 MHz, 28 MHz osv. Utan lågpassfilter kan dessa störa andra tjänster.
+                </div>
+            </div>
+
+            <!-- Sektion 3: Mottagaren -->
+            <div class="content-section" id="mottagare">
+                <h2>2.3 Mottagarens Uppbyggnad</h2>
+                
+                <h3>Superheterodynmottagaren</h3>
+                <p>Den vanligaste mottagarkonstruktionen. Principen är att omvandla inkommande signal till en fast mellanfrekvens (MF/IF) där filtrering och förstärkning sker.</p>
+                
+                <h4>Blockschema</h4>
+                <ol>
+                    <li><strong>Antennfilter/preselektor</strong> - Grov filtrering</li>
+                    <li><strong>RF-förstärkare</strong> - Förstärker svaga signaler</li>
+                    <li><strong>Blandare</strong> - Omvandlar till mellanfrekvens</li>
+                    <li><strong>Lokaloscillator (VFO)</strong> - Styr vilken frekvens som tas emot</li>
+                    <li><strong>MF-filter</strong> - Bestämmer selektivitet och bandbredd</li>
+                    <li><strong>MF-förstärkare</strong> - Huvudförstärkning sker här</li>
+                    <li><strong>Demodulator/detektor</strong> - Tar ut informationen</li>
+                    <li><strong>LF-förstärkare</strong> - Förstärker till högtalar-/hörlursnivå</li>
+                </ol>
+                
+                <h3>Viktiga parametrar</h3>
+                
+                <h4>Känslighet</h4>
+                <p>Förmågan att ta emot svaga signaler. Mäts ofta som den minsta signalnivå som ger användbar mottagning (t.ex. i µV eller dBm).</p>
+                
+                <h4>Selektivitet</h4>
+                <p>Förmågan att skilja ut önskad signal från närliggande signaler. Bestäms främst av MF-filtret.</p>
+                
+                <h4>Dynamikområde</h4>
+                <p>Förmågan att hantera både svaga och starka signaler samtidigt utan att störas. Viktigt på trånga band!</p>
+                
+                <h3>Mellanfrekvens (MF/IF)</h3>
+                <p>Vanliga mellanfrekvenser:</p>
+                <ul>
+                    <li><strong>455 kHz</strong> - Klassisk för AM-mottagare</li>
+                    <li><strong>10,7 MHz</strong> - Klassisk för FM-mottagare</li>
+                    <li><strong>9 MHz</strong> - Vanlig i HF-transceivrar</li>
+                </ul>
+                
+                <h3>Spegelfrekvensproblemet</h3>
+                <p>En blandare svarar på två frekvenser - önskad signal och "spegelfrekvensen". Spegelfrekvensen ligger lika långt på andra sidan om lokaloscillatorn.</p>
+                
+                <div class="formula-box">
+                    f<sub>spegel</sub> = f<sub>LO</sub> ± f<sub>MF</sub>
+                </div>
+                
+                <div class="info-box tip">
+                    <strong>💡 Lösning:</strong> Bra ingångsfilter (preselektor) dämpar spegelfrekvensen. Högre mellanfrekvens ger bättre spegelfrekvensundertryckning.
+                </div>
+            </div>
+
+            <!-- Sektion 4: Transceiver -->
+            <div class="content-section" id="transceiver">
+                <h2>2.4 Transceiver</h2>
+                
+                <h3>Vad är en transceiver?</h3>
+                <p>En transceiver är kombinationen av sändare (transmitter) och mottagare (receiver) i samma enhet. Detta är standardutrustningen för radioamatörer.</p>
+                
+                <h3>Gemensamma komponenter</h3>
+                <p>I en transceiver delas många komponenter mellan sändare och mottagare:</p>
+                <ul>
+                    <li>VFO (variabel frekvensoscillator)</li>
+                    <li>MF-filter (i vissa konstruktioner)</li>
+                    <li>Display och kontroller</li>
+                    <li>Nätaggregat</li>
+                </ul>
+                
+                <h3>TX/RX-omkoppling</h3>
+                <p>När du trycker på PTT (Push-To-Talk) sker automatisk omkoppling:</p>
+                <ul>
+                    <li>Antennen kopplas från mottagare till sändare</li>
+                    <li>Mottagaren tystas</li>
+                    <li>Sändaren aktiveras</li>
+                </ul>
+                
+                <h3>Viktiga funktioner i moderna transceivrar</h3>
+                <ul>
+                    <li><strong>RIT (Receiver Incremental Tuning):</strong> Finjusterar mottagarfrekvensen utan att ändra sändningsfrekvensen</li>
+                    <li><strong>Split:</strong> Sänder och tar emot på olika frekvenser</li>
+                    <li><strong>VOX:</strong> Automatisk sändning vid tal</li>
+                    <li><strong>NB (Noise Blanker):</strong> Dämpar pulsstörningar</li>
+                    <li><strong>NR (Noise Reduction):</strong> Digital brusreducering</li>
+                    <li><strong>ATU (Automatic Tuning Unit):</strong> Automatisk antennanpassning</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 5: Halvledare -->
+            <div class="content-section" id="halvledare">
+                <h2>2.5 Halvledare och Komponenter</h2>
+                
+                <h3>Dioder</h3>
+                <p>En diod släpper igenom ström i en riktning men blockerar i den andra.</p>
+                
+                <h4>Diodtyper</h4>
+                <ul>
+                    <li><strong>Likriktardiod:</strong> Omvandlar växelström till likström</li>
+                    <li><strong>Signaldiod:</strong> Snabb, för små signaler, används i detektorer</li>
+                    <li><strong>Zenerdiod:</strong> Ger konstant spänning, används för spänningsreglering</li>
+                    <li><strong>LED:</strong> Lyser när ström passerar</li>
+                    <li><strong>Kapacitansdiod (varicap):</strong> Kapacitansen varierar med spänningen, används för avstämning</li>
+                </ul>
+                
+                <h3>Transistorer</h3>
+                <p>Transistorer kan förstärka signaler eller fungera som styrda strömbrytare.</p>
+                
+                <h4>Bipolära transistorer (BJT)</h4>
+                <p>Har tre anslutningar: Bas, Kollektor, Emitter</p>
+                <ul>
+                    <li><strong>NPN:</strong> Vanligaste typen, positiv matning till kollektor</li>
+                    <li><strong>PNP:</strong> Omvänd polaritet</li>
+                </ul>
+                <p>Strömförstärkning kallas β (beta) eller hFE.</p>
+                
+                <h4>Fälteffekttransistorer (FET)</h4>
+                <p>Har tre anslutningar: Gate, Drain, Source</p>
+                <ul>
+                    <li><strong>JFET:</strong> Junction FET</li>
+                    <li><strong>MOSFET:</strong> Metal-Oxide-Semiconductor FET - vanlig i moderna förstärkare</li>
+                </ul>
+                <p>Styrs av spänning istället för ström. Hög ingångsimpedans.</p>
+                
+                <div class="info-box tip">
+                    <strong>💡 Jämförelse:</strong>
+                    <br>• BJT: Strömstyrd, hög förstärkning, högre brus
+                    <br>• FET: Spänningsstyrd, hög ingångsimpedans, lägre brus vid höga frekvenser
+                </div>
+                
+                <h3>Integrerade kretsar (IC)</h3>
+                <p>Många komponenter i ett chip. Exempel inom radioteknik:</p>
+                <ul>
+                    <li>Operationsförstärkare (op-amp)</li>
+                    <li>Spänningsregulatorer (78xx-serien)</li>
+                    <li>PLL-kretsar</li>
+                    <li>Kompletta mottagare på ett chip</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 6: Oscillatorer -->
+            <div class="content-section" id="oscillatorer">
+                <h2>2.6 Oscillatorer</h2>
+                
+                <h3>Vad är en oscillator?</h3>
+                <p>En oscillator är en krets som genererar en periodisk signal utan extern insignal. Den omvandlar likström till växelström på en bestämd frekvens.</p>
+                
+                <h3>Villkor för svängning</h3>
+                <p>För att en oscillator ska fungera krävs:</p>
+                <ol>
+                    <li><strong>Förstärkning:</strong> Signalen måste förstärkas tillräckligt</li>
+                    <li><strong>Återkoppling:</strong> En del av utsignalen återförs till ingången</li>
+                    <li><strong>Rätt fas:</strong> Återkopplingen måste vara i fas (positiv återkoppling)</li>
+                </ol>
+                
+                <div class="formula-box">
+                    <strong>Barkhausens kriterium:</strong><br>
+                    Förstärkning × Återkoppling ≥ 1<br>
+                    Fasförskjutning = 0° (eller 360°)
+                </div>
+                
+                <h3>Vanliga oscillatortyper</h3>
+                
+                <h4>LC-oscillatorer</h4>
+                <p>Använder spole och kondensator för att bestämma frekvensen.</p>
+                <ul>
+                    <li><strong>Colpitts:</strong> Kapacitiv spänningsdelare för återkoppling</li>
+                    <li><strong>Hartley:</strong> Induktiv spänningsdelare för återkoppling</li>
+                    <li><strong>Clapp:</strong> Variant av Colpitts med bättre stabilitet</li>
+                </ul>
+                
+                <h4>Kristalloscillator</h4>
+                <p>Använder en kvartskristall som resonator. Mycket stabil frekvens!</p>
+                <ul>
+                    <li>Frekvensstabilitet: typiskt ±10-50 ppm</li>
+                    <li>Används som referens i PLL-system</li>
+                    <li>Vanliga frekvenser: 4 MHz, 10 MHz, 12 MHz</li>
+                </ul>
+                
+                <h4>VFO (Variable Frequency Oscillator)</h4>
+                <p>Oscillator med justerbar frekvens, ofta med variabel kondensator eller kapacitansdiod.</p>
+                
+                <h4>VCO (Voltage Controlled Oscillator)</h4>
+                <p>Frekvensen styrs av en spänning. Används i PLL-kretsar.</p>
+                
+                <h3>PLL (Phase-Locked Loop)</h3>
+                <p>En PLL kombinerar en VCO med en kristallreferens för att få både stabilitet och variabel frekvens:</p>
+                <ol>
+                    <li>VCO genererar utsignalen</li>
+                    <li>Fasdetektorn jämför VCO:n med referensen</li>
+                    <li>Felspänningen korrigerar VCO:n</li>
+                    <li>Frekvensdelare möjliggör olika utfrekvenser</li>
+                </ol>
+                
+                <div class="info-box tip">
+                    <strong>💡 Modern teknik:</strong> De flesta moderna transceivrar använder DDS (Direct Digital Synthesis) som kan generera exakta frekvenser digitalt med mycket hög upplösning.
+                </div>
+            </div>
+
+            <!-- Sektion 7: Blandare -->
+            <div class="content-section" id="blandare">
+                <h2>2.7 Blandare och Frekvensomvandling</h2>
+                
+                <h3>Vad gör en blandare?</h3>
+                <p>En blandare tar två insignaler och producerar utsignaler på summa- och skillnadsfrekvenserna. Detta är grundläggande för superheterodynmottagaren.</p>
+                
+                <div class="formula-box">
+                    <strong>Om f₁ och f₂ matas in, fås ut:</strong><br>
+                    f₁ + f₂ (summafrekvens)<br>
+                    f₁ - f₂ (skillnadsfrekvens)<br>
+                    samt originalfrekvenserna och övertoner
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel - Mottagare:</strong><br>
+                    Signal från antennen: 14,200 MHz<br>
+                    Lokaloscillator (VFO): 14,209 MHz<br>
+                    Mellanfrekvens ut: 14,209 - 14,200 = <strong>9 kHz (eller 9 MHz beroende på konstruktion)</strong>
+                </div>
+                
+                <h3>Blandarkonstruktioner</h3>
+                
+                <h4>Diodringblandare</h4>
+                <p>Fyra dioder i en ringkoppling. Enkel och beprövad konstruktion med goda egenskaper.</p>
+                <ul>
+                    <li>Passiv (ingen förstärkning)</li>
+                    <li>Bra dynamik</li>
+                    <li>Kräver relativt hög LO-nivå</li>
+                </ul>
+                
+                <h4>Gilbertcellblandare</h4>
+                <p>Aktiv blandare med transistorer. Vanlig i integrerade kretsar.</p>
+                <ul>
+                    <li>Kan ge förstärkning</li>
+                    <li>Lägre LO-nivå krävs</li>
+                    <li>Finns i färdiga IC:er</li>
+                </ul>
+                
+                <h3>Användningsområden</h3>
+                <ul>
+                    <li><strong>Mottagare:</strong> Omvandlar RF till MF</li>
+                    <li><strong>Sändare:</strong> Omvandlar MF till RF (uppblandning)</li>
+                    <li><strong>Frekvenssyntes:</strong> Generera olika frekvenser</li>
+                </ul>
+                
+                <div class="info-box important">
+                    <strong>🎯 Provet:</strong> Du behöver förstå att blandning ger summa- och skillnadsfrekvenser, samt hur detta används i en superheterodynmottagare.
+                </div>
+            </div>
+
+            <!-- Sektion 8: Förstärkare -->
+            <div class="content-section" id="forstarkare">
+                <h2>2.8 Förstärkare</h2>
+                
+                <h3>Förstärkarklasser</h3>
+                <p>Förstärkare delas in i klasser baserat på hur de arbetar:</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Klass</th>
+                            <th>Ledningsvinkel</th>
+                            <th>Verkningsgrad</th>
+                            <th>Linjäritet</th>
+                            <th>Användning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>360°</td>
+                            <td>~25-30%</td>
+                            <td>Utmärkt</td>
+                            <td>Lågeffekt, HiFi</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>180°</td>
+                            <td>~60-70%</td>
+                            <td>God</td>
+                            <td>Push-pull-steg</td>
+                        </tr>
+                        <tr>
+                            <td>AB</td>
+                            <td>180-360°</td>
+                            <td>~50-60%</td>
+                            <td>Mycket god</td>
+                            <td>SSB-slutsteg</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><180°</td>
+                            <td>~70-80%</td>
+                            <td>Dålig</td>
+                            <td>FM/CW-slutsteg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box important">
+                    <strong>🎯 Viktigt:</strong>
+                    <br>• <strong>SSB kräver linjär förstärkare</strong> (klass A, AB) - annars förvrängs signalen
+                    <br>• <strong>FM/CW kan använda klass C</strong> - högre verkningsgrad, mindre värmeutveckling
+                </div>
+                
+                <h3>RF-förstärkare</h3>
+                <p>Förstärker radiosignaler. Krav:</p>
+                <ul>
+                    <li>Lågt brus (speciellt i mottagarens frontend)</li>
+                    <li>Bred bandbredd eller avstämbar</li>
+                    <li>Stabilt (ingen självsvängning)</li>
+                    <li>Hög dynamik (klarar både svaga och starka signaler)</li>
+                </ul>
+                
+                <h3>MF-förstärkare</h3>
+                <p>Förstärker mellanfrekvensen i en mottagare. Här sker huvuddelen av förstärkningen.</p>
+                <ul>
+                    <li>Arbetar på en fast frekvens</li>
+                    <li>Kan vara mycket selektiv</li>
+                    <li>AGC (Automatic Gain Control) reglerar förstärkningen</li>
+                </ul>
+                
+                <h3>LF-förstärkare (Audio)</h3>
+                <p>Förstärker ljudfrekvenser (20 Hz - 20 kHz).</p>
+                <ul>
+                    <li>Låg distorsion viktig</li>
+                    <li>Tillräcklig effekt för högtalare</li>
+                </ul>
+                
+                <h3>AGC (Automatic Gain Control)</h3>
+                <p>Automatisk förstärkningsreglering som håller utsignalen på jämn nivå trots varierande insignal.</p>
+                <ul>
+                    <li><strong>Fast AGC:</strong> Snabb respons, bra för CW/SSB</li>
+                    <li><strong>Slow AGC:</strong> Långsam respons, bekvämare för tal</li>
+                </ul>
+                
+                <h3>Slutsteg (PA - Power Amplifier)</h3>
+                <p>Förstärker till full sändareffekt. Viktiga aspekter:</p>
+                <ul>
+                    <li><strong>Uteffekt:</strong> Typiskt 5W - 1kW för amatörbruk</li>
+                    <li><strong>Verkningsgrad:</strong> Påverkar värmeutveckling och strömförbrukning</li>
+                    <li><strong>Harmoniska:</strong> Ska vara väl dämpade (lågpassfilter behövs)</li>
+                    <li><strong>IMD:</strong> Intermodulationsdistorsion ska vara låg för SSB</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Försiktighet med slutsteg:</strong>
+                    <br>• Anslut alltid antenn eller dummyload innan sändning
+                    <br>• Överskrid inte maximal inspänning
+                    <br>• Se till att kylningen fungerar
+                    <br>• SWR över 2:1 kan skada slutsteget
+                </div>
+            </div>
+
+            <!-- Sammanfattning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning Kapitel 2</h2>
+                
+                <div class="key-points">
+                    <h3>Modulationstyper:</h3>
+                    <ul>
+                        <li><strong>AM:</strong> Amplituden varieras, enkel men ineffektiv</li>
+                        <li><strong>FM:</strong> Frekvensen varieras, störningstålig</li>
+                        <li><strong>SSB:</strong> Effektiv, LSB under 10 MHz, USB över</li>
+                        <li><strong>CW:</strong> Smalast bandbredd, morsetelegrafi</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Viktiga begrepp:</h3>
+                    <ul>
+                        <li><strong>Superheterodyn:</strong> Omvandling till fast mellanfrekvens</li>
+                        <li><strong>Blandning:</strong> Ger summa- och skillnadsfrekvenser</li>
+                        <li><strong>PLL:</strong> Kombinerar stabilitet och variabel frekvens</li>
+                        <li><strong>Klass AB:</strong> Används för linjära slutsteg (SSB)</li>
+                        <li><strong>AGC:</strong> Håller jämn ljudnivå</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Kom ihåg:</h3>
+                    <ul>
+                        <li>Lågpassfilter efter sändare dämpar övertoner</li>
+                        <li>SSB kräver linjär förstärkning</li>
+                        <li>Spegelfrekvens = LO ± MF</li>
+                        <li>Aldrig sända utan antenn/last!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="kapitel-1-grundlaggande-elektronik.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Kapitel 1: Elektronik</span>
+                </a>
+                <a href="../test/ovning.html?chapter=2" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 2</span>
+                </a>
+                <a href="kapitel-3-antenner.html" class="nav-button next">
+                    <span class="label">Kapitel 3: Antenner</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(2);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

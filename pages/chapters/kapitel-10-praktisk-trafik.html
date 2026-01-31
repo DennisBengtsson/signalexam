@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 10: Praktisk Trafik - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel" class="active">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="chapter-page">
+        <div class="chapter-content">
+            <!-- Kapitel Hero -->
+            <div class="chapter-hero">
+                <div class="chapter-badge">Kapitel 10</div>
+                <h1>Praktisk Trafik</h1>
+                <p>Sätt ihop allt du lärt dig - från första QSO till DX-expeditioner</p>
+                <div class="chapter-meta">
+                    <span>⏱️ 2 timmar</span>
+                    <span>📝 25 frågor</span>
+                    <span id="chapterProgress">📊 0% genomfört</span>
+                </div>
+            </div>
+
+            <!-- Innehållsförteckning -->
+            <div class="content-section toc">
+                <h2>📑 Innehåll</h2>
+                <ol class="toc-list">
+                    <li><a href="#station">Stationsuppbyggnad</a></li>
+                    <li><a href="#forsta-qso">Ditt första QSO</a></li>
+                    <li><a href="#dx">DX och tävlingar</a></li>
+                    <li><a href="#diplom">Diplom och utmärkelser</a></li>
+                    <li><a href="#aktiviteter">Aktiviteter och evenemang</a></li>
+                    <li><a href="#resurser">Resurser och fortsatt lärande</a></li>
+                </ol>
+            </div>
+
+            <!-- Sektion 1: Stationsuppbyggnad -->
+            <div class="content-section" id="station">
+                <h2>10.1 Stationsuppbyggnad</h2>
+                
+                <h3>Grundutrustning</h3>
+                <p>En komplett amatörradiostation behöver:</p>
+                
+                <h4>Transceiver (sändare/mottagare)</h4>
+                <ul>
+                    <li><strong>HF-transceiver:</strong> För kortvågsbanden (160m-10m)</li>
+                    <li><strong>VHF/UHF-transceiver:</strong> För 2m, 70cm m.fl.</li>
+                    <li><strong>Allbandsradio:</strong> Täcker både HF och VHF/UHF</li>
+                    <li><strong>Handhållen radio:</strong> Portabel för VHF/UHF</li>
+                </ul>
+                
+                <h4>Nätaggregat</h4>
+                <ul>
+                    <li>De flesta radioapparater körs på 13,8V likström</li>
+                    <li>Dimensionera för radioapparatens strömförbrukning + marginal</li>
+                    <li>En 100W HF-radio drar ca 20-22A vid sändning</li>
+                </ul>
+                
+                <h4>Antenn</h4>
+                <ul>
+                    <li>Anpassad för de band du vill använda</li>
+                    <li>Dipol är enkelt och fungerar bra</li>
+                    <li>Vertikal för begränsad plats</li>
+                    <li>Riktantenn för seriöst DX</li>
+                </ul>
+                
+                <h4>Matarledning</h4>
+                <ul>
+                    <li>Koaxialkabel (50Ω) vanligast</li>
+                    <li>Välj kvalitet för låga förluster</li>
+                    <li>Vattentäta kontakter utomhus</li>
+                </ul>
+                
+                <h4>SWR/Effektmätare</h4>
+                <ul>
+                    <li>Kontrollera anpassningen</li>
+                    <li>Verifiera uteffekten</li>
+                </ul>
+                
+                <h4>Antennavstämningsenhet (ATU)</h4>
+                <ul>
+                    <li>Anpassar antennens impedans till 50Ω</li>
+                    <li>Inbyggd i många moderna transceivrar</li>
+                </ul>
+                
+                <h3>Ergonomi i shacket</h3>
+                <ul>
+                    <li>Bekväm sittställning</li>
+                    <li>Bra belysning</li>
+                    <li>Kontroller inom räckhåll</li>
+                    <li>Mikrofon i rätt höjd</li>
+                    <li>Hörlurar för bättre koncentration</li>
+                </ul>
+                
+                <h3>Loggning</h3>
+                <p>Även om det inte är obligatoriskt rekommenderas loggning:</p>
+                <ul>
+                    <li><strong>Papperslogg:</strong> Traditionellt, fungerar alltid</li>
+                    <li><strong>Datorlogg:</strong> Sökbart, kan laddas upp till LoTW/eQSL</li>
+                    <li>Populära loggprogram: Log4OM, N1MM+, Ham Radio Deluxe</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 2: Första QSO -->
+            <div class="content-section" id="forsta-qso">
+                <h2>10.2 Ditt Första QSO</h2>
+                
+                <h3>Förberedelser</h3>
+                <ol>
+                    <li>Kontrollera att allt fungerar (gärna med dummyload först)</li>
+                    <li>Kontrollera SWR på antennen</li>
+                    <li>Ha papper och penna redo</li>
+                    <li>Ha Q-koder och fonetiska alfabetet tillgängligt</li>
+                    <li>Bestäm vilket band som är öppet</li>
+                </ol>
+                
+                <h3>Lyssna först!</h3>
+                <p>Innan du sänder, lyssna och lär dig hur andra gör:</p>
+                <ul>
+                    <li>Hur låter ett CQ-anrop?</li>
+                    <li>Hur svarar man?</li>
+                    <li>Vilken information utbyts?</li>
+                    <li>Hur avslutas kontakten?</li>
+                </ul>
+                
+                <h3>Svara på CQ - enklaste sättet att börja</h3>
+                <p>Att svara på någon annans CQ är mindre nervöst än att ropa CQ själv:</p>
+                
+                <div class="example-box">
+                    <strong>Du hör:</strong>
+                    <br>"CQ CQ CQ, this is DL1ABC, Delta Lima One Alfa Bravo Charlie, calling CQ"
+                    <br><br>
+                    <strong>Du svarar:</strong>
+                    <br>"DL1ABC, this is SM5XYZ, Sierra Mike Five X-ray Yankee Zulu"
+                    <br><br>
+                    <strong>DL1ABC:</strong>
+                    <br>"SM5XYZ, thanks for the call. You are 59, name is Hans, QTH Munich. How copy?"
+                    <br><br>
+                    <strong>Du:</strong>
+                    <br>"DL1ABC, thanks for the 59. You are also 59. Name here is Erik, QTH Stockholm. 73 and thanks for the QSO!"
+                    <br><br>
+                    <strong>DL1ABC:</strong>
+                    <br>"SM5XYZ, 73 and good luck! DL1ABC clear."
+                </div>
+                
+                <h3>Ropa CQ</h3>
+                <p>När du känner dig redo:</p>
+                <ol>
+                    <li>Hitta en ledig frekvens</li>
+                    <li>Fråga "Is this frequency in use?" eller "QRL?"</li>
+                    <li>Vänta några sekunder</li>
+                    <li>Ropa CQ (se kapitel 8)</li>
+                    <li>Lyssna efter svar</li>
+                    <li>Upprepa om ingen svarar</li>
+                </ol>
+                
+                <h3>Tips för nybörjare</h3>
+                <ul>
+                    <li><strong>Var inte nervös</strong> - alla har varit nybörjare</li>
+                    <li><strong>Tala långsamt och tydligt</strong></li>
+                    <li><strong>Be om repetition</strong> om du inte förstår</li>
+                    <li><strong>Håll det enkelt</strong> i början</li>
+                    <li><strong>Prova olika band och tider</strong></li>
+                    <li><strong>2m FM repeater</strong> är bra för övning</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 SSA:s nätverkningar:</strong> Söndagar kl 09:00 på 3,755 kHz finns SSA:s nätverkning där du kan öva i lugn och ro bland vänligt sinnade!
+                </div>
+            </div>
+
+            <!-- Sektion 3: DX och tävlingar -->
+            <div class="content-section" id="dx">
+                <h2>10.3 DX och Tävlingar</h2>
+                
+                <h3>DX - Långdistansförbindelser</h3>
+                <p>DX (Distance) syftar på kontakter med avlägsna länder. Det finns en speciell tjusning i att nå andra sidan jorden med egna medel!</p>
+                
+                <h4>Tips för DX</h4>
+                <ul>
+                    <li><strong>Lär dig banden:</strong> När är de öppna och vart?</li>
+                    <li><strong>Använd DX Cluster:</strong> Se var DX-stationer är aktiva i realtid</li>
+                    <li><strong>Lyssna på pile-ups:</strong> Lär dig tekniken innan du ropar</li>
+                    <li><strong>Timing:</strong> Grålinjen, soluppgång/nedgång är ofta bäst</li>
+                    <li><strong>Tålamod:</strong> Ibland krävs många försök</li>
+                </ul>
+                
+                <h4>Pile-up-teknik</h4>
+                <ol>
+                    <li>Lyssna ut DX-stationens mönster</li>
+                    <li>Vänta på rätt tillfälle</li>
+                    <li>Ropa bara din signal - en gång</li>
+                    <li>Lyssna om du blev hörd</li>
+                    <li>Om inte - vänta och försök igen</li>
+                </ol>
+                
+                <h4>Split-trafik</h4>
+                <p>Sällsynta DX-stationer kör ofta split:</p>
+                <ul>
+                    <li>DX sänder på en frekvens, lyssnar på en annan</li>
+                    <li>"Listening 5-10 up" = lyssnar 5-10 kHz högre</li>
+                    <li>Ställ in VFO A för att lyssna, VFO B för att sända</li>
+                </ul>
+                
+                <h3>Tävlingar (Contest)</h3>
+                <p>Radiotävlingar är ett roligt sätt att träna snabb och effektiv trafik.</p>
+                
+                <h4>Populära tävlingar</h4>
+                <ul>
+                    <li><strong>CQ WW DX Contest</strong> - Världens största, oktober/november</li>
+                    <li><strong>CQ WPX</strong> - Samla prefix</li>
+                    <li><strong>ARRL DX Contest</strong> - Mot USA/Kanada</li>
+                    <li><strong>SAC (Scandinavian Activity Contest)</strong> - Skandinavisk</li>
+                    <li><strong>SM-veckan</strong> - Svenskt mästerskap</li>
+                </ul>
+                
+                <h4>Tävlingsutbyte</h4>
+                <p>I tävlingar utbyts oftast:</p>
+                <ul>
+                    <li>RST-rapport (ofta 59/599)</li>
+                    <li>Löpnummer eller zon/distrikt</li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Typiskt tävlings-QSO:</strong>
+                    <br><br>
+                    CQ CONTEST SM5XYZ
+                    <br>SM5XYZ 59 14 (RST 59, zon 14)
+                    <br>TU 59 05 (Tack, RST 59, löpnummer 05)
+                    <br>TU SM5XYZ CQ CONTEST
+                </div>
+                
+                <h4>Tips för tävling</h4>
+                <ul>
+                    <li>Börja med att S&P (Search and Pounce) - leta och svara</li>
+                    <li>Använd tävlingsloggprogram (N1MM+, etc.)</li>
+                    <li>Lär dig snabbtangenter</li>
+                    <li>Ha kul - det är inte nödvändigt att köra hela tävlingen</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 4: Diplom -->
+            <div class="content-section" id="diplom">
+                <h2>10.4 Diplom och Utmärkelser</h2>
+                
+                <h3>Varför diplom?</h3>
+                <p>Diplom ger mål att sträva mot och dokumenterar dina prestationer.</p>
+                
+                <h3>Populära diplom</h3>
+                
+                <h4>DXCC (DX Century Club)</h4>
+                <p>Det klassiska DX-diplomet från ARRL.</p>
+                <ul>
+                    <li>Bekräfta kontakt med 100 olika "entiteter" (länder/områden)</li>
+                    <li>Det finns ca 340 entiteter</li>
+                    <li>Olika nivåer och endorsements</li>
+                </ul>
+                
+                <h4>WAS (Worked All States)</h4>
+                <p>Kontakt med alla 50 amerikanska delstater.</p>
+                
+                <h4>WAZ (Worked All Zones)</h4>
+                <p>Kontakt med alla 40 CQ-zoner i världen.</p>
+                
+                <h4>Svenska diplom</h4>
+                <ul>
+                    <li><strong>SM-diplomet:</strong> Kontakt med svenska distrikt</li>
+                    <li><strong>Riksfyrar:</strong> Kontakt med svenska fyrplatser</li>
+                    <li><strong>SMLA:</strong> Svenska län</li>
+                </ul>
+                
+                <h4>Europeiska diplom</h4>
+                <ul>
+                    <li><strong>WAE (Worked All Europe)</strong></li>
+                    <li><strong>IOTA (Islands On The Air)</strong> - Öar runt om i världen</li>
+                    <li><strong>SOTA (Summits On The Air)</strong> - Bergstopp-aktivering</li>
+                    <li><strong>WWFF (World Wide Flora & Fauna)</strong> - Naturreservat</li>
+                </ul>
+                
+                <h3>QSL-bekräftelse</h3>
+                <p>För de flesta diplom krävs bekräftelse av kontakterna:</p>
+                <ul>
+                    <li><strong>Papperskort:</strong> Traditionellt, via QSL-byrå eller direkt</li>
+                    <li><strong>LoTW (Logbook of The World):</strong> ARRLs digitala system</li>
+                    <li><strong>eQSL:</strong> Elektroniska QSL-kort</li>
+                    <li><strong>Club Log:</strong> För DXCC och mer</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 5: Aktiviteter -->
+            <div class="content-section" id="aktiviteter">
+                <h2>10.5 Aktiviteter och Evenemang</h2>
+                
+                <h3>SOTA (Summits On The Air)</h3>
+                <p>Aktivera bergtoppar och få poäng - både för aktiverare och jägare.</p>
+                <ul>
+                    <li>Minst 4 QSO:n för giltig aktivering</li>
+                    <li>Portabel, lätt utrustning</li>
+                    <li>Friluftsradio på riktigt!</li>
+                </ul>
+                
+                <h3>POTA (Parks On The Air)</h3>
+                <p>Liknande koncept men från parker och naturreservat.</p>
+                
+                <h3>Field Day</h3>
+                <p>Årligt evenemang där man sätter upp station utomhus.</p>
+                <ul>
+                    <li>Öva nödkommunikation</li>
+                    <li>Testa portabel utrustning</li>
+                    <li>Social aktivitet</li>
+                </ul>
+                
+                <h3>Specialevenemang</h3>
+                <ul>
+                    <li><strong>JOTA (Jamboree On The Air):</strong> Scouter världen över</li>
+                    <li><strong>Museum Ships Weekend:</strong> Från historiska fartyg</li>
+                    <li><strong>Castles On The Air:</strong> Från slott och borgar</li>
+                    <li><strong>Specialsignaler:</strong> Jubileer, minnen, etc.</li>
+                </ul>
+                
+                <h3>Klubbverksamhet</h3>
+                <p>Gå med i en lokal radioamatörklubb!</p>
+                <ul>
+                    <li>Lär av erfarna amatörer</li>
+                    <li>Tillgång till klubbstation</li>
+                    <li>Kurser och föreläsningar</li>
+                    <li>Fältdagar och gemensamma aktiviteter</li>
+                    <li>Hitta klubbar via <strong>SSA.se</strong></li>
+                </ul>
+            </div>
+
+            <!-- Sektion 6: Resurser -->
+            <div class="content-section" id="resurser">
+                <h2>10.6 Resurser och Fortsatt Lärande</h2>
+                
+                <h3>Organisationer</h3>
+                <ul>
+                    <li><strong>SSA (Sveriges Sändareamatörer):</strong> ssa.se - Nationell organisation</li>
+                    <li><strong>IARU:</strong> Internationell organisation</li>
+                    <li><strong>ARRL:</strong> Amerikansk organisation med mycket resurser</li>
+                </ul>
+                
+                <h3>Online-resurser</h3>
+                <ul>
+                    <li><strong>QRZ.com:</strong> Anropssignaldatabas, loggbok</li>
+                    <li><strong>DX Cluster:</strong> dxwatch.com, dxsummit.fi</li>
+                    <li><strong>PSK Reporter:</strong> pskreporter.info - Se var din signal hörs</li>
+                    <li><strong>VOACAP:</strong> Propagationsprognoser</li>
+                    <li><strong>Repeaterkartor:</strong> repeaterbook.com</li>
+                </ul>
+                
+                <h3>Programvara</h3>
+                <ul>
+                    <li><strong>WSJT-X:</strong> FT8, FT4 och andra weak-signal modes</li>
+                    <li><strong>Fldigi:</strong> Digitala modes</li>
+                    <li><strong>JTDX:</strong> Alternativ för FT8</li>
+                    <li><strong>SDR#, HDSDR:</strong> SDR-programvara</li>
+                    <li><strong>N1MM+:</strong> Tävlingslogg</li>
+                    <li><strong>Log4OM:</strong> Allmän loggprogramvara</li>
+                </ul>
+                
+                <h3>Tidningar och media</h3>
+                <ul>
+                    <li><strong>QTC:</strong> SSA:s medlemstidning</li>
+                    <li><strong>CQ Magazine, QST:</strong> Internationella tidningar</li>
+                    <li><strong>YouTube:</strong> Massor av amatörradioinnehåll</li>
+                    <li><strong>Podcasts:</strong> Ham Radio Workbench, QSO Today, etc.</li>
+                </ul>
+                
+                <h3>Fortsätt lära dig</h3>
+                <ul>
+                    <li><strong>Experimentera!</strong> Bygg antenner, prova nya modes</li>
+                    <li><strong>Utmana dig själv:</strong> Prova CW, digitalt, satellit, EME</li>
+                    <li><strong>Dela med dig:</strong> Hjälp nya amatörer</li>
+                    <li><strong>Ha roligt!</strong> Det är det viktigaste</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Slutord:</strong> Radioamatör är en hobby för livet. Det finns alltid något nytt att lära sig, nya länder att jobba, nya tekniker att prova. Välkommen till världens bästa hobby!
+                    <br><br>
+                    <strong>73 de utbildningsteamet!</strong>
+                </div>
+            </div>
+
+            <!-- Sammanfattning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning Kapitel 10</h2>
+                
+                <div class="key-points">
+                    <h3>Kom igång:</h3>
+                    <ul>
+                        <li>Lyssna först - lär av andra</li>
+                        <li>Svara på CQ innan du ropar själv</li>
+                        <li>2m FM och repeatrar är bra övning</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Utvecklas:</h3>
+                    <ul>
+                        <li>Prova DX på HF-banden</li>
+                        <li>Delta i tävlingar</li>
+                        <li>Samla diplom och utmärkelser</li>
+                        <li>Prova portabel trafik (SOTA, POTA)</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Gemenskap:</h3>
+                    <ul>
+                        <li>Gå med i en klubb</li>
+                        <li>Delta i evenemang</li>
+                        <li>Hjälp nya amatörer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Avslutning -->
+            <div class="content-section" style="text-align: center; padding: 3rem;">
+                <h2>🎉 Grattis!</h2>
+                <p style="font-size: 1.2rem;">Du har nu gått igenom hela utbildningsmaterialet. Dags att testa dina kunskaper!</p>
+                <br>
+                <a href="../test/prov.html" class="nav-button practice" style="display: inline-flex; font-size: 1.2rem; padding: 1rem 2rem;">
+                    <span class="icon">📝</span>
+                    <span class="label">Gör ett övningsprov</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="kapitel-9-sakerhet.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Kapitel 9: Säkerhet</span>
+                </a>
+                <a href="../test/ovning.html?chapter=10" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 10</span>
+                </a>
+                <a href="../../index.html" class="nav-button next">
+                    <span class="label">Tillbaka till start</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(10);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

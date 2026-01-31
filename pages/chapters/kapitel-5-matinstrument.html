@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 5: Mätinstrument - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel" class="active">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="chapter-page">
+        <div class="chapter-content">
+            <!-- Kapitel Hero -->
+            <div class="chapter-hero">
+                <div class="chapter-badge">Kapitel 5</div>
+                <h1>Mätinstrument och Mätteknik</h1>
+                <p>Lär dig använda och förstå de verktyg som behövs för att mäta och felsöka</p>
+                <div class="chapter-meta">
+                    <span>⏱️ 2-3 timmar</span>
+                    <span>📝 30 frågor</span>
+                    <span id="chapterProgress">📊 0% genomfört</span>
+                </div>
+            </div>
+
+            <!-- Innehållsförteckning -->
+            <div class="content-section toc">
+                <h2>📑 Innehåll</h2>
+                <ol class="toc-list">
+                    <li><a href="#multimeter">Multimeter</a></li>
+                    <li><a href="#swr-meter">SWR-meter och effektmätare</a></li>
+                    <li><a href="#oscilloskop">Oscilloskop</a></li>
+                    <li><a href="#frekvens">Frekvensmätning</a></li>
+                    <li><a href="#signalgenerator">Signalgeneratorer</a></li>
+                    <li><a href="#dummyload">Dummyload och dämpare</a></li>
+                </ol>
+            </div>
+
+            <!-- Sektion 1: Multimeter -->
+            <div class="content-section" id="multimeter">
+                <h2>5.1 Multimeter</h2>
+                
+                <h3>Vad är en multimeter?</h3>
+                <p>En multimeter är det mest grundläggande mätinstrumentet för elektronik. Den kan mäta spänning, ström och resistans - de tre storheter som Ohms lag beskriver.</p>
+                
+                <h3>Typer av multimetrar</h3>
+                <ul>
+                    <li><strong>Analog:</strong> Visare som rör sig över en skala. Bra för att se trender.</li>
+                    <li><strong>Digital (DMM):</strong> Sifferdisplay. Noggrannare och lättare att avläsa.</li>
+                </ul>
+                
+                <h3>Mäta spänning (Voltmeter)</h3>
+                <ul>
+                    <li>Kopplas <strong>parallellt</strong> med det som ska mätas</li>
+                    <li>Hög inre resistans (idealt oändlig) för att inte påverka kretsen</li>
+                    <li>Välj rätt område: DC eller AC</li>
+                    <li>Börja med högsta mätområdet om spänningen är okänd</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Säkerhet:</strong> Mät aldrig nätspänning (230V) utan att vara säker på vad du gör! Använd rätt mätkategori (CAT).
+                </div>
+                
+                <h3>Mäta ström (Amperemeter)</h3>
+                <ul>
+                    <li>Kopplas <strong>i serie</strong> med det som ska mätas</li>
+                    <li>Låg inre resistans (idealt noll) för att inte påverka kretsen</li>
+                    <li>Bryt kretsen och sätt in mätaren</li>
+                    <li>Välj rätt mätområde! För hög ström kan skada mätaren.</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Vanligt fel:</strong> Att koppla multimetern som amperemeter parallellt över en spänningskälla. Detta kortsluter källan genom mätarens låga resistans och kan skada både mätare och krets!
+                </div>
+                
+                <h3>Mäta resistans (Ohmmeter)</h3>
+                <ul>
+                    <li>Kretsen ska vara <strong>strömlös</strong></li>
+                    <li>Komponenten ska helst vara <strong>urkopplad</strong> (annars mäter du parallellresistanser)</li>
+                    <li>Mätaren skickar en liten ström och mäter spänningsfallet</li>
+                </ul>
+                
+                <h3>Andra funktioner</h3>
+                <ul>
+                    <li><strong>Diodtest:</strong> Kontrollerar dioder och LED</li>
+                    <li><strong>Kontinuitetstest:</strong> Piper vid ledande förbindelse</li>
+                    <li><strong>Kapacitansmätning:</strong> Mäter kondensatorer (på vissa modeller)</li>
+                    <li><strong>Frekvensmätning:</strong> Enklare frekvensmätning (på vissa modeller)</li>
+                </ul>
+                
+                <h3>Specifikationer</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Förklaring</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Noggrannhet</td>
+                            <td>Hur nära sant värde mätaren visar (t.ex. ±0,5%)</td>
+                        </tr>
+                        <tr>
+                            <td>Upplösning</td>
+                            <td>Minsta avläsbara värde (t.ex. 0,1 mV)</td>
+                        </tr>
+                        <tr>
+                            <td>Ingångsimpedans</td>
+                            <td>Typiskt 10 MΩ för voltmeter</td>
+                        </tr>
+                        <tr>
+                            <td>Counts</td>
+                            <td>Digital upplösning (t.ex. 6000 counts)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sektion 2: SWR-meter -->
+            <div class="content-section" id="swr-meter">
+                <h2>5.2 SWR-meter och Effektmätare</h2>
+                
+                <h3>SWR-meter</h3>
+                <p>Mäter stående vågförhållande (SWR) på matarledningen mellan sändare och antenn.</p>
+                
+                <h4>Hur fungerar den?</h4>
+                <p>En riktningskopplare separerar framåtgående och reflekterad effekt. Förhållandet ger SWR.</p>
+                
+                <div class="formula-box">
+                    SWR = (P<sub>fram</sub> + P<sub>refl</sub>) / (P<sub>fram</sub> - P<sub>refl</sub>)<br><br>
+                    eller<br><br>
+                    SWR = (1 + √(P<sub>refl</sub>/P<sub>fram</sub>)) / (1 - √(P<sub>refl</sub>/P<sub>fram</sub>))
+                </div>
+                
+                <h4>Användning</h4>
+                <ol>
+                    <li>Koppla in SWR-metern mellan sändare och antenn/ATU</li>
+                    <li>Sänd med låg effekt (carrier eller CW)</li>
+                    <li>Kalibrera "framåt" till full skala (FWD)</li>
+                    <li>Växla till "reflekterad" (REF/REFL) och läs av SWR</li>
+                </ol>
+                
+                <div class="info-box tip">
+                    <strong>💡 Tips:</strong> Mät SWR på flera frekvenser över bandet för att hitta antennens resonansfrekvens (lägst SWR).
+                </div>
+                
+                <h3>Effektmätare (Wattmeter)</h3>
+                <p>Mäter den faktiska uteffekten från sändaren.</p>
+                
+                <h4>Typer:</h4>
+                <ul>
+                    <li><strong>Absorberande:</strong> Mäter i dummyload, exakt men avbryter signalen</li>
+                    <li><strong>Genomgående:</strong> Mäter i linjen, signalen passerar vidare</li>
+                    <li><strong>PEP-mätare:</strong> Mäter Peak Envelope Power (viktigt för SSB)</li>
+                </ul>
+                
+                <h4>PEP vs medelvärde</h4>
+                <ul>
+                    <li><strong>PEP (Peak Envelope Power):</strong> Maxeffekt vid topparna. Används för SSB.</li>
+                    <li><strong>Medeleffekt:</strong> Genomsnitt över tid. Relevant för FM/CW.</li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> En SSB-sändare visar 100W PEP vid tal, men medeleffekten kanske bara är 20-30W beroende på modulation.
+                </div>
+                
+                <h3>Riktningskopplare</h3>
+                <p>Grundkomponenten i SWR-metrar och genomgående effektmätare. Innehåller oftast en liten transformator som kopplar ut en del av signalen.</p>
+            </div>
+
+            <!-- Sektion 3: Oscilloskop -->
+            <div class="content-section" id="oscilloskop">
+                <h2>5.3 Oscilloskop</h2>
+                
+                <h3>Vad är ett oscilloskop?</h3>
+                <p>Ett oscilloskop visar hur spänningen varierar med tiden - en graf av signalens form. Det är ovärderligt för att analysera signaler och felsöka.</p>
+                
+                <h3>Grundläggande funktioner</h3>
+                <ul>
+                    <li><strong>Vertikal axel (Y):</strong> Spänning (V/div)</li>
+                    <li><strong>Horisontell axel (X):</strong> Tid (s/div eller ms/div)</li>
+                    <li><strong>Trigger:</strong> Synkroniserar bilden så den står stilla</li>
+                </ul>
+                
+                <h3>Vad kan man mäta?</h3>
+                <ul>
+                    <li><strong>Amplitud:</strong> Toppvärde, topp-till-topp, effektivvärde</li>
+                    <li><strong>Frekvens/period:</strong> T = tid för en hel svängning, f = 1/T</li>
+                    <li><strong>Signalform:</strong> Sinus, fyrkant, sågtand, puls</li>
+                    <li><strong>Fasförskjutning:</strong> Med två kanaler</li>
+                    <li><strong>Distorsion:</strong> Avvikelse från ren sinus</li>
+                    <li><strong>Brus:</strong> Synlig störning på signalen</li>
+                </ul>
+                
+                <h3>Typer av oscilloskop</h3>
+                <ul>
+                    <li><strong>Analogt:</strong> Katodstrålerör, realtidsvisning</li>
+                    <li><strong>Digitalt (DSO):</strong> Samplar och lagrar signalen, kan frysa bilden</li>
+                    <li><strong>USB-oscilloskop:</strong> Ansluts till dator</li>
+                </ul>
+                
+                <h3>Mätprob</h3>
+                <p>Oscilloskopets mätprob har oftast 10:1 dämpning för att:</p>
+                <ul>
+                    <li>Öka ingångsimpedansen (mindre påverkan på kretsen)</li>
+                    <li>Minska kapacitansen</li>
+                    <li>Kunna mäta högre spänningar</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Kom ihåg:</strong> Med 10:1 prob måste du multiplicera avläst värde med 10 (eller ställa in oscilloskopet för 10X-prob).
+                </div>
+                
+                <h3>Lissajousfigurer</h3>
+                <p>Om man matar X- och Y-axeln med två olika signaler ser man ett mönster som visar frekvensförhållandet och fasskillnaden.</p>
+            </div>
+
+            <!-- Sektion 4: Frekvensmätning -->
+            <div class="content-section" id="frekvens">
+                <h2>5.4 Frekvensmätning</h2>
+                
+                <h3>Frekvensräknare</h3>
+                <p>Räknar antalet svängningar under en bestämd tid (grindtid).</p>
+                
+                <div class="formula-box">
+                    Frekvens = Antal pulser / Grindtid
+                </div>
+                
+                <h4>Specifikationer:</h4>
+                <ul>
+                    <li><strong>Frekvensområde:</strong> Ofta 10 Hz - 2,4 GHz eller mer</li>
+                    <li><strong>Noggrannhet:</strong> Beror på referensoscillatorn (typiskt 1-10 ppm)</li>
+                    <li><strong>Upplösning:</strong> Antal siffror, påverkas av grindtid</li>
+                    <li><strong>Känslighet:</strong> Minsta signalnivå som kan mätas</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Noggrannhet:</strong> Längre grindtid ger fler siffror men långsammare mätning. 1 sekund grindtid ger 1 Hz upplösning.
+                </div>
+                
+                <h3>Absorberad frekvensmätare (Absorption wavemeter)</h3>
+                <p>Enkel, passiv mätare med LC-krets som visar resonans.</p>
+                <ul>
+                    <li>Placeras nära sändaren</li>
+                    <li>Vrids tills maximal utslag (resonans)</li>
+                    <li>Frekvensen läses av på skalan</li>
+                    <li>Bra för snabb kontroll av grundfrekvens och övertoner</li>
+                </ul>
+                
+                <h3>Spektrumanalysator</h3>
+                <p>Visar signalstyrka som funktion av frekvens - ett "frekvenslandskap".</p>
+                <ul>
+                    <li>Ser hela spektrum samtidigt</li>
+                    <li>Hittar övertoner och spurioser</li>
+                    <li>Mäter sidband och bandbredd</li>
+                    <li>Analyserar modulationsdjup</li>
+                </ul>
+                
+                <h3>SDR som mätinstrument</h3>
+                <p>Moderna SDR-mottagare (Software Defined Radio) med lämplig programvara kan fungera som:</p>
+                <ul>
+                    <li>Spektrumanalysator</li>
+                    <li>Signalgenerator</li>
+                    <li>Vektornätverksanalysator (VNA)</li>
+                    <li>Mätmottagare</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 5: Signalgeneratorer -->
+            <div class="content-section" id="signalgenerator">
+                <h2>5.5 Signalgeneratorer</h2>
+                
+                <h3>RF-signalgenerator</h3>
+                <p>Genererar stabila testsignaler på radiofrekvens.</p>
+                
+                <h4>Användning:</h4>
+                <ul>
+                    <li>Justera och testa mottagare</li>
+                    <li>Mäta känslighet</li>
+                    <li>Mäta selektivitet</li>
+                    <li>Spåra signaler genom en kedja</li>
+                </ul>
+                
+                <h4>Funktioner:</h4>
+                <ul>
+                    <li><strong>Frekvensområde:</strong> T.ex. 100 kHz - 3 GHz</li>
+                    <li><strong>Uteffekt:</strong> Justerbar, ofta i dBm</li>
+                    <li><strong>Modulation:</strong> AM, FM, puls etc.</li>
+                    <li><strong>Dämpare:</strong> För exakt nivåkontroll</li>
+                </ul>
+                
+                <h3>Funktionsgenerator</h3>
+                <p>Genererar olika vågformer vid lägre frekvenser (audio/LF).</p>
+                <ul>
+                    <li>Sinus, fyrkant, triangel, sågtand</li>
+                    <li>Typiskt DC - några MHz</li>
+                    <li>Variabel frekvens och amplitud</li>
+                </ul>
+                
+                <h3>Kristalloscillator/Markeringsgivare</h3>
+                <p>Enkel generator som ger exakta markeringar för kalibrering.</p>
+                <ul>
+                    <li>Kristallstyrd, mycket stabil</li>
+                    <li>Ger signaler på grundfrekvens och övertoner</li>
+                    <li>T.ex. 100 kHz-markörer för att kalibrera VFO-skala</li>
+                </ul>
+                
+                <h3>Antennanalysator</h3>
+                <p>Kombinerat instrument specifikt för antennmätningar:</p>
+                <ul>
+                    <li>Mäter impedans (R och X)</li>
+                    <li>Visar SWR över ett frekvensband</li>
+                    <li>Hittar resonansfrekvens</li>
+                    <li>Mäter kabellängd och förluster</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Rekommendation:</strong> En antennanalysator är ett av de mest användbara instrumenten för en radioamatör. Den gör antennbygge och felsökning mycket enklare!
+                </div>
+            </div>
+
+            <!-- Sektion 6: Dummyload och dämpare -->
+            <div class="content-section" id="dummyload">
+                <h2>5.6 Dummyload och Dämpare</h2>
+                
+                <h3>Dummyload (Konstlast)</h3>
+                <p>En resistiv last som absorberar sändareffekten utan att stråla. Oumbärlig för test och justering!</p>
+                
+                <h4>Egenskaper för bra dummyload:</h4>
+                <ul>
+                    <li><strong>Impedans:</strong> 50 Ω (eller 75 Ω för vissa system)</li>
+                    <li><strong>SWR:</strong> Så nära 1:1 som möjligt över hela frekvensområdet</li>
+                    <li><strong>Effekttålighet:</strong> Från några watt till kilowatt</li>
+                    <li><strong>Kylning:</strong> Luftkylda för låg effekt, oljefyllda för hög effekt</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Viktigt:</strong> Testa och justera alltid sändaren mot dummyload först innan du kopplar in antennen! Det undviker störningar och skyddar utrustningen.
+                </div>
+                
+                <h3>Dämpare (Attenuator)</h3>
+                <p>Minskar signalnivån med ett bestämt antal dB utan att ändra impedansen.</p>
+                
+                <h4>Användning:</h4>
+                <ul>
+                    <li>Minska signalnivå till mätinstrument</li>
+                    <li>Förhindra överbelastning av mottagare</li>
+                    <li>Kalibrera mätningar</li>
+                    <li>Förbättra anpassningen</li>
+                </ul>
+                
+                <h4>Typer:</h4>
+                <ul>
+                    <li><strong>Fast dämpare:</strong> T.ex. 3 dB, 6 dB, 10 dB, 20 dB</li>
+                    <li><strong>Variabel dämpare:</strong> Stegvis eller kontinuerligt justerbar</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <strong>Effektreduktion:</strong><br>
+                    3 dB = halva effekten<br>
+                    6 dB = 1/4 av effekten<br>
+                    10 dB = 1/10 av effekten<br>
+                    20 dB = 1/100 av effekten
+                </div>
+                
+                <h3>Riktningskopplare</h3>
+                <p>Kopplar ut en liten del av signalen (t.ex. -20 dB eller -30 dB) för mätning utan att väsentligt påverka huvudsignalen.</p>
+            </div>
+
+            <!-- Sammanfattning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning Kapitel 5</h2>
+                
+                <div class="key-points">
+                    <h3>Multimeter:</h3>
+                    <ul>
+                        <li>Voltmeter kopplas <strong>parallellt</strong></li>
+                        <li>Amperemeter kopplas <strong>i serie</strong></li>
+                        <li>Ohmmeter: Kretsen ska vara <strong>strömlös</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>SWR och effekt:</h3>
+                    <ul>
+                        <li>SWR 1:1 = perfekt anpassning, 0% reflexion</li>
+                        <li>SWR 2:1 = 11% reflekterad effekt</li>
+                        <li>PEP = toppeffekt, viktig för SSB</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Oscilloskop:</h3>
+                    <ul>
+                        <li>Y-axel = spänning, X-axel = tid</li>
+                        <li>10:1 prob = multiplicera med 10</li>
+                        <li>Visar signalform, amplitud, frekvens</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Kom ihåg:</h3>
+                    <ul>
+                        <li>Använd alltid dummyload vid sändartester</li>
+                        <li>Frekvensräknarens noggrannhet beror på referensen</li>
+                        <li>Antennanalysator är oumbärlig för antennbygge</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="kapitel-4-vagutbredning.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Kapitel 4: Vågutbredning</span>
+                </a>
+                <a href="../test/ovning.html?chapter=5" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 5</span>
+                </a>
+                <a href="kapitel-6-storningar.html" class="nav-button next">
+                    <span class="label">Kapitel 6: Störningar</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(5);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

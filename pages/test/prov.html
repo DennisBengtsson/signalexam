@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulerat Prov - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel">Kapitel</a></li>
+                <li><a href="prov.html" class="active">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="quiz-page">
+        <!-- Startskärm innan provet börjar -->
+        <div class="exam-intro" id="examIntro">
+            <div class="exam-intro-card">
+                <div class="exam-intro-icon">🎓</div>
+                <h1>Simulerat Certifieringsprov</h1>
+                <p>Detta prov simulerar det riktiga provet för radioamatörcertifikat.</p>
+                
+                <div class="exam-rules">
+                    <h3>Provregler:</h3>
+                    <ul>
+                        <li>⏱️ <strong>Tid:</strong> 90 minuter</li>
+                        <li>📝 <strong>Antal frågor:</strong> 60 stycken</li>
+                        <li>✅ <strong>Godkänt:</strong> Minst 70% rätt (42 av 60)</li>
+                        <li>🔀 <strong>Frågor:</strong> Slumpmässigt urval från alla kapitel</li>
+                        <li>🚫 <strong>Hjälpmedel:</strong> Inga (utom formelblad)</li>
+                    </ul>
+                </div>
+                
+                <div class="exam-tips">
+                    <h3>Tips:</h3>
+                    <ul>
+                        <li>Läs varje fråga noggrant</li>
+                        <li>Flagga svåra frågor och återvänd till dem</li>
+                        <li>Gissa hellre än att lämna blankt</li>
+                        <li>Håll koll på tiden</li>
+                    </ul>
+                </div>
+                
+                <button class="btn btn-primary btn-large" onclick="startExam()">
+                    Starta Provet →
+                </button>
+                
+                <a href="ovning.html" class="btn btn-secondary">Jag vill öva istället</a>
+            </div>
+        </div>
+        
+        <!-- Quiz-container (dold tills provet startar) -->
+        <div class="quiz-container" id="quizContainer" style="display: none;">
+            <!-- Fylls i av JavaScript -->
+        </div>
+    </main>
+
+    <script src="../../js/data/chapters.js"></script>
+    <script src="../../js/data/questions.js"></script>
+    <script src="../../js/progress.js"></script>
+    <script src="../../js/quiz.js"></script>
+    <script>
+        function startExam() {
+            document.getElementById('examIntro').style.display = 'none';
+            document.getElementById('quizContainer').style.display = 'block';
+            QuizManager.init({ mode: 'exam' });
+        }
+    </script>
+    
+    <style>
+        .exam-intro {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .exam-intro-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .exam-intro-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .exam-intro-card h1 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-intro-card > p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .exam-rules, .exam-tips {
+            text-align: left;
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+        }
+        
+        .exam-rules h3, .exam-tips h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        .exam-rules ul, .exam-tips ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .exam-rules li, .exam-tips li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .exam-rules li:last-child, .exam-tips li:last-child {
+            border-bottom: none;
+        }
+        
+        .btn-large {
+            padding: 1rem 3rem;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .quiz-page {
+            background: var(--background);
+            min-height: calc(100vh - 80px);
+        }
+    </style>
+</body>
+</html>

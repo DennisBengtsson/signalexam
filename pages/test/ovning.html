@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Övningsläge - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../kapitel.html">Kapitel</a></li>
+                <li><a href="prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="practice-page">
+        <!-- Välj kapitel -->
+        <div class="practice-setup" id="practiceSetup">
+            <div class="practice-setup-card">
+                <h1>📝 Övningsläge</h1>
+                <p>Välj vilka kapitel du vill öva på. Du får direkt feedback och förklaringar.</p>
+                
+                <!-- Visar valt kapitel om man kom från en kapitelsida -->
+                <div class="preselected-notice" id="preselectedNotice" style="display: none;">
+                    <span class="notice-icon">📚</span>
+                    <span class="notice-text" id="preselectedText"></span>
+                    <button class="notice-change" onclick="showAllChapters()">Ändra val</button>
+                </div>
+                
+                <div class="chapter-selection" id="chapterSelection">
+                    <h3>Välj Kapitel:</h3>
+                    <div class="chapter-checkboxes" id="chapterCheckboxes">
+                        <!-- Fylls i av JavaScript -->
+                    </div>
+                    
+                    <div class="select-buttons">
+                        <button class="btn btn-secondary btn-small" onclick="selectAllChapters()">Välj alla</button>
+                        <button class="btn btn-secondary btn-small" onclick="selectNoChapters()">Avmarkera alla</button>
+                        <button class="btn btn-secondary btn-small" onclick="selectWeakChapters()">Mina svagaste</button>
+                    </div>
+                </div>
+                
+                <div class="question-count-selector">
+                    <h3>Antal frågor:</h3>
+                    <div class="count-options">
+                        <label class="count-option">
+                            <input type="radio" name="questionCount" value="10">
+                            <span>10 frågor</span>
+                            <small>~5 min</small>
+                        </label>
+                        <label class="count-option selected">
+                            <input type="radio" name="questionCount" value="20" checked>
+                            <span>20 frågor</span>
+                            <small>~10 min</small>
+                        </label>
+                        <label class="count-option">
+                            <input type="radio" name="questionCount" value="30">
+                            <span>30 frågor</span>
+                            <small>~15 min</small>
+                        </label>
+                        <label class="count-option">
+                            <input type="radio" name="questionCount" value="50">
+                            <span>50 frågor</span>
+                            <small>~25 min</small>
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary btn-large" onclick="startPractice()">
+                    Starta Övning →
+                </button>
+                
+                <a href="prov.html" class="btn btn-secondary">Gör ett simulerat prov istället</a>
+            </div>
+        </div>
+        
+        <!-- Quiz-container -->
+        <div class="quiz-container" id="quizContainer" style="display: none;">
+            <!-- Fylls i av JavaScript -->
+        </div>
+    </main>
+
+    <script src="../../js/data/chapters.js"></script>
+    <script src="../../js/data/questions.js"></script>
+    <script src="../../js/progress.js"></script>
+    <script src="../../js/quiz.js"></script>
+    <script>
+        // Hämta URL-parametrar
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                chapter: params.get('chapter') ? parseInt(params.get('chapter')) : null,
+                chapters: params.get('chapters') ? params.get('chapters').split(',').map(Number) : null
+            };
+        }
+        
+        // Global variabel för att hålla reda på om vi har förvalda kapitel
+        let preselectedChapters = null;
+        
+        // Rendera kapitelval
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('chapterCheckboxes');
+            const params = getUrlParams();
+            
+            // Kolla om kapitel är förvalt via URL
+            if (params.chapter) {
+                preselectedChapters = [params.chapter];
+            } else if (params.chapters) {
+                preselectedChapters = params.chapters;
+            }
+            
+            // Rendera checkboxar
+            container.innerHTML = CHAPTERS.map(chapter => {
+                const knowledge = ProgressManager.getChapterKnowledge(chapter.id);
+                const isChecked = preselectedChapters 
+                    ? preselectedChapters.includes(chapter.id)
+                    : true; // Om inga förvalda, välj alla som default
+                
+                return `
+                    <label class="chapter-checkbox ${isChecked ? 'checked' : ''}">
+                        <input type="checkbox" name="chapter" value="${chapter.id}" ${isChecked ? 'checked' : ''}>
+                        <span class="checkbox-content">
+                            <span class="checkbox-title">${chapter.id}. ${chapter.shortTitle}</span>
+                            <span class="checkbox-progress">${knowledge}%</span>
+                        </span>
+                    </label>
+                `;
+            }).join('');
+            
+            // Visa "preselected notice" om kapitel valdes från URL
+            if (preselectedChapters && preselectedChapters.length > 0) {
+                const notice = document.getElementById('preselectedNotice');
+                const noticeText = document.getElementById('preselectedText');
+                
+                if (preselectedChapters.length === 1) {
+                    const chapter = CHAPTERS.find(c => c.id === preselectedChapters[0]);
+                    noticeText.textContent = `Du övar på: Kapitel ${chapter.id} - ${chapter.title}`;
+                } else {
+                    noticeText.textContent = `Du övar på ${preselectedChapters.length} valda kapitel`;
+                }
+                
+                notice.style.display = 'flex';
+                document.getElementById('chapterSelection').classList.add('collapsed');
+            }
+            
+            // Uppdatera checkbox styling vid ändring
+            document.querySelectorAll('.chapter-checkbox input').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    this.closest('.chapter-checkbox').classList.toggle('checked', this.checked);
+                });
+            });
+            
+            // Radio button styling
+            document.querySelectorAll('.count-option input').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    document.querySelectorAll('.count-option').forEach(opt => {
+                        opt.classList.toggle('selected', opt.contains(this) && this.checked);
+                    });
+                });
+            });
+        });
+        
+        function showAllChapters() {
+            document.getElementById('preselectedNotice').style.display = 'none';
+            document.getElementById('chapterSelection').classList.remove('collapsed');
+            preselectedChapters = null;
+        }
+        
+        function selectAllChapters() {
+            document.querySelectorAll('input[name="chapter"]').forEach(cb => {
+                cb.checked = true;
+                cb.closest('.chapter-checkbox').classList.add('checked');
+            });
+        }
+        
+        function selectNoChapters() {
+            document.querySelectorAll('input[name="chapter"]').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.chapter-checkbox').classList.remove('checked');
+            });
+        }
+        
+        function selectWeakChapters() {
+            selectNoChapters();
+            const weak = ProgressManager.getWeakestChapters(5);
+            weak.forEach(w => {
+                const cb = document.querySelector(`input[name="chapter"][value="${w.chapterId}"]`);
+                if (cb) {
+                    cb.checked = true;
+                    cb.closest('.chapter-checkbox').classList.add('checked');
+                }
+            });
+            
+            // Om inga svaga kapitel finns, välj alla
+            if (weak.length === 0) {
+                selectAllChapters();
+            }
+        }
+        
+        function selectOnlyChapter(chapterId) {
+            selectNoChapters();
+            const cb = document.querySelector(`input[name="chapter"][value="${chapterId}"]`);
+            if (cb) {
+                cb.checked = true;
+                cb.closest('.chapter-checkbox').classList.add('checked');
+            }
+        }
+        
+        function startPractice() {
+            const selectedChapters = Array.from(document.querySelectorAll('input[name="chapter"]:checked'))
+                .map(cb => parseInt(cb.value));
+            
+            if (selectedChapters.length === 0) {
+                alert('Välj minst ett kapitel att öva på!');
+                return;
+            }
+            
+            const questionCount = parseInt(document.querySelector('input[name="questionCount"]:checked').value);
+            
+            document.getElementById('practiceSetup').style.display = 'none';
+            document.getElementById('quizContainer').style.display = 'block';
+            
+            QuizManager.init({
+                mode: 'practice',
+                chapterIds: selectedChapters,
+                questionCount: questionCount,
+                showExplanations: true
+            });
+        }
+    </script>
+    
+    <style>
+        .practice-page {
+            background: var(--background);
+            min-height: calc(100vh - 80px);
+        }
+        
+        .practice-setup {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .practice-setup-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .practice-setup-card h1 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .practice-setup-card > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        /* Preselected Notice */
+        .preselected-notice {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+        }
+        
+        .notice-icon {
+            font-size: 1.5rem;
+        }
+        
+        .notice-text {
+            flex: 1;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .notice-change {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: underline;
+            padding: 0.5rem;
+        }
+        
+        .notice-change:hover {
+            color: var(--primary-dark);
+        }
+        
+        .chapter-selection, .question-count-selector {
+            margin-bottom: 2rem;
+        }
+        
+        .chapter-selection.collapsed {
+            display: none;
+        }
+        
+        .chapter-selection h3, .question-count-selector h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .chapter-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-checkbox {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: var(--background);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .chapter-checkbox:hover {
+            border-color: var(--primary-light);
+        }
+        
+        .chapter-checkbox.checked {
+            border-color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .chapter-checkbox input {
+            margin-right: 0.75rem;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-color);
+        }
+        
+        .checkbox-content {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+        }
+        
+        .checkbox-title {
+            font-weight: 500;
+        }
+        
+        .checkbox-progress {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .select-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .count-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .count-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+        
+        .count-option:hover {
+            border-color: var(--primary-light);
+        }
+        
+        .count-option.selected {
+            border-color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .count-option input {
+            display: none;
+        }
+        
+        .count-option span {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+        
+        .count-option small {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .btn-large {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-setup-card > .btn-secondary {
+            width: 100%;
+            text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            .practice-setup-card {
+                padding: 1.5rem;
+            }
+            
+            .count-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chapter-checkboxes {
+                grid-template-columns: 1fr;
+            }
+            
+            .preselected-notice {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .select-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+</html>

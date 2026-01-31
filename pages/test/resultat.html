@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provresultat - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel">Kapitel</a></li>
+                <li><a href="prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="result-page">
+        <div class="result-container" id="resultContainer">
+            <!-- Fylls i av JavaScript -->
+        </div>
+    </main>
+
+    <script src="../../js/data/chapters.js"></script>
+    <script src="../../js/data/questions.js"></script>
+    <script src="../../js/progress.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultsData = sessionStorage.getItem('lastExamResults');
+            
+            if (!resultsData) {
+                window.location.href = 'prov.html';
+                return;
+            }
+            
+            const results = JSON.parse(resultsData);
+            renderResults(results);
+        });
+        
+        function renderResults(results) {
+            const container = document.getElementById('resultContainer');
+            const percentage = Math.round((results.correctAnswers / results.totalQuestions) * 100);
+            const passed = percentage >= 70;
+            
+            const minutes = Math.floor(results.timeSpent / 60);
+            const seconds = results.timeSpent % 60;
+            const timeString = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            container.innerHTML = `
+                <div class="result-hero ${passed ? 'passed' : 'failed'}">
+                    <div class="result-icon">${passed ? '🎉' : '📚'}</div>
+                    <div class="result-score">${percentage}%</div>
+                    <h1 class="result-message">${passed ? 'Grattis! Du klarade provet!' : 'Tyvärr, du klarade inte provet denna gång.'}</h1>
+                    <p class="result-submessage">${passed 
+                        ? 'Fortsätt öva för att bli ännu säkrare inför det riktiga provet.' 
+                        : 'Oroa dig inte! Öva mer på de områden där du behöver förbättras.'}</p>
+                    
+                    <div class="result-details">
+                        <div class="result-detail">
+                            <div class="result-detail-value">${results.correctAnswers}/${results.totalQuestions}</div>
+                            <div class="result-detail-label">Rätta svar</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value">${timeString}</div>
+                            <div class="result-detail-label">Tid</div>
+                        </div>
+                        <div class="result-detail">
+                            <div class="result-detail-value">${passed ? '✅' : '❌'}</div>
+                            <div class="result-detail-label">${passed ? 'Godkänt' : 'Ej godkänt'}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chapter-results">
+                    <h3>Resultat per Kapitel</h3>
+                    <p class="chapter-results-intro">Se hur du presterade inom varje område:</p>
+                    
+                    ${CHAPTERS.map(chapter => {
+                        const breakdown = results.chapterBreakdown[chapter.id];
+                        if (!breakdown) return '';
+                        
+                        const chapterPercent = Math.round((breakdown.correct / breakdown.total) * 100);
+                        let barClass = '';
+                        if (chapterPercent >= 70) barClass = 'good';
+                        else if (chapterPercent >= 50) barClass = 'medium';
+                        else barClass = 'low';
+                        
+                        return `
+                            <div class="chapter-result-item">
+                                <span class="chapter-result-name">${chapter.shortTitle}</span>
+                                <div class="chapter-result-bar">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill ${barClass}" style="width: ${chapterPercent}%"></div>
+                                    </div>
+                                </div>
+                                <span class="chapter-result-score ${chapterPercent >= 70 ? 'good' : chapterPercent >= 50 ? 'medium' : 'bad'}">
+                                    ${breakdown.correct}/${breakdown.total}
+                                </span>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                
+                <div class="result-actions">
+                    <h3>Vad vill du göra nu?</h3>
+                    <div class="action-buttons">
+                        <a href="prov.html" class="btn btn-primary">
+                            🔄 Gör ett nytt prov
+                        </a>
+                        <a href="ovning.html" class="btn btn-secondary">
+                            📝 Öva på svaga områden
+                        </a>
+                        <a href="../../index.html" class="btn btn-secondary">
+                            🏠 Tillbaka till startsidan
+                        </a>
+                        <button class="btn btn-secondary" onclick="reviewAnswers()">
+                            🔍 Granska svar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Svarsgenomgång -->
+                <div class="answer-review" id="answerReview" style="display: none;">
+                    <h3>Svarsgenomgång</h3>
+                    <div class="filter-buttons">
+                        <button class="btn btn-small active" onclick="filterReview('all')">Alla</button>
+                        <button class="btn btn-small" onclick="filterReview('incorrect')">Endast fel</button>
+                        <button class="btn btn-small" onclick="filterReview('correct')">Endast rätt</button>
+                    </div>
+                    <div class="review-questions" id="reviewQuestions">
+                        ${results.questions.map((q, index) => {
+                            const userAnswer = results.answers[q.id];
+                            const isCorrect = userAnswer === q.correctAnswer;
+                            const chapter = getChapterById(q.chapterId);
+                            
+                            return `
+                                <div class="review-question ${isCorrect ? 'correct' : 'incorrect'}" data-status="${isCorrect ? 'correct' : 'incorrect'}">
+                                    <div class="review-question-header">
+                                        <span class="review-question-number">Fråga ${index + 1}</span>
+                                        <span class="review-question-status">${isCorrect ? '✅ Rätt' : '❌ Fel'}</span>
+                                        <span class="review-question-chapter">${chapter.shortTitle}</span>
+                                    </div>
+                                    <p class="review-question-text">${q.question}</p>
+                                    <div class="review-answers">
+                                        ${q.options.map(opt => {
+                                            let answerClass = 'review-answer';
+                                            if (opt.id === q.correctAnswer) answerClass += ' correct-answer';
+                                            if (opt.id === userAnswer && !isCorrect) answerClass += ' user-wrong';
+                                            
+                                            return `
+                                                <div class="${answerClass}">
+                                                    <span class="answer-letter">${opt.id.toUpperCase()}</span>
+                                                    <span>${opt.text}</span>
+                                                    ${opt.id === q.correctAnswer ? '<span class="correct-badge">✓ Rätt svar</span>' : ''}
+                                                    ${opt.id === userAnswer && !isCorrect ? '<span class="your-badge">Ditt svar</span>' : ''}
+                                                </div>
+                                            `;
+                                        }).join('')}
+                                    </div>
+                                    <div class="review-explanation">
+                                        <strong>Förklaring:</strong> ${q.explanation}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function reviewAnswers() {
+            const reviewSection = document.getElementById('answerReview');
+            reviewSection.style.display = reviewSection.style.display === 'none' ? 'block' : 'none';
+            
+            if (reviewSection.style.display === 'block') {
+                reviewSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        function filterReview(filter) {
+            const questions = document.querySelectorAll('.review-question');
+            const buttons = document.querySelectorAll('.filter-buttons .btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            questions.forEach(q => {
+                const status = q.dataset.status;
+                if (filter === 'all') {
+                    q.style.display = 'block';
+                } else if (filter === status) {
+                    q.style.display = 'block';
+                } else {
+                    q.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    
+    <style>
+        .result-page {
+            background: var(--background);
+            min-height: calc(100vh - 80px);
+            padding: 2rem;
+        }
+        
+        .result-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .result-hero {
+            text-align: center;
+            padding: 3rem;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+        }
+        
+        .result-hero.passed {
+            border-top: 4px solid var(--success-color);
+        }
+        
+        .result-hero.failed {
+            border-top: 4px solid var(--danger-color);
+        }
+        
+        .result-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .result-score {
+            font-size: 5rem;
+            font-weight: 700;
+        }
+        
+        .result-hero.passed .result-score {
+            color: var(--success-color);
+        }
+        
+        .result-hero.failed .result-score {
+            color: var(--danger-color);
+        }
+        
+        .result-message {
+            font-size: 1.75rem;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .result-submessage {
+            color: var(--text-secondary);
+        }
+        
+        .result-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .result-detail-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .result-detail-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .chapter-results {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .chapter-results h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .chapter-results-intro {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-result-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            gap: 1rem;
+        }
+        
+        .chapter-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .chapter-result-name {
+            width: 150px;
+            font-weight: 500;
+        }
+        
+        .chapter-result-bar {
+            flex: 1;
+        }
+        
+        .chapter-result-score {
+            width: 50px;
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        .chapter-result-score.good { color: var(--success-color); }
+        .chapter-result-score.medium { color: var(--warning-color); }
+        .chapter-result-score.bad { color: var(--danger-color); }
+        
+        .result-actions {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        
+        .result-actions h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* Answer Review Styles */
+        .answer-review {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .answer-review h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-buttons .btn {
+            padding: 0.5rem 1rem;
+        }
+        
+        .filter-buttons .btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .review-question {
+            background: var(--background);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--border-color);
+        }
+        
+        .review-question.correct {
+            border-left-color: var(--success-color);
+        }
+        
+        .review-question.incorrect {
+            border-left-color: var(--danger-color);
+        }
+        
+        .review-question-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .review-question-number {
+            font-weight: 600;
+        }
+        
+        .review-question-status {
+            font-weight: 500;
+        }
+        
+        .review-question-chapter {
+            color: var(--text-secondary);
+            margin-left: auto;
+        }
+        
+        .review-question-text {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .review-answers {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .review-answer {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+        }
+        
+        .review-answer.correct-answer {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--success-color);
+        }
+        
+        .review-answer.user-wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--danger-color);
+        }
+        
+        .answer-letter {
+            width: 24px;
+            height: 24px;
+            background: var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        
+        .correct-badge, .your-badge {
+            margin-left: auto;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .correct-badge {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .your-badge {
+            background: var(--danger-color);
+            color: white;
+        }
+        
+        .review-explanation {
+            padding: 1rem;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .review-explanation strong {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 600px) {
+            .result-details {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .chapter-result-item {
+                flex-wrap: wrap;
+            }
+            
+            .chapter-result-name {
+                width: 100%;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>

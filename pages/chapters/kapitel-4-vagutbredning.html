@@ -1,0 +1,271 @@
+                <h3>Frirumsförlust</h3>
+                <p>Signalen försvagas med avståndet även i fri rymd (utan hinder):</p>
+                
+                <div class="formula-box">
+                    <strong>Frirumsförlust (dB) = 32,4 + 20×log(d) + 20×log(f)</strong><br>
+                    där d = avstånd i km, f = frekvens i MHz
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> Förlust på 145 MHz över 10 km:
+                    <br>L = 32,4 + 20×log(10) + 20×log(145)
+                    <br>L = 32,4 + 20 + 43,2 = <strong>95,6 dB</strong>
+                </div>
+                
+                <div class="info-box tip">
+                    <strong>💡 Tumregel:</strong> Dubbelt avstånd = 6 dB mer förlust. Dubbel frekvens = 6 dB mer förlust.
+                </div>
+                
+                <h3>Repeatrar</h3>
+                <p>För att öka räckvidden på VHF/UHF används repeatrar - automatiska stationer på höga positioner som tar emot på en frekvens och samtidigt sänder ut signalen på en annan.</p>
+                <ul>
+                    <li><strong>2m (145 MHz):</strong> Typiskt 600 kHz shift</li>
+                    <li><strong>70cm (432 MHz):</strong> Typiskt 1,6 MHz shift</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 5: Speciella utbredningsfenomen -->
+            <div class="content-section" id="speciella">
+                <h2>4.5 Speciella Utbredningsfenomen</h2>
+                
+                <h3>Sporadiskt E (Es)</h3>
+                <p>Tillfälliga, intensivt joniserade molnliknande områden i E-skiktet som kan reflektera VHF-signaler (50 MHz och ibland 144 MHz).</p>
+                <ul>
+                    <li>Vanligast maj-augusti på norra halvklotet</li>
+                    <li>Typisk räckvidd: 500-2300 km</li>
+                    <li>Oförutsägbart men spännande!</li>
+                    <li>6-metersbandet är känt för Es-öppningar</li>
+                </ul>
+                
+                <h3>Troposfärisk utbredning</h3>
+                <p>Väderfenomen i troposfären (0-10 km höjd) kan böja VHF/UHF-signaler utöver horisonten.</p>
+                
+                <h4>Inversioner</h4>
+                <p>När varm luft ligger ovanpå kall (omvänt mot normalt) bildas ett "lock" som leder radiovågor längs jordytan.</p>
+                <ul>
+                    <li>Vanligt vid stabilt högtryck</li>
+                    <li>Ger räckvidder på flera hundra km på 2m/70cm</li>
+                    <li>Bäst över vatten och flacka landskap</li>
+                </ul>
+                
+                <h4>Troposcatter</h4>
+                <p>Signalen sprids av turbulens i troposfären. Ger svaga men stabila signaler över 500-800 km. Kräver hög effekt och bra antenner.</p>
+                
+                <h3>Aurorareflektion</h3>
+                <p>Norrsken joniserar atmosfären och kan reflektera VHF-signaler.</p>
+                <ul>
+                    <li>Signalen blir förvrängd och "raspig" (CW bäst)</li>
+                    <li>Rikta antennen mot norrskenet (norr)</li>
+                    <li>Fungerar på 6m och 2m, ibland 70cm</li>
+                </ul>
+                
+                <h3>Meteorscatter</h3>
+                <p>Meteorer som brinner upp i atmosfären (80-120 km höjd) skapar joniserade spår som kan reflektera VHF.</p>
+                <ul>
+                    <li>Korta "bursts" på sekunder till minuter</li>
+                    <li>Bäst på 6m och 2m</li>
+                    <li>Meteorskurar ger förutsägbara möjligheter</li>
+                    <li>Digitala modes (MSK144) optimerade för detta</li>
+                </ul>
+                
+                <h3>EME (Earth-Moon-Earth)</h3>
+                <p>Signaler skickas till månen och reflekteras tillbaka - "moonbounce".</p>
+                <ul>
+                    <li>Fördröjning ca 2,5 sekunder</li>
+                    <li>Kräver stora antenner och hög effekt (eller känslig digital mode)</li>
+                    <li>Möjligt från VHF till mikrovåg</li>
+                    <li>Total banförlust ca 250 dB på 2m</li>
+                </ul>
+                
+                <h3>Grålinjen (Greyline)</h3>
+                <p>Övergångszonen mellan dag och natt på jorden ger speciella utbredningsförhållanden på HF.</p>
+                <ul>
+                    <li>D-skiktet försvinner men F-skiktet finns kvar en stund</li>
+                    <li>Signaler kan "följa" grålinjen runt jorden</li>
+                    <li>Utmärkt för DX på 40m och 80m</li>
+                </ul>
+                
+                <div class="info-box important">
+                    <strong>🎯 För DX-jägare:</strong> Lär dig när grålinjen passerar mellan dig och önskade DX-länder. Det finns program och webbsidor som visar detta i realtid!
+                </div>
+            </div>
+
+            <!-- Sektion 6: Solfläckar och solaktivitet -->
+            <div class="content-section" id="solflaeckar">
+                <h2>4.6 Solfläckar och Solaktivitet</h2>
+                
+                <h3>Solcykeln</h3>
+                <p>Solens aktivitet varierar i en cykel på cirka 11 år. Solfläckstalet (SSN - Sunspot Number) är ett mått på aktiviteten.</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Solaktivitet</th>
+                            <th>SSN</th>
+                            <th>Effekt på HF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0-30</td>
+                            <td>Bara lägre band öppna (40m och nedåt)</td>
+                        </tr>
+                        <tr>
+                            <td>Medel</td>
+                            <td>30-100</td>
+                            <td>20m ofta öppet, 15m ibland</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>100-200+</td>
+                            <td>Alla band öppna, 10m utmärkt</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Varför påverkar solen HF?</h3>
+                <p>Ökad solaktivitet = mer UV-strålning = mer jonisering = högre MUF</p>
+                <ul>
+                    <li><strong>Högt solfläckstal:</strong> De högre banden (10m, 12m, 15m) blir användbara</li>
+                    <li><strong>Lågt solfläckstal:</strong> Koncentrera dig på 20m, 40m, 80m</li>
+                </ul>
+                
+                <h3>Solstormar och störningar</h3>
+                
+                <h4>Solflares</h4>
+                <p>Plötsliga explosioner på solen som sänder ut röntgenstrålning.</p>
+                <ul>
+                    <li>Ökar D-skiktets absorption kraftigt</li>
+                    <li>Kan orsaka "radio blackout" på HF</li>
+                    <li>Påverkar bara dagsidan av jorden</li>
+                    <li>Varar minuter till timmar</li>
+                </ul>
+                
+                <h4>Geomagnetiska stormar</h4>
+                <p>Solvindens partiklar når jorden 1-3 dagar efter stora solhändelser.</p>
+                <ul>
+                    <li>Stör jonosfären, speciellt vid polerna</li>
+                    <li>Kan ge aurora (norrsken)</li>
+                    <li>Polära förbindelser påverkas mest</li>
+                    <li>Mäts med K-index (0-9) och A-index</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Resurser för utbredningsprognoser:</strong>
+                    <br>• VOACAP - propagationsprognoser online
+                    <br>• DX Cluster - realtidsspotting
+                    <br>• WSPRnet - automatisk utbredningsmonitorering
+                    <br>• Space Weather Prediction Center (SWPC)
+                </div>
+                
+                <h3>K-index och A-index</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>K-index</th>
+                            <th>Geomagnetisk aktivitet</th>
+                            <th>HF-förhållanden</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0-1</td>
+                            <td>Lugnt</td>
+                            <td>Normala till bra</td>
+                        </tr>
+                        <tr>
+                            <td>2-3</td>
+                            <td>Svagt ostadigt</td>
+                            <td>Något försämrade</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Aktivt</td>
+                            <td>Försämrade, speciellt nord</td>
+                        </tr>
+                        <tr>
+                            <td>5+</td>
+                            <td>Storm</td>
+                            <td>Dåliga, polära vägar blockerade</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sammanfattning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning Kapitel 4</h2>
+                
+                <div class="key-points">
+                    <h3>Jonosfärens skikt:</h3>
+                    <ul>
+                        <li><strong>D-skiktet:</strong> Absorberar, finns bara dagtid</li>
+                        <li><strong>E-skiktet:</strong> Reflekterar MF/lägre HF, sporadiskt E ger VHF</li>
+                        <li><strong>F-skiktet:</strong> Viktigast för HF-DX</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Dag vs natt:</h3>
+                    <ul>
+                        <li><strong>Dagtid:</strong> Högre band öppna (20m-10m)</li>
+                        <li><strong>Nattetid:</strong> Lägre band för DX (160m-40m)</li>
+                        <li><strong>Grålinjen:</strong> Speciellt bra för 40m/80m DX</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>VHF/UHF-utbredning:</h3>
+                    <ul>
+                        <li><strong>Normal:</strong> Siktlinje, begränsas av horisonten</li>
+                        <li><strong>Troposcatter/inversion:</strong> Hundratals km</li>
+                        <li><strong>Sporadiskt E:</strong> 500-2300 km (6m/2m)</li>
+                        <li><strong>Aurora/Meteor:</strong> Speciella förhållanden</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Formler att komma ihåg:</h3>
+                    <ul>
+                        <li><strong>Radiohorisont:</strong> d = 4,12 × √h (km/m)</li>
+                        <li><strong>Frirumsförlust:</strong> 32,4 + 20log(d) + 20log(f) dB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="kapitel-3-antenner.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Kapitel 3: Antenner</span>
+                </a>
+                <a href="../test/ovning.html?chapter=4" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 4</span>
+                </a>
+                <a href="kapitel-5-matinstrument.html" class="nav-button next">
+                    <span class="label">Kapitel 5: Mätinstrument</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(4);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

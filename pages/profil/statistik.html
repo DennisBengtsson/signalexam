@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Statistik - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="statistik.html" class="active">Min Statistik</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="stats-page">
+        <div class="stats-container">
+            <header class="stats-header">
+                <h1>📊 Min Statistik</h1>
+                <p>Följ din progress och se var du kan förbättras</p>
+            </header>
+            
+            <!-- Övergripande statistik -->
+            <section class="stats-overview">
+                <div class="stats-grid" id="statsGrid">
+                    <!-- Fylls i av JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Provstatus -->
+            <section class="exam-readiness" id="examReadiness">
+                <!-- Fylls i av JavaScript -->
+            </section>
+            
+            <!-- Kunskapsnivå per kapitel -->
+            <section class="knowledge-overview">
+                <h2>Kunskapsnivå per Kapitel</h2>
+                <div class="knowledge-chart" id="knowledgeChart">
+                    <!-- Fylls i av JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Provhistorik -->
+            <section class="exam-history">
+                <h2>Provhistorik</h2>
+                <div class="history-list" id="historyList">
+                    <!-- Fylls i av JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Svaga områden -->
+            <section class="weak-areas">
+                <h2>Områden att Förbättra</h2>
+                <div class="weak-areas-content" id="weakAreas">
+                    <!-- Fylls i av JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Utmärkelser -->
+            <section class="achievements-section">
+                <h2>🏆 Utmärkelser</h2>
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Fylls i av JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Datahantering -->
+            <section class="data-management">
+                <h2>⚙️ Datahantering</h2>
+                <div class="data-actions">
+                    <button class="btn btn-secondary" onclick="ProgressManager.exportData()">
+                        📥 Exportera Data
+                    </button>
+                    <label class="btn btn-secondary">
+                        📤 Importera Data
+                        <input type="file" accept=".json" onchange="ProgressManager.importData(this.files[0])" style="display: none;">
+                    </label>
+                    <button class="btn btn-danger" onclick="ProgressManager.resetAllData()">
+                        🗑️ Radera All Data
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../../js/data/chapters.js"></script>
+    <script src="../../js/data/questions.js"></script>
+    <script src="../../js/progress.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderStatistics();
+        });
+        
+        function renderStatistics() {
+            renderStatsOverview();
+            renderExamReadiness();
+            renderKnowledgeChart();
+            renderExamHistory();
+            renderWeakAreas();
+            renderAchievements();
+        }
+        
+        function renderStatsOverview() {
+            const stats = ProgressManager.getOverallStats();
+            const container = document.getElementById('statsGrid');
+            
+            container.innerHTML = `
+                <div class="stats-card">
+                    <div class="stats-card-icon">📝</div>
+                    <div class="stats-card-content">
+                        <div class="big-number">${stats.totalQuestionsAnswered}</div>
+                        <div class="stats-card-label">Frågor Besvarade</div>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stats-card-icon">✅</div>
+                    <div class="stats-card-content">
+                        <div class="big-number">${stats.totalCorrect}</div>
+                        <div class="stats-card-label">Rätta Svar</div>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stats-card-icon">🎯</div>
+                    <div class="stats-card-content">
+                        <div class="big-number">${stats.averageScore}%</div>
+                        <div class="stats-card-label">Genomsnitt</div>
+                        ${stats.trend !== 0 ? `
+                            <div class="trend ${stats.trend > 0 ? 'up' : 'down'}">
+                                ${stats.trend > 0 ? '↑' : '↓'} ${Math.abs(stats.trend)}% senaste proven
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stats-card-icon">🎓</div>
+                    <div class="stats-card-content">
+                        <div class="big-number">${stats.passedExams}/${stats.totalExams}</div>
+                        <div class="stats-card-label">Godkända Prov</div>
+                        ${stats.totalExams > 0 ? `
+                            <div class="stats-subtext">${stats.passRate}% godkända</div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderExamReadiness() {
+            const stats = ProgressManager.getOverallStats();
+            const container = document.getElementById('examReadiness');
+            
+            let readinessLevel, readinessMessage, readinessClass;
+            
+            if (stats.isExamReady) {
+                readinessLevel = 'Redo för prov! 🎉';
+                readinessMessage = 'Du har visat konsekvent goda resultat. Du är redo att ta det riktiga provet!';
+                readinessClass = 'ready';
+            } else if (stats.recentAverage >= 60) {
+                readinessLevel = 'Nästan där! 💪';
+                readinessMessage = 'Du är på god väg! Fortsätt öva för att nå 75% i genomsnitt.';
+                readinessClass = 'almost';
+            } else if (stats.totalExams > 0) {
+                readinessLevel = 'Fortsätt öva 📚';
+                readinessMessage = 'Du behöver mer övning. Fokusera på dina svaga områden.';
+                readinessClass = 'needs-work';
+            } else {
+                readinessLevel = 'Börja din resa 🚀';
+                readinessMessage = 'Gör några övningsprov för att se var du står!';
+                readinessClass = 'new';
+            }
+            
+            container.innerHTML = `
+                <div class="readiness-card ${readinessClass}">
+                    <div class="readiness-content">
+                        <h3>${readinessLevel}</h3>
+                        <p>${readinessMessage}</p>
+                        <div class="readiness-meter">
+                            <div class="readiness-bar">
+                                <div class="readiness-fill" style="width: ${Math.min(stats.recentAverage / 75 * 100, 100)}%"></div>
+                            </div>
+                            <span class="readiness-target">Mål: 75%</span>
+                        </div>
+                    </div>
+                    <a href="../test/prov.html" class="btn ${stats.isExamReady ? 'btn-success' : 'btn-primary'}">
+                        ${stats.isExamReady ? 'Gör Provet Nu!' : 'Öva Mer'}
+                    </a>
+                </div>
+            `;
+        }
+        
+        function renderKnowledgeChart() {
+            const container = document.getElementById('knowledgeChart');
+            
+            container.innerHTML = CHAPTERS.map(chapter => {
+                const knowledge = ProgressManager.getChapterKnowledge(chapter.id);
+                const progress = ProgressManager.getChapterProgress(chapter.id);
+                
+                let barClass = '';
+                if (knowledge >= 70) barClass = 'good';
+                else if (knowledge >= 40) barClass = 'medium';
+                else if (knowledge > 0) barClass = 'low';
+                
+                return `
+                    <div class="knowledge-row">
+                        <div class="knowledge-info">
+                            <span class="knowledge-chapter-name">${chapter.id}. ${chapter.shortTitle}</span>
+                            <span class="knowledge-questions">${progress.questionsAnswered} frågor</span>
+                        </div>
+                        <div class="knowledge-bar-container">
+                            <div class="progress-bar large">
+                                <div class="progress-fill ${barClass}" style="width: ${knowledge}%"></div>
+                            </div>
+                            <span class="knowledge-percent">${knowledge}%</span>
+                        </div>
+                        <a href="../test/ovning.html?chapter=${chapter.id}" class="btn btn-small btn-secondary">Öva</a>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function renderExamHistory() {
+            const data = ProgressManager.getData();
+            const container = document.getElementById('historyList');
+            
+            if (data.examHistory.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">📋</div>
+                        <h3>Ingen provhistorik ännu</h3>
+                        <p>Gör ditt första prov för att se din historik här!</p>
+                        <a href="../test/prov.html" class="btn btn-primary">Starta Prov</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = data.examHistory.slice(0, 10).map(exam => {
+                const date = new Date(exam.date);
+                const dateStr = date.toLocaleDateString('sv-SE');
+                const timeStr = date.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' });
+                const duration = `${Math.floor(exam.timeSpent / 60)}:${(exam.timeSpent % 60).toString().padStart(2, '0')}`;
+                
+                return `
+                    <div class="history-item ${exam.passed ? 'passed' : 'failed'}">
+                        <div class="history-date">
+                            <div class="history-date-main">${dateStr}</div>
+                            <div class="history-date-time">${timeStr}</div>
+                        </div>
+                        <div class="history-info">
+                            <span class="history-type">Simulerat Prov</span>
+                            <span class="history-details">${exam.correctAnswers}/${exam.totalQuestions} rätt • ${duration}</span>
+                        </div>
+                        <div class="history-score ${exam.passed ? 'passed' : 'failed'}">
+                            ${exam.percentage}%
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function renderWeakAreas() {
+            const weakChapters = ProgressManager.getWeakestChapters(3);
+            const problematicQuestions = ProgressManager.getProblematicQuestions(5);
+            const container = document.getElementById('weakAreas');
+            
+            if (weakChapters.length === 0 && problematicQuestions.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state small">
+                        <p>Svara på fler frågor för att se vilka områden du behöver förbättra!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            if (weakChapters.length > 0) {
+                html += `
+                    <div class="weak-section">
+                        <h4>Svagaste Kapitel</h4>
+                        <div class="weak-items">
+                            ${weakChapters.map(w => {
+                                const chapter = getChapterById(w.chapterId);
+                                return `
+                                    <a href="../test/ovning.html?chapter=${w.chapterId}" class="weak-item">
+                                        <span class="weak-item-name">${chapter.shortTitle}</span>
+                                        <span class="weak-item-score">${w.score}%</span>
+                                        <span class="weak-item-action">Öva →</span>
+                                    </a>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        function renderAchievements() {
+            const data = ProgressManager.getData();
+            const container = document.getElementById('achievementsGrid');
+            
+            const allAchievements = [
+                { id: 'first_question', name: 'Första Steget', description: 'Svara på din första fråga', icon: '🎯' },
+                { id: 'ten_correct', name: 'Bra Start', description: 'Svara rätt på 10 frågor', icon: '⭐' },
+                { id: 'hundred_questions', name: 'Dedikerad Student', description: 'Svara på 100 frågor', icon: '📚' },
+                { id: 'first_exam', name: 'Provtagare', description: 'Genomför ditt första prov', icon: '📝' },
+                { id: 'first_pass', name: 'Godkänd!', description: 'Klara ett prov med minst 70%', icon: '✅' },
+                { id: 'perfect_exam', name: 'Perfektionist', description: 'Få 100% på ett prov', icon: '🏆' },
+                { id: 'five_passed', name: 'Konsekvent', description: 'Klara 5 prov i rad', icon: '🔥' },
+                { id: 'all_chapters', name: 'Allround', description: 'Studera alla 10 kapitel', icon: '🎓' },
+                { id: 'speed_demon', name: 'Snabbtänkt', description: 'Klara ett prov på under 30 min', icon: '⚡' },
+                { id: 'veteran', name: 'Veteran', description: 'Svara på 500 frågor', icon: '🏅' }
+            ];
+            
+            container.innerHTML = allAchievements.map(achievement => {
+                const unlocked = data.achievements.includes(achievement.id);
+                return `
+                    <div class="achievement-card ${unlocked ? 'unlocked' : 'locked'}">
+                        <div class="achievement-icon">${achievement.icon}</div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">${achievement.name}</div>
+                            <div class="achievement-desc">${achievement.description}</div>
+                        </div>
+                        ${unlocked ? '<div class="achievement-check">✓</div>' : '<div class="achievement-lock">🔒</div>'}
+                    </div>
+                `;
+            }).join('');
+        }
+    </script>
+    
+    <style>
+        .stats-page {
+            background: var(--background);
+            min-height: calc(100vh - 80px);
+            padding: 2rem;
+        }
+        
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stats-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-header h1 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-header p {
+            color: var(--text-secondary);
+        }
+        
+        /* Stats Overview */
+        .stats-overview {
+            margin-bottom: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stats-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .stats-card-icon {
+            font-size: 2.5rem;
+        }
+        
+        .stats-card-content {
+            flex: 1;
+        }
+        
+        .big-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stats-card-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .stats-subtext {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .trend {
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .trend.up { color: var(--success-color); }
+        .trend.down { color: var(--danger-color); }
+        
+        /* Exam Readiness */
+        .exam-readiness {
+            margin-bottom: 2rem;
+        }
+        
+        .readiness-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--border-color);
+        }
+        
+        .readiness-card.ready { border-left-color: var(--success-color); }
+        .readiness-card.almost { border-left-color: var(--warning-color); }
+        .readiness-card.needs-work { border-left-color: var(--danger-color); }
+        .readiness-card.new { border-left-color: var(--primary-color); }
+        
+        .readiness-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .readiness-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .readiness-meter {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .readiness-bar {
+            width: 200px;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .readiness-fill {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 4px;
+            transition: width 0.5s;
+        }
+        
+        .readiness-target {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Sections */
+        section {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Knowledge Chart */
+        .knowledge-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .knowledge-row:last-child {
+            border-bottom: none;
+        }
+        
+        .knowledge-info {
+            width: 180px;
+        }
+        
+        .knowledge-chapter-name {
+            display: block;
+            font-weight: 500;
+        }
+        
+        .knowledge-questions {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .knowledge-bar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .progress-bar.large {
+            height: 12px;
+        }
+        
+        .knowledge-percent {
+            width: 45px;
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        /* History */
+        .history-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            gap: 1rem;
+        }
+        
+        .history-item:last-child {
+            border-bottom: none;
+        }
+        
+        .history-date {
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .history-date-main {
+            font-weight: 500;
+        }
+        
+        .history-date-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .history-info {
+            flex: 1;
+        }
+        
+        .history-type {
+            display: block;
+            font-weight: 500;
+        }
+        
+        .history-details {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .history-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .history-score.passed { color: var(--success-color); }
+        .history-score.failed { color: var(--danger-color); }
+        
+        /* Weak Areas */
+        .weak-section h4 {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+        }
+        
+        .weak-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .weak-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .weak-item:hover {
+            background: var(--border-color);
+        }
+        
+        .weak-item-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        .weak-item-score {
+            color: var(--danger-color);
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+        
+        .weak-item-action {
+            color: var(--primary-color);
+        }
+        
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .achievement-card {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: var(--radius-md);
+            gap: 1rem;
+        }
+        
+        .achievement-card.locked {
+            opacity: 0.5;
+        }
+        
+        .achievement-card.unlocked {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--success-color);
+        }
+        
+        .achievement-icon {
+            font-size: 2rem;
+        }
+        
+        .achievement-info {
+            flex: 1;
+        }
+        
+        .achievement-name {
+            font-weight: 600;
+        }
+        
+        .achievement-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .achievement-check {
+            color: var(--success-color);
+            font-size: 1.25rem;
+        }
+        
+        .achievement-lock {
+            font-size: 1.25rem;
+        }
+        
+        /* Data Management */
+        .data-management {
+            background: var(--surface);
+        }
+        
+        .data-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Empty States */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .empty-state.small {
+            padding: 1.5rem;
+        }
+        
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .empty-state p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .readiness-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .knowledge-row {
+                flex-wrap: wrap;
+            }
+            
+            .knowledge-info {
+                width: 100%;
+            }
+            
+            .data-actions {
+                flex-direction: column;
+            }
+            
+            .data-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>

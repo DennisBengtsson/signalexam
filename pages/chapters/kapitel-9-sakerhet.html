@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 9: Säkerhet - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel" class="active">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="chapter-page">
+        <div class="chapter-content">
+            <!-- Kapitel Hero -->
+            <div class="chapter-hero">
+                <div class="chapter-badge">Kapitel 9</div>
+                <h1>Säkerhet</h1>
+                <p>Lär dig arbeta säkert med elektricitet, antenner och RF-strålning</p>
+                <div class="chapter-meta">
+                    <span>⏱️ 2 timmar</span>
+                    <span>📝 30 frågor</span>
+                    <span id="chapterProgress">📊 0% genomfört</span>
+                </div>
+            </div>
+
+            <!-- Innehållsförteckning -->
+            <div class="content-section toc">
+                <h2>📑 Innehåll</h2>
+                <ol class="toc-list">
+                    <li><a href="#elsaker">Elsäkerhet</a></li>
+                    <li><a href="#antenner">Antennsäkerhet</a></li>
+                    <li><a href="#rf-strålning">RF-strålning och hälsa</a></li>
+                    <li><a href="#blixskydd">Åskskydd</a></li>
+                    <li><a href="#batterier">Batterier</a></li>
+                </ol>
+            </div>
+
+            <!-- Sektion 1: Elsäkerhet -->
+            <div class="content-section" id="elsaker">
+                <h2>9.1 Elsäkerhet</h2>
+                
+                <h3>Farliga spänningar</h3>
+                <p>Elektrisk ström genom kroppen kan vara dödlig. Risken beror på:</p>
+                <ul>
+                    <li><strong>Strömstyrka</strong> - viktigare än spänning</li>
+                    <li><strong>Strömväg</strong> - genom hjärtat är farligast</li>
+                    <li><strong>Exponeringstid</strong></li>
+                    <li><strong>Frekvens</strong> - 50 Hz (nätfrekvens) är särskilt farligt</li>
+                </ul>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Ström genom kroppen</th>
+                            <th>Effekt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 mA</td>
+                            <td>Knappt kännbar</td>
+                        </tr>
+                        <tr>
+                            <td>5 mA</td>
+                            <td>Obehaglig känsla</td>
+                        </tr>
+                        <tr>
+                            <td>10-15 mA</td>
+                            <td>Muskelkramp, kan inte släppa</td>
+                        </tr>
+                        <tr>
+                            <td>50-100 mA</td>
+                            <td>Hjärtflimmer möjligt - LIVSFARLIGT</td>
+                        </tr>
+                        <tr>
+                            <td>>100 mA</td>
+                            <td>Hjärtstillestånd troligt</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Tumregel:</strong> Spänningar över 50V ska betraktas som livsfarliga! Nätspänningen 230V är mycket farlig.
+                </div>
+                
+                <h3>Säkerhetsregler</h3>
+                <ul>
+                    <li><strong>Bryt strömmen</strong> innan du arbetar inuti utrustning</li>
+                    <li><strong>Vänta</strong> på att kondensatorer laddas ur (kan ta minuter)</li>
+                    <li><strong>En hand i fickan</strong> vid mätning på spänningsförande delar</li>
+                    <li><strong>Använd isolerade verktyg</strong></li>
+                    <li><strong>Arbeta aldrig ensam</strong> med farliga spänningar</li>
+                    <li><strong>Säkringar</strong> ska vara rätt dimensionerade</li>
+                </ul>
+                
+                <h3>Farliga komponenter</h3>
+                
+                <h4>Kondensatorer</h4>
+                <p>Kan behålla farlig laddning länge efter att strömmen brutits!</p>
+                <ul>
+                    <li>Stora elektrolytkondensatorer i nätaggregat</li>
+                    <li>Avstämningskondensatorer i antenntuners</li>
+                    <li>Ladda alltid ur med lämplig resistor</li>
+                </ul>
+                
+                <h4>Rörutrustning</h4>
+                <p>Äldre sändare med elektronrör har mycket höga spänningar:</p>
+                <ul>
+                    <li>Anodspänning ofta 1000-3000V</li>
+                    <li>Dödlig vid beröring!</li>
+                    <li>Låt alltid kylas av efter avstängning</li>
+                </ul>
+                
+                <h3>Jordning</h3>
+                <ul>
+                    <li><strong>Skyddsjord</strong> ska alltid vara ansluten</li>
+                    <li><strong>Kontrollera</strong> att jordfelet i uttaget fungerar</li>
+                    <li><strong>RF-jord</strong> är inte samma sak som skyddsjord</li>
+                </ul>
+                
+                <h3>Första hjälpen vid elolycka</h3>
+                <ol>
+                    <li><strong>Bryt strömmen</strong> - dra ur kontakten eller slå av huvudbrytare</li>
+                    <li><strong>Rör inte</strong> den skadade om strömmen fortfarande är på</li>
+                    <li><strong>Ring 112</strong></li>
+                    <li><strong>HLR</strong> om personen är medvetslös och inte andas</li>
+                </ol>
+            </div>
+
+            <!-- Sektion 2: Antennsäkerhet -->
+            <div class="content-section" id="antenner">
+                <h2>9.2 Antennsäkerhet</h2>
+                
+                <h3>Risker vid antennarbete</h3>
+                <ul>
+                    <li><strong>Fall</strong> från höjd (tak, master, stegar)</li>
+                    <li><strong>Fallande föremål</strong></li>
+                    <li><strong>Elledningar</strong></li>
+                    <li><strong>RF-brännskador</strong></li>
+                    <li><strong>Mekaniska skador</strong></li>
+                </ul>
+                
+                <h3>Säkerhetsåtgärder</h3>
+                
+                <h4>Arbete på höjd</h4>
+                <ul>
+                    <li><strong>Använd säkerhetssele</strong> och livlina</li>
+                    <li><strong>Aldrig ensam</strong> - ha alltid hjälp</li>
+                    <li><strong>Kontrollera utrustning</strong> före användning</li>
+                    <li><strong>Säkra verktyg</strong> mot fall (rep, väska)</li>
+                    <li><strong>Undvik</strong> arbete i dåligt väder</li>
+                </ul>
+                
+                <h4>Kraftledningar</h4>
+                <div class="info-box warning">
+                    <strong>⚠️ LIVSFARLIGT:</strong> En antenn får ALDRIG kunna komma i kontakt med kraftledningar!
+                </div>
+                <ul>
+                    <li><strong>Håll säkert avstånd</strong> - även vid fall av masten</li>
+                    <li><strong>Beakta vippning</strong> vid resning/fällning</li>
+                    <li><strong>Tänk på</strong> matarledningar och staglinor</li>
+                    <li>Om antennen faller på kraftledning: <strong>RÖR INGENTING</strong>, ring 112</li>
+                </ul>
+                
+                <h4>Mastresning</h4>
+                <ul>
+                    <li>Planera noga - tänk igenom varje steg</li>
+                    <li>Ha tillräckligt många hjälpare</li>
+                    <li>Kontrollera infästningar och stag</li>
+                    <li>Res aldrig mast i blåst</li>
+                </ul>
+                
+                <h3>Mekanisk säkerhet</h3>
+                <ul>
+                    <li><strong>Dimensionera</strong> för vindlast och islast</li>
+                    <li><strong>Kontrollera regelbundet</strong> stag, infästningar och korrosion</li>
+                    <li><strong>Rotor</strong> ska vara låst när den inte används</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 3: RF-strålning -->
+            <div class="content-section" id="rf-strålning">
+                <h2>9.3 RF-strålning och Hälsa</h2>
+                
+                <h3>Biologiska effekter</h3>
+                <p>Radiofrekventa fält kan påverka kroppen genom:</p>
+                <ul>
+                    <li><strong>Uppvärmning</strong> - den primära effekten vid högre effektnivåer</li>
+                    <li><strong>Induktion av strömmar</strong> - vid lägre frekvenser</li>
+                </ul>
+                
+                <h3>Gränsvärden</h3>
+                <p>Strålsäkerhetsmyndigheten (SSM) och ICNIRP anger gränsvärden för allmänhetens exponering.</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Frekvensområde</th>
+                            <th>Referensvärde (E-fält)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3-30 MHz (HF)</td>
+                            <td>27-61 V/m</td>
+                        </tr>
+                        <tr>
+                            <td>30-400 MHz (VHF/UHF)</td>
+                            <td>28 V/m</td>
+                        </tr>
+                        <tr>
+                            <td>400-2000 MHz</td>
+                            <td>28-61 V/m</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Riskfaktorer</h3>
+                <ul>
+                    <li><strong>Effekt</strong> - högre effekt = högre fält</li>
+                    <li><strong>Avstånd</strong> - fältstyrkan minskar snabbt med avståndet</li>
+                    <li><strong>Antenntyp</strong> - riktantenner koncentrerar strålningen</li>
+                    <li><strong>Exponeringstid</strong></li>
+                    <li><strong>Frekvens</strong> - kroppen absorberar olika vid olika frekvenser</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <strong>Tumregel:</strong> Fältstyrkan minskar med kvadraten på avståndet.
+                    <br>Dubbelt avstånd = 1/4 av fältstyrkan
+                </div>
+                
+                <h3>Säkerhetsåtgärder</h3>
+                <ul>
+                    <li><strong>Placera antenner högt</strong> - bort från vistelseytor</li>
+                    <li><strong>Undvik</strong> riktade antenner mot bostäder på nära håll</li>
+                    <li><strong>Begränsa effekten</strong> vid låga antenner</li>
+                    <li><strong>Sänd aldrig</strong> mot människor på nära håll</li>
+                    <li><strong>Stäng av sändaren</strong> vid antennarbete</li>
+                </ul>
+                
+                <h3>RF-brännskador</h3>
+                <p>Vid kontakt med strålande antennelement eller matarledning:</p>
+                <ul>
+                    <li>Redan några watt kan ge brännskador</li>
+                    <li>Särskilt på HF där kroppens impedans är låg</li>
+                    <li>Kan ge djupa brännskador som värkar länge</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Varning:</strong> Rör aldrig antennelement eller oskärmade matarledningar under sändning!
+                </div>
+                
+                <h3>Beräkna säkert avstånd</h3>
+                <p>SSA och PTS har vägledning för att beräkna säkra avstånd. Faktorer:</p>
+                <ul>
+                    <li>Sändareffekt</li>
+                    <li>Antennvinst</li>
+                    <li>Matarledningsförluster</li>
+                    <li>Duty cycle (hur mycket av tiden som sändning sker)</li>
+                </ul>
+                
+                <div class="example-box">
+                    <strong>Tumregel för HF:</strong>
+                    <br>Med 100W och dipol behövs vanligen 1-2 meters avstånd.
+                    <br>Med 1000W och riktantenn kan 5-10 meter eller mer krävas i huvudlobens riktning.
+                </div>
+            </div>
+
+            <!-- Sektion 4: Åskskydd -->
+            <div class="content-section" id="blixskydd">
+                <h2>9.4 Åskskydd</h2>
+                
+                <h3>Varför åskskydd?</h3>
+                <p>Antenner och master drar till sig blixtar. En direktträff kan:</p>
+                <ul>
+                    <li>Förstöra all ansluten utrustning</li>
+                    <li>Orsaka brand</li>
+                    <li>Skada eller döda personer</li>
+                </ul>
+                
+                <h3>Skyddsåtgärder</h3>
+                
+                <h4>Jordning av antennsystem</h4>
+                <ul>
+                    <li><strong>Jordspett</strong> vid antennens/mastens fot</li>
+                    <li><strong>Tjock jordledare</strong> (minst 16 mm² koppar)</li>
+                    <li><strong>Kort och rak</strong> väg till jord</li>
+                    <li><strong>Anslut alla metalldelar</strong> till jordspettet</li>
+                </ul>
+                
+                <h4>Gnistgap och överspänningsskydd</h4>
+                <ul>
+                    <li>Gnistgap i antennledningen nära husinförningen</li>
+                    <li>Överspänningsskydd för koaxialkabel</li>
+                    <li>Överspänningsskydd i eluttaget</li>
+                </ul>
+                
+                <h4>Koppla bort vid åska</h4>
+                <ul>
+                    <li>Dra ur antennkablarna från utrustningen</li>
+                    <li>Jorda antennledningen</li>
+                    <li>Dra ur nätkontakten</li>
+                    <li>Gå inte nära utrustningen under åskvädret</li>
+                </ul>
+                
+                <div class="info-box important">
+                    <strong>🎯 Bästa skyddet:</strong> Koppla fysiskt bort antenn och nätanslutning vid åska. Inget elektroniskt skydd klarar en direktträff!
+                </div>
+                
+                <h3>Statisk elektricitet</h3>
+                <p>Även utan direktträff kan antenner ladda upp statiskt:</p>
+                <ul>
+                    <li>Ger obehagliga stötar vid beröring</li>
+                    <li>Kan skada känslig utrustning</li>
+                    <li><strong>Åtgärd:</strong> Jorda antennen via en resistor (ca 1 MΩ) eller drosselspole</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 5: Batterier -->
+            <div class="content-section" id="batterier">
+                <h2>9.5 Batterier</h2>
+                
+                <h3>Risker med batterier</h3>
+                <ul>
+                    <li><strong>Explosionsrisk</strong> - vätgas vid laddning av blybatterier</li>
+                    <li><strong>Frätande syra</strong> - i blybatterier</li>
+                    <li><strong>Brand</strong> - speciellt litiumbaserade batterier</li>
+                    <li><strong>Kortslutning</strong> - hög ström kan orsaka bränder</li>
+                </ul>
+                
+                <h3>Blybatterier</h3>
+                <ul>
+                    <li>Ladda i ventilerat utrymme</li>
+                    <li>Ingen öppen eld eller gnistor i närheten</li>
+                    <li>Använd skyddsglasögon vid hantering</li>
+                    <li>Anslut plus först, minus sist (tvärtom vid bortkoppling)</li>
+                </ul>
+                
+                <h3>Litiumbatterier (Li-Ion, LiPo)</h3>
+                <ul>
+                    <li><strong>Ladda aldrig</strong> med fel laddare</li>
+                    <li><strong>Överlämna inte</strong> laddning utan tillsyn</li>
+                    <li><strong>Skadade batterier</strong> är brandfarliga</li>
+                    <li><strong>Förvara svalt</strong> och torrt</li>
+                    <li><strong>Transportera försiktigt</strong></li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ LiPo-brand:</strong> Om ett litiumbatteri börjar pyra eller brinna, släck med vatten eller sand. Flytta det utomhus om möjligt. Rök är giftig!
+                </div>
+            </div>
+
+            <!-- Sammanfattning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning Kapitel 9</h2>
+                
+                <div class="key-points">
+                    <h3>Elsäkerhet:</h3>
+                    <ul>
+                        <li>Spänningar över 50V är livsfarliga</li>
+                        <li>Bryt strömmen före arbete</li>
+                        <li>Kondensatorer kan behålla laddning</li>
+                        <li>En hand i fickan vid mätning</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Antennsäkerhet:</h3>
+                    <ul>
+                        <li>Säkerhetssele vid höjdarbete</li>
+                        <li>Aldrig ensam</li>
+                        <li>Håll avstånd till kraftledningar</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>RF-strålning:</h3>
+                    <ul>
+                        <li>Placera antenner högt och bort från människor</li>
+                        <li>Rör inte strålande element under sändning</li>
+                        <li>Fältstyrkan minskar med kvadraten på avståndet</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Åskskydd:</h3>
+                    <ul>
+                        <li>Jorda master och antenner</li>
+                        <li>Koppla bort fysiskt vid åska</li>
+                        <li>Inget elektroniskt skydd klarar direktträff</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="kapitel-8-trafikmetoder.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Kapitel 8: Trafikmetoder</span>
+                </a>
+                <a href="../test/ovning.html?chapter=9" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 9</span>
+                </a>
+                <a href="kapitel-10-praktisk-trafik.html" class="nav-button next">
+                    <span class="label">Kapitel 10: Praktisk trafik</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(9);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

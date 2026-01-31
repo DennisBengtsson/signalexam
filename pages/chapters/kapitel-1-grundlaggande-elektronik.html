@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 1: Grundläggande Elektronik - Radioamatör Utbildning</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>RA-Utbildning</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#kapitel" class="active">Kapitel</a></li>
+                <li><a href="../test/prov.html">Gör Prov</a></li>
+                <li><a href="../profil/statistik.html">Min Statistik</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="chapter-page">
+        <div class="chapter-content">
+            <!-- Kapitel Hero -->
+            <div class="chapter-hero">
+                <div class="chapter-badge">Kapitel 1</div>
+                <h1>Grundläggande Elektronik</h1>
+                <p>Lär dig grunderna i elektricitet och elektronik - grunden för all radioteknik</p>
+                <div class="chapter-meta">
+                    <span>⏱️ 3-4 timmar</span>
+                    <span>📝 45 frågor</span>
+                    <span id="chapterProgress">📊 0% genomfört</span>
+                </div>
+            </div>
+
+            <!-- Innehållsförteckning -->
+            <div class="content-section toc">
+                <h2>📑 Innehåll</h2>
+                <ol class="toc-list">
+                    <li><a href="#strom-spanning">Elektrisk ström och spänning</a></li>
+                    <li><a href="#ohms-lag">Resistans och Ohms lag</a></li>
+                    <li><a href="#effekt">Effekt och energi</a></li>
+                    <li><a href="#kondensatorer">Kondensatorer</a></li>
+                    <li><a href="#spolar">Spolar och induktans</a></li>
+                    <li><a href="#serie-parallell">Serie- och parallellkoppling</a></li>
+                    <li><a href="#vaxelstrom">Växelström och impedans</a></li>
+                    <li><a href="#filter">Filter och resonanskretsar</a></li>
+                </ol>
+            </div>
+
+            <!-- Sektion 1: Ström och Spänning -->
+            <div class="content-section" id="strom-spanning">
+                <h2>1.1 Elektrisk Ström och Spänning</h2>
+                
+                <h3>Vad är elektrisk ström?</h3>
+                <p>Elektrisk ström är flödet av elektriska laddningar (elektroner) genom en ledare. Tänk på det som vatten som flödar genom ett rör - ju fler elektroner som passerar en punkt per sekund, desto större är strömmen.</p>
+                
+                <div class="info-box tip">
+                    <strong>💡 Minnesregel:</strong> Ström är som vattenflöde - det mäter hur mycket "elektriskt vatten" som rinner förbi per sekund.
+                </div>
+                
+                <h3>Enheter</h3>
+                <p>Elektrisk ström mäts i <strong>Ampere (A)</strong>, uppkallat efter den franske fysikern André-Marie Ampère.</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Symbol</th>
+                            <th>Värde</th>
+                            <th>Exempel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mikroampere</td>
+                            <td>µA</td>
+                            <td>0,000001 A</td>
+                            <td>Känsliga mätinstrument</td>
+                        </tr>
+                        <tr>
+                            <td>Milliampere</td>
+                            <td>mA</td>
+                            <td>0,001 A</td>
+                            <td>LED-lampa</td>
+                        </tr>
+                        <tr>
+                            <td>Ampere</td>
+                            <td>A</td>
+                            <td>1 A</td>
+                            <td>USB-laddare</td>
+                        </tr>
+                        <tr>
+                            <td>Kiloampere</td>
+                            <td>kA</td>
+                            <td>1000 A</td>
+                            <td>Blixt</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Vad är spänning?</h3>
+                <p>Spänning är den "elektriska trycket" som driver strömmen genom en krets. Det är skillnaden i elektrisk potential mellan två punkter. Utan spänning finns ingen kraft som driver elektronerna.</p>
+                
+                <div class="formula-box">
+                    <strong>Spänning (U)</strong> mäts i <strong>Volt (V)</strong>
+                </div>
+                
+                <h3>Vanliga spänningar</h3>
+                <ul>
+                    <li><strong>1,5 V</strong> - AA/AAA-batteri</li>
+                    <li><strong>9 V</strong> - Transistorbatteri</li>
+                    <li><strong>12 V</strong> - Bilbatteri, många radioapparater</li>
+                    <li><strong>13,8 V</strong> - Standard matningsspänning för amatörradioutrustning</li>
+                    <li><strong>230 V</strong> - Hushållsel i Sverige (växelström)</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ Varning:</strong> Spänningar över 50V kan vara livsfarliga! Var alltid försiktig med nätspänning (230V).
+                </div>
+                
+                <h3>Likström och växelström</h3>
+                <p>Det finns två huvudtyper av elektrisk ström:</p>
+                <ul>
+                    <li><strong>Likström (DC - Direct Current):</strong> Strömmen flyter alltid i samma riktning. Batterier ger likström.</li>
+                    <li><strong>Växelström (AC - Alternating Current):</strong> Strömmen växlar riktning periodiskt. Nätspänningen i Sverige är 230V växelström med frekvensen 50 Hz.</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 2: Ohms lag -->
+            <div class="content-section" id="ohms-lag">
+                <h2>1.2 Resistans och Ohms Lag</h2>
+                
+                <h3>Vad är resistans?</h3>
+                <p>Resistans är ett materials motstånd mot elektrisk ström. Alla material har viss resistans, men metaller har låg resistans (bra ledare) medan gummi och plast har hög resistans (isolatorer).</p>
+                
+                <div class="formula-box">
+                    <strong>Resistans (R)</strong> mäts i <strong>Ohm (Ω)</strong>
+                </div>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Symbol</th>
+                            <th>Värde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Milliohm</td>
+                            <td>mΩ</td>
+                            <td>0,001 Ω</td>
+                        </tr>
+                        <tr>
+                            <td>Ohm</td>
+                            <td>Ω</td>
+                            <td>1 Ω</td>
+                        </tr>
+                        <tr>
+                            <td>Kilohm</td>
+                            <td>kΩ</td>
+                            <td>1 000 Ω</td>
+                        </tr>
+                        <tr>
+                            <td>Megohm</td>
+                            <td>MΩ</td>
+                            <td>1 000 000 Ω</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Ohms lag - Den viktigaste formeln!</h3>
+                <p>Ohms lag beskriver sambandet mellan spänning, ström och resistans. Detta är den mest fundamentala formeln inom elektronik.</p>
+                
+                <div class="formula-box" style="font-size: 1.5rem;">
+                    <strong>U = R × I</strong><br>
+                    <small>Spänning = Resistans × Ström</small>
+                </div>
+                
+                <p>Formeln kan skrivas om på tre sätt:</p>
+                <ul>
+                    <li><strong>U = R × I</strong> (beräkna spänning)</li>
+                    <li><strong>I = U / R</strong> (beräkna ström)</li>
+                    <li><strong>R = U / I</strong> (beräkna resistans)</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Minnesregel - URI-triangeln:</strong><br>
+                    Täck över det du söker - det som syns är formeln!
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" style="max-width: 200px;">
+                            <style>
+                                .triangle { fill: none; stroke: #667eea; stroke-width: 3; }
+                                .text { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+                                .line { stroke: #667eea; stroke-width: 2; }
+                            </style>
+                            <polygon class="triangle" points="100,20 20,160 180,160"/>
+                            <line class="line" x1="60" y1="90" x2="140" y2="90"/>
+                            <text class="text" x="100" y="70" text-anchor="middle">U</text>
+                            <text class="text" x="60" y="140" text-anchor="middle">R</text>
+                            <text class="text" x="140" y="140" text-anchor="middle">I</text>
+                            <text class="text" x="100" y="140" text-anchor="middle" font-size="18">×</text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <h3>Räkneexempel</h3>
+                <div class="example-box">
+                    <strong>Exempel 1:</strong> En lampa har resistansen 100Ω och ansluts till 12V. Hur stor blir strömmen?
+                    <br><br>
+                    <strong>Lösning:</strong> I = U / R = 12V / 100Ω = <strong>0,12 A = 120 mA</strong>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel 2:</strong> En resistor på 470Ω passeras av en ström på 20 mA. Vilken spänning ligger över resistorn?
+                    <br><br>
+                    <strong>Lösning:</strong> U = R × I = 470Ω × 0,020A = <strong>9,4 V</strong>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel 3:</strong> En resistor ansluts till 9V och det flyter 45 mA. Vad är resistansen?
+                    <br><br>
+                    <strong>Lösning:</strong> R = U / I = 9V / 0,045A = <strong>200 Ω</strong>
+                </div>
+            </div>
+
+            <!-- Sektion 3: Effekt -->
+            <div class="content-section" id="effekt">
+                <h2>1.3 Effekt och Energi</h2>
+                
+                <h3>Elektrisk effekt</h3>
+                <p>Effekt beskriver hur snabbt energi omvandlas. I en elektronisk krets omvandlas elektrisk energi till andra former som värme, ljus eller radiovågor.</p>
+                
+                <div class="formula-box" style="font-size: 1.5rem;">
+                    <strong>P = U × I</strong><br>
+                    <small>Effekt = Spänning × Ström</small>
+                </div>
+                
+                <p>Effekt mäts i <strong>Watt (W)</strong>.</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Symbol</th>
+                            <th>Värde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Milliwatt</td>
+                            <td>mW</td>
+                            <td>0,001 W</td>
+                        </tr>
+                        <tr>
+                            <td>Watt</td>
+                            <td>W</td>
+                            <td>1 W</td>
+                        </tr>
+                        <tr>
+                            <td>Kilowatt</td>
+                            <td>kW</td>
+                            <td>1 000 W</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Alternativa effektformler</h3>
+                <p>Genom att kombinera med Ohms lag får vi fler användbara formler:</p>
+                
+                <div class="formula-box">
+                    <strong>P = U × I</strong><br>
+                    <strong>P = I² × R</strong> (praktisk när du känner ström och resistans)<br>
+                    <strong>P = U² / R</strong> (praktisk när du känner spänning och resistans)
+                </div>
+                
+                <h3>Räkneexempel</h3>
+                <div class="example-box">
+                    <strong>Exempel:</strong> En transceiver drar 20A vid 13,8V. Vilken effekt förbrukar den?
+                    <br><br>
+                    <strong>Lösning:</strong> P = U × I = 13,8V × 20A = <strong>276 W</strong>
+                </div>
+                
+                <h3>Effekt i radioteknik</h3>
+                <p>I amatörradio är effekt viktigt eftersom det avgör hur långt din signal kan nå. Typiska effektnivåer:</p>
+                <ul>
+                    <li><strong>QRP</strong> - Max 5W (minimalistisk stil, populärt bland entusiaster)</li>
+                    <li><strong>10-25W</strong> - Typisk handhållen radio</li>
+                    <li><strong>100W</strong> - Typisk HF-transceiver</li>
+                    <li><strong>1000W (1kW)</strong> - Max tillåtet i Sverige för de flesta band</li>
+                </ul>
+                
+                <h3>Decibel (dB)</h3>
+                <p>Inom radioteknik uttrycks effektförhållanden ofta i decibel:</p>
+                <ul>
+                    <li><strong>+3 dB</strong> = dubbel effekt</li>
+                    <li><strong>+10 dB</strong> = 10 gånger effekten</li>
+                    <li><strong>-3 dB</strong> = halva effekten</li>
+                    <li><strong>-10 dB</strong> = en tiondel av effekten</li>
+                </ul>
+                
+                <div class="info-box important">
+                    <strong>🎯 Viktigt för provet:</strong> Kom ihåg att kunna räkna med alla tre effektformlerna och förstå dB-skalan!
+                </div>
+            </div>
+
+            <!-- Sektion 4: Kondensatorer -->
+            <div class="content-section" id="kondensatorer">
+                <h2>1.4 Kondensatorer</h2>
+                
+                <h3>Vad är en kondensator?</h3>
+                <p>En kondensator lagrar elektrisk energi i ett elektriskt fält. Den består av två ledande plattor separerade av ett isolerande material (dielektrikum).</p>
+                
+                <div class="formula-box">
+                    <strong>Kapacitans (C)</strong> mäts i <strong>Farad (F)</strong>
+                </div>
+                
+                <p>Farad är en mycket stor enhet, så i praktiken används oftast:</p>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Symbol</th>
+                            <th>Värde</th>
+                            <th>Användning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pikofarad</td>
+                            <td>pF</td>
+                            <td>10⁻¹² F</td>
+                            <td>RF-kretsar, antenner</td>
+                        </tr>
+                        <tr>
+                            <td>Nanofarad</td>
+                            <td>nF</td>
+                            <td>10⁻⁹ F</td>
+                            <td>Filter, koppling</td>
+                        </tr>
+                        <tr>
+                            <td>Mikrofarad</td>
+                            <td>µF</td>
+                            <td>10⁻⁶ F</td>
+                            <td>Nätaggregat, audio</td>
+                        </tr>
+                        <tr>
+                            <td>Millifarad</td>
+                            <td>mF</td>
+                            <td>10⁻³ F</td>
+                            <td>Stora filterkondensatorer</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Kondensatorns beteende</h3>
+                <ul>
+                    <li><strong>Likström:</strong> Blockerar (efter uppladdning) - fungerar som ett avbrott</li>
+                    <li><strong>Växelström:</strong> Släpper igenom (bättre vid högre frekvens)</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Minnesregel:</strong> Kondensatorer "gillar" höga frekvenser - de släpper igenom mer ju högre frekvensen är.
+                </div>
+                
+                <h3>Kapacitiv reaktans</h3>
+                <p>En kondensators "motstånd" mot växelström kallas kapacitiv reaktans:</p>
+                
+                <div class="formula-box">
+                    X<sub>C</sub> = 1 / (2π × f × C)
+                </div>
+                
+                <p>Där:</p>
+                <ul>
+                    <li>X<sub>C</sub> = kapacitiv reaktans i ohm (Ω)</li>
+                    <li>f = frekvens i hertz (Hz)</li>
+                    <li>C = kapacitans i farad (F)</li>
+                    <li>π ≈ 3,14</li>
+                </ul>
+                
+                <p>Reaktansen <strong>minskar</strong> när frekvensen ökar - kondensatorn släpper igenom mer vid högre frekvenser.</p>
+                
+                <h3>Kondensatortyper</h3>
+                <ul>
+                    <li><strong>Keramiska:</strong> Små värden (pF-nF), stabila, för RF</li>
+                    <li><strong>Film:</strong> Bra precision, låga förluster</li>
+                    <li><strong>Elektrolyt:</strong> Stora värden (µF-mF), polariserade (!), för nätaggregat</li>
+                    <li><strong>Variabla:</strong> Justerbara, för avstämning</li>
+                </ul>
+                
+                <div class="info-box warning">
+                    <strong>⚠️ OBS!</strong> Elektrolytkondensatorer har polaritet (+/-). Ansluter man dem fel kan de explodera!
+                </div>
+            </div>
+
+            <!-- Sektion 5: Spolar -->
+            <div class="content-section" id="spolar">
+                <h2>1.5 Spolar och Induktans</h2>
+                
+                <h3>Vad är en spole?</h3>
+                <p>En spole (induktor) är en tråd som lindats till en spiral. När ström passerar genom spolen skapas ett magnetfält som lagrar energi.</p>
+                
+                <div class="formula-box">
+                    <strong>Induktans (L)</strong> mäts i <strong>Henry (H)</strong>
+                </div>
+                
+                <p>I praktiken används ofta:</p>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Symbol</th>
+                            <th>Värde</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nanohenry</td>
+                            <td>nH</td>
+                            <td>10⁻⁹ H</td>
+                        </tr>
+                        <tr>
+                            <td>Mikrohenry</td>
+                            <td>µH</td>
+                            <td>10⁻⁶ H</td>
+                        </tr>
+                        <tr>
+                            <td>Millihenry</td>
+                            <td>mH</td>
+                            <td>10⁻³ H</td>
+                        </tr>
+                        <tr>
+                            <td>Henry</td>
+                            <td>H</td>
+                            <td>1 H</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Spolens beteende</h3>
+                <ul>
+                    <li><strong>Likström:</strong> Släpper igenom (efter uppstart) - fungerar som en ledare</li>
+                    <li><strong>Växelström:</strong> Motverkar förändringar (högre motstånd vid högre frekvens)</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Minnesregel:</strong> Spolar "ogillar" höga frekvenser - de bromsar mer ju högre frekvensen är.
+                </div>
+                
+                <h3>Induktiv reaktans</h3>
+                <p>En spoles "motstånd" mot växelström kallas induktiv reaktans:</p>
+                
+                <div class="formula-box">
+                    X<sub>L</sub> = 2π × f × L
+                </div>
+                
+                <p>Där:</p>
+                <ul>
+                    <li>X<sub>L</sub> = induktiv reaktans i ohm (Ω)</li>
+                    <li>f = frekvens i hertz (Hz)</li>
+                    <li>L = induktans i henry (H)</li>
+                </ul>
+                
+                <p>Reaktansen <strong>ökar</strong> när frekvensen ökar - spolen släpper igenom mindre vid högre frekvenser.</p>
+                
+                <div class="info-box important">
+                    <strong>🎯 Viktigt att komma ihåg:</strong> Spolar och kondensatorer är varandras motsatser:
+                    <br>• <strong>Kondensator:</strong> Låg reaktans vid hög frekvens (släpper igenom)
+                    <br>• <strong>Spole:</strong> Hög reaktans vid hög frekvens (blockerar)
+                </div>
+                
+                <h3>Faktorer som påverkar induktansen</h3>
+                <ul>
+                    <li>Antal varv (fler varv = högre induktans)</li>
+                    <li>Kärnmaterial (järnkärna ökar induktansen)</li>
+                    <li>Spolens form och storlek</li>
+                </ul>
+            </div>
+
+            <!-- Sektion 6: Serie- och parallellkoppling -->
+            <div class="content-section" id="serie-parallell">
+                <h2>1.6 Serie- och Parallellkoppling</h2>
+                
+                <h3>Seriekoppling</h3>
+                <p>I en seriekoppling är komponenterna kopplade efter varandra. Samma ström flyter genom alla komponenter.</p>
+                
+                <h4>Resistorer i serie</h4>
+                <div class="formula-box">
+                    R<sub>total</sub> = R₁ + R₂ + R₃ + ...
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> Tre resistorer på 100Ω, 220Ω och 330Ω i serie:
+                    <br>R<sub>total</sub> = 100 + 220 + 330 = <strong>650Ω</strong>
+                </div>
+                
+                <h4>Kondensatorer i serie</h4>
+                <div class="formula-box">
+                    1/C<sub>total</sub> = 1/C₁ + 1/C₂ + 1/C₃ + ...
+                </div>
+                <p>Kapacitansen <strong>minskar</strong> vid seriekoppling!</p>
+                
+                <h4>Spolar i serie</h4>
+                <div class="formula-box">
+                    L<sub>total</sub> = L₁ + L₂ + L₃ + ...
+                </div>
+                
+                <h3>Parallellkoppling</h3>
+                <p>I en parallellkoppling är komponenterna kopplade bredvid varandra. Samma spänning ligger över alla komponenter.</p>
+                
+                <h4>Resistorer parallellt</h4>
+                <div class="formula-box">
+                    1/R<sub>total</sub> = 1/R₁ + 1/R₂ + 1/R₃ + ...
+                </div>
+                
+                <div class="example-box">
+                    <strong>Specialfall - två resistorer parallellt:</strong>
+                    <br>R<sub>total</sub> = (R₁ × R₂) / (R₁ + R₂)
+                    <br><br>
+                    <strong>Exempel:</strong> 100Ω och 100Ω parallellt:
+                    <br>R<sub>total</sub> = (100 × 100) / (100 + 100) = 10000/200 = <strong>50Ω</strong>
+                </div>
+                
+                <h4>Kondensatorer parallellt</h4>
+                <div class="formula-box">
+                    C<sub>total</sub> = C₁ + C₂ + C₃ + ...
+                </div>
+                <p>Kapacitansen <strong>ökar</strong> vid parallellkoppling!</p>
+                
+                <h4>Spolar parallellt</h4>
+                <div class="formula-box">
+                    1/L<sub>total</sub> = 1/L₁ + 1/L₂ + 1/L₃ + ...
+                </div>
+                
+                <h3>Sammanfattning</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Komponent</th>
+                            <th>Serie</th>
+                            <th>Parallell</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Resistorer</td>
+                            <td>Adderas</td>
+                            <td>Inverteras och adderas</td>
+                        </tr>
+                        <tr>
+                            <td>Kondensatorer</td>
+                            <td>Inverteras och adderas</td>
+                            <td>Adderas</td>
+                        </tr>
+                        <tr>
+                            <td>Spolar</td>
+                            <td>Adderas</td>
+                            <td>Inverteras och adderas</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box tip">
+                    <strong>💡 Minnesregel:</strong> Kondensatorer beter sig "tvärtom" mot resistorer och spolar vid serie/parallellkoppling!
+                </div>
+            </div>
+
+            <!-- Sektion 7: Växelström och impedans -->
+            <div class="content-section" id="vaxelstrom">
+                <h2>1.7 Växelström och Impedans</h2>
+                
+                <h3>Växelströmmens egenskaper</h3>
+                <p>Växelström (AC) ändrar riktning periodiskt. Viktiga begrepp:</p>
+                
+                <ul>
+                    <li><strong>Frekvens (f):</strong> Antal svängningar per sekund, mäts i Hertz (Hz)</li>
+                    <li><strong>Period (T):</strong> Tid för en hel svängning. T = 1/f</li>
+                    <li><strong>Amplitud:</strong> Maxvärdet (toppvärdet) av spänning eller ström</li>
+                    <li><strong>Effektivvärde (RMS):</strong> Värdet som ger samma effekt som motsvarande likström</li>
+                </ul>
+                
+                <div class="formula-box">
+                    U<sub>eff</sub> = U<sub>topp</sub> / √2 ≈ U<sub>topp</sub> × 0,707
+                    <br><br>
+                    U<sub>topp</sub> = U<sub>eff</sub> × √2 ≈ U<sub>eff</sub> × 1,414
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> Nätspänningen 230V är ett effektivvärde. Toppvärdet är:
+                    <br>U<sub>topp</sub> = 230 × 1,414 ≈ <strong>325V</strong>
+                </div>
+                
+                <h3>Fas och fasförskjutning</h3>
+                <p>I kretsar med spolar och kondensatorer uppstår fasförskjutning mellan ström och spänning:</p>
+                <ul>
+                    <li><strong>Kondensator:</strong> Strömmen föregår spänningen med 90°</li>
+                    <li><strong>Spole:</strong> Strömmen släpar efter spänningen med 90°</li>
+                    <li><strong>Resistor:</strong> Ingen fasförskjutning</li>
+                </ul>
+                
+                <div class="info-box tip">
+                    <strong>💡 Minnesregel "ELI the ICE man":</strong>
+                    <br>• <strong>ELI:</strong> E (spänning) före I (ström) i L (spole)
+                    <br>• <strong>ICE:</strong> I (ström) före E (spänning) i C (kondensator)
+                </div>
+                
+                <h3>Impedans (Z)</h3>
+                <p>Impedans är det totala "motståndet" i en växelströmskrets, inklusive både resistans och reaktans:</p>
+                
+                <div class="formula-box">
+                    Z = √(R² + X²)
+                </div>
+                
+                <p>där X är nettoreaktansen (X = X<sub>L</sub> - X<sub>C</sub>)</p>
+                
+                <p>Impedans mäts i ohm (Ω) precis som resistans.</p>
+                
+                <h3>Ohms lag för växelström</h3>
+                <div class="formula-box">
+                    U = Z × I
+                    <br>I = U / Z
+                    <br>Z = U / I
+                </div>
+            </div>
+
+            <!-- Sektion 8: Filter och resonanskretsar -->
+            <div class="content-section" id="filter">
+                <h2>1.8 Filter och Resonanskretsar</h2>
+                
+                <h3>Resonans</h3>
+                <p>Resonans uppstår när X<sub>L</sub> = X<sub>C</sub>. Vid denna frekvens tar reaktanserna ut varandra.</p>
+                
+                <div class="formula-box" style="font-size: 1.3rem;">
+                    <strong>Resonansfrekvens:</strong><br>
+                    f<sub>res</sub> = 1 / (2π√(L × C))
+                </div>
+                
+                <div class="example-box">
+                    <strong>Exempel:</strong> En krets med L = 10 µH och C = 100 pF. Resonansfrekvensen blir:
+                    <br>f = 1 / (2π√(10×10⁻⁶ × 100×10⁻¹²))
+                    <br>f ≈ <strong>5,03 MHz</strong>
+                </div>
+                
+                <h3>Seriekrets vid resonans</h3>
+                <ul>
+                    <li>Impedansen är <strong>minimal</strong> (endast R kvarstår)</li>
+                    <li>Strömmen är <strong>maximal</strong></li>
+                    <li>Används i mottagarens ingångskretsar</li>
+                </ul>
+                
+                <h3>Parallellkrets vid resonans</h3>
+                <ul>
+                    <li>Impedansen är <strong>maximal</strong></li>
+                    <li>Strömmen är <strong>minimal</strong></li>
+                    <li>Används som svängningskrets i oscillatorer</li>
+                </ul>
+                
+                <h3>Q-värde (kvalitetsfaktor)</h3>
+                <p>Q-värdet anger hur "skarp" resonansen är:</p>
+                <ul>
+                    <li><strong>Högt Q:</strong> Skarp resonans, smal bandbredd</li>
+                    <li><strong>Lågt Q:</strong> Bred resonans, stor bandbredd</li>
+                </ul>
+                
+                <div class="formula-box">
+                    Bandbredd = f<sub>res</sub> / Q
+                </div>
+                
+                <h3>Grundläggande filtertyper</h3>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Filtertyp</th>
+                            <th>Släpper igenom</th>
+                            <th>Dämpar</th>
+                            <th>Användning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lågpassfilter</td>
+                            <td>Låga frekvenser</td>
+                            <td>Höga frekvenser</td>
+                            <td>Dämpa övertoner efter sändare</td>
+                        </tr>
+                        <tr>
+                            <td>Högpassfilter</td>
+                            <td>Höga frekvenser</td>
+                            <td>Låga frekvenser</td>
+                            <td>Blockera DC, släppa igenom signal</td>
+                        </tr>
+                        <tr>
+                            <td>Bandpassfilter</td>
+                            <td>Ett frekvensband</td>
+                            <td>Allt annat</td>
+                            <td>Välja ut önskad signal i mottagare</td>
+                        </tr>
+                        <tr>
+                            <td>Bandspärrfilter</td>
+                            <td>Allt utom ett band</td>
+                            <td>Ett frekvensband</td>
+                            <td>Eliminera en störande frekvens</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Enklaste filtren</h3>
+                <ul>
+                    <li><strong>RC-lågpass:</strong> Resistor i serie, kondensator till jord. Gränsfrekvens: f<sub>c</sub> = 1/(2πRC)</li>
+                    <li><strong>RC-högpass:</strong> Kondensator i serie, resistor till jord. Samma formel för gränsfrekvens.</li>
+                    <li><strong>LC-filter:</strong> Kombinerar spolar och kondensatorer för brantare filtrering.</li>
+                </ul>
+                
+                <div class="info-box important">
+                    <strong>🎯 Praktisk tillämpning:</strong> Som radioamatör använder du lågpassfilter efter din sändare för att dämpa övertoner och undvika störningar!
+                </div>
+            </div>
+
+            <!-- Sammanfattning och övning -->
+            <div class="content-section summary">
+                <h2>📝 Sammanfattning</h2>
+                
+                <div class="key-points">
+                    <h3>Viktiga formler att komma ihåg:</h3>
+                    <ul>
+                        <li><strong>Ohms lag:</strong> U = R × I</li>
+                        <li><strong>Effekt:</strong> P = U × I = I²R = U²/R</li>
+                        <li><strong>Kapacitiv reaktans:</strong> X<sub>C</sub> = 1/(2πfC)</li>
+                        <li><strong>Induktiv reaktans:</strong> X<sub>L</sub> = 2πfL</li>
+                        <li><strong>Impedans:</strong> Z = √(R² + X²)</li>
+                        <li><strong>Resonansfrekvens:</strong> f = 1/(2π√LC)</li>
+                    </ul>
+                </div>
+                
+                <div class="key-points">
+                    <h3>Viktiga samband:</h3>
+                    <ul>
+                        <li>Kondensatorer blockerar likström, släpper igenom växelström</li>
+                        <li>Spolar släpper igenom likström, bromsar växelström</li>
+                        <li>Vid resonans: X<sub>L</sub> = X<sub>C</sub></li>
+                        <li>+3 dB = dubbel effekt, +10 dB = 10× effekt</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="chapter-navigation">
+                <a href="../../index.html" class="nav-button prev">
+                    <span class="arrow">←</span>
+                    <span class="label">Tillbaka till start</span>
+                </a>
+                <a href="../test/ovning.html?chapter=1" class="nav-button practice">
+                    <span class="icon">📝</span>
+                    <span class="label">Öva på kapitel 1</span>
+                </a>
+                <a href="kapitel-2-radioteknik.html" class="nav-button next">
+                    <span class="label">Kapitel 2: Radioteknik</span>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+            <p>Skapat för att hjälpa blivande radioamatörer att klara certifikatsprovet.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        // Uppdatera progress för detta kapitel
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(1);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

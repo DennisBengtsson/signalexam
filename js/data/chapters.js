@@ -21,7 +21,7 @@ const chapters = [
             "Växelström och impedans",
             "Filter och resonanskretsar"
         ],
-        estimatedTime: 45,
+        estimatedTime: "3-4 timmar",
         questionCount: 45
     },
     {
@@ -42,7 +42,7 @@ const chapters = [
             "Digitala modulationsformer",
             "SDR - Software Defined Radio"
         ],
-        estimatedTime: 50,
+        estimatedTime: "4-5 timmar",
         questionCount: 50
     },
     {
@@ -63,7 +63,7 @@ const chapters = [
             "SWR och impedansanpassning",
             "Balun och anpassningsenheter"
         ],
-        estimatedTime: 40,
+        estimatedTime: "3-4 timmar",
         questionCount: 40
     },
     {
@@ -84,7 +84,7 @@ const chapters = [
             "Skip och dead zones",
             "VHF/UHF-utbredning"
         ],
-        estimatedTime: 35,
+        estimatedTime: "2-3 timmar",
         questionCount: 35
     },
     {
@@ -105,7 +105,7 @@ const chapters = [
             "Fältstyrkemätare",
             "Spektrumanalysator"
         ],
-        estimatedTime: 30,
+        estimatedTime: "2-3 timmar",
         questionCount: 30
     },
     {
@@ -126,7 +126,7 @@ const chapters = [
             "Jordning och skärmning",
             "Felsökning av störningar"
         ],
-        estimatedTime: 35,
+        estimatedTime: "2-3 timmar",
         questionCount: 35
     },
     {
@@ -147,7 +147,7 @@ const chapters = [
             "Loggbokskrav",
             "Internationella regler (ITU)"
         ],
-        estimatedTime: 45,
+        estimatedTime: "3-4 timmar",
         questionCount: 45
     },
     {
@@ -168,7 +168,7 @@ const chapters = [
             "DX-trafik",
             "Digitala trafiksätt"
         ],
-        estimatedTime: 40,
+        estimatedTime: "2-3 timmar",
         questionCount: 40
     },
     {
@@ -189,7 +189,7 @@ const chapters = [
             "Åskskydd",
             "Första hjälpen vid elolycka"
         ],
-        estimatedTime: 25,
+        estimatedTime: "2 timmar",
         questionCount: 30
     },
     {
@@ -210,12 +210,12 @@ const chapters = [
             "Portabel och mobil trafik",
             "Satellittrafik"
         ],
-        estimatedTime: 50,
+        estimatedTime: "3-4 timmar",
         questionCount: 35
     }
 ];
 
-// Alias för bakåtkompatibilitet (om något script använder CHAPTERS)
+// Alias för bakåtkompatibilitet
 const CHAPTERS = chapters;
 
 // Hjälpfunktioner
@@ -231,7 +231,6 @@ function getChapterByNumber(number) {
     return chapters.find(ch => ch.number === number);
 }
 
-// Exportera för Node.js (om det används)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { chapters, CHAPTERS, getChapterById, getChapterBySlug, getChapterByNumber };
 }

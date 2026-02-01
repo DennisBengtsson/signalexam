@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morsekodsboken – PDF-version – Radioskola.se</title>
+    <style>
+        /* PDF-optimerade stilar */
+        @media print {
+            body { font-size: 11pt; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none !important; }
+            a { color: black; text-decoration: none; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: white;
+        }
+        
+        /* Framsida */
+        .cover-page {
+            text-align: center;
+            padding: 40mm 20mm;
+            min-height: 250mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 3px solid #e67e22;
+            margin-bottom: 20mm;
+        }
+        
+        .cover-morse {
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5rem;
+        }
+        
+        .cover-title {
+            font-size: 2.5rem;
+            color: #d35400;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        .cover-info {
+            font-size: 1rem;
+            color: #888;
+        }
+        
+        .cover-logo {
+            font-size: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        /* Innehållsförteckning */
+        .toc {
+            margin-bottom: 15mm;
+        }
+        
+        .toc h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #d35400;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted #ccc;
+        }
+        
+        .toc-item:hover {
+            background: #fff8f0;
+        }
+        
+        .toc-chapter {
+            font-weight: bold;
+        }
+        
+        /* Kapitelrubriker */
+        h1 {
+            font-size: 1.8rem;
+            color: #d35400;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            color: #e67e22;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        h3 {
+            font-size: 1.15rem;
+            color: #333;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        p {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+        
+        /* Morsekod-tabeller */
+        .morse-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .morse-table th,
+        .morse-table td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        
+        .morse-table th {
+            background: #e67e22;
+            color: white;
+        }
+        
+        .morse-table tr:nth-child(even) {
+            background: #fff8f0;
+        }
+        
+        .morse-code {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+        
+        /* Alfabetsrutnät */
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .letter-box {
+            border: 1px solid #e67e22;
+            padding: 0.5rem;
+            text-align: center;
+            background: #fff8f0;
+        }
+        
+        .letter-box .letter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d35400;
+        }
+        
+        .letter-box .code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        /* Inforutor */
+        .info-box {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .warning-box {
+            background: #fdf2e9;
+            border-left: 4px solid #e67e22;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .tip-box {
+            background: #e8f8e8;
+            border-left: 4px solid #27ae60;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        /* Q-koder */
+        .q-code-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .q-code-item {
+            border: 1px solid #e67e22;
+            padding: 0.5rem;
+            background: #fff8f0;
+        }
+        
+        .q-code-item strong {
+            color: #d35400;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Övningar */
+        .exercise-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 2px solid #e67e22;
+        }
+        
+        .exercise-section h3 {
+            color: #d35400;
+        }
+        
+        .exercise {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-left: 3px solid #e67e22;
+        }
+        
+        .exercise-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-options {
+            list-style: upper-alpha;
+            margin-left: 1.5rem;
+        }
+        
+        .exercise-options li {
+            margin: 0.25rem 0;
+        }
+        
+        /* Svar (dold by default, visa vid utskrift) */
+        .answers-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e67e22;
+        }
+        
+        /* Sidfot */
+        .page-footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Print-knapp */
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .print-btn:hover {
+            background: #d35400;
+        }
+        
+        /* Responsivt för skärm */
+        @media screen and (max-width: 800px) {
+            body {
+                padding: 10mm;
+            }
+            
+            .alphabet-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .q-code-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Skriv ut / Spara PDF</button>
+
+    <!-- FRAMSIDA -->
+    <div class="cover-page">
+        <div class="cover-morse">· – · ·   – – –   · · · –   ·</div>
+        <h1 class="cover-title">Morsekodsboken</h1>
+        <p class="cover-subtitle">Lär dig CW från grunden</p>
+        <p class="cover-info">
+            6 kapitel • Alfabetet A-Ö • Siffror & skiljetecken<br>
+            Q-koder • Träningsmetoder • Ditt första QSO
+        </p>
+        <p class="cover-info" style="margin-top: 2rem;">
+            <em>En komplett guide för den som vill lära sig<br>radions äldsta och mest effektiva kommunikationssätt</em>
+        </p>
+        <div class="cover-logo">📻 Radioskola.se</div>
+        <p class="cover-info" style="margin-top: 2rem;">2026 • Gratis läromedel</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- INNEHÅLLSFÖRTECKNING -->
+    <div class="toc">
+        <h2>Innehållsförteckning</h2>
+        <div class="toc-item">
+            <span class="toc-chapter">Kapitel 1: Vad är morsekod?</span>
+            <span>3</span>
+        </div>
+        <div class="toc-item">
+            <span class="toc-chapter">Kapitel 2: Alfabetet A-Ö</span>
+            <span>6</span>
+        </div>
+        <div class="toc-item">
+            <span class="toc-chapter">Kapitel 3: Siffror och skiljetecken</span>
+            <span>10</span>
+        </div>
+        <div class="toc-item">
+            <span class="toc-chapter">Kapitel 4: Lyssna och förstå</span>
+            <span>13</span>
+        </div>
+        <div class="toc-item">
+            <span class="toc-chapter">Kapitel 5: Skicka morse</span>
+            <span>17</span>
+        </div>
+        <div class="toc-item">
+            <span class="toc-chapter">Kapitel 6: Morse på luften</span>
+            <span>20</span>
+        </div>
+        <div class="toc-item">
+            <span>Övningsfrågor</span>
+            <span>24</span>
+        </div>
+        <div class="toc-item">
+            <span>Facit</span>
+            <span>27</span>
+        </div>
+        <div class="toc-item">
+            <span>Snabbreferens: Hela alfabetet</span>
+            <span>28</span>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KAPITEL 1 -->
+    <h1>Kapitel 1: Vad är morsekod?</h1>
+    
+    <p><strong>Dit-dah-dit-dit...</strong> Det låter kanske som slumpmässigt pip, men det är faktiskt bokstaven L! Morsekod är ett av de äldsta och mest pålitliga sätten att kommunicera över radio – och det används fortfarande av radioamatörer världen över.</p>
+    
+    <h2>📜 En uppfinning som förändrade världen</h2>
+    
+    <p><strong>Samuel Morse</strong> var egentligen konstnär, inte uppfinnare. Men år 1838 förändrade han världen när han tillsammans med Alfred Vail utvecklade ett sätt att skicka meddelanden genom elektriska ledningar.</p>
+    
+    <div class="info-box">
+        <strong>💡 Varför behövdes morsekod?</strong><br>
+        Den tidiga telegrafen kunde bara skicka elektriska pulser – av eller på. Morse insåg att genom att variera pulsernas längd kunde man skapa ett alfabet. Korta pulser blev <strong>"dit"</strong> (·) och långa blev <strong>"dah"</strong> (–).
+    </div>
+    
+    <p>Det första officiella morsemeddelandet skickades den 24 maj 1844 mellan Washington och Baltimore: <em>"What hath God wrought"</em> (Vad har Gud åstadkommit).</p>
+    
+    <h2>🔤 Så fungerar morsekod</h2>
+    
+    <p>Morsekod är förvånansvärt enkel i sin grundprincip:</p>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Element</th>
+            <th>Symbol</th>
+            <th>Längd</th>
+        </tr>
+        <tr>
+            <td>Dit (prick)</td>
+            <td class="morse-code">·</td>
+            <td>1 enhet</td>
+        </tr>
+        <tr>
+            <td>Dah (streck)</td>
+            <td class="morse-code">–</td>
+            <td>3 enheter</td>
+        </tr>
+        <tr>
+            <td>Mellanrum inom bokstav</td>
+            <td>(tystnad)</td>
+            <td>1 enhet</td>
+        </tr>
+        <tr>
+            <td>Mellanrum mellan bokstäver</td>
+            <td>(tystnad)</td>
+            <td>3 enheter</td>
+        </tr>
+        <tr>
+            <td>Mellanrum mellan ord</td>
+            <td>(tystnad)</td>
+            <td>7 enheter</td>
+        </tr>
+    </table>
+    
+    <h2>🆘 SOS – signalen som räddar liv</h2>
+    
+    <p>Det mest kända morsemeddelandet i världen är <strong>SOS</strong>:</p>
+    
+    <p style="text-align: center; font-size: 1.5rem;" class="morse-code">· · · – – – · · ·</p>
+    <p style="text-align: center;"><em>dit-dit-dit dah-dah-dah dit-dit-dit</em></p>
+    
+    <p>SOS valdes som internationell nödsignal 1906 – inte för att det betyder något speciellt, utan för att det är <strong>lätt att känna igen och svårt att missförstå</strong>. Det är en myt att det står för "Save Our Souls"!</p>
+    
+    <h2>📻 Morse idag – varför lära sig?</h2>
+    
+    <ul>
+        <li><strong>Går längst</strong> – En morsesignal når mycket längre än röst med samma effekt</li>
+        <li><strong>Hörs genom bruset</strong> – Örat kan urskilja morsetoner i kraftiga störningar</li>
+        <li><strong>Enkel utrustning</strong> – En CW-sändare är mycket enklare att bygga</li>
+        <li><strong>Universellt språk</strong> – Q-koder förstås världen över</li>
+        <li><strong>Hjärnträning</strong> – Förbättrar minne och koncentration</li>
+    </ul>
+    
+    <div class="warning-box">
+        <strong>⚠️ Viktigt om inlärning</strong><br>
+        Lär dig INTE morse genom att räkna prickar och streck! Hjärnan måste lära sig känna igen <strong>ljudet</strong> direkt – precis som du hör skillnad på bokstäver när någon pratar.
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KAPITEL 2 -->
+    <h1>Kapitel 2: Alfabetet A-Ö</h1>
+    
+    <p>Nu är det dags att lära sig bokstäverna! Fokusera på <em>ljudet</em>, inte på att räkna prickar.</p>
+    
+    <h2>📋 Det internationella alfabetet</h2>
+    
+    <div class="alphabet-grid">
+        <div class="letter-box"><span class="letter">A</span><br><span class="code">· –</span></div>
+        <div class="letter-box"><span class="letter">B</span><br><span class="code">– · · ·</span></div>
+        <div class="letter-box"><span class="letter">C</span><br><span class="code">– · – ·</span></div>
+        <div class="letter-box"><span class="letter">D</span><br><span class="code">– · ·</span></div>
+        <div class="letter-box"><span class="letter">E</span><br><span class="code">·</span></div>
+        <div class="letter-box"><span class="letter">F</span><br><span class="code">· · – ·</span></div>
+        <div class="letter-box"><span class="letter">G</span><br><span class="code">– – ·</span></div>
+        <div class="letter-box"><span class="letter">H</span><br><span class="code">· · · ·</span></div>
+        <div class="letter-box"><span class="letter">I</span><br><span class="code">· ·</span></div>
+        <div class="letter-box"><span class="letter">J</span><br><span class="code">· – – –</span></div>
+        <div class="letter-box"><span class="letter">K</span><br><span class="code">– · –</span></div>
+        <div class="letter-box"><span class="letter">L</span><br><span class="code">· – · ·</span></div>
+        <div class="letter-box"><span class="letter">M</span><br><span class="code">– –</span></div>
+        <div class="letter-box"><span class="letter">N</span><br><span class="code">– ·</span></div>
+        <div class="letter-box"><span class="letter">O</span><br><span class="code">– – –</span></div>
+        <div class="letter-box"><span class="letter">P</span><br><span class="code">· – – ·</span></div>
+        <div class="letter-box"><span class="letter">Q</span><br><span class="code">– – · –</span></div>
+        <div class="letter-box"><span class="letter">R</span><br><span class="code">· – ·</span></div>
+        <div class="letter-box"><span class="letter">S</span><br><span class="code">· · ·</span></div>
+        <div class="letter-box"><span class="letter">T</span><br><span class="code">–</span></div>
+        <div class="letter-box"><span class="letter">U</span><br><span class="code">· · –</span></div>
+        <div class="letter-box"><span class="letter">V</span><br><span class="code">· · · –</span></div>
+        <div class="letter-box"><span class="letter">W</span><br><span class="code">· – –</span></div>
+        <div class="letter-box"><span class="letter">X</span><br><span class="code">– · · –</span></div>
+        <div class="letter-box"><span class="letter">Y</span><br><span class="code">– · – –</span></div>
+        <div class="letter-box"><span class="letter">Z</span><br><span class="code">– – · ·</span></div>
+    </div>
+    
+    <h2>🇸🇪 Svenska specialtecken</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Bokstav</th>
+            <th>Morsekod</th>
+            <th>Ljud</th>
+        </tr>
+        <tr>
+            <td><strong>Å</strong></td>
+            <td class="morse-code">· – – · –</td>
+            <td>di-dah-dah-di-dah</td>
+        </tr>
+        <tr>
+            <td><strong>Ä</strong></td>
+            <td class="morse-code">· – · –</td>
+            <td>di-dah-di-dah</td>
+        </tr>
+        <tr>
+            <td><strong>Ö</strong></td>
+            <td class="morse-code">– – – ·</td>
+            <td>dah-dah-dah-dit</td>
+        </tr>
+    </table>
+    
+    <h2>🎯 Lika tecken – se upp!</h2>
+    
+    <p>Dessa bokstäver förväxlas ofta:</p>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Par</th>
+            <th>Bokstav 1</th>
+            <th>Bokstav 2</th>
+            <th>Kommentar</th>
+        </tr>
+        <tr>
+            <td>A / N</td>
+            <td class="morse-code">· –</td>
+            <td class="morse-code">– ·</td>
+            <td>Spegelbilder!</td>
+        </tr>
+        <tr>
+            <td>D / U</td>
+            <td class="morse-code">– · ·</td>
+            <td class="morse-code">· · –</td>
+            <td>Spegelbilder!</td>
+        </tr>
+        <tr>
+            <td>B / V</td>
+            <td class="morse-code">– · · ·</td>
+            <td class="morse-code">· · · –</td>
+            <td>Spegelbilder!</td>
+        </tr>
+        <tr>
+            <td>F / L</td>
+            <td class="morse-code">· · – ·</td>
+            <td class="morse-code">· – · ·</td>
+            <td>Nästan samma!</td>
+        </tr>
+    </table>
+    
+    <div class="tip-box">
+        <strong>💡 Tips:</strong> V (· · · –) låter precis som de fyra första tonerna i Beethovens femte symfoni! Under andra världskriget använde BBC detta som signatur – V för Victory!
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KAPITEL 3 -->
+    <h1>Kapitel 3: Siffror och skiljetecken</h1>
+    
+    <h2>🔢 Siffrorna 0-9</h2>
+    
+    <p>Siffrorna har ett elegant mönster – alla har <strong>exakt 5 element</strong>:</p>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Siffra</th>
+            <th>Morsekod</th>
+            <th>Mönster</th>
+        </tr>
+        <tr><td><strong>1</strong></td><td class="morse-code">· – – – –</td><td>1 dit, 4 dah</td></tr>
+        <tr><td><strong>2</strong></td><td class="morse-code">· · – – –</td><td>2 dit, 3 dah</td></tr>
+        <tr><td><strong>3</strong></td><td class="morse-code">· · · – –</td><td>3 dit, 2 dah</td></tr>
+        <tr><td><strong>4</strong></td><td class="morse-code">· · · · –</td><td>4 dit, 1 dah</td></tr>
+        <tr><td><strong>5</strong></td><td class="morse-code">· · · · ·</td><td>5 dit, 0 dah</td></tr>
+        <tr><td><strong>6</strong></td><td class="morse-code">– · · · ·</td><td>1 dah, 4 dit</td></tr>
+        <tr><td><strong>7</strong></td><td class="morse-code">– – · · ·</td><td>2 dah, 3 dit</td></tr>
+        <tr><td><strong>8</strong></td><td class="morse-code">– – – · ·</td><td>3 dah, 2 dit</td></tr>
+        <tr><td><strong>9</strong></td><td class="morse-code">– – – – ·</td><td>4 dah, 1 dit</td></tr>
+        <tr><td><strong>0</strong></td><td class="morse-code">– – – – –</td><td>0 dit, 5 dah</td></tr>
+    </table>
+    
+    <h2>📝 Vanliga skiljetecken</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Tecken</th>
+            <th>Morsekod</th>
+            <th>Användning</th>
+        </tr>
+        <tr><td><strong>.</strong> Punkt</td><td class="morse-code">· – · – · –</td><td>Slut på mening</td></tr>
+        <tr><td><strong>,</strong> Komma</td><td class="morse-code">– – · · – –</td><td>Paus i text</td></tr>
+        <tr><td><strong>?</strong> Frågetecken</td><td class="morse-code">· · – – · ·</td><td>Mycket vanlig!</td></tr>
+        <tr><td><strong>/</strong> Snedstreck</td><td class="morse-code">– · · – ·</td><td>I anropssignaler</td></tr>
+        <tr><td><strong>=</strong> Lika med (BT)</td><td class="morse-code">– · · · –</td><td>Nytt stycke/paus</td></tr>
+    </table>
+    
+    <h2>📡 Prosigns – procedurkoder</h2>
+    
+    <p>Prosigns sänds <strong>utan paus</strong> mellan bokstäverna:</p>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Prosign</th>
+            <th>Morsekod</th>
+            <th>Betydelse</th>
+        </tr>
+        <tr><td><strong>AR</strong></td><td class="morse-code">· – · – ·</td><td>Slut på meddelande</td></tr>
+        <tr><td><strong>SK</strong></td><td class="morse-code">· · · – · –</td><td>Slut på kontakt</td></tr>
+        <tr><td><strong>BT</strong></td><td class="morse-code">– · · · –</td><td>Paus/separator</td></tr>
+        <tr><td><strong>K</strong></td><td class="morse-code">– · –</td><td>Kom (din tur)</td></tr>
+        <tr><td><strong>KN</strong></td><td class="morse-code">– · – – ·</td><td>Endast du får svara</td></tr>
+    </table>
+    
+    <h2>❌ Rätta fel</h2>
+    
+    <p>Alla gör fel! Så här rättar du:</p>
+    
+    <div class="info-box">
+        <strong>HH = · · · · · · · ·</strong> (8 snabba dit:ar)<br>
+        Sänd HH och börja om från det felstavade ordet.
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KAPITEL 4 -->
+    <h1>Kapitel 4: Lyssna och förstå</h1>
+    
+    <p>Att lära sig <em>höra</em> morse är helt annorlunda från att <em>läsa</em> morse. Målet är en direkt koppling mellan ljud och betydelse!</p>
+    
+    <h2>📚 Koch-metoden</h2>
+    
+    <p>Den vetenskapligt bevisade metoden för att lära sig morse:</p>
+    
+    <ol>
+        <li><strong>Börja med full hastighet</strong> – Minst 15-20 WPM direkt</li>
+        <li><strong>Börja med bara 2 tecken</strong> – Traditionellt K och M</li>
+        <li><strong>Lägg till ett tecken i taget</strong> – När du klarar 90% rätt</li>
+        <li><strong>Farnsworth-timing</strong> – Snabba tecken, långa pauser</li>
+    </ol>
+    
+    <div class="warning-box">
+        <strong>⚠️ Varför inte börja långsamt?</strong><br>
+        Vid låg hastighet (5 WPM) börjar hjärnan räkna dit och dah. Det skapar en mental flaskhals som är svår att bli av med!
+    </div>
+    
+    <h2>⏱️ Farnsworth-timing</h2>
+    
+    <p>Lösningen på "för långsam morse":</p>
+    
+    <ul>
+        <li><strong>Tecknen</strong> går snabbt (t.ex. 20 WPM)</li>
+        <li><strong>Pauserna</strong> är långa (ger effektiv 10 WPM)</li>
+        <li>Du lär dig höra hela ljudmönstret direkt</li>
+        <li>Krymp pauserna gradvis tills du når "ren" hastighet</li>
+    </ul>
+    
+    <h2>🛠️ Rekommenderade verktyg</h2>
+    
+    <ul>
+        <li><strong>LCWO.net</strong> – Gratis webbaserad Koch-träning (rekommenderas!)</li>
+        <li><strong>Morse Trainer (Android)</strong> – Koch-metoden i fickan</li>
+        <li><strong>Ham Morse (iOS)</strong> – För iPhone-användare</li>
+        <li><strong>WebSDR</strong> – Lyssna på riktig CW-trafik (websdr.org)</li>
+    </ul>
+    
+    <h2>📅 Träningsschema</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Period</th>
+            <th>Fokus</th>
+            <th>Tid/dag</th>
+        </tr>
+        <tr>
+            <td>Vecka 1-2</td>
+            <td>8-10 tecken vid 90% träffsäkerhet</td>
+            <td>15-20 min</td>
+        </tr>
+        <tr>
+            <td>Vecka 3-4</td>
+            <td>Hela alfabetet</td>
+            <td>20-30 min</td>
+        </tr>
+        <tr>
+            <td>Vecka 5-8</td>
+            <td>Siffror, skiljetecken, hastighet</td>
+            <td>20-30 min</td>
+        </tr>
+        <tr>
+            <td>Vecka 9-12</td>
+            <td>Ord, meningar, riktigt CW</td>
+            <td>30+ min</td>
+        </tr>
+    </table>
+    
+    <div class="tip-box">
+        <strong>💡 Tips:</strong> Träna korta pass – bättre med 3×15 min än 1×45 min. Hjärnan behöver vila för att befästa kunskapen!
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KAPITEL 5 -->
+    <h1>Kapitel 5: Skicka morse</h1>
+    
+    <h2>🔧 Typer av morsenyckel</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Typ</th>
+            <th>Beskrivning</th>
+            <th>Bäst för</th>
+        </tr>
+        <tr>
+            <td><strong>Straight key</strong></td>
+            <td>Klassisk upp-och-ner-nyckel</td>
+            <td>Nybörjare ✓</td>
+        </tr>
+        <tr>
+            <td><strong>Paddle + Keyer</strong></td>
+            <td>Sidorörelser, elektronik sköter timing</td>
+            <td>Höga hastigheter</td>
+        </tr>
+        <tr>
+            <td><strong>Bug</strong></td>
+            <td>Semi-automatisk, mekanisk</td>
+            <td>Tradition, karaktär</td>
+        </tr>
+    </table>
+    
+    <h2>✋ Teknik med straight key</h2>
+    
+    <ol>
+        <li><strong>Handposition:</strong> Tumme och pekfinger håller lätt om knappen</li>
+        <li><strong>Handleden:</strong> Vilar på bordet – rörelsen kommer från handleden</li>
+        <li><strong>Tryck:</strong> Rakt ner, jämnt tryck, snabbt släpp</li>
+        <li><strong>Timing:</strong> Dah = 3× dit, håll jämn rytm</li>
+    </ol>
+    
+    <div class="warning-box">
+        <strong>⚠️ Vanliga fel:</strong>
+        <ul>
+            <li>"Nervös dit" – dit:ar blir längre vid stress</li>
+            <li>Hackig rytm – ojämna pauser</li>
+            <li>Krama nyckeln – håll löst!</li>
+        </ul>
+    </div>
+    
+    <h2>🎵 Din "fist"</h2>
+    
+    <p>Erfarna operatörer utvecklar en personlig stil – sin <strong>"fist"</strong>. Precis som handstil är den unik! Under andra världskriget kunde signalspanare identifiera tyska operatörer på deras fist.</p>
+    
+    <h2>🖥️ Träna utan radio</h2>
+    
+    <ul>
+        <li><strong>VBand (vband.org)</strong> – Öva QSO med andra över internet</li>
+        <li><strong>MorseRunner</strong> – Simulera contest-trafik</li>
+        <li><strong>RufzXP</strong> – Träna anropssignaler</li>
+    </ul>
+    
+    <div class="tip-box">
+        <strong>💡 Tips:</strong> Spela in dig själv och lyssna tillbaka! Det avslöjar fel du inte märker när du sänder.
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KAPITEL 6 -->
+    <h1>Kapitel 6: Morse på luften</h1>
+    
+    <h2>📜 Q-koder</h2>
+    
+    <p>Internationella förkortningar som betyder samma sak oavsett språk:</p>
+    
+    <div class="q-code-list">
+        <div class="q-code-item"><strong>QRZ?</strong> – Vem ropar på mig?</div>
+        <div class="q-code-item"><strong>QTH</strong> – Min position/ort</div>
+        <div class="q-code-item"><strong>QRS</strong> – Sänk hastigheten</div>
+        <div class="q-code-item"><strong>QRQ</strong> – Öka hastigheten</div>
+        <div class="q-code-item"><strong>QRM</strong> – Störningar från stationer</div>
+        <div class="q-code-item"><strong>QRN</strong> – Atmosfäriska störningar</div>
+        <div class="q-code-item"><strong>QSB</strong> – Signalen varierar (fading)</div>
+        <div class="q-code-item"><strong>QSL</strong> – Bekräftelse / QSL-kort</div>
+        <div class="q-code-item"><strong>QSO</strong> – Radiokontakt</div>
+        <div class="q-code-item"><strong>QSY</strong> – Byt frekvens</div>
+        <div class="q-code-item"><strong>QRV</strong> – Jag är redo</div>
+        <div class="q-code-item"><strong>QRP</strong> – Låg effekt (under 5W)</div>
+    </div>
+    
+    <p><strong>Tips:</strong> Lägg till <strong>?</strong> för att göra Q-koden till en fråga: QTH? = Var är du?</p>
+    
+    <h2>🔤 CW-förkortningar</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Förkortning</th>
+            <th>Betydelse</th>
+            <th>Förkortning</th>
+            <th>Betydelse</th>
+        </tr>
+        <tr><td><strong>CQ</strong></td><td>Allmänt anrop</td><td><strong>DE</strong></td><td>Från (this is)</td></tr>
+        <tr><td><strong>K</strong></td><td>Över till dig</td><td><strong>R</strong></td><td>Roger, mottaget</td></tr>
+        <tr><td><strong>73</strong></td><td>Bästa hälsningar</td><td><strong>88</strong></td><td>Kärlek & kyssar</td></tr>
+        <tr><td><strong>TNX</strong></td><td>Tack</td><td><strong>FER</strong></td><td>För</td></tr>
+        <tr><td><strong>UR</strong></td><td>Din/ditt</td><td><strong>ES</strong></td><td>Och</td></tr>
+        <tr><td><strong>FB</strong></td><td>Fine Business (utmärkt)</td><td><strong>VY</strong></td><td>Mycket (very)</td></tr>
+        <tr><td><strong>OM</strong></td><td>Old Man (radioamatör)</td><td><strong>YL</strong></td><td>Young Lady</td></tr>
+        <tr><td><strong>HI</strong></td><td>Skratt</td><td><strong>GM/GA/GE</strong></td><td>God morgon/dag/kväll</td></tr>
+        <tr><td><strong>RST</strong></td><td>Signalrapport</td><td><strong>PWR</strong></td><td>Effekt</td></tr>
+        <tr><td><strong>ANT</strong></td><td>Antenn</td><td><strong>WX</strong></td><td>Väder</td></tr>
+    </table>
+    
+    <h2>📞 Ett typiskt QSO</h2>
+    
+    <div class="info-box">
+        <strong>Du ropar CQ:</strong><br>
+        <code>CQ CQ CQ DE SA0XXX SA0XXX SA0XXX K</code><br><br>
+        
+        <strong>Någon svarar:</strong><br>
+        <code>SA0XXX DE DL1ABC DL1ABC K</code><br><br>
+        
+        <strong>Du svarar med info:</strong><br>
+        <code>DL1ABC DE SA0XXX = GM TNX FER CALL = UR RST 599 = NAME ERIK = QTH STOCKHOLM = HW CPY? K</code><br><br>
+        
+        <strong>Motparten svarar:</strong><br>
+        <code>SA0XXX DE DL1ABC = R FB = UR RST 579 = NAME HANS = QTH BERLIN = TNX FER QSO = 73 K</code><br><br>
+        
+        <strong>Du avslutar:</strong><br>
+        <code>DL1ABC DE SA0XXX = VY TNX FER QSO = 73 73 = SK</code>
+    </div>
+    
+    <h2>📻 CW-band</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <th>Band</th>
+            <th>Frekvens</th>
+            <th>Bästa tid</th>
+        </tr>
+        <tr><td>80m</td><td>3.500-3.570 MHz</td><td>Kväll/natt</td></tr>
+        <tr><td>40m</td><td>7.000-7.040 MHz</td><td>Kväll</td></tr>
+        <tr><td><strong>20m ⭐</strong></td><td><strong>14.000-14.070 MHz</strong></td><td><strong>Dagtid – bäst för nybörjare!</strong></td></tr>
+        <tr><td>15m</td><td>21.000-21.070 MHz</td><td>Dagtid</td></tr>
+        <tr><td>10m</td><td>28.000-28.070 MHz</td><td>Solflocks-max</td></tr>
+    </table>
+    
+    <h2>🎯 Tips för nybörjare</h2>
+    
+    <ul>
+        <li><strong>Skriv manus</strong> – Ha din CQ, namn, QTH nedskrivet</li>
+        <li><strong>Lyssna först</strong> – Lär dig hur QSO:n går till</li>
+        <li><strong>Sänk hastigheten</strong> – Kör 12-15 WPM i början</li>
+        <li><strong>Svara på CQ</strong> – Enklare än att ropa själv</li>
+        <li><strong>Fråga om du missar</strong> – "NAME?" eller "QTH?" är OK</li>
+        <li><strong>Logga allt</strong> – Datum, tid, frekvens, anropssignal, RST</li>
+    </ul>
+    
+    <div class="tip-box">
+        <strong>💡 Var inte rädd!</strong> Alla CW-operatörer var nybörjare en gång. De flesta är väldigt hjälpsamma och sänker gärna hastigheten!
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ÖVNINGAR -->
+    <h1>✍️ Övningsfrågor</h1>
+    
+    <p>Testa dina kunskaper! Svaren finns på nästa sida.</p>
+    
+    <div class="exercise-section">
+        <h3>Kapitel 1: Vad är morsekod?</h3>
+        
+        <div class="exercise">
+            <p class="exercise-question">1. Vem uppfann morsekod och vilket år?</p>
+            <ol class="exercise-options">
+                <li>Guglielmo Marconi, 1895</li>
+                <li>Samuel Morse (med Alfred Vail), 1838</li>
+                <li>Nikola Tesla, 1891</li>
+                <li>Alexander Graham Bell, 1876</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">2. Hur lång är en "dah" jämfört med en "dit"?</p>
+            <ol class="exercise-options">
+                <li>2 gånger så lång</li>
+                <li>3 gånger så lång</li>
+                <li>4 gånger så lång</li>
+                <li>Lika långa</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">3. Vad står CW för inom amatörradio?</p>
+            <ol class="exercise-options">
+                <li>Code Words</li>
+                <li>Continuous Wave</li>
+                <li>Carrier Wave</li>
+                <li>Communication Wireless</li>
+            </ol>
+        </div>
+        
+        <h3>Kapitel 2: Alfabetet</h3>
+        
+        <div class="exercise">
+            <p class="exercise-question">4. Vilken bokstav är kortast i morse?</p>
+            <ol class="exercise-options">
+                <li>A (· –)</li>
+                <li>E (·)</li>
+                <li>T (–)</li>
+                <li>I (· ·)</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">5. Vad är morsekoden för bokstaven S?</p>
+            <ol class="exercise-options">
+                <li>– – –</li>
+                <li>· · ·</li>
+                <li>– · –</li>
+                <li>· – ·</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">6. Vilka två bokstäver är spegelbilder av varandra?</p>
+            <ol class="exercise-options">
+                <li>E och T</li>
+                <li>A och N</li>
+                <li>S och O</li>
+                <li>M och W</li>
+            </ol>
+        </div>
+        
+        <h3>Kapitel 3: Siffror och skiljetecken</h3>
+        
+        <div class="exercise">
+            <p class="exercise-question">7. Hur många element har varje siffra i morse?</p>
+            <ol class="exercise-options">
+                <li>3 element</li>
+                <li>4 element</li>
+                <li>5 element</li>
+                <li>Varierar</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">8. Vad är morsekoden för SOS?</p>
+            <ol class="exercise-options">
+                <li>· · · · · · · · ·</li>
+                <li>· · · – – – · · ·</li>
+                <li>– – – · · · – – –</li>
+                <li>· – · – · – · – ·</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">9. Vilket prosign betyder "slut på kontakt"?</p>
+            <ol class="exercise-options">
+                <li>AR</li>
+                <li>SK</li>
+                <li>BT</li>
+                <li>K</li>
+            </ol>
+        </div>
+        
+        <h3>Kapitel 4: Lyssna och förstå</h3>
+        
+        <div class="exercise">
+            <p class="exercise-question">10. Vad innebär Koch-metoden?</p>
+            <ol class="exercise-options">
+                <li>Lär dig alla tecken långsamt först</li>
+                <li>Lär dig tecken vid full hastighet, lägg till ett i taget vid 90%</li>
+                <li>Fokusera på visuella tabeller</li>
+                <li>Träna endast på att skicka</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">11. Vilken hastighet bör nybörjare börja med enligt Koch?</p>
+            <ol class="exercise-options">
+                <li>5 WPM</li>
+                <li>10 WPM</li>
+                <li>15-20 WPM</li>
+                <li>30 WPM</li>
+            </ol>
+        </div>
+        
+        <h3>Kapitel 5: Skicka morse</h3>
+        
+        <div class="exercise">
+            <p class="exercise-question">12. Vilken nyckeltyp rekommenderas för nybörjare?</p>
+            <ol class="exercise-options">
+                <li>Paddle med keyer</li>
+                <li>Bug (semi-automatisk)</li>
+                <li>Straight key (handnyckel)</li>
+                <li>Datorprogram</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">13. Vad kallas en operatörs personliga morsestil?</p>
+            <ol class="exercise-options">
+                <li>Swing</li>
+                <li>Fist</li>
+                <li>Tone</li>
+                <li>Rhythm</li>
+            </ol>
+        </div>
+        
+        <h3>Kapitel 6: Morse på luften</h3>
+        
+        <div class="exercise">
+            <p class="exercise-question">14. Vad betyder Q-koden QRS?</p>
+            <ol class="exercise-options">
+                <li>Öka hastigheten</li>
+                <li>Sänk hastigheten</li>
+                <li>Störningar</li>
+                <li>Byt frekvens</li>
+            </ol>
+        </div>
+        
+        <div class="exercise">
+            <p class="exercise-question">15. Vad betyder förkortningen 73?</p>
+            <ol class="exercise-options">
+                <li>God natt</li>
+                <li>Tack för kontakten</li>
+                <li>Bästa hälsningar</li>
+                <li>Vi hörs snart</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- FACIT -->
+    <div class="answers-section">
+        <h1>📋 Facit</h1>
+        
+        <table class="morse-table">
+            <tr>
+                <th>Fråga</th>
+                <th>Rätt svar</th>
+                <th>Fråga</th>
+                <th>Rätt svar</th>
+            </tr>
+            <tr><td>1</td><td>B</td><td>9</td><td>B</td></tr>
+            <tr><td>2</td><td>B</td><td>10</td><td>B</td></tr>
+            <tr><td>3</td><td>B</td><td>11</td><td>C</td></tr>
+            <tr><td>4</td><td>B</td><td>12</td><td>C</td></tr>
+            <tr><td>5</td><td>B</td><td>13</td><td>B</td></tr>
+            <tr><td>6</td><td>B</td><td>14</td><td>B</td></tr>
+            <tr><td>7</td><td>C</td><td>15</td><td>C</td></tr>
+            <tr><td>8</td><td>B</td><td></td><td></td></tr>
+        </table>
+        
+        <p style="margin-top: 2rem;"><strong>Resultat:</strong></p>
+        <ul>
+            <li>13-15 rätt: Utmärkt! Du är redo för luften!</li>
+            <li>10-12 rätt: Bra! Repetera de kapitel du missade.</li>
+            <li>Under 10: Läs igenom boken en gång till.</li>
+        </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SNABBREFERENS -->
+    <h1>📋 Snabbreferens: Hela alfabetet</h1>
+    
+    <h2>Bokstäver A-Z + Å Ä Ö</h2>
+    
+    <table class="morse-table" style="font-size: 0.9rem;">
+        <tr>
+            <td><strong>A</strong> · –</td>
+            <td><strong>B</strong> – · · ·</td>
+            <td><strong>C</strong> – · – ·</td>
+            <td><strong>D</strong> – · ·</td>
+            <td><strong>E</strong> ·</td>
+        </tr>
+        <tr>
+            <td><strong>F</strong> · · – ·</td>
+            <td><strong>G</strong> – – ·</td>
+            <td><strong>H</strong> · · · ·</td>
+            <td><strong>I</strong> · ·</td>
+            <td><strong>J</strong> · – – –</td>
+        </tr>
+        <tr>
+            <td><strong>K</strong> – · –</td>
+            <td><strong>L</strong> · – · ·</td>
+            <td><strong>M</strong> – –</td>
+            <td><strong>N</strong> – ·</td>
+            <td><strong>O</strong> – – –</td>
+        </tr>
+        <tr>
+            <td><strong>P</strong> · – – ·</td>
+            <td><strong>Q</strong> – – · –</td>
+            <td><strong>R</strong> · – ·</td>
+            <td><strong>S</strong> · · ·</td>
+            <td><strong>T</strong> –</td>
+        </tr>
+        <tr>
+            <td><strong>U</strong> · · –</td>
+            <td><strong>V</strong> · · · –</td>
+            <td><strong>W</strong> · – –</td>
+            <td><strong>X</strong> – · · –</td>
+            <td><strong>Y</strong> – · – –</td>
+        </tr>
+        <tr>
+            <td><strong>Z</strong> – – · ·</td>
+            <td><strong>Å</strong> · – – · –</td>
+            <td><strong>Ä</strong> · – · –</td>
+            <td><strong>Ö</strong> – – – ·</td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <h2>Siffror 0-9</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <td><strong>1</strong> · – – – –</td>
+            <td><strong>2</strong> · · – – –</td>
+            <td><strong>3</strong> · · · – –</td>
+            <td><strong>4</strong> · · · · –</td>
+            <td><strong>5</strong> · · · · ·</td>
+        </tr>
+        <tr>
+            <td><strong>6</strong> – · · · ·</td>
+            <td><strong>7</strong> – – · · ·</td>
+            <td><strong>8</strong> – – – · ·</td>
+            <td><strong>9</strong> – – – – ·</td>
+            <td><strong>0</strong> – – – – –</td>
+        </tr>
+    </table>
+    
+    <h2>Vanliga tecken & prosigns</h2>
+    
+    <table class="morse-table">
+        <tr>
+            <td><strong>.</strong> · – · – · –</td>
+            <td><strong>,</strong> – – · · – –</td>
+            <td><strong>?</strong> · · – – · ·</td>
+            <td><strong>/</strong> – · · – ·</td>
+        </tr>
+        <tr>
+            <td><strong>AR</strong> · – · – ·</td>
+            <td><strong>SK</strong> · · · – · –</td>
+            <td><strong>BT</strong> – · · · –</td>
+            <td><strong>SOS</strong> · · · – – – · · ·</td>
+        </tr>
+    </table>
+    
+    <h2>Viktiga Q-koder</h2>
+    
+    <table class="morse-table">
+        <tr><td><strong>QRZ?</strong></td><td>Vem ropar?</td><td><strong>QTH</strong></td><td>Position</td></tr>
+        <tr><td><strong>QRS</strong></td><td>Sänk hastighet</td><td><strong>QRQ</strong></td><td>Öka hastighet</td></tr>
+        <tr><td><strong>QSL</strong></td><td>Bekräftar</td><td><strong>QSO</strong></td><td>Kontakt</td></tr>
+        <tr><td><strong>QRM</strong></td><td>Störningar (stationer)</td><td><strong>QRN</strong></td><td>Störningar (atmosfär)</td></tr>
+    </table>
+    
+    <h2>CW-fraser</h2>
+    
+    <table class="morse-table">
+        <tr><td><strong>CQ</strong></td><td>Allmänt anrop</td><td><strong>DE</strong></td><td>Från</td></tr>
+        <tr><td><strong>K</strong></td><td>Kom (din tur)</td><td><strong>73</strong></td><td>Hälsningar</td></tr>
+        <tr><td><strong>TNX</strong></td><td>Tack</td><td><strong>FB</strong></td><td>Utmärkt</td></tr>
+        <tr><td><strong>OM</strong></td><td>Radioamatör</td><td><strong>HI</strong></td><td>Skratt</td></tr>
+    </table>
+
+    <div class="page-footer">
+        <p>📻 <strong>Morsekodsboken</strong> – Radioskola.se – 2026</p>
+        <p>Gratis läromedel för alla som vill lära sig CW</p>
+        <p style="margin-top: 1rem; font-size: 1.5rem;">· · · – – – · · · &nbsp; – · – · – &nbsp; · – · – · –</p>
+        <p><em>73 de Radioskola.se!</em></p>
+    </div>
+
+</body>
+</html>

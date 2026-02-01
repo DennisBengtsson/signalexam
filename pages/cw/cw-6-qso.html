@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse på luften – Radioskola.se</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>Radioskola.se</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#bocker">Böcker</a></li>
+                <li><a href="../test/prov.html">Gör prov</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="../../index.html">Hem</a>
+            <span>/</span>
+            <a href="../../index.html#bocker">Böcker</a>
+            <span>/</span>
+            <span>Morsekod</span>
+            <span>/</span>
+            <span class="current">Kapitel 6</span>
+        </div>
+    </div>
+
+    <main class="chapter-content">
+        <article class="chapter-article">
+            <header class="chapter-header">
+                <span class="chapter-label">Morsekod – Kapitel 6</span>
+                <h1>📻 Morse på luften</h1>
+                <div class="chapter-meta">
+                    <span class="read-time">🕐 20 min läsning</span>
+                    <span class="difficulty intermediate">Medel</span>
+                </div>
+            </header>
+
+            <section class="chapter-section">
+                <div class="intro-box">
+                    <p class="lead">Nu är du redo för det riktiga! Att göra ditt första CW-QSO är en upplevelse du aldrig glömmer. I detta kapitel lär du dig <strong>Q-koder</strong>, <strong>förkortningar</strong>, och exakt hur ett typiskt QSO går till.</p>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <h2>📜 Q-koder – det internationella språket</h2>
+                
+                <p>Q-koder är treställiga förkortningar som betyder samma sak oavsett språk. De används för att snabbt utbyta standardinformation:</p>
+                
+                <div class="q-codes-grid">
+                    <div class="q-code-card important">
+                        <span class="q-code">QRZ?</span>
+                        <span class="meaning">Vem ropar på mig?</span>
+                        <span class="usage">När du hör din signal men missar vem det var</span>
+                    </div>
+                    <div class="q-code-card important">
+                        <span class="q-code">QTH</span>
+                        <span class="meaning">Min position/ort</span>
+                        <span class="usage">"QTH Stockholm" = Jag är i Stockholm</span>
+                    </div>
+                    <div class="q-code-card important">
+                        <span class="q-code">QRS</span>
+                        <span class="meaning">Sänk hastigheten</span>
+                        <span class="usage">Be motparten gå långsammare</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QRQ</span>
+                        <span class="meaning">Öka hastigheten</span>
+                        <span class="usage">Motparten kan gå snabbare</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QRM</span>
+                        <span class="meaning">Störningar från andra stationer</span>
+                        <span class="usage">"QRM here" = Det stör här</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QRN</span>
+                        <span class="meaning">Atmosfäriska störningar</span>
+                        <span class="usage">Åska, statisk elektricitet</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QSB</span>
+                        <span class="meaning">Signalen varierar (fading)</span>
+                        <span class="usage">"UR SIG QSB" = Din signal fadear</span>
+                    </div>
+                    <div class="q-code-card important">
+                        <span class="q-code">QSL</span>
+                        <span class="meaning">Bekräftelse / QSL-kort</span>
+                        <span class="usage">"QSL?" = Bekräftar du? "QSL" = Ja!</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QSO</span>
+                        <span class="meaning">Radiokontakt</span>
+                        <span class="usage">"TNX FER QSO" = Tack för kontakten</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QSY</span>
+                        <span class="meaning">Byt frekvens</span>
+                        <span class="usage">"QSY 7025" = Byt till 7025 kHz</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QRV</span>
+                        <span class="meaning">Jag är redo</span>
+                        <span class="usage">"QRV?" = Är du redo?</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QRP</span>
+                        <span class="meaning">Låg effekt (under 5W)</span>
+                        <span class="usage">"QRP 5W" = Jag kör med 5 watt</span>
+                    </div>
+                    <div class="q-code-card">
+                        <span class="q-code">QRO</span>
+                        <span class="meaning">Hög effekt</span>
+                        <span class="usage">Motsatsen till QRP</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>💡 Fråga med frågetecken</h4>
+                    <p>Lägg till <strong>?</strong> efter Q-koden för att göra den till en fråga:</p>
+                    <ul>
+                        <li><strong>QTH?</strong> = Var är du?</li>
+                        <li><strong>QRS?</strong> = Ska jag sänka hastigheten?</li>
+                        <li><strong>QSL?</strong> = Bekräftar du mottagning?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <h2>🔤 CW-förkortningar</h2>
+                
+                <p>Utöver Q-koder finns massor av förkortningar som sparar tid:</p>
+                
+                <div class="abbreviations-grid">
+                    <div class="abbrev-category">
+                        <h4>👋 Hälsningar</h4>
+                        <div class="abbrev-list">
+                            <div class="abbrev"><span class="code">GM</span><span class="meaning">Good Morning</span></div>
+                            <div class="abbrev"><span class="code">GA</span><span class="meaning">Good Afternoon</span></div>
+                            <div class="abbrev"><span class="code">GE</span><span class="meaning">Good Evening</span></div>
+                            <div class="abbrev"><span class="code">GN</span><span class="meaning">Good Night</span></div>
+                            <div class="abbrev"><span class="code">73</span><span class="meaning">Bästa hälsningar</span></div>
+                            <div class="abbrev"><span class="code">88</span><span class="meaning">Kärlek & kyssar (till YL/XYL)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="abbrev-category">
+                        <h4>📻 Under QSO</h4>
+                        <div class="abbrev-list">
+                            <div class="abbrev"><span class="code">CQ</span><span class="meaning">Allmänt anrop</span></div>
+                            <div class="abbrev"><span class="code">DE</span><span class="meaning">Från (this is)</span></div>
+                            <div class="abbrev"><span class="code">K</span><span class="meaning">Över till dig</span></div>
+                            <div class="abbrev"><span class="code">KN</span><span class="meaning">Endast du får svara</span></div>
+                            <div class="abbrev"><span class="code">BK</span><span class="meaning">Break (snabb växling)</span></div>
+                            <div class="abbrev"><span class="code">R</span><span class="meaning">Roger, mottaget</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="abbrev-category">
+                        <h4>📝 Information</h4>
+                        <div class="abbrev-list">
+                            <div class="abbrev"><span class="code">UR</span><span class="meaning">Your (din/ditt)</span></div>
+                            <div class="abbrev"><span class="code">RST</span><span class="meaning">Signalrapport</span></div>
+                            <div class="abbrev"><span class="code">NAME</span><span class="meaning">Namn</span></div>
+                            <div class="abbrev"><span class="code">OP</span><span class="meaning">Operatör</span></div>
+                            <div class="abbrev"><span class="code">HR</span><span class="meaning">Here (här)</span></div>
+                            <div class="abbrev"><span class="code">ES</span><span class="meaning">And (och)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="abbrev-category">
+                        <h4>⚙️ Utrustning</h4>
+                        <div class="abbrev-list">
+                            <div class="abbrev"><span class="code">RIG</span><span class="meaning">Radio/sändare</span></div>
+                            <div class="abbrev"><span class="code">ANT</span><span class="meaning">Antenn</span></div>
+                            <div class="abbrev"><span class="code">PWR</span><span class="meaning">Effekt (power)</span></div>
+                            <div class="abbrev"><span class="code">WX</span><span class="meaning">Väder</span></div>
+                            <div class="abbrev"><span class="code">HW</span><span class="meaning">How (hur)</span></div>
+                            <div class="abbrev"><span class="code">HPE</span><span class="meaning">Hope (hoppas)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="abbrev-category">
+                        <h4>😊 Uttryck</h4>
+                        <div class="abbrev-list">
+                            <div class="abbrev"><span class="code">TNX</span><span class="meaning">Thanks (tack)</span></div>
+                            <div class="abbrev"><span class="code">FER</span><span class="meaning">For (för)</span></div>
+                            <div class="abbrev"><span class="code">FB</span><span class="meaning">Fine Business (utmärkt!)</span></div>
+                            <div class="abbrev"><span class="code">VY</span><span class="meaning">Very (mycket)</span></div>
+                            <div class="abbrev"><span class="code">CUAGN</span><span class="meaning">See you again</span></div>
+                            <div class="abbrev"><span class="code">HI</span><span class="meaning">Skratt (hi hi!)</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="abbrev-category">
+                        <h4>👥 Personer</h4>
+                        <div class="abbrev-list">
+                            <div class="abbrev"><span class="code">OM</span><span class="meaning">Old Man (radioamatör, man)</span></div>
+                            <div class="abbrev"><span class="code">YL</span><span class="meaning">Young Lady (ogift kvinna)</span></div>
+                            <div class="abbrev"><span class="code">XYL</span><span class="meaning">Ex-YL (gift kvinna, fru)</span></div>
+                            <div class="abbrev"><span class="code">DX</span><span class="meaning">Fjärran station</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fun-fact">
+                    <h4>📜 Varför 73?</h4>
+                    <p>73 har använts sedan 1857! Ursprungligen var det telegrafkod för "bästa hälsningar". Det har inget med morsetecken att göra – det är bara ett nummer med tradition. 88 (love and kisses) kom senare som en variant.</p>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <h2>📞 Ditt första QSO – steg för steg</h2>
+                
+                <p>Så här går ett typiskt CW-QSO till. Följ mallen i början – improvisera senare!</p>
+                
+                <div class="qso-example">
+                    <h4>🔊 Du ropar CQ:</h4>
+                    <div class="qso-exchange">
+                        <div class="qso-line sent">
+                            <span class="direction">DU:</span>
+                            <span class="morse-text">CQ CQ CQ DE SA0XXX SA0XXX SA0XXX K</span>
+                        </div>
+                        <p class="qso-translation">"Jag anropar alla, detta är SA0XXX, kom"</p>
+                        
+                        <div class="qso-line received">
+                            <span class="direction">SVAR:</span>
+                            <span class="morse-text">SA0XXX DE DL1ABC DL1ABC K</span>
+                        </div>
+                        <p class="qso-translation">"SA0XXX, detta är DL1ABC, kom"</p>
+                        
+                        <div class="qso-line sent">
+                            <span class="direction">DU:</span>
+                            <span class="morse-text">DL1ABC DE SA0XXX = GM TNX FER CALL = UR RST 599 599 = NAME ERIK ERIK = QTH STOCKHOLM = HW CPY? DL1ABC DE SA0XXX K</span>
+                        </div>
+                        <p class="qso-translation">"DL1ABC från SA0XXX, god morgon, tack för anropet, din signal är 599, mitt namn är Erik, jag är i Stockholm, hur kopierar du? Kom"</p>
+                        
+                        <div class="qso-line received">
+                            <span class="direction">SVAR:</span>
+                            <span class="morse-text">SA0XXX DE DL1ABC = R FB ERIK = UR RST 579 579 = NAME HANS = QTH BERLIN = RIG IS K3 ES ANT DIPOLE = TNX FER QSO = 73 SA0XXX DE DL1ABC K</span>
+                        </div>
+                        <p class="qso-translation">"Mottaget Erik, din signal 579, jag heter Hans, QTH Berlin, kör K3 med dipol, tack för QSO, 73"</p>
+                        
+                        <div class="qso-line sent">
+                            <span class="direction">DU:</span>
+                            <span class="morse-text">DL1ABC DE SA0XXX = R FB HANS = VY TNX FER QSO ES HPE CUAGN = 73 73 GL ES DX = DL1ABC DE SA0XXX SK</span>
+                        </div>
+                        <p class="qso-translation">"Tack Hans, hoppas vi hörs igen, 73, lycka till, slut på QSO"</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📝 Minimalt QSO</h4>
+                    <p>I en contest eller vid dåliga konditioner räcker det med:</p>
+                    <div class="minimal-qso">
+                        <p><strong>CQ TEST SA0XXX</strong></p>
+                        <p><strong>SA0XXX 599 12</strong> (signal + contestnummer)</p>
+                        <p><strong>TU 599 05</strong> (tack, signal + ditt nummer)</p>
+                        <p><strong>TU</strong></p>
+                    </div>
+                    <p>4 utbyten – klart! Det kan ta under 30 sekunder.</p>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <h2>📻 Hitta CW-trafik</h2>
+                
+                <p>CW har dedikerade segment på varje band:</p>
+                
+                <div class="band-segments">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Band</th>
+                                <th>CW-segment</th>
+                                <th>Bästa tid</th>
+                                <th>Typisk trafik</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>160m</td>
+                                <td>1.810 - 1.838 MHz</td>
+                                <td>Natt</td>
+                                <td>Europeisk DX</td>
+                            </tr>
+                            <tr>
+                                <td>80m</td>
+                                <td>3.500 - 3.570 MHz</td>
+                                <td>Kväll/natt</td>
+                                <td>Skandinavien, Europa</td>
+                            </tr>
+                            <tr>
+                                <td>40m</td>
+                                <td>7.000 - 7.040 MHz</td>
+                                <td>Kväll</td>
+                                <td>Europa, ibland DX</td>
+                            </tr>
+                            <tr class="recommended">
+                                <td>20m ⭐</td>
+                                <td>14.000 - 14.070 MHz</td>
+                                <td>Dagtid</td>
+                                <td>Världsomspännande!</td>
+                            </tr>
+                            <tr>
+                                <td>15m</td>
+                                <td>21.000 - 21.070 MHz</td>
+                                <td>Dagtid</td>
+                                <td>DX vid goda konditioner</td>
+                            </tr>
+                            <tr>
+                                <td>10m</td>
+                                <td>28.000 - 28.070 MHz</td>
+                                <td>Dagtid</td>
+                                <td>Sällsynt, men magiskt!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box">
+                    <h4>💡 Börja på 40m eller 20m</h4>
+                    <p><strong>40m (7 MHz)</strong> är bra på kvällen med europeisk trafik. <strong>20m (14 MHz)</strong> är det mest aktiva bandet dagtid med chans till DX. Lyssna först, lär dig mönstret!</p>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <h2>🎯 Tips för nybörjare</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>📝 Skriv manus</h4>
+                        <p>Ha din "speech" nedskriven framför dig. CQ-anrop, namn, QTH, RST – allt du behöver sända.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4>👂 Lyssna först</h4>
+                        <p>Spendera tid på att bara lyssna innan du sänder. Lär dig hur QSO:n går till i praktiken.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4>🐢 Sänk hastigheten</h4>
+                        <p>Kör 12-15 WPM i början. De flesta anpassar sig till din hastighet om du kör långsamt.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4>🔄 Svara på CQ</h4>
+                        <p>Enklare än att ropa CQ själv! Någon annan driver QSO:t och du följer med.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4>❓ Fråga om du missar</h4>
+                        <p>"NAME?" eller "QTH?" är helt OK att fråga. Alla missar ibland!</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4>📓 Logga!</h4>
+                        <p>Skriv ner varje QSO med datum, tid, frekvens, anropssignal och RST. Det är tradition!</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Var inte rädd!</h4>
+                    <p>Alla CW-operatörer var nybörjare en gång. De flesta är väldigt hjälpsamma och sänker gärna hastigheten. Det värsta som kan hända är att du inte förstår – och då tackar du bara och säger 73!</p>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <h2>🏆 CW-aktiviteter</h2>
+                
+                <p>Det finns massor att göra med CW utöver vanliga QSO:n:</p>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>🏅 Contests</h4>
+                        <p>Tävlingar där du gör så många QSO:n som möjligt under begränsad tid. CQ WW, ARRL DX, CQ WPX...</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🌍 DX-jakt</h4>
+                        <p>Samla länder och zoner. DXCC-diplomet kräver 100 bekräftade länder!</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>⚡ QRP</h4>
+                        <p>Kör med max 5 watt! Att nå andra sidan jorden med minimal effekt är en utmaning.</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🏔️ SOTA</h4>
+                        <p>Summits On The Air – aktivera bergstoppar och gör QSO:n därifrån!</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🏰 Skeds</h4>
+                        <p>Planerade QSO:n med specifika stationer vid bestämda tider.</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🔧 Homebrew</h4>
+                        <p>Bygg din egen CW-sändare! En enkel QRP-rigg kan byggas på en kväll.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <div class="summary-box">
+                    <h3>📝 Sammanfattning</h3>
+                    <ul>
+                        <li>Q-koder är internationella: QTH (plats), QRS (sänk hastighet), QSL (bekräftelse)</li>
+                        <li>73 = bästa hälsningar, CQ = allmänt anrop, DE = från</li>
+                        <li>Ett standard-QSO: CQ → svar → utbyte (RST, namn, QTH) → 73 → SK</li>
+                        <li>Börja med att svara på CQ – lättare än att ropa själv</li>
+                        <li>20m (14 MHz) är bästa bandet för nybörjare dagtid</li>
+                        <li>Var inte rädd – alla har varit nybörjare!</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="chapter-section">
+                <div class="congratulations-box">
+                    <h3>🎉 Grattis – du har slutfört morsekodsboken!</h3>
+                    <p>Du har nu grunderna för att börja med CW. Kom ihåg:</p>
+                    <ul>
+                        <li>Övning ger färdighet – träna varje dag!</li>
+                        <li>Lyssna på riktig CW så ofta du kan</li>
+                        <li>Gör ditt första QSO så snart du vågar</li>
+                        <li>Ha kul – det är hela poängen!</li>
+                    </ul>
+                    <p class="cw-goodbye">· · · – – – · · · &nbsp;&nbsp; – · – · – &nbsp;&nbsp; · – · – · – &nbsp;&nbsp; – – · · – –</p>
+                    <p><em>73 de Radioskola.se!</em></p>
+                </div>
+            </section>
+
+            <section class="chapter-section exercises-section">
+                <h2>✍️ Testa dig själv!</h2>
+                <p>Avslutande quiz om Q-koder och CW-trafik.</p>
+                <div class="exercises-container" id="exercisesContainer"></div>
+                <div class="exercise-results" id="exerciseResults" style="display: none;">
+                    <h3>Ditt resultat</h3>
+                    <p>Du fick <span id="correctCount">0</span> av <span id="totalCount">0</span> rätt!</p>
+                    <button class="btn btn-secondary" onclick="resetExercises()">Försök igen</button>
+                </div>
+            </section>
+
+            <nav class="chapter-navigation">
+                <a href="cw-5-skicka.html" class="nav-btn prev">
+                    <span class="nav-direction">← Föregående</span>
+                    <span class="nav-title">Skicka morse</span>
+                </a>
+                <a href="../../index.html#bocker" class="nav-btn next">
+                    <span class="nav-direction">Tillbaka →</span>
+                    <span class="nav-title">Alla böcker</span>
+                </a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Radioskola.se</p>
+        </div>
+    </footer>
+
+    <script src="../../js/data/morse-chapters.js"></script>
+    <script src="../../js/exercises.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chapter = morseChapters.find(c => c.id === 'morse-6');
+            if (chapter && chapter.exercises) {
+                loadExercises(chapter.exercises);
+            }
+        });
+    </script>
+</body>
+</html>

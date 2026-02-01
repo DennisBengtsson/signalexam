@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMR446 – Komradio för alla | Radioskola.se</title>
+    <style>
+        /* ==========================================
+           PDF-OPTIMERAD STILMALL
+           ========================================== */
+        
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: white;
+            margin: 0;
+            padding: 20px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        
+        /* Rubriker */
+        h1 {
+            font-size: 28pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 0.5em 0;
+            padding-bottom: 0.3em;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 1.5em 0 0.75em 0;
+            padding-bottom: 0.2em;
+            border-bottom: 1px solid #bdc3c7;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #34495e;
+            margin: 1.25em 0 0.5em 0;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 1em 0 0.5em 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0 0 0.75em 0;
+            text-align: justify;
+            orphans: 3;
+            widows: 3;
+        }
+        
+        /* Länkar - visa URL vid utskrift */
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        
+        @media print {
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+                font-size: 9pt;
+                color: #7f8c8d;
+            }
+        }
+        
+        /* Listor */
+        ul, ol {
+            margin: 0.5em 0 1em 0;
+            padding-left: 1.5em;
+        }
+        
+        li {
+            margin-bottom: 0.4em;
+        }
+        
+        /* Framsida */
+        .cover-page {
+            page-break-after: always;
+            text-align: center;
+            padding-top: 15vh;
+            min-height: 90vh;
+        }
+        
+        .cover-icon {
+            font-size: 80pt;
+            margin-bottom: 0.25em;
+        }
+        
+        .cover-title {
+            font-size: 36pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 0.25em 0;
+            border: none;
+            padding: 0;
+        }
+        
+        .cover-subtitle {
+            font-size: 18pt;
+            color: #7f8c8d;
+            margin: 0 0 2em 0;
+            font-style: italic;
+        }
+        
+        .cover-meta {
+            font-size: 12pt;
+            color: #95a5a6;
+            margin-top: 4em;
+        }
+        
+        .cover-meta p {
+            text-align: center;
+            margin: 0.25em 0;
+        }
+        
+        .cover-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 0.5em 1.5em;
+            border-radius: 25px;
+            font-size: 11pt;
+            font-weight: bold;
+            margin-top: 2em;
+        }
+        
+        /* Innehållsförteckning */
+        .toc-page {
+            page-break-after: always;
+        }
+        
+        .toc-title {
+            font-size: 20pt;
+            margin-bottom: 1em;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.5em 0;
+            border-bottom: 1px dotted #bdc3c7;
+        }
+        
+        .toc-chapter {
+            font-weight: bold;
+        }
+        
+        .toc-page-num {
+            color: #7f8c8d;
+        }
+        
+        /* Kapitel */
+        .chapter {
+            page-break-before: always;
+        }
+        
+        .chapter:first-of-type {
+            page-break-before: auto;
+        }
+        
+        .chapter-header {
+            margin-bottom: 1.5em;
+            padding-bottom: 1em;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .chapter-number {
+            font-size: 14pt;
+            color: #3498db;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .chapter-title {
+            font-size: 24pt;
+            margin: 0.25em 0 0 0;
+            border: none;
+            padding: 0;
+        }
+        
+        /* Intro-ruta */
+        .intro-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 1em 1.25em;
+            margin: 1.5em 0;
+            font-size: 11pt;
+        }
+        
+        .intro-box p {
+            margin: 0;
+            font-style: italic;
+        }
+        
+        /* Inforutor */
+        .info-box {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 1em 1.25em;
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+        
+        .info-box h4 {
+            color: #0c5460;
+            margin: 0 0 0.5em 0;
+            font-size: 11pt;
+        }
+        
+        .info-box p {
+            margin: 0;
+        }
+        
+        .info-box ul {
+            margin: 0.5em 0 0 0;
+        }
+        
+        /* Varningsruta */
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1em 1.25em;
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+        
+        .warning-box h4 {
+            color: #856404;
+            margin: 0 0 0.5em 0;
+            font-size: 11pt;
+        }
+        
+        .warning-box p, .warning-box ul {
+            margin: 0;
+        }
+        
+        /* Tips-ruta */
+        .tip-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 1em 1.25em;
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+        
+        .tip-box h4 {
+            color: #155724;
+            margin: 0 0 0.5em 0;
+            font-size: 11pt;
+        }
+        
+        /* Highlight-ruta */
+        .highlight-box {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 1em 1.25em;
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+        
+        .highlight-box h4 {
+            color: #2c3e50;
+            margin: 0 0 0.5em 0;
+        }
+        
+        /* Tabeller */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25em 0;
+            font-size: 10pt;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 0.5em 0.75em;
+            text-align: left;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tr.highlight {
+            background: #fff3cd;
+        }
+        
+        /* Sammanfattning */
+        .summary-box {
+            background: #f4f6f7;
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            padding: 1.25em;
+            margin: 1.5em 0;
+            page-break-inside: avoid;
+        }
+        
+        .summary-box h3 {
+            margin: 0 0 0.75em 0;
+            color: #2c3e50;
+        }
+        
+        .summary-box ul {
+            margin: 0;
+        }
+        
+        /* Övningar */
+        .exercises-section {
+            page-break-before: always;
+            background: #f8f9fa;
+            padding: 1.5em;
+            border-radius: 8px;
+            margin: 2em 0;
+        }
+        
+        .exercises-section h2 {
+            border-bottom: 2px solid #9b59b6;
+            color: #8e44ad;
+        }
+        
+        .exercise {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em 0;
+            page-break-inside: avoid;
+        }
+        
+        .exercise-question {
+            font-weight: bold;
+            margin-bottom: 0.75em;
+        }
+        
+        .exercise-options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .exercise-options li {
+            padding: 0.4em 0 0.4em 2em;
+            position: relative;
+        }
+        
+        .exercise-options li:before {
+            content: "○";
+            position: absolute;
+            left: 0;
+            font-size: 14pt;
+        }
+        
+        /* Anteckningsruta */
+        .notes-box {
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1.5em 0;
+            min-height: 100px;
+        }
+        
+        .notes-box h4 {
+            color: #7f8c8d;
+            margin: 0 0 0.5em 0;
+            font-size: 10pt;
+        }
+        
+        .notes-lines {
+            border-bottom: 1px solid #ecf0f1;
+            height: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        /* Facit-sektion */
+        .answer-key {
+            page-break-before: always;
+            background: #f0f0f0;
+            padding: 1.5em;
+            border-radius: 8px;
+        }
+        
+        .answer-key h2 {
+            border-bottom-color: #27ae60;
+            color: #27ae60;
+        }
+        
+        .answer-item {
+            margin: 0.5em 0;
+            padding: 0.5em;
+            background: white;
+            border-radius: 4px;
+        }
+        
+        .answer-item strong {
+            color: #27ae60;
+        }
+        
+        /* Sidfot */
+        .page-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 9pt;
+            color: #95a5a6;
+            padding: 0.5em;
+        }
+        
+        @media print {
+            .page-footer {
+                position: running(footer);
+            }
+            
+            @page {
+                @bottom-center {
+                    content: element(footer);
+                }
+            }
+        }
+        
+        /* Utskriftsknapp - döljs vid utskrift */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #2980b9;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                padding: 0;
+            }
+        }
+        
+        /* Steg-lista */
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3em;
+            margin-bottom: 1em;
+        }
+        
+        .step-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2em;
+            height: 2em;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2em;
+            font-weight: bold;
+        }
+        
+        /* Grid för två kolumner */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5em;
+            margin: 1em 0;
+        }
+        
+        @media print {
+            .two-column {
+                display: block;
+            }
+            
+            .two-column > * {
+                margin-bottom: 1em;
+            }
+        }
+        
+        /* Kompakt kanaltabell */
+        .channel-table {
+            font-size: 9pt;
+        }
+        
+        .channel-table th, .channel-table td {
+            padding: 0.3em 0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<button class="print-button" onclick="window.print()">🖨️ Skriv ut / Spara som PDF</button>
+
+<!-- ==================== FRAMSIDA ==================== -->
+<div class="cover-page">
+    <div class="cover-icon">📻</div>
+    <h1 class="cover-title">PMR446</h1>
+    <p class="cover-subtitle">Komradio för alla – ingen licens krävs!</p>
+    
+    <div class="cover-badge">GRATIS LICENSFRI RADIO</div>
+    
+    <div class="cover-meta">
+        <p><strong>Radioskola.se</strong></p>
+        <p>Version 1.0 – Februari 2026</p>
+        <p>Lär dig använda PMR-radio på rätt sätt</p>
+    </div>
+</div>
+
+<!-- ==================== INNEHÅLLSFÖRTECKNING ==================== -->
+<div class="toc-page">
+    <h2 class="toc-title">📑 Innehållsförteckning</h2>
+    
+    <ul class="toc-list">
+        <li>
+            <span class="toc-chapter">Kapitel 1: Vad är PMR446?</span>
+            <span class="toc-page-num">3</span>
+        </li>
+        <li>
+            <span class="toc-chapter">Kapitel 2: Kom igång med din radio</span>
+            <span class="toc-page-num">6</span>
+        </li>
+        <li>
+            <span class="toc-chapter">Kapitel 3: Kanaler och koder</span>
+            <span class="toc-page-num">10</span>
+        </li>
+        <li>
+            <span class="toc-chapter">Kapitel 4: Räckvidd och tips</span>
+            <span class="toc-page-num">14</span>
+        </li>
+        <li>
+            <span class="toc-chapter">Kapitel 5: Från PMR till amatörradio</span>
+            <span class="toc-page-num">18</span>
+        </li>
+        <li>
+            <span class="toc-chapter">Övningar med facit</span>
+            <span class="toc-page-num">22</span>
+        </li>
+    </ul>
+    
+    <div class="info-box" style="margin-top: 3em;">
+        <h4>📖 Om denna bok</h4>
+        <p>Den här boken lär dig allt du behöver veta för att använda PMR446-radio. 
+        Du behöver inget certifikat – bara köp en radio och börja! Boken passar alla åldrar, 
+        från 8 år och uppåt.</p>
+    </div>
+    
+    <div class="notes-box" style="margin-top: 2em;">
+        <h4>✏️ Mina anteckningar</h4>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+    </div>
+</div>
+
+<!-- ==================== KAPITEL 1 ==================== -->
+<div class="chapter">
+    <div class="chapter-header">
+        <span class="chapter-number">Kapitel 1</span>
+        <h1 class="chapter-title">📻 Vad är PMR446?</h1>
+    </div>
+    
+    <div class="intro-box">
+        <p>Har du sett de små radioapparaterna som folk använder på skidbacken, campingen eller på byggen? 
+        Det är troligen PMR446-radior – och det bästa är att <strong>alla får använda dem utan certifikat eller avgift!</strong></p>
+    </div>
+    
+    <h2>PMR446 – radio för alla</h2>
+    
+    <p><strong>PMR446</strong> står för <em>Private Mobile Radio, 446 MHz</em>. Det är en typ av komradio 
+    (walkie-talkie) som är helt fri att använda i Sverige och hela Europa.</p>
+    
+    <div class="highlight-box">
+        <h4>🎉 Det här är det roliga med PMR446:</h4>
+        <ul>
+            <li>✅ <strong>Ingen avgift</strong> – det kostar inget att använda</li>
+            <li>✅ <strong>Inget certifikat</strong> – du behöver inte ta något prov</li>
+            <li>✅ <strong>Ingen registrering</strong> – bara köp en radio och börja!</li>
+            <li>✅ <strong>Alla åldrar</strong> – även barn kan använda PMR-radio</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h4>💡 Varför heter det 446?</h4>
+        <p>Siffran 446 kommer från frekvensen: PMR-radior sänder på ungefär 446 MHz (megahertz). 
+        Det är i UHF-bandet, samma område där walkie-talkies och vissa TV-kanaler finns.</p>
+    </div>
+    
+    <h2>Vem använder PMR446?</h2>
+    
+    <p>PMR-radio används av massor av människor i vardagen:</p>
+    
+    <ul>
+        <li><strong>👨‍👩‍👧‍👦 Familjer</strong> – Hålla kontakt på nöjesparker, campingar eller när barnen leker ute</li>
+        <li><strong>⛷️ Skidåkare</strong> – Hitta varandra i skidbacken utan att behöva mobiltäckning</li>
+        <li><strong>🏕️ Friluftsfolk</strong> – Vandring, jakt, fiske – när mobilen inte har täckning</li>
+        <li><strong>🏗️ Arbetsplatser</strong> – Byggarbetare, eventpersonal, lagerarbetare</li>
+        <li><strong>🚴 Cyklister & MC</strong> – Kommunicera under turer utan att stanna</li>
+        <li><strong>🎮 Airsoft & Paintball</strong> – Taktisk kommunikation under spel</li>
+    </ul>
+    
+    <h2>Reglerna du måste följa</h2>
+    
+    <p>Även om PMR446 är licensfritt finns det några regler:</p>
+    
+    <table>
+        <tr>
+            <th>Regel</th>
+            <th>Förklaring</th>
+        </tr>
+        <tr>
+            <td><strong>Max 0,5 watt effekt</strong></td>
+            <td>Radion får inte sända med mer än 500 milliwatt. Alla godkända PMR-radior följer detta automatiskt.</td>
+        </tr>
+        <tr>
+            <td><strong>Fast antenn</strong></td>
+            <td>Du får inte byta antennen till en större. Antennen ska sitta fast på radion.</td>
+        </tr>
+        <tr>
+            <td><strong>CE-märkt radio</strong></td>
+            <td>Radion måste vara godkänd för användning i Europa (CE-märkt).</td>
+        </tr>
+        <tr>
+            <td><strong>Endast 16 kanaler</strong></td>
+            <td>PMR446 har exakt 16 kanaler på frekvenserna 446,00625 - 446,19375 MHz.</td>
+        </tr>
+    </table>
+    
+    <div class="warning-box">
+        <h4>⚠️ Viktigt att veta</h4>
+        <p>Köp inte billiga radior från okända säljare utanför EU. De kan ha för hög effekt eller fel frekvenser 
+        – och då bryter du mot lagen!</p>
+    </div>
+    
+    <h2>PMR446 vs Mobiltelefon</h2>
+    
+    <p>Varför använda radio när alla har mobiler? Här är skillnaderna:</p>
+    
+    <table>
+        <tr>
+            <th>Egenskap</th>
+            <th>📻 PMR446</th>
+            <th>📱 Mobiltelefon</th>
+        </tr>
+        <tr>
+            <td>Behöver täckning?</td>
+            <td><strong>Nej – fungerar överallt!</strong></td>
+            <td>Ja – kräver mobilmaster</td>
+        </tr>
+        <tr>
+            <td>Kostnad per samtal</td>
+            <td><strong>Gratis – alltid!</strong></td>
+            <td>Abonnemang krävs</td>
+        </tr>
+        <tr>
+            <td>Prata med många samtidigt</td>
+            <td><strong>Ja – alla hör direkt!</strong></td>
+            <td>Nej – ett samtal åt gången</td>
+        </tr>
+        <tr>
+            <td>Batteritid</td>
+            <td><strong>Ofta 20+ timmar</strong></td>
+            <td>Ofta 8-12 timmar</td>
+        </tr>
+        <tr>
+            <td>Räckvidd</td>
+            <td>500m - 5km (terräng)</td>
+            <td><strong>Hela världen</strong> (med täckning)</td>
+        </tr>
+    </table>
+    
+    <h2>Så fungerar radio – enkelt förklarat</h2>
+    
+    <p>När du pratar i en PMR-radio händer detta:</p>
+    
+    <ol class="step-list">
+        <li><strong>Du trycker på PTT</strong> – PTT = Push To Talk. När du håller in knappen börjar radion sända.</li>
+        <li><strong>Din röst blir radiovågor</strong> – Mikrofonen plockar upp din röst och radion omvandlar den till elektromagnetiska vågor.</li>
+        <li><strong>Vågorna färdas genom luften</strong> – Radiovågorna åker ut från din antenn med ljusets hastighet!</li>
+        <li><strong>Kompisens radio tar emot</strong> – Alla radior på samma kanal fångar upp signalen och spelar upp din röst.</li>
+    </ol>
+    
+    <div class="tip-box">
+        <h4>🤯 Visste du?</h4>
+        <p>Radiovågor färdas med 300 000 kilometer per sekund – samma hastighet som ljus! 
+        Din röst når kompisen nästan omedelbart.</p>
+    </div>
+    
+    <div class="summary-box">
+        <h3>📝 Sammanfattning – Kapitel 1</h3>
+        <ul>
+            <li>PMR446 är licensfri komradio som alla får använda</li>
+            <li>Frekvensen är 446 MHz med 16 kanaler</li>
+            <li>Max effekt är 0,5 watt med fast antenn</li>
+            <li>Perfekt när mobilen inte har täckning</li>
+            <li>Alla på samma kanal hör varandra direkt</li>
+        </ul>
+    </div>
+    
+    <div class="notes-box">
+        <h4>✏️ Mina anteckningar</h4>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+    </div>
+</div>
+
+<!-- ==================== KAPITEL 2 ==================== -->
+<div class="chapter">
+    <div class="chapter-header">
+        <span class="chapter-number">Kapitel 2</span>
+        <h1 class="chapter-title">🚀 Kom igång med din radio</h1>
+    </div>
+    
+    <div class="intro-box">
+        <p>Dags att börja på riktigt! I det här kapitlet lär du dig allt du behöver för att köpa rätt radio, 
+        ladda den ordentligt och göra din första sändning.</p>
+    </div>
+    
+    <h2>Vilken radio ska du köpa?</h2>
+    
+    <p>Det finns PMR-radior i alla prisklasser:</p>
+    
+    <table>
+        <tr>
+            <th>Prisklass</th>
+            <th>Pris (per par)</th>
+            <th>Passar för</th>
+            <th>Exempel</th>
+        </tr>
+        <tr>
+            <td><strong>Budget</strong></td>
+            <td>200-400 kr</td>
+            <td>Tillfällig användning, barn, nybörjare</td>
+            <td>Motorola TLKR, Midland G5</td>
+        </tr>
+        <tr class="highlight">
+            <td><strong>Mellanpris ⭐</strong></td>
+            <td>500-1000 kr</td>
+            <td>Friluftsfolk, familjer, regelbunden användning</td>
+            <td>Motorola T82, Midland G9 Pro</td>
+        </tr>
+        <tr>
+            <td><strong>Premium</strong></td>
+            <td>1000+ kr</td>
+            <td>Proffs, extrema förhållanden</td>
+            <td>Motorola T92, Midland XT70</td>
+        </tr>
+    </table>
+    
+    <div class="highlight-box">
+        <h4>✅ Checklista vid köp</h4>
+        <ul>
+            <li>☐ CE-märke (obligatoriskt i Europa)</li>
+            <li>☐ Rätt antal kanaler (ska ha 16 PMR-kanaler)</li>
+            <li>☐ Batterityp som passar dig (AAA eller laddbart)</li>
+            <li>☐ Vattentålighet om du är ute i regn</li>
+            <li>☐ Laddstation om du väljer laddbara</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h4>⚠️ Undvik dessa misstag</h4>
+        <ul>
+            <li><strong>Köp inte "Baofeng" eller liknande</strong> – de är amatörradio, inte PMR446!</li>
+            <li><strong>Köp inte radior med "5W" eller mer</strong> – olagligt på PMR!</li>
+            <li><strong>Undvik okända märken utan CE-märkning</strong></li>
+        </ul>
+    </div>
+    
+    <h2>Ladda batterierna rätt</h2>
+    
+    <h4>🔌 Laddningsbara batterier (NiMH/Li-ion)</h4>
+    <ul>
+        <li>Ladda fullt innan första användning (8-12 timmar)</li>
+        <li>Moderna batterier behöver INTE laddas ur helt</li>
+        <li>Förvara svalt – inte i bilen på sommaren!</li>
+        <li>Ladda minst var 3:e månad även om du inte använder radion</li>
+    </ul>
+    
+    <h4>🔋 Vanliga batterier (AA/AAA)</h4>
+    <ul>
+        <li>Ha alltid reservbatterier med dig</li>
+        <li>Ta ur batterierna om radion inte används länge</li>
+        <li>Alkaliska batterier ger längst tid</li>
+        <li>Lithium-batterier funkar bäst i kyla</li>
+    </ul>
+    
+    <div class="tip-box">
+        <h4>💡 Proffstips</h4>
+        <p>Köp en radio som kan använda BÅDE laddbara batterier OCH vanliga AAA. 
+        Då kan du alltid köpa reservbatterier på macken om de laddbara tar slut!</p>
+    </div>
+    
+    <h2>Din första sändning</h2>
+    
+    <p>Nu är det dags – så här gör du:</p>
+    
+    <ol class="step-list">
+        <li><strong>Sätt i batterierna och slå på</strong><br>
+            Kontrollera att radion startar ordentligt. De flesta visar kanalens nummer på displayen.</li>
+        <li><strong>Välj samma kanal på båda radiorna</strong><br>
+            Använd kanalknapparna för att ställa in samma nummer på båda. Börja med kanal 8.</li>
+        <li><strong>LYSSNA först!</strong><br>
+            Innan du börjar prata – lyssna några sekunder. Är kanalen ledig? Avbryt aldrig någon annan.</li>
+        <li><strong>Tryck in PTT och prata</strong><br>
+            Håll radion ca 5-10 cm från munnen. Håll in PTT-knappen, vänta en halv sekund, prata tydligt.</li>
+        <li><strong>Släpp PTT för att lyssna</strong><br>
+            Säg "Kom" eller "Över" när du pratat klart, sedan släpper du knappen för att höra svaret.</li>
+    </ol>
+    
+    <h2>Radiovettig – så pratar du</h2>
+    
+    <div class="two-column">
+        <div class="tip-box">
+            <h4>✅ GÖR såhär</h4>
+            <ul>
+                <li><strong>Lyssna först</strong> – Kolla att kanalen är ledig</li>
+                <li><strong>Prata tydligt</strong> – Inte för snabbt</li>
+                <li><strong>Håll det kort</strong> – Säg det viktiga först</li>
+                <li><strong>Säg "Kom"</strong> – När du pratat klart</li>
+                <li><strong>Vänta på svar</strong> – Ge den andre tid</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>❌ Undvik detta</h4>
+            <ul>
+                <li><strong>Avbryt inte</strong> – Låt andra prata färdigt</li>
+                <li><strong>Svär inte</strong> – Alla kan höra dig</li>
+                <li><strong>Lek inte</strong> – Stör inte andras samtal</li>
+                <li><strong>Lämna inte PTT intryckt</strong> – Blockerar kanalen</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h4>💬 Exempel på radiosamtal</h4>
+        <p><strong>Du:</strong> "Hej Lisa, det är Erik. Hör du mig? Kom."<br>
+        <strong>Lisa:</strong> "Hej Erik! Ja, jag hör dig bra. Var är du? Kom."<br>
+        <strong>Du:</strong> "Jag är vid parkeringen. Kommer om fem minuter. Kom."<br>
+        <strong>Lisa:</strong> "Uppfattat! Ses snart. Slut."</p>
+    </div>
+    
+    <div class="summary-box">
+        <h3>📝 Sammanfattning – Kapitel 2</h3>
+        <ul>
+            <li>Köp CE-märkta radior från kända märken</li>
+            <li>Ladda batterierna fullt innan första användningen</li>
+            <li>Lyssna alltid före du sänder</li>
+            <li>Håll PTT intryckt när du pratar, släpp för att lyssna</li>
+            <li>Säg "Kom" när du pratat klart</li>
+        </ul>
+    </div>
+    
+    <div class="notes-box">
+        <h4>✏️ Mina anteckningar</h4>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+    </div>
+</div>
+
+<!-- ==================== KAPITEL 3 ==================== -->
+<div class="chapter">
+    <div class="chapter-header">
+        <span class="chapter-number">Kapitel 3</span>
+        <h1 class="chapter-title">🔢 Kanaler och koder</h1>
+    </div>
+    
+    <div class="intro-box">
+        <p>PMR446 har 16 kanaler och mystiska "koder" – CTCSS och DCS. Låter krångligt? Det är det inte! 
+        Här förklarar vi allt så att det blir glasklart.</p>
+    </div>
+    
+    <h2>De 16 kanalerna</h2>
+    
+    <p>Alla PMR446-radior i Europa använder samma 16 kanaler:</p>
+    
+    <table class="channel-table">
+        <tr>
+            <th>Kanal</th>
+            <th>Frekvens</th>
+            <th>Kanal</th>
+            <th>Frekvens</th>
+            <th>Kanal</th>
+            <th>Frekvens</th>
+            <th>Kanal</th>
+            <th>Frekvens</th>
+        </tr>
+        <tr>
+            <td>1</td><td>446.00625</td>
+            <td>5</td><td>446.05625</td>
+            <td>9</td><td>446.10625</td>
+            <td>13</td><td>446.15625</td>
+        </tr>
+        <tr>
+            <td>2</td><td>446.01875</td>
+            <td>6</td><td>446.06875</td>
+            <td>10</td><td>446.11875</td>
+            <td>14</td><td>446.16875</td>
+        </tr>
+        <tr>
+            <td>3</td><td>446.03125</td>
+            <td>7</td><td>446.08125</td>
+            <td>11</td><td>446.13125</td>
+            <td>15</td><td>446.18125</td>
+        </tr>
+        <tr>
+            <td>4</td><td>446.04375</td>
+            <td class="highlight"><strong>8</strong></td><td class="highlight"><strong>446.09375</strong></td>
+            <td>12</td><td>446.14375</td>
+            <td>16</td><td>446.19375</td>
+        </tr>
+    </table>
+    
+    <div class="info-box">
+        <h4>💡 Tips: Vilken kanal ska du välja?</h4>
+        <ul>
+            <li><strong>Kanal 1</strong> – Ofta upptagen, undvik för privat kommunikation</li>
+            <li><strong>Kanal 8</strong> – Vanlig "möteskanal" om ni vill hitta varandra</li>
+            <li><strong>Kanal 9-16</strong> – Ofta lugnare, bra för grupper</li>
+        </ul>
+    </div>
+    
+    <h2>Vad är CTCSS-koder?</h2>
+    
+    <p><strong>CTCSS</strong> (Continuous Tone-Coded Squelch System) är ett sätt att "filtrera" vem du hör i radion.</p>
+    
+    <h4>Så fungerar det:</h4>
+    <ol>
+        <li>Du ställer in en kod (t.ex. kod 5 = 88.5 Hz) på din radio</li>
+        <li>När du sänder skickas en ohörbar ton tillsammans med din röst</li>
+        <li>Bara radior med samma kod öppnar ljudet</li>
+        <li>Radior med annan kod (eller ingen kod) förblir tysta</li>
+    </ol>
+    
+    <div class="warning-box">
+        <h4>⚠️ Viktigt att förstå!</h4>
+        <p><strong>CTCSS är INTE kryptering!</strong> Det filtrerar bara vad DU hör. 
+        Alla andra kan fortfarande höra dig om de har en radio utan kod, eller med "monitor"-funktionen aktiverad.</p>
+        <p>Tänk på det som öronproppar med filter – du hör mindre, men du pratar fortfarande lika högt!</p>
+    </div>
+    
+    <h2>Vad är DCS-koder?</h2>
+    
+    <p><strong>DCS</strong> (Digital-Coded Squelch) fungerar på samma sätt som CTCSS, men använder digitala koder. 
+    Det finns 104 DCS-koder.</p>
+    
+    <table>
+        <tr>
+            <th>Egenskap</th>
+            <th>CTCSS</th>
+            <th>DCS</th>
+        </tr>
+        <tr>
+            <td>Typ</td>
+            <td>Analog ton</td>
+            <td>Digital kod</td>
+        </tr>
+        <tr>
+            <td>Antal koder</td>
+            <td>38-50</td>
+            <td>104</td>
+        </tr>
+        <tr>
+            <td>Kompatibilitet</td>
+            <td>Alla radior</td>
+            <td>Nyare radior</td>
+        </tr>
+    </table>
+    
+    <div class="tip-box">
+        <h4>💡 Vårt tips</h4>
+        <p>Använd <strong>CTCSS</strong> om du vill vara säker på att alla i gruppen kan använda samma kod, 
+        oavsett radiomärke.</p>
+    </div>
+    
+    <h2>När ska du använda koder?</h2>
+    
+    <div class="two-column">
+        <div class="tip-box">
+            <h4>✅ Bra att använda kod</h4>
+            <ul>
+                <li>På campingar med många användare</li>
+                <li>På event där flera grupper finns</li>
+                <li>I städer med mycket radiotrafik</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>❌ Skippa koden</h4>
+            <ul>
+                <li>I ödemarken där ingen annan finns</li>
+                <li>I nödsituationer (alla ska höra dig!)</li>
+                <li>Om någon har enkel radio utan koder</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="summary-box">
+        <h3>📝 Sammanfattning – Kapitel 3</h3>
+        <ul>
+            <li>PMR446 har 16 kanaler (446.00625 - 446.19375 MHz)</li>
+            <li>Kanal 8 används ofta som anropskanal</li>
+            <li>CTCSS/DCS-koder filtrerar vad du hör – inte vad andra hör!</li>
+            <li>Koder är INTE kryptering – alla kan höra dig</li>
+            <li>Bestäm kanal och eventuell kod innan ni skiljs åt</li>
+        </ul>
+    </div>
+    
+    <div class="notes-box">
+        <h4>✏️ Mina anteckningar</h4>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+    </div>
+</div>
+
+<!-- ==================== KAPITEL 4 ==================== -->
+<div class="chapter">
+    <div class="chapter-header">
+        <span class="chapter-number">Kapitel 4</span>
+        <h1 class="chapter-title">📡 Räckvidd och tips</h1>
+    </div>
+    
+    <div class="intro-box">
+        <p>"Upp till 10 km räckvidd!" står det på förpackningen. Men stämmer det? 
+        Här lär du dig sanningen om räckvidd – och hur du kan få ut det mesta ur din radio!</p>
+    </div>
+    
+    <h2>Hur långt når PMR446 egentligen?</h2>
+    
+    <p>Den ärliga sanningen: <strong>det beror helt på var du är!</strong></p>
+    
+    <table>
+        <tr>
+            <th>Miljö</th>
+            <th>Typisk räckvidd</th>
+            <th>Kommentar</th>
+        </tr>
+        <tr>
+            <td>🏙️ I staden</td>
+            <td>200m - 1 km</td>
+            <td>Byggnader blockerar signalen kraftigt</td>
+        </tr>
+        <tr>
+            <td>🏡 Villaområde</td>
+            <td>500m - 2 km</td>
+            <td>Bättre än innerstan</td>
+        </tr>
+        <tr>
+            <td>🌲 Skog</td>
+            <td>500m - 3 km</td>
+            <td>Träd absorberar signalen</td>
+        </tr>
+        <tr>
+            <td>🏔️ Öppen terräng</td>
+            <td>3 - 6 km</td>
+            <td>Här kommer radion till sin rätt!</td>
+        </tr>
+        <tr class="highlight">
+            <td>⛰️ Berg till dal</td>
+            <td>10 - 20+ km</td>
+            <td>Från en bergstopp med fri sikt!</td>
+        </tr>
+    </table>
+    
+    <div class="warning-box">
+        <h4>⚠️ Om "10 km räckvidd" på förpackningen</h4>
+        <p>Tillverkare mäter räckvidd under <em>perfekta förhållanden</em> – fri sikt, inga hinder, optimalt väder. 
+        I verkligheten får du ofta bara 10-30% av det. Lita inte blint på siffrorna!</p>
+    </div>
+    
+    <h2>Vad blockerar signalen?</h2>
+    
+    <table>
+        <tr>
+            <th>Hinder</th>
+            <th>Påverkan</th>
+            <th>Förklaring</th>
+        </tr>
+        <tr>
+            <td>🏔️ Berg och kullar</td>
+            <td><strong>Stoppar helt</strong></td>
+            <td>Mark och sten blockerar totalt</td>
+        </tr>
+        <tr>
+            <td>🏢 Byggnader</td>
+            <td><strong>Stoppar mycket</strong></td>
+            <td>Betong och stål blockerar effektivt</td>
+        </tr>
+        <tr>
+            <td>🌲 Träd</td>
+            <td>Dämpar</td>
+            <td>Speciellt lövträd på sommaren</td>
+        </tr>
+        <tr>
+            <td>🌧️ Regn/dimma</td>
+            <td>Liten påverkan</td>
+            <td>UHF påverkas lite av väder</td>
+        </tr>
+        <tr>
+            <td>☀️ Moln/sol</td>
+            <td>Ingen påverkan</td>
+            <td>Spelar ingen roll</td>
+        </tr>
+    </table>
+    
+    <h2>Tips för bättre räckvidd</h2>
+    
+    <ol class="step-list">
+        <li><strong>Sök höjd!</strong><br>
+            Det viktigaste tipset. Gå uppför en kulle, klättra upp på en sten. Kan dubbla räckvidden!</li>
+        <li><strong>Gå ut ur byggnaden</strong><br>
+            Inifrån ett hus når du mycket kortare. Gå ut eller öppna ett fönster.</li>
+        <li><strong>Håll radion upprätt</strong><br>
+            Antennen ska peka uppåt. Luta inte radion.</li>
+        <li><strong>Undvik att täcka antennen</strong><br>
+            Håll inte handen runt antennen. Håll radion i nedre delen.</li>
+        <li><strong>Laddade batterier</strong><br>
+            Svaga batterier = svagare sändning. Håll batterierna laddade!</li>
+        <li><strong>Byt kanal vid störningar</strong><br>
+            Om en kanal har mycket brus, prova en annan.</li>
+    </ol>
+    
+    <h2>Vanliga problem och lösningar</h2>
+    
+    <table>
+        <tr>
+            <th>Problem</th>
+            <th>Möjlig lösning</th>
+        </tr>
+        <tr>
+            <td>"Vi hör inte varandra alls"</td>
+            <td>Kolla samma kanal OCH samma kod. Finns ett berg emellan?</td>
+        </tr>
+        <tr>
+            <td>"Ljudet är hackigt"</td>
+            <td>Ni är nära gränsen – sök höjd eller byt kanal</td>
+        </tr>
+        <tr>
+            <td>"Konstiga röster på kanalen"</td>
+            <td>Andra användare – byt kanal eller använd CTCSS-kod</td>
+        </tr>
+        <tr>
+            <td>"Radion verkar svag"</td>
+            <td>Kolla antenn och batterier. "Low power"-läge?</td>
+        </tr>
+    </table>
+    
+    <div class="summary-box">
+        <h3>📝 Sammanfattning – Kapitel 4</h3>
+        <ul>
+            <li>Verklig räckvidd: 500m-5km (beroende på terräng)</li>
+            <li>Berg, byggnader och skog blockerar signalen</li>
+            <li>Höjd är det viktigaste för bättre räckvidd</li>
+            <li>Håll radion upprätt med antennen fri</li>
+            <li>Fulla batterier = full effekt</li>
+        </ul>
+    </div>
+    
+    <div class="notes-box">
+        <h4>✏️ Mina anteckningar</h4>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+        <div class="notes-lines"></div>
+    </div>
+</div>
+
+<!-- ==================== KAPITEL 5 ==================== -->
+<div class="chapter">
+    <div class="chapter-header">
+        <span class="chapter-number">Kapitel 5</span>
+        <h1 class="chapter-title">🎓 Från PMR till amatörradio</h1>
+    </div>
+    
+    <div class="intro-box">
+        <p>Tycker du att PMR446 är kul? Då kommer du ÄLSKA amatörradio! 
+        Här berättar vi vad som skiljer dem åt och hur du kan ta nästa steg.</p>
+    </div>
+    
+    <h2>PMR vs Amatörradio – vad är skillnaden?</h2>
+    
+    <table>
+        <tr>
+            <th>Egenskap</th>
+            <th>📻 PMR446</th>
+            <th>🎙️ Amatörradio</th>
+        </tr>
+        <tr>
+            <td>Certifikat</td>
+            <td>Inget krävs</td>
+            <td>Ja, kräver prov</td>
+        </tr>
+        <tr>
+            <td>Effekt</td>
+            <td>Max 0,5 watt</td>
+            <td><strong>Upp till 1000 watt!</strong></td>
+        </tr>
+        <tr>
+            <td>Frekvenser</td>
+            <td>Endast 16 kanaler</td>
+            <td><strong>Massor av band</strong></td>
+        </tr>
+        <tr>
+            <td>Antenn</td>
+            <td>Fast, får ej bytas</td>
+            <td><strong>Bygg vad du vill!</strong></td>
+        </tr>
+        <tr>
+            <td>Räckvidd</td>
+            <td>Några kilometer</td>
+            <td><strong>Hela världen!</strong></td>
+        </tr>
+        <tr>
+            <td>Bygga utrustning</td>
+            <td>Inte tillåtet</td>
+            <td><strong>Ja, uppmuntras!</strong></td>
+        </tr>
+    </table>
+    
+    <h2>Vad kan radioamatörer göra?</h2>
+    
+    <ul>
+        <li><strong>🌐 Prata med hela världen</strong> – Med kortvågsradio kan du nå Japan, Australien eller Brasilien!</li>
+        <li><strong>🛰️ Via satellit</strong> – Radioamatörer har egna satelliter!</li>
+        <li><strong>🌙 Studsa mot månen</strong> – EME studsar signaler mot månen och tillbaka</li>
+        <li><strong>🔧 Bygga egen utrustning</strong> – Designa sändare, mottagare och antenner</li>
+        <li><strong>🏆 Tävla i contest</strong> – Så många kontakter som möjligt på kort tid</li>
+        <li><strong>🆘 Nödkommunikation</strong> – Hjälpa till vid katastrofer</li>
+        <li><strong>💻 Digital kommunikation</strong> – FT8, DMR, D-STAR och mer</li>
+    </ul>
+    
+    <h2>Hur blir man radioamatör?</h2>
+    
+    <ol class="step-list">
+        <li><strong>Studera teorin</strong><br>
+            Lär dig om elektronik, radioteknik, antenner och regler. Använd böcker och webbkurser (som Radioskola.se!).</li>
+        <li><strong>Gör provträning</strong><br>
+            Träna på gamla provfrågor. Du behöver 70% rätt för att klara provet.</li>
+        <li><strong>Gör provet</strong><br>
+            Anmäl dig till ett certifikatsprov hos SSA eller en radioamatörklubb. Kostar ca 300-400 kr.</li>
+        <li><strong>Ansök om anropssignal</strong><br>
+            När du klarat provet ansöker du hos PTS. Grattis – nu är du radioamatör!</li>
+    </ol>
+    
+    <div class="highlight-box">
+        <h4>👶 Kan barn bli radioamatörer?</h4>
+        <p><strong>JA!</strong> Det finns ingen åldersgräns i Sverige. Den yngsta svenska radioamatören 
+        var bara 7 år gammal! Om du klarar provet får du certifikatet.</p>
+    </div>
+    
+    <h2>Vad kostar amatörradio?</h2>
+    
+    <table>
+        <tr>
+            <th>Sak</th>
+            <th>Kostnad</th>
+        </tr>
+        <tr>
+            <td>Certifikatsprovet</td>
+            <td>300-400 kr (engångskostnad)</td>
+        </tr>
+        <tr>
+            <td>Enkel handhållen radio</td>
+            <td>500-2000 kr</td>
+        </tr>
+        <tr>
+            <td>Kortvågsradio (HF)</td>
+            <td>5000-15000 kr</td>
+        </tr>
+        <tr>
+            <td>Enkel antenn</td>
+            <td>500-3000 kr (eller bygg själv!)</td>
+        </tr>
+    </table>
+    
+    <div class="tip-box">
+        <h4>💰 Budget-tips</h4>
+        <p>Du kan börja billigt! Köp en begagnad handhållen radio för några hundralappar. 
+        Många klubbar lånar ut utrustning till nybörjare.</p>
+    </div>
+    
+    <div class="summary-box">
+        <h3>📝 Sammanfattning – Kapitel 5</h3>
+        <ul>
+            <li>Amatörradio kräver certifikat men öppnar en helt ny värld</li>
+            <li>Du kan sända med upp till 1000W (istället för 0,5W)</li>
+            <li>Bygg egna antenner, prata med hela världen!</li>
+            <li>Det finns ingen åldersgräns – barn kan också ta certifikat</li>
+            <li>Börja med att läsa introduktionsboken på Radioskola.se</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box" style="text-align: center; margin-top: 2em;">
+        <h3>🎉 Grattis!</h3>
+        <p>Du har nu läst hela PMR446-boken! Du vet nu hur du använder din PMR-radio på rätt sätt, 
+        väljer kanaler och koder, och maximerar räckvidden.</p>
+        <p><strong>Nästa steg?</strong> Gå ut och använd din radio! Och när du är redo för mer – 
+        besök <strong>Radioskola.se</strong> för att börja din resa mot amatörradiocertifikatet!</p>
+    </div>
+</div>
+
+<!-- ==================== ÖVNINGAR ==================== -->
+<div class="exercises-section">
+    <h2>✍️ Övningar</h2>
+    <p>Testa vad du lärt dig! Svaren finns på nästa sida.</p>
+    
+    <div class="exercise">
+        <p class="exercise-question">1. Vad betyder PMR i PMR446?</p>
+        <ul class="exercise-options">
+            <li>A) Public Message Radio</li>
+            <li>B) Private Mobile Radio</li>
+            <li>C) Personal Music Radio</li>
+            <li>D) Professional Marine Radio</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">2. Vilken effekt får en PMR446-radio ha?</p>
+        <ul class="exercise-options">
+            <li>A) 1 watt</li>
+            <li>B) 5 watt</li>
+            <li>C) 0,5 watt (500 milliwatt)</li>
+            <li>D) 10 watt</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">3. Du behöver certifikat för att använda PMR446-radio.</p>
+        <ul class="exercise-options">
+            <li>A) Sant</li>
+            <li>B) Falskt</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">4. Hur många kanaler finns på PMR446?</p>
+        <ul class="exercise-options">
+            <li>A) 8 kanaler</li>
+            <li>B) 16 kanaler</li>
+            <li>C) 22 kanaler</li>
+            <li>D) 40 kanaler</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">5. Vad ska du göra INNAN du trycker på sändknappen?</p>
+        <ul class="exercise-options">
+            <li>A) Bara börja prata direkt</li>
+            <li>B) Lyssna om kanalen är ledig</li>
+            <li>C) Höja volymen till max</li>
+            <li>D) Stänga av radion och slå på igen</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">6. Vad är PTT-knappen?</p>
+        <ul class="exercise-options">
+            <li>A) Knappen som byter kanal</li>
+            <li>B) Knappen du håller in när du pratar</li>
+            <li>C) Knappen som stänger av radion</li>
+            <li>D) Knappen som höjer volymen</li>
+        </ul>
+    </div>
+    
+     <div class="exercise">
+        <p class="exercise-question">7. CTCSS-koder gör ditt samtal hemligt så ingen annan kan höra.</p>
+        <ul class="exercise-options">
+            <li>A) Sant</li>
+            <li>B) Falskt</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">8. Vilken kanal brukar användas som "anropskanal" i Sverige?</p>
+        <ul class="exercise-options">
+            <li>A) Kanal 1</li>
+            <li>B) Kanal 7</li>
+            <li>C) Kanal 8</li>
+            <li>D) Kanal 16</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">9. Hur långt når en PMR446-radio vanligtvis i stadsmiljö?</p>
+        <ul class="exercise-options">
+            <li>A) 5-10 kilometer</li>
+            <li>B) 500 meter till 2 kilometer</li>
+            <li>C) 20 kilometer</li>
+            <li>D) 50 kilometer</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">10. Ju högre upp du står, desto längre räckvidd får du.</p>
+        <ul class="exercise-options">
+            <li>A) Sant</li>
+            <li>B) Falskt</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">11. Vad blockerar radiosignaler mest?</p>
+        <ul class="exercise-options">
+            <li>A) Träd</li>
+            <li>B) Vatten</li>
+            <li>C) Berg och byggnader</li>
+            <li>D) Moln</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">12. Vad får en radioamatör göra som en PMR-användare inte får?</p>
+        <ul class="exercise-options">
+            <li>A) Prata i radio</li>
+            <li>B) Bygga egna antenner och använda högre effekt</li>
+            <li>C) Använda batteridriven radio</li>
+            <li>D) Prata med vänner</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">13. Radioamatörer kan prata med hela världen.</p>
+        <ul class="exercise-options">
+            <li>A) Sant</li>
+            <li>B) Falskt</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">14. Hur gammal måste du vara för att ta radioamatörcertifikat i Sverige?</p>
+        <ul class="exercise-options">
+            <li>A) 18 år</li>
+            <li>B) 15 år</li>
+            <li>C) Det finns ingen åldersgräns</li>
+            <li>D) 12 år</li>
+        </ul>
+    </div>
+    
+    <div class="exercise">
+        <p class="exercise-question">15. Varför använder man CTCSS-koder?</p>
+        <ul class="exercise-options">
+            <li>A) För att öka räckvidden</li>
+            <li>B) För att filtrera bort andra som pratar på samma kanal</li>
+            <li>C) För att ladda batterierna snabbare</li>
+            <li>D) För att kryptera samtalet</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ==================== FACIT ==================== -->
+<div class="answer-key">
+    <h2>✅ Facit</h2>
+    
+    <div class="answer-item">
+        <strong>1. B)</strong> Private Mobile Radio
+        <br><em>PMR står för Private Mobile Radio – personlig mobilradio på svenska.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>2. C)</strong> 0,5 watt (500 milliwatt)
+        <br><em>PMR446-radior är begränsade till max 0,5 watt effekt.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>3. B)</strong> Falskt
+        <br><em>Nej! PMR446 är licensfritt och får användas av alla utan certifikat.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>4. B)</strong> 16 kanaler
+        <br><em>PMR446 har 16 kanaler, numrerade 1-16.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>5. B)</strong> Lyssna om kanalen är ledig
+        <br><em>Lyssna alltid först! Avbryt aldrig någon annan som pratar.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>6. B)</strong> Knappen du håller in när du pratar
+        <br><em>PTT står för Push-To-Talk. Håll in den när du pratar, släpp när du lyssnar!</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>7. B)</strong> Falskt
+        <br><em>Nej! CTCSS filtrerar bara vad DU hör. Alla med en radio kan fortfarande höra dig.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>8. C)</strong> Kanal 8
+        <br><em>Kanal 8 används ofta som anropskanal, men det finns ingen officiell regel.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>9. B)</strong> 500 meter till 2 kilometer
+        <br><em>I stad med byggnader når PMR446 oftast bara 500m-2km. Fri sikt ger längre räckvidd.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>10. A)</strong> Sant
+        <br><em>Ja! Höjd är bästa sättet att öka räckvidden. Från ett berg kan du nå flera mil!</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>11. C)</strong> Berg och byggnader
+        <br><em>Berg och byggnader blockerar UHF-signaler effektivt. Radiovågor går i rak linje.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>12. B)</strong> Bygga egna antenner och använda högre effekt
+        <br><em>Radioamatörer får bygga egen utrustning, använda mycket högre effekt och sända på många fler frekvenser!</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>13. A)</strong> Sant
+        <br><em>Ja! Med rätt utrustning och frekvens kan radioamatörer kommunicera över hela jorden.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>14. C)</strong> Det finns ingen åldersgräns
+        <br><em>Det finns ingen åldersgräns! Även barn kan ta certifikat om de klarar provet.</em>
+    </div>
+    
+    <div class="answer-item">
+        <strong>15. B)</strong> För att filtrera bort andra som pratar på samma kanal
+        <br><em>CTCSS-koder gör att du bara hör de som använder samma kod. Men alla kan fortfarande höra dig!</em>
+    </div>
+    
+    <div class="summary-box" style="margin-top: 2em; text-align: center;">
+        <h3>🏆 Hur gick det?</h3>
+        <table style="margin: 1em auto; text-align: left;">
+            <tr>
+                <td><strong>13-15 rätt:</strong></td>
+                <td>⭐⭐⭐ Utmärkt! Du är redo att använda PMR!</td>
+            </tr>
+            <tr>
+                <td><strong>10-12 rätt:</strong></td>
+                <td>⭐⭐ Bra jobbat! Läs igenom kapitlen en gång till.</td>
+            </tr>
+            <tr>
+                <td><strong>Under 10:</strong></td>
+                <td>⭐ Fortsätt öva! Läs boken igen och testa sedan.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ==================== BAKSIDA ==================== -->
+<div class="chapter" style="text-align: center; padding-top: 20vh;">
+    <div style="font-size: 48pt; margin-bottom: 0.5em;">📻</div>
+    <h2 style="border: none; font-size: 18pt; color: #7f8c8d;">Radioskola.se</h2>
+    <p style="font-size: 12pt; color: #95a5a6; max-width: 400px; margin: 2em auto;">
+        Gratis utbildningsmaterial för alla som vill lära sig om radio. 
+        Från PMR446 till amatörradiocertifikat.
+    </p>
+    
+    <div style="margin-top: 3em; padding: 1.5em; background: #f8f9fa; border-radius: 12px; display: inline-block;">
+        <p style="margin: 0 0 0.5em 0;"><strong>Besök oss online:</strong></p>
+        <p style="margin: 0; font-size: 14pt; color: #3498db;">www.radioskola.se</p>
+    </div>
+    
+    <p style="margin-top: 4em; font-size: 10pt; color: #bdc3c7;">
+        © 2026 Radioskola.se – Fri att skriva ut för personligt bruk.<br>
+        Version 1.0 – Februari 2026
+    </p>
+</div>
+
+</body>
+</html>

@@ -49,16 +49,6 @@
     function toggleBook(bookCard) {
         const isExpanded = bookCard.classList.contains('expanded');
         
-        // Valfritt: Stäng andra öppna böcker först (accordion-beteende)
-        // Kommentera bort om du vill att flera böcker kan vara öppna samtidigt
-        /*
-        document.querySelectorAll('.book-card.expanded').forEach(card => {
-            if (card !== bookCard) {
-                card.classList.remove('expanded');
-            }
-        });
-        */
-        
         bookCard.classList.toggle('expanded');
         
         // Uppdatera ARIA-attribut för tillgänglighet
@@ -86,6 +76,7 @@
                 <h4>Kapitel i denna bok</h4>
                 <p class="loading-message">Kapiteldata kunde inte laddas.</p>
             `;
+            console.error('chapters är inte definierad eller inte en array');
             return;
         }
 
@@ -93,14 +84,14 @@
         let html = '<h4>Kapitel i denna bok</h4>';
         
         chapters.forEach(chapter => {
-            const time = chapter.estimatedTime || 30;
+            const time = chapter.estimatedTime || 'Ca 30 min';
             const slug = chapter.slug || `kapitel-${chapter.number}`;
             
             html += `
                 <a href="pages/chapters/${slug}.html" class="chapter-link">
                     <span class="chapter-num">${chapter.number}</span>
                     <span class="chapter-title">${chapter.title}</span>
-                    <span class="chapter-time">🕐 ${time} min</span>
+                    <span class="chapter-time">⏱️ ${time}</span>
                 </a>
             `;
         });
@@ -115,4 +106,3 @@
     };
 
 })();
-

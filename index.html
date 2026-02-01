@@ -17,6 +17,7 @@
                 <li><a href="index.html" class="active">Hem</a></li>
                 <li><a href="#bocker">Böcker</a></li>
                 <li><a href="pages/test/prov.html">Gör prov</a></li>
+                <li><a href="pages/pdf/index.html">PDF-böcker</a></li>
                 <li><a href="pages/profil/statistik.html">Min statistik</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Öppna meny">
@@ -72,15 +73,28 @@
             </div>
         </section>
 
-        <!-- Böckeröversikt -->
+        <!-- Böckeröversikt - FOKUS PÅ CERTIFIKATET -->
         <section class="books-section" id="bocker">
-            <h2>📚 Utbildningsböcker</h2>
-            <p class="section-intro">
-                Välj en bok nedan för att komma igång! Klicka på en bok för att läsa introduktionen och se alla kapitel. 
-                Börja med <strong>Introduktion</strong> om du är nybörjare – ingen förkunskap krävs.
-            </p>
+            <h2>📚 Studera för certifikatet</h2>
             
+            <!-- SSA Rekommendation -->
+            <div class="ssa-recommendation">
+                <div class="ssa-recommendation-content">
+                    <div class="ssa-recommendation-icon">📖</div>
+                    <div class="ssa-recommendation-text">
+                        <h4>Rekommenderad läsning</h4>
+                        <p>För djupare kunskap, köp fysiska böcker från <strong>SSA Hamshop</strong>. 
+                        Denna sajt är ett gratis komplement för att öka intresset för amatörradio.</p>
+                    </div>
+                    <a href="https://hamshop.ssa.se/produkt-kategori/svensksprakig-litteratur/utbildning/" class="ssa-recommendation-link" target="_blank">
+                        Besök SSA Hamshop
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
             <div class="books-container">
+                
                 <!-- Bok 1: Introduktion -->
                 <article class="book-card" data-book="intro">
                     <div class="book-header">
@@ -88,7 +102,7 @@
                         <div class="book-icon">📖</div>
                         <div class="book-title-area">
                             <h3>Introduktion till radions värld</h3>
-                            <p class="book-tagline">Här tar vi det från början! Ingen förkunskap krävs.</p>
+                            <p class="book-tagline">Börja här! Ingen förkunskap krävs.</p>
                         </div>
                         <span class="toggle-icon">▼</span>
                     </div>
@@ -100,10 +114,6 @@
                                 <strong>Tycker du det verkar svårt?</strong> Denna bok vänder sig till dig som är 
                                 mellan 10–15 år, eller till vuxna som behöver fräscha upp grunderna. Om du tycker 
                                 att tekniken verkar krånglig eller inte har rört matte på ett tag – börja här!
-                            </p>
-                            <p>
-                                Vi förklarar allt från grunden med roliga berättelser, enkla exempel och 
-                                steg-för-steg-förklaringar. Bygg en stabil grund innan du går vidare till certifikatet!
                             </p>
                             <div class="book-meta">
                                 <span>📚 6 kapitel</span>
@@ -168,10 +178,6 @@
                                 läroplanen för grundcertifikatet (N-certifikat). All information du behöver om 
                                 elektronik, antenner, regler, sändning och praktik – direkt anpassad efter PTS provbank.
                             </p>
-                            <p>
-                                Studera ett kapitel i taget och testa dina kunskaper med övningar. När du känner 
-                                dig redo, gör ett simulerat prov för att se om du är förberedd!
-                            </p>
                             <div class="book-meta">
                                 <span>📚 10 kapitel</span>
                                 <span>⏱️ Ca 15–20 timmar totalt</span>
@@ -223,12 +229,67 @@
                 <!-- Fylls i dynamiskt -->
             </div>
         </section>
+
+        <!-- PDF-sektion -->
+        <section class="pdf-promo-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem 2rem; text-align: center; margin: 3rem 0;">
+            <h2 style="color: white; margin: 0 0 1rem 0;">📄 Vill du läsa offline?</h2>
+            <p style="max-width: 600px; margin: 0 auto 1.5rem auto; opacity: 0.9;">
+                Ladda ner våra böcker som PDF – perfekt för utskrift eller läsning utan internet.
+            </p>
+            <a href="pages/pdf/index.html" class="btn btn-secondary" style="background: white; color: #667eea;">
+                Se alla PDF-böcker →
+            </a>
+        </section>
+
+        <!-- BONUSMATERIAL - Längst ner -->
+        <section class="bonus-section" id="bonus">
+            <div class="bonus-header">
+                <h2>🎁 Bonusmaterial</h2>
+                <p>Extra läsning som inte krävs för certifikatet, men som kan vara kul och lärorikt!</p>
+            </div>
+            
+            <div class="bonus-grid">
+                <!-- PMR446 -->
+                <article class="bonus-card" data-book="pmr">
+                    <div class="bonus-card-header">
+                        <div class="bonus-icon">📻</div>
+                        <div class="bonus-title-area">
+                            <h3>PMR446 – Komradio för alla</h3>
+                            <p>Börja direkt utan certifikat! Licensfri radio för nybörjare och familjer.</p>
+                        </div>
+                        <span class="bonus-badge">LICENSFRI</span>
+                    </div>
+                    <div class="bonus-meta">
+                        <span>📚 5 kapitel</span>
+                        <span>⏱️ Ca 1 timme</span>
+                    </div>
+                    <a href="pages/pmr446/pmr-1-vad-ar-pmr446.html" class="btn btn-outline">Läs boken →</a>
+                </article>
+
+                <!-- Morsekod -->
+                <article class="bonus-card" data-book="morse">
+                    <div class="bonus-card-header">
+                        <div class="bonus-icon">· – · ·</div>
+                        <div class="bonus-title-area">
+                            <h3>Morsekodsboken</h3>
+                            <p>Lär dig CW från grunden – det klassiska sättet att kommunicera!</p>
+                        </div>
+                        <span class="bonus-badge">FRIVILLIG</span>
+                    </div>
+                    <div class="bonus-meta">
+                        <span>📚 6 kapitel</span>
+                        <span>⏱️ Ca 2 timmar</span>
+                    </div>
+                    <a href="pages/cw/cw-1-vad-ar-morsekod.html" class="btn btn-outline">Läs boken →</a>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Radioskola.se – Lycka till med dina studier!</p>
-            <p class="footer-note">Denna plattform är inte officiellt kopplad till PTS. Ingen datainsamling sker.</p>
+            <p class="footer-note">Denna plattform är inte officiellt kopplad till PTS eller SSA. Ingen datainsamling sker.</p>
         </div>
     </footer>
 

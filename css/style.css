@@ -3358,3 +3358,1419 @@ section h2 {
     }
 }
 
+/* ============================================
+   PROVREDO MODAL
+   ============================================ */
+
+.exam-ready-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 1rem;
+}
+
+.exam-ready-modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.exam-ready-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.exam-ready-modal.visible .exam-ready-content {
+    transform: scale(1);
+}
+
+.exam-ready-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 0.6s ease infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.exam-ready-content h2 {
+    color: #1a202c;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.exam-ready-content p {
+    color: #4a5568;
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+}
+
+.exam-ready-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.exam-ready-buttons .btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.exam-ready-buttons .btn-primary {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exam-ready-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(17, 153, 142, 0.4);
+}
+
+.exam-ready-buttons .btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.exam-ready-buttons .btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+.exam-ready-note {
+    font-size: 0.9rem;
+    color: #718096;
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Provstatus "Redo!" styling */
+#examReady.ready {
+    color: #10b981;
+    font-weight: 700;
+}
+
+/* ============================================
+   RESPONSIV MODAL
+   ============================================ */
+
+@media (max-width: 500px) {
+    .exam-ready-content {
+        padding: 1.5rem;
+    }
+    
+    .exam-ready-icon {
+        font-size: 3rem;
+    }
+    
+    .exam-ready-content h2 {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* SSA Rekommendation - Modern stil */
+.ssa-recommendation {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-left: 4px solid var(--primary-color, #2563eb);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.ssa-recommendation-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ssa-recommendation-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.ssa-recommendation-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.ssa-recommendation-text h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.ssa-recommendation-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.ssa-recommendation-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary-color, #2563eb);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.ssa-recommendation-link:hover {
+    background: var(--primary-color-dark, #1d4ed8);
+    transform: translateX(2px);
+}
+
+.ssa-recommendation-link .link-arrow {
+    transition: transform 0.2s ease;
+}
+
+.ssa-recommendation-link:hover .link-arrow {
+    transform: translateX(4px);
+}
+
+/* Responsiv anpassning */
+@media (max-width: 600px) {
+    .ssa-recommendation-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .ssa-recommendation-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   PMR446-SPECIFIKA STILAR
+   ========================================== */
+
+/* Användningsfall-grid */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.use-case-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.use-case-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.use-case-card .use-case-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.use-case-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.use-case-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Regler-lista */
+.rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.rule-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.rule-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.rule-content h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--text-color);
+}
+
+.rule-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Jämförelsetabell */
+.comparison-table {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.comparison-table td.good {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.comparison-table td.bad {
+    color: #e74c3c;
+}
+
+.comparison-table td.neutral {
+    color: var(--text-muted);
+}
+
+/* Process-steg */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.process-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    margin: 0 0 0.25rem 0;
+}
+
+.step-content p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Fun fact box */
+.fun-fact {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.fun-fact h4 {
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+.fun-fact p {
+    margin: 0;
+}
+
+/* Köpguide prisnivåer */
+.buying-guide {
+    display: grid;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.price-tier {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+}
+
+.price-tier.featured {
+    border-color: var(--primary-color);
+    position: relative;
+}
+
+.price-tier.featured::before {
+    content: "Rekommenderas";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.price-tier h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.price-tier ul {
+    margin: 0.75rem 0;
+    padding-left: 1.25rem;
+}
+
+.price-tier li {
+    margin-bottom: 0.25rem;
+}
+
+.brand-examples {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Checklista */
+.checklist-box {
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.checklist-box h4 {
+    margin: 0 0 1rem 0;
+    color: #2e7d32;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Batteriinfo */
+.battery-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.battery-type {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.battery-type h4 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+}
+
+.battery-type ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+/* Steg-guide med kort */
+.step-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.step-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.step-num {
+    background: var(--primary-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.step-header h4 {
+    margin: 0;
+}
+
+.step-card p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.step-tip {
+    margin-top: 0.75rem !important;
+    padding: 0.5rem 0.75rem;
+    background: #fff3e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #e65100 !important;
+}
+
+/* Radio-etikett */
+.radio-etiquette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.etiquette-do {
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.etiquette-do h4 {
+    color: #2e7d32;
+    margin: 0 0 1rem 0;
+}
+
+.etiquette-dont {
+    background: #ffebee;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.etiquette-dont h4 {
+    color: #c62828;
+    margin: 0 0 1rem 0;
+}
+
+.radio-etiquette ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.radio-etiquette li {
+    margin-bottom: 0.5rem;
+}
+
+/* Exempel-konversation */
+.example-conversation {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.example-conversation h4 {
+    margin: 0 0 1rem 0;
+}
+
+.conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    max-width: 85%;
+}
+
+.message.outgoing {
+    background: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.message.incoming {
+    background: #e9ecef;
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.message .speaker {
+    font-weight: 600;
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.message .text {
+    font-style: italic;
+}
+
+/* Kanaltabell */
+.channel-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.channel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.channel-table th,
+.channel-table td {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.channel-table th {
+    background: var(--primary-color);
+    color: white;
+}
+
+.channel-table tr:nth-child(even) {
+    background: var(--bg-light);
+}
+
+.channel-table tr.highlighted {
+    background: #fff3e0;
+}
+
+.channel-table tr.highlighted td {
+    font-weight: 500;
+}
+
+/* CTCSS-tabell */
+.ctcss-table-wrapper {
+    margin: 1.5rem 0;
+}
+
+.ctcss-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.5rem;
+}
+
+.ctcss-table th,
+.ctcss-table td {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.ctcss-table th {
+    background: var(--card-bg);
+    font-weight: 600;
+}
+
+.table-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Räckviddskort */
+.range-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.range-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.range-card.featured {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.range-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.range-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.range-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.range-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Blockerare-lista */
+.blockers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.blocker-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    align-items: flex-start;
+}
+
+.blocker-item.severe {
+    border-left: 4px solid #e74c3c;
+}
+
+.blocker-item.moderate {
+    border-left: 4px solid #f39c12;
+}
+
+.blocker-item.mild {
+    border-left: 4px solid #3498db;
+}
+
+.blocker-item.none {
+    border-left: 4px solid #27ae60;
+}
+
+.blocker-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.blocker-info h4 {
+    margin: 0;
+}
+
+.blocker-impact {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.25rem 0 0.5rem 0;
+}
+
+.blocker-item.severe .blocker-impact { color: #e74c3c; }
+.blocker-item.moderate .blocker-impact { color: #f39c12; }
+.blocker-item.mild .blocker-impact { color: #3498db; }
+.blocker-item.none .blocker-impact { color: #27ae60; }
+
+.blocker-info p:last-child {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Tips-grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.tip-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.tip-number {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: var(--primary-color);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.tip-card h4 {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.tip-card p {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.tip-effect {
+    font-size: 0.85rem;
+    color: #27ae60;
+    font-weight: 500;
+}
+
+/* Felsökning */
+.troubleshoot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.troubleshoot-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.troubleshoot-item .problem {
+    background: #fff3e0;
+    padding: 1rem 1.5rem;
+}
+
+.troubleshoot-item .problem h4 {
+    margin: 0;
+    color: #e65100;
+}
+
+.troubleshoot-item .solution {
+    padding: 1rem 1.5rem;
+}
+
+.troubleshoot-item .solution ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.troubleshoot-item .solution li {
+    margin-bottom: 0.5rem;
+}
+
+/* Aktiviteter-grid */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.activity-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.activity-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.activity-card h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.activity-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Effektjämförelse */
+.power-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.power-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.power-bar .power-label {
+    width: 160px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.power-bar .power-value {
+    width: 80px;
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.power-bar .power-fill {
+    flex-grow: 1;
+    height: 24px;
+    background: linear-gradient(90deg, var(--primary-color), #764ba2);
+    border-radius: 12px;
+    min-width: 4px;
+}
+
+/* Kostnadöversikt */
+.cost-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cost-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.cost-item h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.cost-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.cost-item p:last-child {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Nästa steg-kort */
+.next-steps-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.next-step-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s;
+}
+
+.next-step-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.next-step-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.next-step-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.next-step-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Grattis-box */
+.congratulations-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.congratulations-box h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.75rem;
+    color: white;
+}
+
+.congratulations-box p {
+    margin: 0.5rem 0;
+}
+
+.congratulations-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.congratulations-box li {
+    padding: 0.25rem 0;
+}
+
+/* Stor jämförelsetabell */
+.comparison-table-large {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.comparison-table-large table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-table-large th,
+.comparison-table-large td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table-large th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.comparison-table-large th:first-child {
+    background: #5a6fd6;
+}
+
+.comparison-table-large td:first-child {
+    font-weight: 500;
+}
+
+.comparison-table-large td.good {
+    color: #27ae60;
+}
+
+.comparison-table-large td.bad {
+    color: #e74c3c;
+}
+
+.comparison-table-large td.neutral {
+    color: var(--text-muted);
+}
+
+/* Pro tips */
+.pro-tip {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 1rem 1.5rem;
+    border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0;
+}
+
+.pro-tip h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1565c0;
+}
+
+.pro-tip p {
+    margin: 0;
+}
+
+/* Ungdomstips */
+.youth-tips {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.youth-tips h4 {
+    margin: 0 0 1rem 0;
+}
+
+.youth-tips ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.youth-tips li {
+    padding: 0.5rem 0;
+}
+
+/* Responsiva justeringar för PMR-sidor */
+@media (max-width: 768px) {
+    .power-bar {
+        flex-wrap: wrap;
+    }
+    
+    .power-bar .power-label {
+        width: 100%;
+    }
+    
+    .power-bar .power-value {
+        text-align: left;
+    }
+    
+    .use-cases-grid,
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .range-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .use-cases-grid,
+    .activities-grid,
+    .range-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* Bokavdelare */
+.books-divider {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #6c757d;
+}
+
+.books-divider.cert-divider {
+    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, #fdf2f2 0%, #fce8e8 100%);
+}
+
+.divider-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.divider-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.divider-text h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.divider-text p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Bonusbok styling */
+.book-card.bonus-book {
+    border: 2px dashed #e67e22;
+    background: linear-gradient(135deg, #fffbf5 0%, #fff8f0 100%);
+}
+
+.book-card.bonus-book .book-header {
+    background: linear-gradient(135deg, #fff8f0 0%, #ffedd5 100%);
+}
+
+.book-number.bonus {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    font-size: 1.2rem;
+}
+
+.bonus-badge {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    margin-top: 0.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Responsiv avdelare */
+@media (max-width: 600px) {
+    .divider-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+/* ===========================================
+   BONUS SECTION - Längst ner på startsidan
+   =========================================== */
+
+.bonus-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    border-top: 3px solid #dee2e6;
+}
+
+.bonus-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.bonus-header h2 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.bonus-header p {
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bonus-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bonus-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.bonus-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.bonus-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+.bonus-title-area h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.bonus-title-area p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.bonus-badge {
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bonus-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #667eea;
+    color: #667eea;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Responsiv för bonus-section */
+@media (max-width: 768px) {
+    .bonus-section {
+        padding: 2rem 1rem;
+    }
+    
+    .bonus-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bonus-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bonus-icon {
+        margin: 0 auto;
+    }
+    
+    .bonus-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    .bonus-meta {
+        justify-content: center;
+    }
+}

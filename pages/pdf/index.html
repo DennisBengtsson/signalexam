@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladda ner PDF-böcker – Radioskola.se</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        /* Extra stilar för nedladdningssidan */
+        .download-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .download-hero h1 {
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+        }
+        
+        .download-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .pdf-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pdf-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .pdf-card-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pdf-card-header.pmr {
+            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+        }
+        
+        .pdf-card-header.morse {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+        }
+        
+        .pdf-card-header.intro {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+        
+        .pdf-card-header.cert {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .pdf-card-header.bundle {
+            background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);
+        }
+        
+        .pdf-icon {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pdf-card-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .pdf-card-body {
+            padding: 1.5rem;
+        }
+        
+        .pdf-description {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .pdf-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .pdf-features li {
+            padding: 0.4rem 0 0.4rem 1.75rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        
+        .pdf-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .pdf-price {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .price-tag.free {
+            color: #27ae60;
+        }
+        
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .pdf-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .btn-download.primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-download.primary:hover {
+            background: #5a6fd6;
+            transform: scale(1.02);
+        }
+        
+        .btn-download.secondary {
+            background: var(--bg-light);
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
+        }
+        
+        .btn-download.secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .coming-soon-badge {
+            background: #f39c12;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .new-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Instruktioner */
+        .instructions-section {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .instructions-box {
+            background: #e8f4fd;
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        
+        .instructions-box h3 {
+            margin: 0 0 1rem 0;
+            color: #0c5460;
+        }
+        
+        .instructions-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .instruction-step {
+            text-align: center;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .instruction-step h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .instruction-step p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        /* Support-sektion */
+        .support-section {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .support-section h3 {
+            margin: 0 0 1rem 0;
+        }
+        
+        .support-section p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            color: var(--text-muted);
+        }
+        
+        .support-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .support-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .support-btn.swish {
+            background: #00a540;
+            color: white;
+            border-color: #00a540;
+        }
+        
+        .support-btn.swish:hover {
+            background: #008f36;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <span class="logo-icon">📻</span>
+                <span>Radioskola.se</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Hem</a></li>
+                <li><a href="../../index.html#bocker">Böcker</a></li>
+                <li><a href="../test/prov.html">Gör prov</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Öppna meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="download-hero">
+        <h1>📄 Ladda ner PDF-böcker</h1>
+        <p>Utskriftsvänliga versioner av våra utbildningsmaterial. Perfekt för att läsa offline eller ha som referens!</p>
+    </header>
+
+    <main>
+        <div class="pdf-grid">
+            <!-- PMR446 PDF -->
+            <article class="pdf-card">
+                <div class="pdf-card-header pmr">
+                    <div class="pdf-icon">📻</div>
+                    <h3>PMR446 – Komradio för alla</h3>
+                </div>
+                <div class="pdf-card-body">
+                    <p class="pdf-description">
+                        Komplett guide till licensfri PMR-radio. Perfekt för nybörjare, familjer och friluftsfolk.
+                    </p>
+                    <ul class="pdf-features">
+                        <li>5 kapitel med allt du behöver veta</li>
+                        <li>Professionell utskriftslayout</li>
+                        <li>Anteckningsutrymme på varje sida</li>
+                        <li>15 övningsfrågor med facit</li>
+                        <li>Passar alla åldrar (8+)</li>
+                    </ul>
+                    <div class="pdf-price">
+                        <div class="price-tag free">GRATIS</div>
+                        <div class="price-note">Ladda ner direkt</div>
+                    </div>
+                    <div class="pdf-actions">
+                        <a href="pmr446-bok.html" class="btn-download primary" target="_blank">
+                            📄 Öppna PDF-version
+                        </a>
+                        <a href="../pmr446/pmr-1-vad-ar-pmr446.html" class="btn-download secondary">
+                            📖 Läs online istället
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Morsekod PDF - NY! -->
+            <article class="pdf-card">
+                <div class="pdf-card-header morse">
+                    <span class="new-badge">NY!</span>
+                    <div class="pdf-icon">· – · ·</div>
+                    <h3>Morsekodsboken</h3>
+                </div>
+                <div class="pdf-card-body">
+                    <p class="pdf-description">
+                        Lär dig morsekod från grunden! Komplett guide med alfabetet, siffror, Q-koder och tips för ditt första QSO.
+                    </p>
+                    <ul class="pdf-features">
+                        <li>6 kapitel från nybörjare till QSO</li>
+                        <li>Hela alfabetet A-Ö med minnesknep</li>
+                        <li>Q-koder och CW-förkortningar</li>
+                        <li>Träningsschema och verktyg</li>
+                        <li>30 övningsfrågor med facit</li>
+                    </ul>
+                    <div class="pdf-price">
+                        <div class="price-tag free">GRATIS</div>
+                        <div class="price-note">Ladda ner direkt</div>
+                    </div>
+                    <div class="pdf-actions">
+                        <a href="cw-bok.html" class="btn-download primary" target="_blank">
+                            📄 Öppna PDF-version
+                        </a>
+                        <a href="../cw/cw-1-vad-ar-morsekod.html" class="btn-download secondary">
+                            📖 Läs online istället
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Introduktion PDF -->
+            <article class="pdf-card">
+                <div class="pdf-card-header intro">
+                    <span class="coming-soon-badge">KOMMER SNART</span>
+                    <div class="pdf-icon">📖</div>
+                    <h3>Introduktion till radions värld</h3>
+                </div>
+                <div class="pdf-card-body">
+                    <p class="pdf-description">
+                        Grunderna i radio för den som vill förstå tekniken bakom. Ingen förkunskap krävs!
+                    </p>
+                    <ul class="pdf-features">
+                        <li>6 kapitel från grunden</li>
+                        <li>Radiohistoria och fascinerande berättelser</li>
+                        <li>Matematik & fysik förklarat enkelt</li>
+                        <li>Illustrationer och diagram</li>
+                        <li>Övningar efter varje kapitel</li>
+                    </ul>
+                    <div class="pdf-price">
+                        <div class="price-tag">49 kr</div>
+                        <div class="price-note">Stödjer sajtens drift</div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn-download primary" disabled style="opacity: 0.5; cursor: not-allowed;">
+                            🔜 Kommer snart
+                        </button>
+                        <a href="../introduktion/intro-1-vad-ar-radio.html" class="btn-download secondary">
+                            📖 Läs online gratis
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Certifikat PDF -->
+            <article class="pdf-card">
+                <div class="pdf-card-header cert">
+                    <span class="coming-soon-badge">KOMMER SNART</span>
+                    <div class="pdf-icon">🎓</div>
+                    <h3>Certifikatssammanfattning</h3>
+                </div>
+                <div class="pdf-card-body">
+                    <p class="pdf-description">
+                        Komprimerad version av certifikatsmaterialet – perfekt som repetition inför provet.
+                    </p>
+                    <ul class="pdf-features">
+                        <li>Alla 10 kapitel sammanfattade</li>
+                        <li>Viktiga formler och fakta</li>
+                        <li>Minnesregler och tips</li>
+                        <li>Snabbreferens för banden</li>
+                        <li>Checklista inför provet</li>
+                    </ul>
+                    <div class="pdf-price">
+                        <div class="price-tag">79 kr</div>
+                        <div class="price-note">Stödjer sajtens drift</div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn-download primary" disabled style="opacity: 0.5; cursor: not-allowed;">
+                            🔜 Kommer snart
+                        </button>
+                        <a href="../../index.html#bocker" class="btn-download secondary">
+                            📖 Läs online gratis
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Paket -->
+            <article class="pdf-card">
+                <div class="pdf-card-header bundle">
+                    <span class="coming-soon-badge">KOMMER SNART</span>
+                    <div class="pdf-icon">📦</div>
+                    <h3>Komplett PDF-paket</h3>
+                </div>
+                <div class="pdf-card-body">
+                    <p class="pdf-description">
+                        Alla PDF:er i ett paket! Spara pengar och få allt material för din radioresa.
+                    </p>
+                    <ul class="pdf-features">
+                        <li>PMR446-boken (värde: gratis)</li>
+                        <li>Morsekodsboken (värde: gratis)</li>
+                        <li>Introduktionsboken (värde: 49 kr)</li>
+                        <li>Certifikatssammanfattning (värde: 79 kr)</li>
+                        <li>Formelblad & snabbreferens (bonus)</li>
+                    </ul>
+                    <div class="pdf-price">
+                        <div class="price-tag">99 kr</div>
+                        <div class="price-note">Spara 29 kr!</div>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn-download primary" disabled style="opacity: 0.5; cursor: not-allowed;">
+                            🔜 Kommer snart
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Instruktioner -->
+        <section class="instructions-section">
+            <div class="instructions-box">
+                <h3>📥 Så här laddar du ner PDF</h3>
+                <p>Våra PDF:er är optimerade för utskrift på A4-papper. Så här gör du:</p>
+                
+                <div class="instructions-steps">
+                    <div class="instruction-step">
+                        <div class="step-icon">1️⃣</div>
+                        <h4>Öppna PDF-versionen</h4>
+                        <p>Klicka på "Öppna PDF-version" för att öppna boken i webbläsaren.</p>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-icon">2️⃣</div>
+                        <h4>Skriv ut eller spara</h4>
+                        <p>Tryck Ctrl+P (eller Cmd+P på Mac) och välj "Spara som PDF".</p>
+                    </div>
+                    
+                    <div class="instruction-step">
+                        <div class="step-icon">3️⃣</div>
+                        <h4>Skriv ut på papper</h4>
+                        <p>Eller skriv ut direkt på din skrivare för att läsa offline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stöd sajten -->
+        <section class="support-section">
+            <h3>💝 Stöd Radioskola.se</h3>
+            <p>
+                Allt innehåll på sajten är gratis att läsa online. PDF-försäljningen hjälper oss 
+                att betala för domän och hålla sajten igång. Vill du stödja oss på annat sätt?
+            </p>
+            <div class="support-options">
+                <a href="#" class="support-btn swish">
+                    📱 Swish: 123-456 78 90
+                </a>
+                <a href="https://ko-fi.com/" class="support-btn" target="_blank">
+                    ☕ Köp en kaffe
+                </a>
+                <a href="../../index.html#bocker" class="support-btn">
+                    📖 Dela sajten med en vän
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Radioskola.se – Lycka till med dina studier!</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
-// Övningshantering för introduktionskapitlen
+// js/exercises.js
+// Hanterar övningar för alla kapitel (intro, pmr, morse, cert)
 
 let currentExercises = [];
 let userAnswers = {};
@@ -8,140 +9,172 @@ function loadExercises(exercises) {
     userAnswers = {};
     
     const container = document.getElementById('exercisesContainer');
-    if (!container) return;
+    if (!container) {
+        console.error('exercisesContainer not found');
+        return;
+    }
+    
+    if (!exercises || exercises.length === 0) {
+        container.innerHTML = '<p class="no-exercises">Inga övningar tillgängliga för detta kapitel ännu.</p>';
+        return;
+    }
     
     container.innerHTML = exercises.map((ex, index) => renderExercise(ex, index)).join('');
     
-    // Initiera drag and drop efter att övningar laddats
+    // Initiera drag and drop om det finns sådana övningar
     initDragAndDrop();
 }
 
 function renderExercise(exercise, index) {
     const num = index + 1;
+    const type = exercise.type || 'multiple-choice'; // Default till flerval
     
-    switch(exercise.type) {
+    switch(type) {
         case 'multiple-choice':
-            return renderMultipleChoice(exercise, num);
+        case 'multiple':
+            return renderMultipleChoice(exercise, index, num);
         case 'true-false':
-            return renderTrueFalse(exercise, num);
+            return renderTrueFalse(exercise, index, num);
         case 'fill-blank':
-            return renderFillBlank(exercise, num);
+            return renderFillBlank(exercise, index, num);
         case 'matching':
-            return renderMatching(exercise, num);
+            return renderMatching(exercise, index, num);
         case 'ordering':
-            return renderOrdering(exercise, num);
+            return renderOrdering(exercise, index, num);
         case 'calculation':
-            return renderCalculation(exercise, num);
+            return renderCalculation(exercise, index, num);
         case 'reflection':
-            return renderReflection(exercise, num);
+            return renderReflection(exercise, index, num);
         case 'timeline':
-            return renderTimeline(exercise, num);
+            return renderTimeline(exercise, index, num);
         default:
-            return `<div class="exercise-card">Okänd övningstyp: ${exercise.type}</div>`;
+            return renderMultipleChoice(exercise, index, num); // Fallback
     }
 }
 
-function renderMultipleChoice(ex, num) {
+function renderMultipleChoice(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
+    const correctIndex = ex.correct;
+    
     const optionsHTML = ex.options.map((opt, i) => `
-        <label class="option-label">
-            <input type="radio" name="ex-${ex.id}" value="${i}" onchange="checkAnswer('${ex.id}', ${i}, ${ex.correct}, 'multiple-choice')">
+        <label class="exercise-option" data-option="${i}">
+            <input type="radio" name="exercise-${index}" value="${i}" 
+                   onchange="handleMultipleChoice('${exerciseId}', ${index}, ${i}, ${correctIndex})">
+            <span class="option-marker">${String.fromCharCode(65 + i)}</span>
             <span class="option-text">${opt}</span>
         </label>
     `).join('');
     
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Flervalsfråga</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}" data-correct="${correctIndex}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
-            <div class="options-container">
+            <div class="exercise-options">
                 ${optionsHTML}
             </div>
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderTrueFalse(ex, num) {
+function renderTrueFalse(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
+    
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Sant eller falskt</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}" data-correct="${ex.correct}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
-            <div class="options-container true-false-options">
-                <label class="option-label">
-                    <input type="radio" name="ex-${ex.id}" value="true" onchange="checkAnswer('${ex.id}', true, ${ex.correct}, 'true-false')">
-                    <span class="option-text">✓ Sant</span>
+            <div class="exercise-options true-false-options">
+                <label class="exercise-option" data-option="true">
+                    <input type="radio" name="exercise-${index}" value="true" 
+                           onchange="handleTrueFalse('${exerciseId}', ${index}, true, ${ex.correct})">
+                    <span class="option-marker">✓</span>
+                    <span class="option-text">Sant</span>
                 </label>
-                <label class="option-label">
-                    <input type="radio" name="ex-${ex.id}" value="false" onchange="checkAnswer('${ex.id}', false, ${ex.correct}, 'true-false')">
-                    <span class="option-text">✗ Falskt</span>
+                <label class="exercise-option" data-option="false">
+                    <input type="radio" name="exercise-${index}" value="false" 
+                           onchange="handleTrueFalse('${exerciseId}', ${index}, false, ${ex.correct})">
+                    <span class="option-marker">✗</span>
+                    <span class="option-text">Falskt</span>
                 </label>
             </div>
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderFillBlank(ex, num) {
+function renderFillBlank(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
+    
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Fyll i</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
             ${ex.hint ? `<p class="exercise-hint">💡 Ledtråd: ${ex.hint}</p>` : ''}
             <div class="fill-blank-container">
-                <input type="text" id="input-${ex.id}" class="fill-blank-input" placeholder="Skriv ditt svar...">
-                <button class="btn btn-small" onclick="checkFillBlank('${ex.id}')">Kontrollera</button>
+                <input type="text" id="input-${exerciseId}" class="fill-blank-input" placeholder="Skriv ditt svar...">
+                <button class="btn btn-small" onclick="handleFillBlank('${exerciseId}', ${index})">Kontrollera</button>
             </div>
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderCalculation(ex, num) {
+function renderCalculation(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
+    
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Beräkning</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
             ${ex.hint ? `<p class="exercise-hint">💡 Ledtråd: ${ex.hint}</p>` : ''}
             <div class="calculation-container">
-                <input type="number" id="input-${ex.id}" class="calculation-input" placeholder="Svar" step="any">
+                <input type="number" id="input-${exerciseId}" class="calculation-input" placeholder="Svar" step="any">
                 <span class="unit-label">${ex.unit || ''}</span>
-                <button class="btn btn-small" onclick="checkCalculation('${ex.id}', ${ex.answer})">Kontrollera</button>
+                <button class="btn btn-small" onclick="handleCalculation('${exerciseId}', ${index})">Kontrollera</button>
             </div>
             ${ex.steps ? `
-                <button class="btn btn-link" onclick="toggleSteps('${ex.id}')">Visa lösningssteg</button>
-                <div class="steps-container" id="steps-${ex.id}" style="display: none;">
+                <button class="btn btn-link" onclick="toggleSteps('${exerciseId}')">Visa lösningssteg</button>
+                <div class="steps-container" id="steps-${exerciseId}" style="display: none;">
                     <h5>Lösningssteg:</h5>
                     <ol>${ex.steps.map(s => `<li>${s}</li>`).join('')}</ol>
                 </div>
             ` : ''}
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderMatching(ex, num) {
-    // Blanda högerkolumnen
+function renderMatching(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
     const shuffledRight = [...ex.pairs].sort(() => Math.random() - 0.5);
     
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Para ihop</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
             <div class="matching-container">
                 <div class="matching-column left-column">
                     ${ex.pairs.map((pair, i) => `
@@ -152,74 +185,83 @@ function renderMatching(ex, num) {
                     ${ex.pairs.map((pair, i) => `
                         <select class="matching-select" data-pair="${i}">
                             <option value="">Välj...</option>
-                            ${shuffledRight.map((p, j) => `<option value="${ex.pairs.indexOf(p)}">${p.right}</option>`).join('')}
+                            ${shuffledRight.map((p) => `<option value="${ex.pairs.indexOf(p)}">${p.right}</option>`).join('')}
                         </select>
                     `).join('')}
                 </div>
             </div>
-            <button class="btn btn-small" onclick="checkMatching('${ex.id}')">Kontrollera</button>
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <button class="btn btn-small" onclick="handleMatching('${exerciseId}', ${index})">Kontrollera</button>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderOrdering(ex, num) {
-    // Blanda items
+function renderOrdering(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
     const shuffledItems = [...ex.items].sort(() => Math.random() - 0.5);
     
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Ordna rätt</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
-            <div class="ordering-container" id="ordering-${ex.id}">
-                ${shuffledItems.map((item, i) => `
+            <div class="ordering-container" id="ordering-${exerciseId}">
+                ${shuffledItems.map((item) => `
                     <div class="ordering-item" draggable="true" data-original="${ex.items.indexOf(item)}">
                         <span class="drag-handle">⋮⋮</span>
                         <span class="item-text">${item}</span>
                     </div>
                 `).join('')}
             </div>
-            <button class="btn btn-small" onclick="checkOrdering('${ex.id}')">Kontrollera</button>
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <button class="btn btn-small" onclick="handleOrdering('${exerciseId}', ${index})">Kontrollera</button>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderTimeline(ex, num) {
+function renderTimeline(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
     const shuffledItems = [...ex.items].sort(() => Math.random() - 0.5);
     
     return `
-        <div class="exercise-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">Tidslinje</span>
+        <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
-            <div class="timeline-container" id="timeline-${ex.id}">
-                ${shuffledItems.map((item, i) => `
+            <div class="timeline-container" id="timeline-${exerciseId}">
+                ${shuffledItems.map((item) => `
                     <div class="timeline-item" draggable="true" data-original="${ex.items.indexOf(item)}">
                         <span class="drag-handle">⋮⋮</span>
                         <span class="item-text">${item}</span>
                     </div>
                 `).join('')}
             </div>
-            <button class="btn btn-small" onclick="checkTimeline('${ex.id}')">Kontrollera</button>
-            <div class="feedback" id="feedback-${ex.id}" style="display: none;"></div>
+            <button class="btn btn-small" onclick="handleTimeline('${exerciseId}', ${index})">Kontrollera</button>
+            <div class="exercise-feedback" id="feedback-${exerciseId}" style="display: none;">
+                <p class="feedback-text"></p>
+                ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+            </div>
         </div>
     `;
 }
 
-function renderReflection(ex, num) {
+function renderReflection(ex, index, num) {
+    const exerciseId = ex.id || `ex-${index}`;
+    
     let content = `
-        <div class="exercise-card reflection-card" id="exercise-${ex.id}">
-            <div class="exercise-header">
-                <span class="exercise-number">Uppgift ${num}</span>
-                <span class="exercise-type">🤔 Reflektera</span>
+        <div class="exercise-item reflection-card" id="exercise-${exerciseId}" data-index="${index}" data-type="reflection">
+            <div class="exercise-question">
+                <span class="exercise-number">${num}.</span>
+                <span class="exercise-text">🤔 ${ex.question}</span>
             </div>
-            <p class="exercise-question">${ex.question}</p>
     `;
     
     if (ex.hints) {
@@ -227,19 +269,6 @@ function renderReflection(ex, num) {
             <div class="reflection-hints">
                 <h5>Tänk på:</h5>
                 <ul>${ex.hints.map(h => `<li>${h}</li>`).join('')}</ul>
-            </div>
-        `;
-    }
-    
-    if (ex.options) {
-        content += `
-            <div class="reflection-options">
-                ${ex.options.map((opt, i) => `
-                    <label class="reflection-option">
-                        <input type="radio" name="ex-${ex.id}" value="${i}">
-                        <span>${opt}</span>
-                    </label>
-                `).join('')}
             </div>
         `;
     }
@@ -253,39 +282,88 @@ function renderReflection(ex, num) {
     return content;
 }
 
-// Kontrollera svar
-function checkAnswer(exerciseId, userAnswer, correctAnswer, type) {
-    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+// === HANDLERS ===
+
+function handleMultipleChoice(exerciseId, index, selected, correct) {
     const exerciseEl = document.getElementById(`exercise-${exerciseId}`);
-    const exercise = currentExercises.find(ex => ex.id === exerciseId);
+    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+    const feedbackText = feedbackEl.querySelector('.feedback-text');
+    const options = exerciseEl.querySelectorAll('.exercise-option');
+    const exercise = currentExercises[index];
     
-    let isCorrect = false;
+    // Inaktivera alla alternativ
+    exerciseEl.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.disabled = true;
+    });
     
-    if (type === 'true-false') {
-        isCorrect = String(userAnswer) === String(correctAnswer);
-    } else {
-        isCorrect = userAnswer === correctAnswer;
-    }
+    // Markera rätt och fel
+    options.forEach((option, i) => {
+        option.classList.remove('correct', 'incorrect');
+        if (i === correct) {
+            option.classList.add('correct');
+        } else if (i === selected && selected !== correct) {
+            option.classList.add('incorrect');
+        }
+    });
     
-    userAnswers[exerciseId] = isCorrect;
+    // Visa feedback
+    const isCorrect = selected === correct;
+    userAnswers[index] = isCorrect;
     
     if (isCorrect) {
-        feedbackEl.innerHTML = `<div class="feedback-correct">✓ Rätt! ${exercise.explanation || ''}</div>`;
+        feedbackText.textContent = '✅ Rätt!';
+        feedbackText.className = 'feedback-text correct';
         exerciseEl.classList.add('answered-correct');
-        exerciseEl.classList.remove('answered-wrong');
     } else {
-        feedbackEl.innerHTML = `<div class="feedback-wrong">✗ Fel. ${exercise.explanation || ''}</div>`;
+        feedbackText.textContent = '❌ Fel!';
+        feedbackText.className = 'feedback-text incorrect';
         exerciseEl.classList.add('answered-wrong');
-        exerciseEl.classList.remove('answered-correct');
     }
     
     feedbackEl.style.display = 'block';
     updateResults();
 }
 
-function checkFillBlank(exerciseId) {
+function handleTrueFalse(exerciseId, index, selected, correct) {
+    const exerciseEl = document.getElementById(`exercise-${exerciseId}`);
+    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+    const feedbackText = feedbackEl.querySelector('.feedback-text');
+    const options = exerciseEl.querySelectorAll('.exercise-option');
+    
+    // Inaktivera alla alternativ
+    exerciseEl.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.disabled = true;
+    });
+    
+    // Markera rätt och fel
+    options.forEach((option) => {
+        const optionValue = option.dataset.option === 'true';
+        option.classList.remove('correct', 'incorrect');
+        if (optionValue === correct) {
+            option.classList.add('correct');
+        } else if (optionValue === selected && selected !== correct) {
+            option.classList.add('incorrect');
+        }
+    });
+    
+    const isCorrect = selected === correct;
+    userAnswers[index] = isCorrect;
+    
+    if (isCorrect) {
+        feedbackText.textContent = '✅ Rätt!';
+        feedbackText.className = 'feedback-text correct';
+    } else {
+        feedbackText.textContent = '❌ Fel!';
+        feedbackText.className = 'feedback-text incorrect';
+    }
+    
+    feedbackEl.style.display = 'block';
+    updateResults();
+}
+
+function handleFillBlank(exerciseId, index) {
     const input = document.getElementById(`input-${exerciseId}`);
-    const exercise = currentExercises.find(ex => ex.id === exerciseId);
+    const exercise = currentExercises[index];
     const userAnswer = input.value.trim().toLowerCase();
     
     let isCorrect = userAnswer === exercise.answer.toLowerCase();
@@ -295,61 +373,119 @@ function checkFillBlank(exerciseId) {
         isCorrect = exercise.alternatives.some(alt => alt.toLowerCase() === userAnswer);
     }
     
-    checkAnswer(exerciseId, isCorrect ? 0 : 1, 0, 'fill-blank');
+    userAnswers[index] = isCorrect;
+    
+    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+    const feedbackText = feedbackEl.querySelector('.feedback-text');
+    
+    input.disabled = true;
+    
+    if (isCorrect) {
+        feedbackText.textContent = '✅ Rätt!';
+        feedbackText.className = 'feedback-text correct';
+        input.classList.add('correct-input');
+    } else {
+        feedbackText.textContent = `❌ Fel! Rätt svar: ${exercise.answer}`;
+        feedbackText.className = 'feedback-text incorrect';
+        input.classList.add('incorrect-input');
+    }
+    
+    feedbackEl.style.display = 'block';
+    updateResults();
 }
 
-function checkCalculation(exerciseId, correctAnswer) {
+function handleCalculation(exerciseId, index) {
     const input = document.getElementById(`input-${exerciseId}`);
-    const exercise = currentExercises.find(ex => ex.id === exerciseId);
+    const exercise = currentExercises[index];
     const userAnswer = parseFloat(input.value);
     
-    // Tillåt liten felmarginal för decimaltal
     const tolerance = exercise.tolerance || 0.01;
-    const isCorrect = Math.abs(userAnswer - correctAnswer) <= tolerance;
+    const isCorrect = Math.abs(userAnswer - exercise.answer) <= tolerance;
     
-    checkAnswer(exerciseId, isCorrect ? 0 : 1, 0, 'calculation');
+    userAnswers[index] = isCorrect;
+    
+    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+    const feedbackText = feedbackEl.querySelector('.feedback-text');
+    
+    input.disabled = true;
+    
+    if (isCorrect) {
+        feedbackText.textContent = '✅ Rätt!';
+        feedbackText.className = 'feedback-text correct';
+    } else {
+        feedbackText.textContent = `❌ Fel! Rätt svar: ${exercise.answer} ${exercise.unit || ''}`;
+        feedbackText.className = 'feedback-text incorrect';
+    }
+    
+    feedbackEl.style.display = 'block';
+    updateResults();
 }
 
-function checkMatching(exerciseId) {
-    const exercise = currentExercises.find(ex => ex.id === exerciseId);
-    const selects = document.querySelectorAll(`#exercise-${exerciseId} .matching-select`);
+function handleMatching(exerciseId, index) {
+    const exerciseEl = document.getElementById(`exercise-${exerciseId}`);
+    const selects = exerciseEl.querySelectorAll('.matching-select');
     
     let allCorrect = true;
-    selects.forEach((select, index) => {
-        if (parseInt(select.value) !== index) {
+    selects.forEach((select, i) => {
+        if (parseInt(select.value) !== i) {
             allCorrect = false;
+            select.classList.add('incorrect-select');
+        } else {
+            select.classList.add('correct-select');
         }
+        select.disabled = true;
     });
     
-    checkAnswer(exerciseId, allCorrect ? 0 : 1, 0, 'matching');
+    userAnswers[index] = allCorrect;
+    
+    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+    const feedbackText = feedbackEl.querySelector('.feedback-text');
+    
+    if (allCorrect) {
+        feedbackText.textContent = '✅ Alla rätt!';
+        feedbackText.className = 'feedback-text correct';
+    } else {
+        feedbackText.textContent = '❌ Några fel. Gröna är rätt, röda är fel.';
+        feedbackText.className = 'feedback-text incorrect';
+    }
+    
+    feedbackEl.style.display = 'block';
+    updateResults();
 }
 
-function checkOrdering(exerciseId) {
+function handleOrdering(exerciseId, index) {
     const container = document.getElementById(`ordering-${exerciseId}`);
     const items = container.querySelectorAll('.ordering-item');
     
     let isCorrect = true;
-    items.forEach((item, index) => {
-        if (parseInt(item.dataset.original) !== index) {
+    items.forEach((item, i) => {
+        if (parseInt(item.dataset.original) !== i) {
             isCorrect = false;
+            item.classList.add('incorrect-order');
+        } else {
+            item.classList.add('correct-order');
         }
     });
     
-    checkAnswer(exerciseId, isCorrect ? 0 : 1, 0, 'ordering');
+    userAnswers[index] = isCorrect;
+    
+    const feedbackEl = document.getElementById(`feedback-${exerciseId}`);
+    const feedbackText = feedbackEl.querySelector('.feedback-text');
+    
+    if (isCorrect) {
+        feedbackText.textContent = '✅ Rätt ordning!';
+        feedbackText.className = 'feedback-text correct';
+    } else {
+        feedbackText.textContent = '❌ Fel ordning. Gröna är på rätt plats.';
+        feedbackText.className = 'feedback-text incorrect';
+    }
+    
+    feedbackEl.style.display = 'block';
+    updateResults();
 }
 
-function checkTimeline(exerciseId) {
-    const container = document.getElementById(`timeline-${exerciseId}`);
-    const items = container.querySelectorAll('.timeline-item');
-    
-    let isCorrect = true;
-    items.forEach((item, index) => {
-        if (parseInt(item.dataset.original) !== index) {
-            isCorrect = false;
-        }
-    });
-    
-    checkAnswer(exerciseId, isCorrect ? 0 : 1, 0, 'timeline');
+function handleTimeline(exerciseId, index) {
+    handleOrdering(exerciseId, index); // Samma logik
 }
 
 function toggleSteps(exerciseId) {
@@ -358,14 +494,15 @@ function toggleSteps(exerciseId) {
 }
 
 function updateResults() {
+    const totalGradable = currentExercises.filter(ex => 
+        (ex.type || 'multiple-choice') !== 'reflection'
+    ).length;
+    
     const answered = Object.keys(userAnswers).length;
     const correct = Object.values(userAnswers).filter(v => v).length;
     
-    // Exkludera reflektionsfrågor från totalen
-    const totalGradable = currentExercises.filter(ex => ex.type !== 'reflection').length;
-    
     const resultsEl = document.getElementById('exerciseResults');
-    if (resultsEl && answered >= totalGradable) {
+    if (resultsEl && answered >= totalGradable && totalGradable > 0) {
         document.getElementById('correctCount').textContent = correct;
         document.getElementById('totalCount').textContent = totalGradable;
         resultsEl.style.display = 'block';
@@ -381,7 +518,10 @@ function resetExercises() {
     }
 }
 
-// Drag and drop för ordering och timeline
+// === DRAG AND DROP ===
+
+let draggedItem = null;
+
 function initDragAndDrop() {
     const containers = document.querySelectorAll('.ordering-container, .timeline-container');
     
@@ -396,8 +536,6 @@ function initDragAndDrop() {
         });
     });
 }
-
-let draggedItem = null;
 
 function handleDragStart(e) {
     draggedItem = this;
@@ -442,3 +580,15 @@ function getDragAfterElement(container, y) {
         }
     }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
+
+// Global export
+window.loadExercises = loadExercises;
+window.resetExercises = resetExercises;
+window.handleMultipleChoice = handleMultipleChoice;
+window.handleTrueFalse = handleTrueFalse;
+window.handleFillBlank = handleFillBlank;
+window.handleCalculation = handleCalculation;
+window.handleMatching = handleMatching;
+window.handleOrdering = handleOrdering;
+window.handleTimeline = handleTimeline;
+window.toggleSteps = toggleSteps;

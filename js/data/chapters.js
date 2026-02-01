@@ -2,10 +2,11 @@
 // KAPITELDATA FÖR RADIOAMATÖR UTBILDNING
 // ============================================
 
-const CHAPTERS = [
+const chapters = [
     {
+        number: 1,
         id: 1,
-        slug: "grundlaggande-elektronik",
+        slug: "kapitel-1-grundlaggande-elektronik",
         title: "Grundläggande Elektronik",
         shortTitle: "Elektronik",
         description: "Lär dig om ström, spänning, resistans, kondensatorer, spolar och grundläggande kretsteori.",
@@ -20,12 +21,13 @@ const CHAPTERS = [
             "Växelström och impedans",
             "Filter och resonanskretsar"
         ],
-        estimatedTime: "3-4 timmar",
+        estimatedTime: 45,
         questionCount: 45
     },
     {
+        number: 2,
         id: 2,
-        slug: "radioteknik",
+        slug: "kapitel-2-radioteknik",
         title: "Radioteknik och Radiosystem",
         shortTitle: "Radioteknik",
         description: "Förstå hur sändare och mottagare fungerar, modulationstyper och transceiveruppbyggnad.",
@@ -34,18 +36,19 @@ const CHAPTERS = [
             "Oscillatorer",
             "Modulationstyper (AM, FM, SSB)",
             "Sändaruppbyggnad",
-            "Motttagaruppbyggnad",
+            "Mottagaruppbyggnad",
             "Superheterodynprincipen",
             "Transceivrar",
             "Digitala modulationsformer",
             "SDR - Software Defined Radio"
         ],
-        estimatedTime: "4-5 timmar",
+        estimatedTime: 50,
         questionCount: 50
     },
     {
+        number: 3,
         id: 3,
-        slug: "antenner",
+        slug: "kapitel-3-antenner",
         title: "Antenner och Matarledningar",
         shortTitle: "Antenner",
         description: "Lär dig om olika antenntyper, deras egenskaper och hur de ansluts till radion.",
@@ -60,12 +63,13 @@ const CHAPTERS = [
             "SWR och impedansanpassning",
             "Balun och anpassningsenheter"
         ],
-        estimatedTime: "3-4 timmar",
+        estimatedTime: 40,
         questionCount: 40
     },
     {
+        number: 4,
         id: 4,
-        slug: "vagutbredning",
+        slug: "kapitel-4-vagutbredning",
         title: "Vågutbredning",
         shortTitle: "Vågutbredning",
         description: "Förstå hur radiovågor breder ut sig och vilka faktorer som påverkar kommunikation.",
@@ -80,12 +84,13 @@ const CHAPTERS = [
             "Skip och dead zones",
             "VHF/UHF-utbredning"
         ],
-        estimatedTime: "2-3 timmar",
+        estimatedTime: 35,
         questionCount: 35
     },
     {
+        number: 5,
         id: 5,
-        slug: "matinstrument",
+        slug: "kapitel-5-matinstrument",
         title: "Mätinstrument och Mätmetoder",
         shortTitle: "Mätning",
         description: "Lär dig använda multimeter, SWR-mätare och andra mätinstrument.",
@@ -97,15 +102,16 @@ const CHAPTERS = [
             "Frekvensmätning",
             "Oscilloskop grundläggande",
             "Dummyload",
-            "Fältsstyrkemätare",
+            "Fältstyrkemätare",
             "Spektrumanalysator"
         ],
-        estimatedTime: "2-3 timmar",
+        estimatedTime: 30,
         questionCount: 30
     },
     {
+        number: 6,
         id: 6,
-        slug: "storningar",
+        slug: "kapitel-6-storningar",
         title: "Störningar (EMC)",
         shortTitle: "EMC/Störningar",
         description: "Förstå hur störningar uppkommer och hur de kan förebyggas och åtgärdas.",
@@ -114,18 +120,19 @@ const CHAPTERS = [
             "EMC-grundbegrepp",
             "Störningskällor",
             "Störningsmottaglighet",
-            "Övertonsströrningar",
+            "Övertonsstörningar",
             "Intermodulation",
             "Filtertekniker",
             "Jordning och skärmning",
             "Felsökning av störningar"
         ],
-        estimatedTime: "2-3 timmar",
+        estimatedTime: 35,
         questionCount: 35
     },
     {
+        number: 7,
         id: 7,
-        slug: "regler-bestammelser",
+        slug: "kapitel-7-regler-bestammelser",
         title: "Regler och Bestämmelser",
         shortTitle: "Regler",
         description: "Lär dig de lagar och förordningar som gäller för radioamatörer i Sverige.",
@@ -140,12 +147,13 @@ const CHAPTERS = [
             "Loggbokskrav",
             "Internationella regler (ITU)"
         ],
-        estimatedTime: "3-4 timmar",
+        estimatedTime: 45,
         questionCount: 45
     },
     {
+        number: 8,
         id: 8,
-        slug: "trafikmetoder",
+        slug: "kapitel-8-trafikmetoder",
         title: "Trafikmetoder och Operatörsteknik",
         shortTitle: "Trafik",
         description: "Lär dig hur man genomför radiosamtal, Q-koder och fonetiska alfabetet.",
@@ -160,12 +168,13 @@ const CHAPTERS = [
             "DX-trafik",
             "Digitala trafiksätt"
         ],
-        estimatedTime: "2-3 timmar",
+        estimatedTime: 40,
         questionCount: 40
     },
     {
+        number: 9,
         id: 9,
-        slug: "sakerhet",
+        slug: "kapitel-9-sakerhet",
         title: "Elsäkerhet",
         shortTitle: "Säkerhet",
         description: "Viktiga säkerhetsaspekter vid arbete med radioutrustning och antenner.",
@@ -180,12 +189,13 @@ const CHAPTERS = [
             "Åskskydd",
             "Första hjälpen vid elolycka"
         ],
-        estimatedTime: "2 timmar",
+        estimatedTime: 25,
         questionCount: 30
     },
     {
+        number: 10,
         id: 10,
-        slug: "praktisk-trafik",
+        slug: "kapitel-10-praktisk-trafik",
         title: "Praktisk Radiotrafik",
         shortTitle: "Praktik",
         description: "Praktiska tips och övningar för att komma igång som radioamatör.",
@@ -200,22 +210,28 @@ const CHAPTERS = [
             "Portabel och mobil trafik",
             "Satellittrafik"
         ],
-        estimatedTime: "3-4 timmar",
+        estimatedTime: 50,
         questionCount: 35
     }
 ];
 
-// Funktion för att hämta kapitel via ID
+// Alias för bakåtkompatibilitet (om något script använder CHAPTERS)
+const CHAPTERS = chapters;
+
+// Hjälpfunktioner
 function getChapterById(id) {
-    return CHAPTERS.find(ch => ch.id === id);
+    return chapters.find(ch => ch.id === id);
 }
 
-// Funktion för att hämta kapitel via slug
 function getChapterBySlug(slug) {
-    return CHAPTERS.find(ch => ch.slug === slug);
+    return chapters.find(ch => ch.slug === slug);
 }
 
-// Exportera för användning i moduler (om du använder ES6 modules)
+function getChapterByNumber(number) {
+    return chapters.find(ch => ch.number === number);
+}
+
+// Exportera för Node.js (om det används)
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { CHAPTERS, getChapterById, getChapterBySlug };
+    module.exports = { chapters, CHAPTERS, getChapterById, getChapterBySlug, getChapterByNumber };
 }

@@ -5496,7 +5496,7 @@ section h2 {
 /* ===========================================
    28. DARK MODE
    =========================================== */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark){
     :root {
         --background: #1a202c;
         --surface: #2d3748;
@@ -6943,4 +6943,5 @@ section h2 {
     @page {
         margin: 2cm;
     }
+}
 }

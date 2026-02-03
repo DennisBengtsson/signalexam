@@ -2318,12 +2318,16 @@ section h2 {
     cursor: pointer;
 }
 
-/* --- ORDERING - Mobilvänlig --- */
+/* --- ORDERING & TIMELINE - Mobilvänlig v2 --- */
 .ordering-help {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-bottom: 1rem;
-    font-style: italic;
+    padding: 0.75rem 1rem;
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary-color);
+    line-height: 1.5;
 }
 
 .ordering-container,
@@ -2332,6 +2336,8 @@ section h2 {
     flex-direction: column;
     gap: 0.5rem;
     margin: 1rem 0;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .ordering-item,
@@ -2344,9 +2350,12 @@ section h2 {
     border: 2px solid var(--border-color);
     border-radius: 10px;
     cursor: grab;
-    transition: all 0.2s ease;
-    user-select: none;
+    transition: all 0.15s ease;
     -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .ordering-item:active,
@@ -2366,6 +2375,7 @@ section h2 {
     font-weight: 700;
     font-size: 0.9rem;
     flex-shrink: 0;
+    transition: background 0.2s;
 }
 
 .ordering-item .item-text,
@@ -2377,51 +2387,153 @@ section h2 {
 .drag-handle {
     color: var(--text-light);
     font-size: 1.25rem;
-    cursor: grab;
-    padding: 0.25rem;
+    padding: 0.5rem;
+    margin: -0.5rem;
     flex-shrink: 0;
     font-weight: bold;
-    user-select: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
 }
 
+/* Hover state (desktop) */
 .ordering-item:hover,
 .timeline-item:hover {
     border-color: var(--primary-color);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.ordering-item:hover .drag-handle,
+.timeline-item:hover .drag-handle {
+    opacity: 1;
+}
+
+/* Touch-aktiv state (före drag startar) */
+.ordering-item.touch-active,
+.timeline-item.touch-active {
+    border-color: var(--primary-color);
+    background: var(--info-bg);
+    transform: scale(1.02);
+}
+
+/* När man drar */
 .ordering-item.dragging,
 .timeline-item.dragging {
-    opacity: 0.5;
+    opacity: 0.4;
     border-style: dashed;
     border-color: var(--primary-color);
     background: var(--info-bg);
 }
 
-.ordering-item.selected-for-swap {
+/* Vald för swap (tap-to-swap) */
+.ordering-item.selected-for-swap,
+.timeline-item.selected-for-swap {
     border-color: var(--primary-color);
     background: var(--info-bg);
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+    transform: scale(1.02);
 }
 
+.ordering-item.selected-for-swap .order-number {
+    background: var(--primary-dark);
+    animation: pulse-number 1s ease infinite;
+}
+
+@keyframes pulse-number {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Resultat: Rätt ordning */
 .ordering-item.correct-order,
 .timeline-item.correct-order {
     border-color: #28a745;
-    background: #d4edda;
+    background: rgba(40, 167, 69, 0.1);
 }
 
 .ordering-item.correct-order .order-number {
     background: #28a745;
 }
 
+/* Resultat: Fel ordning */
 .ordering-item.incorrect-order,
 .timeline-item.incorrect-order {
     border-color: #dc3545;
-    background: #f8d7da;
+    background: rgba(220, 53, 69, 0.1);
 }
 
 .ordering-item.incorrect-order .order-number {
     background: #dc3545;
+}
+
+/* Ghost element som följer fingret vid touch-drag */
+.drag-ghost {
+    position: fixed;
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0.95;
+    transform: rotate(2deg);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.drag-ghost .order-number {
+    background: var(--primary-color);
+    color: white;
+}
+
+.drag-ghost .drag-handle {
+    display: none;
+}
+
+/* === MOBIL-SPECIFIKA ANPASSNINGAR === */
+@media (max-width: 768px) {
+    .ordering-item,
+    .timeline-item {
+        padding: 1rem 0.875rem;
+        min-height: 60px;
+    }
+    
+    .order-number {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+    
+    .item-text {
+        font-size: 0.95rem;
+    }
+    
+    .drag-handle {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+        margin: -0.75rem -0.5rem -0.75rem 0;
+    }
+    
+    .ordering-help {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+        text-align: center;
+    }
+}
+
+/* Touch-enheter: Större touch targets */
+@media (pointer: coarse) {
+    .ordering-item,
+    .timeline-item {
+        min-height: 64px;
+        padding: 1.125rem 1rem;
+    }
+    
+    .drag-handle {
+        padding: 1rem;
+        margin: -0.5rem -0.25rem -0.5rem 0;
+    }
 }
 
 /* Drag ghost för touch */
@@ -5526,6 +5638,33 @@ section h2 {
         
         --danger-bg: rgba(245, 101, 101, 0.15);
         --danger-border: #fc8181;
+
+            /* Ordering touch states - Dark mode */
+    .ordering-item.touch-active,
+    .timeline-item.touch-active {
+        background: rgba(66, 153, 225, 0.2);
+        border-color: #63b3ed;
+    }
+    
+    .ordering-item.selected-for-swap,
+    .timeline-item.selected-for-swap {
+        background: rgba(66, 153, 225, 0.2);
+        border-color: #4299e1;
+        box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
+    }
+    
+    .drag-ghost {
+        background: var(--surface);
+        border-color: #63b3ed;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    
+    .ordering-help {
+        background: var(--surface);
+        border-left-color: #63b3ed;
+        color: #a0aec0;
+    }
+
     }
     
     /* Grundläggande text */
@@ -6857,6 +6996,8 @@ section h2 {
     figcaption,
     .table-note {
         color: #a0aec0;
+
+        
     }
 }
 

@@ -40,6 +40,14 @@ radioamator-utbildning/
 │   │   ├── pmr-4-rackvidd-tips.html
 │   │   └── pmr-5-fran-pmr-till-amatorradio.html
 │   │
+│   ├── cw/                     # CW-BOKEN (morsekodning)
+│   │   ├── cw-1-vad-ar-morsekod.html
+│   │   ├── cw-2-alfabetet.html
+│   │   ├── cw-3-siffror-skiljetecken.html
+│   │   ├── cw-4-lyssna.html
+│   │   └── cw-5-skicka.html
+│   │   └── cw-6-qso.html
+│   │
 │   ├── introduktion/               # FÖRBEREDANDE KAPITEL
 │   │   ├── intro-1-vad-ar-radio.html
 │   │   ├── intro-2-radiohistoria.html
@@ -108,7 +116,19 @@ Målgrupp: Nybörjare, unga (10-15 år), de som känner sig osäkra på matte/te
 | 5 | intro-5-frekvensbanden.html | Spektrumet, HF/VHF/UHF, amatörband, regler |
 | 6 | intro-6-vad-gor-radioamatorer.html | DX, contest, bygga, satelliter, nödkom, digital |
 
-### Bok 2: Förberedelsebok för radiocertifikatet
+### Bok 2: CW
+Tilläggsmaterial för personer som är intresserade av att lära sig morsekod.
+
+| # | Fil | Innehåll |
+|---|-----|----------|
+| 1 | intro-1-vad-ar-morsekod.html | Vad är morsekod? |
+| 2 | intro-2-alfabetet.html | Skicka morsekod |
+| 3 | intro-3-siffror-skiljetecken.html | Skicka morsekod |
+| 4 | intro-4-lyssna.html | Lyssna |
+| 5 | intro-5-skicka.html | Skicka |
+| 6 | intro-6-qso.html | QSO |
+
+### Bok 3: Förberedelsebok för radiocertifikatet
 Det faktiska materialet som krävs för att klara certifikatsprovet.
 Målgrupp: Certifikatssökande som vill klara PTS-provet.
 
@@ -132,6 +152,7 @@ Utskriftsvänliga versioner för offline-läsning.
 |-----|----------|--------|
 | index.html | Nedladdningssida med alla PDF:er | ✅ Klar |
 | pmr446-bok.html | PMR446-boken komplett (utskriftsvänlig) | ✅ Klar |
+| cw-bok.html | CW-boken komplett (utskriftsvänlig) | ✅ Klar |
 | intro-bok.html | Introduktionsboken komplett | 🔜 Planerad |
 | cert-sammanfattning.html | Certifikatssammanfattning | 🔜 Planerad |
 
@@ -157,21 +178,21 @@ Utskriftsvänliga versioner för offline-läsning.
          │   (startsida)   │
          └────────┬────────┘
                   │
-    ┌─────────────┼─────────────┬─────────────┐
-    ▼             ▼             ▼             ▼
-┌────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐
-│PMR446  │  │Intro-    │  │Certifi-  │  │PDF:er   │
-│Bok 0   │  │duktion   │  │katsbok   │  │(ladda   │
-│        │  │Bok 1     │  │Bok 2     │  │ner)     │
-└───┬────┘  └────┬─────┘  └────┬─────┘  └─────────┘
-    │            │             │
-    ▼            ▼             ▼
-┌────────┐  ┌──────────┐  ┌──────────────┐
-│Kapitel │  │Kapitel   │  │  Provträning │
-│ 1-5    │  │ 1-6      │  │  & Övningar  │
-└───┬────┘  └────┬─────┘  └──────┬───────┘
-    │            │               │
-    └────────────┴───────┬───────┘
+    ┌─────────────┼─────────────┬─────────────┬─────────────┐
+    ▼             ▼             ▼             ▼             ▼
+┌────────┐  ┌──────────┐  ┌─────────┐   ┌─────────┐     ┌────────┐
+│PMR446  │  │Intro-    │  │CW       │   │Certifi- │     │PDF:er  │
+│Bok 0   │  │duktion   │  │Bok 2    │   │katsbok  │     │(ladda  │
+│        │  │Bok 1     │  │         │   │Bok2     │     │ner)    │
+└───┬────┘  └────┬─────┘  └────┬────┘   └────┬────┘     └────────┘    
+    │            │             │             │
+    ▼            ▼             ▼             ▼
+┌────────┐  ┌──────────┐  ┌────────┐  ┌──────────────┐
+│Kapitel │  │Kapitel   │  │Kapitel │  │  Provträning │
+│ 1-5    │  │ 1-6      │  │ 1-6    │  │  & Övningar  │
+└───┬────┘  └────┬─────┘  └───┬────┘  └──────┬───────┘
+    │            │            │              │
+    └────────────┴───────┬────┘──────────────┘
                          ▼
                   ┌──────────────┐
                   │  Statistik   │
@@ -183,12 +204,15 @@ Utskriftsvänliga versioner för offline-läsning.
 ```
 Huvudnavigation:
 ├── Hem (index.html)
-├── Böcker (#bocker)
-│   ├── PMR446 (pages/pmr446/)
+├── Studera (#studera)
+│   ├── Länk till SSA HAM-SHOP (https://hamshop.ssa.se/produkt-kategori/svensksprakig-litteratur/utbildning/)
 │   ├── Introduktion (pages/introduktion/)
 │   └── Certifikatsbok (pages/chapters/)
 ├── Gör prov (pages/test/prov.html)
 ├── PDF-böcker (pages/pdf/index.html)
+├── Bonusmaterial
+│   ├── PMR446 (pages/pmr446/pmr-1-vad-ar-pmr446.html)
+│   └── Morsekod (pages/cw/cw-1-vad-ar-morsekod.html)
 └── Min statistik (pages/profil/statistik.html)
 ```
 
@@ -197,6 +221,7 @@ Huvudnavigation:
 | Sektion | Antal filer | Status |
 |---------|-------------|--------|
 | PMR446-boken | 5 kapitel + 1 PDF | ✅ Komplett |
+| CW-boken | 6 kapitel + 1 PDF | ✅ Komplett |
 | Introduktionsboken | 6 kapitel | ✅ Komplett |
 | Certifikatsboken | 10 kapitel | 🔄 Pågående |
 | Provsystem | 3 sidor | ✅ Komplett |
@@ -207,7 +232,6 @@ Huvudnavigation:
 
 | Bok/Sektion | Beskrivning | Prioritet |
 |-------------|-------------|-----------|
-| Morsekodsboken | Lär dig CW från grunden | Hög |
 | Antennbygge | DIY-antenner steg för steg | Medel |
 | Digital radio | FT8, DMR, D-STAR, APRS | Medel |
 | Nödkommunikation | FRO, prepping, krisradio | Låg |

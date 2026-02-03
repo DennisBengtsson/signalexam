@@ -1,5 +1,6 @@
 // js/exercises.js
 // Hanterar övningar för alla kapitel (intro, pmr, morse, cert)
+// Version 2.0 - Förbättrad mobilkompatibilitet
 
 let currentExercises = [];
 let userAnswers = {};
@@ -214,16 +215,23 @@ function renderOrdering(ex, index, num) {
     const shuffledItems = ex.items.map((item, i) => ({ text: item, origIndex: i }))
         .sort(() => Math.random() - 0.5);
     
+    // Detektera om det är en touch-enhet
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    const helpText = isTouchDevice 
+        ? '👆 Tryck på ett objekt och sedan på ett annat för att byta plats. Eller håll in för att dra.'
+        : '🖱️ Dra och släpp för att ordna objekten i rätt ordning.';
+    
     return `
         <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
             <div class="exercise-question">
                 <span class="exercise-number">${num}.</span>
                 <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="ordering-help">Tryck på ett objekt och sedan på ett annat för att byta plats, eller dra för att flytta.</p>
+            <p class="ordering-help">${helpText}</p>
             <div class="ordering-container" id="ordering-${exerciseId}">
                 ${shuffledItems.map((item, i) => `
-                    <div class="ordering-item" data-original="${item.origIndex}" data-pos="${i}">
+                    <div class="ordering-item" draggable="true" data-original="${item.origIndex}" data-pos="${i}">
                         <span class="order-number">${i + 1}</span>
                         <span class="item-text">${item.text}</span>
                         <span class="drag-handle">⋮⋮</span>
@@ -244,16 +252,22 @@ function renderTimeline(ex, index, num) {
     const shuffledItems = ex.items.map((item, i) => ({ text: item, origIndex: i }))
         .sort(() => Math.random() - 0.5);
     
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    const helpText = isTouchDevice 
+        ? '👆 Tryck på ett objekt och sedan på ett annat för att byta plats.'
+        : '🖱️ Dra och släpp för att ordna i kronologisk ordning.';
+    
     return `
         <div class="exercise-item" id="exercise-${exerciseId}" data-index="${index}">
             <div class="exercise-question">
                 <span class="exercise-number">${num}.</span>
                 <span class="exercise-text">${ex.question}</span>
             </div>
-            <p class="ordering-help">Tryck på ett objekt och sedan på ett annat för att byta plats, eller dra för att flytta.</p>
+            <p class="ordering-help">${helpText}</p>
             <div class="timeline-container ordering-container" id="timeline-${exerciseId}">
                 ${shuffledItems.map((item, i) => `
-                    <div class="ordering-item timeline-item" data-original="${item.origIndex}" data-pos="${i}">
+                    <div class="ordering-item timeline-item" draggable="true" data-original="${item.origIndex}" data-pos="${i}">
                         <span class="order-number">${i + 1}</span>
                         <span class="item-text">${item.text}</span>
                         <span class="drag-handle">⋮⋮</span>
@@ -467,7 +481,8 @@ function handleMatching(exerciseId, index) {
 }
 
 function handleOrdering(exerciseId, index) {
-    const container = document.getElementById(`ordering-${exerciseId}`);
+    const container = document.getElementById(`ordering-${exerciseId}`) || 
+                      document.getElementById(`timeline-${exerciseId}`);
     const items = container.querySelectorAll('.ordering-item');
     
     let isCorrect = true;
@@ -532,10 +547,21 @@ function resetExercises() {
     }
 }
 
-// === DRAG AND DROP + TOUCH + TAP-TO-SWAP ===
+// =============================================
+// DRAG AND DROP + TOUCH + TAP-TO-SWAP
+// Förbättrad mobilkompatibilitet
+// =============================================
 
 let draggedItem = null;
 let selectedForSwap = null;
+let touchStartY = 0;
+let touchStartX = 0;
+let touchCurrentItem = null;
+let touchClone = null;
+let isTouchDragging = false;
+let longPressTimer = null;
+let touchStartTime = 0;
+let initialTouchPos = { x: 0, y: 0 };
 
 function initDragAndDrop() {
     const containers = document.querySelectorAll('.ordering-container');
@@ -544,28 +570,36 @@ function initDragAndDrop() {
         const items = container.querySelectorAll('.ordering-item');
         
         items.forEach(item => {
-            // Desktop drag
+            // Desktop drag events
             item.addEventListener('dragstart', handleDragStart);
             item.addEventListener('dragover', handleDragOver);
             item.addEventListener('drop', handleDrop);
             item.addEventListener('dragend', handleDragEnd);
             
-            // Touch events för mobil
+            // Touch events för mobil - på HELA elementet
             item.addEventListener('touchstart', handleTouchStart, { passive: false });
             item.addEventListener('touchmove', handleTouchMove, { passive: false });
             item.addEventListener('touchend', handleTouchEnd);
+            item.addEventListener('touchcancel', handleTouchCancel);
             
-            // Click/tap för swap
+            // Click/tap för swap (fungerar på både desktop och mobil)
             item.addEventListener('click', handleTapToSwap);
         });
     });
 }
 
+// === DESKTOP DRAG HANDLERS ===
+
 function handleDragStart(e) {
     draggedItem = this;
     this.classList.add('dragging');
     e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', ''); // Firefox fix
+    e.dataTransfer.setData('text/plain', '');
+    
+    // Gör elementet lite transparent
+    setTimeout(() => {
+        this.style.opacity = '0.5';
+    }, 0);
 }
 
 function handleDragOver(e) {
@@ -589,87 +623,137 @@ function handleDrop(e) {
 
 function handleDragEnd() {
     this.classList.remove('dragging');
+    this.style.opacity = '1';
     draggedItem = null;
     updateOrderNumbers(this.parentNode);
 }
 
-// === TOUCH HANDLING ===
-
-let touchStartY = 0;
-let touchCurrentItem = null;
-let touchClone = null;
-let isTouchDragging = false;
+// === TOUCH HANDLERS (MOBIL) ===
 
 function handleTouchStart(e) {
-    // Bara om man trycker på drag handle eller håller länge
-    const handle = e.target.closest('.drag-handle');
-    if (!handle) return;
-    
-    e.preventDefault();
+    // Spara startposition och tid
+    const touch = e.touches[0];
+    touchStartY = touch.clientY;
+    touchStartX = touch.clientX;
+    initialTouchPos = { x: touch.clientX, y: touch.clientY };
+    touchStartTime = Date.now();
     touchCurrentItem = this;
-    touchStartY = e.touches[0].clientY;
     
-    // Markera som aktiv efter kort delay (för att skilja från tap)
-    setTimeout(() => {
+    // Lägg till visuell feedback direkt
+    this.classList.add('touch-active');
+    
+    // Starta long-press timer (250ms för att starta drag)
+    longPressTimer = setTimeout(() => {
         if (touchCurrentItem === this) {
-            isTouchDragging = true;
-            this.classList.add('dragging');
-            
-            // Skapa ghost element
-            touchClone = this.cloneNode(true);
-            touchClone.classList.add('drag-ghost');
-            document.body.appendChild(touchClone);
-            updateGhostPosition(e.touches[0].clientY);
+            startTouchDrag(this, touch);
         }
-    }, 150);
+    }, 250);
+}
+
+function startTouchDrag(item, touch) {
+    isTouchDragging = true;
+    item.classList.remove('touch-active');
+    item.classList.add('dragging');
+    
+    // Haptic feedback om tillgängligt
+    if (navigator.vibrate) {
+        navigator.vibrate(30);
+    }
+    
+    // Skapa ghost element som följer fingret
+    touchClone = item.cloneNode(true);
+    touchClone.classList.add('drag-ghost');
+    touchClone.style.width = item.offsetWidth + 'px';
+    touchClone.style.position = 'fixed';
+    touchClone.style.zIndex = '10000';
+    touchClone.style.pointerEvents = 'none';
+    document.body.appendChild(touchClone);
+    updateGhostPosition(touch.clientY, touch.clientX);
 }
 
 function handleTouchMove(e) {
-    if (!isTouchDragging || !touchCurrentItem) return;
-    e.preventDefault();
+    if (!touchCurrentItem) return;
     
     const touch = e.touches[0];
-    updateGhostPosition(touch.clientY);
+    const deltaY = Math.abs(touch.clientY - initialTouchPos.y);
+    const deltaX = Math.abs(touch.clientX - initialTouchPos.x);
     
-    const container = touchCurrentItem.parentNode;
-    const afterElement = getDragAfterElement(container, touch.clientY);
-    
-    if (afterElement == null) {
-        container.appendChild(touchCurrentItem);
-    } else if (afterElement !== touchCurrentItem) {
-        container.insertBefore(touchCurrentItem, afterElement);
+    // Om användaren rör sig mer än 15px innan long-press aktiveras, avbryt drag-försöket
+    if (!isTouchDragging && (deltaY > 15 || deltaX > 15)) {
+        clearTimeout(longPressTimer);
+        if (touchCurrentItem) {
+            touchCurrentItem.classList.remove('touch-active');
+        }
+        // Låt scroll ske normalt
+        return;
     }
-    updateOrderNumbers(container);
+    
+    // Om vi faktiskt drar, förhindra scroll
+    if (isTouchDragging) {
+        e.preventDefault();
+        
+        updateGhostPosition(touch.clientY, touch.clientX);
+        
+        const container = touchCurrentItem.parentNode;
+        const afterElement = getDragAfterElement(container, touch.clientY);
+        
+        if (afterElement == null) {
+            container.appendChild(touchCurrentItem);
+        } else if (afterElement !== touchCurrentItem) {
+            container.insertBefore(touchCurrentItem, afterElement);
+        }
+        updateOrderNumbers(container);
+    }
 }
 
 function handleTouchEnd(e) {
+    clearTimeout(longPressTimer);
+    
+    const wasDragging = isTouchDragging;
+    const touchDuration = Date.now() - touchStartTime;
+    
+    // Städa upp ghost
     if (touchClone) {
         touchClone.remove();
         touchClone = null;
     }
     
     if (touchCurrentItem) {
-        touchCurrentItem.classList.remove('dragging');
-        updateOrderNumbers(touchCurrentItem.parentNode);
+        touchCurrentItem.classList.remove('dragging', 'touch-active');
+        
+        // Om det var en kort tap (inte drag), låt click-eventet hantera swap
+        // handleTapToSwap hanteras av click-eventet
+        
+        if (wasDragging) {
+            updateOrderNumbers(touchCurrentItem.parentNode);
+        }
     }
     
     touchCurrentItem = null;
     isTouchDragging = false;
 }
 
-function updateGhostPosition(y) {
+function handleTouchCancel(e) {
+    handleTouchEnd(e);
+}
+
+function updateGhostPosition(y, x) {
     if (touchClone) {
-        touchClone.style.top = (y - 25) + 'px';
+        const ghostHeight = touchClone.offsetHeight || 50;
+        const ghostWidth = touchClone.offsetWidth || 200;
+        touchClone.style.top = (y - ghostHeight / 2) + 'px';
+        touchClone.style.left = (x - ghostWidth / 2) + 'px';
     }
 }
 
-// === TAP TO SWAP (alternativ metod för mobil) ===
+// === TAP TO SWAP (Alternativ metod - fungerar alltid) ===
 
 function handleTapToSwap(e) {
-    // Ignorera om man drar
+    // Ignorera om vi har dragit
     if (isTouchDragging) return;
-    // Ignorera om man klickade på handle
-    if (e.target.closest('.drag-handle')) return;
+    
+    // Ignorera om click kom från drag handle på desktop
+    if (e.target.closest('.drag-handle') && !('ontouchstart' in window)) return;
     
     const container = this.parentNode;
     
@@ -678,22 +762,27 @@ function handleTapToSwap(e) {
         selectedForSwap = this;
         this.classList.add('selected-for-swap');
     } else if (selectedForSwap === this) {
-        // Avmarkera
+        // Klick på samma - avmarkera
         this.classList.remove('selected-for-swap');
         selectedForSwap = null;
     } else {
-        // Byt plats
-        const parent = this.parentNode;
-        const items = Array.from(parent.children);
+        // Andra valet - byt plats
+        const items = Array.from(container.children);
         const idx1 = items.indexOf(selectedForSwap);
         const idx2 = items.indexOf(this);
         
+        // Byt plats genom att flytta element
         if (idx1 < idx2) {
-            parent.insertBefore(this, selectedForSwap);
-            parent.insertBefore(selectedForSwap, items[idx2 + 1] || null);
+            container.insertBefore(this, selectedForSwap);
+            container.insertBefore(selectedForSwap, items[idx2 + 1] || null);
         } else {
-            parent.insertBefore(selectedForSwap, this);
-            parent.insertBefore(this, items[idx1 + 1] || null);
+            container.insertBefore(selectedForSwap, this);
+            container.insertBefore(this, items[idx1 + 1] || null);
+        }
+        
+        // Haptic feedback
+        if (navigator.vibrate) {
+            navigator.vibrate(20);
         }
         
         selectedForSwap.classList.remove('selected-for-swap');
@@ -701,6 +790,8 @@ function handleTapToSwap(e) {
         updateOrderNumbers(container);
     }
 }
+
+// === HELPER FUNCTIONS ===
 
 function getDragAfterElement(container, y) {
     const draggableElements = [...container.querySelectorAll('.ordering-item:not(.dragging)')];
@@ -722,10 +813,11 @@ function updateOrderNumbers(container) {
     items.forEach((item, i) => {
         const numEl = item.querySelector('.order-number');
         if (numEl) numEl.textContent = i + 1;
+        item.dataset.pos = i;
     });
 }
 
-// Global export
+// === GLOBAL EXPORTS ===
 window.loadExercises = loadExercises;
 window.resetExercises = resetExercises;
 window.handleMultipleChoice = handleMultipleChoice;

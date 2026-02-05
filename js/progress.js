@@ -1,35 +1,88 @@
 // ============================================
-// PROGRESS & STATISTIK HANTERING
+// PROGRESS & STATISTIK HANTERING - UPPDATERAD VERSION
 // ============================================
+// Hanterar tre olika provtyper:
+// 1. Övningar (delkapitel) - kräver 80%
+// 2. Övningsprov (kapitel) - kräver 80%
+// 3. Certifikatsprov (slutprov) - kräver 70%
 
 const ProgressManager = {
     STORAGE_KEY: 'radioamator_progress',
+    
+    // Tröskel för olika provtyper
+    SUBCHAPTER_PASS: 80,      // Övningar (delkapitel)
+    PRACTICE_EXAM_PASS: 80,   // Övningsprov (kapitel)
+    CERT_EXAM_PASS: 70,       // Certifikatsprov (slutprov)
+    
+    // För provredo-status
     EXAM_READY_THRESHOLD: 75,
     MIN_EXAMS_FOR_READY: 3,
     
     // Hämta all sparad data
     getData() {
-        const data = localStorage.getItem(this.STORAGE_KEY);
-        if (!data) {
+        const stored = localStorage.getItem(this.STORAGE_KEY);
+        if (!stored) {
             return this.getDefaultData();
         }
-        return JSON.parse(data);
+        
+        try {
+            const data = JSON.parse(stored);
+            
+            // Migrera gammal data eller lägg till saknade fält
+            if (!data.subchaptersProgress) data.subchaptersProgress = {};
+            if (!data.chaptersProgress) data.chaptersProgress = {};
+            if (!data.certExamHistory) data.certExamHistory = [];
+            if (!data.practiceExamHistory) data.practiceExamHistory = [];
+            if (!data.questionStats) data.questionStats = {};
+            if (!data.achievements) data.achievements = [];
+            if (typeof data.totalQuestionsAnswered === 'undefined') data.totalQuestionsAnswered = 0;
+            if (typeof data.totalCorrect === 'undefined') data.totalCorrect = 0;
+            if (typeof data.hasSeenExamReadyMessage === 'undefined') data.hasSeenExamReadyMessage = false;
+            if (typeof data.wasExamReady === 'undefined') data.wasExamReady = false;
+            
+            // Om det finns gammal examHistory, migrera inte (för att undvika förvirring)
+            // Användare får börja om med nya provtyper
+            
+            return data;
+        } catch (e) {
+            console.error('Fel vid läsning av sparad data:', e);
+            return this.getDefaultData();
+        }
     },
     
     // Standarddata för ny användare
     getDefaultData() {
-        return {
+        const defaultData = {
+            // Delkapitel-progress (övningar)
+            subchaptersProgress: {},
+            
+            // Kapitel-progress (övningsprov)
             chaptersProgress: {},
-            examHistory: [],
+            
+            // Certifikatsprov-historik (slutprov)
+            certExamHistory: [],
+            
+            // Övningsprov-historik (kapitel)
+            practiceExamHistory: [],
+            
+            // Frågestatistik
             questionStats: {},
+            
+            // Totaler
             totalQuestionsAnswered: 0,
             totalCorrect: 0,
             studyTime: 0,
             lastActivity: null,
+            
+            // Achievements och meddelanden
             achievements: [],
             hasSeenExamReadyMessage: false,
             wasExamReady: false
         };
+        
+        // Spara defaultdata första gången
+        this.saveData(defaultData);
+        return defaultData;
     },
     
     // Spara data
@@ -38,13 +91,202 @@ const ProgressManager = {
         localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
     },
     
-    // Registrera svar på en fråga
-    recordAnswer(questionId, chapterId, isCorrect) {
+    // ============================================
+    // DELKAPITEL-FUNKTIONER (ÖVNINGAR)
+    // ============================================
+    
+    // Registrera resultat för ett delkapitel (övning)
+    recordSubchapterResult(chapterId, subchapterId, results) {
         const data = this.getData();
+        const key = `${chapterId}-${subchapterId}`;
+        
+        if (!data.subchaptersProgress[key]) {
+            data.subchaptersProgress[key] = {
+                attempts: 0,
+                scores: [],
+                bestScore: 0,
+                lastAttempt: null,
+                completed: false,
+                totalQuestions: results.totalQuestions || 10,
+                correctAnswers: 0
+            };
+        }
+        
+        const subProgress = data.subchaptersProgress[key];
+        subProgress.attempts++;
+        subProgress.scores.push(results.percentage);
+        subProgress.lastAttempt = new Date().toISOString();
+        subProgress.correctAnswers = results.correctAnswers;
+        
+        // Uppdatera bästa resultat
+        if (results.percentage > subProgress.bestScore) {
+            subProgress.bestScore = results.percentage;
+        }
+        
+        // Markera som klarat om ≥80%
+        if (results.percentage >= this.SUBCHAPTER_PASS) {
+            subProgress.completed = true;
+        }
         
         // Uppdatera totaler
-        data.totalQuestionsAnswered++;
-        if (isCorrect) data.totalCorrect++;
+        data.totalQuestionsAnswered += results.totalQuestions;
+        data.totalCorrect += results.correctAnswers;
+        
+        this.saveData(data);
+        this.checkAchievements(data);
+        
+        return subProgress;
+    },
+    
+    // Hämta progress för ett delkapitel
+    getSubchapterProgress(chapterId, subchapterId) {
+        const data = this.getData();
+        const key = `${chapterId}-${subchapterId}`;
+        return data.subchaptersProgress[key] || {
+            attempts: 0,
+            scores: [],
+            bestScore: 0,
+            lastAttempt: null,
+            completed: false,
+            totalQuestions: 10,
+            correctAnswers: 0
+        };
+    },
+    
+    // Kolla om ett delkapitel är klarat
+    isSubchapterCompleted(chapterId, subchapterId) {
+        const progress = this.getSubchapterProgress(chapterId, subchapterId);
+        return progress.completed;
+    },
+    
+    // Hämta alla klarade delkapitel för ett kapitel
+    getCompletedSubchapters(chapterId) {
+        const data = this.getData();
+        const completed = [];
+        
+        for (const [key, progress] of Object.entries(data.subchaptersProgress)) {
+            if (key.startsWith(`${chapterId}-`) && progress.completed) {
+                const parts = key.split('-');
+                const subchapterId = parts.slice(1).join('-');
+                completed.push(subchapterId);
+            }
+        }
+        
+        return completed;
+    },
+    
+    // ============================================
+    // ÖVNINGSPROV-FUNKTIONER (KAPITEL)
+    // ============================================
+    
+    // Registrera ett övningsprov (kapitel)
+    recordPracticeExam(chapterId, results) {
+        const data = this.getData();
+        
+        const examRecord = {
+            date: new Date().toISOString(),
+            chapterId: chapterId,
+            totalQuestions: results.totalQuestions,
+            correctAnswers: results.correctAnswers,
+            percentage: Math.round((results.correctAnswers / results.totalQuestions) * 100),
+            passed: results.correctAnswers >= results.totalQuestions * (this.PRACTICE_EXAM_PASS / 100),
+            timeSpent: results.timeSpent
+        };
+        
+        // Lägg till i övningsprov-historik
+        data.practiceExamHistory.unshift(examRecord);
+        if (data.practiceExamHistory.length > 50) {
+            data.practiceExamHistory = data.practiceExamHistory.slice(0, 50);
+        }
+        
+        // Uppdatera kapitelstatistik
+        if (!data.chaptersProgress[chapterId]) {
+            data.chaptersProgress[chapterId] = {
+                attempts: 0,
+                bestScore: 0,
+                completed: false,
+                lastAttempt: null
+            };
+        }
+        
+        const chapterProgress = data.chaptersProgress[chapterId];
+        chapterProgress.attempts++;
+        chapterProgress.lastAttempt = new Date().toISOString();
+        
+        if (examRecord.percentage > chapterProgress.bestScore) {
+            chapterProgress.bestScore = examRecord.percentage;
+        }
+        
+        if (examRecord.passed) {
+            chapterProgress.completed = true;
+        }
+        
+        // Uppdatera totaler
+        data.totalQuestionsAnswered += results.totalQuestions;
+        data.totalCorrect += results.correctAnswers;
+        
+        this.saveData(data);
+        this.checkAchievements(data);
+        
+        return examRecord;
+    },
+    
+    // Hämta kapitelstatistik (från övningsprov)
+    getChapterProgress(chapterId) {
+        const data = this.getData();
+        return data.chaptersProgress[chapterId] || {
+            attempts: 0,
+            bestScore: 0,
+            completed: false,
+            lastAttempt: null
+        };
+    },
+    
+    // ============================================
+    // CERTIFIKATSPROV-FUNKTIONER (SLUTPROV)
+    // ============================================
+    
+    // Registrera ett certifikatsprov (slutprov)
+    recordCertExam(results) {
+        const data = this.getData();
+        
+        const examRecord = {
+            date: new Date().toISOString(),
+            totalQuestions: results.totalQuestions,
+            correctAnswers: results.correctAnswers,
+            percentage: Math.round((results.correctAnswers / results.totalQuestions) * 100),
+            passed: results.correctAnswers >= results.totalQuestions * (this.CERT_EXAM_PASS / 100),
+            timeSpent: results.timeSpent,
+            chapterBreakdown: results.chapterBreakdown
+        };
+        
+        data.certExamHistory.unshift(examRecord);
+        
+        // Behåll endast de senaste 50 proven
+        if (data.certExamHistory.length > 50) {
+            data.certExamHistory = data.certExamHistory.slice(0, 50);
+        }
+        
+        // Uppdatera totaler
+        data.totalQuestionsAnswered += results.totalQuestions;
+        data.totalCorrect += results.correctAnswers;
+        
+        this.saveData(data);
+        this.checkAchievements(data);
+        
+        // Kontrollera om användaren nu är provredo
+        this.checkExamReadyStatus();
+        
+        return examRecord;
+    },
+    
+    // ============================================
+    // FRÅGESTATISTIK
+    // ============================================
+    
+    // Registrera svar på en fråga (används i alla lägen)
+    recordAnswer(questionId, chapterId, isCorrect) {
+        const data = this.getData();
         
         // Uppdatera frågestatistik
         if (!data.questionStats[questionId]) {
@@ -58,72 +300,14 @@ const ProgressManager = {
         if (isCorrect) data.questionStats[questionId].correct++;
         data.questionStats[questionId].lastAttempt = new Date().toISOString();
         
-        // Uppdatera kapitelstatistik
-        if (!data.chaptersProgress[chapterId]) {
-            data.chaptersProgress[chapterId] = {
-                questionsAnswered: 0,
-                correctAnswers: 0,
-                completed: false,
-                lastStudied: null
-            };
-        }
-        data.chaptersProgress[chapterId].questionsAnswered++;
-        if (isCorrect) data.chaptersProgress[chapterId].correctAnswers++;
-        data.chaptersProgress[chapterId].lastStudied = new Date().toISOString();
-        
         this.saveData(data);
-        this.checkAchievements(data);
         
         return data;
     },
     
-    // Registrera ett avslutat prov
-    recordExam(results) {
-        const data = this.getData();
-        
-        const examRecord = {
-            date: new Date().toISOString(),
-            totalQuestions: results.totalQuestions,
-            correctAnswers: results.correctAnswers,
-            percentage: Math.round((results.correctAnswers / results.totalQuestions) * 100),
-            passed: results.correctAnswers >= results.totalQuestions * 0.7,
-            timeSpent: results.timeSpent,
-            chapterBreakdown: results.chapterBreakdown
-        };
-        
-        data.examHistory.unshift(examRecord);
-        
-        // Behåll endast de senaste 50 proven
-        if (data.examHistory.length > 50) {
-            data.examHistory = data.examHistory.slice(0, 50);
-        }
-        
-        this.saveData(data);
-        this.checkAchievements(data);
-        
-        // Kontrollera om användaren nu är provredo
-        this.checkExamReadyStatus();
-        
-        return examRecord;
-    },
-    
-    // Hämta kapitelstatistik
-    getChapterProgress(chapterId) {
-        const data = this.getData();
-        return data.chaptersProgress[chapterId] || {
-            questionsAnswered: 0,
-            correctAnswers: 0,
-            completed: false,
-            lastStudied: null
-        };
-    },
-    
-    // Beräkna procentuell kunskap per kapitel
-    getChapterKnowledge(chapterId) {
-        const progress = this.getChapterProgress(chapterId);
-        if (progress.questionsAnswered === 0) return 0;
-        return Math.round((progress.correctAnswers / progress.questionsAnswered) * 100);
-    },
+    // ============================================
+    // ÖVERGRIPANDE STATISTIK
+    // ============================================
     
     // Hämta övergripande statistik
     getOverallStats() {
@@ -133,38 +317,78 @@ const ProgressManager = {
             ? Math.round((data.totalCorrect / data.totalQuestionsAnswered) * 100)
             : 0;
         
-        const passedExams = data.examHistory.filter(e => e.passed).length;
-        const totalExams = data.examHistory.length;
+        // Statistik för CERTIFIKATSPROV (slutprov)
+        const certExamHistory = data.certExamHistory || [];
+        const passedCertExams = certExamHistory.filter(e => e.passed).length;
+        const totalCertExams = certExamHistory.length;
         
-        const recentExams = data.examHistory.slice(0, 5);
-        const recentAvg = recentExams.length > 0
-            ? Math.round(recentExams.reduce((sum, e) => sum + e.percentage, 0) / recentExams.length)
+        const recentCertExams = certExamHistory.slice(0, 5);
+        const recentCertAvg = recentCertExams.length > 0
+            ? Math.round(recentCertExams.reduce((sum, e) => sum + e.percentage, 0) / recentCertExams.length)
             : 0;
         
-        // Beräkna trend
+        // Beräkna trend (certifikatsprov)
         let trend = 0;
-        if (data.examHistory.length >= 2) {
-            const recent = data.examHistory.slice(0, 3).reduce((sum, e) => sum + e.percentage, 0) / Math.min(3, data.examHistory.length);
-            const older = data.examHistory.slice(3, 6).reduce((sum, e) => sum + e.percentage, 0) / Math.min(3, data.examHistory.length - 3);
+        if (certExamHistory.length >= 2) {
+            const recent = certExamHistory.slice(0, 3).reduce((sum, e) => sum + e.percentage, 0) / Math.min(3, certExamHistory.length);
+            const older = certExamHistory.slice(3, 6).reduce((sum, e) => sum + e.percentage, 0) / Math.min(3, certExamHistory.length - 3);
             if (older > 0) {
                 trend = Math.round(recent - older);
             }
         }
         
-        const isExamReady = recentAvg >= this.EXAM_READY_THRESHOLD && totalExams >= this.MIN_EXAMS_FOR_READY;
+        // Statistik för ÖVNINGSPROV (kapitel)
+        const practiceExamHistory = data.practiceExamHistory || [];
+        const totalPracticeExams = practiceExamHistory.length;
+        const passedPracticeExams = practiceExamHistory.filter(e => e.passed).length;
+        
+        // Statistik för ÖVNINGAR (delkapitel)
+        const subchaptersProgress = data.subchaptersProgress || {};
+        const totalSubchapters = Object.keys(subchaptersProgress).length;
+        const completedSubchapters = Object.values(subchaptersProgress).filter(p => p.completed).length;
+        
+        const isExamReady = recentCertAvg >= this.EXAM_READY_THRESHOLD && totalCertExams >= this.MIN_EXAMS_FOR_READY;
         
         return {
-            totalQuestionsAnswered: data.totalQuestionsAnswered,
-            totalCorrect: data.totalCorrect,
+            // Totaler
+            totalQuestionsAnswered: data.totalQuestionsAnswered || 0,
+            totalCorrect: data.totalCorrect || 0,
             averageScore: avgScore,
-            passedExams,
-            totalExams,
-            passRate: totalExams > 0 ? Math.round((passedExams / totalExams) * 100) : 0,
-            recentAverage: recentAvg,
-            trend,
+            
+            // Certifikatsprov (slutprov)
+            certExams: {
+                total: totalCertExams,
+                passed: passedCertExams,
+                passRate: totalCertExams > 0 ? Math.round((passedCertExams / totalCertExams) * 100) : 0,
+                recentAverage: recentCertAvg,
+                trend: trend
+            },
+            
+            // Övningsprov (kapitel)
+            practiceExams: {
+                total: totalPracticeExams,
+                passed: passedPracticeExams,
+                passRate: totalPracticeExams > 0 ? Math.round((passedPracticeExams / totalPracticeExams) * 100) : 0
+            },
+            
+            // Övningar (delkapitel)
+            subchapters: {
+                total: totalSubchapters,
+                completed: completedSubchapters,
+                completionRate: totalSubchapters > 0 ? Math.round((completedSubchapters / totalSubchapters) * 100) : 0
+            },
+            
+            // Provredo-status (baserat på certifikatsprov)
             isExamReady,
-            achievements: data.achievements
+            achievements: data.achievements || []
         };
+    },
+    
+    // Beräkna kapitel-progress baserat på delkapitel
+    getChapterProgressFromSubchapters(chapterId, totalSubchapters) {
+        const completed = this.getCompletedSubchapters(chapterId);
+        if (totalSubchapters === 0) return 0;
+        return Math.round((completed.length / totalSubchapters) * 100);
     },
     
     // ============================================
@@ -301,13 +525,12 @@ const ProgressManager = {
         const data = this.getData();
         const chapterScores = [];
         
-        for (let i = 1; i <= 10; i++) {
-            const progress = data.chaptersProgress[i];
-            if (progress && progress.questionsAnswered >= 5) {
+        for (const [chapterId, progress] of Object.entries(data.chaptersProgress)) {
+            if (progress.attempts >= 1) {
                 chapterScores.push({
-                    chapterId: i,
-                    score: Math.round((progress.correctAnswers / progress.questionsAnswered) * 100),
-                    questionsAnswered: progress.questionsAnswered
+                    chapterId: parseInt(chapterId),
+                    score: progress.bestScore,
+                    attempts: progress.attempts
                 });
             }
         }
@@ -370,49 +593,65 @@ const ProgressManager = {
                 condition: () => data.totalQuestionsAnswered >= 100
             },
             {
-                id: 'first_exam',
-                name: 'Provtagare',
-                description: 'Genomför ditt första prov',
-                icon: '📝',
-                condition: () => data.examHistory.length >= 1
+                id: 'first_subchapter',
+                name: 'Delkapitel Klarat',
+                description: 'Klara ditt första delkapitel med 80%',
+                icon: '✅',
+                condition: () => {
+                    return Object.values(data.subchaptersProgress).some(p => p.completed);
+                }
             },
             {
-                id: 'first_pass',
+                id: 'first_practice_exam',
+                name: 'Övningsprov',
+                description: 'Genomför ditt första övningsprov',
+                icon: '📝',
+                condition: () => data.practiceExamHistory.length >= 1
+            },
+            {
+                id: 'first_cert_exam',
+                name: 'Slutprov',
+                description: 'Genomför ditt första certifikatsprov',
+                icon: '🎓',
+                condition: () => data.certExamHistory.length >= 1
+            },
+            {
+                id: 'first_cert_pass',
                 name: 'Godkänd!',
-                description: 'Klara ett prov med minst 70%',
+                description: 'Klara ett certifikatsprov med minst 70%',
                 icon: '✅',
-                condition: () => data.examHistory.some(e => e.passed)
+                condition: () => data.certExamHistory.some(e => e.passed)
             },
             {
                 id: 'perfect_exam',
                 name: 'Perfektionist',
-                description: 'Få 100% på ett prov',
+                description: 'Få 100% på ett certifikatsprov',
                 icon: '🏆',
-                condition: () => data.examHistory.some(e => e.percentage === 100)
+                condition: () => data.certExamHistory.some(e => e.percentage === 100)
             },
             {
                 id: 'five_passed',
                 name: 'Konsekvent',
-                description: 'Klara 5 prov i rad',
+                description: 'Klara 5 certifikatsprov i rad',
                 icon: '🔥',
                 condition: () => {
-                    const recent = data.examHistory.slice(0, 5);
+                    const recent = data.certExamHistory.slice(0, 5);
                     return recent.length >= 5 && recent.every(e => e.passed);
                 }
             },
             {
-                id: 'all_chapters',
+                id: 'all_chapters_practiced',
                 name: 'Allround',
-                description: 'Studera alla 10 kapitel',
+                description: 'Genomför övningsprov på alla 10 kapitel',
                 icon: '🎓',
                 condition: () => Object.keys(data.chaptersProgress).length >= 10
             },
             {
                 id: 'speed_demon',
                 name: 'Snabbtänkt',
-                description: 'Klara ett prov på under 30 minuter',
+                description: 'Klara ett certifikatsprov på under 30 minuter',
                 icon: '⚡',
-                condition: () => data.examHistory.some(e => e.passed && e.timeSpent < 1800)
+                condition: () => data.certExamHistory.some(e => e.passed && e.timeSpent < 1800)
             },
             {
                 id: 'veteran',
@@ -476,7 +715,6 @@ const ProgressManager = {
     // Uppdatera all statistik på startsidan
     updateHomePageStats() {
         const stats = this.getOverallStats();
-        const data = this.getData();
         
         // Uppdatera statistik-element
         const chaptersEl = document.getElementById('chaptersCompleted');
@@ -484,8 +722,7 @@ const ProgressManager = {
         const averageEl = document.getElementById('averageScore');
         
         if (chaptersEl) {
-            const completedChapters = Object.keys(data.chaptersProgress).length;
-            chaptersEl.textContent = `${completedChapters}/16`;
+            chaptersEl.textContent = `${stats.subchapters.completed}/${stats.subchapters.total}`;
         }
         if (questionsEl) {
             questionsEl.textContent = stats.totalQuestionsAnswered;
@@ -497,25 +734,29 @@ const ProgressManager = {
         // Uppdatera provredo-status
         this.updateExamReadyUI(stats.isExamReady);
         
-        // Uppdatera kunskapsbars
+        // Uppdatera kunskapsbars om de finns
         this.updateKnowledgeBars();
     },
     
     // Uppdatera kunskapsnivå-staplar
     updateKnowledgeBars() {
         const container = document.getElementById('knowledgeBars');
-        if (!container || typeof chapters === 'undefined') return;
+        if (!container) return;
+        
+        // Kräver att certChapters är definierat
+        if (typeof certChapters === 'undefined') return;
         
         let html = '';
-        chapters.forEach(chapter => {
-            const score = this.getChapterKnowledge(chapter.id);
+        certChapters.forEach(chapter => {
+            const progress = this.getChapterProgress(chapter.id);
+            const score = progress.bestScore || 0;
             const barClass = score >= 80 ? 'high' : score >= 50 ? 'medium' : 'low';
             
             html += `
                 <div class="knowledge-bar-item">
                     <div class="knowledge-bar-header">
                         <span class="knowledge-bar-icon">${chapter.icon}</span>
-                        <span class="knowledge-bar-title">${chapter.shortTitle}</span>
+                        <span class="knowledge-bar-title">${chapter.title}</span>
                         <span class="knowledge-bar-score">${score}%</span>
                     </div>
                     <div class="knowledge-bar-track">
@@ -532,10 +773,18 @@ const ProgressManager = {
     // DATA-HANTERING
     // ============================================
     
+    // Rensa localStorage och börja om (för debugging)
+    clearAndReset() {
+        localStorage.removeItem(this.STORAGE_KEY);
+        const newData = this.getDefaultData();
+        console.log('localStorage rensad. Ny data skapad:', newData);
+        return newData;
+    },
+    
     // Återställ all data
     resetAllData() {
         if (confirm('Är du säker på att du vill radera all din progress? Detta kan inte ångras.')) {
-            localStorage.removeItem(this.STORAGE_KEY);
+            this.clearAndReset();
             location.reload();
         }
     },

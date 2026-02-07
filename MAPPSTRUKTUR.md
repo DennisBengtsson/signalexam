@@ -1,40 +1,49 @@
 # Radioskola.se – Mappstruktur
 
-Senast uppdaterad: 2026-02-04
+Senast uppdaterad: 2026-02-07
 
 ## Översikt
 
 ```
-radioamator-utbildning/
+signalexam/ (eller radioamator-utbildning/)
 │
+├── .gitattributes                   # Git-konfig (standard)
+├── CNAME                           # Custom domän (t.ex. radioskola.se)
+├── DNS-hantering.txt               # Instruktioner för DNS-inställningar
 ├── index.html                      # Startsida med statistik och kapitelöversikt
-├── MAPPSTRUKTUR.md                 # Denna fil
+├── introduktion.html               # Direktlänk till introduktionsboken
+├── MAPPSTRUKTUR.md                 # Denna fil (uppdaterad från tree-output)
+├── struktur.txt                    # Genererad trädstruktur (från Windows tree /f)
+├── sw.js                           # Service Worker för PWA (offline-caching)
+│
+├── assets/
+│   ├── audio/
+│   │   └── morse/                  # Morsekod-övningar (MP3-filer?)
+│   └── images/
+│       ├── diagrams/               # Kretsscheman, blockscheman, antennbilder
+│       └── icons/                  # Ikoner och grafik (SVG/PNG)
 │
 ├── css/
-│   └── style.css                   # Huvudstilmall (inkl. alla böcker)
+│   └── style.css                   # Huvudstilmall (inkl. alla böcker, responsiv)
 │
 ├── js/
-│   ├── main.js                     # Huvudlogik, navigation, dynamiskt innehåll
-│   ├── quiz.js                     # Testlogik för prov och övningar
-│   ├── exercises.js                # Logik för intro-kapitlens övningar
-│   ├── progress.js                 # Statistik & framstegshantering (localStorage)
 │   ├── books.js                    # Hantering av bokexpandering på startsidan
+│   ├── exercises.js                # Logik för intro-kapitlens övningar
+│   ├── main.js                     # Huvudlogik, navigation, dynamiskt innehåll
+│   ├── progress-provtyper.md       # Dokumentation för provtyper (Markdown)
+│   ├── progress.js                 # Statistik & framstegshantering (localStorage)
+│   ├── quiz.js                     # Testlogik för prov och övningar
 │   │
 │   └── data/
+│       ├── cert-chapters.js        # Data för certifikatskapitel 1-10
 │       ├── chapters.js             # Data för utbildningskapitel 1-10
-│       ├── questions.js            # Alla provfrågor för kapitel 1-10
 │       ├── intro-chapters.js       # Data för introduktionskapitel 1-6
-│       └── pmr-chapters.js         # Data för PMR446-kapitel 1-5
+│       ├── morse-chapters.js       # Data för CW/Morse-kapitel
+│       ├── ovning-logic.js         # Logik för övningar (nya typer)
+│       ├── pmr-chapters.js         # Data för PMR446-kapitel 1-5
+│       └── questions.js            # Alla provfrågor för kapitel 1-10
 │
 ├── pages/
-│   │
-│   ├── introduktion/               # BOK 1: FÖRBEREDANDE KAPITEL
-│   │   ├── intro-1-vad-ar-radio.html
-│   │   ├── intro-2-radiohistoria.html
-│   │   ├── intro-3-nar-radio-raddade-liv.html
-│   │   ├── intro-4-matematik-fysik.html
-│   │   ├── intro-5-frekvensbanden.html
-│   │   └── intro-6-vad-gor-radioamatorer.html
 │   │
 │   ├── chapters/                   # BOK 2: UTBILDNINGSKAPITEL (certifikatsinnehåll)
 │   │   ├── kapitel-1-grundlaggande-elektronik.html
@@ -48,13 +57,6 @@ radioamator-utbildning/
 │   │   ├── kapitel-9-sakerhet.html
 │   │   └── kapitel-10-praktisk-trafik.html
 │   │
-│   ├── pmr446/                     # BONUSMATERIAL 1: PMR446-BOKEN (licensfri radio)
-│   │   ├── pmr-1-vad-ar-pmr446.html
-│   │   ├── pmr-2-kom-igang.html
-│   │   ├── pmr-3-kanaler-koder.html
-│   │   ├── pmr-4-rackvidd-tips.html
-│   │   └── pmr-5-fran-pmr-till-amatorradio.html
-│   │
 │   ├── cw/                         # BONUSMATERIAL 2: CW-BOKEN (morsekodning)
 │   │   ├── cw-1-vad-ar-morsekod.html
 │   │   ├── cw-2-alfabetet.html
@@ -63,25 +65,33 @@ radioamator-utbildning/
 │   │   ├── cw-5-skicka.html
 │   │   └── cw-6-qso.html
 │   │
-│   ├── test/                       # PROV OCH ÖVNINGAR
-│   │   ├── prov.html               # Simulerat certifikatsprov (60 frågor, 90 min)
-│   │   ├── ovning.html             # Övningsläge per kapitel
-│   │   └── resultat.html           # Detaljerad resultatvisning
+│   ├── introduktion/               # BOK 1: FÖRBEREDANDE KAPITEL
+│   │   ├── intro-1-vad-ar-radio.html
+│   │   ├── intro-2-radiohistoria.html
+│   │   ├── intro-3-nar-radio-raddade-liv.html
+│   │   ├── intro-4-matematik-fysik.html
+│   │   ├── intro-5-frekvensbanden.html
+│   │   └── intro-6-vad-gor-radioamatorer.html
 │   │
 │   ├── pdf/                        # PDF-NEDLADDNINGAR
+│   │   ├── cw-bok.html             # CW-boken i utskriftsvänligt format
 │   │   ├── index.html              # Nedladdningssida med alla PDF:er
 │   │   └── pmr446-bok.html         # PMR446-boken i utskriftsvänligt format
 │   │
-│   └── profil/
-│       └── statistik.html          # Personlig statistik & framsteg
-│
-└── assets/
-    ├── images/
-    │   ├── diagrams/               # Kretsscheman, blockscheman, antennbilder
-    │   └── icons/                  # Ikoner och grafik
-    │
-    └── audio/
-        └── morse/                  # Morsekod-övningar (valfritt)
+│   ├── pmr446/                     # BONUSMATERIAL 1: PMR446-BOKEN (licensfri radio)
+│   │   ├── pmr-1-vad-ar-pmr446.html
+│   │   ├── pmr-2-kom-igang.html
+│   │   ├── pmr-3-kanaler-koder.html
+│   │   ├── pmr-4-rackvidd-tips.html
+│   │   └── pmr-5-fran-pmr-till-amatorradio.html
+│   │
+│   ├── profil/
+│   │   └── statistik.html          # Personlig statistik & framsteg
+│   │
+│   └── test/                       # PROV OCH ÖVNINGAR
+│       ├── ovning.html             # Övningsläge per kapitel
+│       ├── prov.html               # Simulerat certifikatsprov (60 frågor, 90 min)
+│       └── resultat.html           # Detaljerad resultatvisning
 ```
 
 ## Innehållsstruktur enligt index.html
@@ -109,6 +119,7 @@ radioamator-utbildning/
 |---|-----|----------|-----|
 | 1 | kapitel-1-grundlaggande-elektronik.html | Ström, spänning, resistans, komponenter | 3-4 h |
 | 2 | kapitel-2-radioteknik.html | Oscillatorer, modulering, mottagare, sändare | 2-3 h |
+```markdown
 | 3 | kapitel-3-antenner.html | Antenntyper, matning, SWR | 2-3 h |
 | 4 | kapitel-4-vagutbredning.html | Jonosfär, markvåg, rymdvåg, fading | 1-2 h |
 | 5 | kapitel-5-matinstrument.html | Multimeter, oscilloskop, SWR-mätare | 1-2 h |
@@ -150,6 +161,7 @@ Utskriftsvänliga versioner för offline-läsning.
 
 | Fil | Innehåll | Status |
 |-----|----------|--------|
+| cw-bok.html | CW/Morse-boken komplett (utskriftsvänlig) | ✅ Klar |
 | index.html | Nedladdningssida med alla PDF:er | ✅ Klar |
 | pmr446-bok.html | PMR446-boken komplett (utskriftsvänlig) | ✅ Klar |
 
@@ -157,15 +169,19 @@ Utskriftsvänliga versioner för offline-läsning.
 
 | Fil | Syfte |
 |-----|-------|
-| main.js | Navigation, kapitelrendering, mobilmeny |
-| quiz.js | Frågelogik, timer, resultatberäkning |
-| exercises.js | Övningstyper för intro-kapitlen (fyll i, para ihop, etc.) |
-| progress.js | Spara/läsa framsteg i localStorage |
 | books.js | Hantering av bokexpandering på startsidan |
+| exercises.js | Logik för intro-kapitlens övningar |
+| main.js | Huvudlogik, navigation, dynamiskt innehåll |
+| progress-provtyper.md | Dokumentation för provtyper (Markdown) |
+| progress.js | Spara/läsa framsteg i localStorage |
+| quiz.js | Frågelogik, timer, resultatberäkning |
+| data/cert-chapters.js | Data för certifikatskapitel 1-10 (ny) |
 | data/chapters.js | Array med kapiteldata (titel, ikon, ämnen) |
-| data/questions.js | Array med alla provfrågor |
 | data/intro-chapters.js | Array med intro-kapitel och deras övningar |
+| data/morse-chapters.js | Array med CW/Morse-kapitel (ny) |
+| data/ovning-logic.js | Logik för övningar (nya typer, ny) |
 | data/pmr-chapters.js | Array med PMR446-kapitel och övningar |
+| data/questions.js | Array med alla provfrågor |
 
 ## Navigationsflöde
 
@@ -231,18 +247,21 @@ Introduktion      Certifikats-      PMR446            Morsekod
 | Sektion | Antal filer | Status | Prioritet |
 |---------|-------------|--------|-----------|
 | Introduktionsboken | 6 kapitel | ✅ Komplett | ⭐⭐⭐ |
-| Certifikatsboken | 10 kapitel | 🔄 Pågående | ⭐⭐⭐ |
+| Certifikatsboken | 10 kapitel | ✅ Komplett | ⭐⭐⭐ |
 | PMR446-boken | 5 kapitel | ✅ Komplett | ⭐⭐ |
 | Morsekodsboken | 6 kapitel | ✅ Komplett | ⭐ |
 | Provsystem | 3 sidor | ✅ Komplett | ⭐⭐⭐ |
-| PDF-system | 2+ sidor | 🔄 Pågående | ⭐⭐ |
+| PDF-system | 3 sidor | ✅ Komplett | ⭐⭐ |
 | Statistik | 1 sida | ✅ Komplett | ⭐⭐⭐ |
+| JS/Data | 13 filer | ✅ Komplett | ⭐⭐⭐ |
 
 **Status-symboler:**
 - ✅ Komplett och fungerande
 - 🔄 Pågående utveckling
 - 🔜 Planerad
 - ❌ Pausad/avbruten
+
+**Total: 338 filer, 182 mappar (~4.81 MB)** – Uppdaterat från tree /f (2026-02-07).
 
 ## Pedagogisk progressionsplan
 
@@ -281,7 +300,7 @@ Introduktion      Certifikats-      PMR446            Morsekod
 | Video-genomgångar | YouTube-integrering för vissa kapitel | Låg | 🔜 |
 | Nödkommunikationsguide | FRO, prepping, krisradio | Låg | 🔜 |
 | Kontestguide | Tävla i amatörradio | Låg | 🔜 |
-| Mobil app | PWA för offline-läsning | Medel | 🔜 |
+| Mobil app | PWA för offline-läsning (sw.js-ready) | Medel | 🔜 |
 | Community-forum | Diskussioner och frågor | Låg | 🔜 |
 
 ## Teknisk information
@@ -304,6 +323,11 @@ Introduktion      Certifikats-      PMR446            Morsekod
 - Touch-optimerad navigation
 - Läsbar typografi på alla skärmstorlekar
 
+**Hosting & Deployment:**
+- GitHub Pages (signalexam.github.io)
+- Custom domän via CNAME/DNS-hantering.txt
+- PWA med sw.js för offline
+
 ---
 
 **Kontakt & Feedback:**  
@@ -314,5 +338,6 @@ Radioskola.se är inte officiellt kopplad till PTS (Post- och telestyrelsen) ell
 
 ---
 
-*Senast uppdaterad: 2026-02-04*  
-*Version: 2.1*
+*Senast uppdaterad: 2026-02-07*  
+*Version: 2.2* (Uppdaterad med tree-output: Nya filer som cert-chapters.js, sw.js, DNS-hantering.txt)
+```

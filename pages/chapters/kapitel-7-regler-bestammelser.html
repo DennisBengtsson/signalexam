@@ -1060,3 +1060,2848 @@
                     <br>• Tillsyn: Person utan certifikat får sända under direkt övervakning (fysiskt närvarande), certifikatinnehavarens signal används, hen är fullt ansvarig
                 </div>
             </div>
+<!-- ============================================ -->
+<!-- SEKTION 7.3: ANROPSSIGNALER -->
+<!-- ============================================ -->
+
+<div class="content-section" id="anropssignal">
+    <h2>7.3 Anropssignaler - Ditt unika radionamn</h2>
+    
+    <h3>Vad är en anropssignal?</h3>
+    
+    <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+        <strong>💡 Bilregistreringsnummer-analogin:</strong>
+        <br><br>
+        <strong>Tänk på anropssignalen som ett bilregistreringsnummer:</strong>
+        <br><br>
+        <strong>Bilnummer (ABC 123):</strong>
+        <br>• Unikt för varje bil i Sverige
+        <br>• Används för att identifiera fordonet
+        <br>• Står på skyltar fram och bak
+        <br>• Måste användas när bilen är i trafik
+        <br>• Följer ett visst mönster (3 bokstäver + 3 siffror)
+        <br><br>
+        <strong>Anropssignal (SM5XYZ):</strong>
+        <br>• Unik för varje radioamatör i Sverige
+        <br>• Används för att identifiera dig på radion
+        <br>• "Står på skylten" = du säger den på luften
+        <br>• Måste användas när du sänder
+        <br>• Följer ett visst mönster (SM + siffra + 2-3 bokstäver)
+        <br><br>
+        <strong>Skillnaden:</strong>
+        <br>• Bilnummer: Kopplat till fordonet
+        <br>• Anropssignal: Kopplat till DIG personligen (även om du byter radio)
+    </div>
+    
+    <h3>Uppbyggnad av svenska anropssignaler</h3>
+    
+    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #1e40af;">🔤 SVENSKA ANROPSSIGNALER - STRUKTUREN</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #1e40af;">Standard svensk signal: SM5XYZ</strong>
+            <br><br>
+            <table class="content-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Del</th>
+                        <th style="width: 30%;">Betydelse</th>
+                        <th style="width: 50%;">Förklaring</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #dbeafe;">
+                        <td><strong>SM</strong></td>
+                        <td><strong>Prefix (landsprefix)</strong></td>
+                        <td>• ITU-tilldelat prefix för Sverige
+                        <br>• SA, SB, SC, SD, SE, SF, SG, SH, SI, SJ, <strong>SM</strong>
+                        <br>• SM används för amatörradio (SA-SL alla "Sverige")
+                        <br>• 7S och 8S också Sverige (speciella tillfällen)</td>
+                    </tr>
+                    <tr style="background: #fef3c7;">
+                        <td><strong>5</strong></td>
+                        <td><strong>Områdessiffra</strong></td>
+                        <td>• Anger geografiskt område i Sverige
+                        <br>• 0 = Stockholm och kringområden
+                        <br>• 1 = Norra Sverige (Norrbotten, Västerbotten)
+                        <br>• 2 = Norra Mellansverige (Jämtland, Västernorrland, Gävleborg)
+                        <br>• 3 = Västra Sverige (Västra Götaland, Halland)
+                        <br>• 4 = Södra Sverige (Skåne, Blekinge, Kronoberg)
+                        <br>• 5 = Östra Mellansverige (Södermanland, Östergötland, Kalmar, Gotland)
+                        <br>• 6 = Värmland, Örebro, Västmanland
+                        <br>• 7 = Västra Mellansverige (Dalarna, Gävleborg del)
+                        <br>• Baserat på var du BOR, inte var du trafikerar</td>
+                    </tr>
+                    <tr style="background: #d1fae5;">
+                        <td><strong>XYZ</strong></td>
+                        <td><strong>Suffix (personlig del)</strong></td>
+                        <td>• 2-3 bokstäver (A-Z, ej ÅÄÖ)
+                        <br>• Gör signalen unik
+                        <br>• Du kan önska vissa bokstäver
+                        <br>• Men PTS bestämmer vad som är ledigt
+                        <br>• Exempel: AAA, ABC, ZZZ, osv.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h4 style="color: #1e40af; margin-top: 1.5rem;">Exempel på svenska anropssignaler:</h4>
+        
+        <div class="example-box" style="border-left: 4px solid #3b82f6; margin-top: 1rem;">
+            <strong>📻 Olika typer av svenska signaler:</strong>
+            <br><br>
+            <strong>Personliga stationssignaler:</strong>
+            <br>• <strong>SM0XYZ</strong> - Stockholmsområdet
+            <br>• <strong>SM5ABC</strong> - Östergötland/Kalmar
+            <br>• <strong>SM7XY</strong> - Dalarna (2 bokstäver i suffix)
+            <br>• <strong>SA5DEF</strong> - Speciell signal (SA-prefix)
+            <br><br>
+            <strong>Klubbstationer:</strong>
+            <br>• <strong>SK7AX</strong> - Klubbstation (SK-prefix)
+            <br>• K-prefix indikerar klubb
+            <br>• Samma områdessiffra som personliga
+            <br><br>
+            <strong>Fyrar och specialstationer:</strong>
+            <br>• <strong>SE5X</strong> - Automatisk station (fyr, repeater)
+            <br>• <strong>SL9ABC</strong> - Specialevenemang
+            <br>• <strong>7S7X</strong> - Jubileumssignal
+        </div>
+    </div>
+    
+    <h3>Områdessiffror i Sverige - Geografisk indelning</h3>
+    
+    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 3px solid #0ea5e9; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #0369a1;">🗺️ SVERIGES OMRÅDESSIFFROR (0-7)</h4>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Siffra</th>
+                    <th style="width: 35%;">Område</th>
+                    <th style="width: 50%;">Län som ingår</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>SM0</strong></td>
+                    <td><strong>Stockholm och närområde</strong></td>
+                    <td>• Stockholms län
+                    <br>• Uppsala län</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM1</strong></td>
+                    <td><strong>Norra Sverige (Norrland nordväst)</strong></td>
+                    <td>• Norrbottens län
+                    <br>• Västerbottens län</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM2</strong></td>
+                    <td><strong>Norra Mellansverige</strong></td>
+                    <td>• Jämtlands län
+                    <br>• Västernorrlands län
+                    <br>• (Gävleborgs län delvis)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM3</strong></td>
+                    <td><strong>Västra Sverige</strong></td>
+                    <td>• Västra Götalands län
+                    <br>• Hallands län</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM4</strong></td>
+                    <td><strong>Södra Sverige (Götaland syd)</strong></td>
+                    <td>• Skåne län
+                    <br>• Blekinge län
+                    <br>• Kronobergs län</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM5</strong></td>
+                    <td><strong>Östra Mellansverige</strong></td>
+                    <td>• Södermanlands län
+                    <br>• Östergötlands län
+                    <br>• Kalmar län
+                    <br>• Gotlands län</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM6</strong></td>
+                    <td><strong>Mellersta Västra Sverige</strong></td>
+                    <td>• Värmlands län
+                    <br>• Örebro län
+                    <br>• Västmanlands län</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>SM7</strong></td>
+                    <td><strong>Västra Mellansverige</strong></td>
+                    <td>• Dalarnas län
+                    <br>• (Gävleborgs län delvis)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box tip" style="margin-top: 1rem;">
+            <strong>💡 Varför områdessiffror?</strong>
+            <br><br>
+            <strong>Historiskt:</strong>
+            <br>• Från telegraferingstiden (1900-talet)
+            <br>• Hjälpte operatörer veta var signalen kom från
+            <br>• Underlättade routing av telegram
+            <br><br>
+            <strong>Idag:</strong>
+            <br>• Fortfarande användbart för att veta ungefär var någon är
+            <br>• T.ex. hör du SM7... vet du att det är Dalarna
+            <br>• Hjälper vid tävlingar (poäng per område)
+            <br>• Traditioner och kultur (SM7 = "Dalaborna")
+            <br><br>
+            <strong>OBS:</strong> Om du flyttar behöver du INTE byta signal! Din gamla signal följer med dig. Men du kan ansöka om ny signal med rätt områdessiffra om du vill.
+        </div>
+    </div>
+    
+    <h3>Så ansöker du om anropssignal</h3>
+    
+    <div class="example-box" style="border-left: 4px solid #059669;">
+        <strong>📝 STEG-FÖR-STEG: Ansökan om anropssignal</strong>
+        <br><br>
+        <strong>Steg 1: Klara HAREC-provet</strong>
+        <br>• Du kan inte ansöka förrän du har certifikat
+        <br>• SSA rapporterar ditt godkända prov till PTS
+        <br><br>
+        <strong>Steg 2: Logga in på PTS sajt</strong>
+        <br>• Gå till <a href="https://www.pts.se" target="_blank">www.pts.se</a>
+        <br>• Välj "e-tjänster" → "Anropssignal"
+        <br>• Logga in med BankID
+        <br><br>
+        <strong>Steg 3: Fyll i ansökan</strong>
+        <br>• Ange personuppgifter (hämtas från folkbokföring)
+        <br>• Välj områdessiffra (baserat på din bostadsadress)
+        <br>• <strong>Önska suffix (valfritt):</strong>
+        <br>  - Du kan önska specifika bokstäver (t.ex. "ABC" om det är dina initialer)
+        <br>  - Kolla om det är ledigt först (finns sökfunktion)
+        <br>  - PTS tilldelar om det är ledigt
+        <br>  - Annars tilldelar PTS något annat
+        <br><br>
+        <strong>Steg 4: Skicka in</strong>
+        <br>• Granska och skicka ansökan
+        <br>• Ingen avgift!
+        <br><br>
+        <strong>Steg 5: Vänta på beslut</strong>
+        <br>• Vanligen 1-4 veckor
+        <br>• PTS mailar/postar beslut
+        <br>• Din signal publiceras i PTS register (offentligt)
+        <br><br>
+        <strong>Steg 6: Börja trafikera!</strong>
+        <br>• När du fått beslutet får du sända
+        <br>• Använd din nya signal
+        <br>• Registrera dig på QRZ.com, SSA:s medlemsregister, etc.
+    </div>
+    
+    <h3>Specialsignaler och tillfälliga prefix</h3>
+    
+    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #92400e;">🎭 SPECIELLA ANROPSSIGNALER</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #92400e;">Olika typer av specialsignaler:</strong>
+            <br><br>
+            
+            <table class="content-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Typ</th>
+                        <th style="width: 35%;">Format</th>
+                        <th style="width: 40%;">Användning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: white;">
+                        <td><strong>Klubbstation</strong></td>
+                        <td><strong>SK</strong>7ABC</td>
+                        <td>• Radioklubbar och föreningar
+                        <br>• "K" = Klubb
+                        <br>• Flera medlemmar kan använda</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Repeater/Fyr</strong></td>
+                        <td><strong>SE</strong>5XYZ</td>
+                        <td>• Automatiska stationer
+                        <br>• Repeatrar, fyrar, beacons
+                        <br>• "E" = Experimentell/automatisk</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Specialevent</strong></td>
+                        <td><strong>SL</strong>9ABC</td>
+                        <td>• Tillfälliga evenemang
+                        <br>• Jubileum, firanden
+                        <br>• Söks separat hos PTS</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Utomlands (CEPT)</strong></td>
+                        <td><strong>DL/SM</strong>5XYZ</td>
+                        <td>• När du trafikerar i annat land
+                        <br>• Värdlandets prefix först
+                        <br>• Sedan / och din signal</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Mobil/Portabel</strong></td>
+                        <td>SM5XYZ<strong>/M</strong>
+                        <br>SM5XYZ<strong>/P</strong></td>
+                        <td>• /M = Mobil (i bil)
+                        <br>• /P = Portabel (fältstuga)
+                        <br>• Valfritt att lägga till</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Annat område</strong></td>
+                        <td>SM5XYZ<strong>/0</strong></td>
+                        <td>• När du trafikerar från annat område än ditt
+                        <br>• T.ex. SM5XYZ i Stockholm = SM5XYZ/0
+                        <br>• Inte obligatoriskt men uppskattas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h4 style="color: #92400e; margin-top: 1.5rem;">Exempel på specialsignaler:</h4>
+        
+        <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+            <strong>🎉 Exempel 1 - Evenemangssignal:</strong>
+            <br><br>
+            <strong>Situation:</strong> Stockholm firar 750-årsjubileum
+            <br><br>
+            <strong>Signal:</strong> <strong>SL750S</strong>
+            <br>• SL = Specialprefix
+            <br>• 750 = Jubileumsår
+            <br>• S = Stockholm
+            <br><br>
+            <strong>Användning:</strong>
+            <br>• Tillfällig signal (t.ex. 1 månad)
+            <br>• Radioklubbar i Stockholm ansöker gemensamt
+            <br>• Många operatörer kan använda samma signal
+            <br>• Populärt att jaga för QSL-samlare!
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+            <strong>🚗 Exempel 2 - Mobil trafik:</strong>
+            <br><br>
+            <strong>Situation:</strong> Du kör bil från Göteborg till Stockholm
+            <br><br>
+            <strong>Möjliga sätt att identifiera:</strong>
+            <br>1. <strong>SM5XYZ/M</strong> - Enklast, "jag är mobil"
+            <br>2. <strong>SM5XYZ/3</strong> - I Göteborg (område 3)
+            <br>3. <strong>SM5XYZ/0</strong> - I Stockholm (område 0)
+            <br><br>
+            <strong>Rekommendation:</strong>
+            <br>Använd /M om du kör genom flera områden. Då behöver du inte byta hela tiden.
+        </div>
+    </div>
+    
+    <h3>Identifieringsskyldighet - När och hur?</h3>
+    
+    <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border: 3px solid #dc2626; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #991b1b;">⚠️ IDENTIFIERINGSSKYLDIGHET - KRITISKT VIKTIGT!</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #991b1b;">Grundregel från PTSFS:</strong>
+            <br><br>
+            <strong>"Du ska identifiera din station med anropssignal vid början och slut av varje sändning, samt minst var 10:e minut under pågående sändning."</strong>
+            <br><br>
+            
+            <table class="content-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Situation</th>
+                        <th style="width: 70%;">Hur du identifierar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: white;">
+                        <td><strong>Börja sända (CQ)</strong></td>
+                        <td><strong>"CQ CQ CQ från SM5XYZ, SM5XYZ anropar CQ och lyssnar"</strong>
+                        <br>• Signal i början
+                        <br>• Signal i slutet
+                        <br>• Tydligt och långsamt</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Svara på CQ</strong></td>
+                        <td><strong>"SM3ABC från SM5XYZ, god morgon!"</strong>
+                        <br>• Säg HANS signal först (vem du kallar)
+                        <br>• Sedan din egen signal
+                        <br>• Klart och tydligt</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Lång QSO (>10 min)</strong></td>
+                        <td><strong>Identifiera minst var 10:e minut</strong>
+                        <br>• "...och det var väl det, SM5XYZ"
+                        <br>• Kan vara i mitten av mening
+                        <br>• Behöver inte avbryta samtalet
+                        <br>• Men får inte glömmas!</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Avsluta QSO</strong></td>
+                        <td><strong>"Tack för QSO, SM5XYZ clear med SM3ABC. 73!"</strong>
+                        <br>• Båda signaler
+                        <br>• Klart att du är klar ("clear")
+                        <br>• Artigt avslut</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Testa/Tuning</strong></td>
+                        <td><strong>"SM5XYZ testar"</strong> eller <strong>"SM5XYZ tuning"</strong>
+                        <br>• Även vid test måste du identifiera
+                        <br>• Kort och koncist
+                        <br>• Inte bara "test test"!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="info-box warning" style="margin-top: 1rem;">
+            <strong>❌ VANLIGA MISSTAG - UNDVIK DESSA:</strong>
+            <br><br>
+            <strong>1. Glömma identifiera vid test/tuning</strong>
+            <br>• FEL: "Test test test" (ingen signal)
+            <br>• RÄTT: "SM5XYZ testar, test test test, SM5XYZ"
+            <br><br>
+            <strong>2. För sällan identifiera vid lång QSO</strong>
+            <br>• Prata i 30 minuter utan att säga signal = regelbrott!
+            <br>• Sätt klocka/timer om du glömmer lätt
+            <br><br>
+            <strong>3. Otydlig uttal</strong>
+            <br>• Mumla inte din signal!
+            <br>• Säg tydligt: "SIERRA MIKE FIVE X-RAY YANKEE ZULU"
+            <br>• Särskilt viktigt vid dåliga förhållanden
+            <br><br>
+            <strong>4. Använd andras signal</strong>
+            <br>• Aldrig säg någon annans signal om du sänder
+            <br>• Även som skämt = förbjudet
+            <br><br>
+            <strong>5. Identifiera bara i början</strong>
+            <br>• Du måste också identifiera i SLUTET
+            <br>• Och minst var 10:e minut under tiden
+        </div>
+    </div>
+    
+    <h3>Fonetiskt alfabet - Bokstavera tydligt</h3>
+    
+    <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669;">
+        <strong>📢 INTERNATIONELLA FONETISKA ALFABETET (ITU)</strong>
+        <br><br>
+        <strong>Varför behövs det?</strong>
+        <br>• B och V låter likadant på radio
+        <br>• M och N svåra att skilja åt
+        <br>• Vid QRM/QSB/dåliga förhållanden
+        <br>• Internationell standard = alla förstår
+        <br><br>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th>Bokstav</th>
+                    <th>Kodord</th>
+                    <th>Uttal (ungefär)</th>
+                    <th>Bokstav</th>
+                    <th>Kodord</th>
+                    <th>Uttal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td>A</td>
+                    <td>Alfa</td>
+                    <td>AL-fah</td>
+                    <td>N</td>
+                    <td>November</td>
+                    <td>no-VEM-ber</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>B</td>
+                    <td>Bravo</td>
+                    <td>BRAH-vo</td>
+                    <td>O</td>
+                    <td>Oscar</td>
+                    <td>OSS-kah</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>C</td>
+                    <td>Charlie</td>
+                    <td>CHAR-li</td>
+                    <td>P</td>
+                    <td>Papa</td>
+                    <td>pah-PAH</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>D</td>
+                    <td>Delta</td>
+                    <td>DEL-tah</td>
+                    <td>Q</td>
+                    <td>Quebec</td>
+                    <td>keh-BECK</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>E</td>
+                    <td>Echo</td>
+                    <td>ECK-oh</td>
+                    <td>R</td>
+                    <td>Romeo</td>
+                    <td>ROW-me-oh</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>F</td>
+                    <td>Foxtrot</td>
+                    <td>FOKS-trot</td>
+                    <td>S</td>
+                    <td>Sierra</td>
+                    <td>see-AIR-rah</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>G</td>
+                    <td>Golf</td>
+                    <td>GOLF</td>
+                    <td>T</td>
+                    <td>Tango</td>
+                    <td>TANG-go</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>H</td>
+                    <td>Hotel</td>
+                    <td>ho-TELL</td>
+                    <td>U</td>
+                    <td>Uniform</td>
+                    <td>YOU-nee-form</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>I</td>
+                    <td>India</td>
+                    <td>IN-dee-ah</td>
+                    <td>V</td>
+                    <td>Victor</td>
+                    <td>VIK-tah</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>J</td>
+                    <td>Juliett</td>
+                    <td>JEW-lee-ett</td>
+                    <td>W</td>
+                    <td>Whiskey</td>
+                    <td>WISS-key</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>K</td>
+                    <td>Kilo</td>
+                    <td>KEY-loh</td>
+                    <td>X</td>
+                    <td>X-ray</td>
+                    <td>ECKS-ray</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>L</td>
+                    <td>Lima</td>
+                    <td>LEE-mah</td>
+                    <td>Y</td>
+                    <td>Yankee</td>
+                    <td>YANG-key</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>M</td>
+                    <td>Mike</td>
+                    <td>MIKE</td>
+                    <td>Z</td>
+                    <td>Zulu</td>
+                    <td>ZOO-loo</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 8px;">
+            <strong style="color: #059669;">Siffror (också viktigt!):</strong>
+            <br><br>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Siffra</th>
+                        <th>Uttal</th>
+                        <th>Tips</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: white;">
+                        <td>0</td>
+                        <td>ZE-ro</td>
+                        <td>Inte "noll"</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td>1</td>
+                        <td>WUN</td>
+                        <td>Inte "ett"</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td>2</td>
+                        <td>TOO</td>
+                        <td>Inte "två"</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td>3</td>
+                        <td>TREE</td>
+                        <td>Inte "tre"</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td>4</td>
+                        <td>FOW-er</td>
+                        <td>Inte "fyra"</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td>5</td>
+                        <td>FIFE</td>
+                        <td>Inte "fem"</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td>9</td>
+                        <td>NIN-er</td>
+                        <td>Inte "nio"</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <em>💡 Varför konstiga uttal? För att undvika sammanblandning mellan språk och vid dåliga förhållanden!</em>
+        </div>
+    </div>
+    
+    <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+        <strong>📻 Exempel - Bokstavera signal fonetiskt:</strong>
+        <br><br>
+        <strong>Signal: SM5XYZ</strong>
+        <br><br>
+        <strong>Korrekt fonetiskt:</strong>
+        <br>"SIERRA MIKE FIFE X-RAY YANKEE ZULU"
+        <br><br>
+        <strong>Vid dåliga förhållanden, upprepa:</strong>
+        <br>"SM5XYZ, jag upprepar: SIERRA MIKE FIFE X-RAY YANKEE ZULU"
+        <br><br>
+        <strong>Fel (använd ej):</strong>
+        <br>❌ "SM fem XYZ"
+        <br>❌ "S som i Sven, M som i Martin..."
+        <br>❌ "SM5 X Y Z" (utan fonetik när det behövs)
+    </div>
+    
+    <h3>✅ Snabbtest - Anropssignaler</h3>
+    
+    <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+        <strong>✅ Kan du svara på dessa?</strong>
+        <ul style="margin-top: 0.5rem;">
+            <li>Hur är en svensk anropssignal uppbyggd? (Ge exempel)</li>
+            <li>Vad betyder siffran i SM5XYZ?</li>
+            <li>När måste du identifiera din station?</li>
+            <li>Hur ofta måste du identifiera under en lång QSO?</li>
+            <li>Vad betyder /M och /P efter anropssignalen?</li>
+            <li>Hur bokstaverar du "SM5ABC" fonetiskt?</li>
+        </ul>
+        <details style="margin-top: 0.5rem;">
+            <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+            <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                <small>
+                    • Prefix (SM) + områdessiffra (0-7) + suffix (2-3 bokstäver). Exempel: SM5XYZ
+                    <br>• Geografiskt område i Sverige (5 = Östergötland, Kalmar, Gotland, Södermanland)
+                    <br>• Vid början och slut av varje sändning, samt minst var 10:e minut under pågående sändning
+                    <br>• Minst var 10:e minut
+                    <br>• /M = Mobil (i fordon), /P = Portabel (fältstuga, temporär)
+                    <br>• SIERRA MIKE FIFE ALFA BRAVO CHARLIE
+                </small>
+            </div>
+        </details>
+    </div>
+    
+    <div class="info-box important">
+        <strong>🎯 Viktigt för provet:</strong>
+        <br>• Svenska anropssignaler: SM + siffra (0-7) + 2-3 bokstäver
+        <br>• Områdessiffra anger geografiskt område (baserat på bostadsadress)
+        <br>• Identifiering: Vid början och slut + minst var 10:e minut
+        <br>• Fonetiskt alfabet (ITU) används för tydlighet
+        <br>• Specialsignaler: SK (klubb), SE (automatisk), SL (event)
+        <br>• /M = mobil, /P = portabel, /0-7 = annat område
+        <br>• Vid CEPT-trafik: Värdlandets prefix + / + din signal (t.ex. DL/SM5XYZ)
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SEKTION 7.4: FREKVENSER OCH BANDPLANER -->
+<!-- ============================================ -->
+
+<div class="content-section" id="frekvenser">
+    <h2>7.4 Frekvenser och bandplaner - Var får vi vara?</h2>
+    
+    <h3>Varför inte hela spektrumet?</h3>
+    
+    <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+        <strong>💡 Motorvägsanalogin del 2:</strong>
+        <br><br>
+        <strong>Tänk dig att radiospektrumet är en stor motorväg med många filer:</strong>
+        <br><br>
+        <strong>Fil 1 (LF/MF):</strong> Långvågsradio, tidssignaler, navigering
+        <br><strong>Fil 2 (HF):</strong> Kortvåg - rundradio, sjöfartsradio, <strong>AMATÖRRADIO</strong>, militär
+        <br><strong>Fil 3 (VHF):</strong> FM-radio, TV, flygradio, <strong>AMATÖRRADIO</strong>
+        <br><strong>Fil 4 (UHF):</strong> Mobiltelefoni, <strong>AMATÖRRADIO</strong>, TV, GPS
+        <br><strong>Fil 5 (SHF):</strong> Satellit, radar, WiFi, <strong>AMATÖRRADIO</strong>
+        <br><br>
+        <strong>Varför inte en enda stor fil för amatörer?</strong>
+        <br>• Radiospektrumet är en EXTREMT begränsad resurs
+        <br>• Alla måste dela: Militär, polis, flyg, räddning, rundradio, mobil, TV, etc.
+        <br>• Amatörradio är en hobby - får inte störa kritiska tjänster
+        <br>• ITU fördelar spektrumet rättvist mellan alla användare
+        <br><br>
+        <strong>Därför:</strong>
+        <br>✅ Amatörradio får specifika "SMÅ filer" på motorvägen
+        <br>✅ Vi måste hålla oss inom våra tilldelade band
+        <br>✅ Och inom banden: Frivilliga bandplaner för att organisera trafiken
+    </div>
+    
+    <h3>ITU:s frekvensallokering - Vad vi får använda</h3>
+    
+    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #1e40af;">📊 SVENSKA AMATÖRBAND - ÖVERSIKT</h4>
+        
+        <p style="background: white; padding: 1rem; border-radius: 8px;">
+            <strong>Viktigt att förstå:</strong>
+            <br>• Dessa frekvenser är tilldelade av ITU till Region 1 (Europa)
+            <br>• Sverige följer ITU:s allokering via PTSFS
+            <br>• Vissa band är "primära" (vi har förtur), andra "sekundära" (vi måste ge vika)
+            <br>• Effektgränser varierar per band (se nästa sektion)
+        </p>
+        
+        <h4 style="color: #1e40af; margin-top: 1.5rem;">HF-band (kortväg) - Långdistans:</h4>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Band</th>
+                    <th style="width: 30%;">Frekvenser</th>
+                    <th style="width: 25%;">Max effekt</th>
+                    <th style="width: 25%;">Användning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>160m</strong></td>
+                    <td>1810 - 2000 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Nattband, lokal-regional, CW/SSB/Digital</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>80m</strong></td>
+                    <td>3500 - 3800 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Natt/gryning, regional-europeisk, populärt!</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>60m</strong></td>
+                    <td>5351,5 - 5366,5 kHz</td>
+                    <td><strong>15W EIRP</strong></td>
+                    <td>Sekundär användning, låg effekt, USB</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>40m</strong></td>
+                    <td>7000 - 7200 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Allround, dag+natt, populäraste HF-bandet</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>30m</strong></td>
+                    <td>10100 - 10150 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Endast CW och digitala modes (ej SSB/FM!)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>20m</strong></td>
+                    <td>14000 - 14350 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>DX-bandet, världsomspännande, dag</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>17m</strong></td>
+                    <td>18068 - 18168 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Mindre använt, bra DX ibland</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>15m</strong></td>
+                    <td>21000 - 21450 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>DX, solcykel-beroende, dag</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>12m</strong></td>
+                    <td>24890 - 24990 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Mindre använt, säsongsberoende</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>10m</strong></td>
+                    <td>28000 - 29700 kHz</td>
+                    <td>1000W PEP</td>
+                    <td>Solcykel-beroende, FM-repeatrar, DX</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4 style="color: #1e40af; margin-top: 1.5rem;">VHF/UHF/SHF-band - Lokal & satellit:</h4>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Band</th>
+                    <th style="width: 30%;">Frekvenser</th>
+                    <th style="width: 25%;">Max effekt</th>
+                    <th style="width: 25%;">Användning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>6m</strong></td>
+                    <td>50 - 52 MHz</td>
+                    <td><strong>200W PEP</strong></td>
+                    <td>"Magic band", sporadiskt DX, SSB/CW</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>4m</strong></td>
+                    <td>70 - 70,5 MHz</td>
+                    <td>1000W PEP</td>
+                    <td>Sällan använt, lokal trafik</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>2m</strong></td>
+                    <td>144 - 146 MHz</td>
+                    <td>1000W PEP</td>
+                    <td>Populäraste VHF, FM-repeatrar, SSB/CW</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>70cm</strong></td>
+                    <td>430 - 440 MHz</td>
+                    <td>1000W PEP</td>
+                    <td>Handhållna radioapparater, repeatrar, APRS</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>23cm</strong></td>
+                    <td>1240 - 1300 MHz</td>
+                    <td>1000W PEP</td>
+                    <td>ATV, digital, experimentellt</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>13cm & högre</strong></td>
+                    <td>2,3 GHz - 250 GHz</td>
+                    <td>Varierar</td>
+                    <td>Mikrovåg, EME, experimentellt, få användare</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box warning" style="margin-top: 1rem;">
+            <strong>⚠️ VIKTIGA UNDANTAG OCH SPECIALREGLER:</strong>
+            <br><br>
+            <strong>60m-bandet (5 MHz):</strong>
+            <br>• Endast 15W EIRP (Effective Isotropic Radiated Power)
+            <br>• Sekundär användning (vi måste ge vika för primära användare)
+            <br>• Endast USB (Upper Sideband)
+            <br>• Specifika kanalfrekvenser (ej hela bandet fritt)
+            <br><br>
+            <strong>6m-bandet (50 MHz):</strong>
+            <br>• Max 200W PEP (lägre än andra band!)
+            <br>• Särskilt intressant under solcykelmax (sporadiskt E)
+            <br><br>
+            <strong>30m, 17m, 12m (WARC-band):</strong>
+            <br>• Inga tävlingar tillåtna (för att bevara dem för QSO)
+            <br>• 30m: Endast CW och digitala modes (ej SSB!)
+        </div>
+    </div>
+    
+    <h3>IARU:s bandplaner - Organisera trafiken</h3>
+    
+    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #065f46;">📋 IARU REGION 1 BANDPLAN - FRIVILLIG MEN RESPEKTERAD</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #065f46;">Vad är bandplanen?</strong>
+            <br><br>
+            <strong>ITU säger:</strong> "Amatörer får använda 14000-14350 kHz"
+            <br><br>
+            <strong>Men ITU säger INTE:</strong>
+            <br>• Var CW ska vara
+            <br>• Var SSB ska vara
+            <br>• Var digitala modes ska vara
+            <br>• Var DX-window är
+            <br><br>
+            <strong>Därför har IARU skapat en FRIVILLIG bandplan:</strong>
+            <br>✅ "14000-14070: Endast CW"
+            <br>✅ "14070-14099: Digitala modes (RTTY, PSK31, FT8)"
+            <br>✅ "14100-14350: SSB (telefoni)"
+            <br>✅ "14195-14200: DX-window (prioritet för DX)"
+            <br><br>
+            <strong>Varför följer alla detta?</strong>
+            <br>• Det FUNGERAR!
+            <br>• Om alla följer vet man var man ska leta
+            <br>• CW-operatörer hittar CW-trafik lätt
+            <br>• SSB-operatörer stör inte CW-trafiken
+            <br>• Mindre kaos = bättre för alla
+            <br><br>
+            <strong>Är det LAG?</strong>
+            <br>• Nej, inte i Sverige (PTSFS säger inget om detta)
+            <br>• Men i vissa länder har de gjort bandplanen till lag
+            <br>• I Sverige: Starkt rekommenderat, god amatörpraxis
+            <br>• Om du bryter mot bandplanen blir andra arga (men du får ingen böter)
+        </div>
+        
+        <h4 style="color: #065f46; margin-top: 1.5rem;">Exempel: 20m-bandets bandplan (IARU Region 1):</h4>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Frekvens</th>
+                    <th style="width: 35%;">Användning</th>
+                    <th style="width: 40%;">Noteringar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td>14000 - 14060</td>
+                    <td><strong>Endast CW</strong></td>
+                    <td>• Inget SSB, FM, digital här!
+                    <br>• QRP CW 14060 (låg effekt)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14060 - 14070</td>
+                    <td><strong>CW och digitala modes</strong></td>
+                    <td>• Överlappning CW/digital OK</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14070 - 14089</td>
+                    <td><strong>Digitala modes</strong></td>
+                    <td>• PSK31, RTTY, MFSK, etc.
+                    <br>• 14074: FT8 "anropsfrekvens"</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14089 - 14099</td>
+                    <td><strong>Digitala modes</strong></td>
+                    <td>• Automatiska digitala stationer</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14099 - 14101</td>
+                    <td><strong>IBP-fyrar</strong></td>
+                    <td>• International Beacon Project
+                    <br>• Lyssna, sända ej!</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14100 - 14112</td>
+                    <td><strong>SSB (telefoni)</strong></td>
+                    <td>• Tävlingstrafik prioriterad
+                    <br>• 14100: SSB QRP anropsfrekvens</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14112 - 14125</td>
+                    <td><strong>SSB</strong></td>
+                    <td>• Allmän trafik</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14125 - 14300</td>
+                    <td><strong>SSB</strong></td>
+                    <td>• Allmän trafik
+                    <br>• 14130: Digital Voice</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14195 - 14200</td>
+                    <td><strong>DX-window</strong></td>
+                    <td>• Prioritet för DX-stationer
+                    <br>• Europeiska stationer: Anropa utanför detta!</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>14300 - 14350</td>
+                    <td><strong>SSB</strong></td>
+                    <td>• Allmän trafik
+                    <br>• 14300: Nöd- och katastrofer (ETS)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box tip" style="margin-top: 1rem;">
+            <strong>💡 DX-WINDOW - Vad är det?</strong>
+            <br><br>
+            <strong>Problem:</strong>
+            <br>• En sällsynt DX-station (t.ex. från Antarktis) kommer på bandet
+            <br>• Hundratals europeiska stationer vill kontakta den
+            <br>• Om alla anropar på samma frekvens = totalt kaos!
+            <br><br>
+            <strong>Lösning: DX-window</strong>
+            <br>• DX-stationen sänder i DX-window (t.ex. 14195)
+            <br>• Europeiska stationer lyssnar där
+            <br>• Men ANROPAR utanför window (t.ex. 14210, 14220)
+            <br>• DX-stationen säger: "Lyssnar på 14220"
+            <br>• Alla som vill nå hen går dit och anropar
+            <br><br>
+            <strong>Resultat:</strong>
+            <br>✅ DX-stationen hör anropen tydligt
+            <br>✅ Mindre QRM (störningar)
+            <br>✅ Fler får kontakt
+            <br><br>
+            <strong>Regel:</strong> Om du är i Europa, ANROPA ALDRIG i DX-window! Lyssna där, men anropa utanför.
+        </div>
+    </div>
+    
+    <h3>Anropsfrekvenser - Var man startar en QSO</h3>
+    
+    <div class="example-box" style="border-left: 4px solid #3b82f6;">
+        <strong>📻 ANROPSFREKVENSER (Calling Frequencies)</strong>
+        <br><br>
+        <strong>Vad är en anropsfrekvens?</strong>
+        <br>• En specifik frekvens där man GÅR för att hitta kontakter
+        <br>• Som en "torg" där alla träffas
+        <br>• Du anropar här, sedan flyttar ni till annan frekvens för QSO
+        <br><br>
+        <strong>Vanliga anropsfrekvenser:</strong>
+        <br><br>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Band</th>
+                    <th>Mode</th>
+                    <th>Frekvens</th>
+                    <th>Användning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td>20m</td>
+                    <td>SSB</td>
+                    <td>14285 kHz</td>
+                    <td>Internationell SSB-anropsfrekvens</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>20m</td>
+                    <td>CW</td>
+                    <td>14055 kHz</td>
+                    <td>CW-anropsfrekvens</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>40m</td>
+                    <td>SSB</td>
+                    <td>7090 kHz</td>
+                    <td>Europeisk SSB-anropsfrekvens</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>2m</td>
+                    <td>SSB</td>
+                    <td>144.300 MHz</td>
+                    <td>VHF SSB-anropsfrekvens (mycket populär!)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>2m</td>
+                    <td>FM</td>
+                    <td>145.500 MHz</td>
+                    <td>FM simplex-anropsfrekvens (mobil/portabel)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td>70cm</td>
+                    <td>FM</td>
+                    <td>433.500 MHz</td>
+                    <td>UHF FM-anropsfrekvens</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br>
+        <strong>Hur använder man en anropsfrekvens?</strong>
+        <br><br>
+        <strong>1. Gå till anropsfrekvensen</strong>
+        <br>• T.ex. 144.300 på 2m SSB
+        <br><br>
+        <strong>2. Lyssna först!</strong>
+        <br>• Är någon redan i kontakt? Vänta!
+        <br>• Är det tyst? OK att anropa
+        <br><br>
+        <strong>3. Anropa kort</strong>
+        <br>• "CQ från SM5XYZ, lyssnar"
+        <br>• INTE lång QSO på anropsfrekvensen!
+        <br><br>
+        <strong>4. Någon svarar?</strong>
+        <br>• "SM3ABC, tack för svar! Ska vi gå till 144.350?"
+        <br>• Båda flyttar till annan frekvens
+        <br>• Anropsfrekvensen blir fri för andra
+        <br><br>
+        <strong>Varför inte stanna på anropsfrekvensen?</strong>
+        <br>• Den ska vara FRI för nya anrop
+        <br>• Annars kan ingen annan hitta kontakter
+        <br>• Som att stå och prata mitt i dörren - andra kommer inte in!
+    </div>
+    
+    <h3>✅ Snabbtest - Frekvenser och bandplaner</h3>
+    
+    <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+        <strong>✅ Kan du svara på dessa?</strong>
+        <ul style="margin-top: 0.5rem;">
+            <li>Vilket är det populäraste HF-bandet för DX?</li>
+            <li>Vad är speciellt med 60m-bandet?</li>
+            <li>Vad betyder "WARC-band" och vilka regler gäller?</li>
+            <li>Vad är en "bandplan" och vem gör den?</li>
+            <li>Vad är DX-window och hur använder man det?</li>
+            <li>Vad är anropsfrekvensen för 2m SSB?</li>
+        </ul>
+        <details style="margin-top: 0.5rem;">
+            <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+            <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                <small>
+                    • 20m (14 MHz) - Bäst för global DX under dagen
+                    <br>• Max 15W EIRP, sekundär användning, endast USB, specifika kanaler
+                    <br>• WARC = World Administrative Radio Conference. Band: 30m, 17m, 12m. Regler: Inga tävlingar, 30m endast CW/digital
+                    <br>• Frivillig plan från IARU som anger var olika trafiksätt ska vara (CW, SSB, digital, etc.)
+                    <br>• Frekvensfönster där DX-stationer sänder. Europeiska stationer lyssnar där men anropar UTANFÖR window.
+                    <br>• 144.300 MHz (mycket viktig att komma ihåg!)
+                </small>
+            </div>
+        </details>
+    </div>
+    
+    <div class="info-box important">
+        <strong>🎯 Viktigt för provet:</strong>
+        <br>• Amatörradio har specifika frekvenssegment tilldelade av ITU
+        <br>• Max effekt varierar per band (60m = 15W EIRP, 6m = 200W, övriga = 1000W PEP)
+        <br>• 30m, 17m, 12m = WARC-band (inga tävlingar, 30m endast CW/digital)
+        <br>• IARU:s bandplan är frivillig men starkt respekterad
+        <br>• Bandplanen anger var CW, SSB, digitala modes ska vara
+        <br>• DX-window: Lyssna där, anropa utanför (europeiska stationer)
+        <br>• Anropsfrekvenser: 144.300 (2m SSB), 145.500 (2m FM), 14285 (20m SSB)
+    </div>
+</div>
+<!-- ============================================ -->
+<!-- SEKTION 7.5: EFFEKTGRÄNSER -->
+<!-- ============================================ -->
+
+<div class="content-section" id="effekt">
+    <h2>7.5 Effektgränser - Hur mycket får vi köra med?</h2>
+    
+    <h3>Varför finns effektgränser?</h3>
+    
+    <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+        <strong>💡 Bilmotoranalogin:</strong>
+        <br><br>
+        <strong>Tänk dig att radions effekt är som en bilmotor:</strong>
+        <br><br>
+        <strong>Liten motor (5-10W):</strong>
+        <br>• Som en moped
+        <br>• Räcker för lokala turer
+        <br>• Låg bränsleförbrukning
+        <br>• Lite buller och avgaser
+        <br><br>
+        <strong>Normal motor (50-100W):</strong>
+        <br>• Som en vanlig bil
+        <br>• Klarar det mesta
+        <br>• Rimlig förbrukning
+        <br>• Acceptabelt buller
+        <br><br>
+        <strong>Stor motor (500-1000W):</strong>
+        <br>• Som en lastbil eller sportbil
+        <br>• Mycket kraft när det behövs
+        <br>• Hög förbrukning
+        <br>• Mer buller och påverkan på omgivningen
+        <br><br>
+        <strong>Varför inte alltid maxeffekt?</strong>
+        <br>1. <strong>Störningar:</strong> Mer effekt = större risk att störa annan elektronik
+        <br>2. <strong>Säkerhet:</strong> Högre RF-fält kan påverka människor och djur
+        <br>3. <strong>Rättvisa:</strong> Alla ska kunna höras, inte bara de med mest effekt
+        <br>4. <strong>Teknik:</strong> Visa att du kan kommunicera med finesse, inte bara brute force
+        <br><br>
+        <strong>Devisen inom amatörradio:</strong>
+        <br><em>"Använd minsta möjliga effekt för att uppnå kontakten"</em>
+        <br>(Precis som att inte köra 200 km/h när 50 räcker!)
+    </div>
+    
+    <h3>Svenska effektgränser - Översikt</h3>
+    
+    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #1e40af;">⚡ MAXIMAL TILLÅTEN EFFEKT MED HAREC-CERTIFIKAT</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #1e40af;">Grundregel:</strong>
+            <br><br>
+            Med HAREC-certifikat får du använda <strong>1000W PEP</strong> (Peak Envelope Power) på de flesta band.
+            <br><br>
+            <strong>Undantag finns för:</strong>
+            <br>• 60m-bandet (5 MHz)
+            <br>• 6m-bandet (50 MHz)
+            <br>• Vissa mikrovågsband
+        </div>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Band</th>
+                    <th style="width: 30%;">Frekvens</th>
+                    <th style="width: 20%;">Max effekt</th>
+                    <th style="width: 25%;">Anmärkning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>160m - 10m</strong></td>
+                    <td>1,8 - 29,7 MHz</td>
+                    <td><strong>1000W PEP</strong></td>
+                    <td>Standard (utom 60m)</td>
+                </tr>
+                <tr style="background: #fef3c7;">
+                    <td><strong>60m</strong></td>
+                    <td>5,3 MHz</td>
+                    <td><strong>15W EIRP</strong></td>
+                    <td>⚠️ Mycket lägre! Sekundär användning</td>
+                </tr>
+                <tr style="background: #fee2e2;">
+                    <td><strong>6m</strong></td>
+                    <td>50 - 52 MHz</td>
+                    <td><strong>200W PEP</strong></td>
+                    <td>⚠️ Lägre än andra band</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>4m</strong></td>
+                    <td>70 - 70,5 MHz</td>
+                    <td><strong>1000W PEP</strong></td>
+                    <td>Standard</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>2m</strong></td>
+                    <td>144 - 146 MHz</td>
+                    <td><strong>1000W PEP</strong></td>
+                    <td>Standard</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>70cm</strong></td>
+                    <td>430 - 440 MHz</td>
+                    <td><strong>1000W PEP</strong></td>
+                    <td>Standard</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>23cm+</strong></td>
+                    <td>1240 MHz →</td>
+                    <td><strong>1000W PEP</strong></td>
+                    <td>Standard (vissa undantag i PTSFS)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box important" style="margin-top: 1rem;">
+            <strong>🔑 VIKTIGA DEFINITIONER:</strong>
+            <br><br>
+            <strong>PEP (Peak Envelope Power):</strong>
+            <br>• Toppeffekten vid modulationstoppar
+            <br>• Relevant för SSB (variabel effekt)
+            <br>• Exempel: SSB-sändare sägs ha "100W PEP" = toppen når 100W vid modulationstopp
+            <br><br>
+            <strong>EIRP (Effective Isotropic Radiated Power):</strong>
+            <br>• Effektiv utstrålad effekt i huvudriktningen
+            <br>• Inkluderar antennvinst!
+            <br>• EIRP = Sändareffekt + Antennvinst (dBi) - Kabelförluster
+            <br>• Exempel: 10W sändare + 6 dBi antenn ≈ 40W EIRP
+            <br>• Endast använt för 60m-bandet i Sverige
+            <br><br>
+            <strong>Genomsnittseffekt (Mean Power):</strong>
+            <br>• Relevant för CW och digitala modes
+            <br>• Kontinuerlig effekt över tid
+            <br>• Ofta cirka hälften av PEP för SSB
+        </div>
+    </div>
+    
+    <h3>60m-bandet - Specialregler</h3>
+    
+    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #92400e;">📻 60M-BANDET (5 MHz) - SPECIELLA BEGRÄNSNINGAR</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #92400e;">Varför så låg effekt på 60m?</strong>
+            <br><br>
+            <strong>Historiskt:</strong>
+            <br>• 60m-bandet var länge oanvänt för amatörradio
+            <br>• Militären och kustradio använde det
+            <br>• Efter långa förhandlingar fick amatörer "smyga in"
+            <br><br>
+            <strong>Därför:</strong>
+            <br>• <strong>Sekundär användning</strong> = Vi får vara där, men måste ge vika
+            <br>• Låg effekt för att INTE störa primära användare
+            <br>• Endast vissa specifika kanaler (ej hela bandet)
+            <br>• Endast USB (Upper Sideband)
+            <br><br>
+            <strong>Max effekt: 15W EIRP</strong>
+            <br>• EIRP inkluderar antennvinst!
+            <br>• Måste räknas med i beräkningen
+        </div>
+        
+        <h4 style="color: #92400e; margin-top: 1.5rem;">Hur beräknar man EIRP?</h4>
+        
+        <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+            <strong>📊 EIRP-beräkning - Exempel:</strong>
+            <br><br>
+            <strong>Scenario:</strong>
+            <br>• Sändareffekt: 10W
+            <br>• Kabelförlust: -1 dB
+            <br>• Antennvinst: +3 dBi
+            <br><br>
+            <strong>Beräkning:</strong>
+            <br><br>
+            <strong>Steg 1: Effekt vid antennen</strong>
+            <br>10W - 1 dB förlust ≈ 7,9W vid antennen
+            <br><br>
+            <strong>Steg 2: EIRP med antennvinst</strong>
+            <br>7,9W + 3 dBi vinst = 7,9W × 2 ≈ <strong>15,8W EIRP</strong>
+            <br><br>
+            <strong>Resultat:</strong>
+            <br>⚠️ <strong>FÖR HÖGT!</strong> Du är över 15W EIRP-gränsen.
+            <br><br>
+            <strong>Lösning:</strong>
+            <br>Minska sändareffekten till 8W:
+            <br>• 8W - 1 dB = 6,3W vid antennen
+            <br>• 6,3W + 3 dBi = 12,6W EIRP ✓ (under 15W)
+            <br><br>
+            <em>💡 På 60m måste du alltid räkna med antennvinsten!</em>
+        </div>
+        
+        <div class="info-box warning" style="margin-top: 1rem;">
+            <strong>⚠️ OFTA MISSFÖRSTÅTT:</strong>
+            <br><br>
+            <strong>FEL tänk:</strong>
+            <br>"Jag har 15W sändare, då är jag OK på 60m!"
+            <br><br>
+            <strong>RÄTT tänk:</strong>
+            <br>"Jag måste räkna: Sändareffekt - kabelförlust + antennvinst = EIRP"
+            <br><br>
+            <strong>Om du har en riktantenn med 6 dBi vinst:</strong>
+            <br>• 15W sändare + 6 dBi ≈ 60W EIRP (!)
+            <br>• Detta är 4× över gränsen = regelbrott
+            <br>• Du måste minska till 4W sändare för att vara laglig
+        </div>
+    </div>
+    
+    <h3>QRP - Lågeffekt som konst</h3>
+    
+    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #065f46;">🔋 QRP - "LOW POWER" SOM UTMANING OCH GLÄDJE</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #065f46;">Vad är QRP?</strong>
+            <br><br>
+            <strong>Q-kod QRP = "Ska jag minska effekten?"</strong>
+            <br>• Inom amatörradio: Frivillig lågeffektstrafik
+            <br>• Inte en regel, utan en rörelse/filosofi
+            <br>• Visa att man kan jobba DX med minimal effekt
+            <br><br>
+            <strong>Definitioner:</strong>
+            <br>• <strong>HF (CW):</strong> Max 5W uteffekt
+            <br>• <strong>HF (SSB):</strong> Max 10W PEP uteffekt
+            <br>• <strong>VHF/UHF:</strong> Varierar, ofta 10W
+            <br><br>
+            <strong>Varför QRP?</strong>
+            <br>✅ Utmaning och tillfredsställelse
+            <br>✅ Mindre störningar på andra
+            <br>✅ Lägre energiförbrukning (portabel drift)
+            <br>✅ Mindre, enklare, billigare utrustning
+            <br>✅ Lär dig att optimera antenn och operatörsteknik
+            <br>✅ Roligt community med egna tävlingar och diplom
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+            <strong>📻 QRP-exempel från verkligheten:</strong>
+            <br><br>
+            <strong>Scenario 1 - Imponerande DX:</strong>
+            <br>• SM5ABC i Norrköping
+            <br>• 5W CW på 20m-bandet
+            <br>• Enkel tråddipol i trädgården
+            <br>• Lyckas kontakta Nya Zeeland (ZL)!
+            <br>• Distans: 18 000 km med 5 watt
+            <br><br>
+            <em>💡 Detta är som att köra moped från Sverige till Australien - det låter omöjligt, men med rätt teknik (och jonosfären som hjälper) går det!</em>
+            <br><br>
+            <strong>Scenario 2 - Portabel äventyr:</strong>
+            <br>• QRP-radio (5W) i ryggsäcken
+            <br>• Solpanel för laddning
+            <br>• Enkel tråddipol mellan träd
+            <br>• Tältar på fjället, kör trafik från toppen
+            <br>• Kan jobba hela Europa med 5W!
+            <br><br>
+            <em>🏔️ Lägre effekt = mindre utrustning = mer äventyr!</em>
+        </div>
+        
+        <div class="info-box tip" style="margin-top: 1rem;">
+            <strong>💡 QRP-TIPS FÖR NYBÖRJARE:</strong>
+            <br><br>
+            <strong>1. Börja med CW:</strong>
+            <br>• CW (telegrafi) är mer effektivt än SSB
+            <br>• 5W CW ≈ 50W SSB i praktiken
+            <br>• Smalare bandbredd = lättare att höra svaga signaler
+            <br><br>
+            <strong>2. Optimera antennen:</strong>
+            <br>• Bra antenn viktigare än effekt!
+            <br>• En dipol på 10m höjd bättre än 100W i markansluten antenn
+            <br>• QRP + bra antenn >> 100W + dålig antenn
+            <br><br>
+            <strong>3. Lyssna och lär:</strong>
+            <br>• Anropa när band är öppet
+            <br>• Välj rätt tidpunkt (jonosfären hjälper dig)
+            <br>• Var tålmodig - ibland tar det fler försök
+            <br><br>
+            <strong>4. Använd QRP-frekvenser:</strong>
+            <br>• 7030 kHz - 40m CW QRP
+            <br>• 14060 kHz - 20m CW QRP
+            <br>• 3560 kHz - 80m CW QRP
+            <br>• Andra QRP-operatörer lyssnar där!
+        </div>
+    </div>
+    
+    <h3>Varför använda lägre effekt än max?</h3>
+    
+    <div class="info-box important" style="background: #dbeafe; border-left: 4px solid #3b82f6;">
+        <strong>🎯 "USE THE MINIMUM POWER NECESSARY" - AMATÖRRADIOKODEN</strong>
+        <br><br>
+        <strong>Varför inte alltid köra 1000W?</strong>
+        <br><br>
+        <strong>1. Störningar (EMC):</strong>
+        <br>• Högre effekt = större RF-fält runt antennen
+        <br>• Risk att störa TV, radio, internet hos grannar
+        <br>• Din egen dator, telefon kan störas
+        <br>• Särskilt problem på 160m och 80m (låga frekvenser)
+        <br><br>
+        <strong>2. Säkerhet (RF-exponering):</strong>
+        <br>• RF-strålning vid höga effekter kan påverka kroppen
+        <br>• Särskilt nära antennen
+        <br>• Regler finns för max tillåtet RF-fält
+        <br>• Lägre effekt = säkrare miljö
+        <br><br>
+        <strong>3. Ekonomi:</strong>
+        <br>• 1000W slutsteg kostar 30 000+ kr
+        <br>• Drar mycket ström (dyrt att köra)
+        <br>• 100W transceiver kostar 10 000 kr och räcker för det mesta
+        <br>• Du kan jobba världen med 100W + bra antenn!
+        <br><br>
+        <strong>4. Teknik och lärande:</strong>
+        <br>• Lär dig optimera antennen istället för att köpa effekt
+        <br>• Bättre operatörsteknik (tajming, frekvensval)
+        <br>• Respekt från andra amatörer
+        <br>• QRP-kontakter är mer tillfredsställande!
+        <br><br>
+        <strong>5. Rättvisa och etik:</strong>
+        <br>• Alla ska kunna höras, inte bara de med mest power
+        <br>• Om alla körde 1000W skulle QRM explodera
+        <br>• "Gentleman's agreement" - använd bara vad du behöver
+        <br><br>
+        <strong>Tumregel:</strong>
+        <br>• Lokalt (repeatrar, 2m FM): 5-25W räcker
+        <br>• Regionalt (80m, 40m): 50-100W
+        <br>• DX (20m, 15m): 100W oftast tillräckligt
+        <br>• Svår DX eller tävling: 500-1000W kan motiveras
+    </div>
+    
+    <h3>Effekt och antenn - Vilken påverkar mest?</h3>
+    
+    <div class="example-box" style="border-left: 4px solid #3b82f6;">
+        <strong>📊 JÄMFÖRELSE: EFFEKT vs ANTENN</strong>
+        <br><br>
+        <strong>Scenario A: Hög effekt, dålig antenn</strong>
+        <br>• 1000W slutsteg
+        <br>• Dålig antenn (t.ex. inomhusantenn med -10 dBi)
+        <br>• Resultat: Effektivt utstrålat ≈ 100W
+        <br><br>
+        <strong>Scenario B: Låg effekt, bra antenn</strong>
+        <br>• 100W transceiver
+        <br>• Bra antenn (t.ex. 3-elements Yagi med +9 dBi)
+        <br>• Resultat: Effektivt utstrålat ≈ 800W
+        <br><br>
+        <strong>Vinnare:</strong> Scenario B! 
+        <br><br>
+        <strong>Lärdomen:</strong>
+        <br>"Bättre att lägga pengar på antennen än slutsteget!"
+        <br><br>
+        <strong>En annan jämförelse:</strong>
+        <br>• Dubbla effekten (100W → 200W) = +3 dB = 0,5 S-enheter
+        <br>• Tiodubbla effekten (100W → 1000W) = +10 dB = 1,5 S-enheter
+        <br>• Förbättra antennen 1 S-enhet (t.ex. högre upp) = motsvarar 4× effekt
+        <br><br>
+        <em>💡 Konkret: Att höja din dipol från 5m till 10m höjd ger mer än att gå från 100W till 400W!</em>
+    </div>
+    
+    <h3>✅ Snabbtest - Effektgränser</h3>
+    
+    <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+        <strong>✅ Kan du svara på dessa?</strong>
+        <ul style="margin-top: 0.5rem;">
+            <li>Vad är den vanliga maxeffekten med HAREC-certifikat?</li>
+            <li>Vilka två band har lägre effektgränser?</li>
+            <li>Vad betyder PEP och när används det?</li>
+            <li>Vad betyder EIRP och varför är det viktigt på 60m?</li>
+            <li>Vad är QRP och vilka effektgränser gäller där?</li>
+            <li>Varför ska man använda minsta möjliga effekt?</li>
+        </ul>
+        <details style="margin-top: 0.5rem;">
+            <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+            <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                <small>
+                    • 1000W PEP på de flesta band
+                    <br>• 60m (15W EIRP) och 6m (200W PEP)
+                    <br>• Peak Envelope Power = toppeffekt vid modulationstoppar. Används för SSB där effekten varierar.
+                    <br>• Effective Isotropic Radiated Power = utstrålad effekt inkl. antennvinst. Viktigt på 60m för att räkna total effekt.
+                    <br>• Low power operation. HF CW: max 5W, HF SSB: max 10W. Frivilligt för utmaning och minimala störningar.
+                    <br>• Minska störningar, säkerhet (RF-exponering), ekonomi, rättvisa, amatöretik, lära sig teknik istället för att köpa effekt
+                </small>
+            </div>
+        </details>
+    </div>
+    
+    <div class="info-box important">
+        <strong>🎯 Viktigt för provet:</strong>
+        <br>• Standard max effekt: 1000W PEP (de flesta band)
+        <br>• Undantag: 60m = 15W EIRP, 6m = 200W PEP
+        <br>• PEP = Peak Envelope Power (toppeffekt vid modulationstoppar)
+        <br>• EIRP = Effective Isotropic Radiated Power (inkl. antennvinst)
+        <br>• QRP: Frivillig lågeffekt (5W CW, 10W SSB på HF)
+        <br>• Princip: Använd minsta möjliga effekt för att uppnå kontakt
+        <br>• Bättre antenn ger mer än högre effekt i praktiken
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SEKTION 7.6: TILLÅTET INNEHÅLL -->
+<!-- ============================================ -->
+
+<div class="content-section" id="innehall">
+    <h2>7.6 Tillåtet innehåll - Vad får vi prata om?</h2>
+    
+    <h3>Grundprincipen - Tekniskt fokus och icke-kommersiellt</h3>
+    
+    <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+        <strong>💡 Radioklubbanalogin:</strong>
+        <br><br>
+        <strong>Tänk dig amatörradio som en teknisk hobbyklubb:</strong>
+        <br><br>
+        <strong>En radioklubb är som en dataklubb, modellflygklubb eller bilklubb:</strong>
+        <br>• Medlemmarna pratar om sitt gemensamma intresse (radio/teknik)
+        <br>• Man delar erfarenheter, diskuterar utrustning, hjälper varandra
+        <br>• Man umgås och har trevligt
+        <br>• Men klubben får inte användas för affärer eller politik
+        <br><br>
+        <strong>Samma sak på luften:</strong>
+        <br>✅ Prata om radio, teknik, väder, hobbies
+        <br>✅ Ha trevliga samtal, skapa vänskap
+        <br>✅ Hjälpa varandra med tekniska problem
+        <br>✅ Dela erfarenheter från projekt
+        <br>❌ Ingen politik, ingen reklam, inga affärer
+        <br>❌ Inte våldsskildringar eller olämpligt språk
+        <br>❌ Inte musik eller krypterade meddelanden
+        <br><br>
+        <strong>Varför?</strong>
+        <br>Amatörradio är ett tekniskt och vetenskapligt privilegium, inte en kommersiell radio- eller TV-kanal. Vi får våra frekvenser GRATIS för att experimentera och lära, inte för att göra affärer eller sprida propaganda.
+    </div>
+    
+    <h3>Vad är tillåtet? ✅</h3>
+    
+    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #065f46;">✅ TILLÅTNA SAMTALSÄMNEN OCH AKTIVITETER</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #065f46;">Från PTSFS och god amatörpraxis:</strong>
+            <br><br>
+            
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Kategori</th>
+                        <th style="width: 70%;">Vad som är OK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: white;">
+                        <td><strong>Tekniska samtal</strong></td>
+                        <td>✅ Diskutera radioutrustning (sändare, antenner, mottagare)
+                        <br>✅ Dela erfarenheter från byggen och experiment
+                        <br>✅ Felsökning och teknisk hjälp
+                        <br>✅ Rapporter om propagation och bandförhållanden
+                        <br>✅ Diskutera ny teknologi (SDR, digitala modes)
+                        <br>✅ Antenntips och antennprojekt
+                        <br><br><em>Detta är kärnan i amatörradio!</em></td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Personliga samtal</strong></td>
+                        <td>✅ Prata om familj, barn, husdjur
+                        <br>✅ Väder och natur
+                        <br>✅ Jobb och studier (men inte reklam!)
+                        <br>✅ Resor och upplevelser
+                        <br>✅ Andra hobbies (fotografering, segling, etc.)
+                        <br>✅ Lokala nyheter och händelser (neutralt)
+                        <br><br><em>Helt normalt vardagsprat är OK!</em></td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Nödkommunikation</strong></td>
+                        <td>✅ Akuta nödsituationer (olycka, brand, sjukdom)
+                        <br>✅ Naturkatastrofer (översvämning, storm)
+                        <br>✅ Vidarebefordra nödmeddelanden
+                        <br>✅ Trafiknät vid kriser (IARU Emergency Net)
+                        <br><br><em>Vid nödsituation har du förtur framför all annan trafik!</em></td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Tävlingar och diplom</strong></td>
+                        <td>✅ Delta i "contests" (tävlingar)
+                        <br>✅ Jaga DX och sällsynta länder
+                        <br>✅ Samla QSL-kort och diplom (DXCC, IOTA, etc.)
+                        <br>✅ Rapportera resultat och poäng
+                        <br><br><em>Tävlingselement är en stor del av hobbyn!</em></td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Utbildning</strong></td>
+                        <td>✅ Träna nya operatörer (under tillsyn)
+                        <br>✅ Demonstrationer på mässor och event
+                        <br>✅ Skol-stationer och ungdomsutbildning
+                        <br>✅ On-air-kurser (t.ex. CW-träning)
+                        <br><br><em>Sprida kunskap och intresse är viktigt!</em></td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Experimentverksamhet</strong></td>
+                        <td>✅ Testa ny utrustning och antenner
+                        <br>✅ Propagationsstudier (jonosfären)
+                        <br>✅ Satellitkommunikation
+                        <br>✅ EME (moonbounce)
+                        <br>✅ Nya digitala modes och protokoll
+                        <br><br><em>Amatörradio är för vetenskapligt experimentering!</em></td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Internationell trafik</strong></td>
+                        <td>✅ Kontakter med amatörer i andra länder
+                        <br>✅ Kulturutbyte och språkträning
+                        <br>✅ Vänskapskontakter och penpal
+                        <br>✅ Diskutera kulturella skillnader (neutralt)
+                        <br><br><em>Radio utan gränser - folkdiplomati!</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+            <strong>📻 Exempel på bra QSO (samtalsutdrag):</strong>
+            <br><br>
+            <strong>SM5ABC:</strong> "...ja, jag körde lite FT8 på 20m igår kväll. Lyckades få Australien med bara 50W till min dipol!"
+            <br><br>
+            <strong>SM3XYZ:</strong> "Inte illa! Hur hög har du dipolen?"
+            <br><br>
+            <strong>SM5ABC:</strong> "Den sitter på 12 meter, mellan två tallar här i trädgården. Fungerar förvånansvärt bra."
+            <br><br>
+            <strong>SM3XYZ:</strong> "Bra höjd! Jag sitter också med en dipol, men bara 8 meter. Funderar på att rigga upp en vertikal för 40m. Har du provat det?"
+            <br><br>
+            <strong>SM5ABC:</strong> "Ja, jag hade en vertikal förra året. Funka okej men dipolen var bättre för DX. Vertikalen var dock bra för lokal trafik..."
+            <br><br>
+            <em>✅ Detta är perfekt! Tekniskt samtal, utbyte av erfarenheter, vänlig ton.</em>
+        </div>
+    </div>
+    
+    <h3>Vad är FÖRBJUDET? ❌</h3>
+    
+    <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border: 3px solid #dc2626; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #991b1b;">❌ FÖRBJUDNA SAMTALSÄMNEN OCH AKTIVITETER</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #991b1b;">Från PTSFS och internationella regler:</strong>
+            <br><br>
+            
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Kategori</th>
+                        <th style="width: 40%;">Vad som är förbjudet</th>
+                        <th style="width: 30%;">Varför</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: white;">
+                        <td><strong>Kommersiell verksamhet</strong></td>
+                        <td>❌ Sälja varor eller tjänster
+                        <br>❌ Reklam för företag
+                        <br>❌ "Köp min bil för 50 000 kr"
+                        <br>❌ "Ring mitt företag för..."
+                        <br>❌ Affärsförhandlingar</td>
+                        <td>Amatörradio är icke-kommersiellt. Kommersiella aktörer betalar stora summor för sina frekvenser.</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Politik och religion</strong></td>
+                        <td>❌ Politisk propaganda
+                        <br>❌ Religiös missionering
+                        <br>❌ Hets mot folkgrupp
+                        <br>❌ Diskriminering
+                        <br>❌ Kontroversiella debatter</td>
+                        <td>Radio ska förena, inte splittra. Amatörradio är internationellt - vi respekterar alla åsikter genom att inte diskutera dem.</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Musik och broadcast</strong></td>
+                        <td>❌ Spela inspelad musik
+                        <br>❌ Liveinspelningar
+                        <br>❌ Sjunga eller spela instrument
+                        <br>❌ "DJ-verksamhet"
+                        <br>❌ Rundradio-liknande sändningar</td>
+                        <td>Du är inte en radiostation. Musik kräver upphovsrättslicenser. Amatörradio är för tvåvägskommunikation.</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Kryptering och kodning</strong></td>
+                        <td>❌ Hemliga koder eller chiffer
+                        <br>❌ Krypterad kommunikation
+                        <br>❌ Dold mening i meddelanden
+                        <br><br>✅ Undantag: Q-koder och RST-rapporter är OK</td>
+                        <td>All amatörradiotrafik ska vara öppen och avlyssningsbar. Transparens = tillit.</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Olämpligt språk</strong></td>
+                        <td>❌ Svordomar och obscent språk
+                        <br>❌ Våldsskildringar
+                        <br>❌ Sexuellt innehåll
+                        <br>❌ Trakasserier
+                        <br>❌ Mobbning</td>
+                        <td>Barn och ungdomar lyssnar. Radio når alla - håll god ton!</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Störningar</strong></td>
+                        <td>❌ Avsiktlig störning ("jamming")
+                        <br>❌ Falska nödsignaler
+                        <br>❌ Använda andras anropssignal
+                        <br>❌ Långvariga "dead carrier"
+                        <br>❌ Upptagen frekvens utan QSO</td>
+                        <td>Respektera andra användare. Störningar är allvarliga regelbrott.</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Kommunikation åt tredje part</strong></td>
+                        <td>❌ Vidarebefordra meddelanden för icke-amatörer (utom nödsituationer)
+                        <br>❌ Jobbrelaterade meddelanden
+                        <br>❌ "Säg till min fru att..."
+                        <br><br>✅ Undantag: Nödlägen</td>
+                        <td>Amatörradio är för amatörer att kommunicera med varandra, inte ersätta telefon/SMS.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #dc2626; margin-top: 1rem;">
+            <strong>❌ Exempel på dåliga QSO (UNDVIK DESSA):</strong>
+            <br><br>
+            <strong>Fel exempel 1 - Kommersiellt:</strong>
+            <br>"Hej SM3ABC, ja jag säljer en fin Yaesu FT-991A för 12 000 kr. Den är i toppskick! Ring mig på 070-123456 om du är intresserad."
+            <br><br>
+            <strong>Varför fel:</strong> Kommersiell försäljning förbjuden. Du kan nämna att du funderar på att sälja, men inte pris och köpuppmaningar.
+            <br><br>
+            <strong>Rätt version:</strong> "Jag funderar på att uppgradera min transceiver så min gamla FT-991A blir över. Om någon är intresserad kan vi prata mer på mail."
+            <br><br>
+            <hr style="margin: 1rem 0;">
+            <br>
+            <strong>Fel exempel 2 - Politik:</strong>
+            <br>"Regeringen är idioter! De förstår ingenting om radio. Rösta på [parti] nästa val!"
+            <br><br>
+            <strong>Varför fel:</strong> Politisk propaganda och nesligt språk. Amatörradio ska inte användas för att påverka val eller sprida politiska budskap.
+            <br><br>
+            <strong>Rätt version:</strong> "Jag är lite bekymrad över förslaget om nya EMC-regler, hoppas SSA kan påverka beslutet."
+            <br><br>
+            <hr style="margin: 1rem 0;">
+            <br>
+            <strong>Fel exempel 3 - Musik:</strong>
+            <br>[Spelar AC/DC's "Thunderstruck" från högtalare i radion]
+            <br><br>
+            <strong>Varför fel:</strong> Musik är förbjudet. Upphovsrättsskyddad musik kräver licenser. Amatörradio är inte en musiktjänst.
+            <br><br>
+            <strong>Rätt version:</strong> Inget! Spela musik bara för dig själv, inte på luften.
+        </div>
+    </div>
+    
+    <h3>Gränszoner - När är det OK och när inte?</h3>
+    
+    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #92400e;">⚖️ GRÅZONER - VAR GÅR GRÄNSEN?</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #92400e;">Vissa ämnen är inte helt förbjudna, men kräver försiktighet:</strong>
+            <br><br>
+            
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Ämne</th>
+                        <th style="width: 35%;">✅ OK om...</th>
+                        <th style="width: 35%;">❌ Ej OK om...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: white;">
+                        <td><strong>Jobb och karriär</strong></td>
+                        <td>✅ "Jag jobbar som elektriker"
+                        <br>✅ "Spännande projekt på jobbet idag"
+                        <br>✅ "Vi bygger en ny fabrik"</td>
+                        <td>❌ "Ring mitt företag för offerter"
+                        <br>❌ "Vi söker personal, sänd CV"
+                        <br>❌ Reklam för ditt företag</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Köp/Sälj radioutrustning</strong></td>
+                        <td>✅ "Funderar på att sälja min radio"
+                        <br>✅ "Letar efter en Icom IC-7300"
+                        <br>✅ "Vi kan prata mer via mail"</td>
+                        <td>❌ "Säljer X för Y kronor, ring nu!"
+                        <br>❌ Långa försäljningspitchar
+                        <br>❌ Återkommande affärsverksamhet</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Politik (allmänt)</strong></td>
+                        <td>✅ "Intressant med nya EMC-regler"
+                        <br>✅ "Hoppas spektrumutredningen blir bra"
+                        <br>✅ Neutrala faktasamtal</td>
+                        <td>❌ "Rösta på [parti]!"
+                        <br>❌ Hetsa mot politiker
+                        <br>❌ Kontroversiella debatter</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Nyheter</strong></td>
+                        <td>✅ "Hörde att det varit storm i norr"
+                        <br>✅ "Läste om ny satellit"
+                        <br>✅ Neutrala nyhetssamtal</td>
+                        <td>❌ Långvariga nyhetssändningar
+                        <br>❌ "Broadcasting" av nyheter
+                        <br>❌ Enbart åsikter om nyheter</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td><strong>Hälsa och medicin</strong></td>
+                        <td>✅ "Har varit förkyld, sämre röst idag"
+                        <br>✅ "Nyopererad, tar det lugnt"
+                        <br>✅ Allmänt välmående</td>
+                        <td>❌ Detaljerade medicinska beskrivningar
+                        <br>❌ Ge medicinska råd
+                        <br>❌ Marknadsföra hälsoprodukter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="info-box tip" style="margin-top: 1rem;">
+            <strong>💡 TUMREGELN:</strong>
+            <br><br>
+            <strong>Fråga dig själv:</strong>
+            <br>• "Skulle jag säga detta på en teknisk hobbyklubb?"
+            <br>• "Är det något jag försöker sälja eller övertyga om?"
+            <br>• "Kan det uppfattas som stötande av någon?"
+            <br><br>
+            <strong>Om du är osäker:</strong>
+            <br>→ Låt bli!
+            <br>→ Eller håll det KORT och flytta vidare till annat ämne
+            <br><br>
+            <strong>Minns:</strong>
+            <br>Det är OK att vara personlig och vänlig, men håll dig till ämnen som passar en teknisk hobbyklubb. Politik, religion och affärer hör inte hemma på amatörradio.
+        </div>
+    </div>
+    
+    <h3>✅ Snabbtest - Tillåtet innehåll</h3>
+    
+    <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+        <strong>✅ Kan du svara på dessa?</strong>
+        <ul style="margin-top: 0.5rem;">
+            <li>Får du spela musik på amatörradio?</li>
+            <li>Får du sälja din gamla radio på luften?</li>
+            <li>Får du diskutera politik?</li>
+            <li>Får du prata om ditt jobb?</li>
+            <li>Vad betyder "icke-kommersiell verksamhet"?</li>
+            <li>Varför är kryptering förbjuden?</li>
+        </ul>
+        <details style="margin-top: 0.5rem;">
+            <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+            <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                <small>
+                    • Nej, musik (inspelad eller live) är förbjuden på amatörradio
+                    <br>• Nej, inte direkt försäljning med pris. Du kan nämna att du funderar på att sälja och hänvisa till mail/telefon.
+                    <br>• Nej, politisk propaganda och debatter är förbjudna. Neutrala faktasamtal om t.ex. spektrumregler kan vara OK.
+                    <br>• Ja, du kan berätta vad du jobbar med, men inte göra reklam för ditt företag eller söka kunder.
+                    <br>• Amatörradio får inte användas för affärer, försäljning, reklam eller vinst. Det är en hobbytjänst.
+                    <br>• All amatörradiotrafik ska vara öppen och avlyssningsbar. Kryptering undergräver transparens och tillit.
+                </small>
+            </div>
+        </details>
+    </div>
+    
+    <div class="info-box important">
+        <strong>🎯 Viktigt för provet:</strong>
+        <br>• Amatörradio är icke-kommersiell (ingen affärsverksamhet, reklam, försäljning)
+        <br>• Förbjudet: Politik, religion, musik, kryptering, olämpligt språk, störningar
+        <br>• Tillåtet: Tekniska samtal, personliga samtal, nödkommunikation, tävlingar, utbildning
+        <br>• Gråzon: Jobb (berätta OK, reklam ej OK), köp/sälj (kort nämna OK, försäljningspitch ej OK)
+        <br>• Princip: Skulle jag säga detta på en teknisk hobbyklubb? Om nej → säg det inte på radio
+        <br>• All trafik ska vara öppen (ingen kryptering utom Q-koder/RST)
+    </div>
+</div>
+<!-- ============================================ -->
+<!-- SEKTION 7.7: INTERNATIONELL TRAFIK -->
+<!-- ============================================ -->
+
+<div class="content-section" id="internationellt">
+    <h2>7.7 Internationell trafik - Radio utomlands</h2>
+    
+    <h3>Radiovågor känner inga gränser</h3>
+    
+    <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+        <strong>💡 Passkontrollanalogin:</strong>
+        <br><br>
+        <strong>Tänk dig att resa med bil mellan länder:</strong>
+        <br><br>
+        <strong>Före Schengen (gamla tider):</strong>
+        <br>• Stanna vid varje gräns
+        <br>• Visa pass och körkort
+        <br>• Få stämpel och tillstånd
+        <br>• Vänta i kö i timmar
+        <br>• Krångligt och tidskrävande!
+        <br><br>
+        <strong>Efter Schengen (idag):</strong>
+        <br>• Kör rakt över gränsen
+        <br>• Inget stopp, ingen ansökan
+        <br>• Ditt körkort gäller överallt
+        <br>• Enkelt och smidigt!
+        <br><br>
+        <strong>Samma sak för amatörradio:</strong>
+        <br><br>
+        <strong>Före CEPT (gamla tider):</strong>
+        <br>• Ansök om tillstånd i varje land
+        <br>• Vänta veckor på svar
+        <br>• Betala avgifter
+        <br>• Ta nya prov ibland
+        <br>• Många åkte på semester utan radio!
+        <br><br>
+        <strong>Efter CEPT T/R 61-02 (idag):</strong>
+        <br>• Ta med ditt HAREC-certifikat
+        <br>• Trafikera direkt i 48 länder
+        <br>• Ingen ansökan, ingen avgift
+        <br>• Använd värdlandets prefix + din signal
+        <br>• Radio på alla semestrar! 🎉
+    </div>
+    
+    <h3>CEPT-trafik - Fri rörlighet i Europa</h3>
+    
+    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #1e40af;">🇪🇺 CEPT T/R 61-02 - TILLFÄLLIG ANVÄNDNING</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #1e40af;">Vad är CEPT T/R 61-02?</strong>
+            <br><br>
+            En europeisk rekommendation från 1985 (uppdaterad) som tillåter radioamatörer att trafikera i andra CEPT-länder utan separat tillstånd.
+            <br><br>
+            <strong>Vad krävs:</strong>
+            <br>✅ Giltigt HAREC-certifikat från ditt hemland
+            <br>✅ Ta med certifikatet (kopia eller digitalt)
+            <br>✅ Använd värdlandets prefix före din signal
+            <br>✅ Följ värdlandets regler (frekvenser, effekt, bandplaner)
+            <br><br>
+            <strong>Hur länge gäller det?</strong>
+            <br>• <strong>Upp till 3 månader</strong> per besök (vanlig regel)
+            <br>• Kan variera mellan länder (vissa tillåter längre)
+            <br>• För längre vistelse: Ansök om permanent tillstånd i värdlandet
+        </div>
+        
+        <h4 style="color: #1e40af; margin-top: 1.5rem;">Vilka länder ingår i CEPT?</h4>
+        
+        <p>48 länder i Europa och närområdet. <strong>De viktigaste för svenska semesterresenärer:</strong></p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <strong>Norden:</strong>
+                <br>• Norge
+                <br>• Danmark
+                <br>• Finland
+                <br>• Island
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <strong>Centraleuropa:</strong>
+                <br>• Tyskland
+                <br>• Österrike
+                <br>• Schweiz
+                <br>• Nederländerna
+                <br>• Belgien
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <strong>Sydeuropa:</strong>
+                <br>• Spanien
+                <br>• Frankrike
+                <br>• Italien
+                <br>• Grekland
+                <br>• Portugal
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <strong>Östeuropa:</strong>
+                <br>• Polen
+                <br>• Tjeckien
+                <br>• Ungern
+                <br>• Kroatien
+                <br>• Rumänien
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <strong>UK & Irland:</strong>
+                <br>• Storbritannien
+                <br>• Irland
+                <br>(Trots Brexit!)
+            </div>
+            <div style="background: white; padding: 1rem; border-radius: 8px;">
+                <strong>Andra:</strong>
+                <br>• Turkiet
+                <br>• Ryssland*
+                <br>• Ukraina
+                <br>• Serbien
+                <br><small>*Vissa restriktioner</small>
+            </div>
+        </div>
+        
+        <div class="info-box warning" style="margin-top: 1rem;">
+            <strong>⚠️ INTE CEPT-länder (populära semestermål):</strong>
+            <br><br>
+            Dessa länder kräver separat ansökan eller reciprokt avtal:
+            <br>• <strong>USA</strong> - Kräver FCC-tillstånd (Sverige har reciprokt avtal)
+            <br>• <strong>Thailand</strong> - Kräver ansökan hos NBTC
+            <br>• <strong>Japan</strong> - Kräver lokalt certifikat
+            <br>• <strong>Australien</strong> - Kräver ansökan hos ACMA
+            <br>• <strong>Egypten</strong> - Mycket svårt, sällan godkänt
+            <br>• <strong>Förenade Arabemiraten</strong> - Kräver lokal sponsor
+            <br><br>
+            <strong>Kontrollera ALLTID innan du åker!</strong>
+            <br>• Kolla SSA:s hemsida under "Trafik utomlands"
+            <br>• Eller IARU:s lista över reciproka avtal
+            <br>• I värsta fall: Trafik utan tillstånd = stora böter eller fängelse!
+        </div>
+    </div>
+    
+    <h3>Hur identifierar du dig utomlands?</h3>
+    
+    <div class="example-box" style="border-left: 4px solid #3b82f6;">
+        <strong>📻 IDENTIFIERING VID CEPT-TRAFIK</strong>
+        <br><br>
+        <strong>Grundregel:</strong>
+        <br>Värdlandets prefix + / + din hemlandsignal
+        <br><br>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Värdland</th>
+                    <th style="width: 25%;">Prefix</th>
+                    <th style="width: 25%;">Din signal</th>
+                    <th style="width: 25%;">Anropssignal utomlands</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td>Norge</td>
+                    <td>LA</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>LA/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Danmark</td>
+                    <td>OZ</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>OZ/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Finland</td>
+                    <td>OH</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>OH/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Tyskland</td>
+                    <td>DL</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>DL/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Spanien</td>
+                    <td>EA</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>EA/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Frankrike</td>
+                    <td>F</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>F/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Storbritannien</td>
+                    <td>G</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>G/SM5XYZ</strong> eller <strong>M/SM5XYZ</strong></td>
+                </tr>
+                <tr style="background: white;">
+                    <td>Italien</td>
+                    <td>I</td>
+                    <td>SM5XYZ</td>
+                    <td><strong>I/SM5XYZ</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br>
+        <strong>Alternativa format (vissa länder accepterar båda):</strong>
+        <br>• <strong>Prefix före:</strong> DL/SM5XYZ (vanligast)
+        <br>• <strong>Prefix efter:</strong> SM5XYZ/DL (mindre vanligt, men OK)
+        <br><br>
+        <strong>Tips:</strong> Använd alltid prefix FÖRE (DL/SM5XYZ) - det är internationell standard och lättare att höra.
+    </div>
+    
+    <h3>Praktiska exempel - Semester med radio</h3>
+    
+    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #065f46;">🏖️ SEMESTERSCENARIER - SÅ GÖR DU</h4>
+        
+        <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+            <strong>Scenario 1 - Sommarsemester i Norge:</strong>
+            <br><br>
+            <strong>Du: SM5XYZ</strong>
+            <br>• Åker på bilsemester till Norge i 2 veckor
+            <br>• Vill trafikera från stugan
+            <br><br>
+            <strong>Vad du gör:</strong>
+            <br>1. Ta med HAREC-certifikatet (kopia)
+            <br>2. Packa handhållen radio eller portabel HF-rig
+            <br>3. I Norge: Använd signalen <strong>LA/SM5XYZ</strong>
+            <br>4. Följ norska regler (samma som svenska, mestadels)
+            <br>5. Trafikera fritt på norska amatörband
+            <br><br>
+            <strong>Exempel QSO:</strong>
+            <br>"CQ CQ CQ från LA/SM5XYZ, LA slash SM5XYZ anropar CQ från Norge och lyssnar"
+            <br><br>
+            <em>✅ Så enkelt är det! Ingen ansökan, inget krångel.</em>
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+            <strong>Scenario 2 - Långsemester i Spanien:</strong>
+            <br><br>
+            <strong>Du: SM7ABC</strong>
+            <br>• Vintrar i Spanien i 3 månader
+            <br>• Vill köra mycket radio från lägenheten
+            <br><br>
+            <strong>Vad du gör:</strong>
+            <br>1. Ta med HAREC-certifikat
+            <br>2. Kontrollera spanska regler på SSA:s hemsida
+            <br>3. I Spanien: Använd signalen <strong>EA/SM7ABC</strong>
+            <br>4. Följ spanska effektgränser och frekvenser
+            <br>5. CEPT gäller i upp till 3 månader
+            <br><br>
+            <strong>Om du stannar längre än 3 månader:</strong>
+            <br>• Ansök om permanent spansk licens hos AMT (spanska PTS)
+            <br>• Kan ta några veckor, men oftast OK med HAREC
+            <br><br>
+            <em>💡 Många svenska "vintergäster" kör EA/SM... på repeatrar i södra Spanien!</em>
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+            <strong>Scenario 3 - Roadtrip genom Europa:</strong>
+            <br><br>
+            <strong>Du: SM3DEF</strong>
+            <br>• Husbilsresa: Sverige → Tyskland → Österrike → Italien → Frankrike → hem
+            <br>• Vill trafikera från varje land
+            <br><br>
+            <strong>Vad du gör:</strong>
+            <br>1. Ta med HAREC-certifikat (visa vid kontroll)
+            <br>2. Handhållen VHF/UHF-radio för lokal trafik
+            <br>3. Byt prefix i varje land:
+            <br>   - Tyskland: <strong>DL/SM3DEF</strong>
+            <br>   - Österrike: <strong>OE/SM3DEF</strong>
+            <br>   - Italien: <strong>I/SM3DEF</strong>
+            <br>   - Frankrike: <strong>F/SM3DEF</strong>
+            <br>4. Sök lokala repeatrar (RepeaterBook app)
+            <br>5. Kör trafik och njut!
+            <br><br>
+            <em>🚐 Perfekt sätt att möta lokala amatörer och få tips om sevärdheter!</em>
+        </div>
+        
+        <div class="example-box" style="border-left: 4px solid #dc2626; margin-top: 1rem;">
+            <strong>❌ Scenario 4 - FEL: Thailand utan tillstånd:</strong>
+            <br><br>
+            <strong>Du: SM5GHI</strong>
+            <br>• Åker på semester till Thailand
+            <br>• Tänker: "CEPT gäller överallt i Europa, så det funkar säkert här också!"
+            <br>• Tar med handhållen radio och kör trafik
+            <br><br>
+            <strong>Vad som händer:</strong>
+            <br>⚠️ <strong>Thailand är INTE CEPT-land!</strong>
+            <br>• Du trafikerar illegalt
+            <br>• Thailändska myndigheter (NBTC) kan:
+            <br>  - Beslagta din utrustning
+            <br>  - Ge böter (stora!)
+            <br>  - I värsta fall: Fängelse
+            <br><br>
+            <strong>Rätt väg:</strong>
+            <br>1. Ansök om tillfälligt tillstånd hos NBTC (tar veckor!)
+            <br>2. Eller: Lyssna bara, sända inte
+            <br>3. Eller: Skaffa thailändska vänner som kan "gästa" dig
+            <br><br>
+            <em>🚨 Kolla ALLTID innan du trafikerar utanför Europa!</em>
+        </div>
+    </div>
+    
+    <h3>Reciproka avtal - Utanför CEPT</h3>
+    
+    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #92400e;">🤝 RECIPROKA AVTAL - BILATERALA ÖVERENSKOMMELSER</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #92400e;">Vad är ett reciprokt avtal?</strong>
+            <br><br>
+            En överenskommelse mellan två länder där de ömsesidigt accepterar varandras amatörradio-certifikat.
+            <br><br>
+            <strong>Exempel:</strong>
+            <br>• Sverige ↔ USA
+            <br>• Sverige ↔ Australien
+            <br>• Sverige ↔ Kanada
+            <br>• Sverige ↔ Japan (begränsat)
+            <br><br>
+            <strong>Hur det fungerar:</strong>
+            <br>1. Du ansöker hos värdlandets myndighet (t.ex. FCC för USA)
+            <br>2. Skickar kopia på ditt HAREC-certifikat
+            <br>3. Betalar avgift (varierar)
+            <br>4. Får tillfällig licens (vanligen 1 år)
+            <br>5. Kan trafikera lagligt i värdlandet
+        </div>
+        
+        <h4 style="color: #92400e; margin-top: 1.5rem;">Exempel: Trafikera i USA</h4>
+        
+        <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+            <strong>🇺🇸 USA - Reciprokt avtal via FCC:</strong>
+            <br><br>
+            <strong>Sverige har reciprokt avtal med USA!</strong>
+            <br><br>
+            <strong>Två alternativ:</strong>
+            <br><br>
+            <strong>Alternativ 1 - Temporär trafik (enklast):</strong>
+            <br>• Ansök om "reciprocal permit" hos FCC
+            <br>• Skicka HAREC-certifikat och ansökningsblankett
+            <br>• Avgift: Cirka $35 (varierar)
+            <br>• Giltighetstid: 1 år
+            <br>• Får använda: <strong>W5/SM5XYZ</strong> eller <strong>SM5XYZ/W5</strong>
+            <br>  (W-nummer baserat på var i USA du är)
+            <br><br>
+            <strong>Alternativ 2 - Ta amerikanskt certifikat:</strong>
+            <br>• Gör FCC-provet i USA (eller online)
+            <br>• Får egen amerikansk anropssignal (t.ex. W5ABC)
+            <br>• Gäller permanent, även när du inte är i USA
+            <br>• Populärt för DX-ops och tävlingsamatörer
+            <br><br>
+            <strong>USA:s districts (W-nummer):</strong>
+            <br>• W1 = Nordöstra USA (New England)
+            <br>• W2 = New York, New Jersey
+            <br>• W3 = Pennsylvania, Delaware
+            <br>• W4 = Sydöstra USA (Florida, Georgia, etc.)
+            <br>• W5 = Texas, Louisiana, Oklahoma
+            <br>• W6 = Kalifornien
+            <br>• W7 = Nordvästra USA (Oregon, Washington)
+            <br>• W8 = Michigan, Ohio, West Virginia
+            <br>• W9 = Illinois, Indiana, Wisconsin
+            <br>• W0 = Mellanvästern (Colorado, Kansas, etc.)
+            <br><br>
+            <em>💡 K och N används också som prefix (K5XYZ, N5XYZ) - alla är likvärdiga.</em>
+        </div>
+    </div>
+    
+    <h3>Maritim och luftfart - Specialregler</h3>
+    
+    <div class="info-box warning" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+        <strong>⚠️ MARITIM MOBIL (MM) OCH AERONAUTIC MOBIL (AM)</strong>
+        <br><br>
+        <strong>Från fartyg på internationellt vatten:</strong>
+        <br>• Lägg till <strong>/MM</strong> (Maritime Mobile) efter signalen
+        <br>• Exempel: <strong>SM5XYZ/MM</strong>
+        <br>• Regler: Följ ditt hemlands regler
+        <br>• Frekvenser: Vissa begränsningar (kolla IARU)
+        <br>• Tips: Populärt för seglare och kryssningsfartyg
+        <br><br>
+        <strong>Från flygplan:</strong>
+        <br>• Lägg till <strong>/AM</strong> (Aeronautic Mobile) efter signalen
+        <br>• Exempel: <strong>SM5XYZ/AM</strong>
+        <br>• <strong>VIKTIGT:</strong> Måste ha tillstånd från flygbolaget!
+        <br>• Endast vissa band tillåtna (störningar på flygnavigering)
+        <br>• Mycket ovanligt - de flesta flygbolag tillåter det inte
+        <br><br>
+        <strong>/AM är extremt sällsynt:</strong>
+        <br>• Kräver specialutrustning
+        <br>• Störningsrisk för flygelektronik
+        <br>• Få amatörer har testat det
+        <br>• Om du lyckas: Du blir en legend! 🛩️
+    </div>
+    
+    <h3>Tips för internationell trafik</h3>
+    
+    <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669;">
+        <strong>💡 SMARTA TIPS FÖR TRAFIK UTOMLANDS:</strong>
+        <br><br>
+        <strong>1. Förberedelser hemma:</strong>
+        <br>• Kopiera ditt HAREC-certifikat (digital + papper)
+        <br>• Ladda ner lista över lokala repeatrar (RepeaterBook, RepeaterMap)
+        <br>• Kolla frekvensplaner i värdlandet (kan skilja från Sverige)
+        <br>• Spara SSA:s kontaktinfo (ifall problem uppstår)
+        <br><br>
+        <strong>2. Packa rätt utrustning:</strong>
+        <br>• Handhållen VHF/UHF (lätt, praktiskt för repeatrar)
+        <br>• HF-portabel om du vill köra DX (KX2, FT-817, IC-705)
+        <br>• Antenn (tråddipol, vertikaler lätt att rigga)
+        <br>• Adapter för olika eluttag (230V vs 110V)
+        <br><br>
+        <strong>3. På plats:</strong>
+        <br>• Presentera dig som "visiting operator from Sweden"
+        <br>• Lokala amatörer brukar vara hjälpsamma!
+        <br>• Fråga om lokala trafiksätt och frekvenser
+        <br>• Delta i lokala klubbträffar (många välkomnar besökare)
+        <br><br>
+        <strong>4. Respektera värdlandet:</strong>
+        <br>• Följ deras regler (även om annorlunda än hemma)
+        <br>• Lär dig lite fraser på lokalt språk ("Hola", "Bonjour", etc.)
+        <br>• Var en god ambassadör för Sverige och amatörradio
+        <br>• Skicka QSL-kort till kontakter (uppskattas!)
+        <br><br>
+        <strong>5. Säkerhet och lagar:</strong>
+        <br>• Ha certifikatet lättillgängligt (kan kontrolleras)
+        <br>• Anteckna vilka frekvenser du använt (ifall frågor)
+        <br>• Vid problem: Kontakta svensk ambassad eller SSA
+        <br>• Trafikera ALDRIG utan tillstånd i icke-CEPT-länder!
+    </div>
+    
+    <h3>✅ Snabbtest - Internationell trafik</h3>
+    
+    <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+        <strong>✅ Kan du svara på dessa?</strong>
+        <ul style="margin-top: 0.5rem;">
+            <li>Vad är CEPT T/R 61-02 och vad innebär det?</li>
+            <li>Hur identifierar du dig när du trafikerar i Tyskland?</li>
+            <li>Hur länge får du trafikera i ett CEPT-land utan separat tillstånd?</li>
+            <li>Är USA ett CEPT-land? Hur trafikerar du där?</li>
+            <li>Vad betyder /MM efter anropssignalen?</li>
+            <li>Varför ska du alltid kontrollera regler innan trafik utomlands?</li>
+        </ul>
+        <details style="margin-top: 0.5rem;">
+            <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+            <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                <small>
+                    • CEPT-rekommendation som tillåter radioamatörer att trafikera i 48 europeiska länder utan separat tillstånd, bara med HAREC-certifikat
+                    <br>• DL/SM5XYZ (värdlandets prefix före din signal)
+                    <br>• Upp till 3 månader per besök (kan variera mellan länder)
+                    <br>• Nej, USA är inte CEPT. Sverige har reciprokt avtal - du måste ansöka om tillstånd hos FCC eller ta amerikanskt certifikat.
+                    <br>• Maritime Mobile - trafikerar från fartyg på internationellt vatten
+                    <br>• Regler varierar mellan länder. Vissa länder kräver tillstånd. Trafik utan tillstånd kan ge böter, utrustningsbeslag eller fängelse.
+                </small>
+            </div>
+        </details>
+    </div>
+    
+    <div class="info-box important">
+        <strong>🎯 Viktigt för provet:</strong>
+        <br>• CEPT T/R 61-02 tillåter trafik i 48 europeiska länder med HAREC-certifikat
+        <br>• Identifiering utomlands: Värdlandets prefix + / + din signal (t.ex. DL/SM5XYZ)
+        <br>• Max vistelse: 3 månader per besök (vanlig regel, kan variera)
+        <br>• Ta alltid med kopia på HAREC-certifikatet
+        <br>• Följ värdlandets regler (frekvenser, effekt, bandplaner)
+        <br>• USA, Thailand, Japan m.fl. är INTE CEPT - kräver separat tillstånd
+        <br>• /MM = Maritime Mobile (från fartyg), /AM = Aeronautic Mobile (från flygplan)
+        <br>• Kontrollera ALLTID regler innan trafik i nytt land (SSA:s hemsida)
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SEKTION 7.8: ÖVRIGA BESTÄMMELSER -->
+<!-- ============================================ -->
+
+<div class="content-section" id="ovrigt">
+    <h2>7.8 Övriga bestämmelser - Loggbok, QSL och repeatrar</h2>
+    
+    <h3>Loggbok - Dokumentera din trafik</h3>
+    
+    <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+        <strong>💡 Dagboksanalogin:</strong>
+        <br><br>
+        <strong>Tänk dig loggboken som en resedagbok:</strong>
+        <br><br>
+        <strong>I en resedagbok skriver du:</strong>
+        <br>• Datum och tid
+        <br>• Var du var
+        <br>• Vad du gjorde
+        <br>• Vem du träffade
+        <br>• Intressanta upplevelser
+        <br><br>
+        <strong>I radiologgboken skriver du:</strong>
+        <br>• Datum och tid (UTC)
+        <br>• Frekvens och band
+        <br>• Trafiksätt (SSB, CW, FT8)
+        <br>• Vem du kontaktade (anropssignal)
+        <br>• Rapporter (signal, läsbarhet)
+        <br><br>
+        <strong>Varför?</strong>
+        <br>• Minnas dina kontakter (särskilt DX!)
+        <br>• Bevisa kontakter för diplom (DXCC, IOTA, etc.)
+        <br>• Hjälp vid felsökning ("När började problemet?")
+        <br>• Krav i vissa länder (Sverige: ej obligatoriskt, men rekommenderat)
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #1e40af;">📓 LOGGBOK - VAD SKA FINNAS MED?</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #1e40af;">Är loggbok obligatorisk i Sverige?</strong>
+            <br><br>
+            <strong>Lagligt svar:</strong> Nej, det finns inget krav i PTSFS att föra loggbok för personlig trafik.
+            <br><br>
+            <strong>Men:</strong>
+            <br>• Starkt rekommenderat av SSA och internationella organisationer
+            <br>• Obligatoriskt för vissa aktiviteter (t.ex. klubbstationer, tävlingar)
+            <br>• Nödvändigt för diplom och utmärkelser
+            <br>• Hjälper vid eventuella störningsklagomål
+            <br>• Bevarar minnen av dina kontakter!
+            <br><br>
+            <strong>I vissa länder (t.ex. USA) är loggbok OBLIGATORISK.</strong>
+        </div>
+        
+        <h4 style="color: #1e40af; margin-top: 1.5rem;">Vad ska loggas?</h4>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Fält</th>
+                    <th style="width: 35%;">Vad det betyder</th>
+                    <th style="width: 40%;">Exempel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>Datum</strong></td>
+                    <td>När kontakten gjordes</td>
+                    <td>2025-02-07</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Tid (UTC)</strong></td>
+                    <td>Tidpunkt i UTC (inte lokal tid!)</td>
+                    <td>14:35 UTC</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Frekvens</strong></td>
+                    <td>Vilken frekvens (i kHz eller MHz)</td>
+                    <td>14250 kHz (20m)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Band</strong></td>
+                    <td>Vilket amatörband</td>
+                    <td>20m, 2m, 70cm</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Mode</strong></td>
+                    <td>Trafiksätt</td>
+                    <td>SSB, CW, FT8, FM</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Anropssignal</strong></td>
+                    <td>Vem du kontaktade</td>
+                    <td>DL3ABC, W5XYZ</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>RST sänt</strong></td>
+                    <td>Rapport du gav</td>
+                    <td>59, 599 (CW), 57</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>RST mottaget</strong></td>
+                    <td>Rapport du fick</td>
+                    <td>59, 579, 55</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Namn</strong></td>
+                    <td>Operatörens namn (frivilligt)</td>
+                    <td>Hans, Maria, John</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>QTH</strong></td>
+                    <td>Plats/locator</td>
+                    <td>Berlin, JO62, Florida</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Anteckningar</strong></td>
+                    <td>Intressant info</td>
+                    <td>"Första QSO på 6m!", "QRP 5W"</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4 style="color: #1e40af; margin-top: 1.5rem;">Exempel på loggutdrag:</h4>
+        
+        <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.9rem; overflow-x: auto;">
+            <pre style="margin: 0;">
+Datum      Tid UTC  Band  Mode  Anropss.  RST Sänt  RST Mott  Namn    QTH      Anmärkning
+-------------------------------------------------------------------------------------------------
+2025-02-07 14:35    20m   SSB   DL3ABC    59        58        Hans    Berlin   Trevlig QSO!
+2025-02-07 15:10    20m   CW    W5XYZ     599       589       Tom     Texas    QRP 5W
+2025-02-07 16:45    2m    FM    SM3DEF    59        59        Lisa    Gbg      Via SK7RR
+2025-02-08 08:20    40m   FT8   OH2GHI    +05       -10       -       JO60     Weak signal
+2025-02-08 12:00    20m   SSB   ZL1JKL    57        56        Dave    NZ       Första ZL!
+            </pre>
+        </div>
+    </div>
+    
+    <h3>Loggprogram - Digitalt istället för papper</h3>
+    
+    <div class="example-box" style="border-left: 4px solid #3b82f6;">
+        <strong>💻 POPULÄRA LOGGPROGRAM:</strong>
+        <br><br>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Program</th>
+                    <th>Typ</th>
+                    <th>Fördelar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>Log4OM</strong></td>
+                    <td>Windows (Gratis)</td>
+                    <td>• Svenskt! Utvecklat av SM4TBB
+                    <br>• Modernt gränssnitt
+                    <br>• QSL-hantering
+                    <br>• Stor användarskara</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>CQRLOG</strong></td>
+                    <td>Linux (Gratis)</td>
+                    <td>• Populärt bland Linux-användare
+                    <br>• MySQL-databas
+                    <br>• Många funktioner</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>HRD (Ham Radio Deluxe)</strong></td>
+                    <td>Windows (Betalning)</td>
+                    <td>• Professionellt
+                    <br>• CAT-kontroll av radio
+                    <br>• Mycket omfattande</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>N1MM Logger+</strong></td>
+                    <td>Windows (Gratis)</td>
+                    <td>• Främst för tävlingar
+                    <br>• Mycket snabb inmatning
+                    <br>• Stödjer alla contest</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>WSJT-X</strong></td>
+                    <td>Multi-plattform</td>
+                    <td>• För FT8, FT4, WSPR
+                    <br>• Inbyggd logg
+                    <br>• Gratis, open source</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Cloudlog</strong></td>
+                    <td>Web-baserad</td>
+                    <td>• Åtkomst från alla enheter
+                    <br>• Synkroniserar automatiskt
+                    <br>• Modernt</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br>
+        <strong>Fördelar med digitala loggar:</strong>
+        <br>✅ Automatisk DXCC-räkning
+        <br>✅ Sökning och filtrering
+        <br>✅ Export till ADIF (standard loggformat)
+        <br>✅ Integration med QRZ.com och LoTW
+        <br>✅ Backup och synkronisering
+        <br>✅ Statistik och analys
+    </div>
+    
+    <h3>QSL-kort - "Vykort" från radiotrafik</h3>
+    
+    <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border: 3px solid #db2777; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #9f1239;">📮 QSL-KORT - BEKRÄFTA KONTAKTER</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #9f1239;">Vad är ett QSL-kort?</strong>
+            <br><br>
+            Ett <strong>QSL-kort</strong> (Q-kod för "Kan du bekräfta mottagningen?") är ett vykort som bekräftar en radiokontakt.
+            <br><br>
+            <strong>Innehåll på ett QSL-kort:</strong>
+            <br>• Din anropssignal (stor och tydlig)
+            <br>• Datum och tid (UTC) för kontakten
+            <br>• Frekvens och band
+            <br>• Mode (SSB, CW, FT8, etc.)
+            <br>• RST-rapport
+            <br>• Motpartens anropssignal (TO: DL3ABC)
+            <br>• Ofta: Foto eller design från ditt område
+            <br><br>
+            <strong>Varför QSL-kort?</strong>
+            <br>• Bekräfta kontakter för diplom (DXCC, IOTA, etc.)
+            <br>• Samlarföremål (många samlar vackra kort!)
+            <br>• Vänlig gest (särskilt för DX-kontakter)
+            <br>• Tradition sedan 1920-talet
+        </div>
+        
+        <h4 style="color: #9f1239; margin-top: 1.5rem;">Hur skickar man QSL?</h4>
+        
+        <table class="content-table" style="margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Metod</th>
+                    <th style="width: 35%;">Hur det funkar</th>
+                    <th style="width: 40%;">För- och nackdelar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: white;">
+                    <td><strong>Direkt (Direct)</strong></td>
+                    <td>Posta QSL-kortet direkt till operatören
+                    <br><br>Adress från QRZ.com eller HamQTH</td>
+                    <td><strong>Fördelar:</strong>
+                    <br>✅ Snabbast (1-2 veckor)
+                    <br>✅ Säkrast
+                    <br><br><strong>Nackdelar:</strong>
+                    <br>❌ Dyrt (porto)
+                    <br>❌ Kräver adress</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Via byrå (Bureau)</strong></td>
+                    <td>Skicka till SSA:s QSL-byrå
+                    <br><br>SSA sorterar och skickar bulk till andra länders byråer</td>
+                    <td><strong>Fördelar:</strong>
+                    <br>✅ Billigast (ingår i SSA-medlemskap)
+                    <br>✅ Miljövänligare (bulk)
+                    <br><br><strong>Nackdelar:</strong>
+                    <br>❌ Långsamt (6-24 månader!)
+                    <br>❌ Kräver SSA-medlemskap</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Elektroniskt (eQSL/LoTW)</strong></td>
+                    <td>Logga in på eQSL.cc eller ARRL LoTW
+                    <br><br>Ladda upp logg, få automatiska bekräftelser</td>
+                    <td><strong>Fördelar:</strong>
+                    <br>✅ Omedelbart (sekunder!)
+                    <br>✅ Gratis
+                    <br>✅ Miljövänligt
+                    <br>✅ Fungerar för diplom
+                    <br><br><strong>Nackdelar:</strong>
+                    <br>❌ Inte lika "äkta" som papperskort
+                    <br>❌ Alla använder inte det</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box tip" style="margin-top: 1rem;">
+            <strong>💡 TIPS FÖR QSL-KORT:</strong>
+            <br><br>
+            <strong>1. Designa eget kort:</strong>
+            <br>• Använd online-tjänster (Vistaprint, Printful, etc.)
+            <br>• Storlek: Standard vykort (A6, 10×15 cm)
+            <br>• Välj vackert foto från ditt område
+            <br>• Gör det personligt och unikt!
+            <br><br>
+            <strong>2. Viktiga DX-kontakter:</strong>
+            <br>• Skicka direkt (snabbare och säkrare)
+            <br>• Inkludera returkuvert med porto (SAE = Self-Addressed Envelope)
+            <br>• Eller "green stamps" (IRC = International Reply Coupon)
+            <br><br>
+            <strong>3. Vanliga kontakter:</strong>
+            <br>• Använd SSA:s byrå (billigt och enkelt)
+            <br>• Eller elektroniskt (eQSL/LoTW)
+            <br><br>
+            <strong>4. För diplom:</strong>
+            <br>• DXCC accepterar både papper och LoTW
+            <br>• Vissa diplom kräver papperskort
+            <br>• Spara alla QSL-kort du får!
+        </div>
+    </div>
+    
+    <h3>Repeatrar - Automatstationer som förlänger räckvidden</h3>
+    
+    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+        <h4 style="margin-top: 0; color: #065f46;">📡 REPEATRAR - RÄCKVIDDSFÖRLÄNGARE</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <strong style="color: #065f46;">Vad är en repeater?</strong>
+            <br><br>
+            En <strong>repeater</strong> (repeater, omradiator) är en automatisk radiostation som:
+            <br>1. Tar emot på en frekvens (ingångsfrekvens)
+            <br>2. Sänder ut på en annan frekvens (utgångsfrekvens)
+            <br>3. Förlänger räckvidden för handhållna och mobila radioapparater
+            <br><br>
+            <strong>Varför behövs repeatrar?</strong>
+            <br>• Handhållna radioapparater har begränsad räckvidd (5-10 km)
+            <br>• Repeatern sitter högt (torn, berg, höghus)
+            <br>• Kan täcka stor yta (50-100 km radie)
+            <br>• Möjliggör lokal trafik för alla
+            <br><br>
+            <strong>Typisk repeater:</strong>
+            <br>• Placerad på TV-torn eller bergstopp
+            <br>• Höjd: 200-500 meter över omgivningen
+            <br>• Effekt: 10-50W (räcker långt från höjden!)
+            <br>• Täckning: Flera mil runt om
+        </div>
+        
+        <h4 style="color: #065f46; margin-top: 1.5rem;">Hur fungerar en repeater?</h4>
+        
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+            <strong>Exempel: Göteborgs repeater SK7RR på 2m:</strong>
+            <br><br>
+            <table class="content-table">
+                <tr style="background: #f8fafc;">
+                    <td><strong>Utgångsfrekvens (Tx):</strong></td>
+                    <td>145.700 MHz</td>
+                    <td>← Detta ställer du in på radion</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>Ingångsfrekvens (Rx):</strong></td>
+                    <td>145.100 MHz</td>
+                    <td>← Repeatern lyssnar här</td>
+                </tr>
+                <tr style="background: #f8fafc;">
+                    <td><strong>Shift:</strong></td>
+                    <td>-600 kHz</td>
+                    <td>← Skillnaden (du sänder -600 kHz)</td>
+                </tr>
+                <tr style="background: white;">
+                    <td><strong>CTCSS-ton:</strong></td>
+                    <td>123.0 Hz</td>
+                    <td>← Subton för att öppna repeatern</td>
+                </tr>
+            </table>
+            <br>
+            <strong>Så gör du:</strong>
+            <br>1. Ställ in din radio på 145.700 MHz
+            <br>2. Aktivera shift -600 kHz (radion sänder då på 145.100)
+            <br>3. Ställ in CTCSS-ton 123.0 Hz
+            <br>4. Tryck PTT (Push-To-Talk)
+            <br>5. Repeatern svarar med "boop" eller ID
+            <br>6. Prata! Alla i täckningsområdet hör dig
+        </div>
+        
+        <h4 style="color: #065f46; margin-top: 1.5rem;">Repeater-etikette - Regler och artighet</h4>
+        
+        <div class="info-box important" style="margin-top: 1rem;">
+            <strong>📋 REGLER FÖR REPEATER-TRAFIK:</strong>
+            <br><br>
+            <strong>1. Identifiera korrekt:</strong>
+            <br>• Säg din signal vid början, slut och var 10:e minut
+            <br>• "SM5XYZ via SK7RR" (nämn repeatern)
+            <br><br>
+            <strong>2. Var kortfattad:</strong>
+            <br>• Repeatrar är för ALLA
+            <br>• Håll QSO kort (max 3-5 minuter)
+            <br>• Gör pauser så andra kan komma in
+            <br><br>
+            <strong>3. Lämna utrymme:</strong>
+            <br>• Släpp PTT mellan meningar
+            <br>• Ge andra chans att "bryta in" vid nöd
+            <br>• Nödtrafik har ALLTID företräde!
+            <br><br>
+            <strong>4. Nödtrafik prioriteras:</strong>
+            <br>• Om någon säger "MAYDAY" eller "NÖDTRAFIK" → TYST!
+            <br>• Alla andra QSO avbryts omedelbart
+            <br>• Lyssna och hjälp till om du kan
+            <br><br>
+            <strong>5. Testa kort:</strong>
+            <br>• "SM5XYZ test via SK7RR"
+            <br>• Vänta på repeaterns svar (boop/ID)
+            <br>• Om inget svar: Du är utanför täckning
+            <br><br>
+            <strong>6. Använd subton (CTCSS):</strong>
+            <br>• Förhindrar att andra signaler öppnar repeatern av misstag
+            <br>• Minskar störningar
+            <br>• Kolla repeaterlistan för rätt ton!
+        </div>
+        
+        <h4 style="color: #065f46; margin-top: 1.5rem;">Hitta repeatrar i ditt område</h4>
+        
+        <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+            <strong>🗺️ REPEATER-RESURSER:</strong>
+            <br><br>
+            <strong>1. SSA:s repeaterlistor:</strong>
+            <br>• <a href="https://www.ssa.se" target="_blank">www.ssa.se</a> → Repeatrar
+            <br>• Lista över alla svenska repeatrar
+            <br>• Frekvens, shift, CTCSS-ton, plats
+            <br><br>
+            <strong>2. RepeaterBook (app och webb):</strong>
+            <br>• <a href="https://www.repeaterbook.com" target="_blank">www.repeaterbook.com</a>
+            <br>• Världsomspännande databas
+            <br>• GPS-baserad sökning
+            <br>• Gratis app för iOS och Android
+            <br><br>
+            <strong>3. RepeaterMap:</strong>
+            <br>• Visar repeatrar på karta
+            <br>• Täckningsområden
+            <br>• Mycket visuellt
+            <br><br>
+            <strong>4. Lokala radioklubbar:</strong>
+            <br>• Känner till lokala repeatrar
+            <br>• Ofta egen repeater
+            <br>• Hjälper gärna nya amatörer!
+        </div>
+    </div>
+    
+    <h3>✅ Snabbtest - Övriga bestämmelser</h3>
+    
+    <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+        <strong>✅ Kan du svara på dessa?</strong>
+        <ul style="margin-top: 0.5rem;">
+            <li>Är loggbok obligatorisk i Sverige?</li>
+            <li>Vad ska finnas med i en loggboksanteckning?</li>
+            <li>Vad är ett QSL-kort och varför skickar man det?</li>
+            <li>Vad är en repeater och varför används de?</li>
+            <li>Vad betyder "shift" på en repeater?</li>
+            <li>Varför ska man vara kortfattad på repeatrar?</li>
+        </ul>
+        <details style="margin-top: 0.5rem;">
+            <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+            <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                <small>
+                    • Nej, inte obligatorisk men starkt rekommenderat. Nödvändigt för diplom och tävlingar.
+                    <br>• Datum, tid (UTC), frekvens, band, mode, anropssignal, RST sänt/mottaget, namn, QTH
+                    <br>• Vykort som bekräftar en radiokontakt. Skickas för att bevisa kontakter för diplom (DXCC), som samlarföremål och som vänlig gest.
+                    <br>• Automatstation som tar emot på en frekvens och sänder ut på en annan. Förlänger räckvidden för handhållna radioapparater genom att sitta högt upp (torn, berg).
+                    <br>• Frekvensskillnaden mellan ingång (vad du sänder på) och utgång (vad repeatern sänder på). T.ex. -600 kHz på 2m.
+                    <br>• Repeatrar är för alla. Håll QSO kort (3-5 min) så andra får plats. Nödtrafik har alltid företräde.
+                </small>
+            </div>
+        </details>
+    </div>
+    
+    <div class="info-box important">
+        <strong>🎯 Viktigt för provet:</strong>
+        <br>• Loggbok: Ej obligatorisk i Sverige, men rekommenderat (obligatorisk för tävlingar/diplom)
+        <br>• Logg ska innehålla: Datum, tid (UTC), frekvens, band, mode, anropssignal, RST, QTH
+        <br>• QSL-kort: Bekräftelsekort för radiokontakt. Skickas direkt, via byrå eller elektroniskt (eQSL/LoTW)
+        <br>• Repeater: Automatstation som förlänger räckvidd genom att ta emot på en frekvens och sända på en annan
+        <br>• Shift: Skillnad mellan repeaters ingång och utgång (t.ex. -600 kHz på 2m, +1.6 MHz på 70cm)
+        <br>• CTCSS: Subton som öppnar repeatern (förhindrar störningar)
+        <br>• Repeater-etikette: Identifiera, var kortfattad, lämna utrymme, nödtrafik prioriteras alltid
+    </div>
+</div>
+<!-- ============================================ -->
+<!-- KAPITELNAVIGERING -->
+<!-- ============================================ -->
+
+<!-- Navigation -->
+<div class="chapter-navigation">
+    <a href="kapitel-6-storsaekerhetsemC.html" class="nav-button prev">
+        <span class="arrow">←</span>
+        <span class="label">Kapitel 6: Störsäkerhet och EMC</span>
+    </a>
+    <a href="../test/ovning.html?chapter=7" class="nav-button practice">
+        <span class="icon">📝</span>
+        <span class="label">Öva på kapitel 7</span>
+    </a>
+    <a href="../test/prov.html" class="nav-button next">
+        <span class="label">Gör fullständigt prov</span>
+        <span class="arrow">→</span>
+    </a>
+</div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
+            <p>Skapat för att hjälpa blivande radioamatörer att klara certifikatsprovet.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        // Uppdatera progress för detta kapitel
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof ProgressTracker !== 'undefined') {
+                const progress = ProgressTracker.getChapterProgress(7);
+                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
+            }
+        });
+    </script>
+</body>
+</html>

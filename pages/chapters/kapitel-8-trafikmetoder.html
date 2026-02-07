@@ -57,14 +57,183 @@
                 </ol>
             </div>
 
-            <!-- Sektion 1: Q-koder -->
+            <!-- ============================================ -->
+            <!-- SEKTION 8.1: Q-KODER OCH FÖRKORTNINGAR -->
+            <!-- ============================================ -->
+            
             <div class="content-section" id="q-koder">
                 <h2>8.1 Q-koder och Förkortningar</h2>
                 
-                <h3>Vad är Q-koder?</h3>
-                <p>Q-koder är internationella förkortningar som ursprungligen utvecklades för telegrafi. De börjar alltid med bokstaven Q och kan användas som fråga (med frågetecken) eller påstående.</p>
+                <h3>Vad är Q-koder egentligen?</h3>
+                <p>Tänk dig att du ska kommunicera med någon som talar ett helt annat språk - kinesiska, arabiska, ryska. Hur gör du? Jo, ni behöver ett gemensamt "kodspråk" som båda förstår! Det är exakt vad Q-koder är.</p>
                 
-                <h3>Vanliga Q-koder</h3>
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 RESTAURANG-ANALOGIN:</strong>
+                    <br><br>
+                    Tänk på Q-koder som en restaurangmeny där varje rätt har ett nummer:
+                    <br><br>
+                    <strong>Servitör:</strong> "Vad vill ni ha?" → QRG? (Vilken frekvens?)
+                    <br><strong>Gäst:</strong> "Nummer 14 tack!" → QRG 14,200 MHz (Min frekvens är 14,200)
+                    <br><strong>Servitör:</strong> "Vill ni ha mer?" → QRO? (Ska jag öka effekten?)
+                    <br><strong>Gäst:</strong> "Nej tack, lagom!" → QRP (Jag kör låg effekt)
+                    <br><br>
+                    Kort, tydligt, fungerar oavsett språk!
+                </div>
+                
+                <h3>Varför Q-koder?</h3>
+                <p>Q-koder utvecklades på 1900-talet för telegrafi (morsekod) där VARJE tecken tar tid att sända. Istället för att skriva "What is my exact frequency?" (29 tecken) skriver man bara "QRG?" (4 tecken) - nästan 90% snabbare!</p>
+                
+                <p>Idag använder vi dem fortfarande för:</p>
+                <ul>
+                    <li>✅ Snabb kommunikation (sparar tid)</li>
+                    <li>✅ Fungerar över språkbarriärer (rysk, tysk, svensk - alla förstår QTH!)</li>
+                    <li>✅ Tradition (vi radioamatörer älskar våra traditioner!)</li>
+                </ul>
+                
+                <h3>🔷 DE 10 VIKTIGASTE Q-KODERNA (lär dig dessa först!)</h3>
+                
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">Q-kod</th>
+                                <th style="width: 25%;">Fråga</th>
+                                <th style="width: 25%;">Svar</th>
+                                <th style="width: 40%;">💬 Praktiskt exempel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>QTH</strong></td>
+                                <td>Var är du?</td>
+                                <td>Min position är...</td>
+                                <td>"QTH Stockholm" = Jag är i Stockholm</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QSL</strong></td>
+                                <td>Kan du bekräfta?</td>
+                                <td>Jag bekräftar</td>
+                                <td>"QSL?" = Hörde du mig? "QSL!" = Ja, hörde dig!</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QRM</strong></td>
+                                <td>Störs du av andra?</td>
+                                <td>Jag störs...</td>
+                                <td>"QRM5" = Mycket störd av andra stationer!</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QRN</strong></td>
+                                <td>Atmosfäriskt brus?</td>
+                                <td>Jag har brus...</td>
+                                <td>"QRN8" = Massa åska och brus här!</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QRZ</strong></td>
+                                <td>Vem anropar?</td>
+                                <td>Du anropas av...</td>
+                                <td>Efter CQ: "QRZ?" = Vem var det som svarade?</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QRT</strong></td>
+                                <td>Ska jag sluta?</td>
+                                <td>Jag stänger</td>
+                                <td>"QRT" = Jag stänger stationen nu, hej då!</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QRV</strong></td>
+                                <td>Är du redo?</td>
+                                <td>Jag är redo</td>
+                                <td>"QRV?" = Kan du ta en kontakt nu?</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QSY</strong></td>
+                                <td>Byt frekvens?</td>
+                                <td>Byt till...</td>
+                                <td>"QSY 14.250" = Flytta till 14,250 MHz</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QSO</strong></td>
+                                <td>Kan du prata?</td>
+                                <td>Radiosamtal</td>
+                                <td>"Nice QSO!" = Trevlig kontakt! "73!"</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>QRP</strong></td>
+                                <td>Minska effekt?</td>
+                                <td>Låg effekt</td>
+                                <td>"QRP 5W" = Jag kör bara 5 watt!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="info-box tip" style="background: #ede9fe; border-left: 4px solid #8b5cf6;">
+                    <strong>🎯 MINNESREGLER:</strong>
+                    <br><br>
+                    • <strong>QRT</strong> = <strong>Q</strong>uit <strong>R</strong>ight <strong>T</strong>here (sluta direkt)
+                    <br>• <strong>QTH</strong> = <strong>Q</strong>ue <strong>T</strong>he <strong>H</strong>ome (var är hemma)
+                    <br>• <strong>QSL</strong> = <strong>Q</strong>onfirmation <strong>S</strong>ent, <strong>L</strong>etter (bekräftelse skickas)
+                    <br>• <strong>QSO</strong> = <strong>Q</strong>uiet <strong>S</strong>tation <strong>O</strong>pen (prata med station)
+                </div>
+                <h3>📻 Så här ANVÄNDER du Q-koder:</h3>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6;">
+                    <strong>EXEMPEL 1 - Som fråga (lägg till ?):</strong>
+                    <br><br>
+                    <strong>Du:</strong> "QRG?" 
+                    <br><em>(= Vilken exakt frekvens sänder jag på?)</em>
+                    <br><br>
+                    <strong>Motpart:</strong> "QRG 14.205" 
+                    <br><em>(= Du sänder på 14,205 MHz)</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>EXEMPEL 2 - Som påstående:</strong>
+                    <br><br>
+                    <strong>Du:</strong> "QRM5 QRN3" 
+                    <br><em>(= Jag störs mycket av andra stationer (5/5) och lite atmosfäriskt brus (3/5))</em>
+                    <br><br>
+                    <strong>Motpart:</strong> "QRO?" 
+                    <br><em>(= Ska jag öka min effekt så du hör mig bättre?)</em>
+                    <br><br>
+                    <strong>Du:</strong> "QRO QRO!" 
+                    <br><em>(= Ja, öka effekten! Öka effekten!)</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+                    <strong>EXEMPEL 3 - I en riktig kontakt:</strong>
+                    <br><br>
+                    <strong>SM5XYZ:</strong> "CQ CQ CQ de SM5XYZ"
+                    <br><strong>SM0ABC:</strong> [svarar]
+                    <br><strong>SM5XYZ:</strong> "QRZ?" <em>(Vem var det som svarade?)</em>
+                    <br><strong>SM0ABC:</strong> "SM0ABC SM0ABC"
+                    <br><strong>SM5XYZ:</strong> "SM0ABC UR 59, QTH Uppsala, QSL?"
+                    <br><em>(Du är 5/9, jag är i Uppsala, bekräftar du?)</em>
+                    <br><strong>SM0ABC:</strong> "QSL QSL, UR 57, QTH Stockholm"
+                    <br><em>(Bekräftar! Du är 5/7, jag är i Stockholm)</em>
+                </div>
+                
+                <h3>⚠️ VANLIGA MISSTAG MED Q-KODER</h3>
+                
+                <div class="info-box warning" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+                    <strong>Undvik dessa vanliga fel:</strong>
+                    <br><br>
+                    ❌ <strong>FEL:</strong> "Jag är QRL" (meningslöst!)
+                    <br>✅ <strong>RÄTT:</strong> "QRL?" innan du börjar sända (= Är frekvensen upptagen?)
+                    <br><br>
+                    ❌ <strong>FEL:</strong> "QRZ SM5XYZ" (dubbelt fel!)
+                    <br>✅ <strong>RÄTT:</strong> Bara "QRZ?" (= Vem anropade MIG?)
+                    <br><br>
+                    ❌ <strong>FEL:</strong> Blanda svenska och Q-koder: "Jag har QTH i Stockholm"
+                    <br>✅ <strong>RÄTT:</strong> Antingen "QTH Stockholm" ELLER "Jag är i Stockholm"
+                </div>
+                
+                <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>💡 PRO-TIPS:</strong> På foni (tal) används Q-koder mest på HF (kortvåg). På VHF/UHF-repeatrar pratar man oftast vanlig svenska utan Q-koder!
+                </div>
+                
+                <h3>Fullständig Q-kod tabell</h3>
+                
                 <table class="content-table">
                     <thead>
                         <tr>
@@ -177,644 +346,2308 @@
                     </tbody>
                 </table>
                 
-                <h3>Andra vanliga förkortningar</h3>
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Förkortning</th>
-                            <th>Betydelse</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>CQ</td>
-                            <td>Allmänt anrop (seek you)</td>
-                        </tr>
-                        <tr>
-                            <td>DE</td>
-                            <td>Från (detta är)</td>
-                        </tr>
-                        <tr>
-                            <td>DX</td>
-                            <td>Långdistans / utländsk station</td>
-                        </tr>
-                        <tr>
-                            <td>73</td>
-                            <td>Vänliga hälsningar</td>
-                        </tr>
-                        <tr>
-                            <td>88</td>
-                            <td>Kramar och kyssar</td>
-                        </tr>
-                        <tr>
-                            <td>OM</td>
-                            <td>Old man (radioamatör, man)</td>
-                        </tr>
-                        <tr>
-                            <td>YL</td>
-                            <td>Young lady (radioamatör, kvinna)</td>
-                        </tr>
-                        <tr>
-                            <td>XYL</td>
-                            <td>Ex-young lady (gift radioamatörs fru)</td>
-                        </tr>
-                        <tr>
-                            <td>HI</td>
-                            <td>Skratt</td>
-                        </tr>
-                        <tr>
-                            <td>R</td>
-                            <td>Roger, mottaget</td>
-                        </tr>
-                        <tr>
-                            <td>K</td>
-                            <td>Kom (over)</td>
-                        </tr>
-                        <tr>
-                            <td>SK</td>
-                            <td>Slut på kontakt</td>
-                        </tr>
-                        <tr>
-                            <td>BK</td>
-                            <td>Break (avbrott för snabbt svar)</td>
-                        </tr>
-                        <tr>
-                            <td>PSE</td>
-                            <td>Please (var snäll)</td>
-                        </tr>
-                        <tr>
-                            <td>TNX/TKS</td>
-                            <td>Thanks (tack)</td>
-                        </tr>
-                        <tr>
-                            <td>UR</td>
-                            <td>Your/Du/Din</td>
-                        </tr>
-                        <tr>
-                            <td>WX</td>
-                            <td>Väder</td>
-                        </tr>
-                        <tr>
-                            <td>RIG</td>
-                            <td>Utrustning/radio</td>
-                        </tr>
-                        <tr>
-                            <td>ANT</td>
-                            <td>Antenn</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Sektion 2: Fonetiska alfabetet -->
-            <div class="content-section" id="fonetiska">
-                <h2>8.2 Fonetiska Alfabetet</h2>
+                <h3>🎓 ANDRA VIKTIGA FÖRKORTNINGAR</h3>
                 
-                <h3>ITU/NATO fonetiska alfabetet</h3>
-                <p>För att bokstäver ska uppfattas korrekt används fonetiska ord. Det internationella (ITU/NATO) alfabetet är standard.</p>
+                <p>Förutom Q-koder finns massor av andra förkortningar som används i radioamatörtrafik:</p>
                 
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Bokstav</th>
-                            <th>Fonetiskt ord</th>
-                            <th>Uttal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>A</td><td>Alfa</td><td>AL-FA</td></tr>
-                        <tr><td>B</td><td>Bravo</td><td>BRA-VO</td></tr>
-                        <tr><td>C</td><td>Charlie</td><td>TSJAR-LI</td></tr>
-                        <tr><td>D</td><td>Delta</td><td>DELL-TA</td></tr>
-                        <tr><td>E</td><td>Echo</td><td>EK-O</td></tr>
-                        <tr><td>F</td><td>Foxtrot</td><td>FÅKS-TRÅTT</td></tr>
-                        <tr><td>G</td><td>Golf</td><td>GÅLF</td></tr>
-                        <tr><td>H</td><td>Hotel</td><td>HO-TELL</td></tr>
-                        <tr><td>I</td><td>India</td><td>IN-DI-A</td></tr>
-                        <tr><td>J</td><td>Juliet</td><td>DJU-LI-ETT</td></tr>
-                        <tr><td>K</td><td>Kilo</td><td>KI-LO</td></tr>
-                        <tr><td>L</td><td>Lima</td><td>LI-MA</td></tr>
-                        <tr><td>M</td><td>Mike</td><td>MAJK</td></tr>
-                        <tr><td>N</td><td>November</td><td>NO-VEM-BER</td></tr>
-                        <tr><td>O</td><td>Oscar</td><td>ÅSS-KAR</td></tr>
-                        <tr><td>P</td><td>Papa</td><td>PA-PA</td></tr>
-                        <tr><td>Q</td><td>Quebec</td><td>KE-BECK</td></tr>
-                        <tr><td>R</td><td>Romeo</td><td>RO-MI-O</td></tr>
-                        <tr><td>S</td><td>Sierra</td><td>SI-ER-RA</td></tr>
-                        <tr><td>T</td><td>Tango</td><td>TANG-GO</td></tr>
-                        <tr><td>U</td><td>Uniform</td><td>JU-NI-FORM</td></tr>
-                        <tr><td>V</td><td>Victor</td><td>VIK-TOR</td></tr>
-                        <tr><td>W</td><td>Whiskey</td><td>WISS-KI</td></tr>
-                        <tr><td>X</td><td>X-ray</td><td>EKKS-REJ</td></tr>
-                        <tr><td>Y</td><td>Yankee</td><td>JANG-KI</td></tr>
-                        <tr><td>Z</td><td>Zulu</td><td>ZU-LU</td></tr>
-                    </tbody>
-                </table>
+                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0;">📝 ALLMÄNNA FÖRKORTNINGAR</h4>
+                    
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Förkortning</th>
+                                <th>Betydelse</th>
+                                <th>Användning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>CQ</strong></td>
+                                <td>"Seek you" - Allmänt anrop</td>
+                                <td>"CQ CQ CQ de SM5XYZ" = Jag söker kontakt med vem som helst</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>DE</strong></td>
+                                <td>"From" / "Detta är"</td>
+                                <td>"CQ DE SM5XYZ" = CQ från SM5XYZ</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>DX</strong></td>
+                                <td>"Distance" - Långdistans</td>
+                                <td>"Working DX" = Kontakt med utländsk station</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>73</strong></td>
+                                <td>"Best regards" - Vänliga hälsningar</td>
+                                <td>Används ALLTID vid avslut: "Thanks for QSO, 73!"</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>88</strong></td>
+                                <td>"Love and kisses" - Kramar och kyssar</td>
+                                <td>Används till YL (kvinnliga radioamatörer)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
-                <h3>Siffror</h3>
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Siffra</th>
-                            <th>Uttal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>0</td><td>ZE-RO</td></tr>
-                        <tr><td>1</td><td>WAN</td></tr>
-                        <tr><td>2</td><td>TU</td></tr>
-                        <tr><td>3</td><td>TRI</td></tr>
-                        <tr><td>4</td><td>FO-ER</td></tr>
-                        <tr><td>5</td><td>FAJF</td></tr>
-                        <tr><td>6</td><td>SIKS</td></tr>
-                        <tr><td>7</td><td>SEV-EN</td></tr>
-                        <tr><td>8</td><td>EJT</td></tr>
-                        <tr><td>9</td><td>NAJ-NER</td></tr>
-                    </tbody>
-                </table>
+                <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border: 3px solid #db2777; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0;">👥 PERSONER</h4>
+                    
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Förkortning</th>
+                                <th>Betydelse</th>
+                                <th>Förklaring</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>OM</strong></td>
+                                <td>"Old Man"</td>
+                                <td>Manlig radioamatör (används även till unga!)</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>YL</strong></td>
+                                <td>"Young Lady"</td>
+                                <td>Kvinnlig radioamatör</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>XYL</strong></td>
+                                <td>"Ex-Young Lady"</td>
+                                <td>Gift mans fru (lite gammaldags men används!)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
-                <div class="info-box tip">
-                    <strong>💡 Tips:</strong> Öva på att säga din egen anropssignal fonetiskt tills det sitter automatiskt. SM5XYZ blir "Sierra Mike Five X-ray Yankee Zulu".
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0;">🔧 TEKNISKA FÖRKORTNINGAR</h4>
+                    
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Förkortning</th>
+                                <th>Betydelse</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>RIG</strong></td>
+                                <td>Utrustning/radio (din transceiver)</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>ANT</strong></td>
+                                <td>Antenn</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>WX</strong></td>
+                                <td>Weather = Väder</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>PSE</strong></td>
+                                <td>Please = Var snäll / Tack</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>TNX / TKS</strong></td>
+                                <td>Thanks = Tack</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>UR</strong></td>
+                                <td>Your = Du/Din</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0;">📡 CW-SPECIFIKA (morsekod)</h4>
+                    
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Förkortning</th>
+                                <th>Betydelse</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>K</strong></td>
+                                <td>"Come" = Kom (över till dig)</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>SK</strong></td>
+                                <td>"End of contact" = Slut på kontakten</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>BK</strong></td>
+                                <td>"Break" = Avbrott (snabbt svar)</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>R</strong></td>
+                                <td>"Roger" = Mottaget / Förstått</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>HI</strong></td>
+                                <td>Skratt (ljudet av skratt i morse)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>✅ Snabbtest - Q-koder och förkortningar</h3>
+                
+                <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+                    <strong>✅ Kan du svara på dessa?</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>1. Vad betyder QTH?</li>
+                        <li>2. Hur frågar du om någon kan bekräfta?</li>
+                        <li>3. Vad betyder "73"?</li>
+                        <li>4. Skillnaden mellan QRM och QRN?</li>
+                        <li>5. När använder du QRZ?</li>
+                        <li>6. Vad står CQ för?</li>
+                        <li>7. Vad är skillnaden mellan OM och YL?</li>
+                    </ul>
+                    <details style="margin-top: 0.5rem;">
+                        <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+                        <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                            <strong>SVAR:</strong>
+                            <br>1. QTH = Position/plats (Vilken är din position?)
+                            <br>2. "QSL?" (Kan du kvittera/bekräfta?)
+                            <br>3. 73 = Vänliga hälsningar (används vid avslut)
+                            <br>4. QRM = Störningar från andra stationer, QRN = Atmosfäriska störningar (åska, brus)
+                            <br>5. QRZ = Efter att någon anropat dig men du inte hörde vem (Vem anropar mig?)
+                            <br>6. CQ = "Seek You" - Allmänt anrop till vem som helst
+                            <br>7. OM = "Old Man" (manlig radioamatör), YL = "Young Lady" (kvinnlig radioamatör)
+                        </div>
+                    </details>
                 </div>
             </div>
 
-            <!-- Sektion 3: RST-systemet -->
+            <!-- ============================================ -->
+            <!-- SEKTION 8.2: FONETISKA ALFABETET -->
+            <!-- ============================================ -->
+            
+            <div class="content-section" id="fonetiska">
+                <h2>8.2 Fonetiska Alfabetet</h2>
+                
+                <h3>Varför fonetiskt alfabet?</h3>
+                
+                <p>Har du någonsin försökt bokstavera ditt namn i telefon när det är dålig signal?</p>
+                
+                <div class="example-box" style="border-left: 4px solid #dc2626;">
+                    <strong>❌ Utan fonetiskt alfabet:</strong>
+                    <br><br>
+                    <strong>Motpart:</strong> "Heter du ERIC eller DEREK?"
+                    <br><strong>Du:</strong> "ERIK! E som i... ehh... Emil?"
+                    <br><strong>Motpart:</strong> "Emil? Är du EMIL då?"
+                    <br><strong>Du:</strong> "NEJ! ERIK! E-R-I-K!"
+                    <br><br>
+                    <em>😤 Frustrerande!</em>
+                </div>
+                
+                <p>Detta är varför vi behöver det fonetiska alfabetet!</p>
+                
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 FLYGPLATS-ANALOGIN:</strong>
+                    <br><br>
+                    Tänk på flygplatser - de har alltid tydliga koder: ARN (Stockholm-Arlanda), CPH (Köpenhamn), LAX (Los Angeles). Ingen förvirring!
+                    <br><br>
+                    Samma sak med fonetiska alfabetet - varje bokstav får ett UNIKT ord som inte kan missförstås:
+                    <br><br>
+                    • B och D låter lika? Inget problem: <strong>Bravo</strong> vs <strong>Delta</strong>!
+                    <br>• M och N låter lika? <strong>Mike</strong> vs <strong>November</strong>!
+                    <br>• F och S låter lika? <strong>Foxtrot</strong> vs <strong>Sierra</strong>!
+                </div>
+                
+                <h3>🔷 ITU/NATO FONETISKA ALFABETET</h3>
+                <p>Detta är det <strong>internationella</strong> standarden som används av flygplatser, militären, sjöfarten och radioamatörer över hela världen. Lär dig detta utantill!</p>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Bokstav</th>
+                            <th style="width: 20%;">Fonetiskt</th>
+                            <th style="width: 20%;">Uttal</th>
+                            <th style="width: 45%;">💡 Kom ihåg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>A</strong></td><td><strong>Alfa</strong></td><td>AL-FA</td><td>Början på alfabetet</td></tr>
+                        <tr><td><strong>B</strong></td><td><strong>Bravo</strong></td><td>BRA-VO</td><td>Applåder efter show!</td></tr>
+                        <tr><td><strong>C</strong></td><td><strong>Charlie</strong></td><td>TSJAR-LI</td><td>Klassiskt namn</td></tr>
+                        <tr><td><strong>D</strong></td><td><strong>Delta</strong></td><td>DELL-TA</td><td>Flodelta (geografi!)</td></tr>
+                        <tr><td><strong>E</strong></td><td><strong>Echo</strong></td><td>EK-O</td><td>Eko i bergen</td></tr>
+                        <tr><td><strong>F</strong></td><td><strong>Foxtrot</strong></td><td>FÅKS-TRÅTT</td><td>Dans från 1900-talet</td></tr>
+                        <tr><td><strong>G</strong></td><td><strong>Golf</strong></td><td>GÅLF</td><td>Sporten med hål</td></tr>
+                        <tr><td><strong>H</strong></td><td><strong>Hotel</strong></td><td>HO-TELL</td><td>Där du bor på semester</td></tr>
+                        <tr><td><strong>I</strong></td><td><strong>India</strong></td><td>IN-DI-A</td><td>Landet</td></tr>
+                        <tr><td><strong>J</strong></td><td><strong>Juliet</strong></td><td>DJU-LI-ETT</td><td>Romeo och...</td></tr>
+                        <tr><td><strong>K</strong></td><td><strong>Kilo</strong></td><td>KI-LO</td><td>1000 gram</td></tr>
+                        <tr><td><strong>L</strong></td><td><strong>Lima</strong></td><td>LI-MA</td><td>Huvudstad i Peru</td></tr>
+                        <tr><td><strong>M</strong></td><td><strong>Mike</strong></td><td>MAJK</td><td>Kort för "microphone"</td></tr>
+                        <tr><td><strong>N</strong></td><td><strong>November</strong></td><td>NO-VEM-BER</td><td>Månad 11</td></tr>
+                        <tr><td><strong>O</strong></td><td><strong>Oscar</strong></td><td>ÅSS-KAR</td><td>Filmpriser!</td></tr>
+                        <tr><td><strong>P</strong></td><td><strong>Papa</strong></td><td>PA-PA</td><td>Pappa</td></tr>
+                        <tr><td><strong>Q</strong></td><td><strong>Quebec</strong></td><td>KE-BECK</td><td>Kanadensisk provins</td></tr>
+                        <tr><td><strong>R</strong></td><td><strong>Romeo</strong></td><td>RO-MI-O</td><td>...och Julia</td></tr>
+                        <tr><td><strong>S</strong></td><td><strong>Sierra</strong></td><td>SI-ER-RA</td><td>Bergskedja</td></tr>
+                        <tr><td><strong>T</strong></td><td><strong>Tango</strong></td><td>TANG-GO</td><td>Argentinsk dans</td></tr>
+                        <tr><td><strong>U</strong></td><td><strong>Uniform</strong></td><td>JU-NI-FORM</td><td>Kläder (polis, militär)</td></tr>
+                        <tr><td><strong>V</strong></td><td><strong>Victor</strong></td><td>VIK-TOR</td><td>Vinnare!</td></tr>
+                        <tr><td><strong>W</strong></td><td><strong>Whiskey</strong></td><td>WISS-KI</td><td>Dryck från Skottland</td></tr>
+                        <tr><td><strong>X</strong></td><td><strong>X-ray</strong></td><td>EKKS-REJ</td><td>Röntgen</td></tr>
+                        <tr><td><strong>Y</strong></td><td><strong>Yankee</strong></td><td>JANG-KI</td><td>Amerikan</td></tr>
+                        <tr><td><strong>Z</strong></td><td><strong>Zulu</strong></td><td>ZU-LU</td><td>Sydafrikanskt folk</td></tr>
+                    </tbody>
+                </table>
+                
+                <h3>Siffror - Fonetiskt uttal</h3>
+                
+                <div class="info-box important" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+                    <strong>⚠️ VIKTIGT:</strong> Siffror uttalas ALLTID med engelsk betoning, även när du pratar svenska! Detta undviker missförstånd.
+                </div>
+                
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Siffra</th>
+                            <th style="width: 30%;">Uttal</th>
+                            <th style="width: 50%;">Trick för att komma ihåg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>0</strong></td><td><strong>ZE-RO</strong></td><td>"Zero" på engelska</td></tr>
+                        <tr><td><strong>1</strong></td><td><strong>WAN</strong></td><td>"One" → "Wan"</td></tr>
+                        <tr><td><strong>2</strong></td><td><strong>TU</strong></td><td>"Two" → "Tu"</td></tr>
+                        <tr><td><strong>3</strong></td><td><strong>TRI</strong></td><td>"Three" → "Tri"</td></tr>
+                        <tr><td><strong>4</strong></td><td><strong>FO-ER</strong></td><td>"Four" → "Fo-er"</td></tr>
+                        <tr><td><strong>5</strong></td><td><strong>FAJF</strong></td><td>"Five" → "Fajf"</td></tr>
+                        <tr><td><strong>6</strong></td><td><strong>SIKS</strong></td><td>"Six" → "Siks"</td></tr>
+                        <tr><td><strong>7</strong></td><td><strong>SEV-EN</strong></td><td>"Seven" betoning på BÅDA stavelser</td></tr>
+                        <tr><td><strong>8</strong></td><td><strong>EJT</strong></td><td>"Eight" → "Ejt"</td></tr>
+                        <tr><td><strong>9</strong></td><td><strong>NAJ-NER</strong></td><td>"Nine" → "Naj-ner" (INTE "nain"!)</td></tr>
+                    </tbody>
+                </table>
+                
+                <h3>📻 PRAKTISKA EXEMPEL</h3>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6;">
+                    <strong>EXEMPEL 1 - Säg din anropssignal:</strong>
+                    <br><br>
+                    <strong>SM5XYZ</strong> blir:
+                    <br>"<strong>Sierra Mike Five X-ray Yankee Zulu</strong>"
+                    <br><br>
+                    <strong>Steg-för-steg första gången:</strong>
+                    <br>1. Säg bokstaven långsamt
+                    <br>2. Pausa kort mellan varje ord
+                    <br>3. Betona första stavelsen
+                    <br>4. Överdriva lite - bättre för tydligt än för otydligt!
+                    <br><br>
+                    ❌ <strong>Dåligt:</strong> "smfivexyzeezee" (allt i ett svep)
+                    <br>✅ <strong>Bra:</strong> "Sierra - Mike - Five - X-ray - Yankee - Zulu"
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>EXEMPEL 2 - Om motparten inte hör:</strong>
+                    <br><br>
+                    <strong>Motpart:</strong> "Station calling, say again your call?"
+                    <br><strong>Du:</strong> "Sierra Mike Five X-ray Yankee Zulu"
+                    <br><strong>Motpart:</strong> "SM5X...?"
+                    <br><strong>Du:</strong> "Sierra Mike FIVE, X-RAY Yankee Zulu"
+                    <br><em>(betona de delar som missades!)</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+                    <strong>EXEMPEL 3 - Snabbare efter övning:</strong>
+                    <br><br>
+                    När båda har bra signal kan man förkorta:
+                    <br><br>
+                    <strong>Långt sätt:</strong> "SM5XYZ" → "Sierra Mike Five, X-ray Yankee Zulu"
+                    <br><br>
+                    <strong>Erfarna kan säga:</strong>
+                    <br>"Five X-ray Yankee Zulu" (prefixet SM5 är underförstått i Sverige)
+                </div>
+                
+                <h3>🎯 TRÄNINGSTIPS - Lär dig fonetiska alfabetet</h3>
+                
+                <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0;">📚 3-veckors träningsplan</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 1rem;">
+                        <tr style="background: #fef3c7;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>VECKA 1:</strong> Lär dig A-M (Alfa till Mike)
+                                <br>• Säg dem högt varje morgon
+                                <br>• Bokstavera ditt namn
+                                <br>• Bokstavera din gata
+                            </td>
+                        </tr>
+                        <tr style="background: #dbeafe;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>VECKA 2:</strong> Lär dig N-Z (November till Zulu)
+                                <br>• Fortsätt öva A-M också!
+                                <br>• Bokstavera vänners namn
+                                <br>• Öva på siffror (0-9)
+                            </td>
+                        </tr>
+                        <tr style="background: #fce7f3;">
+                            <td style="padding: 1rem;">
+                                <strong>VECKA 3:</strong> Hela alfabetet + din anropssignal
+                                <br>• Säg din anropssignal 10 gånger varje dag
+                                <br>• Målet: Säga den på under 3 sekunder utan att tänka!
+                                <br>• Bokstavera registreringsnummer på bilar
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px;">
+                        <strong>PRO-LEVEL:</strong> Bokstavera registreringsnummer på bilar du ser
+                        <br>• ABC123 → "Alfa Bravo Charlie, One Two Three"
+                        <br>• XYZ789 → "X-ray Yankee Zulu, Seven Eight Niner"
+                        <br><br>
+                        <em>💡 HEMLIGHET: Efter 2-3 veckor daglig övning sitter det i ryggmärgen!</em>
+                    </div>
+                </div>
+                
+                <h3>⚠️ VANLIGA MISSTAG</h3>
+                
+                <div class="info-box warning" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+                    <strong>Undvik dessa misstag:</strong>
+                    <br><br>
+                    ❌ <strong>ANVÄND INTE svenska ord:</strong>
+                    <br>• "S som i Sigurd" ❌
+                    <br>• "Ä som i Äpple" ❌
+                    <br><br>
+                    ✅ <strong>Använd ALLTID ITU-alfabetet:</strong>
+                    <br>• "Sierra" ✓
+                    <br>• Å, Ä, Ö bokstaveras: "Alfa-ring", "Alfa-umlaut", "Oscar-umlaut"
+                    <br><br>
+                    ❌ <strong>FEL uttal:</strong>
+                    <br>• "Djuliet" ❌ (ska vara "DJU-li-ett")
+                    <br>• "Nain-er" ❌ (ska vara "NAJ-ner")
+                    <br>• "Kweebek" ❌ (ska vara "KE-BECK")
+                </div>
+                
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b; margin-top: 1rem;">
+                    <strong>💡 Tips:</strong> Öva på att säga din egen anropssignal fonetiskt tills det sitter automatiskt. SM5XYZ blir "Sierra Mike Five X-ray Yankee Zulu".
+                </div>
+                
+                <h3>✅ Snabbtest - Fonetiskt alfabet</h3>
+                
+                <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+                    <strong>✅ Kan du säga dessa utan att titta?</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>1. Hur säger du SM7ABC fonetiskt?</li>
+                        <li>2. Bokstavera RADIO fonetiskt</li>
+                        <li>3. Hur säger du siffran 9?</li>
+                        <li>4. Vad heter bokstaven Q fonetiskt?</li>
+                        <li>5. Din egen anropssignal - hur snabbt kan du säga den?</li>
+                        <li>6. Bokstavera ditt förnamn fonetiskt</li>
+                        <li>7. Vad är skillnaden mellan Mike och November?</li>
+                    </ul>
+                    <details style="margin-top: 0.5rem;">
+                        <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+                        <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                            <strong>SVAR:</strong>
+                            <br>1. Sierra Mike Seven, Alfa Bravo Charlie
+                            <br>2. Romeo Alfa Delta India Oscar
+                            <br>3. NAJ-NER (INTE "nain"!)
+                            <br>4. Quebec (KE-BECK)
+                            <br>5. [Träna tills du kan säga den på under 3 sekunder!]
+                            <br>6. [Öva själv - t.ex. ERIK = Echo Romeo India Kilo]
+                            <br>7. Mike = MAJK (för M), November = NO-VEM-BER (för N)
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- ============================================ -->
+            <!-- SEKTION 8.3: RST-SYSTEMET -->
+            <!-- ============================================ -->
+            
             <div class="content-section" id="rst">
                 <h2>8.3 RST-systemet</h2>
                 
                 <h3>Vad är RST?</h3>
-                <p>RST är ett standardiserat sätt att rapportera signalkvalitet:</p>
+                <p>Efter att du etablerat kontakt vill du berätta hur bra du hör den andra stationen. Men hur beskriver man signalkvalitet på ett standardiserat sätt som fungerar över hela världen? Svaret: <strong>RST-systemet!</strong></p>
+                
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 BETYG I SKOLAN-ANALOGIN:</strong>
+                    <br><br>
+                    RST är som att sätta betyg på en provräkning:
+                    <br><br>
+                    <strong>R (Readability):</strong> Kan du läsa texten? (handstilen)
+                    <br>• 1 = Kladdig text, går inte att läsa
+                    <br>• 5 = Perfekt handstil, kristallklar!
+                    <br><br>
+                    <strong>S (Strength):</strong> Hur kraftigt trycker pennan? (signalstyrka)
+                    <br>• 1 = Knappt synligt
+                    <br>• 9 = Trycker igenom papperet!
+                    <br><br>
+                    <strong>T (Tone):</strong> Hur ren är ljudet av pennan? (endast CW/morsekod)
+                    <br>• 1 = Skrapar och knastrar
+                    <br>• 9 = Mjuk, ren ton
+                </div>
+                
+                <h3>RST-koden består av:</h3>
                 <ul>
-                    <li><strong>R</strong> = Readability (läsbarhet)</li>
-                    <li><strong>S</strong> = Strength (signalstyrka)</li>
-                    <li><strong>T</strong> = Tone (ton, endast för CW)</li>
+                    <li><strong>R</strong> = Readability (läsbarhet) → 1-5</li>
+                    <li><strong>S</strong> = Strength (signalstyrka) → 1-9</li>
+                    <li><strong>T</strong> = Tone (ton) → 1-9 (endast för CW, inte foni!)</li>
                 </ul>
                 
-                <h3>R - Läsbarhet (1-5)</h3>
+                <div class="info-box important" style="background: #fef3c7; border-left: 4px solid #f59e0b;">
+                    <strong>🎯 VIKTIGT ATT KOMMA IHÅG:</strong>
+                    <br><br>
+                    <strong>FONI (tal):</strong> Använd bara <strong>RS</strong> (två siffror)
+                    <br>• Exempel: "Du är 59" = Läsbarhet 5, Styrka 9
+                    <br><br>
+                    <strong>CW (morsekod):</strong> Använd <strong>RST</strong> (tre siffror)
+                    <br>• Exempel: "UR 599" = Läsbarhet 5, Styrka 9, Ton 9
+                    <br><br>
+                    T (ton) har ingen mening på foni - din röst har ingen "ton" som en morsetelegraf har!
+                </div>
+                
+                <h3>R - Läsbarhet (Readability)</h3>
+                
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #1e40af;">📖 LÄSBARHET (R) - 1 till 5</h4>
+                    
+                    <table class="content-table" style="margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">R-värde</th>
+                                <th style="width: 30%;">Officiell betydelse</th>
+                                <th style="width: 60%;">💬 I praktiken betyder det...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #fee2e2;">
+                                <td><strong>R1</strong></td>
+                                <td>Oläsbar</td>
+                                <td>Jag hör att du sänder men förstår INGENTING. Bara brus och knas. 😞<br><em>"Du är ett-två. Tyvärr oläsbar här."</em></td>
+                            </tr>
+                            <tr style="background: #fed7aa;">
+                                <td><strong>R2</strong></td>
+                                <td>Knappt läsbar</td>
+                                <td>Jag uppfattar enstaka ord då och då. "Hej... SM5... Uppsala... QRT". Mycket svårt! 😓<br><em>"Du är två-tre. Uppfattar bara enstaka ord."</em></td>
+                            </tr>
+                            <tr style="background: #fef3c7;">
+                                <td><strong>R3</strong></td>
+                                <td>Läsbar med stor svårighet</td>
+                                <td>Jag förstår det mesta men måste koncentrera mig hårt. Ber dig upprepa vissa delar. 😐<br><em>"Du är tre-fem. Läsbar men svårt, kan du upprepa QTH?"</em></td>
+                            </tr>
+                            <tr style="background: #d1fae5;">
+                                <td><strong>R4</strong></td>
+                                <td>Läsbar utan större svårighet</td>
+                                <td>Hör dig bra! Lite fädning eller små störningar men inga problem egentligen. 😊<br><em>"Du är fyra-åtta. Bra läsbarhet med lite QSB."</em></td>
+                            </tr>
+                            <tr style="background: #86efac;">
+                                <td><strong>R5</strong></td>
+                                <td>Perfekt läsbar</td>
+                                <td>Kristallklart! Som att du står bredvid mig. Inga störningar alls! 🎉<br><em>"Du är fem-nio. Perfekt koppling!"</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6;">
+                    <strong>📻 Exempel - Läsbarhet i praktiken:</strong>
+                    <br><br>
+                    <strong>R5:</strong> "Du är fem-nio. Perfekt koppling här! Din röst är glasklar."
+                    <br><br>
+                    <strong>R4:</strong> "Du är fyra-åtta. Hör dig bra men lite svag ibland när du fäder."
+                    <br><br>
+                    <strong>R3:</strong> "Du är tre-fem. Hör dig men måste lyssna noga. Kan du upprepa ditt QTH?"
+                    <br><br>
+                    <strong>R2:</strong> "Du är två-tre. Mycket svår koppling. Bara enstaka ord kommer igenom."
+                    <br><br>
+                    <strong>R1:</strong> "Du är ett-två. Tyvärr kan jag inte läsa dig. QRO?" (Kan du öka effekten?)
+                </div>
+                
+                <h3>S - Signalstyrka (Strength)</h3>
+                
+                <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border: 3px solid #db2777; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #9f1239;">📊 SIGNALSTYRKA (S) - 1 till 9</h4>
+                    
+                    <table class="content-table" style="margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">S-värde</th>
+                                <th style="width: 25%;">Officiell betydelse</th>
+                                <th style="width: 20%;">S-meter visning</th>
+                                <th style="width: 45%;">💬 I praktiken...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>S1</strong></td>
+                                <td>Knappt märkbar</td>
+                                <td>S1 (nål knappt rör sig)</td>
+                                <td>Nästan osynlig i bruset, knappt hörbar</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>S2</strong></td>
+                                <td>Mycket svag</td>
+                                <td>S2</td>
+                                <td>Ser signalen, men väldigt svag</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>S3</strong></td>
+                                <td>Svag</td>
+                                <td>S3</td>
+                                <td>Klar över bruset men svag</td>
+                            </tr>
+                            <tr style="background: #fef3c7;">
+                                <td><strong>S4</strong></td>
+                                <td>Godtagbar</td>
+                                <td>S4</td>
+                                <td>OK signal, fungerar men inte stark</td>
+                            </tr>
+                            <tr style="background: #fef3c7;">
+                                <td><strong>S5</strong></td>
+                                <td>Ganska god</td>
+                                <td>S5</td>
+                                <td>Bra signal, tydligt över bruset</td>
+                            </tr>
+                            <tr style="background: #d1fae5;">
+                                <td><strong>S6</strong></td>
+                                <td>God signal</td>
+                                <td>S6</td>
+                                <td>Mycket bra signal</td>
+                            </tr>
+                            <tr style="background: #d1fae5;">
+                                <td><strong>S7</strong></td>
+                                <td>Ganska stark</td>
+                                <td>S7</td>
+                                <td>Stark och tydlig signal</td>
+                            </tr>
+                            <tr style="background: #86efac;">
+                                <td><strong>S8</strong></td>
+                                <td>Stark signal</td>
+                                <td>S8</td>
+                                <td>Mycket stark, nästan max</td>
+                            </tr>
+                            <tr style="background: #86efac;">
+                                <td><strong>S9</strong></td>
+                                <td>Extremt stark</td>
+                                <td>S9 (nål i taket!)</td>
+                                <td>Maximal styrka på S-metern!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px;">
+                        <strong style="color: #9f1239;">🔥 ÖVER S9 - Decibel-skalan:</strong>
+                        <br><br>
+                        Om signalen är <strong>starkare än S9</strong>, används decibel (dB) över S9:
+                        <br><br>
+                        • <strong>S9+10dB</strong> = 10 dB starkare än S9 (ungefär dubbelt så stark!)
+                        <br>• <strong>S9+20dB</strong> = 20 dB starkare än S9 (ungefär 4 gånger starkare!)
+                        <br>• <strong>S9+30dB</strong> = 30 dB starkare (ungefär 8 gånger starkare!)
+                        <br>• <strong>S9+40dB</strong> = 40 dB starkare (extremt kraftfull signal!)
+                        <br><br>
+                        💡 <em>Varje +10dB innebär ungefär en fördubbling i upplevd styrka!</em>
+                        <br><br>
+                        <strong>Exempel:</strong>
+                        <br>"Du är 59 plus tjugo" = R5, S9+20dB (perfekt läsbarhet, mycket stark signal!)
+                    </div>
+                </div>
+                
+                <div class="info-box warning" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+                    <strong>⚠️ VARNING - "Signalrapport-inflation"!</strong>
+                    <br><br>
+                    Ett vanligt problem i amatörradio: Alla ger "59" även när signalen är svag!
+                    <br><br>
+                    <strong>Varför händer detta?</strong>
+                    <br>• Folk vill vara artiga och säga något positivt
+                    <br>• Man vill inte såra någons känslor
+                    <br>• "Alla andra säger 59 så jag gör det också"
+                    <br><br>
+                    <strong>Problemet:</strong> Om alla alltid är "59", förlorar systemet sin mening!
+                    <br><br>
+                    <strong>Var ärlig istället:</strong>
+                    <br>✅ "Du är 57" = Sant och användbart
+                    <br>✅ "Du är 44" = Ärlig rapport som hjälper stationen förbättra sin utrustning
+                    <br>❌ "Du är 59" när signalen egentligen är S3 = Meningslöst och förvirrande
+                    <br><br>
+                    <em>💡 En ärlig rapport är mer värdefull än en "snäll" rapport!</em>
+                </div>
+                
+                <h3>T - Ton (Tone) - endast för CW</h3>
+                
+                <div style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); border: 3px solid #8b5cf6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #5b21b6;">🎵 TON (T) - 1 till 9 (endast CW/morsekod)</h4>
+                    
+                    <p style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        Tonkvaliteten beskriver hur "ren" morsesignalen låter. En perfekt CW-signal låter som en ren sinuston (som en stämgaffel). En dålig signal låter skrovlig, med brum eller knas.
+                    </p>
+                    
+                    <table class="content-table" style="margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%;">T-värde</th>
+                                <th style="width: 35%;">Betydelse</th>
+                                <th style="width: 55%;">💬 Hur det låter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>T1</strong></td>
+                                <td>Extremt rå växelströmston</td>
+                                <td>Fruktansvärt! Knastrande, skrapande, som en trasig radio</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>T3</strong></td>
+                                <td>Rå växelströmston, rektifierad men ofiltrerad</td>
+                                <td>Mycket brum och knas, svår att lyssna på</td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>T5</strong></td>
+                                <td>Tydligt modulerad ton, musikalisk</td>
+                                <td>Hörbar brum men acceptabel, något "musikalisk" kvalitet</td>
+                            </tr>
+                            <tr style="background: #fef3c7;">
+                                <td><strong>T7</strong></td>
+                                <td>Nära ren ton, lätt brum</td>
+                                <td>Nästan ren, bara ett lätt brum i bakgrunden</td>
+                            </tr>
+                            <tr style="background: #d1fae5;">
+                                <td><strong>T8</strong></td>
+                                <td>Nästan perfekt ton, spår av brum</td>
+                                <td>Mycket ren, knappt märkbart brum</td>
+                            </tr>
+                            <tr style="background: #86efac;">
+                                <td><strong>T9</strong></td>
+                                <td>Perfekt ton, ren sinusvåg</td>
+                                <td>Kristallklar, perfekt sinusvåg, som en stämgaffel! 🎵</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px;">
+                        <strong style="color: #5b21b6;">💡 I praktiken:</strong>
+                        <br><br>
+                        Nästan alla moderna CW-sändare har T9 (perfekt ton). Dålig ton (T1-T5) hörs bara från:
+                        <br>• Hembyggd utrustning med dålig filter
+                        <br>• Mycket gammal utrustning
+                        <br>• Felaktig utrustning
+                        <br><br>
+                        <strong>Vanligaste rapporter på CW:</strong>
+                        <br>• <strong>599</strong> = Perfekt! (R5, S9, T9)
+                        <br>• <strong>579</strong> = Stark men lite svår att läsa (R5, S7, T9)
+                        <br>• <strong>339</strong> = Svag och svår, men ren ton (R3, S3, T9)
+                    </div>
+                </div>
+                
+                <h3>📻 RST i praktiken - Fullständiga exempel</h3>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6;">
+                    <strong>EXEMPEL 1 - Foni (SSB):</strong>
+                    <br><br>
+                    <strong>Scenario:</strong> Du hör en station på 14,200 MHz. Signalen är stark och helt klar.
+                    <br><br>
+                    <strong>Du säger:</strong> "SM0ABC, du är fem-nio här i Uppsala. Perfekt koppling!"
+                    <br><strong>Betydelse:</strong> R5 (perfekt läsbar), S9 (mycket stark signal)
+                    <br><br>
+                    <em>Notera: Bara TVÅ siffror på foni - ingen T!</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>EXEMPEL 2 - Foni med svag signal:</strong>
+                    <br><br>
+                    <strong>Scenario:</strong> DX-station från Japan, svag signal med fädning.
+                    <br><br>
+                    <strong>Du säger:</strong> "JA1ABC, you are four-three with QSB."
+                    <br><strong>Betydelse:</strong> R4 (läsbar utan större svårighet), S3 (svag signal), QSB (fädning)
+                    <br><br>
+                    <em>En ärlig rapport hjälper JA1ABC förstå sina signalförhållanden!</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #8b5cf6; margin-top: 1rem;">
+                    <strong>EXEMPEL 3 - CW (morsekod):</strong>
+                    <br><br>
+                    <strong>Scenario:</strong> CW-kontakt på 7 MHz, perfekt signal.
+                    <br><br>
+                    <strong>Du sänder:</strong> "UR RST 599 599"
+                    <br><strong>Betydelse:</strong> R5 (perfekt läsbar), S9 (mycket stark), T9 (perfekt ton)
+                    <br><br>
+                    <em>Notera: TRE siffror på CW - inklusive T för ton!</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #f59e0b; margin-top: 1rem;">
+                    <strong>EXEMPEL 4 - Extremt stark signal:</strong>
+                    <br><br>
+                    <strong>Scenario:</strong> Grannstationen 2 km bort, maximal signal!
+                    <br><br>
+                    <strong>Du säger:</strong> "Du är fem-nio plus trettio! Enorm signal här!"
+                    <br><strong>Betydelse:</strong> R5 (perfekt), S9+30dB (extremt stark - S-metern pekar långt över S9!)
+                    <br><br>
+                    <em>+30dB över S9 är MYCKET starkt - typiskt för närliggande stationer.</em>
+                </div>
+                
+                <h3>🎯 Hur använder man S-metern?</h3>
+                
+                <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669;">
+                    <strong>💡 ATT LÄSA S-METERN:</strong>
+                    <br><br>
+                    De flesta transceivrar har en S-meter som visar signalstyrkan:
+                    <br><br>
+                    <strong>På mottagning:</strong>
+                    <br>• Nålen visar inkommande signalstyrka (S1-S9, sedan +10, +20, +30 dB)
+                    <br>• Läs av när stationen sänder (PTT nere)
+                    <br>• Ge rapport baserat på genomsnittlig visning (inte max vid fädning!)
+                    <br><br>
+                    <strong>På sändning:</strong>
+                    <br>• Många transceivrar växlar till SWR-meter eller effektmeter
+                    <br>• Visar din EGEN utsignal, inte motpartens!
+                    <br><br>
+                    <strong>Tips:</strong>
+                    <br>• Om signalen fäder mellan S5 och S9, ge genomsnittet: "Du är 57 med QSB"
+                    <br>• Om nålen bara hänger på S1, stationen är väldigt svag: "Du är 21"
+                    <br>• Om nålen slår i taket på S9, kolla +dB-skalan: "Du är 59 plus 20"
+                </div>
+                
+                <h3>📋 Snabb referenstabell - RST</h3>
+                
                 <table class="content-table">
                     <thead>
                         <tr>
-                            <th>Värde</th>
+                            <th>Rapport</th>
+                            <th>Trafiksätt</th>
                             <th>Betydelse</th>
+                            <th>Vanligt scenario</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>1</td><td>Oläsbar</td></tr>
-                        <tr><td>2</td><td>Knappt läsbar, enstaka ord uppfattas</td></tr>
-                        <tr><td>3</td><td>Läsbar med stor svårighet</td></tr>
-                        <tr><td>4</td><td>Läsbar med liten svårighet</td></tr>
-                        <tr><td>5</td><td>Helt läsbar (perfekt)</td></tr>
-                    </tbody>
-                </table>
-                
-                <h3>S - Signalstyrka (1-9)</h3>
-                <table class="content-table">
-                    <thead>
                         <tr>
-                            <th>Värde</th>
-                            <th>Betydelse</th>
-                            <th>Ungefärlig S-meter</th>
+                            <td><strong>59</strong></td>
+                            <td>Foni</td>
+                            <td>Perfekt läsbar, mycket stark</td>
+                            <td>Lokal station, bra förhållanden</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Knappt märkbar signal</td><td>S1</td></tr>
-                        <tr><td>2</td><td>Mycket svag signal</td><td>S2</td></tr>
-                        <tr><td>3</td><td>Svag signal</td><td>S3</td></tr>
-                        <tr><td>4</td><td>Godtagbar signal</td><td>S4</td></tr>
-                        <tr><td>5</td><td>Ganska god signal</td><td>S5</td></tr>
-                        <tr><td>6</td><td>God signal</td><td>S6</td></tr>
-                        <tr><td>7</td><td>Ganska stark signal</td><td>S7</td></tr>
-                        <tr><td>8</td><td>Stark signal</td><td>S8</td></tr>
-                        <tr><td>9</td><td>Mycket stark signal</td><td>S9</td></tr>
-                    </tbody>
-                </table>
-                
-                <p>Signaler över S9 anges som S9+10dB, S9+20dB etc.</p>
-                
-                <h3>T - Ton (1-9, endast CW)</h3>
-                <table class="content-table">
-                    <thead>
                         <tr>
-                            <th>Värde</th>
-                            <th>Betydelse</th>
+                            <td><strong>57</strong></td>
+                            <td>Foni</td>
+                            <td>Perfekt läsbar, ganska stark</td>
+                            <td>Bra DX-kontakt</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Extremt rå växelströmston</td></tr>
-                        <tr><td>5</td><td>Tydligt modulerad ton, musikalisk</td></tr>
-                        <tr><td>7</td><td>Nära ren ton, lätt brum</td></tr>
-                        <tr><td>8</td><td>Nästan perfekt ton, spår av brum</td></tr>
-                        <tr><td>9</td><td>Perfekt ton, ren sinusvåg</td></tr>
+                        <tr>
+                            <td><strong>55</strong></td>
+                            <td>Foni</td>
+                            <td>Perfekt läsbar, medel signal</td>
+                            <td>OK kontakt, fungerar bra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>44</strong></td>
+                            <td>Foni</td>
+                            <td>Läsbar utan större problem, godtagbar styrka</td>
+                            <td>Svag men fungerande kontakt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>33</strong></td>
+                            <td>Foni</td>
+                            <td>Svår att läsa, svag signal</td>
+                            <td>Dåliga förhållanden, gränsen för kontakt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>599</strong></td>
+                            <td>CW</td>
+                            <td>Perfekt läsbar, stark, ren ton</td>
+                            <td>Standard CW-rapport (nästan alltid T9 idag)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>579</strong></td>
+                            <td>CW</td>
+                            <td>Perfekt läsbar, ganska stark, ren ton</td>
+                            <td>Bra CW DX-kontakt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>339</strong></td>
+                            <td>CW</td>
+                            <td>Svår att läsa, svag men ren ton</td>
+                            <td>Svag CW-signal, kräver koncentration</td>
+                        </tr>
                     </tbody>
                 </table>
                 
-                <div class="example-box">
-                    <strong>Exempel:</strong>
-                    <br>• "Du är 59" (foni) = Helt läsbar, mycket stark signal
-                    <br>• "Du är 599" (CW) = Perfekt läsbarhet, styrka och ton
-                    <br>• "Du är 55" (foni) = Läsbar, ganska god signal
-                    <br>• "Du är 339" (CW) = Svår att läsa, svag signal men ren ton
+                <h3>✅ Snabbtest - RST-systemet</h3>
+                
+                <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+                    <strong>✅ Kan du svara på dessa?</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>1. Vad står RST för?</li>
+                        <li>2. Hur många siffror ger man på foni? På CW?</li>
+                        <li>3. Vad betyder "Du är 57"?</li>
+                        <li>4. Vad betyder S9+20dB?</li>
+                        <li>5. Varför ska man inte alltid säga "59"?</li>
+                        <li>6. Vad betyder T9 i RST 599?</li>
+                        <li>7. Hur rapporterar man en signal som fäder mellan S5 och S9?</li>
+                    </ul>
+                    <details style="margin-top: 0.5rem;">
+                        <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+                        <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                            <strong>SVAR:</strong>
+                            <br>1. R = Readability (läsbarhet), S = Strength (styrka), T = Tone (ton)
+                            <br>2. Foni: 2 siffror (RS). CW: 3 siffror (RST)
+                            <br>3. Läsbarhet 5 (perfekt), Styrka 7 (ganska stark signal)
+                            <br>4. Signalen är 20 dB starkare än S9 (mycket stark, ungefär 4x starkare än S9)
+                            <br>5. För att ge ärlig, användbar information. "59" när signalen är svag hjälper ingen.
+                            <br>6. T9 = Perfekt ton (ren sinusvåg). Nästan alla moderna CW-sändare har T9.
+                            <br>7. Ge genomsnittet och nämn fädningen: "Du är 57 med QSB" (fädning mellan S5 och S9)
+                        </div>
+                    </details>
                 </div>
             </div>
-
-            <!-- Sektion 4: Anrop och QSO -->
+            <!-- ============================================ -->
+            <!-- SEKTION 8.4: ANROP OCH QSO -->
+            <!-- ============================================ -->
+            
             <div class="content-section" id="anrop">
                 <h2>8.4 Anrop och QSO</h2>
                 
-                <h3>Innan du sänder</h3>
-                <ol>
-                    <li><strong>Lyssna!</strong> Är frekvensen upptagen?</li>
-                    <li>Fråga "Is this frequency in use?" eller "QRL?"</li>
-                    <li>Vänta på svar innan du börjar</li>
-                </ol>
+                <h3>Innan du sänder - LYSSNA!</h3>
                 
-                <h3>CQ-anrop (allmänt anrop)</h3>
-                <p>När du vill kalla på vem som helst:</p>
+                <p>Det viktigaste du kan göra innan du börjar sända är att <strong>LYSSNA</strong>. Detta låter självklart, men det är förvånansvärt många som glömmer detta!</p>
                 
-                <div class="example-box">
-                    <strong>Foni:</strong>
-                    <br>"CQ CQ CQ, this is Sierra Mike Five X-ray Yankee Zulu, SM5XYZ calling CQ and standing by"
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 SAMTALSBORDS-ANALOGIN:</strong>
                     <br><br>
-                    <strong>Eller på svenska (inom Sverige):</strong>
-                    <br>"CQ CQ CQ, här är SM5XYZ, Sierra Mike Fem X-ray Yankee Zulu, kallar CQ"
+                    Tänk dig att du går in i ett rum fullt med pågående samtal vid olika bord:
+                    <br><br>
+                    ❌ <strong>Dåligt:</strong> Ropa "HALLÅ!" utan att kolla om någon redan pratar vid det bord du vill sitta vid
+                    <br>✅ <strong>Bra:</strong> Stanna, lyssna om bordet är ledigt, fråga "Är det ledigt här?", SEDAN sätt dig
+                    <br><br>
+                    På radio är det exakt samma sak - frekvensen är "bordet" och du måste kolla om det är ledigt!
                 </div>
                 
-                <h3>Svara på CQ</h3>
-                <div class="example-box">
-                    <strong>Exempel:</strong>
-                    <br>"SM5XYZ, this is SM0ABC, Sierra Mike Zero Alfa Bravo Charlie, over"
+                <h3>📋 Checklista innan du sänder</h3>
+                
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #1e40af;">✅ FÖRE DU TRYCKER PTT</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr style="background: #fef3c7;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #3b82f6;">
+                                <strong>1. LYSSNA i minst 30 sekunder</strong>
+                                <br>• Är frekvensen upptagen?
+                                <br>• Pågår det en kontakt?
+                                <br>• Är det en nätfrekvens eller DX pile-up?
+                            </td>
+                        </tr>
+                        <tr style="background: #dbeafe;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #3b82f6;">
+                                <strong>2. FRÅGA om frekvensen är ledig</strong>
+                                <br>• På engelska: "Is this frequency in use?"
+                                <br>• På svenska: "Är frekvensen upptagen?"
+                                <br>• Eller kort: "QRL?" (Q-kod för "är frekvensen upptagen?")
+                            </td>
+                        </tr>
+                        <tr style="background: #fce7f3;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #3b82f6;">
+                                <strong>3. VÄNTA på svar</strong>
+                                <br>• Vänta minst 5-10 sekunder
+                                <br>• Om någon svarar "Yes" eller "QRL" → byt frekvens!
+                                <br>• Om tyst → fortsätt till nästa steg
+                            </td>
+                        </tr>
+                        <tr style="background: #d1fae5;">
+                            <td style="padding: 1rem;">
+                                <strong>4. NU kan du börja sända</strong>
+                                <br>• Antingen CQ-anrop (allmänt anrop)
+                                <br>• Eller riktat anrop till specifik station
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 
-                <h3>Riktat anrop</h3>
-                <p>När du vill kalla på en specifik station:</p>
-                <div class="example-box">
-                    "SM0ABC SM0ABC, this is SM5XYZ, over"
+                <div class="info-box warning" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+                    <strong>⚠️ VARFÖR ÄR DETTA SÅ VIKTIGT?</strong>
+                    <br><br>
+                    <strong>Om du inte lyssnar först kan du:</strong>
+                    <br>• Störa pågående kontakter (QRM för andra)
+                    <br>• Förstöra någons viktiga DX-kontakt
+                    <br>• Bryta mot trafikregler
+                    <br>• Bli arga tillrop och "röd flagga" i community
+                    <br><br>
+                    <em>💡 "Lyssna först, sända sedan" är radioamatörens gyllene regel!</em>
                 </div>
                 
-                <h3>Struktur för ett QSO</h3>
-                <ol>
-                    <li><strong>Inledning:</strong> Signaler, namn, QTH</li>
-                    <li><strong>Rapport:</strong> RST</li>
-                    <li><strong>Information:</strong> Utrustning, antenn, väder, etc.</li>
-                    <li><strong>Avslutning:</strong> Tack, 73, signaler</li>
-                </ol>
+                <h3>CQ-anrop - Allmänt anrop</h3>
                 
-                <div class="example-box">
-                    <strong>Typiskt kort QSO:</strong>
+                <p>Ett <strong>CQ-anrop</strong> betyder "jag söker kontakt med vem som helst". Det är det vanligaste sättet att initiera kontakt på HF-banden.</p>
+                
+                <h4>🔷 Hur gör man ett CQ-anrop?</h4>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6;">
+                    <strong>📻 EXEMPEL - CQ-anrop på engelska (HF/internationellt):</strong>
                     <br><br>
-                    <em>SM0ABC:</em> "SM5XYZ, you are 59, name is Johan, QTH Stockholm. How copy? Over."
-                    <br><br>
-                    <em>SM5XYZ:</em> "SM0ABC, thanks for the 59. You are also 59. Name here is Erik, QTH Uppsala. Thanks for the call, 73!"
-                    <br><br>
-                    <em>SM0ABC:</em> "73, SM0ABC clear with SM5XYZ."
+                    <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        "CQ CQ CQ, this is Sierra Mike Five X-ray Yankee Zulu,
+                        <br>SM5XYZ calling CQ and standing by"
+                    </div>
+                    <br>
+                    <strong>Uppdelning:</strong>
+                    <br>• <strong>CQ CQ CQ</strong> = Allmänt anrop (säg 3 gånger)
+                    <br>• <strong>this is</strong> = "detta är" (kan också säga "de" från franskans "de")
+                    <br>• <strong>Sierra Mike Five X-ray Yankee Zulu</strong> = Din signal fonetiskt
+                    <br>• <strong>SM5XYZ</strong> = Din signal normalt (efter fonetiskt)
+                    <br>• <strong>calling CQ</strong> = Kallar CQ (upprepa vad du gör)
+                    <br>• <strong>standing by</strong> = Står redo / väntar på svar
                 </div>
                 
-                <h3>DX-kontakter</h3>
-                <p>Vid DX (långdistans) hålls QSO:t ofta kortare:</p>
-                <ul>
-                    <li>Signal och rapport</li>
-                    <li>Tack och 73</li>
-                    <li>Nästa station</li>
-                </ul>
+                <div class="example-box" style="border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>📻 EXEMPEL - CQ-anrop på svenska (inom Sverige):</strong>
+                    <br><br>
+                    <div style="background: #f0fdfa; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        "CQ CQ CQ, här är SM5XYZ, Sierra Mike Fem X-ray Yankee Zulu,
+                        <br>kallar CQ och lyssnar"
+                    </div>
+                    <br>
+                    <strong>Notera:</strong>
+                    <br>• På svenska säger man "här är" istället för "this is"
+                    <br>• "lyssnar" eller "står redo" istället för "standing by"
+                    <br>• Samma struktur annars!
+                </div>
                 
-                <h3>Pile-up</h3>
-                <p>När många stationer anropar samtidigt (t.ex. en sällsynt DX-station):</p>
-                <ul>
-                    <li><strong>Lyssna först</strong> på DX-stationens instruktioner</li>
-                    <li><strong>Split:</strong> DX lyssnar på annan frekvens än den sänder på</li>
-                    <li><strong>Anropa kort:</strong> Bara din signal en gång</li>
-                    <li><strong>Vänta på din tur</strong></li>
-                </ul>
+                <h4>💡 Tips för bra CQ-anrop</h4>
                 
-                <div class="info-box tip">
-                    <strong>💡 Pile-up-etikett:</strong> Anropa INTE om du inte hört DX-stationen själv. Respektera instruktioner om split, "EU only", "JA only" etc.
+                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr>
+                            <td style="padding: 1rem;">
+                                <strong>✅ GÖR:</strong>
+                                <br><br>
+                                • Säg din signal TYDLIGT och LÅNGSAMT
+                                <br>• Använd fonetiskt alfabet (särskilt första gången)
+                                <br>• Säg "CQ" tre gånger
+                                <br>• Pausa mellan upprepningar
+                                <br>• Lyssna minst 10 sekunder mellan anrop
+                                <br>• Upprepa 2-3 gånger, SEDAN lyssna längre
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-top: 2px solid #f59e0b;">
+                                <strong>❌ UNDVIK:</strong>
+                                <br><br>
+                                • Säga "CQ CQ CQ..." i 5 minuter utan paus
+                                <br>• Prata för snabbt (speciellt din signal!)
+                                <br>• Glömma lyssna mellan anrop
+                                <br>• Säga din signal bara en gång
+                                <br>• Använda endast bokstäver utan fonetiskt (första gången)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Svara på CQ - Hur gör man?</h3>
+                
+                <p>När du hör någon kalla CQ och vill svara, gör så här:</p>
+                
+                <div class="example-box" style="border-left: 4px solid #8b5cf6;">
+                    <strong>📻 EXEMPEL - Svara på CQ:</strong>
+                    <br><br>
+                    <strong>SM5XYZ kallar:</strong> "CQ CQ CQ this is SM5XYZ standing by"
+                    <br><br>
+                    <strong>Du svarar (SM0ABC):</strong>
+                    <br><br>
+                    <div style="background: #faf5ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        "SM5XYZ, this is SM0ABC, Sierra Mike Zero Alfa Bravo Charlie, over"
+                    </div>
+                    <br>
+                    <strong>Uppdelning:</strong>
+                    <br>• <strong>SM5XYZ</strong> = Stationen du anropar (säg först!)
+                    <br>• <strong>this is</strong> = "detta är"
+                    <br>• <strong>SM0ABC</strong> = Din signal (normalt)
+                    <br>• <strong>Sierra Mike Zero...</strong> = Din signal fonetiskt
+                    <br>• <strong>over</strong> = Över till dig / jag är klar
+                </div>
+                
+                <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>💡 VIKTIGT:</strong>
+                    <br><br>
+                    • Säg MOTPARTENS signal FÖRST (så han vet att DU svarar på HONOM)
+                    <br>• Säg din egen signal fonetiskt (han kanske inte hörde dig perfekt)
+                    <br>• Håll det kort - han vill veta VEM som svarar, inte din livshistoria (än!)
+                </div>
+                
+                <h3>Riktat anrop - Kalla en specifik station</h3>
+                
+                <p>Ibland vill du kalla på en <strong>specifik station</strong> istället för "vem som helst". Då gör du ett riktat anrop:</p>
+                
+                <div class="example-box" style="border-left: 4px solid #db2777;">
+                    <strong>📻 EXEMPEL - Riktat anrop:</strong>
+                    <br><br>
+                    Du vill prata med SM0ABC:
+                    <br><br>
+                    <div style="background: #fdf2f8; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        "SM0ABC SM0ABC, this is SM5XYZ, SM5XYZ calling, over"
+                    </div>
+                    <br>
+                    <strong>Uppdelning:</strong>
+                    <br>• <strong>SM0ABC SM0ABC</strong> = Stationen du vill nå (säg 2-3 gånger)
+                    <br>• <strong>this is SM5XYZ</strong> = Detta är du
+                    <br>• <strong>calling</strong> = Anropar
+                    <br>• <strong>over</strong> = Över till dig
+                    <br><br>
+                    <em>💡 Säg målstationens signal FLERA gånger så han hör att det är HAN som anropas!</em>
+                </div>
+                
+                <h3>Struktur för ett komplett QSO</h3>
+                
+                <p>Ett typiskt QSO (radiosamtal) följer en ganska fast struktur. Här är hur det går till steg-för-steg:</p>
+                
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 3px solid #0ea5e9; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #0369a1;">📝 FULLSTÄNDIGT QSO - STEG FÖR STEG</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr style="background: #fef3c7;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #0ea5e9;">
+                                <strong>1. INLEDNING - Hälsning och signal</strong>
+                                <br><br>
+                                "Good morning! Thanks for the call. You are 59 here in Uppsala."
+                                <br><br>
+                                <em>Ge: RST-rapport + din QTH (plats)</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #dbeafe;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #0ea5e9;">
+                                <strong>2. PRESENTATION - Namn och info</strong>
+                                <br><br>
+                                "My name is Erik, Echo Romeo India Kilo. How copy?"
+                                <br><br>
+                                <em>Ge: Ditt namn (fonetiskt första gången) + fråga om han hör</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #fce7f3;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #0ea5e9;">
+                                <strong>3. UTRUSTNING (valfritt men vanligt)</strong>
+                                <br><br>
+                                "My rig here is an Icom IC-7300, running 100 watts to a dipole antenna."
+                                <br><br>
+                                <em>Berätta: Radio, effekt, antenn (om intresserad!)</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #d1fae5;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #0ea5e9;">
+                                <strong>4. SAMTAL (valfri längd)</strong>
+                                <br><br>
+                                Prata om: Väder, jobb, hobbies, tidigare DX-kontakter, antenner...
+                                <br><br>
+                                <em>Detta kan vara 30 sekunder eller 30 minuter!</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #86efac;">
+                            <td style="padding: 1rem;">
+                                <strong>5. AVSLUTNING - Tack och 73</strong>
+                                <br><br>
+                                "Thanks for the nice QSO Erik, 73 and hope to catch you again soon!"
+                                <br>"SM5XYZ from SM0ABC, 73 and clear."
+                                <br><br>
+                                <em>Alltid: Tack + 73 (vänliga hälsningar) + signaler</em>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>📻 Fullständigt exempel - Helt QSO</h3>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6; background: #f8fafc;">
+                    <strong>KOMPLETT QSO mellan SM5XYZ (Erik) och SM0ABC (Johan):</strong>
+                    <br><br>
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM5XYZ (Erik):</strong>
+                        <br>"CQ CQ CQ, this is SM5XYZ, Sierra Mike Five X-ray Yankee Zulu, calling CQ and standing by."
+                    </div>
+                    
+                    <div style="background: #fce7f3; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM0ABC (Johan):</strong>
+                        <br>"SM5XYZ, this is SM0ABC, Sierra Mike Zero Alfa Bravo Charlie, over."
+                    </div>
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM5XYZ (Erik):</strong>
+                        <br>"SM0ABC, good afternoon! Thanks for the call. You are 59, readability 5 and strength 9 here in Uppsala. My name is Erik, Echo Romeo India Kilo. How do you copy? Over."
+                    </div>
+                    
+                    <div style="background: #fce7f3; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM0ABC (Johan):</strong>
+                        <br>"SM5XYZ from SM0ABC. Thanks Erik! You are also 59 here in Stockholm. Name here is Johan, Juliet Oscar Hotel Alfa November. Nice to meet you! My rig is a Yaesu FT-991A with 100 watts to a vertical antenna. What's your setup? Over."
+                    </div>
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM5XYZ (Erik):</strong>
+                        <br>"Roger Johan, nice setup! I'm running an Icom IC-7300 with about 80 watts into a dipole at 10 meters height. Weather here is sunny and nice today. How's the weather in Stockholm? Over."
+                    </div>
+                    
+                    <div style="background: #fce7f3; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM0ABC (Johan):</strong>
+                        <br>"SM5XYZ, same here - beautiful sunny day! Good day for radio. Well Erik, I need to QRT soon, but thanks for the nice contact. Hope to catch you again on the bands. 73 to you and your family! SM0ABC clear with SM5XYZ."
+                    </div>
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>SM5XYZ (Erik):</strong>
+                        <br>"Thanks Johan, 73 and take care! SM5XYZ clear and listening."
+                    </div>
+                </div>
+                
+                <h3>DX-kontakter - Kortare protokoll</h3>
+                
+                <p>När du pratar med <strong>DX</strong> (långdistans, speciellt sällsynta länder), hålls QSO:t ofta mycket kortare:</p>
+                
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 VARFÖR KORTA DX-KONTAKTER?</strong>
+                    <br><br>
+                    • Sällsynt DX-station kanske har 100+ stationer som vill prata!
+                    <br>• Signalen kanske är svag och instabil
+                    <br>• Propagation kan försvinna när som helst
+                    <br>• Respektera tiden - ge andra chans också!
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #f59e0b;">
+                    <strong>📻 EXEMPEL - Kort DX-kontakt:</strong>
+                    <br><br>
+                    <strong>SM5XYZ anropar:</strong> "CQ DX, this is SM5XYZ"
+                    <br><strong>JA1ABC svarar:</strong> "SM5XYZ, JA1ABC"
+                    <br><br>
+                    <strong>SM5XYZ:</strong> "JA1ABC, thanks! You are 55, name Erik, QTH Uppsala Sweden. QSL?"
+                    <br><br>
+                    <strong>JA1ABC:</strong> "QSL, UR 57, name Yoshi, QTH Tokyo. 73 thanks!"
+                    <br><br>
+                    <strong>SM5XYZ:</strong> "73 Yoshi, sayonara! SM5XYZ clear."
+                    <br><br>
+                    <em>🎯 Totalt: Kanske 60 sekunder! Signal + Namn + QTH + Tack + 73. KLART!</em>
+                </div>
+                
+                <h3>Pile-up - När många anropar samtidigt</h3>
+                
+                <p>En <strong>pile-up</strong> uppstår när många stationer försöker anropa samma DX-station samtidigt. Detta är vanligt för sällsynta länder eller speciella event.</p>
+                
+                <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border: 3px solid #dc2626; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #991b1b;">🚨 PILE-UP ETIKETT - VIKTIG!</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr>
+                            <td style="padding: 1rem;">
+                                <strong>✅ GÖR:</strong>
+                                <br><br>
+                                <strong>1. LYSSNA FÖRST!</strong>
+                                <br>• Hur arbetar DX-stationen? Split? Vilken frekvens lyssnar han på?
+                                <br>• Vilka stationer lyckas komma igenom?
+                                <br>• Anropar han specifika områden? ("EU only", "JA only", "5 land only")
+                                <br><br>
+                                <strong>2. Anropa KORT</strong>
+                                <br>• Bara din signal EN gång: "SM5XYZ"
+                                <br>• Kanske fonetiskt om han inte hör: "Sierra Mike Five X-ray Yankee Zulu"
+                                <br>• INGET mer! Ingen "this is", ingen "calling", ingen rapport!
+                                <br><br>
+                                <strong>3. VÄNTA på din tur</strong>
+                                <br>• Om DX inte svarar dig → VÄNTA
+                                <br>• Anropa igen efter 30-60 sekunder
+                                <br>• Tålamod är en dygd!
+                                <br><br>
+                                <strong>4. Följ instruktioner</strong>
+                                <br>• Om han säger "EU only" och du är SM5 → anropa!
+                                <br>• Om han säger "JA only" och du är SM5 → VÄNTA!
+                                <br>• Om han säger "5 land only" och du är SM5 → anropa!
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-top: 2px solid #dc2626;">
+                                <strong>❌ GÖR INTE:</strong>
+                                <br><br>
+                                • Anropa om du inte hört DX själv (no blind calling!)
+                                <br>• Säga "CQ DX this is SM5XYZ..." i en pile-up (tar för lång tid!)
+                                <br>• Anropa när han sa "JA only" och du inte är från Japan
+                                <br>• Köra QRO (hög effekt) för att "vinna" över andra (dålig sportmanship!)
+                                <br>• Anropa upprepade gånger utan paus ("TAILGATING")
+                                <br>• Bli arg och börja störa andra (ALDRIG OK!)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Split-operation i pile-ups</h3>
+                
+                <p><strong>Split</strong> betyder att DX-stationen sänder på en frekvens men lyssnar på EN ANNAN frekvens. Detta används för att undvika kaos!</p>
+                
+                <div class="example-box" style="border-left: 4px solid #8b5cf6;">
+                    <strong>📻 EXEMPEL - Split operation:</strong>
+                    <br><br>
+                    <strong>DX-station sänder på:</strong> 14.195 MHz
+                    <br><strong>DX lyssnar på:</strong> 14.200-14.210 MHz ("listening 5 up")
+                    <br><br>
+                    <strong>Vad betyder "5 up"?</strong>
+                    <br>→ Han lyssnar 5 kHz HÖGRE än sin TX-frekvens
+                    <br>→ 14.195 + 0.005 = 14.200 MHz
+                    <br><br>
+                    <strong>Hur ställer du in din radio?</strong>
+                    <br>1. Ställ VFO-A på 14.195 MHz (lyssna på DX här)
+                    <br>2. Ställ VFO-B på 14.200 MHz (sända här)
+                    <br>3. Aktivera SPLIT-läge
+                    <br>4. När du trycker PTT → sänder på 14.200, hör på 14.195!
+                </div>
+                
+                <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669; margin-top: 1rem;">
+                    <strong>💡 VARFÖR SPLIT?</strong>
+                    <br><br>
+                    Utan split:
+                    <br>• 100 stationer anropar DX på 14.195 samtidigt
+                    <br>• DX hör bara kaos (QRM)
+                    <br>• Ingen kommer igenom!
+                    <br><br>
+                    Med split:
+                    <br>• DX sänder "rent" på 14.195
+                    <br>• Alla anropar mellan 14.200-14.210 (10 kHz "spridning")
+                    <br>• DX kan välja ut enskilda stationer i sitt lyssningsområde
+                    <br>• Mycket mer organiserat!
+                </div>
+                
+                <h3>✅ Snabbtest - Anrop och QSO</h3>
+                
+                <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+                    <strong>✅ Kan du svara på dessa?</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>1. Vad är det första du ska göra innan du sänder?</li>
+                        <li>2. Hur frågar du om frekvensen är ledig?</li>
+                        <li>3. Vad betyder CQ?</li>
+                        <li>4. Hur svarar du på ett CQ-anrop?</li>
+                        <li>5. Vilka 5 delar ingår i ett typiskt QSO?</li>
+                        <li>6. Varför är DX-kontakter kortare än lokala kontakter?</li>
+                        <li>7. Vad betyder "listening 5 up" i en pile-up?</li>
+                        <li>8. Vad ska du INTE göra i en pile-up?</li>
+                    </ul>
+                    <details style="margin-top: 0.5rem;">
+                        <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+                        <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                            <strong>SVAR:</strong>
+                            <br>1. LYSSNA! Minst 30 sekunder för att kolla om frekvensen är upptagen
+                            <br>2. "Is this frequency in use?" eller "QRL?"
+                            <br>3. CQ = "Seek You" - allmänt anrop till vem som helst
+                            <br>4. Säg motpartens signal först, sedan din signal fonetiskt: "SM5XYZ this is SM0ABC, Sierra Mike Zero Alfa Bravo Charlie, over"
+                            <br>5. 1) Hälsning och RST, 2) Namn, 3) Utrustning (valfritt), 4) Samtal, 5) Avslutning med 73
+                            <br>6. Många vill prata med DX, signalen kan vara svag/instabil, propagation kan försvinna
+                            <br>7. DX-stationen lyssnar 5 kHz högre än sin sändningsfrekvens (t.ex. TX 14.195, RX 14.200)
+                            <br>8. Anropa utan att ha hört DX, ignorera instruktioner ("JA only"), "tailgate" (anropa upprepat utan paus), bli arg och störa
+                        </div>
+                    </details>
                 </div>
             </div>
-
-            <!-- Sektion 5: Foni -->
+            <!-- ============================================ -->
+            <!-- SEKTION 8.5: FONI (TAL) -->
+            <!-- ============================================ -->
+            
             <div class="content-section" id="foni">
                 <h2>8.5 Foni (Taltrafik)</h2>
                 
-                <h3>Trafiksätt</h3>
-                <ul>
-                    <li><strong>SSB (Single Sideband):</strong> Standard på HF
-                        <ul>
-                            <li>LSB under 10 MHz</li>
-                            <li>USB på 10 MHz och uppåt</li>
-                        </ul>
-                    </li>
-                    <li><strong>FM:</strong> Standard på VHF/UHF (2m, 70cm)</li>
-                    <li><strong>AM:</strong> Används sällan, mest på 10m</li>
-                </ul>
+                <h3>Vad är foni?</h3>
+                <p><strong>Foni</strong> (från grekiska "phonē" = ljud/röst) betyder helt enkelt <strong>taltrafik</strong> - när du pratar med din röst via mikrofonen istället för morsekod eller digitala modes.</p>
                 
-                <h3>Mikrofonteknik</h3>
-                <ul>
-                    <li>Håll lagom avstånd (5-10 cm)</li>
-                    <li>Tala tydligt, inte för fort</li>
-                    <li>Undvik bakgrundsljud</li>
-                    <li>Kontrollera ALC-mätaren (ska inte slå i taket)</li>
-                </ul>
-                
-                <h3>FM Simplex</h3>
-                <p>Direkt kommunikation på samma frekvens.</p>
-                <ul>
-                    <li><strong>Anropsfrekvens 2m:</strong> 145,500 MHz</li>
-                    <li><strong>Anropsfrekvens 70cm:</strong> 433,500 MHz</li>
-                    <li>Flytta till annan frekvens efter kontakt etablerad (QSY)</li>
-                </ul>
-                
-                <h3>FM Repeater</h3>
-                <p>Via automatisk repeater för utökad räckvidd.</p>
-                <ul>
-                    <li>Repeatern tar emot på en frekvens, sänder på en annan</li>
-                    <li><strong>Shift 2m:</strong> ±600 kHz</li>
-                    <li><strong>Shift 70cm:</strong> ±1,6 MHz eller ±7,6 MHz</li>
-                    <li>Många repeatrar kräver CTCSS-subtoner</li>
-                </ul>
-                
-                <div class="example-box">
-                    <strong>Repeateranrop:</strong>
-                    <br>"SM5XYZ lyssnar på [repeaterns anropssignal]"
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 TELEFON-ANALOGIN:</strong>
                     <br><br>
-                    <strong>Eller CQ via repeater:</strong>
-                    <br>"CQ via SK5RN, detta är SM5XYZ"
+                    Foni på radio är som att ringa ett telefonsamtal, fast:
+                    <br><br>
+                    ✅ Du kan nå hela världen utan att betala (gratis!)
+                    <br>✅ Många kan lyssna samtidigt
+                    <br>✅ Du kan prata med främlingar och bli vänner
+                    <br><br>
+                    ❌ Bara en person kan prata åt gången (inte duplex som telefon)
+                    <br>❌ Du måste följa trafikregler och etikett
+                    <br>❌ Signalen kan vara svag eller störd
+                </div>
+                
+                <h3>Olika modulationstyper för foni</h3>
+                
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #1e40af;">📻 MODULATIONSTYPER FÖR TAL</h4>
+                    
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%;">Typ</th>
+                                <th style="width: 25%;">Var används det?</th>
+                                <th style="width: 30%;">Fördelar</th>
+                                <th style="width: 30%;">Nackdelar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>SSB</strong><br>(Single Sideband)</td>
+                                <td>
+                                    <strong>HF-banden</strong>
+                                    <br>• 160m-10m
+                                    <br>• Långdistans/DX
+                                    <br>• Amatörradio standard
+                                </td>
+                                <td>
+                                    ✅ Effektivt (3x bättre än AM)
+                                    <br>✅ Smal bandbredd (2,4 kHz)
+                                    <br>✅ Bäst för svaga signaler
+                                    <br>✅ Standard på HF
+                                </td>
+                                <td>
+                                    ❌ Kräver noggrann avstämning
+                                    <br>❌ Låter "konstigt" om fel inställd
+                                    <br>❌ Kräver SSB-läge i radion
+                                </td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>FM</strong><br>(Frequency Modulation)</td>
+                                <td>
+                                    <strong>VHF/UHF</strong>
+                                    <br>• 2m-bandet (144 MHz)
+                                    <br>• 70cm (432 MHz)
+                                    <br>• Repeatrar
+                                    <br>• Handhållna radioapparater
+                                </td>
+                                <td>
+                                    ✅ Mycket bra ljudkvalitet
+                                    <br>✅ Störningstålig
+                                    <br>✅ Enkelt att använda
+                                    <br>✅ "Capture effect" (stark tar över)
+                                </td>
+                                <td>
+                                    ❌ Stor bandbredd (12-16 kHz)
+                                    <br>❌ Fungerar dåligt med svaga signaler
+                                    <br>❌ Inte bra för DX på HF
+                                </td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>AM</strong><br>(Amplitude Modulation)</td>
+                                <td>
+                                    <strong>Sällan!</strong>
+                                    <br>• Flygradio (118-137 MHz)
+                                    <br>• 10m-bandet (ibland)
+                                    <br>• Rundradio (långvåg/mellanvåg)
+                                </td>
+                                <td>
+                                    ✅ Enkel mottagare
+                                    <br>✅ "Klassisk" känsla
+                                </td>
+                                <td>
+                                    ❌ Ineffektiv (66% slöseri!)
+                                    <br>❌ Stor bandbredd
+                                    <br>❌ Störningskänslig
+                                    <br>❌ Nästan aldrig använd i amatörradio
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>SSB på HF - LSB vs USB</h3>
+                
+                <div class="info-box important" style="background: #fef3c7; border-left: 4px solid #f59e0b;">
+                    <strong>🎯 VIKTIG REGEL - LSB vs USB:</strong>
+                    <br><br>
+                    Det finns en fast tradition inom amatörradio:
+                    <br><br>
+                    <strong>UNDER 10 MHz → LSB (Lower Sideband)</strong>
+                    <br>• 160m-bandet (1,8 MHz): <strong>LSB</strong>
+                    <br>• 80m-bandet (3,5 MHz): <strong>LSB</strong>
+                    <br>• 40m-bandet (7 MHz): <strong>LSB</strong>
+                    <br><br>
+                    <strong>PÅ OCH ÖVER 10 MHz → USB (Upper Sideband)</strong>
+                    <br>• 20m-bandet (14 MHz): <strong>USB</strong>
+                    <br>• 15m-bandet (21 MHz): <strong>USB</strong>
+                    <br>• 10m-bandet (28 MHz): <strong>USB</strong>
+                    <br>• VHF/UHF: <strong>USB</strong> (men oftast FM här!)
+                    <br><br>
+                    <em>💡 Minnesregel: "Över tio, övre!" (USB)</em>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6;">
+                    <strong>🤔 Varför denna regel?</strong>
+                    <br><br>
+                    <strong>Historisk anledning:</strong>
+                    <br>Gamla AM-sändare på kortvåg använde LSB på lägre frekvenser och USB på högre. När SSB kom fortsatte man samma tradition för att undvika förvirring.
+                    <br><br>
+                    <strong>Praktisk anledning idag:</strong>
+                    <br>Om ALLA följer samma regel kan man lätt hitta varandra! Om du lyssnar på 7.100 MHz och hör konstiga ljud → kolla att du är på LSB, inte USB!
+                    <br><br>
+                    <em>🎯 Moderna transceivrar ställer ofta in LSB/USB automatiskt baserat på bandet!</em>
+                </div>
+                
+                <h3>Mikrofonteknik - Så pratar du rätt</h3>
+                
+                <p>Hur du håller mikrofonen och pratar påverkar signalkvaliteten enormt!</p>
+                
+                <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #047857;">🎤 PERFEKT MIKROFONTEKNIK</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr style="background: #fef3c7;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>1. AVSTÅND TILL MIKROFONEN</strong>
+                                <br><br>
+                                <strong>✅ Optimalt: 5-10 cm från läpparna</strong>
+                                <br>• För nära (< 3 cm) → bas-överbelastning, "puffljud", distorsion
+                                <br>• För långt (> 15 cm) → svag signal, mycket bakgrundsbrus
+                                <br><br>
+                                💡 <em>Testa genom att lyssna på din egen signal med en annan mottagare!</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #dbeafe;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>2. TALHASTIGHET</strong>
+                                <br><br>
+                                <strong>✅ Prata LÅNGSAMMARE än normalt</strong>
+                                <br>• Normal konversation: ~150 ord/minut
+                                <br>• Bra radio-hastighet: ~100-120 ord/minut
+                                <br>• Speciellt långsamt vid DX eller dåliga förhållanden: ~80 ord/minut
+                                <br><br>
+                                💡 <em>Pausa mellan meningar så motparten hinner uppfatta!</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #fce7f3;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>3. TYDLIGHET</strong>
+                                <br><br>
+                                <strong>✅ Artikulera tydligt</strong>
+                                <br>• Öppna munnen ordentligt
+                                <br>• Betona konsonanter (P, T, K, S)
+                                <br>• Undvik att mumla
+                                <br><br>
+                                ❌ "Smsvxyzhär" (otydligt, snabbt)
+                                <br>✅ "Sierra - Mike - Five - X-ray - Yankee - Zulu" (tydligt, pausat)
+                            </td>
+                        </tr>
+                        <tr style="background: #ede9fe;">
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>4. BAKGRUNDSLJUD</strong>
+                                <br><br>
+                                <strong>✅ Minimera störningar</strong>
+                                <br>• Stäng fönster (trafik, vind)
+                                <br>• Tysta fläktar och datorer om möjligt
+                                <br>• Flytta undan från brummande nätaggregat
+                                <br>• Sätt radion i VOX-läge eller använd headset för hands-free
+                                <br><br>
+                                💡 <em>VOX (Voice Operated Xmit) = automatisk sändning när du pratar</em>
+                            </td>
+                        </tr>
+                        <tr style="background: #fee2e2;">
+                            <td style="padding: 1rem;">
+                                <strong>5. ALC-KONTROLL (viktigast!)</strong>
+                                <br><br>
+                                <strong>⚠️ KRITISKT: Kolla ALC-metern!</strong>
+                                <br>• ALC = Automatic Level Control
+                                <br>• Metern visar om du "övermodulerar" (pratar för högt/nära)
+                                <br><br>
+                                ✅ <strong>Bra:</strong> ALC rör sig lite, kanske upp till 30-50% av skalan
+                                <br>❌ <strong>Dåligt:</strong> ALC slår i taket (100%) = ÖVERMODULERING!
+                                <br><br>
+                                <strong>Övermodulering ger:</strong>
+                                <br>• Distorsion ("splatter")
+                                <br>• Störningar på närliggande frekvenser
+                                <br>• Din signal låter förvrängd och ful
+                                <br>• Folk blir arga på dig!
+                                <br><br>
+                                💡 <em>Lösning: Flytta mikrofonen längre bort ELLER sänk mikrofonförstärkningen</em>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="example-box" style="border-left: 4px solid #dc2626;">
+                    <strong>⚠️ VANLIGA MIKROFONFEL:</strong>
+                    <br><br>
+                    <strong>1. "Puff-ljudet"</strong>
+                    <br>Problem: För nära mikrofon + hårda P/B/T-ljud
+                    <br>Lösning: Håll mikrofonen 5-10 cm bort, prata förbi den (inte rakt in)
+                    <br><br>
+                    <strong>2. "Distorsion/splatter"</strong>
+                    <br>Problem: Övermodulering, ALC slår i taket
+                    <br>Lösning: Sänk mikrofonförstärkningen eller flytta mikrofonen längre bort
+                    <br><br>
+                    <strong>3. "Dålig audio, svag signal"</strong>
+                    <br>Problem: För långt från mikrofonen, pratar för tyst
+                    <br>Lösning: Närmare mikrofon, prata tydligare/högre
+                    <br><br>
+                    <strong>4. "Bakgrundsbrus"</strong>
+                    <br>Problem: Fläktar, datorer, trafik hörs
+                    <br>Lösning: Flytta utrustning, stäng fönster, använd noise gate
+                </div>
+                
+                <h3>FM Simplex - Direkt kommunikation</h3>
+                
+                <p><strong>Simplex</strong> betyder att båda stationer sänder och tar emot på SAMMA frekvens. Ingen repeater inblandad - direkt kontakt!</p>
+                
+                <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border: 3px solid #db2777; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #9f1239;">📻 FM SIMPLEX - ANROPSFREKVENSER</h4>
+                    
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">Band</th>
+                                <th style="width: 30%;">Anropsfrekvens</th>
+                                <th style="width: 50%;">Användning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: white;">
+                                <td><strong>2m (VHF)</strong></td>
+                                <td><strong>145,500 MHz</strong></td>
+                                <td>
+                                    <strong>Viktigaste simplex-frekvensen!</strong>
+                                    <br>• Anropa här, sedan QSY till annan frekvens
+                                    <br>• Används över hela Europa
+                                    <br>• Räckvidd: 5-50 km (beroende på terräng)
+                                </td>
+                            </tr>
+                            <tr style="background: white;">
+                                <td><strong>70cm (UHF)</strong></td>
+                                <td><strong>433,500 MHz</strong></td>
+                                <td>
+                                    Simplex-anrop på 70cm
+                                    <br>• Kortare räckvidd än 2m
+                                    <br>• Bättre för stadsmiljö (penetrerar byggnader bättre)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px;">
+                        <strong style="color: #9f1239;">💡 HUR SIMPLEX FUNGERAR:</strong>
+                        <br><br>
+                        <strong>Steg 1:</strong> Anropa på 145,500 MHz
+                        <br>"CQ på 145,500, detta är SM5XYZ, lyssnar"
+                        <br><br>
+                        <strong>Steg 2:</strong> Någon svarar
+                        <br>"SM5XYZ, här är SM0ABC"
+                        <br><br>
+                        <strong>Steg 3:</strong> Flytta (QSY) till annan frekvens för QSO
+                        <br>"Tack SM0ABC, ska vi QSY till 145,525?"
+                        <br>"QSL, QSY 145,525"
+                        <br><br>
+                        <strong>Steg 4:</strong> Fortsätt samtalet på 145,525 MHz
+                        <br><br>
+                        <em>🎯 Detta frigör 145,500 för andra som vill anropa!</em>
+                    </div>
+                </div>
+                
+                <h3>FM Repeater - Utökad räckvidd</h3>
+                
+                <p>En <strong>repeater</strong> är en automatisk station som tar emot din signal på en frekvens och sänder ut den på en annan frekvens med högre effekt och bättre antenn-placering. Detta ger dig mycket längre räckvidd!</p>
+                
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 MEGAFON-ANALOGIN:</strong>
+                    <br><br>
+                    Tänk på repeatern som en megafon på toppen av ett berg:
+                    <br><br>
+                    <strong>Utan repeater (simplex):</strong>
+                    <br>• Du ropar från din trädgård
+                    <br>• Grannarna hör dig (5 km)
+                    <br><br>
+                    <strong>Med repeater:</strong>
+                    <br>• Du viskar till repeatern
+                    <br>• Repeatern ropar ut ditt meddelande från bergstoppen med megafon!
+                    <br>• Hela staden hör dig (50-100 km!)
+                </div>
+                
+                <h4>Hur fungerar en repeater?</h4>
+                
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #1e40af;">📡 REPEATER-PRINCIP</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #3b82f6;">
+                                <strong>1. DU SÄNDER (TX) på en frekvens</strong>
+                                <br>Exempel: 145,6125 MHz (in-frekvens / input)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #3b82f6;">
+                                <strong>2. REPEATERN TAR EMOT på samma frekvens</strong>
+                                <br>Repeatern lyssnar på 145,6125 MHz
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #3b82f6;">
+                                <strong>3. REPEATERN SÄNDER UT (TX) på annan frekvens</strong>
+                                <br>Exempel: 145,0125 MHz (ut-frekvens / output)
+                                <br>Med hög effekt (10-100W) från bra plats (bergstopp, torn)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">
+                                <strong>4. ANDRA LYSSNAR på ut-frekvensen</strong>
+                                <br>Alla andra ställer in 145,0125 MHz och hör dig!
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div style="margin-top: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px;">
+                        <strong>🔑 SHIFT (förskjutning):</strong>
+                        <br><br>
+                        Skillnaden mellan in- och ut-frekvensen kallas <strong>shift</strong>:
+                        <br><br>
+                        <strong>2m-bandet (145 MHz):</strong>
+                        <br>• Standard shift: <strong>±600 kHz</strong>
+                        <br>• Exempel: TX 145,6125 → RX 145,0125 (shift -600 kHz)
+                        <br><br>
+                        <strong>70cm-bandet (433 MHz):</strong>
+                        <br>• Standard shift: <strong>±1,6 MHz</strong> eller <strong>±7,6 MHz</strong>
+                        <br>• Exempel: TX 433,500 → RX 431,900 (shift -1,6 MHz)
+                        <br><br>
+                        💡 <em>Moderna radioapparater ställer ofta in shift automatiskt!</em>
+                    </div>
+                </div>
+                
+                <h3>CTCSS / Subton - "Nyckeln" till repeatern</h3>
+                
+                <p>Många repeatrar kräver en <strong>CTCSS-ton</strong> (Continuous Tone-Coded Squelch System) för att öppna. Detta förhindrar oavsiktliga öppningar från störningar.</p>
+                
+                <div class="example-box" style="border-left: 4px solid #8b5cf6;">
+                    <strong>🔑 Hur CTCSS fungerar:</strong>
+                    <br><br>
+                    <strong>Utan CTCSS:</strong>
+                    <br>• Repeatern öppnar för ALLA signaler på in-frekvensen
+                    <br>• Störningar kan öppna repeatern
+                    <br>• Andra användare på samma frekvens hörs
+                    <br><br>
+                    <strong>Med CTCSS (t.ex. 123,0 Hz):</strong>
+                    <br>• Din radio skickar en oHÖRBAR låg ton (123 Hz) tillsammans med din röst
+                    <br>• Repeatern kollar: "Har signalen 123 Hz-ton?" 
+                    <br>• JA → Öppnar och sänder vidare
+                    <br>• NEJ → Ignorerar signalen
+                    <br><br>
+                    💡 <em>Tonen är så låg (under 300 Hz) att den inte hörs i högtalaren!</em>
+                    <br><br>
+                    <strong>Hur ställer du in CTCSS?</strong>
+                    <br>1. Kolla repeater-listan för din ort (t.ex. repeater.nu)
+                    <br>2. Hitta repeaterns CTCSS-ton (t.ex. 123,0 Hz)
+                    <br>3. Ställ in samma ton i din radio (kallas också "PL-ton" eller "Tone Squelch")
+                    <br>4. Aktivera CTCSS-sändning
+                </div>
+                
+                <h3>Exempel: Använda en repeater</h3>
+                
+                <div class="example-box" style="border-left: 4px solid #059669; background: #f0fdfa;">
+                    <strong>📻 KOMPLETT EXEMPEL - Repeater SK5RN (Uppsala):</strong>
+                    <br><br>
+                    <strong>Repeater-data:</strong>
+                    <br>• Ut-frekvens (output): 145,0125 MHz
+                    <br>• In-frekvens (input): 145,6125 MHz
+                    <br>• Shift: -600 kHz
+                    <br>• CTCSS: 123,0 Hz
+                    <br>• Anropssignal: SK5RN
+                    <br><br>
+                    <strong>Steg 1: Ställ in radion</strong>
+                    <br>• Frekvens: 145,0125 MHz (ut-frekvensen!)
+                    <br>• Shift: -600 kHz (eller -0,6 MHz)
+                    <br>• CTCSS: 123,0 Hz
+                    <br>• Läge: FM
+                    <br><br>
+                    <strong>Steg 2: Lyssna</strong>
+                    <br>• Hör du någon prata via repeatern? → Vänta tills de är klara
+                    <br>• Tyst? → Fortsätt
+                    <br><br>
+                    <strong>Steg 3: Anropa</strong>
+                    <br>[Tryck PTT]
+                    <br>"SM5XYZ lyssnar på SK5RN"
+                    <br>[Släpp PTT]
+                    <br><br>
+                    <strong>Steg 4: Vänta på svar</strong>
+                    <br>• Om någon svarar → QSO!
+                    <br>• Om inget svar på 30 sekunder → försök igen senare
+                </div>
+                
+                <h3>✅ Snabbtest - Foni</h3>
+                
+                <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+                    <strong>✅ Kan du svara på dessa?</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>1. Vilken modulation används på HF för tal?</li>
+                        <li>2. LSB eller USB på 7 MHz? På 14 MHz?</li>
+                        <li>3. Vilken är anropsfrekvensen för FM simplex på 2m?</li>
+                        <li>4. Hur långt från mikrofonen ska du hålla munnen?</li>
+                        <li>5. Vad är ALC och varför är det viktigt?</li>
+                        <li>6. Vad är shift på en repeater?</li>
+                        <li>7. Vad är standard shift på 2m-bandet?</li>
+                        <li>8. Vad är CTCSS och varför används det?</li>
+                    </ul>
+                    <details style="margin-top: 0.5rem;">
+                        <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+                        <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                            <strong>SVAR:</strong>
+                            <br>1. SSB (Single Sideband) - effektivt och smal bandbredd
+                            <br>2. 7 MHz (40m): LSB (under 10 MHz). 14 MHz (20m): USB (över 10 MHz)
+                            <br>3. 145,500 MHz (2m simplex anropsfrekvens)
+                            <br>4. 5-10 cm från läpparna (optimalt avstånd)
+                            <br>5. ALC = Automatic Level Control. Visar om du övermodulerar. Ska INTE slå i taket!
+                            <br>6. Shift = Skillnaden mellan repeaterns in- och ut-frekvens
+                            <br>7. ±600 kHz (0,6 MHz) på 2m-bandet
+                            <br>8. CTCSS = Osynlig låg ton (subton) som "låser upp" repeatern. Förhindrar oavsiktliga öppningar från störningar.
+                        </div>
+                    </details>
                 </div>
             </div>
-
-            <!-- Sektion 6: CW (Telegrafi) -->
+            <!-- ============================================ -->
+            <!-- SEKTION 8.6: CW (TELEGRAFI/MORSEKOD) -->
+            <!-- ============================================ -->
+            
             <div class="content-section" id="cw">
                 <h2>8.6 CW (Telegrafi/Morsekod)</h2>
                 
-                <h3>Varför CW?</h3>
-                <ul>
-                    <li>Smalast bandbredd (~100 Hz)</li>
-                    <li>Går igenom när inget annat gör det</li>
-                    <li>Enkel utrustning räcker</li>
-                    <li>Traditionell och populär trafikform</li>
-                </ul>
+                <h3>Vad är CW?</h3>
+                <p><strong>CW</strong> står för "Continuous Wave" och är det tekniska namnet för <strong>morsekod</strong> över radio. Det är den äldsta och enklaste formen av radiomodulation - men också en av de mest effektiva!</p>
                 
-                <h3>Morsekoden</h3>
-                <p>Bokstäver och siffror representeras av korta (dit) och långa (dah) signaler.</p>
-                
-                <div class="info-box tip">
-                    <strong>💡 Lär dig morse:</strong> Det finns inget krav på morsekunskap för HAREC-certifikat, men det är en värdefull färdighet. Börja med att lära dig ljuden, inte prickar och streck!
+                <div class="info-box tip" style="background: #fff7ed; border-left: 4px solid #f59e0b;">
+                    <strong>💡 FICKLAMPA-ANALOGIN:</strong>
+                    <br><br>
+                    Tänk dig att du signalerar med en ficklampa till en kompis långt borta:
+                    <br><br>
+                    • <strong>Kort blixt</strong> = DIT (punkt ·)
+                    <br>• <strong>Lång blixt</strong> = DAH (streck −)
+                    <br>• <strong>Paus</strong> = Mellanrum mellan tecken
+                    <br><br>
+                    <strong>Exempel - bokstaven A:</strong>
+                    <br>· − (Dit-Dah) = Kort blixt, lång blixt
+                    <br><br>
+                    CW fungerar på exakt samma sätt - sändaren slås på (blixt) och av (paus) för att bilda bokstäver och siffror!
                 </div>
                 
-                <h3>CW-förkortningar</h3>
+                <h3>Varför CW? Fördelar och nackdelar</h3>
+                
+                <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border: 3px solid #059669; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #047857;">✅ FÖRDELAR MED CW</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>1. SMALAST BANDBREDD</strong>
+                                <br><br>
+                                • CW: 100-500 Hz
+                                <br>• SSB: 2400 Hz (5x bredare!)
+                                <br>• FM: 12000 Hz (24x bredare!)
+                                <br><br>
+                                🎯 <em>Smalare bandbredd = mindre brus kommer igenom = bättre signal-till-brus-förhållande!</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>2. "GÅR IGENOM NÄR INGET ANNAT GÖR DET"</strong>
+                                <br><br>
+                                CW fungerar med extremt svaga signaler:
+                                <br>• En signal som är -20 dB under brusnivån kan läsas på CW!
+                                <br>• Samma signal är OLÄSBAR på SSB eller FM
+                                <br><br>
+                                💡 <em>Därför säger man: "When all else fails, CW prevails"</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>3. ENKEL UTRUSTNING</strong>
+                                <br><br>
+                                • En CW-sändare kan byggas med några få komponenter
+                                <br>• Perfekt för QRP (lågeffekt) och hembygge
+                                <br>• Kräver minimal elektronik jämfört med SSB/FM
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>4. LÅG EFFEKT RÄCKER LÅNGT</strong>
+                                <br><br>
+                                • 5W CW ≈ 50W SSB (10x effektivare!)
+                                <br>• QRP-entusiaster kör ofta 1-5W och når hela världen
+                                <br>• Perfekt för portabel drift (batteri)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #059669;">
+                                <strong>5. SPRÅKOBEROENDE</strong>
+                                <br><br>
+                                • Morsekod är samma överallt
+                                <br>• Du kan kommunicera med någon som inte talar ditt språk
+                                <br>• Förkortningar (CW-Q-koder) förstås av alla
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">
+                                <strong>6. TRADITION OCH CHARM</strong>
+                                <br><br>
+                                • 175+ år gammal teknik som fortfarande används!
+                                <br>• Speciell känsla och tillfredsställelse
+                                <br>• Stark community av CW-entusiaster
+                                <br>• Populärt i tävlingar (contest)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border: 3px solid #dc2626; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #991b1b;">❌ NACKDELAR MED CW</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #dc2626;">
+                                <strong>1. KRÄVER MORSEKOD-KUNSKAP</strong>
+                                <br><br>
+                                • Tar tid att lära (veckor till månader)
+                                <br>• Måste övas regelbundet för att behålla färdigheten
+                                <br>• Inte längre krav för amatörlicens (sedan 2004 i Sverige)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #dc2626;">
+                                <strong>2. LÅNGSAMT</strong>
+                                <br><br>
+                                • Typisk hastighet: 20-30 ord/minut (nybörjare: 5-15 WPM)
+                                <br>• Jämfört med tal: 150 ord/minut
+                                <br>• QSO tar längre tid än på foni
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">
+                                <strong>3. BEGRÄNSAD POPULARITET IDAG</strong>
+                                <br><br>
+                                • Färre använder CW nu än förr (digitala modes tar över)
+                                <br>• Många hoppar över CW helt
+                                <br>• Men: Fortfarande stark community av dedikerade användare!
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="info-box important" style="background: #fef3c7; border-left: 4px solid #f59e0b;">
+                    <strong>🎯 VIKTIGT ATT VETA:</strong>
+                    <br><br>
+                    Det finns <strong>INGET krav</strong> på morsekunskap för att få HAREC-certifikat i Sverige (eller någonstans i Europa). Kravet togs bort 2004.
+                    <br><br>
+                    <strong>MEN:</strong> Många erfarna radioamatörer rekommenderar starkt att lära sig morse ändå! Det är en värdefull färdighet som öppnar nya möjligheter och är rolig att behärska.
+                </div>
+                
+                <h3>Morsekoden - Bokstäver och siffror</h3>
+                
+                <p>Morsekoden består av kombinationer av <strong>korta signaler (dit/punkt ·)</strong> och <strong>långa signaler (dah/streck −)</strong>.</p>
+                
+                <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid #3b82f6; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #1e40af;">📝 INTERNATIONELLA MORSEKODEN</h4>
+                    
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong style="color: #1e40af;">💡 LÄR DIG LJUDEN, INTE PRICKARNA!</strong>
+                        <br><br>
+                        Det största misstaget nybörjare gör är att försöka memorera <em>visuella</em> prickar och streck (· −).
+                        <br><br>
+                        Istället ska du lära dig <em>LJUDEN</em>:
+                        <br>• <strong>A:</strong> Inte "punkt-streck" utan ljudet "di-DAH" (kort-lång)
+                        <br>• <strong>K:</strong> Inte "streck-punkt-streck" utan "DAH-di-DAH"
+                        <br><br>
+                        <em>🎯 Erfarna CW-operatörer "hör" bokstäver direkt, precis som du läser ord utan att stava!</em>
+                    </div>
+                    
+                    <h4>Bokstäver (A-Z)</h4>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Bokstav</th>
+                                <th>Kod</th>
+                                <th>Ljud</th>
+                                <th>Bokstav</th>
+                                <th>Kod</th>
+                                <th>Ljud</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>A</strong></td>
+                                <td>· −</td>
+                                <td>di-DAH</td>
+                                <td><strong>N</strong></td>
+                                <td>− ·</td>
+                                <td>DAH-di</td>
+                            </tr>
+                            <tr>
+                                <td><strong>B</strong></td>
+                                <td>− · · ·</td>
+                                <td>DAH-di-di-di</td>
+                                <td><strong>O</strong></td>
+                                <td>− − −</td>
+                                <td>DAH-DAH-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>C</strong></td>
+                                <td>− · − ·</td>
+                                <td>DAH-di-DAH-di</td>
+                                <td><strong>P</strong></td>
+                                <td>· − − ·</td>
+                                <td>di-DAH-DAH-di</td>
+                            </tr>
+                            <tr>
+                                <td><strong>D</strong></td>
+                                <td>− · ·</td>
+                                <td>DAH-di-di</td>
+                                <td><strong>Q</strong></td>
+                                <td>− − · −</td>
+                                <td>DAH-DAH-di-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>E</strong></td>
+                                <td>·</td>
+                                <td>di</td>
+                                <td><strong>R</strong></td>
+                                <td>· − ·</td>
+                                <td>di-DAH-di</td>
+                            </tr>
+                            <tr>
+                                <td><strong>F</strong></td>
+                                <td>· · − ·</td>
+                                <td>di-di-DAH-di</td>
+                                <td><strong>S</strong></td>
+                                <td>· · ·</td>
+                                <td>di-di-di</td>
+                            </tr>
+                            <tr>
+                                <td><strong>G</strong></td>
+                                <td>− − ·</td>
+                                <td>DAH-DAH-di</td>
+                                <td><strong>T</strong></td>
+                                <td>−</td>
+                                <td>DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>H</strong></td>
+                                <td>· · · ·</td>
+                                <td>di-di-di-di</td>
+                                <td><strong>U</strong></td>
+                                <td>· · −</td>
+                                <td>di-di-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>I</strong></td>
+                                <td>· ·</td>
+                                <td>di-di</td>
+                                <td><strong>V</strong></td>
+                                <td>· · · −</td>
+                                <td>di-di-di-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>J</strong></td>
+                                <td>· − − −</td>
+                                <td>di-DAH-DAH-DAH</td>
+                                <td><strong>W</strong></td>
+                                <td>· − −</td>
+                                <td>di-DAH-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>K</strong></td>
+                                <td>− · −</td>
+                                <td>DAH-di-DAH</td>
+                                <td><strong>X</strong></td>
+                                <td>− · · −</td>
+                                <td>DAH-di-di-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>L</strong></td>
+                                <td>· − · ·</td>
+                                <td>di-DAH-di-di</td>
+                                <td><strong>Y</strong></td>
+                                <td>− · − −</td>
+                                <td>DAH-di-DAH-DAH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>M</strong></td>
+                                <td>− −</td>
+                                <td>DAH-DAH</td>
+                                <td><strong>Z</strong></td>
+                                <td>− − · ·</td>
+                                <td>DAH-DAH-di-di</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 style="margin-top: 2rem;">Siffror (0-9)</h4>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Siffra</th>
+                                <th>Kod</th>
+                                <th>Ljud</th>
+                                <th>Minnesregel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>· − − − −</td><td>di-DAH-DAH-DAH-DAH</td><td>1 punkt, 4 streck</td></tr>
+                            <tr><td><strong>2</strong></td><td>· · − − −</td><td>di-di-DAH-DAH-DAH</td><td>2 punkter, 3 streck</td></tr>
+                            <tr><td><strong>3</strong></td><td>· · · − −</td><td>di-di-di-DAH-DAH</td><td>3 punkter, 2 streck</td></tr>
+                            <tr><td><strong>4</strong></td><td>· · · · −</td><td>di-di-di-di-DAH</td><td>4 punkter, 1 streck</td></tr>
+                            <tr><td><strong>5</strong></td><td>· · · · ·</td><td>di-di-di-di-di</td><td>5 punkter</td></tr>
+                            <tr><td><strong>6</strong></td><td>− · · · ·</td><td>DAH-di-di-di-di</td><td>1 streck, 4 punkter</td></tr>
+                            <tr><td><strong>7</strong></td><td>− − · · ·</td><td>DAH-DAH-di-di-di</td><td>2 streck, 3 punkter</td></tr>
+                            <tr><td><strong>8</strong></td><td>− − − · ·</td><td>DAH-DAH-DAH-di-di</td><td>3 streck, 2 punkter</td></tr>
+                            <tr><td><strong>9</strong></td><td>− − − − ·</td><td>DAH-DAH-DAH-DAH-di</td><td>4 streck, 1 punkt</td></tr>
+                            <tr><td><strong>0</strong></td><td>− − − − −</td><td>DAH-DAH-DAH-DAH-DAH</td><td>5 streck</td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px;">
+                        <strong>💡 Tips för siffror:</strong>
+                        <br><br>
+                        Siffrorna har ett enkelt mönster - alla är 5 tecken långa:
+                        <br>• 1-5: Börjar med punkter, slutar med streck
+                        <br>• 6-0: Börjar med streck, slutar med punkter
+                        <br>• 5: Exakt i mitten - bara punkter!
+                        <br>• 0: Bara streck!
+                    </div>
+                </div>
+                
+                <h3>CW-förkortningar och procedurtecken</h3>
+                
+                <p>På CW används speciella förkortningar för att spara tid. Många av dessa är <strong>prosigns</strong> - två bokstäver som sänds som ETT tecken utan paus emellan.</p>
+                
                 <table class="content-table">
                     <thead>
                         <tr>
-                            <th>Förkortning</th>
-                            <th>Betydelse</th>
+                            <th style="width: 15%;">Förkortning</th>
+                            <th style="width: 20%;">Kod</th>
+                            <th style="width: 30%;">Betydelse</th>
+                            <th style="width: 35%;">Användning</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>AR</td><td>Slut på meddelande</td></tr>
-                        <tr><td>AS</td><td>Vänta</td></tr>
-                        <tr><td>BK</td><td>Break (avbrott)</td></tr>
-                        <tr><td>BT</td><td>Separerar delar av meddelande</td></tr>
-                        <tr><td>CL</td><td>Stänger stationen</td></tr>
-                        <tr><td>K</td><td>Kom (inbjudan att sända)</td></tr>
-                        <tr><td>KN</td><td>Kom, endast namngiven station</td></tr>
-                        <tr><td>R</td><td>Roger, mottaget</td></tr>
-                        <tr><td>SK</td><td>Slut på kontakt</td></tr>
-                        <tr><td>TU</td><td>Thank you</td></tr>
-                    </tbody>
-                </table>
-                
-                <h3>CW QSO-struktur</h3>
-                <div class="example-box">
-                    <strong>Typiskt CW-QSO:</strong>
-                    <br><br>
-                    CQ CQ CQ DE SM5XYZ SM5XYZ K
-                    <br><br>
-                    SM5XYZ DE SM0ABC SM0ABC K
-                    <br><br>
-                    SM0ABC DE SM5XYZ = TNX FER CALL = UR RST 599 599 = NAME ERIK QTH UPPSALA = HW? SM0ABC DE SM5XYZ K
-                    <br><br>
-                    SM5XYZ DE SM0ABC = R TNX RPT = UR RST 599 = NAME JOHAN QTH STOCKHOLM = TNX QSO 73 SM5XYZ DE SM0ABC SK
-                    <br><br>
-                    SM0ABC DE SM5XYZ R TU 73 SK
-                </div>
-            </div>
-
-            <!-- Sektion 7: Digitala trafiksätt -->
-            <div class="content-section" id="digitalt">
-                <h2>8.7 Digitala Trafiksätt</h2>
-                
-                <h3>Översikt</h3>
-                <p>Digitala trafiksätt använder datorn för att koda och avkoda signaler. Fördelar:</p>
-                <ul>
-                    <li>Fungerar ofta med svagare signaler än foni</li>
-                    <li>Automatisk loggning</li>
-                    <li>Intressant teknik att experimentera med</li>
-                </ul>
-                
-                <h3>Populära digitala modes</h3>
-                
-                <h4>FT8</h4>
-                <p>Extremt populärt mode för DX med svaga signaler.</p>
-                <ul>
-                    <li>15-sekunderscykel</li>
-                    <li>Fungerar ner till -20 dB under brusnivån</li>
-                    <li>Standardiserad QSO-struktur</li>
-                    <li>Programvara: WSJT-X</li>
-                </ul>
-                
-                <h4>FT4</h4>
-                <p>Snabbare variant av FT8 för tävlingar.</p>
-                <ul>
-                    <li>7,5-sekunderscykel</li>
-                    <li>Kräver något starkare signal</li>
-                </ul>
-                
-                <h4>JS8Call</h4>
-                <p>Baserat på FT8 men tillåter fria meddelanden och "keyboard-to-keyboard"-QSO.</p>
-                
-                <h4>PSK31</h4>
-                <p>Klassiskt textmode för "ragchew" (långsamma, trevliga QSO).</p>
-                <ul>
-                    <li>Bandbredd: ~31 Hz</li>
-                    <li>Tangentbord-till-tangentbord</li>
-                    <li>Programvara: Fldigi, DigiPan</li>
-                </ul>
-                
-                <h4>RTTY</h4>
-                <p>Radio Teletype - äldsta digitala modet, fortfarande populärt i tävlingar.</p>
-                <ul>
-                    <li>Bandbredd: ~250 Hz</li>
-                    <li>45,45 baud standard</li>
-                </ul>
-                
-                <h4>Paketradio / APRS</h4>
-                <p>Digital dataöverföring, positionsrapportering.</p>
-                <ul>
-                    <li>APRS på 144,800 MHz</li>
-                    <li>Positionsrapportering, meddelanden</li>
-                </ul>
-                
-                <h4>Winlink</h4>
-                <p>E-post via radio för nödkommunikation och båtfolk.</p>
-                
-                <h3>Utrustning för digitalt</h3>
-                <ul>
-                    <li><strong>Dator</strong> med ljudkort</li>
-                    <li><strong>Interface</strong> mellan dator och radio (eller inbyggt i radion)</li>
-                    <li><strong>Programvara</strong> för respektive mode</li>
-                    <li><strong>Korrekt inställning</strong> av ljudnivåer</li>
-                </ul>
-            </div>
-
-            <!-- Sektion 8: Nödtrafik -->
-            <div class="content-section" id="nodtrafik">
-                <h2>8.8 Nödtrafik</h2>
-                
-                <h3>När används nödtrafik?</h3>
-                <p>Nödtrafik används när det finns omedelbar fara för människoliv eller egendom av betydande värde.</p>
-                
-                <h3>Nödsignaler</h3>
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>Signal</th>
-                            <th>Betydelse</th>
-                            <th>Användning</th>
+                        <tr style="background: #fef3c7;">
+                            <td><strong>AR</strong></td>
+                            <td>· − · − ·</td>
+                            <td>Slut på meddelande</td>
+                            <td>Efter ditt meddelande, innan du signerar av</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>MAYDAY</strong></td>
-                            <td>Nödanrop</td>
-                            <td>Omedelbar livsfara</td>
+                        <tr style="background: #dbeafe;">
+                            <td><strong>AS</strong></td>
+                            <td>· − · · ·</td>
+                            <td>Vänta</td>
+                            <td>"Vänta ett ögonblick, jag återkommer"</td>
                         </tr>
-                        <tr>
-                            <td><strong>PAN PAN</strong></td>
-                            <td>Ilmeddelande</td>
-                            <td>Brådskande men ej omedelbar livsfara</td>
+                        <tr style="background: #fce7f3;">
+                            <td><strong>BK</strong></td>
+                            <td>− · · · − · −</td>
+                            <td>Break (avbrott)</td>
+                            <td>Snabbt svar/kommentar mitt i QSO</td>
                         </tr>
-                        <tr>
-                            <td><strong>SECURITÉ</strong></td>
-                            <td>Säkerhetsmeddelande</td>
-                            <td>Viktig säkerhetsinformation</td>
+                        <tr style="background: #d1fae5;">
+                            <td><strong>BT</strong></td>
+                            <td>− · · · −</td>
+                            <td>Separator</td>
+                            <td>Separerar delar av meddelande (som "=") </td>
                         </tr>
-                        <tr>
-                            <td><strong>SOS</strong></td>
-                            <td>Nödsignal (CW)</td>
-                            <td>··· ─ ─ ─ ···</td>
+                        <tr style="background: #ede9fe;">
+                            <td><strong>CL</strong></td>
+                            <td>− · − · · − · ·</td>
+                            <td>Closing (stänger)</td>
+                            <td>"Jag stänger stationen helt nu"</td>
+                        </tr>
+                        <tr style="background: #fef3c7;">
+                            <td><strong>K</strong></td>
+                            <td>− · −</td>
+                            <td>Kom / Over</td>
+                            <td>Inbjudan att sända (till specifik station)</td>
+                        </tr>
+                        <tr style="background: #dbeafe;">
+                            <td><strong>KN</strong></td>
+                            <td>− · − − ·</td>
+                            <td>Kom, endast namngiven</td>
+                            <td>Bara den anropade stationen ska svara</td>
+                        </tr>
+                        <tr style="background: #fce7f3;">
+                            <td><strong>R</strong></td>
+                            <td>· − ·</td>
+                            <td>Roger / Mottaget</td>
+                            <td>"Jag har mottagit ditt meddelande"</td>
+                        </tr>
+                        <tr style="background: #d1fae5;">
+                            <td><strong>SK</strong></td>
+                            <td>· · · − · −</td>
+                            <td>Slut på kontakt</td>
+                            <td>"QSO avslutat, jag lyssnar vidare"</td>
+                        </tr>
+                        <tr style="background: #ede9fe;">
+                            <td><strong>TU</strong></td>
+                            <td>− · ·</td>
+                            <td>Thank you</td>
+                            <td>Tack (snabbare än TNX)</td>
                         </tr>
                     </tbody>
                 </table>
                 
-                <h3>Nödanrop (MAYDAY)</h3>
-                <div class="example-box">
-                    <strong>Format:</strong>
+                <h3>Struktur för ett CW-QSO</h3>
+                
+                <p>Ett typiskt CW-QSO är mycket mer <strong>standardiserat</strong> och <strong>kortare</strong> än foni. Här är den klassiska strukturen:</p>
+                
+                <div class="example-box" style="border-left: 4px solid #3b82f6; background: #f8fafc;">
+                    <strong>📻 KOMPLETT CW-QSO EXEMPEL:</strong>
                     <br><br>
-                    "MAYDAY MAYDAY MAYDAY
-                    <br>This is [anropssignal] [anropssignal] [anropssignal]
-                    <br>MAYDAY [anropssignal]
-                    <br>My position is [position]
-                    <br>I have [beskriv nödsituationen]
-                    <br>I require [beskriv hjälpbehov]
-                    <br>[Antal personer, annan info]
-                    <br>Over"
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace;">
+                        <strong>SM5XYZ kallar CQ:</strong>
+                        <br>CQ CQ CQ DE SM5XYZ SM5XYZ K
+                    </div>
+                    
+                    <div style="background: #fce7f3; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace;">
+                        <strong>SM0ABC svarar:</strong>
+                        <br>SM5XYZ DE SM0ABC SM0ABC K
+                    </div>
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace;">
+                        <strong>SM5XYZ ger rapport:</strong>
+                        <br>SM0ABC DE SM5XYZ = 
+                        <br>TNX FER CALL = 
+                        <br>UR RST 599 599 = 
+                        <br>NAME ERIK ERIK = 
+                        <br>QTH UPPSALA UPPSALA = 
+                        <br>HW? SM0ABC DE SM5XYZ K
+                    </div>
+                    
+                    <div style="background: #fce7f3; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace;">
+                        <strong>SM0ABC svarar:</strong>
+                        <br>SM5XYZ DE SM0ABC = 
+                        <br>R TNX RPT = 
+                        <br>UR RST 599 = 
+                        <br>NAME JOHAN JOHAN = 
+                        <br>QTH STOCKHOLM STOCKHOLM = 
+                        <br>TNX QSO 73 SM5XYZ DE SM0ABC SK
+                    </div>
+                    
+                    <div style="background: #dbeafe; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace;">
+                        <strong>SM5XYZ avslutar:</strong>
+                        <br>SM0ABC DE SM5XYZ R TU 73 SK
+                    </div>
+                    
+                    <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <strong>Översättning:</strong>
+                        <br><br>
+                        <strong>Förkortningar som används:</strong>
+                        <br>• DE = "detta är" (from)
+                        <br>• K = Kom (över till dig)
+                        <br>• = (BT) = Separator mellan meningar
+                        <br>• TNX = Thanks (tack)
+                        <br>• FER = For (för)
+                        <br>• UR = Your (din)
+                        <br>• HW? = How copy? (hur hör du mig?)
+                        <br>• R = Roger (mottaget)
+                        <br>• RPT = Report (rapport)
+                        <br>• TU = Thank you
+                        <br>• 73 = Vänliga hälsningar
+                        <br>• SK = Slut på kontakt
+                    </div>
                 </div>
                 
-                <h3>Nödfrekvenser</h3>
-                <ul>
-                    <li><strong>HF:</strong> 14,300 MHz (internationell nödfrekvens)</li>
-                    <li><strong>Andra HF:</strong> 3,760 / 7,110 / 18,160 / 21,360 kHz</li>
-                    <li><strong>2m:</strong> 145,500 MHz (anropsfrekvens)</li>
-                </ul>
+                <div class="info-box tip" style="background: #d1fae5; border-left: 4px solid #059669;">
+                    <strong>💡 NOTERA SKILLNADER MOT FONI:</strong>
+                    <br><br>
+                    • Mycket mer förkortningar (TNX, FER, UR, etc.)
+                    <br>• Viktiga ord upprepas (NAME ERIK ERIK, QTH UPPSALA UPPSALA)
+                    <br>• RST har TRE siffror på CW (inte två som på foni!)
+                    <br>• Prosigns används (K, SK, =)
+                    <br>• Mycket kortare än foni-QSO
+                    <br>• Ingen "small talk" - rakt på sak!
+                </div>
                 
-                <h3>Om du hör nödtrafik</h3>
-                <ol>
-                    <li><strong>Sluta sända</strong> och lyssna</li>
-                    <li><strong>Anteckna</strong> all information</li>
-                    <li><strong>Vänta</strong> - se om någon annan svarar</li>
-                    <li><strong>Svara</strong> om ingen annan gör det</li>
-                    <li><strong>Larma</strong> räddningstjänst (112) om nödvändigt</li>
-                    <li><strong>Assistera</strong> med kommunikation om möjligt</li>
-                </ol>
+                <h3>Lär dig CW - Tips och resurser</h3>
                 
-                <h3>Regler vid nödtrafik</h3>
-                <ul>
-                    <li>Nödtrafik har <strong>alltid prioritet</strong></li>
-                    <li>Du får använda <strong>vilken frekvens som helst</strong></li>
-                    <li>Du får använda <strong>vilken effekt som helst</strong></li>
-                    <li>Dokumentera allt i efterhand</li>
-                </ul>
+                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 3px solid #f59e0b; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+                    <h4 style="margin-top: 0; color: #92400e;">📚 SÅ LÄR DU DIG MORSEKOD</h4>
+                    
+                    <table style="width: 100%; background: white; border-radius: 8px;">
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #f59e0b;">
+                                <strong>1. LÄR DIG LJUDEN, INTE PRICKARNA!</strong>
+                                <br><br>
+                                ❌ Tänk INTE: "A är punkt-streck"
+                                <br>✅ Tänk: "A låter 'di-DAH'"
+                                <br><br>
+                                Din hjärna ska känna igen ljudmönstret direkt, precis som du känner igen bokstäver när du läser.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #f59e0b;">
+                                <strong>2. BÖRJA LÅNGSAMT (5-10 WPM)</strong>
+                                <br><br>
+                                • WPM = Words Per Minute (ord per minut)
+                                <br>• 5 WPM är perfekt för nybörjare
+                                <br>• Öka gradvis när du känner dig bekväm
+                                <br>• Målet: 15-20 WPM för bekväma QSO
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #f59e0b;">
+                                <strong>3. ÖVA DAGLIGEN (15-30 MIN)</strong>
+                                <br><br>
+                                • Bättre med 15 min varje dag än 2 timmar en gång i veckan
+                                <br>• Hjärnan behöver repetition för att "kabla in" mönstren
+                                <br>• Efter 2-3 månader daglig övning: Stor framgång!
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 2px solid #f59e0b;">
+                                <strong>4. ANVÄND BRA ÖVNINGSVERKTYG</strong>
+                                <br><br>
+                                <strong>Gratis online-verktyg:</strong>
+                                <br>• <strong>LCWO.net</strong> - Utmärkt övningssite
+                                <br>• <strong>Morse Code Ninja</strong> - App för mobil
+                                <br>• <strong>AA9PW CW Practice</strong> - Många övningar
+                                <br><br>
+                                <strong>Program för dator:</strong>
+                                <br>• <strong>Just Learn Morse Code (G4FON)</strong> - Mycket bra för Windows
+                                <br>• <strong>Morse Runner</strong> - Tävlingsträning
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">
+                                <strong>5. LYSSNA PÅ RIKTIGA QSO</strong>
+                                <br><br>
+                                • När du lärt dig grunderna: Lyssna på CW-delen av banden
+                                <br>• 14,000 - 14,070 MHz (20m CW)
+                                <br>• 7,000 - 7,040 MHz (40m CW)
+                                <br>• Du förstår inte allt först - det är OK! Bara lyssna och försök uppfatta.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 
-                <div class="info-box important">
-                    <strong>🎯 Kom ihåg:</strong> Vid verklig nödsituation - använd sunt förnuft! Reglerna är sekundära när det handlar om att rädda liv.
+                <div class="info-box important" style="background: #fee2e2; border-left: 4px solid #dc2626;">
+                    <strong>⚠️ VANLIGA MISSTAG ATT UNDVIKA:</strong>
+                    <br><br>
+                    ❌ <strong>Försöka memorera visuella prickar/streck</strong>
+                    <br>→ Lär dig ljuden istället!
+                    <br><br>
+                    ❌ <strong>Räkna "dit" och "dah"</strong>
+                    <br>→ Känn igen mönstret direkt (som ett ord)
+                    <br><br>
+                    ❌ <strong>Börja för snabbt</strong>
+                    <br>→ 5-10 WPM först, öka sen
+                    <br><br>
+                    ❌ <strong>Ge upp efter en vecka</strong>
+                    <br>→ Det tar 2-3 månader att bli bekväm - håll ut!
+                </div>
+                
+                <h3>✅ Snabbtest - CW</h3>
+                
+                <div class="info-box" style="background: #f0f9ff; border-left: 4px solid #0ea5e9;">
+                    <strong>✅ Kan du svara på dessa?</strong>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>1. Vad står CW för?</li>
+                        <li>2. Varför fungerar CW bättre än SSB med svaga signaler?</li>
+                        <li>3. Ungefär hur bred bandbredd har CW jämfört med SSB?</li>
+                        <li>4. Vad betyder SK i CW?</li>
+                        <li>5. Hur många siffror i RST-rapport på CW?</li>
+                        <li>6. Vad är viktigast när man lär sig morse?</li>
+                        <li>7. Krävs morsekunskap för HAREC-certifikat?</li>
+                    </ul>
+                    <details style="margin-top: 0.5rem;">
+                        <summary style="cursor: pointer; color: #0ea5e9; font-weight: bold;">📖 Visa svar</summary>
+                        <div style="margin-top: 0.5rem; padding: 1rem; background: white; border-radius: 6px;">
+                            <strong>SVAR:</strong>
+                            <br>1. CW = Continuous Wave (kontinuerlig våg)
+                            <br>2. Mycket smalare bandbredd (100-500 Hz vs 2400 Hz) = mindre brus kommer igenom
+                            <br>3. CW: 100-500 Hz. SSB: 2400 Hz. (CW är 5-24x smalare!)
+                            <br>4. SK = Slut på kontakt ("End of contact")
+                            <br>5. TRE siffror (RST = Readability, Strength, Tone)
+                            <br>6. Lära sig LJUDEN (di-DAH), inte visuella prickar och streck
+                            <br>7. NEJ - kravet togs bort 2004 (men det är värdefullt att kunna ändå!)
+                        </div>
+                    </details>
                 </div>
             </div>
-
-            <!-- Sammanfattning -->
-            <div class="content-section summary">
-                <h2>📝 Sammanfattning Kapitel 8</h2>
-                
-                <div class="key-points">
-                    <h3>Kommunikation:</h3>
-                    <ul>
-                        <li><strong>Q-koder:</strong> QTH, QSL, QSY, QRM, QRN, QRZ...</li>
-                        <li><strong>RST:</strong> Läsbarhet (1-5), Styrka (1-9), Ton (1-9)</li>
-                        <li><strong>Fonetiskt alfabet:</strong> Alfa, Bravo, Charlie...</li>
-                    </ul>
-                </div>
-                
-                <div class="key-points">
-                    <h3>Trafikmetoder:</h3>
-                    <ul>
-                        <li><strong>Lyssna först</strong> innan du sänder</li>
-                        <li><strong>CQ</strong> för allmänt anrop</li>
-                        <li><strong>SSB:</strong> LSB under 10 MHz, USB över</li>
-                        <li><strong>FM:</strong> Simplex och repeater på VHF/UHF</li>
-                    </ul>
-                </div>
-                
-                <div class="key-points">
-                    <h3>Nödtrafik:</h3>
-                    <ul>
-                        <li><strong>MAYDAY:</strong> Omedelbar livsfara</li>
-                        <li><strong>PAN PAN:</strong> Brådskande</li>
-                        <li>Nödtrafik har alltid prioritet</li>
-                        <li>Alla frekvenser och effekter tillåtna</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="chapter-navigation">
-                <a href="kapitel-7-regler-bestammelser.html" class="nav-button prev">
-                    <span class="arrow">←</span>
-                    <span class="label">Kapitel 7: Regler</span>
-                </a>
-                <a href="../test/ovning.html?chapter=8" class="nav-button practice">
-                    <span class="icon">📝</span>
-                    <span class="label">Öva på kapitel 8</span>
-                </a>
-                <a href="kapitel-9-sakerhet.html" class="nav-button next">
-                    <span class="label">Kapitel 9: Säkerhet</span>
-                    <span class="arrow">→</span>
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Radioamatör Utbildning. Baserat på SSA:s utbildningsmaterial.</p>
-        </div>
-    </footer>
-
-    <script src="../../js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof ProgressTracker !== 'undefined') {
-                const progress = ProgressTracker.getChapterProgress(8);
-                document.getElementById('chapterProgress').textContent = `📊 ${progress}% genomfört`;
-            }
-        });
-    </script>
-</body>
-</html>

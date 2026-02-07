@@ -1843,155 +1843,295 @@ explanation: "Genom att testa EN åtgärd i taget och dokumentera resultatet vet
 difficulty: "easy"
 },
 
-    // ============================================
-    // KAPITEL 7: REGLER OCH BESTÄMMELSER
-    // ============================================
-    {
-        id: 131,
-        chapterId: 7,
-        question: "Vilken myndighet utfärdar amatörradiolicenser i Sverige?",
-        options: [
-            { id: "a", text: "Trafikverket" },
-            { id: "b", text: "Post- och telestyrelsen (PTS)" },
-            { id: "c", text: "Försvarsmakten" },
-            { id: "d", text: "Elsäkerhetsverket" }
-        ],
-        correctAnswer: "b",
-        explanation: "PTS (Post- och telestyrelsen) är ansvarig myndighet för radiolicenser i Sverige.",
-        difficulty: "easy"
-    },
-    {
-        id: 132,
-        chapterId: 7,
-        question: "Vad är en anropssignal?",
-        options: [
-            { id: "a", text: "En signal som hörs vid inkommande samtal" },
-            { id: "b", text: "En unik identifierare för varje radioamatör" },
-            { id: "c", text: "En nödsignal" },
-            { id: "d", text: "En testsignal" }
-        ],
-        correctAnswer: "b",
-        explanation: "Anropssignalen (callsign) är den unika bokstavs-/sifferkombination som identifierar varje licensierad amatör.",
-        difficulty: "easy"
-    },
-    {
-        id: 133,
-        chapterId: 7,
-        question: "Vad betyder CEPT-licens för radioamatörer?",
-        options: [
-            { id: "a", text: "En permanent internationell licens" },
-            { id: "b", text: "Tillstånd att operera i andra CEPT-länder med sin hemlicens" },
-            { id: "c", text: "En begränsad nybörjarlicens" },
-            { id: "d", text: "Tillstånd för kommersiell radiotrafik" }
-        ],
-        correctAnswer: "b",
-        explanation: "CEPT-rekommendationen T/R 61-01 tillåter amatörer att använda sin licens i andra CEPT-länder vid tillfälliga besök.",
-        difficulty: "medium"
-    },
-    {
-        id: 134,
-        chapterId: 7,
-        question: "Hur ofta måste man identifiera sig med anropssignal under ett QSO?",
-        options: [
-            { id: "a", text: "Bara i början" },
-            { id: "b", text: "Bara i slutet" },
-            { id: "c", text: "I början, med jämna mellanrum och i slutet" },
-            { id: "d", text: "Aldrig, det är frivilligt" }
-        ],
-        correctAnswer: "c",
-        explanation: "Man ska identifiera sig i början och slutet av kontakten, samt regelbundet under långa QSO (normalt var 10:e minut).",
-        difficulty: "easy"
-    },
-    {
-        id: 135,
-        chapterId: 7,
-        question: "Får man sända krypterade meddelanden som radioamatör?",
-        options: [
-            { id: "a", text: "Ja, obegränsat" },
-            { id: "b", text: "Nej, all trafik ska vara öppen och möjlig att avlyssna" },
-            { id: "c", text: "Ja, men endast digitalt" },
-            { id: "d", text: "Ja, men endast till andra amatörer" }
-        ],
-        correctAnswer: "b",
-        explanation: "Amatörradiotrafik ska vara öppen. Kryptering som döljer meddelandets innehåll är inte tillåten.",
-        difficulty: "easy"
-    },
-    {
-        id: 136,
-        chapterId: 7,
-        question: "Vad är maximal effekt för svenska radioamatörer med högsta behörighetsklassen?",
-        options: [
-            { id: "a", text: "100 W" },
-            { id: "b", text: "200 W" },
-            { id: "c", text: "1000 W (1 kW) PEP" },
-            { id: "d", text: "Obegränsad" }
-        ],
-        correctAnswer: "c",
-        explanation: "I Sverige är maximal tillåten effekt 1000 W PEP för amatörer med HAREC-certifikat.",
-        difficulty: "medium"
-    },
-    {
-        id: 137,
-        chapterId: 7,
-        question: "Får man sända reklam eller kommersiella meddelanden som radioamatör?",
-        options: [
-            { id: "a", text: "Ja, obegränsat" },
-            { id: "b", text: "Ja, mot betalning" },
-            { id: "c", text: "Nej, det är förbjudet" },
-            { id: "d", text: "Ja, men endast på vissa band" }
-        ],
-        correctAnswer: "c",
-        explanation: "Amatörradio får inte användas för kommersiella syften eller reklam. Det ska vara för personligt intresse.",
-        difficulty: "easy"
-    },
-    {
-        id: 138,
-        chapterId: 7,
-        question: "Vad står ITU för?",
-        options: [
-            { id: "a", text: "International Technology Union" },
-            { id: "b", text: "International Telecommunication Union" },
-            { id: "c", text: "Internet Technology Users" },
-            { id: "d", text: "Internal Transmitter Unit" }
-        ],
-        correctAnswer: "b",
-        explanation: "ITU (International Telecommunication Union) är FN-organet som koordinerar global radiofrekvensanvändning.",
-        difficulty: "easy"
-    },
-    {
-        id: 139,
-        chapterId: 7,
-        question: "Vad menas med primär och sekundär status för frekvensband?",
-        options: [
-            { id: "a", text: "Första och andra val av frekvens" },
-            { id: "b", text: "Primära användare har företräde, sekundära får inte störa" },
-            { id: "c", text: "Olika effektnivåer" },
-            { id: "d", text: "Dag- och nattfrekvenser" }
-        ],
-        correctAnswer: "b",
-        explanation: "Primära tjänster har företräde. Sekundära användare får inte störa primära och måste acceptera störningar.",
-        difficulty: "medium"
-    },
-    {
-        id: 140,
-        chapterId: 7,
-        question: "Är det tillåtet att spela in och återutsända musik via amatörradio?",
-        options: [
-            { id: "a", text: "Ja, obegränsat" },
-            { id: "b", text: "Ja, om det är copyright-fri musik" },
-            { id: "c", text: "Nej, musikutsändningar är inte tillåtna" },
-            { id: "d", text: "Ja, men endast på VHF" }
-        ],
-        correctAnswer: "c",
-        explanation: "Amatörradio är avsedd för kommunikation, experiment och utbildning - inte för musikutsändningar.",
-        difficulty: "easy"
-    },
+// ============================================
+// KAPITEL 7: REGLER OCH BESTÄMMELSER (Uppdaterade frågor)
+// ============================================
+{
+    id: 131,
+    chapterId: 7,
+    question: "Vilken myndighet utfärdar HAREC-certifikat och anropssignaler i Sverige?",
+    options: [
+        { id: "a", text: "SSA (Sveriges Sändareamatörer)" },
+        { id: "b", text: "Post- och telestyrelsen (PTS)" },
+        { id: "c", text: "IARU Region 1" },
+        { id: "d", text: "CEPT" }
+    ],
+    correctAnswer: "b",
+    explanation: "PTS (Post- och telestyrelsen) är den svenska myndighet som utfärdar HAREC-certifikat och tilldelar anropssignaler. SSA arrangerar proven på uppdrag av PTS.",
+    difficulty: "easy"
+},
+{
+    id: 132,
+    chapterId: 7,
+    question: "Hur är en svensk personlig anropssignal uppbyggd?",
+    options: [
+        { id: "a", text: "Prefix + områdessiffra + suffix (t.ex. SM5XYZ)" },
+        { id: "b", text: "Bara bokstäver (t.ex. SWEDEN)" },
+        { id: "c", text: "Siffror först (t.ex. 5SMXYZ)" },
+        { id: "d", text: "Helt valfritt mönster" }
+    ],
+    correctAnswer: "a",
+    explanation: "Svenska anropssignaler består av: Prefix (SM, SA, etc.) + områdessiffra (0-7) + suffix (2-3 bokstäver). Exempel: SM5XYZ där SM=Sverige, 5=Östergötland, XYZ=personlig del.",
+    difficulty: "easy"
+},
+{
+    id: 133,
+    chapterId: 7,
+    question: "Vad innebär CEPT T/R 61-02 för radioamatörer?",
+    options: [
+        { id: "a", text: "Krav på minsta effekt 100W" },
+        { id: "b", text: "Rätt att trafikera i 48 europeiska länder utan separat tillstånd" },
+        { id: "c", text: "Förbud mot trafik utomlands" },
+        { id: "d", text: "Krav på återkommande certifikatprov" }
+    ],
+    correctAnswer: "b",
+    explanation: "CEPT T/R 61-02 tillåter radioamatörer med HAREC-certifikat att trafikera i 48 CEPT-länder utan separat tillstånd, upp till 3 månader per besök. Man använder värdlandets prefix + sin egen signal (t.ex. DL/SM5XYZ i Tyskland).",
+    difficulty: "medium"
+},
+{
+    id: 134,
+    chapterId: 7,
+    question: "Hur ofta måste du identifiera din station med anropssignal?",
+    options: [
+        { id: "a", text: "Bara i början av QSO" },
+        { id: "b", text: "Bara i slutet av QSO" },
+        { id: "c", text: "Vid början, slut och minst var 10:e minut under pågående sändning" },
+        { id: "d", text: "Aldrig, det är frivilligt" }
+    ],
+    correctAnswer: "c",
+    explanation: "Enligt PTSFS ska du identifiera din station vid början och slut av varje sändning, samt minst var 10:e minut under pågående sändning. Detta gäller även vid test och tuning.",
+    difficulty: "easy"
+},
+{
+    id: 135,
+    chapterId: 7,
+    question: "Är krypterade meddelanden tillåtna på amatörradio?",
+    options: [
+        { id: "a", text: "Ja, obegränsat" },
+        { id: "b", text: "Nej, all trafik ska vara öppen och avlyssningsbar" },
+        { id: "c", text: "Ja, men endast för nödtrafik" },
+        { id: "d", text: "Ja, men endast på HF-band" }
+    ],
+    correctAnswer: "b",
+    explanation: "All amatörradiotrafik ska vara öppen och möjlig att avlyssna. Kryptering eller hemliga koder är förbjudna. Undantag: Q-koder och RST-rapporter är tillåtna då de är standardiserade och öppna.",
+    difficulty: "easy"
+},
+{
+    id: 136,
+    chapterId: 7,
+    question: "Vad är maximal tillåten effekt på de flesta amatörband med HAREC-certifikat?",
+    options: [
+        { id: "a", text: "100 W PEP" },
+        { id: "b", text: "500 W PEP" },
+        { id: "c", text: "1000 W (1 kW) PEP" },
+        { id: "d", text: "Obegränsad" }
+    ],
+    correctAnswer: "c",
+    explanation: "Maximal tillåten effekt är 1000W PEP på de flesta band. UNDANTAG: 60m = 15W EIRP, 6m = 200W PEP. PEP = Peak Envelope Power (toppeffekt vid modulationstoppar).",
+    difficulty: "medium"
+},
+{
+    id: 137,
+    chapterId: 7,
+    question: "Får du sälja varor eller göra reklam på amatörradio?",
+    options: [
+        { id: "a", text: "Ja, obegränsat" },
+        { id: "b", text: "Ja, men endast radioutrustning" },
+        { id: "c", text: "Nej, amatörradio är icke-kommersiell" },
+        { id: "d", text: "Ja, men endast på VHF/UHF" }
+    ],
+    correctAnswer: "c",
+    explanation: "Amatörradio är icke-kommersiell. Förbjudet: Reklam, försäljning med pris, affärsverksamhet. Du kan NÄMNA att du funderar på att sälja något och hänvisa till mail/telefon, men inte göra försäljningspitch på luften.",
+    difficulty: "easy"
+},
+{
+    id: 138,
+    chapterId: 7,
+    question: "Vad står ITU för och vad gör organisationen?",
+    options: [
+        { id: "a", text: "International Technology Union - sätter datornormer" },
+        { id: "b", text: "International Telecommunication Union - FN-organ som fördelar radiofrekvenser globalt" },
+        { id: "c", text: "Internet Technology Users - reglerar internet" },
+        { id: "d", text: "Inget av ovanstående" }
+    ],
+    correctAnswer: "b",
+    explanation: "ITU (International Telecommunication Union) är FN:s organ för telekommunikation. ITU fördelar radiofrekvenser mellan länder och tjänster, sätter tekniska standarder och tilldelar prefix (SM för Sverige, DL för Tyskland, etc.).",
+    difficulty: "easy"
+},
+{
+    id: 139,
+    chapterId: 7,
+    question: "Vad betyder primär respektive sekundär användning av frekvensband?",
+    options: [
+        { id: "a", text: "Första och andra valet av frekvens" },
+        { id: "b", text: "Primära användare har förtur, sekundära måste ge vika och får inte störa" },
+        { id: "c", text: "Dag- och nattfrekvenser" },
+        { id: "d", text: "HF och VHF" }
+    ],
+    correctAnswer: "b",
+    explanation: "Primära tjänster har företräde i ett band. Sekundära användare får inte störa primära och måste acceptera störningar från dem. Exempel: 60m-bandet är sekundär användning för amatörradio - därför låg effekt (15W EIRP).",
+    difficulty: "medium"
+},
+{
+    id: 140,
+    chapterId: 7,
+    question: "Är musik tillåten på amatörradio?",
+    options: [
+        { id: "a", text: "Ja, obegränsat" },
+        { id: "b", text: "Ja, om copyright-fri" },
+        { id: "c", text: "Nej, musik (inspelad eller live) är förbjuden" },
+        { id: "d", text: "Ja, men endast klassisk musik" }
+    ],
+    correctAnswer: "c",
+    explanation: "Musik (inspelad eller live) är förbjuden på amatörradio. Amatörradio är för tvåvägskommunikation, experiment och utbildning - inte broadcast eller underhållning. Du får inte spela från Spotify, sjunga eller spela instrument på luften.",
+    difficulty: "easy"
+},
+{
+    id: 141,
+    chapterId: 7,
+    question: "Vad betyder QRP inom amatörradio?",
+    options: [
+        { id: "a", text: "Krav på minst 100W effekt" },
+        { id: "b", text: "Frivillig lågeffektstrafik (5W CW, 10W SSB på HF)" },
+        { id: "c", text: "Endast digitala modes" },
+        { id: "d", text: "Trafik på repeatrar" }
+    ],
+    correctAnswer: "b",
+    explanation: "QRP betyder låg effekt (Q-kod: 'Ska jag minska effekten?'). Definition: Max 5W på CW, max 10W PEP på SSB (HF). QRP är frivilligt - en utmaning att jobba DX med minimal effekt. Visar skicklighet och respekt.",
+    difficulty: "medium"
+},
+{
+    id: 142,
+    chapterId: 7,
+    question: "Hur identifierar du dig när du trafikerar i Tyskland med svensk licens?",
+    options: [
+        { id: "a", text: "Bara SM5XYZ som vanligt" },
+        { id: "b", text: "DL/SM5XYZ (värdlandets prefix före din signal)" },
+        { id: "c", text: "Ny tysk anropssignal krävs" },
+        { id: "d", text: "DE/SM5XYZ" }
+    ],
+    correctAnswer: "b",
+    explanation: "Vid CEPT-trafik: Värdlandets prefix + / + din signal. Tyskland = DL/SM5XYZ. Norge = LA/SM5XYZ. Spanien = EA/SM5XYZ. Detta visar att du är gästoperatör från Sverige i värdlandet.",
+    difficulty: "medium"
+},
+{
+    id: 143,
+    chapterId: 7,
+    question: "Vad är en loggbok och är den obligatorisk i Sverige?",
+    options: [
+        { id: "a", text: "Obligatorisk för alla amatörer" },
+        { id: "b", text: "Ej obligatorisk men starkt rekommenderad, nödvändig för diplom" },
+        { id: "c", text: "Endast för tävlingar" },
+        { id: "d", text: "Förbjuden" }
+    ],
+    correctAnswer: "b",
+    explanation: "Loggbok är EJ obligatorisk för personlig trafik i Sverige, men starkt rekommenderad. Innehåll: Datum, tid (UTC), frekvens, band, mode, anropssignal, RST. Nödvändig för: diplom (DXCC), tävlingar, störningsklagomål.",
+    difficulty: "easy"
+},
+{
+    id: 144,
+    chapterId: 7,
+    question: "Vad är ett QSL-kort?",
+    options: [
+        { id: "a", text: "En digital bekräftelse via mail" },
+        { id: "b", text: "Ett vykort som bekräftar en radiokontakt" },
+        { id: "c", text: "En faktura för radiotjänster" },
+        { id: "d", text: "Ett medlemskort i SSA" }
+    ],
+    correctAnswer: "b",
+    explanation: "QSL-kort är ett vykort som bekräftar en radiokontakt. Innehåll: Datum, tid (UTC), frekvens, mode, RST, anropssignaler. Skickas: Direkt (post), via byrå (SSA), eller elektroniskt (eQSL/LoTW). Används för diplom och som samlarföremål.",
+    difficulty: "easy"
+},
+{
+    id: 145,
+    chapterId: 7,
+    question: "Vad är en repeater och varför används de?",
+    options: [
+        { id: "a", text: "En störsändare" },
+        { id: "b", text: "Automatstation som förlänger räckvidden för handhållna radioapparater" },
+        { id: "c", text: "En typ av antenn" },
+        { id: "d", text: "En förstärkare" }
+    ],
+    correctAnswer: "b",
+    explanation: "Repeater = automatstation som tar emot på en frekvens och sänder ut på en annan. Placeras högt (torn, berg) för att förlänga räckvidden. Exempel: 2m FM-repeater med shift -600 kHz kan ge 50-100 km täckning från en handhållen 5W-radio.",
+    difficulty: "easy"
+},
+{
+    id: 146,
+    chapterId: 7,
+    question: "Vilken är anropsfrekvensen för 2m SSB?",
+    options: [
+        { id: "a", text: "144.300 MHz" },
+        { id: "b", text: "145.500 MHz" },
+        { id: "c", text: "14.285 MHz" },
+        { id: "d", text: "433.500 MHz" }
+    ],
+    correctAnswer: "a",
+    explanation: "144.300 MHz är den internationella SSB-anropsfrekvensen på 2m-bandet. Här anropar du CQ, sedan flyttar ni till annan frekvens för QSO. 145.500 MHz är FM simplex-anropsfrekvens (inte SSB).",
+    difficulty: "medium"
+},
+{
+    id: 147,
+    chapterId: 7,
+    question: "Vad betyder 'shift' på en repeater?",
+    options: [
+        { id: "a", text: "Skillnaden mellan ingångs- och utgångsfrekvens" },
+        { id: "b", text: "Tid på dygnet" },
+        { id: "c", text: "Effekt" },
+        { id: "d", text: "Antenntyp" }
+    ],
+    correctAnswer: "a",
+    explanation: "Shift = frekvensskillnad mellan vad du sänder på (ingång) och vad repeatern sänder på (utgång). 2m: -600 kHz, 70cm: +1,6 MHz. Exempel: Repeater 145.700 med shift -600 → du sänder på 145.100, lyssnar på 145.700.",
+    difficulty: "medium"
+},
+{
+    id: 148,
+    chapterId: 7,
+    question: "Vad står HAREC för?",
+    options: [
+        { id: "a", text: "Ham Radio Education Certificate" },
+        { id: "b", text: "Harmonised Amateur Radio Examination Certificate" },
+        { id: "c", text: "High Amateur Radio Efficiency Class" },
+        { id: "d", text: "Historical Amateur Radio Experiment Club" }
+    ],
+    correctAnswer: "b",
+    explanation: "HAREC = Harmonised Amateur Radio Examination Certificate. Europeiskt gemensamt certifikat (CEPT T/R 61-01) som ger fulla rättigheter: alla band, 1000W PEP, trafik i 48 CEPT-länder, livstid.",
+    difficulty: "medium"
+},
+{
+    id: 149,
+    chapterId: 7,
+    question: "Vilken effekt får du använda på 60m-bandet (5 MHz)?",
+    options: [
+        { id: "a", text: "1000W PEP som vanligt" },
+        { id: "b", text: "15W EIRP (inkl. antennvinst)" },
+        { id: "c", text: "200W PEP" },
+        { id: "d", text: "Obegränsad" }
+    ],
+    correctAnswer: "b",
+    explanation: "60m-bandet har speciella regler: Max 15W EIRP (Effective Isotropic Radiated Power = inkl. antennvinst!), endast USB, sekundär användning. Du måste räkna: Sändareffekt - kabelförlust + antennvinst = EIRP ≤ 15W.",
+    difficulty: "hard"
+},
+{
+    id: 150,
+    chapterId: 7,
+    question: "Vad betyder /MM efter en anropssignal?",
+    options: [
+        { id: "a", text: "Mycket hög effekt" },
+        { id: "b", text: "Maritime Mobile - trafikerar från fartyg på internationellt vatten" },
+        { id: "c", text: "Mobil i bil" },
+        { id: "d", text: "Mikrofon avstängd" }
+    ],
+    correctAnswer: "b",
+    explanation: "/MM = Maritime Mobile (från fartyg på internationellt vatten). /M = Mobil (bil), /P = Portabel (fältstuga), /AM = Aeronautic Mobile (flygplan, mycket ovanligt). Exempel: SM5XYZ/MM när du seglar på Östersjön.",
+    difficulty: "medium"
+},
 
     // ============================================
     // KAPITEL 8: TRAFIKMETODER
     // ============================================
     {
-        id: 161,
+        id: 151,
         chapterId: 8,
         question: "Vad betyder Q-koden 'QTH'?",
         options: [
@@ -2005,7 +2145,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 162,
+        id: 152,
         chapterId: 8,
         question: "Vad betyder 'CQ' i amatörradio?",
         options: [
@@ -2019,7 +2159,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 163,
+        id: 153,
         chapterId: 8,
         question: "Vad står RST-systemet för?",
         options: [
@@ -2033,7 +2173,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 164,
+        id: 154,
         chapterId: 8,
         question: "Vad betyder 'QRZ'?",
         options: [
@@ -2047,7 +2187,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 165,
+        id: 155,
         chapterId: 8,
         question: "Hur bokstaveras 'S' i det fonetiska alfabetet?",
         options: [
@@ -2061,7 +2201,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 166,
+        id: 156,
         chapterId: 8,
         question: "Vad är ett QSO?",
         options: [
@@ -2075,7 +2215,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 167,
+        id: 157,
         chapterId: 8,
         question: "Vad är den internationella nödfrekvensen på HF?",
         options: [
@@ -2089,7 +2229,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 168,
+        id: 158,
         chapterId: 8,
         question: "Vad betyder 'MAYDAY' i radiosammanhang?",
         options: [
@@ -2103,7 +2243,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 169,
+        id: 159,
         chapterId: 8,
         question: "Vad är en repeater (relä)?",
         options: [
@@ -2117,7 +2257,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 170,
+        id: 160,
         chapterId: 8,
         question: "Vad betyder '73' i amatörradio?",
         options: [
@@ -2135,7 +2275,7 @@ difficulty: "easy"
     // KAPITEL 9: ELSÄKERHET
     // ============================================
     {
-        id: 181,
+        id: 171,
         chapterId: 9,
         question: "Vid vilken strömstyrka anses elektrisk ström bli farlig för människor?",
         options: [
@@ -2149,7 +2289,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 182,
+        id: 172,
         chapterId: 9,
         question: "Varför är det viktigt med skyddsjord?",
         options: [
@@ -2163,7 +2303,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 183,
+        id: 173,
         chapterId: 9,
         question: "Vad ska man göra först om någon får en elektrisk stöt?",
         options: [
@@ -2177,7 +2317,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 184,
+        id: 174,
         chapterId: 9,
         question: "Var finns högspänning i en typisk HF-transceiver?",
         options: [
@@ -2191,7 +2331,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 185,
+        id: 175,
         chapterId: 9,
         question: "Vad är SAR-värde?",
         options: [
@@ -2205,7 +2345,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 186,
+        id: 176,
         chapterId: 9,
         question: "Hur skyddar man sig bäst mot åskskador på radioutrustning?",
         options: [
@@ -2219,7 +2359,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 187,
+        id: 177,
         chapterId: 9,
         question: "Vad är en säker avstånd från en HF-antenn vid sändning med hög effekt?",
         options: [
@@ -2233,7 +2373,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 188,
+        id: 178,
         chapterId: 9,
         question: "Varför är kondensatorer farliga även efter att strömmen stängts av?",
         options: [
@@ -2247,7 +2387,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 189,
+        id: 179,
         chapterId: 9,
         question: "Vad är syftet med en jordfelsbrytare?",
         options: [
@@ -2261,7 +2401,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 190,
+        id: 180,
         chapterId: 9,
         question: "Vad bör man tänka på vid arbete på tak eller master för antenninstallation?",
         options: [
@@ -2279,7 +2419,7 @@ difficulty: "easy"
     // KAPITEL 10: PRAKTISK RADIOTRAFIK
     // ============================================
     {
-        id: 201,
+        id: 191,
         chapterId: 10,
         question: "Vilket band är bäst för lokala kontakter (inom ca 50 km)?",
         options: [
@@ -2293,7 +2433,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 202,
+        id: 192,
         chapterId: 10,
         question: "Vad är en lämplig första radio för en nybörjare?",
         options: [
@@ -2307,7 +2447,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 203,
+        id: 193,
         chapterId: 10,
         question: "Vad är CTCSS (subtoner) vid repeatertrafik?",
         options: [
@@ -2321,7 +2461,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 204,
+        id: 194,
         chapterId: 10,
         question: "Vad är FT8?",
         options: [
@@ -2335,7 +2475,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 205,
+        id: 195,
         chapterId: 10,
         question: "Vad är ett QSL-kort?",
         options: [
@@ -2349,7 +2489,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 206,
+        id: 196,
         chapterId: 10,
         question: "Vad är DXCC?",
         options: [
@@ -2363,7 +2503,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 207,
+        id: 197,
         chapterId: 10,
         question: "Vad är APRS?",
         options: [
@@ -2377,7 +2517,7 @@ difficulty: "easy"
         difficulty: "medium"
     },
     {
-        id: 208,
+        id: 198,
         chapterId: 10,
         question: "Vilket band är populärast för DX (långdistans) på HF?",
         options: [
@@ -2391,7 +2531,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 209,
+        id: 199,
         chapterId: 10,
         question: "Vad innebär portabel radiotrafik (/P)?",
         options: [
@@ -2405,7 +2545,7 @@ difficulty: "easy"
         difficulty: "easy"
     },
     {
-        id: 210,
+        id: 200,
         chapterId: 10,
         question: "Vad är SOTA?",
         options: [

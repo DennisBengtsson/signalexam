@@ -5017,14 +5017,725 @@ const certChapters = [
             }
         ]
     },
-    {
-        id: 7,
-        number: 7,
-        title: 'Regler och Bestämmelser',
-        slug: 'kapitel-7-regler-bestammelser',
-        icon: '📜',
-        subchapters: []
-    },
+{
+    id: 7,
+    number: 7,
+    title: 'Regler och Bestämmelser',
+    slug: 'kapitel-7-regler-bestammelser',
+    icon: '📜',
+    subchapters: [
+        {
+            id: '7.1',
+            title: '7.1 Regelverkets uppbyggnad',
+            exercises: [
+                {
+                    id: 'c7-1-e1',
+                    type: 'multiple-choice',
+                    question: 'Vad är ITU och vad gör organisationen?',
+                    options: [
+                        'FN-organ för datorer',
+                        'FN-organ som fördelar radiofrekvenser globalt och tilldelar prefix',
+                        'Europeisk radioorganisation',
+                        'Svensk myndighet'
+                    ],
+                    correct: 1,
+                    explanation: 'ITU (International Telecommunication Union) är FN:s organ för telekommunikation. Uppgifter: Fördela radiofrekvenser mellan länder/tjänster, tilldela prefix (SM=Sverige, DL=Tyskland), sätta tekniska standarder, dela upp världen i 3 regioner.'
+                },
+                {
+                    id: 'c7-1-e2',
+                    type: 'multiple-choice',
+                    question: 'Vilken ITU-region ligger Sverige i?',
+                    options: [
+                        'Region 1 (Europa, Afrika, Mellanöstern)',
+                        'Region 2 (Amerika)',
+                        'Region 3 (Asien, Oceanien)',
+                        'Ingen region'
+                    ],
+                    correct: 0,
+                    explanation: 'Sverige ligger i ITU Region 1 (Europa, Afrika, Mellanöstern, Ryssland). Detta påverkar vilka frekvenser vi får använda - t.ex. 7000-7200 kHz i Region 1, men bara 7000-7125 kHz i Region 2.'
+                },
+                {
+                    id: 'c7-1-e3',
+                    type: 'multiple-choice',
+                    question: 'Vad är CEPT och vad gör de för amatörradio?',
+                    options: [
+                        'FN-organ',
+                        'Europeisk organisation som harmoniserar tele-regler, bl.a. HAREC och fri trafik',
+                        'Svensk radioförening',
+                        'Amerikanskt organ'
+                    ],
+                    correct: 1,
+                    explanation: 'CEPT (European Conference of Postal and Telecommunications Administrations) = 48 europeiska länder. Viktigt för amatörradio: CEPT T/R 61-01 (HAREC-certifikat), CEPT T/R 61-02 (trafik i andra länder utan tillstånd).'
+                },
+                {
+                    id: 'c7-1-e4',
+                    type: 'multiple-choice',
+                    question: 'Vad står HAREC för och vad innebär det?',
+                    options: [
+                        'High Amateur Radio Class',
+                        'Harmonised Amateur Radio Examination Certificate - gemensamt EU-certifikat',
+                        'Ham Radio Education Center',
+                        'Historical Amateur Radio Equipment'
+                    ],
+                    correct: 1,
+                    explanation: 'HAREC = Harmonised Amateur Radio Examination Certificate. Europeiskt gemensamt certifikat (CEPT T/R 61-01). Ger: Alla band, 1000W PEP, alla trafiksätt, CEPT-trafik i 48 länder, livstid.'
+                },
+                {
+                    id: 'c7-1-e5',
+                    type: 'multiple-choice',
+                    question: 'Vilken svensk myndighet utfärdar certifikat och anropssignaler?',
+                    options: [
+                        'SSA',
+                        'PTS (Post- och telestyrelsen)',
+                        'IARU',
+                        'CEPT'
+                    ],
+                    correct: 1,
+                    explanation: 'PTS (Post- och telestyrelsen) är svensk myndighet som utfärdar HAREC-certifikat och tilldelar anropssignaler. SSA arrangerar proven på PTS uppdrag. PTS sätter också reglerna (PTSFS).'
+                },
+                {
+                    id: 'c7-1-e6',
+                    type: 'multiple-choice',
+                    question: 'Vad är IARU och vad gör de?',
+                    options: [
+                        'FN-organ för radio',
+                        'Frivillig organisation som representerar radioamatörer, utarbetar bandplaner',
+                        'Europeisk myndighet',
+                        'Amerikansk radioförening'
+                    ],
+                    correct: 1,
+                    explanation: 'IARU (International Amateur Radio Union) är frivillig organisation för radioamatörer. Uppgifter: Representera i ITU, utarbeta bandplaner (CW här, SSB där), koordinera evenemang, dela upp världen i 3 regioner.'
+                },
+                {
+                    id: 'c7-1-e7',
+                    type: 'multiple-choice',
+                    question: 'Vad är SSA och vad gör de?',
+                    options: [
+                        'Statlig myndighet',
+                        'Sveriges Sändareamatörer - frivillig förening, arrangerar prov och driver QSL-byrå',
+                        'Europeiskt radioförbund',
+                        'Företag som säljer radioapparater'
+                    ],
+                    correct: 1,
+                    explanation: 'SSA (Sveriges Sändareamatörer) är frivillig förening för svenska radioamatörer. Uppgifter: Arrangera certifikatprov (PTS uppdrag), utbildningsmaterial, QTC-tidning, QSL-byrå, Sveriges medlem i IARU, lobbying.'
+                },
+                {
+                    id: 'c7-1-e8',
+                    type: 'true-false',
+                    question: 'IARU:s bandplan är LAG i Sverige och du kan få böter om du bryter mot den.',
+                    correct: false,
+                    explanation: 'FALSKT! IARU:s bandplan är FRIVILLIG (inte lag i Sverige). Men nästan alla följer den eftersom det FUNGERAR - om alla vet var CW, SSB och digitalt ska vara blir det mindre kaos. God amatörpraxis = följ bandplanen!'
+                },
+                {
+                    id: 'c7-1-e9',
+                    type: 'matching',
+                    question: 'Para ihop organisation med uppgift:',
+                    pairs: [
+                        { left: 'ITU', right: 'Fördelar frekvenser globalt' },
+                        { left: 'CEPT', right: 'Harmoniserar EU-regler (HAREC)' },
+                        { left: 'IARU', right: 'Utarbetar bandplaner' },
+                        { left: 'PTS', right: 'Utfärdar certifikat i Sverige' }
+                    ]
+                },
+                {
+                    id: 'c7-1-e10',
+                    type: 'multiple-choice',
+                    question: 'Vad betyder "undantag från tillståndsplikt" för amatörradio?',
+                    options: [
+                        'Du får sända helt fritt',
+                        'Du behöver inte ansöka om tillstånd per radio, men måste ha certifikat och följa regler',
+                        'Inga regler gäller',
+                        'Du behöver inget certifikat'
+                    ],
+                    correct: 1,
+                    explanation: 'Undantag från tillståndsplikt = Du behöver INTE ansöka för varje radio (som förr). MEN: Du MÅSTE ha HAREC-certifikat, anropssignal och följa PTSFS. Som körkortet - du ansöker inte per resa, men måste följa trafikreglerna!'
+                }
+            ]
+        },
+        {
+            id: '7.2',
+            title: '7.2 Anropssignaler',
+            exercises: [
+                {
+                    id: 'c7-2-e1',
+                    type: 'multiple-choice',
+                    question: 'Hur är en svensk personlig anropssignal uppbyggd?',
+                    options: [
+                        'Bara bokstäver',
+                        'Prefix (SM) + områdessiffra (0-7) + suffix (2-3 bokstäver)',
+                        'Bara siffror',
+                        'Helt valfritt'
+                    ],
+                    correct: 1,
+                    explanation: 'Svensk signal: Prefix (SM, SA, etc.) + områdessiffra (0-7) + suffix (2-3 bokstäver). Exempel: SM5XYZ där SM=Sverige, 5=Östergötland/Kalmar, XYZ=personlig del. Områdessiffran baseras på bostadsadress.'
+                },
+                {
+                    id: 'c7-2-e2',
+                    type: 'multiple-choice',
+                    question: 'Vad betyder siffran i SM5XYZ?',
+                    options: [
+                        'Effektnivå',
+                        'Geografiskt område (5 = Östergötland, Kalmar, Gotland, Södermanland)',
+                        'Antal år som amatör',
+                        'Certifikatklass'
+                    ],
+                    correct: 1,
+                    explanation: 'Områdessiffra (0-7) anger geografiskt område baserat på bostadsadress. 0=Stockholm, 1=Norrbotten/Västerbotten, 2=Norrland nordväst, 3=Västra Sverige, 4=Södra Sverige, 5=Östra Mellansverige, 6=Värmland/Örebro, 7=Dalarna.'
+                },
+                {
+                    id: 'c7-2-e3',
+                    type: 'multiple-choice',
+                    question: 'När måste du identifiera din station?',
+                    options: [
+                        'Bara i början',
+                        'Bara i slutet',
+                        'Vid början, slut OCH minst var 10:e minut under pågående sändning',
+                        'Aldrig'
+                    ],
+                    correct: 2,
+                    explanation: 'IDENTIFIERINGSSKYLDIGHET (PTSFS): Vid början och slut av varje sändning + minst var 10:e minut under pågående sändning. Gäller även test/tuning! Glöm detta = regelbrott.'
+                },
+                {
+                    id: 'c7-2-e4',
+                    type: 'multiple-choice',
+                    question: 'Hur identifierar du dig när du trafikerar i Tyskland med svensk licens?',
+                    options: [
+                        'SM5XYZ som vanligt',
+                        'DL/SM5XYZ (värdlandets prefix före)',
+                        'Ny tysk signal krävs',
+                        'Tyskland/SM5XYZ'
+                    ],
+                    correct: 1,
+                    explanation: 'CEPT-trafik: Värdlandets prefix + / + din signal. Tyskland=DL/SM5XYZ, Norge=LA/SM5XYZ, Spanien=EA/SM5XYZ. Detta visar att du är svensk gästoperatör i värdlandet.'
+                },
+                {
+                    id: 'c7-2-e5',
+                    type: 'multiple-choice',
+                    question: 'Vad betyder /M, /P och /MM efter anropssignalen?',
+                    options: [
+                        'Olika effektnivåer',
+                        '/M=Mobil (bil), /P=Portabel (fält), /MM=Maritime Mobile (fartyg)',
+                        'Olika certifikatklasser',
+                        'Olika band'
+                    ],
+                    correct: 1,
+                    explanation: '/M = Mobil (i fordon), /P = Portabel (fältstuga, temporär), /MM = Maritime Mobile (fartyg på internationellt vatten), /AM = Aeronautic Mobile (flygplan, mycket ovanligt). Exempel: SM5XYZ/M när du kör bil.'
+                },
+                {
+                    id: 'c7-2-e6',
+                    type: 'multiple-choice',
+                    question: 'Vilken signal använder klubbstationer?',
+                    options: [
+                        'Samma som personliga (SM5XYZ)',
+                        'SK-prefix (t.ex. SK7AB) - K visar klubb',
+                        'SC-prefix',
+                        'SL-prefix'
+                    ],
+                    correct: 1,
+                    explanation: 'Klubbstationer använder SK-prefix (K=Klubb). Exempel: SK7RR (Göteborgs repeater). Automatiska stationer (repeatrar, fyrar) använder SE-prefix. Specialevenemang kan ha SL-prefix.'
+                },
+                {
+                    id: 'c7-2-e7',
+                    type: 'true-false',
+                    question: 'Om du flyttar från Göteborg (område 3) till Stockholm (område 0) MÅSTE du byta anropssignal.',
+                    correct: false,
+                    explanation: 'FALSKT! Du behöver INTE byta signal om du flyttar. Din signal följer med dig. Men du KAN ansöka om ny signal med rätt områdessiffra om du vill. Många behåller sin gamla signal av sentiment.'
+                },
+                {
+                    id: 'c7-2-e8',
+                    type: 'multiple-choice',
+                    question: 'Vilket fonetiskt alfabet används internationellt?',
+                    options: [
+                        'Svenska (Adam, Bertil, Cesar...)',
+                        'ITU (Alfa, Bravo, Charlie...)',
+                        'Amerikanska (Apple, Boy, Cat...)',
+                        'Valfritt'
+                    ],
+                    correct: 1,
+                    explanation: 'ITU:s fonetiska alfabet är internationell standard: Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu.'
+                },
+                {
+                    id: 'c7-2-e9',
+                    type: 'multiple-choice',
+                    question: 'Hur bokstaverar du "SM5ABC" fonetiskt korrekt?',
+                    options: [
+                        'S M 5 A B C',
+                        'SIERRA MIKE FIFE ALFA BRAVO CHARLIE',
+                        'Sven Martin Fem Anna Bertil Cesar',
+                        'Sweden Mike Five Alpha Beta Charlie'
+                    ],
+                    correct: 1,
+                    explanation: 'Korrekt: SIERRA MIKE FIFE ALFA BRAVO CHARLIE. Viktigt: Siffror också fonetiskt (FIFE=5, WUN=1, TOO=2, TREE=3, FOW-er=4, NIN-er=9). Vid dåliga förhållanden, upprepa alltid!'
+                },
+                {
+                    id: 'c7-2-e10',
+                    type: 'true-false',
+                    question: 'Vid test/tuning behöver du INTE identifiera dig med anropssignal.',
+                    correct: false,
+                    explanation: 'FALSKT och viktigt! Även vid test/tuning MÅSTE du identifiera: "SM5XYZ testar" eller "SM5XYZ tuning". Inte bara "test test test" utan signal! Detta är ett vanligt misstag som är regelbrott.'
+                }
+            ]
+        },
+        {
+            id: '7.3',
+            title: '7.3 Frekvenser och effekt',
+            exercises: [
+                {
+                    id: 'c7-3-e1',
+                    type: 'multiple-choice',
+                    question: 'Vad är maximal tillåten effekt på de flesta amatörband med HAREC?',
+                    options: [
+                        '100W PEP',
+                        '500W PEP',
+                        '1000W (1 kW) PEP',
+                        'Obegränsad'
+                    ],
+                    correct: 2,
+                    explanation: 'Maxeffekt: 1000W PEP på de flesta band. UNDANTAG: 60m = 15W EIRP (inkl. antennvinst!), 6m = 200W PEP. PEP = Peak Envelope Power (toppeffekt vid modulationstoppar på SSB).'
+                },
+                {
+                    id: 'c7-3-e2',
+                    type: 'multiple-choice',
+                    question: 'Vilken effekt får du använda på 60m-bandet?',
+                    options: [
+                        '1000W som vanligt',
+                        '15W EIRP (inkl. antennvinst)',
+                        '200W PEP',
+                        '500W'
+                    ],
+                    correct: 1,
+                    explanation: '60m-bandet (5 MHz): Max 15W EIRP. EIRP = Effective Isotropic Radiated Power = sändareffekt - kabelförlust + antennvinst. Exempel: 10W sändare + 3 dBi antenn ≈ 20W EIRP = FÖR HÖGT! Minska till 8W.'
+                },
+                {
+                    id: 'c7-3-e3',
+                    type: 'multiple-choice',
+                    question: 'Vad betyder QRP?',
+                    options: [
+                        'Hög effekt (>500W)',
+                        'Frivillig lågeffekt (5W CW, 10W SSB på HF)',
+                        'Endast digitala modes',
+                        'Endast repeatrar'
+                    ],
+                    correct: 1,
+                    explanation: 'QRP = Frivillig lågeffektstrafik. Definition: Max 5W CW, max 10W PEP SSB på HF. Q-kod: "Ska jag minska effekten?". Visar skicklighet - jobba DX med minimal effekt! Populärt för portabel drift och utmaning.'
+                },
+                {
+                    id: 'c7-3-e4',
+                    type: 'multiple-choice',
+                    question: 'Vilket band har lägst maxeffekt (förutom 60m)?',
+                    options: [
+                        '20m (14 MHz)',
+                        '6m (50 MHz) - max 200W PEP',
+                        '2m (144 MHz)',
+                        '70cm (430 MHz)'
+                    ],
+                    correct: 1,
+                    explanation: '6m-bandet (50-52 MHz) har max 200W PEP - lägre än vanliga 1000W. Övriga VHF/UHF-band: 1000W. 60m är lägst med 15W EIRP, men 6m är näst lägst.'
+                },
+                {
+                    id: 'c7-3-e5',
+                    type: 'true-false',
+                    question: 'Du ska alltid använda minsta möjliga effekt för att uppnå kontakten.',
+                    correct: true,
+                    explanation: 'SANT och viktigt! Amatörradiokod: "Use minimum power necessary". Varför? Minska störningar, säkerhet (RF-exponering), ekonomi, rättvisa, lär dig teknik. 100W + bra antenn >> 1000W + dålig antenn!'
+                },
+                {
+                    id: 'c7-3-e6',
+                    type: 'multiple-choice',
+                    question: 'Vad är DX-window och hur använder man det?',
+                    options: [
+                        'Fönster för att se DX',
+                        'Frekvensområde där DX-stationer sänder, europeiska lyssnar där men anropar UTANFÖR',
+                        'Tidpunkt på dygnet',
+                        'Typ av antenn'
+                    ],
+                    correct: 1,
+                    explanation: 'DX-window (t.ex. 14195-14200 kHz på 20m): Sällsynta DX-stationer sänder här. Europeiska stationer lyssnar där men ANROPAR UTANFÖR (14210+). Undvik QRM, fler får kontakt. ALDRIG anropa i DX-window om du är i Europa!'
+                },
+                {
+                    id: 'c7-3-e7',
+                    type: 'multiple-choice',
+                    question: 'Vad är anropsfrekvensen för 2m SSB?',
+                    options: [
+                        '144.300 MHz',
+                        '145.500 MHz',
+                        '433.500 MHz',
+                        '14.285 MHz'
+                    ],
+                    correct: 0,
+                    explanation: '144.300 MHz är internationell SSB-anropsfrekvens på 2m. Anropa här kort, sedan flytta till annan frekvens för QSO. 145.500 MHz är FM simplex-anropsfrekvens (inte SSB). Lär dig denna - mycket använd!'
+                },
+                {
+                    id: 'c7-3-e8',
+                    type: 'true-false',
+                    question: 'WARC-banden (30m, 17m, 12m) får användas för tävlingar.',
+                    correct: false,
+                    explanation: 'FALSKT! WARC-band (World Administrative Radio Conference): 30m, 17m, 12m. Speciella regler: INGA tävlingar (för att bevara för QSO), 30m endast CW/digitalt (ej SSB/FM). Respektera detta!'
+                },
+                {
+                    id: 'c7-3-e9',
+                    type: 'matching',
+                    question: 'Para ihop band med typisk användning:',
+                    pairs: [
+                        { left: '20m (14 MHz)', right: 'DX-bandet, global räckvidd' },
+                        { left: '40m (7 MHz)', right: 'Allround, populäraste HF' },
+                        { left: '2m (144 MHz)', right: 'Lokal VHF, FM-repeatrar' },
+                        { left: '60m (5 MHz)', right: 'Låg effekt, sekundär' }
+                    ]
+                },
+                {
+                    id: 'c7-3-e10',
+                    type: 'multiple-choice',
+                    question: 'Vad är IARU:s bandplan?',
+                    options: [
+                        'Lag som måste följas',
+                        'Frivillig plan som anger var CW, SSB, digitalt ska vara - starkt respekterad',
+                        'Endast för tävlingar',
+                        'Endast för DX'
+                    ],
+                    correct: 1,
+                    explanation: 'IARU Region 1 bandplan är FRIVILLIG men starkt respekterad. Anger: CW här (t.ex. 14000-14070), SSB där (14100-14350), digitalt här (14070-14099). Följs av nästan alla - gör det lättare att hitta kontakter!'
+                }
+            ]
+        },
+        {
+            id: '7.4',
+            title: '7.4 Tillåtet innehåll',
+            exercises: [
+                {
+                    id: 'c7-4-e1',
+                    type: 'true-false',
+                    question: 'Du får sälja din gamla transceiver med pris och köpuppmaningar på luften.',
+                    correct: false,
+                    explanation: 'FALSKT! Kommersiell verksamhet förbjuden. Du får KORT nämna att du funderar på att sälja och hänvisa till mail/telefon. Men INTE: pris, försäljningspitch, "ring nu!", upprepad reklam. Amatörradio är icke-kommersiellt!'
+                },
+                {
+                    id: 'c7-4-e2',
+                    type: 'true-false',
+                    question: 'Musik (inspelad eller live) är förbjuden på amatörradio.',
+                    correct: true,
+                    explanation: 'SANT! Musik förbjuden - varken inspelad (Spotify, CD) eller live (sjunga, spela instrument). Amatörradio är för tvåvägskommunikation, experiment, utbildning - INTE broadcast eller underhållning. Upphovsrättslicenser krävs för musik.'
+                },
+                {
+                    id: 'c7-4-e3',
+                    type: 'multiple-choice',
+                    question: 'Är krypterade meddelanden tillåtna?',
+                    options: [
+                        'Ja, obegränsat',
+                        'Nej, all trafik ska vara öppen och avlyssningsbar',
+                        'Ja, för nödtrafik',
+                        'Ja, mellan klubbar'
+                    ],
+                    correct: 1,
+                    explanation: 'All amatörradiotrafik ska vara ÖPPEN och möjlig att avlyssna. Kryptering eller hemliga koder förbjudna. Undantag: Q-koder och RST-rapporter OK (standardiserade och öppna). Transparens = tillit!'
+                },
+                {
+                    id: 'c7-4-e4',
+                    type: 'multiple-choice',
+                    question: 'Vad får du INTE prata om på amatörradio?',
+                    options: [
+                        'Tekniska ämnen',
+                        'Politik (propaganda), religion (missionering), kommersiellt, musik, kryptering',
+                        'Väder',
+                        'Familj'
+                    ],
+                    correct: 1,
+                    explanation: 'FÖRBJUDET: Politik (propaganda/debatt), religion (missionering), kommersiell verksamhet, musik, kryptering, olämpligt språk, störningar. TILLÅTET: Teknik, personligt (familj, väder, hobbies), nöd, tävlingar, utbildning.'
+                },
+                {
+                    id: 'c7-4-e5',
+                    type: 'true-false',
+                    question: 'Du får prata om ditt jobb, men inte göra reklam för ditt företag.',
+                    correct: true,
+                    explanation: 'SANT! Gråzon: Berätta vad du jobbar med = OK ("Jag är elektriker"). Reklam för företaget = EJ OK ("Ring mitt företag för offerter"). Tumregel: Skulle jag säga detta på en hobbyklubb? Om ja → OK.'
+                },
+                {
+                    id: 'c7-4-e6',
+                    type: 'multiple-choice',
+                    question: 'Vad är "god amatöranda"?',
+                    options: [
+                        'Köra maxeffekt',
+                        'Tekniskt fokus, vänlighet, hjälpsamhet, respekt, icke-kommersiellt',
+                        'Tävla mycket',
+                        'Vara tyst'
+                    ],
+                    correct: 1,
+                    explanation: 'God amatöranda: Tekniskt fokus, vänlighet, hjälpsamhet, respekt för andra, minimal effekt, god ton, icke-kommersiellt, dela kunskap, följa regler. Amatörradio bygger på ömsesidig respekt och samarbete!'
+                },
+                {
+                    id: 'c7-4-e7',
+                    type: 'true-false',
+                    question: 'Nödtrafik har alltid företräde framför all annan trafik.',
+                    correct: true,
+                    explanation: 'SANT och kritiskt! Vid nödsignal (MAYDAY, NÖDTRAFIK): ALLA andra QSO avbryts omedelbart, TYST, lyssna, hjälp om du kan. Nödfrekvenser: 3760 kHz (80m), 7110 kHz (40m), 14300 kHz (20m), 145.500 MHz (2m FM).'
+                },
+                {
+                    id: 'c7-4-e8',
+                    type: 'multiple-choice',
+                    question: 'Vad får du göra vid nödsituation?',
+                    options: [
+                        'Ingenting',
+                        'Vidarebefordra nödmeddelanden, använda annan frekvens om nödvändigt, bryta regler för att rädda liv',
+                        'Bara lyssna',
+                        'Stänga av radion'
+                    ],
+                    correct: 1,
+                    explanation: 'Vid NÖD får du: Vidarebefordra meddelanden för icke-amatörer (annars förbjudet), använda VILKEN frekvens som helst (även utanför amatörband), överskrIda effektgränser. LIV går före regler! Men falsk nödsignal = allvarligt brott.'
+                },
+                {
+                    id: 'c7-4-e9',
+                    type: 'true-false',
+                    question: 'Du får avsiktligt störa annan trafik (jamming) om du tycker de pratar för länge.',
+                    correct: false,
+                    explanation: 'FALSKT och allvarligt brott! Avsiktlig störning (jamming) är FÖRBJUDET och kan leda till: indragning av certifikat, böter, åtal. Om störd av lång QSO: Vänta eller byt frekvens. ALDRIG störa avsiktligt!'
+                },
+                {
+                    id: 'c7-4-e10',
+                    type: 'matching',
+                    question: 'Para ihop aktivitet med tillåtet/förbjudet:',
+                    pairs: [
+                        { left: 'Tekniskt samtal om antenner', right: 'TILLÅTET ✅' },
+                        { left: 'Spela musik från Spotify', right: 'FÖRBJUDET ❌' },
+                        { left: 'Sälja bil med pris på luften', right: 'FÖRBJUDET ❌' },
+                        { left: 'Vidarebefordra nödmeddelande', right: 'TILLÅTET ✅' }
+                    ]
+                }
+            ]
+        },
+        {
+            id: '7.5',
+            title: '7.5 Internationell trafik',
+            exercises: [
+                {
+                    id: 'c7-5-e1',
+                    type: 'multiple-choice',
+                    question: 'Vad innebär CEPT T/R 61-02?',
+                    options: [
+                        'Förbud mot trafik utomlands',
+                        'Rätt att trafikera i 48 europeiska länder utan separat tillstånd',
+                        'Krav på nytt prov',
+                        'Endast för klubbstationer'
+                    ],
+                    correct: 1,
+                    explanation: 'CEPT T/R 61-02 = Tillfällig användning. Med HAREC-certifikat får du trafikera i 48 CEPT-länder utan separat tillstånd, upp till 3 månader per besök. Använd värdlandets prefix + din signal (DL/SM5XYZ i Tyskland).'
+                },
+                {
+                    id: 'c7-5-e2',
+                    type: 'multiple-choice',
+                    question: 'Hur länge får du trafikera i ett CEPT-land per besök?',
+                    options: [
+                        '1 vecka',
+                        '1 månad',
+                        'Upp till 3 månader (vanlig regel, kan variera)',
+                        'Obegränsat'
+                    ],
+                    correct: 2,
+                    explanation: 'CEPT-trafik: Vanligen upp till 3 månader per besök (kan variera mellan länder). För längre vistelse: Ansök om permanent tillstånd i värdlandet. Ta alltid med kopia på HAREC-certifikatet!'
+                },
+                {
+                    id: 'c7-5-e3',
+                    type: 'multiple-choice',
+                    question: 'Hur identifierar du dig i Norge med svensk licens?',
+                    options: [
+                        'SM5XYZ som vanligt',
+                        'LA/SM5XYZ (norska prefix före)',
+                        'NO/SM5XYZ',
+                        'Norge-SM5XYZ'
+                    ],
+                    correct: 1,
+                    explanation: 'Norge använder LA-prefix. Du blir: LA/SM5XYZ. Danmark=OZ/SM5XYZ, Finland=OH/SM5XYZ, Tyskland=DL/SM5XYZ, Spanien=EA/SM5XYZ, Frankrike=F/SM5XYZ, UK=G/SM5XYZ eller M/SM5XYZ.'
+                },
+                {
+                    id: 'c7-5-e4',
+                    type: 'true-false',
+                    question: 'USA är ett CEPT-land så du kan trafikera där direkt med HAREC-certifikat.',
+                    correct: false,
+                    explanation: 'FALSKT! USA är INTE CEPT. MEN: Sverige har reciprokt avtal med USA. Du måste ansöka om "reciprocal permit" hos FCC (cirka $35, gäller 1 år) ELLER ta amerikanskt certifikat. Trafik utan tillstånd = olagligt!'
+                },
+                {
+                    id: 'c7-5-e5',
+                    type: 'multiple-choice',
+                    question: 'Vilka länder är INTE CEPT och kräver separat tillstånd?',
+                    options: [
+                        'Norge, Danmark, Finland',
+                        'Thailand, Japan, Australien',
+                        'Tyskland, Frankrike, Spanien',
+                        'Alla EU-länder'
+                    ],
+                    correct: 1,
+                    explanation: 'INTE CEPT (kräver tillstånd): USA (reciprokt avtal), Thailand (ansökan NBTC), Japan (lokalt certifikat), Australien (ansökan ACMA), Egypten (mycket svårt). ALLTID kolla innan du trafikerar utanför Europa!'
+                },
+                {
+                    id: 'c7-5-e6',
+                    type: 'multiple-choice',
+                    question: 'Vad betyder /MM efter anropssignalen?',
+                    options: [
+                        'Mycket hög effekt (Maximum)',
+                        'Maritime Mobile - trafikerar från fartyg på internationellt vatten',
+                        'Mobil i bil',
+                        'Monteringsmisslyckande'
+                    ],
+                    correct: 1,
+                    explanation: '/MM = Maritime Mobile (fartyg på internationellt vatten). Följ ditt hemlands regler. Exempel: SM5XYZ/MM när du seglar på Östersjön. /AM = Aeronautic Mobile (flygplan, mycket ovanligt och kräver tillstånd från flygbolag).'
+                },
+                {
+                    id: 'c7-5-e7',
+                    type: 'true-false',
+                    question: 'När du trafikerar utomlands ska du alltid följa VÄRDLANDETS regler (frekvenser, effekt).',
+                    correct: true,
+                    explanation: 'SANT och viktigt! Vid CEPT-trafik: Följ VÄRDLANDETS regler (frekvenser, effektgränser, bandplaner, trafiksätt). Exempel: Om värdlandet har lägre effektgräns än Sverige, följ deras. Respektera värdlandet!'
+                },
+                {
+                    id: 'c7-5-e8',
+                    type: 'multiple-choice',
+                    question: 'Vad ska du ta med när du trafikerar utomlands?',
+                    options: [
+                        'Ingenting',
+                        'Kopia på HAREC-certifikat (papper eller digitalt)',
+                        'Bara radion',
+                        'Svenskt körkort'
+                    ],
+                    correct: 1,
+                    explanation: 'Ta alltid med: Kopia på HAREC-certifikat (papper + digitalt), lista över lokala repeatrar, frekvensplaner för värdlandet, SSA:s kontaktinfo. Certifikatet kan kontrolleras av myndigheter - ha det tillgängligt!'
+                },
+                {
+                    id: 'c7-5-e9',
+                    type: 'matching',
+                    question: 'Para ihop land med prefix:',
+                    pairs: [
+                        { left: 'Norge', right: 'LA' },
+                        { left: 'Tyskland', right: 'DL' },
+                        { left: 'Spanien', right: 'EA' },
+                        { left: 'Finland', right: 'OH' }
+                    ]
+                },
+                {
+                    id: 'c7-5-e10',
+                    type: 'true-false',
+                    question: 'Om du trafikerar i Thailand utan tillstånd riskerar du böter, beslag och fängelse.',
+                    correct: true,
+                    explanation: 'SANT! Thailand är INTE CEPT och har stränga lagar. Trafik utan tillstånd kan ge: Beslag av utrustning, stora böter, fängelse. ALLTID kolla INNAN du trafikerar i nytt land (SSA:s hemsida eller IARU). Var inte naiv!'
+                }
+            ]
+        },
+        {
+            id: '7.6',
+            title: '7.6 Loggbok, QSL och repeatrar',
+            exercises: [
+                {
+                    id: 'c7-6-e1',
+                    type: 'true-false',
+                    question: 'Loggbok är obligatorisk för all amatörradiotrafik i Sverige.',
+                    correct: false,
+                    explanation: 'FALSKT! Loggbok är EJ obligatorisk för personlig trafik i Sverige. MEN: Starkt rekommenderad och nödvändig för diplom (DXCC), tävlingar, störningsklagomål. Vissa länder (t.ex. USA) kräver loggbok.'
+                },
+                {
+                    id: 'c7-6-e2',
+                    type: 'multiple-choice',
+                    question: 'Vad ska finnas med i en loggboksanteckning?',
+                    options: [
+                        'Bara anropssignal',
+                        'Datum, tid (UTC), frekvens, band, mode, anropssignal, RST, QTH',
+                        'Bara datum',
+                        'Ingenting'
+                    ],
+                    correct: 1,
+                    explanation: 'Loggbok ska innehålla: Datum, tid (UTC!), frekvens, band, mode (SSB/CW/FT8), anropssignal, RST sänt/mottaget, namn, QTH/locator, anteckningar. Tid alltid i UTC (inte lokal tid)!'
+                },
+                {
+                    id: 'c7-6-e3',
+                    type: 'multiple-choice',
+                    question: 'Vad är ett QSL-kort?',
+                    options: [
+                        'En faktura',
+                        'Ett vykort som bekräftar en radiokontakt',
+                        'Ett medlemskort',
+                        'En antenn'
+                    ],
+                    correct: 1,
+                    explanation: 'QSL-kort = vykort som bekräftar radiokontakt. Innehåll: Datum, tid (UTC), frekvens, mode, RST, anropssignaler. Skickas: Direkt (post), via byrå (SSA), elektroniskt (eQSL/LoTW). Används för diplom och som samlarföremål.'
+                },
+                {
+                    id: 'c7-6-e4',
+                    type: 'multiple-choice',
+                    question: 'Hur kan du skicka QSL-kort?',
+                    options: [
+                        'Endast direkt post',
+                        'Direkt (post), via byrå (SSA), eller elektroniskt (eQSL/LoTW)',
+                        'Endast elektroniskt',
+                        'Endast via SSA'
+                    ],
+                    correct: 1,
+                    explanation: 'Tre sätt: 1) DIREKT (post, snabbt men dyrt), 2) VIA BYRÅ (SSA, billigt men långsamt 6-24 mån), 3) ELEKTRONISKT (eQSL/LoTW, omedelbart och gratis). För viktiga DX: Direkt med SAE (Self-Addressed Envelope).'
+                },
+                {
+                    id: 'c7-6-e5',
+                    type: 'multiple-choice',
+                    question: 'Vad är en repeater?',
+                    options: [
+                        'En typ av antenn',
+                        'Automatstation som tar emot på en frekvens och sänder på en annan',
+                        'En förstärkare',
+                        'Ett filter'
+                    ],
+                    correct: 1,
+                    explanation: 'Repeater = automatstation som förlänger räckvidden. Tar emot på ingångsfrekvens, sänder på utgångsfrekvens. Placeras högt (torn, berg) → 50-100 km täckning från handhållen 5W-radio. Viktigt för lokal VHF/UHF-trafik!'
+                },
+                {
+                    id: 'c7-6-e6',
+                    type: 'multiple-choice',
+                    question: 'Vad betyder "shift" på en repeater?',
+                    options: [
+                        'Tid på dygnet',
+                        'Skillnaden mellan ingångs- och utgångsfrekvens',
+                        'Effekt',
+                        'Modulation'
+                    ],
+                    correct: 1,
+                    explanation: 'Shift = frekvensskillnad mellan ingång (vad du sänder) och utgång (vad repeatern sänder). 2m: -600 kHz, 70cm: +1,6 MHz. Exempel: Repeater 145.700 med shift -600 → du sänder 145.100, lyssnar 145.700.'
+                },
+                {
+                    id: 'c7-6-e7',
+                    type: 'multiple-choice',
+                    question: 'Vad är CTCSS-ton (subton) på repeatrar?',
+                    options: [
+                        'Volymkontroll',
+                        'Låg ton (t.ex. 123.0 Hz) som öppnar repeatern och förhindrar störningar',
+                        'Effektkontroll',
+                        'Frekvensjustering'
+                    ],
+                    correct: 1,
+                    explanation: 'CTCSS (Continuous Tone-Coded Squelch System) = låg ton (t.ex. 123.0 Hz, 88.5 Hz) som öppnar repeatern. Förhindrar att andra signaler öppnar repeatern av misstag. Kolla repeaterlista för rätt ton!'
+                },
+                {
+                    id: 'c7-6-e8',
+                    type: 'true-false',
+                    question: 'På repeatrar ska du hålla QSO kort (3-5 min) så andra får plats.',
+                    correct: true,
+                    explanation: 'SANT! Repeater-etikette: Kort QSO (3-5 min), identifiera korrekt, gör pauser, nödtrafik prioriteras ALLTID. Repeatrar är för ALLA - var artigt och dela utrymmet. Långa QSO → gå till simplex-frekvens istället!'
+                },
+                {
+                    id: 'c7-6-e9',
+                    type: 'matching',
+                    question: 'Para ihop repeater-term med förklaring:',
+                    pairs: [
+                        { left: 'Shift', right: 'Skillnad ingång/utgång' },
+                        { left: 'CTCSS', right: 'Subton som öppnar repeatern' },
+                        { left: 'Ingång (Rx)', right: 'Vad du sänder på' },
+                        { left: 'Utgång (Tx)', right: 'Vad repeatern sänder på' }
+                    ]
+                },
+                {
+                    id: 'c7-6-e10',
+                    type: 'true-false',
+                    question: 'Vid nödsignal på repeater måste alla andra QSO avbrytas omedelbart.',
+                    correct: true,
+                    explanation: 'SANT och kritiskt! Vid MAYDAY eller NÖDTRAFIK: Alla avbryter, TYST, lyssna, hjälp om du kan. Nödtrafik har ALLTID företräde - liv går före allt annat. Säg "SM5XYZ clear för nödtrafik".'
+                }
+            ]
+        }
+    ]
+},
     {
         id: 8,
         number: 8,

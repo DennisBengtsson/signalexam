@@ -1,0 +1,80 @@
+# Innehåll att lägga till i senare kapitel
+_Uppdateras löpande under arbetet med Certifikatshandboken_
+
+---
+
+## Kapitel 2 — Radioteknik
+
+### Från 1.4.1 (Kapacitans)
+- Specifika radioexempel för kapacitansprefix:
+  - pF: VFO-avstämning, antennanpassning, RF-kretsar
+  - nF: Koppling mellan förstärkarsteg, filter
+  - µF: Avkoppling, nätaggregatsfilter, audioväg
+  - mF: Stora filterkondensatorer i kraftiga nätaggregat
+
+### Från 1.4.2 (Kapacitiv reaktans)
+- Praktiska radioexempel för XC:
+  - Kopplingskondensator som blockerar likströmsbias men släpper ljud/RF
+  - VFO-kondensator i samarbete med spole
+  - Antenntuner med variabla kondensatorer för SWR-förbättring
+
+### Från 1.5.1 (Induktans)
+- Specifika radioexempel för induktansprefix:
+  - nH: VHF/UHF-kretsar, korta RF-choker
+  - µH: HF-kretsar, antennspolar, LC-filter
+  - mH: Audiofilter, stora RF-choker
+  - H: Nätaggregat, transformatorer
+
+### Från 1.5.2 (Induktiv reaktans)
+- Praktiska radioexempel för XL:
+  - RF-choke som blockerar RF på matarledning
+  - Antennförlängningsspole som kompenserar kapacitiv reaktans
+  - VFO-spole i samarbete med kondensator
+
+---
+
+## Kapitel 3 — Antenner
+
+### Från 1.5.2 (Induktiv reaktans)
+- Övningsfråga om antennförlängningsspole:
+  - 20 µH spole vid 3,5 MHz → XL ≈ 440 Ω
+  - Antennen har kapacitiv reaktans −440 Ω (för kort)
+  - Spole + antenn → resonans, 0 Ω total reaktans
+  - Eleven förstår att spolen "förlänger antennen elektriskt"
+- Facit för denna fråga finns redan skrivet (gamla facitblock 4 i 1.5)
+
+### Från 1.5.4 (Spoltyper)
+- Balun-boxen:
+  - Balun = Balanced–Unbalanced
+  - Kopplar obalanserad matning (koax) till balanserad antenn (dipol)
+  - Utan balun: mantelströmmar på kabelns utsida → störningar
+  - 1:1 chokebalun: stoppar mantelströmmar, ingen impedanstransformation (50Ω→50Ω)
+  - 1:4 balun: impedanstransformation ×4 (50Ω→200Ω)
+- Facit för balun-frågan finns redan skrivet (gamla facitblock 6 i 1.5)
+
+---
+
+## Kapitel 1.6 — Serie- och parallellkoppling
+
+### Från 1.4 (Kondensatorer)
+- Räkneexempel med 47/100/220 µF:
+  - Parallellt: Ctot = 47 + 100 + 220 = 367 µF
+  - Serie (47 µF och 100 µF): 1/Ctot = 1/47 + 1/100 → Ctot ≈ 32 µF
+  - Poäng: serie ger lägre C än den minsta ingående (omvänt mot resistorer)
+- Tabell med omvända regler för C och L sida vid sida:
+  - Kondensatorer i serie → C minskar (som parallella resistorer)
+  - Kondensatorer parallellt → C adderas (som resistorer i serie)
+  - Spolar i serie → L adderas (som resistorer i serie)
+  - Spolar parallellt → L minskar (som parallella resistorer)
+- Övningsfråga: Varför parallellkopplar man kondensatorer i nätaggregat?
+  - Svar: Stor total kapacitans jämnar ut spänningsvågor (rippel) effektivare
+  - Bonus: olika typer täcker olika frekvensområden (stor elektrolyt + liten keramisk)
+
+---
+
+## Noteringar
+
+- RF-choke som begrepp introduceras först ordentligt i kapitel 2.
+  I 1.5 används bara "spole som blockerar störningar" som beskrivning.
+- VFO, SWR, antenntuner — inga av dessa förklaras i kapitel 1.
+  De ska introduceras i respektive kapitel med rätt kontext.

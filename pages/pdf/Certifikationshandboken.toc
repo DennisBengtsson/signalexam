@@ -1,0 +1,88 @@
+\xpg@aux {}{swedish}
+\contentsline {chapter}{Förord}{2}{chapter*.1}%
+\contentsline {chapter}{Innan du börjar}{3}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Grundläggande Elektronik}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Elektrisk ström och spänning}{9}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Ström – Ampere (A)}{9}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Spänning – Volt (V)}{10}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Likström (DC) och växelström (AC)}{10}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Resistans och Ohms lag}{12}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Ohms lag – grundformeln}{13}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Material och resistivitet}{15}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Effekt och energi}{19}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}De tre effektformlerna}{19}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Decibel (dB)}{21}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Verkningsgrad}{25}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Kondensatorer}{26}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Kapacitans}{26}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Kapacitiv reaktans}{27}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Kondensatortyper}{29}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Tidskonstant}{32}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}Spolar och induktans}{34}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Induktans}{35}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Induktiv reaktans}{36}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Kondensator vs Spole -- fullständiga motsatser}{38}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Spoltyper}{39}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Tidskonstant}{40}{subsection.1.5.5}%
+\contentsline {section}{\numberline {1.6}Serie- och parallellkoppling}{42}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Seriekoppling}{42}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Parallellkoppling}{44}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Kirchhoffs lagar}{45}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Omvända regler för kondensatorer och spolar}{46}{subsection.1.6.4}%
+\contentsline {section}{\numberline {1.7}Växelström och impedans}{49}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Frekvens och period}{49}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Effektivvärde (RMS)}{51}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Impedans}{54}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Resonans}{56}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Fasförskjutning -- ELI the ICE man}{58}{subsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.7.6}Standard-impedanser och varför just 50\,$\Omega $}{60}{subsection.1.7.6}%
+\contentsline {subsection}{\numberline {1.7.7}Skineffekt}{62}{subsection.1.7.7}%
+\contentsline {subsection}{\numberline {1.7.8}SWR -- Standing Wave Ratio}{65}{subsection.1.7.8}%
+\contentsline {section}{\numberline {1.8}Filter och resonanskretsar}{69}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Filtertyper}{70}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Resonansfrekvens}{72}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Q-värde}{74}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Pi-filtret}{77}{subsection.1.8.4}%
+\contentsline {section}{\numberline {1.9}Halvledare och transistorn}{80}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Halvledarmaterial -- vad skiljer en ledare från en isolator?}{80}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Dioden -- strömmen får bara gå en väg}{81}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Transistorn -- den aktiva komponenten}{83}{subsection.1.9.3}%
+\contentsline {subsection}{\numberline {1.9.4}Transistorn som förstärkare}{84}{subsection.1.9.4}%
+\contentsline {subsection}{\numberline {1.9.5}Transistorn som switch}{86}{subsection.1.9.5}%
+\contentsline {subsection}{\numberline {1.9.6}Transistortyper -- BJT och FET}{87}{subsection.1.9.6}%
+\contentsline {section}{Grunden är lagd}{89}{subsection.1.9.6}%
+\contentsline {chapter}{Facit – Kapitel 1}{90}{chapter*.4}%
+\contentsline {chapter}{\numberline {2}Radioteknik}{110}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Vad är en radiovåg?}{110}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Elektromagnetiska vågor -- ljus och radio är släktingar}{110}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Frekvens och våglängd -- sambandet $\lambda = c/f$}{111}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Frekvensspektrum och amatörband}{112}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Modulering -- att packa information i en våg}{114}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Bärfrekvensen -- stommen som allt hänger på}{114}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Amplitudmodulering (AM)}{114}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Frekvensmodulering (FM)}{115}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Enkelsidebandssändning (SSB)}{116}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Digitala sändningsslag -- CW, RTTY, FT8}{117}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Sändaren}{118}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Oscillatorn -- hjärtat som skapar frekvensen}{118}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Förstärkarsteg}{119}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}PLL och frekvenssyntes}{119}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Sändarskedjans blockschema}{120}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Mottagaren}{121}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Selektivitet -- att hitta en röst i ett kakofoni}{121}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Superheterodynprincipen}{122}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Känslighet och brus}{123}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Mottagarskedjans blockschema}{123}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Sändtagaren -- transceivern}{125}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Hur sändare och mottagare delar komponenter}{125}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Duplexer och VOX}{126}{subsection.2.5.2}%
+\contentsline {section}{Signalen lever}{126}{subsection.2.5.2}%
+\contentsline {chapter}{Facit – Kapitel 2}{127}{chapter*.5}%
+\contentsline {chapter}{\numberline {3}Antenner}{130}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Vågutbredning}{131}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Mätinstrument}{132}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Störningar}{133}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Regler och bestämmelser}{134}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Trafikmetoder}{135}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Säkerhet}{136}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Praktisk trafik}{137}{chapter.10}%

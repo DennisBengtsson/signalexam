@@ -1,0 +1,1405 @@
+Alla övningsfrågor
+
+
+Övningsfrågor – 1.1 Ström och spänning
+Försök svara utan att titta i texten. Facit finns i slutet av kapitlet. GRUND = begrepp och definitioner  ·  RÄKNA = uträkning krävs  ·  PROV = PTS-examinationsnivå.
+
+Fråga 1
+Grund1. Vilken enhet mäts elektrisk ström i? Vad är beteckningen för ström i formler? Ange också de vanligaste underenheterna och deras relationer till grundenheten.
+Fråga 2
+Grund2. Vad är skillnaden mellan likström (DC) och växelström (AC)? Ge ett konkret praktiskt exempel på vardera typ i en typisk radiostation.
+Fråga 3
+Grund3. Vilken spänning är standard för amatörradioutrustning, och varför är det inte exakt 12 V trots att de flesta mobila installationer körs från ett 12 V-bilbatteri?
+Fråga 4
+Räkna4. Du har ett 12 Ah-batteri och en handhållen VHF-radio som förbrukar 1,5 A vid sändning och 0,3 A vid mottagning. Under ett fältpass sänder du 20 % av tiden och tar emot 80 % av tiden.
+
+a) Vad är den genomsnittliga strömförbrukningen?
+b) Hur länge räcker batteriet?
+Fråga 5
+Räkna5. Omvandla följande strömvärden till ampere:
+a) 250 mA    b) 4 200 µA    c) 0,75 kA    d) 85 mA
+
+Omvandla dessutom: 0,035 A till mA och till µA.
+Fråga 6
+Prov6. Vid nödkommunikation efter en storm ska du driva en HF-transceiver (100 W, 13,8 V, max 22 A vid sändning / 2 A vid mottagning) från en 60 Ah-batteribank. Du planerar att sända 15 minuter och ta emot 45 minuter per timme.
+
+a) Beräkna den genomsnittliga strömförbrukningen per timme.
+b) Hur många timmars drift ger batteribanken om du vill undvika att ladda ur den under 50 % (vilket skyddar batteriet och behåller reserv)?
+c) Nätaggregatet hemma ger 13,8 V med max 25 A. Är det tillräckligt för detta scenario?
+Fråga 7
+Prov7. Varför anges just 50 V som gränsen för "farlig spänning" i svenska elsäkerhetsföreskrifter, och vad är det specifikt med kroppen som avgör denna gräns – snarare än spänningen i sig?
+
+Beräkna hur stor ström som kan flöda genom en person med kroppsmotstånd 2 000 Ω om personen rör vid 50 V respektive 230 V.
+
+Övningsfrågor – 1.2 Resistans och Ohms lag
+Lös alla uträkningar utan räknare i första hand – det tränar din känsla för rimlighet och är bra förberedelse inför provet. Facit finns i slutet av kapitlet.
+
+Fråga 1
+Grund1. Ange Ohms lag i alla tre formerna (för U, för I och för R). Vad betecknar varje bokstav och i vilken enhet mäts de? Rita URI-triangeln och förklara hur den används.
+Fråga 2
+Grund2. Rangordna dessa material från lägst till högst resistans: silver, plast, kol, koppar, gummi, aluminium.
+
+Förklara sedan varför silver inte används i kablar trots att det är ett bättre ledande material än koppar.
+Fråga 3
+Räkna3. Beräkna det okända värdet i varje fall (konvertera enheter om det behövs!):
+a) U = ?   R = 330 Ω   I = 45 mA
+b) I = ?   U = 13,8 V   R = 4,7 kΩ
+c) R = ?   U = 6 V   I = 12 mA
+d) U = ?   R = 50 Ω   I = 2 A
+Fråga 4
+Räkna4. En matningskabel till en antennrotor har DC-resistansen 0,8 Ω (tur och retur). Rotorn drar 3 A under rörelse.
+
+a) Vilket spänningsfall uppstår i kabeln?
+b) Om nätaggregatet levererar 13,8 V – vilken spänning faktiskt når rotorn?
+c) Rotortillverkaren anger att rotorn kräver minst 11 V för korrekt drift. Är installationen godkänd?
+Fråga 5
+Räkna5. Du ska bygga en 50 Ω dummylast av fyra lika resistorer. Hur kopplar du dem och vilken resistans ska varje enskild resistor ha? Redovisa båda möjliga lösningarna och förklara för- och nackdelar.
+Fråga 6
+Prov6. En SWR-meter mäter den framåtgående spänningen till 70,7 V (RMS) i ett 50 Ω-system.
+
+a) Beräkna strömmen genom systemet med Ohms lag.
+b) Beräkna effekten i systemet (P = U × I).
+c) En tekniker påstår att koaxkabelns resistans (3 dB förlust vid denna effektnivå) är acceptabelt. Instämmer du? Motivera med beräkning.
+Fråga 7
+Prov7. Varför anges antennimpedansen för de flesta amatörradioapparater till 50 Ω och inte 75 Ω (som används för kabel-TV och TV-antenner)?
+
+Beskriv det fysikaliska resonemang som leder till kompromissen 50 Ω, och nämn vid vilken impedans en luftfylld koaxkabel har lägst dämpning respektive högst effektkapacitet.
+
+Övningsfrågor – 1.3 Effekt och energi
+Välj alltid formel innan du sätter in siffror. Kontrollera alltid att svaret är rimligt.
+
+Fråga 1
+Grund1. Förklara med egna ord vad effekt är och hur den skiljer sig från energi. Vilken enhet mäts effekt i och vad heter den uppkallad efter?
+Fråga 2
+Grund2. Du har tre effektformler att välja mellan. I vilka situationer använder du respektive formel? Ge ett radioexempel för varje.
+Fråga 3
+Räkna3. Beräkna effekten i varje fall. Ange också vilken formel du valde och varför:
+a) U = 13,8 V, I = 15 A
+b) I = 500 mA, R = 8 Ω
+c) U = 50 V, R = 50 Ω
+d) U = 230 V, I = 4,35 A
+Fråga 4
+Räkna4. Ett slutsteg levererar 100 W RF till antennen och drar 22 A från ett 13,8 V nätaggregat.
+
+a) Hur stor är den totala ineffekten (Pin)?
+b) Vad är verkningsgraden (η)?
+c) Hur stor effekt (i watt) omvandlas till värme?
+d) Kylflänsen klarar 100 W utan fläkt. Behövs fläkt?
+Fråga 5
+Räkna5. Din sändare ger 100 W. Koaxkabeln till antennen har 3 dB förlust.
+
+a) Hur många watt når antennen?
+b) Du byter till en kabel med bara 1 dB förlust. Är det värt bytet i watt räknat?
+c) Hur många dB förstärkning från en riktantenn behövs för att kompensera 3 dB kabelförlust?
+Fråga 6
+Prov6. En 470 Ω resistor är seriekopplad med en LED och ansluten till 12 V. Strömmen är 20 mA.
+
+a) Beräkna effekten som värme i resistorn med P = I² × R.
+b) Stämmer svaret med P = UR × I om du beräknar spänningsfallet över resistorn?
+c) Vilken standardeffekt (¼ W, ½ W, 1 W) ska resistorn minst ha?
+Fråga 7
+Prov7. En radioamatör byter från 100 W till 400 W sändeffekt. Hur många dB är ökningen? Kan han förvänta sig dubbelt så lång räckvidd? Motivera svaret.
+
+Övningsfrågor – 1.4 Kondensatorer
+Fråga 1
+Grund1. Förklara med egna ord varför en kondensator blockerar likström men inte växelström. Använd gummihinna-analogin i förklaringen.
+Fråga 2
+Grund2. Vilken kondensatortyp har polaritet och varför är det kritiskt att ansluta den rätt? Hur känner man igen plus- och minussidan på en ny komponent?
+Fråga 3
+Räkna3. Beräkna kapacitiv reaktans XC för en 100 pF kondensator vid:
+a) 7 MHz (40m-bandet)
+b) 144 MHz (2m-bandet)
+c) Vad händer med reaktansen när frekvensen ökar? Motivera med formeln.
+Fråga 4
+Räkna4. Du har tre kondensatorer: 47 µF, 100 µF och 220 µF.
+
+a) Vad blir total kapacitans om du kopplar dem parallellt?
+b) Vad händer (principiellt) om du kopplar de två lika 100 µF i serie?
+c) Varför kopplar man kondensatorer parallellt i nätaggregat?
+Fråga 5
+Räkna5. En kopplingskondensator på 10 µF används i audiovägen för att blockera DC men släppa igenom ljud (20 Hz – 20 kHz).
+
+a) Beräkna XC vid 20 Hz (lägsta ljudfrekvens).
+b) Beräkna XC vid 1 000 Hz (mellanfrekvens).
+c) Är 10 µF ett bra val? Motivera med hjälp av reaktansvärdena.
+Fråga 6
+Prov6. Förklara vad en "bypass-kondensator" (avkopplingskondensator) gör i en elektronisk krets. Varför placeras ofta en liten keramisk (100 nF) kondensator parallellt med en stor elektrolyt (100 µF) i nätaggregat och förstärkare?
+
+Övningsfrågor – 1.5 Spolar och induktans
+Fråga 1
+Grund1. Förklara med det tunga vattenhjulets analogi varför en spole bromsar växelström men inte likström.
+Fråga 2
+Grund2. Jämför kondensatorn och spolen. Fyll i tabellen utan att titta i texten:
+
+Egenskap	Kondensator	Spole
+Blockerar DC/AC?	 	 
+Reaktans vid hög f?	 	 
+Reaktansformel	 	 
+Lagrar energi i	 	 
+Fråga 3
+Räkna3. Beräkna induktiv reaktans XL för en 10 µH spole vid:
+a) 3,5 MHz (80m-bandet)
+b) 14 MHz (20m-bandet)
+c) 144 MHz (2m-bandet)
+d) Vad observerar du? Vad händer med XL när frekvensen ökar?
+Fråga 4
+Räkna4. Du behöver en RF-choke som har minst 500 Ω reaktans vid 7 MHz. Hur stor induktans krävs (ungefär)?
+Fråga 5
+Räkna5. En antennförlängningsspole har 20 µH och sätts i en kort vertikalantenn för 80m-bandet (3,5 MHz).
+
+a) Beräkna spolens reaktans vid 3,5 MHz.
+b) Spolen "kompenserar" för att antennen är för kort (kapacitiv reaktans −440 Ω). Jämför med din uträkning.
+Fråga 6
+Prov6. Förklara vad en balun är, varför den behövs och hur en enkel 1:1 chokebalun (RF-choke) fungerar. Vad är skillnaden mellan en 1:1 och en 1:4 balun?
+
+Övningsfrågor – 1.6 Serie- och parallellkoppling
+Fråga 1
+Grund1. Förklara med vattenrör-analogin vad som händer med ström och spänning i en seriekrets respektive parallellkrets när en komponent öppnar (brott).
+Fråga 2
+Räkna2. Tre resistorer – 100 Ω, 220 Ω och 470 Ω – kopplas i serie till 12 V.
+
+a) Beräkna total resistans.
+b) Beräkna strömmen i kretsen.
+c) Beräkna spänningsfallet över varje resistor och kontrollera att de summerar till 12 V.
+Fråga 3
+Räkna3. Samma tre resistorer kopplas nu parallellt till 12 V.
+
+a) Beräkna total resistans med den allmänna formeln.
+b) Beräkna total ström och strömmen i varje gren.
+c) Kontrollera: är Rtot lägre än den minsta resistorn?
+Fråga 4
+Räkna4. Du ska bygga en 50 Ω dummylast som tål 200 W. Du har tillgång till 200 Ω resistorer som tål 1 W var.
+
+a) Hur många behövs och hur kopplas de?
+b) Vilken total effekttålighet får konstruktionen?
+c) Varför räcker inte en enda 50 Ω resistor?
+Fråga 5
+Räkna5. Du har kondensatorerna 47 µF, 100 µF och 220 µF.
+
+a) Vad är Ctot om alla tre kopplas parallellt?
+b) Om 47 µF och 100 µF kopplas i serie – vad är Ctot?
+c) Varför är kondensatorer i serie ovanligt i praktiska kretsar?
+Fråga 6
+Prov6. En antenntuner innehåller en variabel kondensator och en variabel spole. Förklara vad serieresp. parallellkoppling av L och C gör med induktansen och kapacitansen, och varför tунern kan matcha en mängd olika antennimpedanser mot 50 Ω.
+
+Övningsfrågor – 1.7 Växelström och impedans
+Fråga 1
+Grund1. Vad är skillnaden mellan resistans och impedans? När räcker det med resistans, och när behöver man impedans?
+Fråga 2
+Räkna2. a) Nätspänningen är 230 V RMS. Vad är toppvärdet?
+b) En sändare matar antennen med 100 V toppvärde. Vad är RMS-värdet?
+c) Varför är det viktigt att använda RMS-värden vid effektberäkningar?
+Fråga 3
+Räkna3. En RF-krets har R = 50 Ω, XL = 80 Ω och XC = 30 Ω vid en viss frekvens.
+
+a) Beräkna total impedans Z.
+b) Är kretsen kapacitiv eller induktiv?
+c) Vad behöver XC bli för att kretsen ska resonera (Z = R)?
+Fråga 4
+Räkna4. En sändare ger 100 W ut i ett 50 Ω-system. SWR-metern visar SWR 2:1.
+
+a) Hur stor procentandel av effekten reflekteras?
+b) Hur många watt reflekteras tillbaka mot sändaren?
+c) Hur mycket (i watt) når faktiskt antennen?
+Fråga 5
+Prov5. Förklara minnesregeln "ELI the ICE man" och vad den säger om fasförhållandet i spolar respektive kondensatorer. Varför är fasförskjutning viktigt att förstå vid impedansberäkningar?
+Fråga 6
+Prov6. En antenn har impedansen 200 + j150 Ω vid 14 MHz. Du vill mata den med 50 Ω koax.
+
+a) Vilken komponent i impedansen kan en antenntuner inte kompensera bort?
+b) Hur eliminerar man den reaktiva delen (j150 Ω)?
+c) Vad gör en 1:4 balun i detta sammanhang?
+
+Övningsfrågor – 1.8 Filter och resonanskretsar
+Fråga 1
+Grund1. Namnge de fyra grundläggande filtertyperna och beskriv kortfattat vad varje typ gör. Ge ett praktiskt radioexempel för varje typ.
+Fråga 2
+Grund2. Förklara vad som händer i en LC-krets vid resonansfrekvensen. Vad är det speciella med impedansen just då, och varför är resonans viktigt i radioteknik?
+Fråga 3
+Räkna3. Beräkna resonansfrekvensen för dessa LC-kretsar:
+a) L = 10 µH, C = 100 pF
+b) L = 1 µH, C = 50 pF
+c) L = 500 nH, C = 20 pF
+Fråga 4
+Räkna4. Ett bandpassfilter är centrerat på 7 MHz och har en 3 dB-bandbredd på 200 kHz.
+
+a) Beräkna Q-värdet.
+b) Är detta ett bra val för ett CW-filter? Motivera.
+c) Vad behövde bandbredden vara för att Q = 100?
+Fråga 5
+Räkna5. Din sändare arbetar på 14,2 MHz och genererar övertoner på 28,4 MHz, 42,6 MHz och 56,8 MHz. Du sätter ett lågpassfilter med cutoff 20 MHz.
+
+a) Vilka övertoner dämpas?
+b) Varför väljer man cutoff 20 MHz och inte t.ex. 15 MHz?
+c) Det krävs minst 40 dB dämpning. Vad innebär det i watt om sändaren ger 100 W?
+Fråga 6
+Prov6. Förklara Pi-filtrets (C–L–C) tre funktioner efter ett effektslutssteg. Varför är det viktigt att filtret är dimensionerat för rätt frekvensband, och vad händer om man använder ett 80m-filter på 10m-bandet?
+
+Övningsfrågor – 2.1 Signaler och Modulation
+Fråga 1
+Grund1. Vilka tre egenskaper hos en bärvåg kan moduleras? Namnge dem och ange vilken modulationstyp som hör till varje egenskap.
+Fråga 2
+Grund2. Förklara varför SSB är mer effektivt än AM. Vad tas bort ur AM-signalen och varför räcker ett sidband?
+Fråga 3
+Grund3. Du ska köra SSB-telefoni – ska du använda LSB eller USB på dessa band?
+a) 80m-bandet (3,7 MHz)
+b) 20m-bandet (14,2 MHz)
+c) 40m-bandet (7,1 MHz)
+d) 15m-bandet (21,2 MHz)
+Fråga 4
+Räkna4. På 20m-bandet (14,000–14,350 MHz) finns 350 kHz utrymme.
+
+a) Hur många SSB-stationer (3 kHz) ryms teoretiskt?
+b) Hur många FM-stationer (15 kHz) ryms?
+c) Hur många CW-stationer (500 Hz) ryms?
+Fråga 5
+Prov5. Varför används FM på VHF/UHF men inte på HF (kortvåg)? Resonera kring bandbredd, störningskänslighet och tillgängligt frekvensutrymme.
+
+
+Övningsfrågor – 2.2 Sändarens Uppbyggnad
+Fråga 1
+Grund1. Namnge de sex huvudblocken i en sändare i rätt ordning från mikrofon till antenn och beskriv kortfattat vad varje block gör.
+Fråga 2
+Grund2. Vad är skillnaden mellan VFO, PLL och DDS? Vilken typ används i moderna transceivrar och varför?
+Fråga 3
+Grund3. Varför måste ett slutsteg alltid ha en last (antenn eller dummyload) när det sänder? Vad händer om lasten saknas?
+Fråga 4
+Räkna4. Din sändare ger 100 W på 7 MHz. Lågpassfiltret har en cutoff på 10 MHz och dämpar övertoner med −40 dB.
+
+a) Vilka harmoniska övertoner genereras (ange frekvenser)?
+b) Hur många watt når antennen på den 2:a harmoniska efter filtret?
+c) Uppfyller detta lagkravet på −40 dB för HF?
+Fråga 5
+Prov5. Förklara varför linjäritet är kritiskt i slutsteget vid SSB-sändning men inte vid FM eller CW. Vilken förstärkarklass används för respektive trafiksätt och varför?
+
+
+Övningsfrågor – 2.3 Mottagarens Uppbyggnad
+Fråga 1
+Grund1. Förklara principen bakom en superheterodyn-mottagare. Vad är den grundläggande idén och varför är den så effektiv?
+Fråga 2
+Grund2. Vad är spegelfrekvensproblemet i en superheterodyn-mottagare? Hur motverkas det?
+Fråga 3
+Räkna3. En mottagare har MF på 9 MHz och använder höginjektion.
+
+a) Du vill lyssna på 7,100 MHz – vilken frekvens ska VFO vara inställd på?
+b) Vilken spegelfrekvens kan störa mottagningen?
+c) Du vill lyssna på 3,750 MHz – vilken frekvens ska VFO vara inställd på?
+Fråga 4
+Räkna4. En mottagare har en brusfaktor på 6 dB och känslighet på 0,3 µV för SSB.
+
+a) Vad innebär brusfaktorn 6 dB praktiskt?
+b) Är 0,3 µV känslighet bra eller dåligt för HF SSB? Motivera.
+Fråga 5
+Prov5. Förklara vad AGC gör och varför det är nödvändigt. Varför används Fast AGC för CW men Slow AGC för AM-telefoni?
+
+Övningsfrågor – 2.4 Transceiver
+Fråga 1
+Grund1. Vad är en transceiver och vad är fördelen med att kombinera sändare och mottagare i samma enhet jämfört med separata enheter?
+Fråga 2
+Grund2. Förklara vad RIT är och ge ett praktiskt exempel på när du behöver använda det.
+Fråga 3
+Grund3. Vad är skillnaden mellan Noise Blanker (NB) och Noise Reduction (NR)? Vilken typ av störning passar varje funktion för?
+Fråga 4
+Räkna4. En DX-expedition sänder på 21,295 MHz och lyssnar 10 kHz upp.
+
+a) På vilken frekvens ska du sända för att nå DX-stationen?
+b) Vilken funktion i transceivern behöver du aktivera?
+c) Vad händer om du sänder på 21,295 MHz istället?
+Fråga 5
+Prov5. Varför måste antennreläet koppla om INNAN slutsteget aktiveras vid PTT? Vad är risken om ordningen är omvänd?
+
+
+Övningsfrågor – 2.5 Halvledare
+Fråga 1
+Grund1. Vad är skillnaden mellan N-material och P-material i en halvledare? Vad är laddningsbärarna i respektive typ?
+Fråga 2
+Grund2. Förklara vad en varicap-diod är och hur den används i en FM-modulator. Vad händer med kapacitansen när spänningen ökar?
+Fråga 3
+Räkna3. En NPN-transistor har strömförstärkning β = 200.
+
+a) Basströmmen är 0,5 mA – hur stor är kollektorströmmen?
+b) Du vill ha 400 mA kollektorström – hur stor basström behövs?
+Fråga 4
+Grund4. Vad är den viktigaste skillnaden mellan en BJT och en FET? Varför används FET (MOSFET) i moderna kraftiga slutsteg?
+Fråga 5
+Prov5. Förklara varför en Schottky-diod används i RF-blandare istället för en vanlig kiseldiod. Vad är den avgörande tekniska skillnaden?
+
+
+Övningsfrågor – 2.6 Oscillatorer
+Fråga 1
+Grund1. Vad är Barkhausens kriterium? Formulera de två villkoren och förklara vad som händer om bara ett av dem uppfylls.
+Fråga 2
+Grund2. Förklara principen bakom en PLL-oscillator. Vad är VCO:ns roll och vad gör fasdetektorn?
+Fråga 3
+Räkna3. Beräkna resonansfrekvensen för en LC-krets med L = 2 µH och C = 200 pF.
+
+a) Vilken frekvens svänger kretsen på?
+b) Vilket amatörband är du närmast?
+c) Vad ska C vara för att få exakt 7,100 MHz med samma L?
+Fråga 4
+Grund4. Vad är den största praktiska skillnaden mellan en LC-VFO och en kristalloscillator? Ge ett exempel på när varje typ är att föredra.
+Fråga 5
+Prov5. Varför används DDS i nästan alla moderna transceivrar? Nämn tre fördelar jämfört med PLL och en nackdel som kräver extra åtgärd.
+
+
+Övningsfrågor – 2.7 Blandare
+Fråga 1
+Grund1. Förklara vad en blandare gör. Vilka fyra utfrekvenser skapas när f₁ och f₂ blandas?
+Fråga 2
+Räkna2. En mottagare har MF = 9 MHz och använder höginjektion.
+
+a) Du vill lyssna på 3,750 MHz – vilken frekvens ska VFO vara på?
+b) Vilka fyra frekvenser ger blandaren ut?
+c) Vilket MF-filter släpper igenom den önskade produkten?
+Fråga 3
+Räkna3. Två starka signaler finns på 21,200 MHz och 21,205 MHz.
+
+a) Beräkna tredje ordningens intermodulationsprodukt (2×f₁ − f₂ och 2×f₂ − f₁).
+b) Varför är dessa produkter ett problem?
+Fråga 4
+Grund4. Vad är en diodringblandare och varför är den vanlig i HF-mottagare?
+Fråga 5
+Prov5. Förklara vad IP3 mäter och varför det är viktigt vid val av mottagare för tät bandbeläggning på HF. Vad innebär ett högt IP3-värde i praktiken?
+
+
+Övningsfrågor – 2.8 Förstärkare
+Fråga 1
+Grund1. Förklara skillnaden mellan klass A, klass AB och klass C förstärkare. Vad är avvägningen mellan dessa klasser?
+Fråga 2
+Grund2. Varför måste ett SSB-slutsteg vara linjärt (klass AB) men ett FM-slutsteg kan använda klass C? Vad händer om ett SSB-slutsteg körs i klass C?
+Fråga 3
+Räkna3. Beräkna förstärkningen i dB för dessa fall:
+
+a) Ineffekt 5 mW, uteffekt 500 mW
+b) Ineffekt 1 µV, uteffekt 10 mV (spänning)
+c) Vad är uteffekten om förstärkningen är 13 dB och ineffekten är 10 mW?
+Fråga 4
+Räkna4. Ett slutsteg levererar 100 W RF-effekt och arbetar i klass AB med 55% verkningsgrad.
+
+a) Hur stor DC-ineffekt krävs?
+b) Hur många watt försvinner som värme?
+c) Hur stor är strömförbrukningen vid 13,8 V matning?
+Fråga 5
+Prov5. Förklara varför den första förstärkaren (LNA) i en mottagarkedja är avgörande för hela systemets känslighet. Vad händer med totalbrusningen om LNA:n byts mot en med dubbelt så hög brusfaktor?
+
+Övningsfrågor – 3.1 Grundprinciper
+Fråga 1
+Grund1. Vad gör en antenn vid sändning?
+A) Omvandlar elektrisk energi till elektromagnetiska vågor
+B) Förstärker RF-signalen från sändaren
+C) Filtrerar bort övertoner
+D) Omvandlar elektromagnetiska vågor till ljud
+Fråga 2
+Grund2. Vad innebär reciprocitetsprincipen för antenner?
+A) Antennen har dubbelt så hög vinst vid sändning som vid mottagning
+B) En antenn som är bra på att sända är lika bra på att ta emot
+C) Antennen behöver kalibreras separat för sändning och mottagning
+D) Sändnings- och mottagningsimpedansen är alltid olika
+Fråga 3
+Grund3. Hur långt sträcker sig nära fältet från en antenn?
+A) Upp till 10 meter oavsett frekvens
+B) Inom 1–2 våglängder från antennen
+C) Bortom 3 våglängder från antennen
+D) Inom 10 cm från antennen
+Fråga 4
+Prov4. Vilken impedans har en halvvågsdipol i fri rymd?
+A) 50 Ω
+B) 300 Ω
+C) 73 Ω
+D) 36 Ω
+Fråga 5
+Prov5. Varför är 50 Ω valt som standard för amatörradioutrustning?
+A) Det ger lägst möjliga dämpning i koaxkabel
+B) Det är en kompromiss mellan lägsta förlust (~77 Ω) och högsta effekttålighet (~30 Ω)
+C) Det matchar exakt impedansen hos halvvågsdipolen i fri rymd
+D) Det är standard för TV-anläggningar
+
+Övningsfrågor – 3.2 Våglängd och Frekvens
+Fråga 1
+Räkna1. Beräkna våglängden för 14 MHz.
+A) 14 meter    B) 21,4 meter    C) 28 meter    D) 7 meter
+Fråga 2
+Räkna2. Hur lång ska en halvvågsdipol vara för 7,1 MHz?
+A) 21,1 m    B) 20,1 m    C) 42,3 m    D) 10,6 m
+Fråga 3
+Grund3. Varför är en praktisk dipol kortare än den teoretiska λ/2-längden?
+A) Antenntråden värms upp av strömmen
+B) Elektronerna färdas något långsammare i tråden än i fri rymd (förkortningsfaktorn k)
+C) Isolatorer lägger till elektrisk längd
+D) Jordreflektioner gör antennen kortare
+Fråga 4
+Räkna4. Beräkna längden på en kvartsvågs vertikal för 145 MHz.
+A) 103 cm    B) 49,3 cm    C) 24,7 cm    D) 206 cm
+Fråga 5
+Prov5. En 40m-dipol (grundfrekvens 7 MHz) används på 21 MHz. Hur lång är antennen elektriskt sett, och fungerar den?
+A) λ/2 — fungerar perfekt
+B) 3λ/2 — fungerar acceptabelt med antenntuner
+C) λ — fungerar dåligt (helvåg)
+D) 2λ — fungerar perfekt på jämna harmoniska
+
+Övningsfrågor – 3.3 Dipolantenner
+Fråga 1
+Räkna1. Beräkna den totala längden för en halvvågsdipol för 3,65 MHz (80m-bandet).
+A) 41,1 m    B) 39,2 m    C) 82,2 m    D) 21,0 m
+Fråga 2
+Grund2. Åt vilket håll strålar en halvvågsdipol som starkast?
+A) Längs med dipolen
+B) Vinkelrätt mot dipolen (åttafigur-mönster)
+C) Lika åt alla håll (rundstrålning)
+D) Snett uppåt 45°
+Fråga 3
+Grund3. Vilken är den viktigaste fördelen med en inverterad-V dipol jämfört med en rak dipol?
+A) Högre vinst
+B) Lägre utstrålningsvinkel och bättre för DX
+C) Kräver bara en hög upphängningspunkt
+D) Bredare bandbredd
+Fråga 4
+Prov4. En dipol hänger λ/4 över mark. Hur påverkas utstrålningsvinkeln jämfört med en dipol på 1λ höjd?
+A) Utstrålningsvinkeln minskar, bättre för DX
+B) Utstrålningsvinkeln ökar (25–30°), bättre för regional trafik
+C) Ingen skillnad — höjden påverkar inte utstrålningsvinkeln
+D) Utstrålningsvinkeln ökar och räckvidden minskar kraftigt
+Fråga 5
+Prov5. Vad är en fälldipol (trap dipole) och vilken nackdel har den?
+A) En dipol som kan fällas ihop; nackdelen är att den är skrymmande
+B) En dipol med LC-kretsar (fällor) för flerbandsanvändning; nackdelen är förluster i fällorna
+C) En dipol i inverterad-V form; nackdelen är lägre vinst
+D) En dipol med flera trådar i solfjädersform; nackdelen är komplex upphängning
+
+Övningsfrågor – 3.4 Vertikala Antenner
+Fråga 1
+Räkna1. Beräkna längden på en kvartsvågs vertikal för 7,1 MHz.
+A) 21,1 m    B) 10,1 m    C) 5,0 m    D) 14,3 m
+Fråga 2
+Grund2. Varför behöver en vertikal antenn ett jordplan?
+A) För att skydda sändaren mot högt SWR
+B) Jordplanet fungerar som den "andra halvan" av antennen (spegelbilden av radiatorn)
+C) För att jorda antennen mot blixtnedslag
+D) Jordplanet filtrerar bort övertoner
+Fråga 3
+Prov3. En kvartsvågs vertikal med horisontella radialer har impedansen ~36 Ω. Vad kan man göra för att få ~50 Ω utan anpassningsnät?
+A) Korta radialerna till λ/8
+B) Vinkla radialerna 45° nedåt (ground plane-design)
+C) Fördubbla antalet radialer
+D) Förkorta radiatorn med 10 %
+Fråga 4
+Prov4. Hur mycket mer vinst har en 5/8λ vertikal jämfört med en kvartsvågs vertikal, och vad beror vinsten på?
+A) Ca +6 dBd — fler radialer ger mer vinst
+B) Ca +3 dBd — lägre utstrålningsvinkel ger mer energi mot horisonten
+C) Ca +3 dBd — antennen är längre och strålar mer effekt totalt
+D) Ingen skillnad i vinst, bara impedansen skiljer
+Fråga 5
+Grund5. Var bör en mobilantenn placeras på en bil för bästa prestanda?
+A) På stötfångaren fram — lägst vindmotstånd
+B) På glaset (glasmontage) — enklast montering
+C) Mitt på taket — bäst jordplan och rundstrålning
+D) På bagageluckan — bäst riktverkan bakåt
+
+Övningsfrågor – 3.5 Riktantenner
+Fråga 1
+Grund1. Vilka tre typer av element finns i en Yagi-antenn?
+A) Radiator, reflektor och jordplan
+B) Reflektor, driven element och direktorer
+C) Dipol, monopol och loop
+D) Matning, skärm och radiator
+Fråga 2
+Grund2. Vilket element i en Yagi är längst och var sitter det?
+A) Direktorerna, längst fram i strålriktningen
+B) Det drivna elementet, i mitten av bommen
+C) Reflektorn, längst bak (bakom det drivna elementet)
+D) Direktorerna, bakom det drivna elementet
+Fråga 3
+Prov3. Vad är "parasitiska element" i en Yagi, och hur fungerar de?
+A) Kortslutna element som inte påverkar strålningsmönstret
+B) Element som inte är matade men påverkas av fältet genom induktiv koppling
+C) Extra matade element för flerbandsanvändning
+D) Jordledare som minskar mantelströmmar
+Fråga 4
+Prov4. En 5-elements Yagi har ungefär +7 dBd vinst. Hur stor ekvivalent sändeffekt motsvarar det jämfört med en dipol?
+A) 2 gånger    B) 5 gånger    C) 10 gånger    D) 3 gånger
+Fråga 5
+Grund5. Vilken antenntyp väljer du om du behöver täcka ett brett frekvensområde (t.ex. 50–150 MHz) utan att trimma antennen?
+A) Yagi med många direktorer
+B) Halvvågsdipol
+C) Log-periodisk (LPDA)
+D) Quad med fällor
+
+Övningsfrågor – 3.6 Matarledningar
+Fråga 1
+Grund1. Vilka fyra delar består en koaxialkabel av, inifrån och ut?
+A) Skärm, dielektrikum, innerledare, ytterhölje
+B) Innerledare, dielektrikum, skärm, ytterhölje
+C) Innerledare, skärm, dielektrikum, ytterhölje
+D) Dielektrikum, innerledare, skärm, ytterhölje
+Fråga 2
+Grund2. Hur förändras kabeldämpningen när frekvensen ökar?
+A) Dämpningen minskar — kabeln fungerar bättre på höga frekvenser
+B) Dämpningen ökar kraftigt — kabel som funkar på HF kan vara katastrofal på UHF
+C) Dämpningen är konstant oberoende av frekvens
+D) Dämpningen fördubblas exakt för varje fördubbling av frekvensen
+Fråga 3
+Prov3. Vad är hastighetsfaktorn (VF) för RG-213 med solid polyeten, och vad innebär det?
+A) VF = 1,0 — signalen färdas lika snabbt i kabeln som i fri rymd
+B) VF = 0,66 — signalen färdas 66 % av ljusets hastighet i kabeln
+C) VF = 0,50 — signalen halveras i hastighet
+D) VF = 0,80 — kabeln förlorar 20 % av effekten
+Fråga 4
+Prov4. Varför är Aircell 7 att föredra framför RG-58 för en 20 m kabelsträcka på 432 MHz?
+A) Aircell 7 har 75 Ω impedans som passar bättre för UHF
+B) RG-58 ger ~4,5 dB förlust på 20 m (72 % av effekten försvinner). Aircell 7 ger bara ~1,4 dB förlust
+C) Aircell 7 är billigare och har lika bra prestanda
+D) RG-58 tål inte höga frekvenser elektriskt
+Fråga 5
+Grund5. Vilken kontakttyp rekommenderas för VHF/UHF utomhus och varför?
+A) PL-259 — den är standard och finns på all utrustning
+B) BNC — den är liten och lätt att koppla
+C) N-kontakt — äkta 50 Ω, vattentät och fungerar upp till 10 GHz
+D) SMA — den ger lägst förlust av alla kontakttyper
+
+Övningsfrågor – 3.7 Anpassning och SWR
+Fråga 1
+Grund1. Vilket SWR-värde representerar perfekt impedansanpassning?
+A) 0:1    B) 1:1    C) 2:1    D) 50:1
+Fråga 2
+Prov2. En antenn har SWR 3:1. Hur stor andel av sändningseffekten reflekteras tillbaka mot sändaren?
+A) 3 %    B) 11 %    C) 25 %    D) 50 %
+Fråga 3
+Grund3. Vilket SWR-värde anses vara ett praktiskt mål (utmärkt) för amatörinstallationer?
+A) Under 1,2:1    B) Under 1,5:1    C) Under 3,0:1    D) Under 5,0:1
+Fråga 4
+Prov4. Vad gör en antenntuner (ATU), och vad gör den INTE?
+A) Den förbättrar antennen och eliminerar alla förluster
+B) Den transformerar impedans så sändaren ser 50 Ω, men förbättrar INTE antennen och eliminerar INTE kabelförluster
+C) Den mäter SWR och justerar automatiskt antennlängden
+D) Den fungerar bara med balanserade antenner
+Fråga 5
+Prov5. Var placeras en antenntuner för att minimera förluster i kabeln vid högt SWR?
+A) Inne i radion (inbyggd tuner)
+B) Mitt på kabeln, halvvägs till antennen
+C) Direkt vid antennen (matningspunkten)
+D) Det spelar ingen roll var tunern placeras
+
+Övningsfrågor – 3.8 Balun och Mantelströmmar
+Fråga 1
+Grund1. Vad är mantelströmmar?
+A) Ström som flödar inuti koaxkabelns innerledare
+B) RF-ström som flödar på utsidan av koaxkabelns skärm
+C) Jordströmmar som uppstår vid blixtnedslag
+D) Ström som läcker genom kabelns isolering
+Fråga 2
+Grund2. Vad betyder förkortningen BALUN?
+A) Bandwidth Adjusted Linear Unidirectional Network
+B) BALanced to UNbalanced
+C) Broadband Antenna Loss Unification
+D) Basic Antenna Line Utility Node
+Fråga 3
+Prov3. Vilka tre problem kan mantelströmmar orsaka?
+A) För hög sändningseffekt, för låg mottagningskänslighet och korrosion på kontakter
+B) RF i shacket (störningar/brännskador), snedvridet strålningsmönster och felaktigt SWR-värde
+C) Kortslutning i sändaren, överhettning av kabeln och brus på frekvensen
+D) Lägre bandbredd, högre SWR och reducerad räckvidd
+Fråga 4
+Prov4. Var ska en balun placeras för bästa effekt?
+A) Vid radion, för att skydda sändaren
+B) Mitt på kabeln, för att dela upp problemet
+C) Direkt vid antennens matningspunkt
+D) Det spelar ingen roll var balunen sitter
+Fråga 5
+Prov5. Hur kan du enkelt testa om du har mantelströmmar i din installation?
+A) Mät kabeldämpningen med ett dämpningsmätinstrument
+B) Rör koaxkabeln under sändning — om SWR ändras är det ett tecken på mantelströmmar
+C) Kontrollera att alla kontakter är åtdragna
+D) Mät impedansen i antennsystemet med en antennanalysator
+
+Övningsfrågor – 4.1 Grundbegrepp
+Fråga 1
+Grund1. En radiostation sänder på 7 MHz. Beräkna våglängden med formeln λ = 300 / f.
+Fråga 2
+Räkna2. En antenn är konstruerad för λ = 10 m. Vilken frekvens i MHz är antennen designad för? Ange uträkning.
+Fråga 3
+Grund3. Vilket av följande frekvensband kallas HF (kortväg)?
+A) 300 kHz – 3 MHz    B) 3 – 30 MHz    C) 30 – 300 MHz    D) 300 MHz – 3 GHz
+Fråga 4
+Prov4. Du vill etablera en DX-förbindelse till en station 8 000 km bort. Det är mitt på dagen och solaktiviteten är hög. Vilket utbredningssätt och vilket band är mest lämpligt – och varför?
+Fråga 5
+Grund5. Sätt rätt etikett (Markvåg / Rymdvåg / Siktlinje) på varje påstående:
+a) Begränsas av jordkrökningen och dominerar på VHF/UHF.
+b) Böjs runt jordkurvans horisont och fungerar bäst på låga frekvenser.
+c) Reflekteras i jonosfären och möjliggör kommunikation runt hela jorden på HF.
+
+
+Övningsfrågor – 4.2 Markvåg
+Fråga 1
+Grund1. Fungerar markvågen bäst vid låga eller höga frekvenser? Förklara kort varför.
+Fråga 2
+Grund2. Vilken polarisation är överlägsen för markvåg – vertikal eller horisontell – och varför?
+Fråga 3
+Grund3. En station sänder på 160 m-bandet med 100 W från en vertikal antenn placerad vid havet. En annan station sänder med samma effekt och antenn men från ett bergigt inlandsområde. Vilken station har längst markvågsräckvidd och varför?
+Fråga 4
+Prov4. Vad är NVIS och vilket problem löser tekniken? Ange vilket/vilka band som lämpar sig bäst.
+Fråga 5
+Räkna5. En station ökar sin sändareffekt från 10 W till 1 000 W (100× ökning) på 160 m-bandet. Hur ungefär förändras markvågsräckvidden? (Använd tumregeln: 10× effekt ≈ 3× räckvidd.)
+
+
+Övningsfrågor – 4.3 Rymdvåg och jonosfären
+Fråga 1
+Grund1. Vilket jonosfärskikt är absorberande dagtid och vid vilken höjd finns det?
+Fråga 2
+Grund2. Vad står MUF för och vad innebär det att använda 80–90 % av MUF?
+Fråga 3
+Prov3. Förklara begreppet "död zon" (skip zone). Nämn tre metoder för att kringgå problemet.
+Fråga 4
+Grund4. Varför är 20 m-bandet bäst för DX dagtid men sämre nattetid? Koppla svaret till jonosfärens skikt.
+Fråga 5
+Prov5. Den kritiska frekvensen (fc) uppmäts just nu till 8 MHz. Beräkna ungefärlig MUF för en transatlantisk förbindelse (faktor 3,5) och ange vilket amatörband som passar bäst.
+
+
+Övningsfrågor – 4.4 Siktlinjeförbindelse
+Fråga 1
+Räkna1. En antenn är monterad 100 m över marken. Hur långt når den till radiohorisonten? (d = 4,12 × √h)
+Fråga 2
+Räkna2. Station A har antenn på 36 m höjd och Station B på 9 m höjd. Hur långt kan de kommunicera på 2 m-bandet via siktlinje?
+Fråga 3
+Grund3. Varför behöver en repeater på 2 m-bandet ett "shift" på 600 kHz mellan ingångs- och utgångsfrekvens?
+Fråga 4
+Grund4. Vad är den viktigaste faktorn för att öka räckvidden på VHF/UHF – effekt eller antennhöjd? Motivera.
+Fråga 5
+Prov5. Beräkna frirumsförlusten på 2 m-bandet (144 MHz) vid 20 km avstånd. Formel: L = 32,4 + 20·log(d) + 20·log(f). (log 20 ≈ 1,30 · log 144 ≈ 2,16)
+
+
+Övningsfrågor – 4.5 Speciella utbredningsfenomen
+Fråga 1
+Grund1. Vilket fenomen möjliggör DX på 6 m-bandet under sommarmånaderna? Beskriv kortfattat hur det uppstår.
+Fråga 2
+Grund2. Vad är troposfärisk ducting och vilket väderfenomen orsakar det?
+Fråga 3
+Prov3. Kp-index är just nu 6. Hur påverkas (a) 20 m-bandet och (b) 2 m-bandet? Vad kan du göra för att utnyttja situationen?
+Fråga 4
+Grund4. Vad står EME för, vilket band är vanligast och vilket digitalt mode har gjort EME tillgängligare?
+Fråga 5
+Prov5. Förklara skillnaden i signalkarakter mellan aurora-DX på 2 m och en normal SSB-kontakt på 20 m. Varför rekommenderas CW vid aurora?
+
+
+Övningsfrågor – 4.6 Solfläckar och solaktivitet
+Fråga 1
+Grund1. Hur lång är solcykeln ungefär och vad kallas de två extrempunkterna?
+Fråga 2
+Grund2. Hur påverkar ett högt solfläckstal (SSN > 100) 10 m-bandet jämfört med ett lågt SSN (<30)?
+Fråga 3
+Prov3. En X2-klass solflar inträffar. Beskriv (a) den omedelbara effekten på HF och hur lång tid det tar, samt (b) vad som kan förväntas 1–3 dagar senare.
+Fråga 4
+Grund4. Du kontrollerar spaceweather.com och ser A-index = 55 och K-index = 6. Vilka band bör du prioritera för DX och vilka bör du undvika?
+Fråga 5
+Räkna5. SSN-talet idag är 120. Vilket frekvensband – 10 m, 20 m eller 80 m – ger bäst DX-förhållanden mitt på dagen och varför?
+
+
+Övningsfrågor – 5.1 Multimeter
+Fråga 1
+Grund1. Hur kopplas en voltmeter – i serie eller parallellt? Vad ska dess inre impedans vara och varför?
+Fråga 2
+Grund2. Du ska mäta strömmen genom en LED-krets. Beskriv steg-för-steg hur du kopplar amperemeter korrekt.
+Fråga 3
+Prov3. Vad händer om du råkar sätta multimetern i strömläge (A) och kopplar den parallellt direkt över ett 12 V-batteri? Förklara varför med hjälp av Ohms lag.
+Fråga 4
+Grund4. Du mäter resistansen på R1 = 470 Ω utan att lossa den från kretsen. I kretsen finns R2 = 470 Ω parallellt. Vad visar mätaren, och stämmer det?
+Fråga 5
+Prov5. Nätspänningen är 230 V AC (RMS). Vad är toppvärdet? Kan du mäta en RF-signal på 3,5 MHz med en vanlig multimeter – varför eller varför inte?
+
+
+Övningsfrågor – 5.2 SWR-meter och effektmätare
+Fråga 1
+Grund1. Vad mäter en SWR-meter? Varför är det viktigt att SWR hålls lågt?
+Fråga 2
+Grund2. Din dipol visar SWR 3,5:1. Hur stor procentandel av effekten reflekteras och vad riskerar du om du fortsätter sända på denna belastning?
+Fråga 3
+Prov3. Beskriv kalibreringsproceduren för en analog SWR-meter. Varför måste den göras om vid varje frekvensändring?
+Fråga 4
+Grund4. Vad är skillnaden mellan PEP och medeleffekt för en SSB-sändare? Vilket av dessa mått anger tillverkaren för en "100 W"-sändare?
+Fråga 5
+Prov5. Du kopplar SWR-metern med antennsidan (ANT) mot sändaren och TX-sidan mot antennen – alltså bakvänt. Hur påverkar det mätresultatet och varför?
+
+
+Övningsfrågor – 5.3 Oscilloskop
+Fråga 1
+Grund1. Vad visar Y-axeln respektive X-axeln på ett oscilloskop? Vad menas med "trigger" och varför behövs det?
+Fråga 2
+Räkna2. Oscilloskopet är inställt på 500 µs/div och 1 V/div. En sinusvåg fyller 4 rutor i tid (en hel period) och 6 rutor i höjd (topp till dal). Beräkna (a) frekvensen och (b) topp-till-topp-spänningen.
+Fråga 3
+Grund3. Varför ska man använda ett 10:1-prob snarare än ett 1:1-prob vid RF-mätningar? Vad måste man tänka på när man läser av spänningen?
+Fråga 4
+Prov4. Du ansluter ett nytt 10:1-prob och ser en fyrkantsvåg med rundade hörn på oscilloskopet. Vad kallas detta fenomen och hur åtgärdar du det?
+Fråga 5
+Prov5. Du har en audioförstärkare och ser att sinusvågen "plattar till" i topparna vid hög insignal. Vad heter detta fenomen och vad innebär det för signalkvaliteten?
+
+
+Övningsfrågor – 5.4 Frekvensmätning
+Fråga 1
+Grund1. Förklara principen för en frekvensräknare. Vad är "grindtid" och hur påverkar den upplösningen?
+Fråga 2
+Räkna2. En frekvensräknare har en referensoscillator med noggrannhet ±2 ppm. Hur många Hz kan mätningen vara fel vid (a) 7 MHz och (b) 144 MHz? Uppfyller den lagkraven?
+Fråga 3
+Grund3. Varför ska man aldrig ansluta en sändare direkt till frekvensräknarens ingång? Hur löser man det?
+Fråga 4
+Prov4. Din frekvensräknare visar 14,400 MHz när du mäter din 40m-VFO som borde ge 7,2 MHz. Vad är den troliga orsaken och hur åtgärdar du det?
+Fråga 5
+Grund5. Vad är ett absorption-wavemeter och vad är dess största fördel jämfört med en elektronisk frekvensräknare?
+
+Övningsfrågor – 5.5 Signalgeneratorer
+Fråga 1
+Grund1. Vad är skillnaden mellan en RF-signalgenerator och en funktionsgenerator? Ge ett konkret användningsexempel för varje.
+Fråga 2
+Grund2. Vad är MDS och hur mäter man det? Vad är ett typiskt bra värde för en HF-mottagare?
+Fråga 3
+Räkna3. S-metern visar S7 på din mottagare. Hur stark är signalen i dBm? Om en annan station är S9+20 dB – hur många dB starkare är den jämfört med S7?
+Fråga 4
+Grund4. Vad är en markeringsgenerator och hur använder man dess övertoner för att kalibrera en VFO-skala?
+Fråga 5
+Prov5. Du vill mäta selektiviteten (närkanalsskiljning) på din mottagare vid 3 kHz kanalavstånd. Beskriv testet med en RF-generator och tolka ett resultat på 35 dB.
+
+
+Övningsfrågor – 5.5 Signalgeneratorer
+Fråga 1
+Grund1. Vad är skillnaden mellan en RF-signalgenerator och en funktionsgenerator? Ge ett konkret användningsexempel för varje.
+Fråga 2
+Grund2. Vad är MDS och hur mäter man det? Vad är ett typiskt bra värde för en HF-mottagare?
+Fråga 3
+Räkna3. S-metern visar S7 på din mottagare. Hur stark är signalen i dBm? Om en annan station är S9+20 dB – hur många dB starkare är den jämfört med S7?
+Fråga 4
+Grund4. Vad är en markeringsgenerator och hur använder man dess övertoner för att kalibrera en VFO-skala?
+Fråga 5
+Prov5. Du vill mäta selektiviteten (närkanalsskiljning) på din mottagare vid 3 kHz kanalavstånd. Beskriv testet med en RF-generator och tolka ett resultat på 35 dB.
+
+
+Övningsfrågor – 5.7 Antennanalysator
+Fråga 1
+Grund1. Vad är den största fördelen med en antennanalysator jämfört med att mäta SWR med en vanlig SWR-meter och sändare?
+Fråga 2
+Grund2. Antennanalysatorn visar impedansen 45 + j55 Ω vid 7,1 MHz. Vad innebär den positiva reaktansen (+j55) och vad behöver du göra med antennelementens längd?
+Fråga 3
+Prov3. Analysatorn hittar resonans på din 20m-dipol vid 14,50 MHz (övre kanten). Du vill ha resonans vid 14,20 MHz. Ska du förlänga eller förkorta elementen? Beräkna ungefär hur mycket (element längd ≈ 5 m vardera).
+Fråga 4
+Grund4. Vad är TDR-funktionen på en antennanalysator och vad kan du använda den till?
+Fråga 5
+Prov5. Du mäter din koaxkabel med analysatorns kabelförlustfunktion. Ny kabel gav 2,5 dB vid 144 MHz. Nu visar den 6,8 dB. Vad drar du för slutsats och vad gör du?
+
+Övningsfrågor – 6.1 EMC-grundbegrepp
+Fråga 1
+Grund1. Vad är EMC och vilka två grundpelare bygger begreppet på?
+Fråga 2
+Grund2. Störningstrekanten består av tre delar. Nämn dem och förklara varför det räcker att ta bort en av delarna för att lösa störningsproblemet.
+Fråga 3
+Prov3. Du sänder på 7 MHz och grannens TV störs. Du kopplar bort alla kablar från TV:n utom nätsladden – störningen kvarstår. Du lägger sedan ett metallhölje runt TV:n – störningen försvinner. Vilken kopplingsväg förmedlar störningen, och varför?
+Fråga 4
+Grund4. Vad innebär CE-märkning på en elektronisk produkt, och vilket ansvar har du som radioamatör om du modifierar en CE-märkt apparat?
+Fråga 5
+Prov5. Du köper en billig LED-lampa från en webbutik utanför EU. Den har ett CE-märke på förpackningen, men du märker att bruset på 40 m-bandet ökar kraftigt när lampan är tänd. Vad kan du dra för slutsatser om märkets tillförlitlighet och vad bör du göra?
+
+
+Övningsfrågor – 6.2 Störningskällor
+Fråga 1
+Grund1. Nämn tre naturliga störningskällor och beskriv kortfattat karaktären hos var och en. På vilka frekvensområden är de vanligtvis mest besvärliga?
+Fråga 2
+Grund2. Du hör ett regelbundet TICK... TICK... TICK... med exakt en sekunds mellanrum på 7 MHz. Störningen finns på alla HF-band och hörs tydligt hundratals meter bort. Vad är troligtvis källan och hur kan du hjälpa till att lösa problemet?
+Fråga 3
+Prov3. Förklara varför PLC (Powerline Communication – internet via elnätet) är särskilt skadligt för HF-mottagning, och vilket alternativ du skulle rekommendera en granne som vill ha internet i ett rum utan WiFi-täckning.
+Fråga 4
+Prov4. Du misstänker att en extern störkälla finns i ett hus några hundra meter bort. Beskriv det praktiska tillvägagångssättet för att pejla källan, inklusive vilken utrustning du behöver och vad du bör tänka på ur ett juridiskt och socialt perspektiv.
+Fråga 5
+Prov5. En granne installerar solceller och du märker att bruset på 14 MHz ökar kraftigt under soliga dagar men försvinner om natten. Du vill lösa problemet diplomatiskt. Vilka steg tar du, i vilken ordning, och vad är PTS roll i detta?
+
+
+Övningsfrågor – 6.3 Störningar från din sändare
+Fråga 1
+Grund1. Du sänder på 7 MHz med 100 W. Vilka frekvenser innehåller de tre lägsta övertonerna, och hur mycket effekt tillåter lagen maximalt på dessa frekvenser?
+Fråga 2
+Grund2. Vad är skillnaden mellan en balun och en choke balun? Beskriv hur du bygger den enklaste möjliga choken för att stoppa mantelströmmar, och vad den kostar.
+Fråga 3
+Prov3. Du sänder SSB på 14 MHz och grannen rapporterar att hen hör din röst i stereoanläggningens högtalare. Du kopplar bort alla kablar till stereoanläggningen utom nätkabeln – problemet kvarstår. Du tar bort nätkabeln – problemet försvinner. Vilken kopplingsväg gäller och vilka åtgärder vidtar du?
+Fråga 4
+Prov4. Förklara vad mantelströmmar är, varför de uppstår på en koaxkabel matad till en dipol utan balun, och vad som händer i hemmet om de inte åtgärdas.
+Fråga 5
+Prov5. En radioamatör märker att ALC-metern slår konstant under tal. Förklara varför detta är ett problem ur EMC-synpunkt, vad det konkret innebär för signalen på bandet, och hur det åtgärdas.
+
+
+Övningsfrågor – 6.4 Störningar på mottagare
+Fråga 1
+Grund1. Vad är skillnaden mellan överbelastning och blockering i en mottagare? Ge ett praktiskt symptom för vardera.
+Fråga 2
+Räkna2. Två starka stationer sänder på 3,600 MHz och 3,650 MHz. Beräkna de två tredje ordningens intermodulationsfrekvenserna (IMD3) som skapas i din mottagare.
+Fråga 3
+Räkna3. Din mottagare har en mellanfrekvens (IF) på 9 MHz. Du lyssnar på 14,200 MHz. På vilken frekvens finns spegelfrekvensen?
+Fråga 4
+Prov4. Du hör ett tydligt nyhetsuppläsarröst ovanpå din SSB-signal på 7 MHz. Rösten försvinner inte när du ändrar frekvens inom 40 m-bandet. Diagnos: vilken typ av störning är det sannolikt, vad orsakar den och vad är den enklaste åtgärden?
+Fråga 5
+Prov5. Förklara varför en dämpare på 10 dB är så effektiv mot intermodulation, trots att den också dämpar de önskade signalerna.
+
+Övningsfrågor – 6.5 Förebyggande och åtgärder
+Fråga 1
+Grund1. Nämn de fyra grundprinciperna för EMC-åtgärder och rangordna dem efter kostnadseffektivitet – vilken bör du alltid prova först?
+Fråga 2
+Räkna2. Din antenn sitter 3 m från grannens TV-antenn. Du flyttar din antenn så att avståndet blir 6 m. Med hur mycket (i gånger) minskar den strålad fältstyrkan vid TV-antennen?
+Fråga 3
+Grund3. Vilka tre åtgärder hör till "Nivå 1 – förebygg alltid" och varför är just dessa viktigast att göra redan vid installation?
+Fråga 4
+Prov4. Du ska installera en ny HF-station hemma och vill planera EMC-smart från start. Beskriv fem konkreta beslut du fattar redan under installationsfasen för att minimera framtida störningsproblem.
+Fråga 5
+Prov5. Varför är skärmning beskrivet som "sista utvägen" trots att det kan ge mycket god EMC-prestanda? Vilka praktiska svårigheter finns och när är det motiverat att ändå använda det?
+
+
+Övningsfrågor – 6.6 Filter och skärmning
+Fråga 1
+Grund1. Beskriv de fyra filtertyperna (lågpass, högpass, bandpass, bandspärr) och ge ett konkret EMC-användningsexempel för varje typ.
+Fråga 2
+Grund2. Vilken ferrit-mix rekommenderas för en mantelströmschoke på 40 m-bandet, och varför? Hur ökar du dämpningen utan att köpa mer material?
+Fråga 3
+Prov3. Du ska montera en ferritklämma på HDMI-kabeln till din TV för att minska RF-intrång. Var på kabeln placerar du den, och varför är placeringen kritisk?
+Fråga 4
+Prov4. Förklara hur en luftlindad choke fungerar och varför den stoppar mantelströmmar utan att påverka RF-signalen inuti koaxkabeln.
+Fråga 5
+Prov5. Du bygger ett metallhölje runt en störande USB-laddare men störningarna kvarstår nästan oförändrade. Vad är de troligaste orsakerna till att skärmningen inte fungerar, och vad kontrollerar du?
+
+Övningsfrågor – 6.7 Systematisk felsökning
+Fråga 1
+Grund1. Nämn de sju stegen i den systematiska felsökningsmetoden. Vilket steg är det vanligaste att hoppa över – och varför är det ett misstag?
+Fråga 2
+Grund2. Beskriv hur huvudbrytartestet utförs i praktiken och vad de två möjliga resultaten innebär för din felsökning.
+Fråga 3
+Prov3. Du har ett störningsproblem på 14 MHz och misstänker att det är intermodulation. Beskriv hur du använder dämpningstestet för att bekräfta eller avfärda din hypotes, och vad du förväntar dig se.
+Fråga 4
+Prov4. En radioamatör sätter ferrit på alla kablar till TV:n, byter till skärmad HDMI-kabel, installerar nätfilter och flyttar TV:n – allt samma dag. TV-störningarna försvinner. Vilket är problemet med detta tillvägagångssätt, och hur borde det ha gjorts?
+Fråga 5
+Prov5. Du ska pejla en extern störkälla i bostadsområdet. Beskriv metoden steg för steg, vilken utrustning du behöver, vad du bör dokumentera och vilka juridiska och sociala hänsyn du måste ta.
+
+
+Övningsfrågor – 7.0
+Fråga 1
+Grund1. Vilket av följande är ett av de fem huvudsyftena med reglerna för amatörradio?
+A) Att begränsa antalet radioamatörer i Sverige
+B) Att undvika störningar mellan användare av radiospektrumet
+C) Att göra amatörradio kommersiellt lönsamt
+D) Att hindra internationell kommunikation
+Fråga 2
+Grund2. Vilken historisk händelse år 1912 ledde till att de första internationella reglerna för radiotrafi k utarbetades?
+A) Första världskriget bröt ut
+B) Titanics förlisning och problem med nödkommunikation
+C) Marconi uppfann radion
+D) ITU grundades
+Fråga 3
+Grund3. Vad är den första åtgärden PTS normalt vidtar när en radioamatör bryter mot reglerna?
+A) Böter utfärdas omedelbart
+B) Certifikatet dras in utan förvarning
+C) En tillsägelse ges och händelsen dokumenteras
+D) Ärendet lämnas till åklagare
+Fråga 4
+Prov4. Varför är det extra allvarligt att avsiktligt störa ("jamma") amatörradiotrafik jämfört med att av misstag sända på fel frekvens?
+A) Det är inte allvarligare – båda behandlas lika av PTS
+B) Avsiktlig störning kan leda till böter eller åtal, medan oavsiktliga misstag normalt leder till tillsägelse
+C) Oavsiktliga misstag är alltid allvarligare eftersom de är vanligare
+D) Avsiktlig störning är tillåten om man har HAREC-certifikat
+Fråga 5
+Prov5. En radioamatör anser att ett visst regelverk är onödigt och väljer att ignorera det. Förutom de personliga konsekvenserna, vad riskerar hobbyn som helhet?
+A) Ingenting – regler påverkar bara den enskilde amatören
+B) Att frekvensband kan förloras till kommersiella aktörer och att myndigheterna blir mer restriktiva
+C) Att provet för HAREC-certifikatet blir svårare
+D) Att SSA upplöses
+
+Övningsfrågor – 7.1
+Fråga 1
+Grund1. Vad är ITU och vilken roll spelar organisationen för amatörradio?
+A) En svensk myndighet som utfärdar certifikat
+B) FN:s specialorgan för telekommunikation som fördelar radiofrekvenser globalt och sätter grundregler
+C) Radioamatörernas frivilliga organisation som utarbetar bandplaner
+D) En europeisk organisation som harmoniserar regler inom EU
+Fråga 2
+Grund2. I vilken ITU-region ligger Sverige?
+A) Region 2
+B) Region 3
+C) Region 1
+D) Sverige har en egen region
+Fråga 3
+Grund3. Vad innebär CEPT-rekommendationen T/R 61-01 (HAREC) för en svensk radioamatör?
+A) Att man måste ta om certifikatsprovet i varje europeiskt land man besöker
+B) Att det svenska HAREC-certifikatet är giltigt i alla 48 CEPT-länder
+C) Att man måste ansöka om tillstånd hos PTS för varje ny radio
+D) Att man bara får trafikera inom Sverige
+Fråga 4
+Prov4. Vad är den viktigaste skillnaden mellan PTS och SSA när det gäller amatörradio i Sverige?
+A) PTS är frivillig medan SSA är en statlig myndighet
+B) PTS är statlig myndighet (regler, certifikat, tillsyn) medan SSA är frivillig organisation (prov, utbildning, tjänster)
+C) Båda är statliga myndigheter med olika ansvarsområden
+D) PTS och SSA är samma organisation med olika namn
+Fråga 5
+Prov5. IARU:s bandplan anger att CW ska vara i segmentet 14000–14070 kHz på 20m-bandet. Är detta ett lagkrav i Sverige?
+A) Ja, det är inskrivet i PTSFS och är ett lagkrav
+B) Nej, det är en frivillig rekommendation från IARU – starkt rekommenderat men inte lagstadgat i Sverige
+C) Ja, det är ett ITU-krav som alla länder måste följa
+D) Nej, det gäller bara CEPT-länder utanför Sverige
+
+Övningsfrågor – 7.2
+Fråga 1
+Grund1. Vad innebär att amatörradio i Sverige är "undantagen från tillståndsplikt"?
+A) Du behöver varken certifikat eller tillstånd för att sända
+B) Du behöver certifikat men inte ansöka om tillstånd för varje enskild radio
+C) Du måste ansöka om tillstånd för varje ny sändare du köper
+D) Du behöver bara tillstånd om du sänder med mer än 100W
+Fråga 2
+Grund2. Hur länge gäller ett HAREC-certifikat i Sverige?
+A) 5 år, sedan måste det förnyas
+B) 10 år
+C) Livstid – ingen förnyelse krävs
+D) Till man fyller 65 år
+Fråga 3
+Grund3. Vad gäller om en person utan certifikat vill använda din amatörradio?
+A) Det är alltid förbjudet, oavsett omständigheter
+B) Det är tillåtet om du är fysiskt närvarande, använder din anropssignal och övervakar sändningen
+C) Det är tillåtet om du ger personen din PIN-kod till radion
+D) Det är tillåtet via fjärrstyrning om du kan se via kamera
+Fråga 4
+Prov4. Vilka trafiksätt och effekter tillåter ett HAREC-certifikat på HF-banden (med undantag för 60m och 6m)?
+A) Endast SSB och CW med max 100W
+B) Alla trafiksätt inklusive digitala modes med max 1000W PEP
+C) Alla trafiksätt med max 500W PEP
+D) Endast CW och SSB med max 1000W
+Fråga 5
+Prov5. Du åker på semester utomlands och lämnar din radiostation hemma. Din granne, som saknar certifikat, erbjuder sig att "paska" stationen åt dig via fjärrstyrning. Vad gäller?
+A) Det är tillåtet om grannen lovar att bara lyssna och inte sända
+B) Det är tillåtet om du kan se via webbkamera
+C) Det är förbjudet – fjärrstyrning räknas inte som direkt tillsyn; grannen saknar certifikat och har inte rätt att sända
+D) Det är tillåtet om grannen använder sin egen anropssignal
+
+Övningsfrågor – 7.3
+Fråga 1
+Grund1. Hur är en svensk personlig anropssignal uppbyggd? Ge ett korrekt format.
+A) Prefix (2 bokstäver) + siffra (0–7) + suffix (2–3 bokstäver), t.ex. SM5XYZ
+B) Siffra + prefix + suffix, t.ex. 5SMXYZ
+C) Suffix (3 bokstäver) + siffra + prefix, t.ex. XYZ5SM
+D) Prefix (3 bokstäver) + siffra, t.ex. SM50
+Fråga 2
+Grund2. Vilket geografiskt område representerar siffran 4 i anropssignalen SM4ABC?
+A) Stockholmsområdet
+B) Norra Sverige (Norrbotten och Västerbotten)
+C) Södra Sverige – Skåne, Blekinge och Kronoberg
+D) Västra Sverige – Västra Götaland och Halland
+Fråga 3
+Grund3. Hur ofta måste du identifiera din station under ett pågående långt QSO?
+A) En gång i början räcker
+B) Minst var 10:e minut under pågående sändning
+C) Var 30:e minut
+D) Bara i slutet av QSO:t
+Fråga 4
+Prov4. Vilken anropssignal används normalt av en automatisk repeaterstation i Sverige?
+A) SM-prefix med områdessiffra
+B) SK-prefix (klubbstation)
+C) SE-prefix (automatisk station)
+D) SL-prefix (specialevenemang)
+Fråga 5
+Prov5. Du provkör din nya antenn och sänder ett testsignal. Vilket av följande är korrekt?
+A) "Test test test" – du behöver inte identifiera vid test
+B) "SM5XYZ testar" – du måste alltid identifiera, även vid test och tuning
+C) Du behöver inte identifiera om du sänder kortare än 30 sekunder
+D) Identifiering krävs bara vid riktiga QSO, inte vid test
+
+Övningsfrågor – 7.4
+Fråga 1
+Grund1. Vilket HF-band kallas "DX-bandet" och är bäst för världsomspännande kontakter under dagtid?
+A) 80m (3,5 MHz)
+B) 40m (7 MHz)
+C) 20m (14 MHz)
+D) 160m (1,8 MHz)
+Fråga 2
+Grund2. Vad kallas 30m-, 17m- och 12m-banden gemensamt, och vilken viktig regel gäller för dem?
+A) DX-band – särskilda DX-windows gäller
+B) WARC-band – inga tävlingar tillåtna (30m: ej SSB)
+C) Nybörjarband – lägre effekt krävs
+D) Satellitband – endast satellittrafik tillåten
+Fråga 3
+Grund3. Vad är SSB-anropsfrekvensen för 2m-bandet (VHF)?
+A) 144.200 MHz
+B) 144.300 MHz
+C) 145.500 MHz
+D) 145.000 MHz
+Fråga 4
+Prov4. En sällsynt DX-station sänder i DX-window på 14197 kHz och säger "Listening 14225." Hur ska du som europeisk station agera?
+A) Anropa direkt på 14197 kHz för att nå DX-stationen
+B) Lyssna på 14197 kHz men anropa på 14225 kHz
+C) Ignorera DX-stationen – europeiska stationer ska inte använda DX-window
+D) Anropa på den frekvens du föredrar
+Fråga 5
+Prov5. IARU:s bandplan anger att CW ska vara i 14000–14070 kHz på 20m. Är detta ett lagkrav i Sverige, och vad händer om du sänder SSB i det segmentet?
+A) Det är ett lagkrav – du kan förlora certifikatet
+B) Det är en frivillig rekommendation – du bryter mot god amatörpraxis men inte mot PTSFS, dock troligen arga reaktioner från CW-operatörer
+C) Det är ett ITU-krav som PTS kontrollerar noggrant
+D) SSB är alltid tillåtet på 20m, oavsett frekvens
+
+Övningsfrågor – 7.5
+Fråga 1
+Grund1. Vilken maximal uteffekt tillåts med HAREC-certifikat på de flesta amatörband i Sverige?
+A) 100W PEP
+B) 500W PEP
+C) 1000W PEP
+D) 5000W PEP
+Fråga 2
+Grund2. Vilket effektmått gäller för 60m-bandet och vad inkluderar det?
+A) 1000W PEP – enbart sändareffekt
+B) 200W PEP – enbart sändareffekt
+C) 15W EIRP – inkluderar antennvinst och kabelförluster
+D) 100W EIRP – inkluderar antennvinst
+Fråga 3
+Räkna3. Du sänder på 60m med 10W, kabeln har 1 dB förlust och antennen har +3 dBi vinst. Vad är EIRP och är du inom gränsen på 15W?
+A) EIRP ≈ 10W – inom gränsen
+B) EIRP ≈ 15,8W – över gränsen på 15W EIRP
+C) EIRP ≈ 8W – inom gränsen
+D) EIRP = sändareffekten 10W – alltid OK
+Fråga 4
+Prov4. Vilken maximal effekt gäller för 6m-bandet (50–52 MHz) i Sverige?
+A) 1000W PEP
+B) 500W PEP
+C) 200W PEP
+D) 15W EIRP
+Fråga 5
+Prov5. Varför rekommenderas lägsta möjliga effekt, även om du lagligen får använda 1000W?
+A) Det är ett lagkrav i PTSFS att alltid köra QRP
+B) Lägre effekt minskar störningar, ökar säkerhet (RF-exponering), sparar pengar och är rättvist mot andra
+C) Hög effekt förstör antenner snabbt
+D) Det finns inga fördelar – kör alltid maxeffekt för bästa signal
+
+Övningsfrågor – 7.6
+Fråga 1
+Grund1. Får du spela inspelad musik i bakgrunden medan du pratar på amatörradio?
+A) Ja, om musiken är lugn och inte stör samtalet
+B) Ja, om du äger musiken
+C) Nej, musik (inspelad eller live) är förbjuden på amatörradio
+D) Ja, om du informerar den andra stationen
+Fråga 2
+Grund2. Varför är kryptering av amatörradiotrafik förbjuden (med undantag för Q-koder och RST)?
+A) Krypterad trafik stör mer
+B) All amatörradiotrafik ska vara öppen och avlyssningsbar – transparens är ett grundkrav
+C) Kryptering kräver dyrare utrustning och är orättvist
+D) ITU har inte bestämt en gemensam krypteringsstandard
+Fråga 3
+Grund3. Du driver ett VVS-företag. Vilket av följande är tillåtet på amatörradio?
+A) "Ring 070-XXXXXX och beställ ROT-avdragsjobb!"
+B) "Jag jobbar som rörmokare – har haft ett händelserikt jobb idag!"
+C) "Vi söker montörer, hör av er på radion om ni vill jobba hos oss"
+D) "Specialpris på värmepumpar den här veckan!"
+Fråga 4
+Prov4. En operatör sänder ett långt "dead carrier" på en frekvens för att blockera en station han är osams med. Vilket regelbrott begår han?
+A) Inget – det är tillåtet att sända carrier om man identifierar sig
+B) Avsiktlig störning ("jamming") – ett allvarligt brott som kan leda till böter eller åtal
+C) Enbart ett bandplansbrott som ger tillsägelse
+D) Bara ett etikettbrott, inte ett regelbrott
+Fråga 5
+Prov5. Är det tillåtet att via amatörradio förmedla ett meddelande åt en granne som saknar certifikat?
+A) Ja, alltid – det är service till allmänheten
+B) Ja, om grannen betalar dig
+C) Nej – kommunikation åt tredje part (icke-amatörer) är förbjuden, utom vid nödsituationer
+D) Ja, om meddelandet är kortare än 30 sekunder
+
+Övningsfrågor – 7.7
+Fråga 1
+Grund1. Vad innebär CEPT T/R 61-02 för dig som svensk radioamatör på semester i Europa?
+A) Du måste ansöka om tillstånd i varje land minst 3 månader i förväg
+B) Du får trafikera i 48 CEPT-länder med ditt HAREC-certifikat utan separat tillstånd, upp till 3 månader
+C) Du måste betala avgift till varje lands telekommunikationsmyndighet
+D) Du får bara använda handhållna radioapparater utomlands
+Fråga 2
+Grund2. SM7ABC är på semester i Italien och vill trafikera. Vilken anropssignal ska han använda?
+A) SM7ABC – den svenska signalen gäller automatiskt
+B) IT/SM7ABC
+C) I/SM7ABC
+D) EU/SM7ABC
+Fråga 3
+Grund3. Är USA ett CEPT-land, och hur kan en svensk radioamatör trafikera lagligt där?
+A) Ja, USA är CEPT-land – HAREC-certifikatet gäller automatiskt
+B) Nej, men Sverige har reciprokt avtal – ansök om FCC reciprocal permit eller ta ett amerikanskt certifikat
+C) Nej, det är omöjligt för svenska amatörer att trafikera lagligt i USA
+D) Ja, USA accepterar alla europeiska certifikat utan ansökan
+Fråga 4
+Prov4. Vad betyder tillägget /MM efter en anropssignal?
+A) Mobil i bil – inga särskilda regler
+B) Maritime Mobile – stationen trafikerar från fartyg på internationellt vatten
+C) Multi-Mode – stationen kör flera trafiksätt simultant
+D) Master Mode – stationen är repeateroperatör
+Fråga 5
+Prov5. SM4DEF åker till Thailand och vill använda sin handhållna radio. Han tror CEPT täcker resan. Vad stämmer?
+A) Inget problem – CEPT gäller globalt
+B) Thailand är inte CEPT-land. Han måste ansöka om tillstånd hos NBTC i förväg, eller avstå från att sända
+C) Han kan trafikera om han bara lyssnar och inte anropar
+D) Han kan sända men måste använda ett thai-prefix
+
+Övningsfrågor – 7.8
+Fråga 1
+Grund1. Är det obligatoriskt att föra loggbok i Sverige för personlig amatörradiotrafik?
+A) Ja, PTS kräver att alla amatörer loggar
+B) Nej, inget lagkrav i PTSFS – men starkt rekommenderat och obligatoriskt för tävlingar och diplom
+C) Ja, men bara för stationer över 100W
+D) Nej, och det finns heller inga fördelar med att logga
+Fråga 2
+Grund2. Vad är ett QSL-kort och varför skickar radioamatörer dem?
+A) En faktura för tjänster utförda via radio
+B) Ett vykort som bekräftar en specifik radiokontakt – används för att bevisa kontakter för diplom och som vänskaplig gest
+C) En licensblankett som skickas till PTS efter varje QSO
+D) En teknisk rapport om utrustningens prestanda
+Fråga 3
+Grund3. Vad innebär "shift" på en 2m-repeater, och varför finns den?
+A) Repeatern skiftar automatiskt mellan CW och SSB
+B) Frekvensskillnaden (−600 kHz) mellan repeaterns ingång (du sänder) och utgång (repeatern sänder) – möjliggör simultan sändning och mottagning
+C) En tidsfördröjning för bättre ljudkvalitet
+D) En automatisk volymjustering
+Fråga 4
+Prov4. Du och en vän har ett intressant QSO via en lokal repeater och planerar att prata i ytterligare 30 minuter. Vad är bäst?
+A) Fortsätt på repeatern – inga tidsgränser finns
+B) Flytta till en simplex-frekvens (direkt, utan repeater) så att repeatern är fri för andra
+C) Avsluta QSO:t – repeatrar tillåter inte QSO längre än 15 min
+D) Minska effekten till minimum och fortsätt
+Fråga 5
+Prov5. Vilken QSL-metod är snabbast och vilken är billigast för vanliga vardagsQSO?
+A) Direkt (posta) är snabbast; via SSA:s byrå är billigast
+B) Elektroniskt (eQSL/LoTW) är snabbast; via SSA:s byrå är billigast
+C) Via SSA:s byrå är snabbast; direkt (posta) är billigast
+D) Elektroniskt är snabbast och billigast i alla situationer
+
+Övningsfrågor — 8.1
+Fråga 1
+Grund1. Du hör en station på 14,205 MHz och vill veta om frekvensen är ledig innan du börjar sända. Vilken Q-kod använder du?
+Fråga 2
+Grund2. Vad är skillnaden mellan QRM och QRN? Ge ett praktiskt exempel på när du skulle rapportera vardera.
+Fråga 3
+Prov3. Du kallar CQ och hör ett svagt svar men hörde inte anropssignalen tydligt. Vilken Q-kod använder du, och vad är skillnaden mot att säga "QRZ SM5XYZ"?
+Fråga 4
+Grund4. Vad betyder "73" och när används det? Vad kallas det om man säger "73s" (med s)?
+Fråga 5
+Prov5. Förklara vad QSB betyder och hur du skulle rapportera det i en kontakt där signalstyrkan växlar mellan S5 och S9.
+
+
+Övningsfrågor — 8.2
+Fråga 1
+Grund1. Bokstavera anropssignalen SM7ABC fonetiskt, fullt utskriven med alla ord.
+Fråga 2
+Grund2. Hur uttalas siffran 9 fonetiskt? Varför är det viktigt att inte säga "nio" eller "nain"?
+Fråga 3
+Prov3. En ny radioamatör bokstaverar sin signal och säger: "S som i Sven, M som i Mats, noll, A som i Arne…". Vad är felet och hur borde det låta?
+Fråga 4
+Grund4. Vilket fonetiskt ord används för bokstaven Q? Hur uttalas det korrekt?
+Fråga 5
+Prov5. Du har anropssignalen SM5XYZ. Hur bokstaverar du den fonetiskt, och hur snabbt bör du kunna göra det utan att tveka?
+
+
+Övningsfrågor — 8.3
+Fråga 1
+Grund1. Vad står R, S och T för i RST-systemet? Vilken del används INTE på foni?
+Fråga 2
+Grund2. Du hör en station på 20m-bandet. Signalen är perfekt läsbar men ganska svag — S-metern visar S4. Vilken rapport ger du?
+Fråga 3
+Prov3. En grannstation 2 km bort sänder på 40m-bandet. S-metern slår långt förbi S9. Hur rapporterar du detta och vad betyder det?
+Fråga 4
+Prov4. Varför är det fel att alltid ge signalrapporten "59" oavsett hur signalen verkligen låter? Vad kallas detta fenomen?
+Fråga 5
+Prov5. Du kör CW och hör en DX-station. Signalen fäder (QSB) mellan R3 och R5, och S-metern varierar mellan S5 och S7. Tonen är perfekt. Vilken RST-rapport ger du och hur motiverar du ditt val?
+
+
+Övningsfrågor — 8.4
+Fråga 1
+Grund1. Vad är det allra första du ska göra innan du sänder på en frekvens, och varför?
+Fråga 2
+Grund2. Du hör SM0ABC kalla CQ och vill svara. Din anropssignal är SM5XYZ. Skriv ett korrekt svar — i rätt ordning med rätt delar.
+Fråga 3
+Prov3. Vad betyder "listening 5 up" i samband med en DX pile-up, och hur ställer du in din radio för att delta?
+Fråga 4
+Prov4. Nämn tre saker du INTE ska göra i en pile-up, och förklara varför varje sak är problematisk.
+Fråga 5
+Grund5. Vilka fem delar ingår i ett typiskt komplett QSO på HF? Nämn dem i ordning.
+
+
+Övningsfrågor — 8.5
+Fråga 1
+Grund1. Vilken modulation används normalt för tal på HF-banden, och vilken används på VHF/UHF-repeatrar?
+Fråga 2
+Prov2. Du vill köra SSB på 40m-bandet (7 MHz) och sedan på 20m-bandet (14 MHz). Vilket sidband (LSB eller USB) ska du välja på respektive band, och varför?
+Fråga 3
+Grund3. Vad är standard-anropsfrekvensen för FM simplex på 2m-bandet? Vad ska du göra efter att du fått svar på anropet?
+Fråga 4
+Prov4. Vad är ALC och vad händer om ALC-metern slår i taket när du sänder?
+Fråga 5
+Prov5. En repeater på 2m-bandet har ut-frekvens 145,0125 MHz och standard shift. Vilken frekvens sänder DU på för att aktivera repeatern, och vad är CTCSS?
+
+
+Övningsfrågor — 8.6
+Fråga 1
+Grund1. Vad betyder CW och vad är den viktigaste tekniska egenskapen som gör att CW fungerar bättre än SSB med svaga signaler?
+Fråga 2
+Prov2. Hur många siffror ingår i en RST-rapport på CW, och vad betyder "599"? Jämför med foni.
+Fråga 3
+Grund3. Vad betyder prosignen SK i ett CW-QSO? När används den?
+Fråga 4
+Prov4. Varför är det fel att lära sig morsekod genom att memorera visuella prickar och streck? Vad är det rätta tillvägagångssättet?
+Fråga 5
+Prov5. Krävs morsekunskap för HAREC-certifikatet i Sverige? Nämn ändå tre konkreta fördelar med att kunna CW som gör det värt att lära sig.
+
+
+Övningsfrågor — 8.7
+Fråga 1
+Grund1. Vilket digitalt mode är det mest använda idag, och vad är dess viktigaste tekniska fördel jämfört med SSB?
+Fråga 2
+Grund2. Hur lång är en FT8-period (ett sändningsintervall), och vad krävs för att alla stationer ska kunna synkronisera sig?
+Fråga 3
+Prov3. Vilket digitalt mode väljer du om du vill ha en fri konversation på tangentbordet med svaga signaler, snarare än standardiserade korta meddelanden?
+Fråga 4
+Grund4. Vad är APRS och på vilken frekvens körs det i Sverige/Europa?
+Fråga 5
+Prov5. Vad händer om du ställer in för hög mikrofonvolym (för hög datorvolym mot radion) när du kör FT8? Hur märker du problemet och hur åtgärdar du det?
+
+
+Övningsfrågor — 8.8
+Fråga 1
+Grund1. Vad är skillnaden mellan MAYDAY och PAN PAN? Ge ett konkret exempel på en situation som är MAYDAY och en som är PAN PAN.
+Fråga 2
+Prov2. Hur många gånger säger man MAYDAY i inledningen av ett nödanrop, och varför upprepas det?
+Fråga 3
+Grund3. Vilken är den internationella nödfrekvensen på amatörband som du bör känna till, och vilket band tillhör den?
+Fråga 4
+Prov4. Du hör ett MAYDAY-anrop och ingen annan verkar svara. Skriv den korrekta meningen du sänder som svar, med rätt format.
+Fråga 5
+Prov5. Vid verklig nödsituation — får du använda en frekvens utanför amatörbanden och högre effekt än din normala gräns? Vad ska du göra i efterhand?
+
+
+Övningsfrågor – 9.1 Elsäkerhet
+Fråga 1
+Grund1. Vad är det som faktiskt dödar vid en elektrisk stöt – spänningen eller strömmen? Förklara varför med hjälp av Ohms lag.
+Fråga 2
+Räkna2. En person med torr hud (100 kΩ) råkar röra en 230 V nätledning. Beräkna strömstyrkan och bedöm om den är direkt livsfarlig. Gör sedan om beräkningen med fuktig hud (10 kΩ).
+Fråga 3
+Grund3. Du öppnar ett gammalt nätaggregat och vill byta en komponent. Vilka steg ska du ta innan du rör vid något inne i aggregatet? Nämn minst tre åtgärder.
+Fråga 4
+Räkna4. En kondensator på 2 200 µF är laddad till 400 V. Beräkna hur mycket energi kondensatorn lagrar med formeln E = ½ × C × U². Vad kan den energimängden jämföras med?
+Fråga 5
+Prov5. Du hittar en person som fått en elektrisk stöt och fortfarande verkar vara i kontakt med strömkällan. Beskriv i rätt ordning vad du gör under de första minuterna. Vad är det allra viktigaste första steget och varför?
+
+
+Övningsfrågor – 9.2 Antennsäkerhet
+Fråga 1
+Grund1. Vilken är den vanligaste allvarliga olyckan vid antennarbete, och vilken säkerhetsutrustning är absolut obligatorisk vid arbete över 2 meters höjd?
+Fråga 2
+Räkna2. Du har en 15 m hög mast på 8 m avstånd från en 20 kV-mellanspänningsledning. Beräkna om masten kan nå ledningen vid fall, och vilket minsta avstånd som skulle behövas.
+Fråga 3
+Prov3. Beskriv exakt vad du gör om din antennmast rasar och landar på en kraftledning. Vad händer om du försöker dra bort antennen för hand?
+Fråga 4
+Räkna4. En yagi-antenn har 2,5 m² vindfångsyta. Beräkna kraften vid 30 m/s vind med formeln F ≈ 0,6 × A × v². Vad motsvarar den vikten i kg?
+Fråga 5
+Grund5. Hur ofta ska du kontrollera stag och vajrar på en antennmast, och vad ska du titta efter? Vad gör du om du hittar rost eller utfransade trådar?
+
+Övningsfrågor – 9.3 RF-strålning och hälsa
+Fråga 1
+Grund1. Vad är skillnaden mellan joniserande och icke-joniserande strålning? Ge ett exempel på vardera typ, och förklara varför RF-strålning ändå kan vara skadlig.
+Fråga 2
+Räkna2. Fältstyrkan vid 1 m från en antenn är 45 V/m. Beräkna fältstyrkan vid 3 m och vid 6 m. ICNIRP-gränsen är 28 V/m – vid vilket avstånd är du under gränsen?
+Fråga 3
+Grund3. Varför är RF-brännskador på HF-banden extra farliga jämfört med brännskador i GHz-området? Nämn två egenskaper som gör dem svåra att upptäcka i tid.
+Fråga 4
+Prov4. Du kör 100 W SSB på 14 MHz med en 3-elements yagi (8 dBi). En dipol ger 2,15 dBi. Med hur många gånger är din yagis EIRP högre jämfört med en dipol? Vad innebär det för det säkra avståndet framför antennen?
+Fråga 5
+Grund5. Vad mäter SAR (Specific Absorption Rate) och i vilken enhet? Vad är EU:s SAR-gräns för huvud och kropp, och i vilken situation för radioamatörer är SAR mest relevant?
+
+
+Övningsfrågor – 9.4 Åskskydd
+Fråga 1
+Grund1. Vad är skillnaden mellan en direktträff av blixt och närhetseffekter? Vilken typ av skada orsakar respektive, och vilket skydd hjälper mot dem?
+Fråga 2
+Grund2. Varför räcker det inte med ett elektroniskt överspänningsskydd som enda skydd mot blixten? Vad är det enda garanterade skyddet?
+Fråga 3
+Räkna3. Förklara varför jordledaren till mastfoten ska vara minst 16 mm² och gå rakt utan böjar. Vad händer med en 1,5 mm² ledare vid ett blixtnedslag med 30 kA?
+Fråga 4
+Prov4. Det börjar åska 8 km bort. Beskriv exakt vad du gör med din amatörradiostation, steg för steg. Hur lång tid efter sista åskan ska du vänta innan du kopplar in igen?
+Fråga 5
+Grund5. Vad orsakar statisk uppladdning på en antenn, och vilka skador kan det orsaka? Beskriv en enkel och billig åtgärd som minskar problemet.
+
+Övningsfrågor – 9.5 Batterier
+Fråga 1
+Grund1. Varför måste ett blybatteri laddas i ett ventilerat utrymme? Vilken gas bildas vid laddning och vad händer om en gnista når den gasen?
+Fråga 2
+Grund2. I vilken ordning ansluter du kablarna till ett blybatteri, och i vilken ordning kopplar du loss dem? Förklara varför ordningen spelar roll.
+Fråga 3
+Räkna3. Ett 12 V blybatteri har en inre resistans på 8 mΩ. Du råkar kortsluta det med ett metallverktyg. Beräkna kortslutningsströmmen. Vad händer med verktyget och varför är det farligt om vätgas finns i närheten?
+Fråga 4
+Prov4. Vad är "thermal runaway" i ett litiumbatteri? Beskriv kedjereaktionen och nämn minst tre faktorer som kan utlösa den. Varför kan processen inte stoppas när den väl startat?
+Fråga 5
+Prov5. Du märker att ditt LiPo-batteri börjar ryka och bli varmt under laddning. Beskriv exakt vad du gör. Varför ska du inte andas in röken och varför fungerar inte en vanlig pulversläckare?
+
+Övningsfrågor – 10.1 Stationsuppbyggnad
+Fråga 1
+Grund1. Vilken matningsspänning använder de flesta HF-transceivrar?
+Fråga 2
+Räkna2. En 100 W HF-transceiver har ett slutsteg med 50 % verkningsgrad. Hur stor ström förbrukar den vid sändning om spänningen är 13,8 V? Välj sedan lämpligt nätaggregat.
+Fråga 3
+Räkna3. Beräkna längden på varje arm i en halvvågsdipol för 80m-bandet (mittenfrekvens 3,6 MHz). Ge svaret i meter.
+Fråga 4
+Grund4. Du mäter SWR 2:1 på din antenn. Hur stor andel av den sända effekten reflekteras tillbaka, och är detta acceptabelt för en transceiver?
+Fråga 5
+Prov5. Förklara varför ett switch-mode nätaggregat av låg kvalitet kan vara ett problem i ett HF-shack, och vad du kan göra för att minska problemet.
+
+
+Övningsfrågor – 10.2 Ditt Första QSO
+Fråga 1
+Grund1. Vad betyder RST-rapporten "59" och i vilket sammanhang används enbart "RS" (utan T)?
+Fråga 2
+Grund2. Vad säger du INNAN du ropar CQ för att kontrollera att frekvensen är ledig, och hur länge väntar du på svar?
+Fråga 3
+Grund3. Vad är skillnaden mellan orden "over" och "out" i radiotrafik? Varför ska man aldrig säga "over and out"?
+Fråga 4
+Prov4. Vad är CTCSS och varför behöver de flesta FM-repeatrar en CTCSS-ton för att öppnas?
+Fråga 5
+Prov5. Varför är det viktigt att vänta ungefär 2 sekunder efter att ha tryckt ned PTT innan man börjar tala? Vad händer med de första orden om man inte väntar?
+
+
+Övningsfrågor – 10.3 DX och Tävlingar
+Fråga 1
+Grund1. Vilket HF-band anses vara det klassiska DX-bandet dagtid, och varför är det öppet mot hela världen vid solmaximum?
+Fråga 2
+Grund2. Förklara vad grålinjen är och varför soluppgång/nedgång ger de bästa förutsättningarna för DX.
+Fråga 3
+Prov3. En DX-spot visar: 14.195,0 VK9AB CW UP5. Beskriv exakt hur du ställer in transceivern för att svara på denna station.
+Fråga 4
+Grund4. Vad innebär S&P (Search and Pounce) i tävlingssammanhang, och varför är det en bra metod för nybörjare?
+Fråga 5
+Prov5. Varför kör sällsynta DX-stationer nästan alltid split-operation? Vad är konsekvensen om du råkar sända på DX-stationens TX-frekvens?
+
+
+Övningsfrågor – 10.4 Diplom och Utmärkelser
+Fråga 1
+Grund1. Hur många bekräftade DXCC-entiteter krävs för grunddiplom DXCC, och hur många entiteter finns det totalt att arbeta?
+Fråga 2
+Grund2. Hur många CQ-zoner finns i WAZ-programmet, och vilken zon tillhör Sverige?
+Fråga 3
+Grund3. Hur många giltiga QSO krävs för en SOTA-aktivering respektive en POTA-aktivering?
+Fråga 4
+Prov4. Vad är LoTW och varför är det viktigt att registrera sig tidigt? Förklara hur bekräftelsen sker automatiskt.
+Fråga 5
+Prov5. Beskriv skillnaden mellan en SOTA-aktiverare och en SOTA-jägare. Vilken utrustning är typisk för en aktiverare?
+
+
+Övningsfrågor – 10.5 Aktiviteter och Evenemang
+Fråga 1
+Grund1. Hur många QSO krävs för en giltig POTA-aktivering, och vad skiljer POTA från SOTA?
+Fråga 2
+Grund2. Vad är APRS, på vilken frekvens sänds det normalt i Sverige, och vad kan det användas till?
+Fråga 3
+Grund3. Vad heter det återkommande nordiska aktivitetsevenemanget som äger rum varje tisdagskväll, och vad handlar det om?
+Fråga 4
+Prov4. Varför är det avgörande att datorklockan är exakt synkroniserad när man kör FT8? Vad händer om klockan är mer än 1 sekund fel?
+Fråga 5
+Prov5. Vad innebär JOTA, när arrangeras det och vem är den primära målgruppen för evenemanget?
+
+
+Övningsfrågor – 10.6 Resurser och Fortsatt Lärande
+Fråga 1
+Grund1. Vad heter den svenska amatörradiounionen och på vilken webbplats hittar du din lokala amatörradioklubbs kontaktuppgifter?
+Fråga 2
+Grund2. Vilken webbplats använder du för att slå upp information om en okänd anropssignal, och vad kan du typiskt hitta där?
+Fråga 3
+Grund3. Vilket gratisprogram används för FT8, och vem är mannen bakom det?
+Fråga 4
+Prov4. Vilken webbplats visar i realtid var din FT8- eller PSK31-signal hörs i världen, och hur fungerar systemet?
+Fråga 5
+Prov5. Vad heter det internationella organet som representerar radioamatörerna gentemot ITU (Internationella teleunionen), och vad är dess huvuduppgift?
+
+

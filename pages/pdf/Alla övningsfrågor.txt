@@ -769,6 +769,18 @@ Grund4. Vad är en markeringsgenerator och hur använder man dess övertoner fö
 Fråga 5
 Prov5. Du vill mäta selektiviteten (närkanalsskiljning) på din mottagare vid 3 kHz kanalavstånd. Beskriv testet med en RF-generator och tolka ett resultat på 35 dB.
 
+Övningsfrågor – 5.6 Dummyload och dämpare
+Fråga 1
+Grund1. Vad är en dummyload och varför är det nödvändigt att använda den vid sändartester?
+Fråga 2
+Grund2. Vilken impedans ska en dummyload för amatörradio ha och vad händer med all inmatad RF-effekt?
+Fråga 3
+Räkna3. Du har en 500 W sändare och vill ansluta den till en frekvensräknare via en −40 dB dämpare. Hur stor effekt når räknaren?
+Fråga 4
+Grund4. Vilken typ av dummyload lämpar sig bäst för kontinuerlig drift med 200 W och varför?
+Fråga 5
+Prov5. Du bygger en enkel luftkyld dummyload av 8 stycken 390 Ω resistorer kopplade parallellt. Beräkna den totala impedansen och den maximala kontinuerliga effekten om varje resistor tål 5 W.
+
 
 Övningsfrågor – 5.7 Antennanalysator
 Fråga 1

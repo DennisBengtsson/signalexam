@@ -8,3 +8,86 @@ Svar i ibox-body: nyckelbegrepp i <strong>, beräkningar rad för rad med <br>, 
 ibox-hdr används bara i avslutningsboxen (ibox blue) i slutet av kapitlet
 Frågorna numreras om från 1 i varje nytt delkapitel
 Avsluta alltid med <div class="spacer"></div> före footern
+
+Här är en förnyad och förfinad prompt:
+# Prompt: Facit-sidor till Certifikatshandboken
+Du skriver **HTML-fragment för facit-sidor** (lösningsförslag med svar) till **Certifikatshandboken** på Radioskola.se. Följ dessa regler exakt:
+## 📋 Grundregler
+- Skriv bara `<div class="page light">` och nedåt – aldrig `<!DOCTYPE>`, `<html>`, `<head>` eller `<body>`
+- Använd endast nedanstående klasser i rätt struktur och ordning
+## 🎯 Tillåtna klasser
+**Sidstruktur:**
+- `page`, `page light`
+- `page-header`, `page-header-left`, `page-header-right`
+- `page-content`
+- `spacer`
+- `page-footer`, `page-footer-line`, `page-footer-content`, `page-footer-center`
+**Titlar och text:**
+- `sec-title` – för huvudtitel på facitsidorna
+- `subsec-title` – för undertitel
+- `body-p` – för löpande text
+**Frågeblock:**
+- `q-section-hdr` – frågenummer (t.ex. "Fråga 1")
+- `q-block` – wrapper runt varje fråga
+- `q-level` – nivåmärkning: `grund`, `rakna` eller `prov`
+- `q-num` – frågans nummer
+**Svarsboxar:**
+- `ibox green` – för facitsvar
+- `ibox blue` – för avslutande sammanfattning (endast här används `ibox-hdr`)
+- `ibox-body` – innehåll i boxen
+## 📝 Strukturell ordning
+**Varje fråga ska följa detta mönster:**
+```
+q-section-hdr (Fråga X)
+→ q-block (med q-level + q-num inuti)
+→ ibox green
+→ ibox-body (med svaret)
+```
+## ✍️ Svarsformat i ibox-body
+- **Nyckelbegrepp** markeras med `<strong>`
+- **Beräkningar** skrivs rad för rad med `<br>` mellan varje rad
+- **Slutsvaret** markeras med `<strong>`
+- Använd `<sub>` för nedsänkta indices (t.ex. `P<sub>ut</sub>`)
+## 🔢 Numrering
+- Frågorna numreras om från 1 i varje nytt delkapitel
+- Behåll nivåmärkningen (grund/rakna/prov) i q-level
+## 📌 Avslutning
+- Avsluta alltid sidan med `<div class="spacer"></div>` före footern
+- Lägg till en avslutande `ibox blue` med sammanfattning i slutet av kapitlet (här används `ibox-hdr`)
+## 📄 Exempel på korrekt struktur
+```html
+<div class="page light">
+  <div class="page-header">
+    <div class="page-header-left"><span>2.8 – Facit</span></div>
+    <div class="page-header-right"><span>Radioteknik</span></div>
+  </div>
+  <div class="page-content">
+    <div class="sec-title">Facit – 2.8 Förstärkare</div>
+    <div class="q-section-hdr">Fråga 1</div>
+    <div class="q-block">
+      <span class="q-level grund">Grund</span>
+      <span class="q-num">1.</span>
+      [Frågan här]
+    </div>
+    <div class="ibox green">
+      <div class="ibox-body">
+        <p class="body-p"><strong>Svar:</strong><br>
+        [Nyckelbegrepp]<br>
+        [Beräkning rad 1]<br>
+        [Beräkning rad 2]<br>
+        <strong>20 dB</strong></p>
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </div>
+  <div class="page-footer">
+    <div class="page-footer-line"></div>
+    <div class="page-footer-content">
+      <span>Certifikatshandboken · 1:a upplagan</span>
+      <span class="page-footer-center">2.8 – Facit</span>
+      <span>Radioskola.se</span>
+    </div>
+  </div>
+</div>
+```
+Denna prompt kan du nu använda för att generera facit-sidor enligt exakt samma format och stil som i din kod.

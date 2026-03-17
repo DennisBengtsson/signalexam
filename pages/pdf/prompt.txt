@@ -1,24 +1,31 @@
-PROMPT – Radioskola.se Certifikatshandboken
-Du är kodgenerator för Radioskola.se:s PDF-bok (Certifikatshandboken). Generera HTML-sidor för [KAPITEL X.Y – TITEL] baserat på bifogad webbkod.
-FORMAT:
-    • Bara <div class="page light">...</div>-block – inga <html>, <body>, <style> eller <link> 
-    • Varje sida måste avslutas korrekt med <div class="spacer"></div> följt av </div> (page-content), sedan page-footer, sedan </div> (page light) – innan nästa sida börjar 
-    • Sidhuvud: <div class="page-header"> med vänster = avsnittnamn, höger = kapitelnamn 
-    • Sidfot: <div class="page-footer"> med "Certifikatshandboken · 1:a upplagan" / sidtitel / "Radioskola.se" 
-KLASSER: .sec-title · .subsec-title · .body-p · .dropcap · .ibox.orange/.blue/.green/.red/.grey · .ibox-hdr · .ibox-body · .tbl · .example · .ex-hdr · .analogy · .analogy-hdr · .formula-box · .q-block · .q-section-hdr · .q-level.grund/.rakna/.prov · .q-num · .spacer
-INNEHÅLL:
-    • Ta med ALLA exempel, SVG-diagram och analogier från källkoden 
-    • Inga snabbtest – varje delkapitel avslutas med en övningsfrågesida med exakt 5 frågor 
-    • Övningsfrågorna följer detta format: 
-html
-<div class="q-section-hdr">Fråga 1</div>
+PROMPT – Radioskola.se CertifikatshandbokenDu är kodgenerator för Radioskola.se:s PDF-bok (Certifikatshandboken). Generera HTML-sidor för [KAPITEL X.Y – TITEL] baserat på bifogad webbkod.FORMAT:
+
+Bara <div class="page light">...</div>-block – inga <html>, <body>, <style> eller <link>
+Varje sida måste avslutas korrekt med <div class="spacer"></div> följt av </div> (page-content), sedan page-footer, sedan </div> (page light) – innan nästa sida börjar
+SIDHUVUD – använd alltid exakt detta mönster:
+html<div class="page-header">
+  <div class="page-header-left"><span>AVSNITTNAMN</span></div>
+  <div class="page-header-right"><span>KAPITELNAMN</span></div>
+</div>SIDFOT – använd alltid exakt detta mönster:
+html<div class="page-footer"><div class="page-footer-line"></div>
+  <div class="page-footer-content"><span>Certifikatshandboken · 1:a upplagan</span><span class="page-footer-center">X.Y – Titel</span><span>Radioskola.se</span></div>
+</div>DROPCAP – sätt klassen direkt på <p>-taggen, aldrig som <span> inuti texten:
+html<p class="body-p dropcap">Första stycket börjar här...</p>KLASSER:
+.sec-title · .subsec-title · .body-p · .dropcap · .ibox.orange/.blue/.green/.red/.grey · .ibox-hdr · .ibox-body · .tbl · .example · .ex-hdr · .analogy · .analogy-hdr · .formula-box · .q-block · .q-section-hdr · .q-level.grund/.rakna/.prov · .q-num · .spacerINNEHÅLL:
+Glöm inte kapitelförklaringen "x.0"
+
+Ta med ALLA exempel, SVG-diagram och analogier från källkoden
+Inga snabbtest – varje delkapitel avslutas med en övningsfrågesida med exakt 5 frågor
+Övningsfrågorna följer detta format:
+
+html<div class="q-section-hdr">Fråga 1</div>
 <div class="q-block">
   <span class="q-level grund">Grund</span>
   <span class="q-num">1.</span>
   Frågetext här.
 </div>
-    • Blanda svårighetsgrader: grund · rakna · prov 
-    • Inget facit – det läggs till separat när hela kapitlet är klart 
-    • Generera koden i en enda kodruta i chatten 
-Bifoga källkodens HTML och skriv: "Fortsätt med sektion X.Y"
 
+Blanda svårighetsgrader: grund · rakna · prov
+Inget facit – det läggs till separat när hela kapitlet är klart
+Generera koden i en enda kodruta i chatten
+Bifoga källkodens HTML och skriv: "Fortsätt med sektion X.Y"

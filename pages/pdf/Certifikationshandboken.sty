@@ -54,23 +54,6 @@ _Uppdateras löpande under arbetet med Certifikatshandboken_
 
 ---
 
-## Kapitel 1.6 — Serie- och parallellkoppling
-
-### Från 1.4 (Kondensatorer)
-- Räkneexempel med 47/100/220 µF:
-  - Parallellt: Ctot = 47 + 100 + 220 = 367 µF
-  - Serie (47 µF och 100 µF): 1/Ctot = 1/47 + 1/100 → Ctot ≈ 32 µF
-  - Poäng: serie ger lägre C än den minsta ingående (omvänt mot resistorer)
-- Tabell med omvända regler för C och L sida vid sida:
-  - Kondensatorer i serie → C minskar (som parallella resistorer)
-  - Kondensatorer parallellt → C adderas (som resistorer i serie)
-  - Spolar i serie → L adderas (som resistorer i serie)
-  - Spolar parallellt → L minskar (som parallella resistorer)
-- Övningsfråga: Varför parallellkopplar man kondensatorer i nätaggregat?
-  - Svar: Stor total kapacitans jämnar ut spänningsvågor (rippel) effektivare
-  - Bonus: olika typer täcker olika frekvensområden (stor elektrolyt + liten keramisk)
-
----
 
 ## Noteringar
 
@@ -78,3 +61,14 @@ _Uppdateras löpande under arbetet med Certifikatshandboken_
   I 1.5 används bara "spole som blockerar störningar" som beskrivning.
 - VFO, SWR, antenntuner — inga av dessa förklaras i kapitel 1.
   De ska introduceras i respektive kapitel med rätt kontext.
+
+\begin{qblock}{6.}
+\qprov\quad En antenntuner innehåller en variabel 
+kondensator och en variabel spole. Förklara hur 
+serie- och parallellkoppling av L och C påverkar 
+induktansen och kapacitansen, och varför tunern 
+kan matcha en mängd olika antennimpedanser mot 
+50\,$\Omega$.
+\end{qblock}
+
+Ser ett problem direkt: Fråga 6 i facittexten du skickade är en forward reference — antenntuner och impedansmatching hör inte hemma i 1.6. Den ska bort ur kapitlet och läggas i listan för senare kapitel.

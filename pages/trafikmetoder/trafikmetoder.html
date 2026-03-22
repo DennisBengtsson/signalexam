@@ -674,6 +674,16 @@
                     <div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-nod" id="nodBar" style="width:0%"></div></div>
                     <span class="mpm-pct" id="nodPct">0%</span>
                 </div>
+                <div class="mpm-section">
+                    <span class="mpm-label">📡 Anropssignaler</span>
+                    <div class="progress-bar-outer"><div class="progress-bar-inner" style="background:linear-gradient(90deg,#667eea,#764ba2)" id="anropBar" style="width:0%"></div></div>
+                    <span class="mpm-pct" id="anropPct">0%</span>
+                </div>
+                <div class="mpm-section">
+                    <span class="mpm-label">🗣️ QSO-trafik</span>
+                    <div class="progress-bar-outer"><div class="progress-bar-inner" style="background:linear-gradient(90deg,#f6ad55,#ed8936)" id="qsoBar" style="width:0%"></div></div>
+                    <span class="mpm-pct" id="qsoPct">0%</span>
+                </div>
             </div>
 
             <div class="tab-nav" id="mainTabNav">
@@ -682,6 +692,8 @@
                 <button onclick="showMain('fork', this)">🔤 Förkortningar</button>
                 <button onclick="showMain('qkod', this)">📻 Q-koder</button>
                 <button onclick="showMain('nod', this)">🆘 Nödsignaler</button>
+                <button onclick="showMain('anrop', this)">📡 Anropssignaler</button>
+                <button onclick="showMain('qso', this)">🗣️ QSO-trafik</button>
             </div>
 
             <div class="sub-tab-nav" id="fonetisktSubNav">
@@ -852,6 +864,36 @@
                 </div>
             </div>
 
+            <!-- Anropssignaler -->
+            <div id="main-anrop" class="main-section">
+                <div class="quiz-wrap">
+                    <div class="quiz-top">
+                        <span style="font-size:0.9rem;color:var(--text-secondary)">Anropssignaler och prefix</span>
+                        <div class="quiz-mode-toggle">
+                            <button class="active" id="anrop-ref-btn" onclick="setAnropView('ref')">📋 Referens</button>
+                            <button id="anrop-quiz-btn" onclick="setAnropView('quiz')">🎯 Quiz</button>
+                            <button id="anrop-distrikt-btn" onclick="setAnropView('distrikt')">🗺️ Distrikt</button>
+                        </div>
+                    </div>
+                    <div id="anropArea"></div>
+                </div>
+            </div>
+
+            <!-- QSO-trafik -->
+            <div id="main-qso" class="main-section">
+                <div class="quiz-wrap">
+                    <div class="quiz-top">
+                        <span style="font-size:0.9rem;color:var(--text-secondary)">QSO-trafik och radiosamtal</span>
+                        <div class="quiz-mode-toggle">
+                            <button class="active" id="qso-ref-btn" onclick="setQsoView('ref')">📋 Referens</button>
+                            <button id="qso-quiz-btn" onclick="setQsoView('quiz')">🎯 Quiz</button>
+                            <button id="qso-logg-btn" onclick="setQsoView('logg')">📔 Loggbok</button>
+                        </div>
+                    </div>
+                    <div id="qsoArea"></div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -865,15 +907,19 @@
 // ===== DATA =====
 const SV = {
     A:{w:'Adam',p:'A-DAM'},B:{w:'Bertil',p:'BER-TIL'},C:{w:'Cesar',p:'SE-SAR'},
-    D:{w:'David',p:'DA-VID'},E:{w:'Evert',p:'E-VERT'},F:{w:'Fredrik',p:'FRED-RIK'},
-    G:{w:'Gunnar',p:'GUN-NAR'},H:{w:'Henrik',p:'HEN-RIK'},I:{w:'Ivar',p:'I-VAR'},
+    D:{w:'David',p:'DA-VID'},E:{w:'Erik',p:'E-RIK'},F:{w:'Filip',p:'FIL-IP'},
+    G:{w:'Gustav',p:'GUST-AV'},H:{w:'Helge',p:'HEL-GE'},I:{w:'Ivar',p:'I-VAR'},
     J:{w:'Johan',p:'JO-HAN'},K:{w:'Kalle',p:'KAL-LE'},L:{w:'Ludvig',p:'LUD-VIG'},
-    M:{w:'Martin',p:'MAR-TIN'},N:{w:'Niklas',p:'NIK-LAS'},O:{w:'Oskar',p:'OS-KAR'},
-    P:{w:'Petter',p:'PET-TER'},Q:{w:'Quintus',p:'KVIN-TUS'},R:{w:'Rudolf',p:'RU-DOLF'},
+    M:{w:'Martin',p:'MAR-TIN'},N:{w:'Niklas',p:'NIK-LAS'},O:{w:'Olof',p:'O-LOF'},
+    P:{w:'Petter',p:'PET-TER'},Q:{w:'Qvintus',p:'KVIN-TUS'},R:{w:'Rudolf',p:'RU-DOLF'},
     S:{w:'Sigurd',p:'SI-GURD'},T:{w:'Tore',p:'TO-RE'},U:{w:'Urban',p:'UR-BAN'},
     V:{w:'Viktor',p:'VIK-TOR'},W:{w:'Wilhelm',p:'VIL-HELM'},X:{w:'Xerxes',p:'SERK-SES'},
     Y:{w:'Yngve',p:'YNG-VE'},Z:{w:'Zäta',p:'SÄ-TA'},Å:{w:'Åke',p:'Å-KE'},
-    Ä:{w:'Ärlig',p:'ÄR-LIG'},Ö:{w:'Östen',p:'ÖS-TEN'}
+    Ä:{w:'Ärlig',p:'ÄR-LIG'},Ö:{w:'Östen',p:'ÖS-TEN'},
+    '0':{w:'Nolla',p:'NOL-LA'},'1':{w:'Ett',p:'ETT'},'2':{w:'Tvåa',p:'TVÅ-A'},
+    '3':{w:'Trea',p:'TRE-A'},'4':{w:'Fyra',p:'FY-RA'},'5':{w:'Femma',p:'FEM-MA'},
+    '6':{w:'Sexa',p:'SEK-SA'},'7':{w:'Sju',p:'SJU'},'8':{w:'Åtta',p:'ÅT-TA'},
+    '9':{w:'Nia',p:'NI-A'}
 };
 const NATO = {
     A:{w:'Alfa',p:'AL-FA'},B:{w:'Bravo',p:'BRA-VO'},C:{w:'Charlie',p:'CHAR-LI'},
@@ -884,7 +930,11 @@ const NATO = {
     P:{w:'Papa',p:'PA-PA'},Q:{w:'Quebec',p:'KE-BEK'},R:{w:'Romeo',p:'RO-ME-O'},
     S:{w:'Sierra',p:'SI-ER-RA'},T:{w:'Tango',p:'TANG-GO'},U:{w:'Uniform',p:'JU-NI-FORM'},
     V:{w:'Victor',p:'VIK-TOR'},W:{w:'Whiskey',p:'VIS-KI'},X:{w:'X-ray',p:'EKS-REJ'},
-    Y:{w:'Yankee',p:'JANG-KI'},Z:{w:'Zulu',p:'ZU-LU'}
+    Y:{w:'Yankee',p:'JANG-KI'},Z:{w:'Zulu',p:'ZU-LU'},
+    '0':{w:'Zero',p:'ZI-RO'},'1':{w:'One',p:'WUN'},'2':{w:'Two',p:'TU'},
+    '3':{w:'Three',p:'TRI'},'4':{w:'Four',p:'FOW-ER'},'5':{w:'Five',p:'FAJF'},
+    '6':{w:'Six',p:'SIX'},'7':{w:'Seven',p:'SEV-EN'},'8':{w:'Eight',p:'AJT'},
+    '9':{w:'Nine',p:'NIN-ER'}
 };
 
 // Decoys per bokstav, separata för SV och ICAO
@@ -917,7 +967,17 @@ const DECOYS_SV = {
     Z:['Zelda','Zlatan','Zara','Zigge'],
     Å:['Åsa','Åland','Ågot','Åberg'],
     Ä:['Älva','Ängla','Äppel','Ärna'],
-    Ö:['Örjan','Öberg','Öland','Östman']
+    Ö:['Örjan','Öberg','Öland','Östman'],
+    '0':['Noll','Nula','Nullan','Ingen'],
+    '1':['En','Etta','Ena','Ettan'],
+    '2':['Två','Tvåan','Duva','Dubba'],
+    '3':['Tre','Trean','Trio','Tripp'],
+    '4':['Fyran','Fyr','Fira','Fyrtal'],
+    '5':['Fem','Femman','Femte','Femti'],
+    '6':['Sex','Sexan','Sexti','Sexig'],
+    '7':['Sjuan','Sju-an','Sjunde','Sjuttio'],
+    '8':['Åttan','Åtte','Åttio','Åttonde'],
+    '9':['Ni','Nian','Nio','Nionde']
 };
 
 const DECOYS_ICAO = {
@@ -946,7 +1006,17 @@ const DECOYS_ICAO = {
     W:['Whisper','Whiston','Whitby','Walrus','Warrior','Warhawk'],
     X:['X-band','X-force','X-gate','Xenon','Xebec'],
     Y:['Yanko','Yantra','Yantis','Yucatan','Yeoman'],
-    Z:['Zumar','Zuniga','Zulon','Zephyr','Zenith']
+    Z:['Zumar','Zuniga','Zulon','Zephyr','Zenith'],
+    '0':['Zilch','Zonal','Zoro','Naught'],
+    '1':['Won','Wun','One-up','Uno'],
+    '2':['Too','Tow','Twice','Dual'],
+    '3':['Tree','Tri','Thrice','Triple'],
+    '4':['For','Fore','Fourth','Fower'],
+    '5':['Fife','Fife-er','Fifth','Fiver'],
+    '6':['Sixer','Sicks','Sixth','Sixt'],
+    '7':['Severn','Seventh','Sever','Sevan'],
+    '8':['Ate','Eighth','Eighty','Aight'],
+    '9':['Niner-up','Ninth','Nein','Niño']
 };
 
 // ===== STATE =====
@@ -1020,6 +1090,8 @@ function showMain(name, btn) {
     if (name === 'fork') { forkView = 'ref'; renderFork(); }
     if (name === 'qkod') { qkodView = 'ref'; renderQkod(); }
     if (name === 'nod') { nodView = 'ref'; renderNod(); }
+    if (name === 'anrop') { anropView = 'ref'; renderAnrop(); }
+    if (name === 'qso') { qsoView = 'ref'; renderQso(); }
 }
 
 function showTab(name, btn) {
@@ -1831,21 +1903,28 @@ const FORK = [
     {k:'LOC', m:'Locator — QTH-locator (Maidenhead)', e:'T.ex. JO89 för Sverige'}
 ];
 
+const QKOD_CLUSTERS = [
+    {id:0, namn:'Signalkvalitet & störningar', color:'#3b82f6'},
+    {id:1, namn:'Effekt & sändning',           color:'#f59e0b'},
+    {id:2, namn:'Anrop & identifiering',        color:'#8b5cf6'},
+    {id:3, namn:'Förbindelse & frekvens',       color:'#10b981'}
+];
+
 const QKODER = [
-    {k:'QRK', eng:'Readability', m:'Läsbarheten på din signal är...', e:'QRK 5 = utmärkt läsbarhet'},
-    {k:'QRM', eng:'Man-made interference', m:'Jag störs av annan radiostation', e:'Interferens från andra stationer'},
-    {k:'QRN', eng:'Natural interference', m:'Jag störs av statiskt brus', e:'Atmosfäriska störningar'},
-    {k:'QRO', eng:'Increase power', m:'Öka sändningseffekten', e:'Kör mer effekt'},
-    {k:'QRP', eng:'Reduce power', m:'Minska sändningseffekten', e:'Kör låg effekt (ofta max 5W)'},
-    {k:'QRT', eng:'Stop transmitting', m:'Sluta sända / stäng av stationen', e:'Avslutar sessionen'},
-    {k:'QRV', eng:'Ready to receive', m:'Jag är redo / är du redo?', e:'QRV = jag är redo att ta emot'},
-    {k:'QRX', eng:'Stand by', m:'Vänta — jag kallar dig igen kl...', e:'Stand by'},
-    {k:'QRZ', eng:'Who is calling me?', m:'Vem kallar mig?', e:'Används när man hör ett anrop men inte uppfattat anropssignalen'},
-    {k:'QSB', eng:'Signal fading', m:'Din signal varierar i styrka', e:'Fading'},
-    {k:'QSL', eng:'Acknowledge receipt', m:'Jag bekräftar mottagandet', e:'Även QSL-kort = bekräftelsekort'},
-    {k:'QSO', eng:'Communication with', m:'Förbindelse / radiosamtal', e:'Jag kan ha förbindelse med...'},
-    {k:'QSY', eng:'Change frequency', m:'Byt frekvens till...', e:'QSY till 14.250 MHz'},
-    {k:'QTH', eng:'My location is', m:'Min position/ort är...', e:'QTH = hemort eller nuvarande position'}
+    {k:'QRK', eng:'Readability',            m:'Läsbarheten på din signal är...',        e:'QRK 5 = utmärkt läsbarhet',                                          c:0},
+    {k:'QRM', eng:'Man-made interference',  m:'Jag störs av annan radiostation',        e:'Interferens från andra stationer',                                   c:0},
+    {k:'QRN', eng:'Natural interference',   m:'Jag störs av statiskt brus',             e:'Atmosfäriska störningar',                                            c:0},
+    {k:'QSB', eng:'Signal fading',          m:'Din signal varierar i styrka',           e:'Fading',                                                             c:0},
+    {k:'QRO', eng:'Increase power',         m:'Öka sändningseffekten',                  e:'Kör mer effekt',                                                     c:1},
+    {k:'QRP', eng:'Reduce power',           m:'Minska sändningseffekten',               e:'Kör låg effekt (ofta max 5W)',                                       c:1},
+    {k:'QRT', eng:'Stop transmitting',      m:'Sluta sända / stäng av stationen',       e:'Avslutar sessionen',                                                 c:1},
+    {k:'QRV', eng:'Ready to receive',       m:'Jag är redo / är du redo?',              e:'QRV = jag är redo att ta emot',                                      c:1},
+    {k:'QRX', eng:'Stand by',               m:'Vänta — jag kallar dig igen kl...',      e:'Stand by',                                                           c:1},
+    {k:'QRZ', eng:'Who is calling me?',     m:'Vem kallar mig?',                        e:'Används när man hör ett anrop men inte uppfattat anropssignalen',    c:2},
+    {k:'QTH', eng:'My location is',         m:'Min position/ort är...',                 e:'QTH = hemort eller nuvarande position',                              c:2},
+    {k:'QSL', eng:'Acknowledge receipt',    m:'Jag bekräftar mottagandet',              e:'Även QSL-kort = bekräftelsekort',                                    c:3},
+    {k:'QSO', eng:'Communication with',     m:'Förbindelse / radiosamtal',              e:'Jag kan ha förbindelse med...',                                      c:3},
+    {k:'QSY', eng:'Change frequency',       m:'Byt frekvens till...',                   e:'QSY till 14.250 MHz',                                                c:3}
 ];
 
 let forkView = 'ref';
@@ -1995,16 +2074,24 @@ function renderQkod() {
     const area = document.getElementById('qkodArea');
     if (qkodView === 'kontext') { renderQkodKontext(); return; }
     if (qkodView === 'ref') {
+        const clusterRows = QKOD_CLUSTERS.map(cl => {
+            const entries = QKODER.filter(q => q.c === cl.id);
+            const header = `<tr style="background:${cl.color}18;border-left:4px solid ${cl.color}">
+                <td colspan="4" style="padding:0.45rem 0.75rem;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;color:${cl.color};text-transform:uppercase">${cl.namn}</td>
+            </tr>`;
+            const rows = entries.map(q => `<tr style="border-left:3px solid ${cl.color}40">
+                <td class="fork-code">${q.k}</td>
+                <td style="font-style:italic;color:var(--text-secondary);font-size:0.85rem">${q.eng}</td>
+                <td class="fork-meaning">${q.m}</td>
+                <td class="fork-extra">${q.e}</td>
+            </tr>`).join('');
+            return header + rows;
+        }).join('');
         area.innerHTML = `<div class="ref-table-card">
             <h3>Q-koder</h3>
             <table class="fork-ref-table">
                 <thead><tr><th>Kod</th><th>Engelska</th><th>Svenska</th><th>Kommentar</th></tr></thead>
-                <tbody>${QKODER.map(q => `<tr>
-                    <td class="fork-code">${q.k}</td>
-                    <td style="font-style:italic;color:var(--text-secondary);font-size:0.85rem">${q.eng}</td>
-                    <td class="fork-meaning">${q.m}</td>
-                    <td class="fork-extra">${q.e}</td>
-                </tr>`).join('')}</tbody>
+                <tbody>${clusterRows}</tbody>
             </table>
         </div>`;
     } else if (qkodView === 'flash') {
@@ -2354,6 +2441,16 @@ function renderNodRef() {
     </div>
 
     <div class="ref-table-card">
+        <h3>📻 Amatörradio — vilken kanal ska man använda?</h3>
+        <div style="padding:0.25rem 0.25rem 0.5rem">
+            <p style="font-size:0.9rem;margin-bottom:0.75rem">Det finns ingen dedikerad nödfrekvens inom amatörradio. Vid nödläge sänder du på den frekvens eller kanal där det finns aktivitet — målet är att nå <em>någon</em> som kan ringa nödnumret.</p>
+            <div style="background:var(--bg-light);border-radius:var(--radius-sm);padding:0.75rem 1rem;font-size:0.85rem;color:var(--text-secondary)">
+                Sök igenom banden efter trafik → anropa med MAYDAY → be stationen kontakta SOS Alarm (112). Du behöver inte veta rätt frekvens i förväg — vilken aktiv frekvens som helst räcker.
+            </div>
+        </div>
+    </div>
+
+    <div class="ref-table-card">
         <h3>📋 Struktur för ett MAYDAY-anrop</h3>
         <div style="padding:1rem">
             <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:1rem">Sänd på nödfrekvensen (VHF kanal 16). Upprepa MAYDAY tre gånger.</p>
@@ -2585,6 +2682,22 @@ document.addEventListener('keydown', function(e) {
         if (nodView === 'kontext') {
             if (e.key === 'Enter') { const nb = document.getElementById('nodKontextNext'); if (nb && nb.style.display !== 'none') { nextNodKontext(); return; } }
             if (['1','2','3','4'].includes(e.key) && !nodKontextAnswered) { const btns = document.querySelectorAll('#nodArea .quiz-opt'); if(btns[+e.key-1]) btns[+e.key-1].click(); return; }
+        }
+    }
+
+    // Anropssignaler
+    if (activeMain.id === 'main-anrop') {
+        if (anropView === 'quiz') {
+            if (e.key === 'Enter') { const nb = document.getElementById('anropNextBtn'); if (nb && nb.style.display !== 'none') { anropQuizState.idx++; renderAnropQuiz(); return; } }
+            if (['1','2','3','4'].includes(e.key) && !anropQuizState?.answered) { const btns = document.querySelectorAll('#anropArea .quiz-opt'); if(btns[+e.key-1]) btns[+e.key-1].click(); return; }
+        }
+    }
+
+    // QSO-trafik
+    if (activeMain.id === 'main-qso') {
+        if (qsoView === 'quiz') {
+            if (e.key === 'Enter') { const nb = document.getElementById('qsoNextBtn'); if (nb && nb.style.display !== 'none') { qsoQuizState.idx++; renderQsoQuiz(); return; } }
+            if (['1','2','3','4'].includes(e.key) && !qsoQuizState?.answered) { const btns = document.querySelectorAll('#qsoArea .quiz-opt'); if(btns[+e.key-1]) btns[+e.key-1].click(); return; }
         }
     }
 
@@ -2951,6 +3064,378 @@ function endSpeedQuiz() {
         </div>`;
 
     speedState = null;
+}
+
+// ===== ANROPSSIGNALER DATA =====
+const DISTRIKT = [
+    { num:'0', name:'Stockholm', lan:['A','B'] },
+    { num:'1', name:'Gotland', lan:['I'] },
+    { num:'2', name:'Västerbotten / Norrbotten', lan:['AC','BD'] },
+    { num:'3', name:'Gävleborg / Västernorrland / Jämtland', lan:['X','Y','Z'] },
+    { num:'4', name:'Örebro / Värmland / Dalarna', lan:['T','S','W'] },
+    { num:'5', name:'Uppsala / Södermanland / Östergötland / Västmanland', lan:['C','D','E','U','N'] },
+    { num:'6', name:'Halland / Västra Götaland', lan:['N','O','P'] },
+    { num:'7', name:'Jönköping / Kronoberg / Kalmar / Blekinge / Skåne', lan:['G','H','K','M','L'] }
+];
+
+const ANROP_QUIZ = [
+    { q:'Vad är prefixet för Sverige (privatperson, grundsignal)?', a:'SA eller SM', opts:['SA eller SM','SK eller SL','SM eller SH','SA eller SK'] },
+    { q:'Vad betyder prefixet SH?', a:'Privatperson med instegscertifikat', opts:['Privatperson med instegscertifikat','Radioklubb','Försvarsutövare','Utländsk amatör i Sverige'] },
+    { q:'Vad är prefixet för en radioklubb (juridisk person)?', a:'SA eller SK', opts:['SA eller SK','SM eller SH','SL eller SM','SC eller SD'] },
+    { q:'Vad är prefixet för Försvarsmakten och FRO?', a:'SL', opts:['SL','SF','SG','SM'] },
+    { q:'Vilket distrikt täcker Stockholm?', a:'Distrikt 0', opts:['Distrikt 0','Distrikt 1','Distrikt 5','Distrikt 3'] },
+    { q:'Vilket distrikt täcker Gotland?', a:'Distrikt 1', opts:['Distrikt 1','Distrikt 0','Distrikt 7','Distrikt 6'] },
+    { q:'Vilket distrikt täcker Skåne?', a:'Distrikt 7', opts:['Distrikt 7','Distrikt 6','Distrikt 5','Distrikt 4'] },
+    { q:'Vilket prefix har Norge?', a:'LA', opts:['LA','OZ','OH','LY'] },
+    { q:'Vilket prefix har Finland?', a:'OH', opts:['OH','OZ','LA','OHØ'] },
+    { q:'Vilket prefix har Danmark?', a:'OZ', opts:['OZ','LA','OH','ON'] },
+    { q:'Vilket prefix har Åland?', a:'OHØ', opts:['OHØ','OH','OZ','SM'] },
+    { q:'Vilket prefix har Tyskland?', a:'DL', opts:['DL','DA','DE','DF'] },
+    { q:'Vilket prefix har England?', a:'G', opts:['G','GB','GI','GM'] },
+    { q:'Vilket prefix har USA?', a:'W eller K', opts:['W eller K','US','A','N eller W'] },
+    { q:'Vad betyder tillägget /M i en anropssignal?', a:'Mobil', opts:['Mobil','Maritim','Militär','Mottagning'] },
+    { q:'Vad betyder tillägget /MM?', a:'Maritime Mobile (sjöfart)', opts:['Maritime Mobile (sjöfart)','Militär mobil','Mikrofon mobil','Mottagare mobil'] },
+    { q:'Vad används /AM för?', a:'Aeronautical Mobile (flygplan)', opts:['Aeronautical Mobile (flygplan)','Antenn mobil','Amatör mobil','Automatisk mottagning'] },
+    { q:'Vad består en anropssignal av?', a:'Prefix + siffra + suffix', opts:['Prefix + siffra + suffix','Suffix + siffra + prefix','Enbart suffix','Prefix + suffix'] },
+    { q:'Vad är suffix i anropssignalen SM3CER?', a:'CER', opts:['CER','SM','3','SM3'] },
+    { q:'Vad är prefixet i SM3CER?', a:'SM', opts:['SM','SM3','3CER','CER'] },
+    { q:'Vilket distrikt befinner sig en SM5-station i?', a:'Distrikt 5 (Uppsala/Södermanland m.fl.)', opts:['Distrikt 5 (Uppsala/Södermanland m.fl.)','Distrikt 0','Distrikt 3','Distrikt 7'] },
+    { q:'En finsk amatör besöker Sverige. Vilket prefix används?', a:'SM/OH6ZR', opts:['SM/OH6ZR','OH/SM3XYZ','SM+OH6ZR','SM:OH6ZR'] }
+];
+
+const ANROP_PREFIX_TABLE = [
+    { prefix:'LA', land:'Norge' }, { prefix:'OH', land:'Finland' }, { prefix:'OHØ', land:'Åland' },
+    { prefix:'OZ', land:'Danmark' }, { prefix:'DL', land:'Tyskland' }, { prefix:'EA', land:'Spanien' },
+    { prefix:'ES', land:'Estland' }, { prefix:'F', land:'Frankrike' }, { prefix:'G', land:'England' },
+    { prefix:'HB', land:'Schweiz' }, { prefix:'I', land:'Italien' }, { prefix:'LY', land:'Litauen' },
+    { prefix:'OK', land:'Tjeckien' }, { prefix:'ON', land:'Belgien' }, { prefix:'PA', land:'Holland' },
+    { prefix:'S5', land:'Slovenien' }, { prefix:'SP', land:'Polen' }, { prefix:'SV', land:'Grekland' },
+    { prefix:'UA', land:'Ryssland' }, { prefix:'YL', land:'Lettland' }, { prefix:'ZS', land:'Sydafrika' },
+    { prefix:'HS', land:'Thailand' }, { prefix:'JA', land:'Japan' }, { prefix:'W/K', land:'USA' },
+    { prefix:'VE', land:'Kanada' }, { prefix:'LU', land:'Argentina' }, { prefix:'PY', land:'Brasilien' },
+    { prefix:'VK', land:'Australien' }, { prefix:'ZL', land:'Nya Zeeland' }
+];
+
+let anropView = 'ref';
+let anropQuizState = null;
+
+function setAnropView(v) {
+    anropView = v;
+    ['ref','quiz','distrikt'].forEach(x => {
+        const btn = document.getElementById('anrop-'+x+'-btn');
+        if (btn) btn.classList.toggle('active', x === v);
+    });
+    renderAnrop();
+}
+
+function renderAnrop() {
+    const area = document.getElementById('anropArea');
+    if (!area) return;
+    if (anropView === 'ref') {
+        area.innerHTML = `
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Anropssignalens uppbyggnad</h3>
+            <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:1rem;margin-bottom:1rem;text-align:center">
+                <span style="font-size:1.8rem;font-weight:800;letter-spacing:0.1em;color:var(--primary-color)">SM<span style="color:var(--danger-color)">3</span><span style="color:var(--success-color)">CER</span></span>
+                <div style="display:flex;justify-content:center;gap:2rem;margin-top:0.5rem;font-size:0.85rem;flex-wrap:wrap">
+                    <span><strong style="color:var(--primary-color)">SM</strong> = Prefix (Sverige)</span>
+                    <span><strong style="color:var(--danger-color)">3</strong> = Distriktssiffra</span>
+                    <span><strong style="color:var(--success-color)">CER</strong> = Suffix (personlig kod)</span>
+                </div>
+            </div>
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+                <tr style="background:var(--bg-light)"><th style="padding:0.5rem;text-align:left;border-bottom:1px solid var(--border-color)">Prefix</th><th style="padding:0.5rem;text-align:left;border-bottom:1px solid var(--border-color)">Betydelse</th></tr>
+                <tr><td style="padding:0.5rem;border-bottom:1px solid var(--border-color)"><strong>SA / SM</strong></td><td style="padding:0.5rem;border-bottom:1px solid var(--border-color)">Privatperson (grundsignal)</td></tr>
+                <tr><td style="padding:0.5rem;border-bottom:1px solid var(--border-color)"><strong>SH</strong></td><td style="padding:0.5rem;border-bottom:1px solid var(--border-color)">Privatperson med instegscertifikat</td></tr>
+                <tr><td style="padding:0.5rem;border-bottom:1px solid var(--border-color)"><strong>SA / SK</strong></td><td style="padding:0.5rem;border-bottom:1px solid var(--border-color)">Radioklubb (juridisk person)</td></tr>
+                <tr><td style="padding:0.5rem"><strong>SL</strong></td><td style="padding:0.5rem">Försvarsmakten och FRO</td></tr>
+            </table>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Rörliga stationer</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;font-size:0.9rem">
+                <div style="background:var(--bg-light);padding:0.75rem;border-radius:var(--radius-md)"><strong>/M</strong> — Mobil (land)</div>
+                <div style="background:var(--bg-light);padding:0.75rem;border-radius:var(--radius-md)"><strong>/MM</strong> — Maritime Mobile (sjö)</div>
+                <div style="background:var(--bg-light);padding:0.75rem;border-radius:var(--radius-md)"><strong>/AM</strong> — Aeronautical Mobile (flyg)</div>
+                <div style="background:var(--bg-light);padding:0.75rem;border-radius:var(--radius-md)"><strong>SM3CER/6</strong> — Mobil i distrikt 6</div>
+            </div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Internationella prefix (urval)</h3>
+            <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+                <tr style="background:var(--bg-light)"><th style="padding:0.5rem;text-align:left">Prefix</th><th style="padding:0.5rem;text-align:left">Land</th><th style="padding:0.5rem;text-align:left">Prefix</th><th style="padding:0.5rem;text-align:left">Land</th></tr>
+                ${ANROP_PREFIX_TABLE.reduce((rows,item,i) => {
+                    if (i % 2 === 0) rows.push([item]);
+                    else rows[rows.length-1].push(item);
+                    return rows;
+                },[]).map(pair => `<tr>
+                    <td style="padding:0.5rem;border-bottom:1px solid var(--border-color)"><strong>${pair[0].prefix}</strong></td>
+                    <td style="padding:0.5rem;border-bottom:1px solid var(--border-color)">${pair[0].land}</td>
+                    <td style="padding:0.5rem;border-bottom:1px solid var(--border-color)">${pair[1]?`<strong>${pair[1].prefix}</strong>`:''}</td>
+                    <td style="padding:0.5rem;border-bottom:1px solid var(--border-color)">${pair[1]?pair[1].land:''}</td>
+                </tr>`).join('')}
+            </table></div>
+        </div>`;
+    } else if (anropView === 'distrikt') {
+        area.innerHTML = `
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Sveriges 8 amatörradiodistrikt</h3>
+            <div style="display:grid;gap:0.6rem">
+            ${DISTRIKT.map(d => `<div style="display:flex;align-items:center;gap:1rem;padding:0.75rem;background:var(--bg-light);border-radius:var(--radius-md)">
+                <div style="font-size:2rem;font-weight:800;color:var(--primary-color);min-width:2rem;text-align:center">${d.num}</div>
+                <div>
+                    <div style="font-weight:600">${d.name}</div>
+                    <div style="font-size:0.8rem;color:var(--text-secondary)">Länskoder: ${d.lan.join(', ')}</div>
+                    <div style="font-size:0.8rem;color:var(--primary-color)">Exempel: SM${d.num}XYZ</div>
+                </div>
+            </div>`).join('')}
+            </div>
+        </div>`;
+    } else if (anropView === 'quiz') {
+        renderAnropQuiz();
+    }
+}
+
+function renderAnropQuiz() {
+    const area = document.getElementById('anropArea');
+    if (!anropQuizState || anropQuizState.done) {
+        const pool = shuffle([...ANROP_QUIZ]);
+        anropQuizState = { pool, idx: 0, correct: 0, wrong: 0, done: false, answered: false };
+    }
+    const { pool, idx, correct, wrong } = anropQuizState;
+    const total = pool.length;
+    if (idx >= total) {
+        anropQuizState.done = true;
+        const pct = Math.round((correct/total)*100);
+        area.innerHTML = `<div class="score-card">
+            <div class="score-big">${pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '💪'}</div>
+            <div style="font-size:2rem;font-weight:700;color:var(--primary-color)">${correct}/${total}</div>
+            <p class="score-msg">${pct}% rätt — ${pct>=80?'Utmärkt!':pct>=60?'Bra jobbat!':'Öva mer!'}</p>
+            <button class="btn btn-primary" onclick="anropQuizState=null;renderAnropQuiz()">Försök igen</button>
+        </div>`;
+        updateAnropProgress(correct, total);
+        return;
+    }
+    const item = pool[idx];
+    const opts = shuffle(item.opts);
+    anropQuizState.answered = false;
+    area.innerHTML = `<div class="quiz-card">
+        <div class="quiz-question-label">Anropssignaler — fråga ${idx+1} av ${total}</div>
+        <div style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;line-height:1.4">${item.q}</div>
+        <div class="quiz-options" style="grid-template-columns:1fr">
+            ${opts.map((o, i) => `<button class="quiz-opt" onclick="checkAnropQuiz('${o.replace(/'/g,"\\'")}')"><span class="key-hint">${i+1}</span> ${o}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback" id="anropFeedback"></div>
+        <button class="quiz-next-btn" id="anropNextBtn" onclick="anropQuizState.idx++;renderAnropQuiz()">Nästa → <span class="key-hint" style="margin-left:6px">↵</span></button>
+    </div>
+    <div class="quiz-keyboard-hint">
+        Använd <span class="key-hint">1</span><span class="key-hint">2</span><span class="key-hint">3</span><span class="key-hint">4</span> för att välja svar, sedan <span class="key-hint">↵ Enter</span> för att gå vidare
+    </div>
+    <div class="quiz-progress-row" style="margin-top:1rem">
+        <div class="quiz-progress-bar-outer"><div class="quiz-progress-bar-inner" style="width:${Math.round((idx/total)*100)}%"></div></div>
+        <span class="quiz-stat">${idx}/${total}</span>
+    </div>`;
+}
+
+function checkAnropQuiz(chosen) {
+    if (anropQuizState.answered) return;
+    anropQuizState.answered = true;
+    const item = anropQuizState.pool[anropQuizState.idx];
+    const isCorrect = chosen === item.a;
+    if (isCorrect) anropQuizState.correct++; else anropQuizState.wrong++;
+    document.querySelectorAll('#anropArea .quiz-opt').forEach(b => {
+        b.disabled = true;
+        const btnText = b.querySelector('span.key-hint') ? b.textContent.replace(b.querySelector('span.key-hint').textContent, '').trim() : b.textContent.trim();
+        if (btnText === item.a) b.classList.add('correct');
+        else if (btnText === chosen && !isCorrect) b.classList.add('wrong');
+    });
+    const fb = document.getElementById('anropFeedback');
+    fb.innerHTML = isCorrect ? '<span style="color:var(--success-color)">✓ Rätt!</span>' : `<span style="color:var(--danger-color)">✗ Fel</span> — rätt svar: <strong>${item.a}</strong>`;
+    document.getElementById('anropNextBtn').style.display = 'inline-block';
+}
+
+function updateAnropProgress(correct, total) {
+    const pct = Math.round((correct/total)*100);
+    const bar = document.getElementById('anropBar');
+    const pctEl = document.getElementById('anropPct');
+    if (bar) bar.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '%';
+}
+
+// ===== QSO-TRAFIK DATA =====
+const QSO_QUIZ = [
+    { q:'Vad betyder CQ?', a:'Allmänt anrop — söker kontakt med vem som helst', opts:['Allmänt anrop — söker kontakt med vem som helst','Avslut av sändning','Bekräftelse på mottaget meddelande','Frekvensen är upptagen'] },
+    { q:'Vad ska du göra FÖRST vid ett allmänt anrop (CQ)?', a:'Lyssna om frekvensen är ledig', opts:['Lyssna om frekvensen är ledig','Sända ditt anrop tre gånger','Kontrollera antennen','Höja effekten'] },
+    { q:'Vad betyder "73"?', a:'Hälsningar / avslutsälsning', opts:['Hälsningar / avslutsälsning','Signal är 73%','Frekvens 73 kHz','Klart slut'] },
+    { q:'Vad är ett QSO?', a:'En radiokontakt mellan två stationer', opts:['En radiokontakt mellan två stationer','En loggbok','En antenntyp','Ett frekvensband'] },
+    { q:'Vad används AR för i CW?', a:'Slut på sändningsföljd', opts:['Slut på sändningsföljd','Klart slut på QSO','Komma igång','Anropa på nytt'] },
+    { q:'Vad används SK för i CW?', a:'Klart slut — sista tecknet i ett QSO', opts:['Klart slut — sista tecknet i ett QSO','Slut på sändningsföljd','Söker kontakt','Signalen är klar'] },
+    { q:'Vad används K för i CW?', a:'"Kom" — inbjudan att svara', opts:['"Kom" — inbjudan att svara','"Klart"','"Kallas"','Kilo i alfabetet'] },
+    { q:'Vad är ett RST-rapport?', a:'Rapportering av Readability, Strength, Tone (läsbarhet, styrka, ton)', opts:['Rapportering av Readability, Strength, Tone (läsbarhet, styrka, ton)','En radiostation i Stockholm','En antennsignal','En frekvensmätning'] },
+    { q:'Vad innebär "599" i RST?', a:'Perfekt signal — bästa möjliga rapport', opts:['Perfekt signal — bästa möjliga rapport','Frekvens 599 kHz','Antennstyrka 599W','Signalen är svag'] },
+    { q:'Vad gör du om frekvensen är upptagen?', a:'Lyssna och QSY till en annan frekvens', opts:['Lyssna och QSY till en annan frekvens','Sända starkare','Fråga QRZ?','Ignorera det'] },
+    { q:'Vad betyder QRZ?', a:'Vem kallar mig?', opts:['Vem kallar mig?','Frekvensen är ledig','Stör du mig?','Klart slut'] },
+    { q:'Vad betyder QSY?', a:'Byt frekvens', opts:['Byt frekvens','Sänd starkare','Stanna på frekvensen','Ta en paus'] },
+    { q:'Vad ska anges FÖRST i en radiokontakt?', a:'Motstationens anropssignal', opts:['Motstationens anropssignal','Din egen anropssignal','Ditt QTH','Din RST-rapport'] },
+    { q:'Vad är ett QTH?', a:'Plats / position', opts:['Plats / position','En antennyp','En radiomodell','Effektmätning'] },
+    { q:'Varför används fonetiska alfabetet i radio?', a:'För att minska missförstånd vid stavning', opts:['För att minska missförstånd vid stavning','För att spara tid','Det är ett krav i lagen','För att låta professionell'] },
+    { q:'Vad betyder BK i CW?', a:'"Break" — snabb övergång utan att upprepa anropssignaler', opts:['"Break" — snabb övergång utan att upprepa anropssignaler','"Bekräfta"','Slut på QSO','Sök kontakt'] },
+    { q:'Vad är ett VHF-QSO?', a:'Radiokontakt på VHF-bandet (t.ex. 144 MHz)', opts:['Radiokontakt på VHF-bandet (t.ex. 144 MHz)','Kontakt via satellit','Kortvägsförbindelse','Kontakt med flyg'] },
+    { q:'Vad är en repeater?', a:'En reläststation som vidarebefordrar signaler', opts:['En reläststation som vidarebefordrar signaler','En antennyp','En radiomodell','En frekvensplan'] },
+    { q:'Varför ska man kontrollera om frekvensen är ledig innan man sänder?', a:'För att inte störa en pågående kontakt', opts:['För att inte störa en pågående kontakt','Det är inte nödvändigt','För att hitta bäst signal','För att mäta effekten'] },
+    { q:'Vad innehåller en loggbok?', a:'Datum, tid (UTC), anropssignal, frekvens, sändningsslag och rapporter', opts:['Datum, tid (UTC), anropssignal, frekvens, sändningsslag och rapporter','Bara anropssignaler','Bara datum och tid','Väderleksrapporter'] }
+];
+
+const LOGG_HEADERS = ['YYMMDD','UTC','Anropssignal','FQ (MHz)','Mode','Effekt (W)','Sänt RST','Mott. RST','Namn','Kommentar'];
+const LOGG_EXAMPLE = [
+    ['240113','0800','SM5PHU','7','LSB','25','59','59','Jens','SSA HQ-nät'],
+    ['240114','1515','WB6ACU','14','CW','25','579','589','Joe','Beverly Hills'],
+    ['240115','1230','OH2ABC','14','SSB','100','57','55','Mikko','Helsinki'],
+];
+
+let qsoView = 'ref';
+let qsoQuizState = null;
+
+function setQsoView(v) {
+    qsoView = v;
+    ['ref','quiz','logg'].forEach(x => {
+        const btn = document.getElementById('qso-'+x+'-btn');
+        if (btn) btn.classList.toggle('active', x === v);
+    });
+    renderQso();
+}
+
+function renderQso() {
+    const area = document.getElementById('qsoArea');
+    if (!area) return;
+    if (qsoView === 'ref') {
+        area.innerHTML = `
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Genomföra ett QSO — steg för steg</h3>
+            <div style="display:flex;flex-direction:column;gap:0.5rem">
+                ${[
+                    ['1','Lyssna','Kontrollera att frekvensen är ledig. Fråga "QRL?" om du är osäker.'],
+                    ['2','Anropa','Sända CQ följt av din anropssignal. T.ex.: "CQ CQ CQ — detta är SM3CER kallar"'],
+                    ['3','Vänta','Lyssna efter svar. Upprepa vid behov.'],
+                    ['4','Svara','Bekräfta anropssignalen, ge rapport (RST), namn och QTH.'],
+                    ['5','Fortsätt','Utbyt information. Håll tonen saklig och vänlig.'],
+                    ['6','Avsluta','Tacka för kontakten. Avsluta med "73" och SK.'],
+                ].map(([n,h,t]) => `<div style="display:flex;gap:0.75rem;align-items:flex-start;padding:0.6rem;background:var(--bg-light);border-radius:var(--radius-md)">
+                    <div style="font-size:1.2rem;font-weight:800;color:var(--primary-color);min-width:1.5rem">${n}</div>
+                    <div><div style="font-weight:700">${h}</div><div style="font-size:0.85rem;color:var(--text-secondary)">${t}</div></div>
+                </div>`).join('')}
+            </div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Vanliga fraser och förkortningar</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.9rem">
+                ${[['CQ','Allmänt anrop'],['QSO','Radiokontakt'],['73','Hälsningar'],['RST','Signalrapport'],['QTH','Position/ort'],['QRZ','Vem kallar?'],['QSY','Byt frekvens'],['QRM','Störning (konstgjord)'],['QRN','Störning (natur)'],['QRB','Avstånd'],['AR','Slut på sändning'],['SK','Slut på QSO'],['K','Kom (svara)'],['BK','Break'],['de','Från (av)'],['es','Och']].map(([k,v]) => `
+                <div style="background:var(--bg-light);padding:0.5rem 0.75rem;border-radius:var(--radius-sm)">
+                    <strong style="color:var(--primary-color)">${k}</strong> <span style="color:var(--text-secondary)">${v}</span>
+                </div>`).join('')}
+            </div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1.1rem">Exempelkontakt (foni)</h3>
+            <div style="font-family:monospace;font-size:0.9rem;background:var(--bg-light);padding:1rem;border-radius:var(--radius-md);line-height:1.8">
+                <div><span style="color:var(--primary-color);font-weight:700">SM9XYZ →</span> CQ CQ CQ, detta är SM9XYZ, Sierra Mike 9 X-ray Yankee Zulu, kallar och lyssnar.</div>
+                <div style="margin-top:0.5rem"><span style="color:var(--success-color);font-weight:700">G4ABC →</span> SM9XYZ, detta är Golf 4 Alpha Bravo Charlie. God morgon och tack för anropet. Min rapport till dig är 59. Mitt namn är John och jag befinner mig i London. Över.</div>
+                <div style="margin-top:0.5rem"><span style="color:var(--primary-color);font-weight:700">SM9XYZ →</span> G4ABC, roger. God morgon! Rapport 59. Mitt namn är Fred, QTH Göteborg. Tack för kontakten. 73, SM9XYZ.</div>
+            </div>
+        </div>`;
+    } else if (qsoView === 'quiz') {
+        renderQsoQuiz();
+    } else if (qsoView === 'logg') {
+        area.innerHTML = `
+        <div style="background:var(--surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem">
+            <h3 style="margin-bottom:0.5rem;font-size:1.1rem">📔 Loggbok</h3>
+            <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:1rem">Kravet att föra loggbok upphävdes 1993, men det är fortfarande god praxis att dokumentera alla QSO:n. Loggboken innehåller datum, tid (UTC), anropssignal, frekvens, sändningsslag, effekt och signalrapporter.</p>
+            <div style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:0.85rem">
+                <thead><tr style="background:var(--bg-light)">${LOGG_HEADERS.map(h => `<th style="padding:0.5rem;text-align:left;border-bottom:2px solid var(--border-color);white-space:nowrap">${h}</th>`).join('')}</tr></thead>
+                <tbody>${LOGG_EXAMPLE.map((row,i) => `<tr style="${i%2===0?'':'background:var(--bg-light)'}">
+                    ${row.map(c => `<td style="padding:0.5rem;border-bottom:1px solid var(--border-color);white-space:nowrap">${c}</td>`).join('')}
+                </tr>`).join('')}</tbody>
+            </table>
+            </div>
+        </div>
+        <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-lg);padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem;font-size:1rem">💡 Kom ihåg</h3>
+            <ul style="font-size:0.9rem;color:var(--text-secondary);line-height:1.8;padding-left:1.2rem">
+                <li>Tid anges alltid i <strong>UTC</strong> (koordinerad universell tid)</li>
+                <li>Frekvens anges i <strong>MHz</strong></li>
+                <li>RST-rapport: <strong>R</strong>eadability, <strong>S</strong>trength, <strong>T</strong>one</li>
+                <li>QSL-kort kan skickas som bekräftelse på kontakten</li>
+                <li>Loggprogram finns att ladda ned eller använda online</li>
+            </ul>
+        </div>`;
+    }
+}
+
+function renderQsoQuiz() {
+    const area = document.getElementById('qsoArea');
+    if (!qsoQuizState || qsoQuizState.done) {
+        qsoQuizState = { pool: shuffle([...QSO_QUIZ]), idx: 0, correct: 0, wrong: 0, done: false, answered: false };
+    }
+    const { pool, idx, correct } = qsoQuizState;
+    const total = pool.length;
+    if (idx >= total) {
+        qsoQuizState.done = true;
+        const pct = Math.round((correct/total)*100);
+        area.innerHTML = `<div class="score-card">
+            <div class="score-big">${pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '💪'}</div>
+            <div style="font-size:2rem;font-weight:700;color:var(--primary-color)">${correct}/${total}</div>
+            <p class="score-msg">${pct}% rätt — ${pct>=80?'Utmärkt!':pct>=60?'Bra jobbat!':'Öva mer!'}</p>
+            <button class="btn btn-primary" onclick="qsoQuizState=null;renderQsoQuiz()">Försök igen</button>
+        </div>`;
+        updateQsoProgress(correct, total);
+        return;
+    }
+    const item = pool[idx];
+    const opts = shuffle(item.opts);
+    qsoQuizState.answered = false;
+    area.innerHTML = `<div class="quiz-card">
+        <div class="quiz-question-label">QSO-trafik — fråga ${idx+1} av ${total}</div>
+        <div style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;line-height:1.4">${item.q}</div>
+        <div class="quiz-options" style="grid-template-columns:1fr">
+            ${opts.map((o, i) => `<button class="quiz-opt" onclick="checkQsoQuiz('${o.replace(/'/g,"\\'")}')"><span class="key-hint">${i+1}</span> ${o}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback" id="qsoFeedback"></div>
+        <button class="quiz-next-btn" id="qsoNextBtn" onclick="qsoQuizState.idx++;renderQsoQuiz()">Nästa → <span class="key-hint" style="margin-left:6px">↵</span></button>
+    </div>
+    <div class="quiz-keyboard-hint">
+        Använd <span class="key-hint">1</span><span class="key-hint">2</span><span class="key-hint">3</span><span class="key-hint">4</span> för att välja svar, sedan <span class="key-hint">↵ Enter</span> för att gå vidare
+    </div>
+    <div class="quiz-progress-row" style="margin-top:1rem">
+        <div class="quiz-progress-bar-outer"><div class="quiz-progress-bar-inner" style="width:${Math.round((idx/total)*100)}%"></div></div>
+        <span class="quiz-stat">${idx}/${total}</span>
+    </div>`;
+}
+
+function checkQsoQuiz(chosen) {
+    if (qsoQuizState.answered) return;
+    qsoQuizState.answered = true;
+    const item = qsoQuizState.pool[qsoQuizState.idx];
+    const isCorrect = chosen === item.a;
+    if (isCorrect) qsoQuizState.correct++; else qsoQuizState.wrong++;
+    document.querySelectorAll('#qsoArea .quiz-opt').forEach(b => {
+        b.disabled = true;
+        const btnText = b.querySelector('span.key-hint') ? b.textContent.replace(b.querySelector('span.key-hint').textContent, '').trim() : b.textContent.trim();
+        if (btnText === item.a) b.classList.add('correct');
+        else if (btnText === chosen && !isCorrect) b.classList.add('wrong');
+    });
+    const fb = document.getElementById('qsoFeedback');
+    fb.innerHTML = isCorrect ? '<span style="color:var(--success-color)">✓ Rätt!</span>' : `<span style="color:var(--danger-color)">✗ Fel</span> — rätt svar: <strong>${item.a}</strong>`;
+    document.getElementById('qsoNextBtn').style.display = 'inline-block';
+}
+
+function updateQsoProgress(correct, total) {
+    const pct = Math.round((correct/total)*100);
+    const bar = document.getElementById('qsoBar');
+    const pctEl = document.getElementById('qsoPct');
+    if (bar) bar.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '%';
 }
 
 // ===== INIT =====

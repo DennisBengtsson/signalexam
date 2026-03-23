@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellära – Radioskola.se</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+            color: white;
+            padding: 2.5rem 0 2rem;
+            margin-bottom: 2rem;
+        }
+        .page-header h1 { color: white; font-size: 2rem; margin-bottom: 0.4rem; }
+        .page-header p { color: rgba(255,255,255,0.85); margin: 0; font-size: 1rem; }
+
+        .master-progress-multi {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .mpm-section { display: flex; align-items: center; gap: 0.75rem; }
+        .mpm-label { font-size: 0.8rem; color: var(--text-secondary); min-width: 155px; white-space: nowrap; }
+        .mpm-pct { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); min-width: 36px; text-align: right; }
+        .progress-bar-outer { flex: 1; height: 12px; background: var(--bg-light); border-radius: 6px; overflow: hidden; }
+        .progress-bar-inner { height: 100%; border-radius: 6px; transition: width 0.5s ease; }
+        .mpm-bar-ohm    { background: linear-gradient(90deg, #805ad5, #6b46c1); }
+        .mpm-bar-effekt { background: linear-gradient(90deg, #ed8936, #dd6b20); }
+        .mpm-bar-kablar { background: linear-gradient(90deg, #e53e3e, #c53030); }
+        .mpm-bar-energi { background: linear-gradient(90deg, #48bb78, #276749); }
+        .mpm-bar-freq   { background: linear-gradient(90deg, #38b2ac, #2c7a7b); }
+        .mpm-bar-vaxel  { background: linear-gradient(90deg, #f6ad55, #c05621); }
+        .mpm-bar-db     { background: linear-gradient(90deg, #4299e1, #2b6cb0); }
+
+        .tab-nav {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0;
+            flex-wrap: wrap;
+        }
+        .tab-nav button {
+            padding: 0.6rem 0.9rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            border-radius: 0;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .tab-nav button:hover { color: #805ad5; }
+        .tab-nav button.active { color: #805ad5; border-bottom-color: #805ad5; font-weight: 600; }
+        .tab-section { display: none; }
+        .tab-section.active { display: block; }
+
+        /* Formula triangles */
+        .tri-container { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem; }
+        .tri-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; flex: 1; min-width: 200px; max-width: 260px; box-shadow: var(--shadow-sm); }
+        .tri-card h4 { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .tri-svg { width: 140px; height: 120px; cursor: pointer; }
+        .tri-seg { transition: opacity 0.2s; }
+        .tri-seg:hover { opacity: 0.8; }
+        .tri-seg.dimmed { opacity: 0.25; }
+        .tri-label { font-family: 'Georgia', serif; font-size: 1rem; font-weight: 700; pointer-events: none; }
+        .tri-formula-display { margin-top: 0.8rem; font-size: 1.25rem; font-family: 'Georgia', serif; font-weight: 700; color: #553c9a; min-height: 1.8em; }
+        .tri-hint { font-size: 0.75rem; color: var(--text-light); margin-top: 0.3rem; }
+
+        /* Calc quiz */
+        .calc-wrap { max-width: 640px; margin: 0 auto; }
+        .calc-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem 1.5rem; box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
+        .calc-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .calc-scenario { background: var(--bg-light); border-radius: var(--radius-md); padding: 1rem 1.2rem; font-size: 0.95rem; color: var(--text-primary); line-height: 1.6; margin-bottom: 1.5rem; border-left: 4px solid #805ad5; }
+        .calc-ask { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; }
+        .calc-input-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .calc-input { padding: 0.75rem 1rem; font-size: 1.1rem; border: 2px solid var(--border-color); border-radius: var(--radius-md); width: 150px; text-align: center; font-family: inherit; color: var(--text-primary); background: var(--surface); transition: border-color 0.2s; }
+        .calc-input:focus { outline: none; border-color: #805ad5; }
+        .calc-input.correct-input { border-color: var(--success-color); background: var(--success-bg); }
+        .calc-input.wrong-input { border-color: var(--danger-color); background: var(--danger-bg); }
+        .calc-unit { font-size: 1rem; font-weight: 600; color: var(--text-secondary); }
+        .calc-submit { padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #805ad5, #6b46c1); color: white; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .calc-submit:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .calc-feedback { margin-top: 1rem; font-size: 0.95rem; min-height: 1.4em; color: var(--text-secondary); }
+        .calc-solution { display: none; margin-top: 0.8rem; background: var(--info-bg); border: 1px solid var(--info-border); border-radius: var(--radius-md); padding: 0.85rem 1rem; font-size: 0.9rem; line-height: 1.6; }
+        .calc-next-btn { margin-top: 1.2rem; padding: 0.7rem 2rem; background: linear-gradient(135deg, #805ad5, #6b46c1); color: white; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; display: none; }
+        .calc-next-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .calc-progress-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+        .calc-progress-bar-outer { flex: 1; height: 8px; background: var(--bg-light); border-radius: 4px; overflow: hidden; }
+        .calc-progress-bar-inner { height: 100%; background: #805ad5; border-radius: 4px; transition: width 0.3s; }
+        .calc-stat { font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; }
+        .score-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; box-shadow: var(--shadow-sm); }
+        .score-big { font-size: 3rem; }
+        .score-msg { color: var(--text-secondary); margin: 0.5rem 0 1.5rem; }
+
+        /* MCQ quiz */
+        .quiz-wrap { max-width: 600px; margin: 0 auto; }
+        .quiz-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem 1.5rem; text-align: center; box-shadow: var(--shadow-sm); }
+        .quiz-question-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .quiz-options { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-top: 1.2rem; }
+        .quiz-opt { padding: 0.85rem 1rem; border: 2px solid var(--border-color); background: var(--surface); border-radius: var(--radius-md); cursor: pointer; font-size: 0.95rem; font-weight: 500; color: var(--text-primary); transition: all 0.15s; font-family: inherit; text-align: left; }
+        .quiz-opt:hover:not(:disabled) { border-color: #805ad5; background: #faf5ff; }
+        .quiz-opt.correct { border-color: var(--success-color); background: var(--success-bg); color: #276749; }
+        .quiz-opt.wrong { border-color: var(--danger-color); background: var(--danger-bg); color: #c53030; }
+        .quiz-opt:disabled { cursor: default; }
+        .quiz-feedback { margin-top: 1rem; font-size: 0.95rem; min-height: 1.4em; color: var(--text-secondary); }
+        .quiz-next-btn { margin-top: 1.2rem; padding: 0.7rem 2rem; background: linear-gradient(135deg, #805ad5, #6b46c1); color: white; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; display: none; }
+        .quiz-next-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .quiz-progress-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+        .quiz-progress-bar-outer { flex: 1; height: 8px; background: var(--bg-light); border-radius: 4px; overflow: hidden; }
+        .quiz-progress-bar-inner { height: 100%; background: #805ad5; border-radius: 4px; transition: width 0.3s; }
+        .quiz-stat { font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; }
+        .key-hint { display: inline-flex; align-items: center; justify-content: center; background: var(--bg-light); border: 1px solid var(--border-color); border-bottom-width: 2px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; padding: 1px 6px; margin-right: 8px; color: var(--text-secondary); vertical-align: middle; line-height: 1.6; min-width: 20px; text-align: center; }
+
+        /* Ref tables */
+        .ref-table-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1rem; box-shadow: var(--shadow-sm); }
+        .ref-table-card h3 { padding: 0.85rem 1.2rem; margin: 0; font-size: 1rem; background: var(--bg-light); border-bottom: 1px solid var(--border-color); color: var(--text-primary); }
+        .ref-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .ref-table th { background: var(--bg-light); color: var(--text-secondary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.6rem 1rem; text-align: left; border-bottom: 2px solid var(--border-color); }
+        .ref-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        .ref-table tr:last-child td { border-bottom: none; }
+        .ref-table tr:hover td { background: var(--surface-hover); }
+        .ref-sym { font-weight: 700; color: #805ad5; font-family: 'Georgia', serif; font-size: 1.1rem; }
+        .ref-formula { font-family: 'Georgia', serif; color: #553c9a; font-size: 1rem; }
+        .db-highlight { font-weight: 700; color: #805ad5; }
+
+        /* Lathund */
+        .lathund-section { margin-bottom: 1.5rem; }
+        .lathund-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); padding: 0.75rem 1rem; background: var(--bg-light); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .formula-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; font-size: 0.9rem; font-weight: 700; font-family: 'Georgia', serif; }
+        .badge-ohm  { background: #e9d8fd; color: #553c9a; }
+        .badge-eff  { background: #feebc8; color: #744210; }
+        .badge-kab  { background: #fed7d7; color: #c53030; }
+        .badge-ener { background: #c6f6d5; color: #276749; }
+        .badge-freq { background: #b2f5ea; color: #234e52; }
+        .badge-vax  { background: #feebc8; color: #7b341e; }
+        .badge-db   { background: #bee3f8; color: #1a365d; }
+
+        /* Cable table */
+        .cable-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .cable-table th { background: var(--bg-light); color: var(--text-secondary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 0.75rem; text-align: center; border-bottom: 2px solid var(--border-color); }
+        .cable-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-color); text-align: center; }
+        .cable-table tr:last-child td { border-bottom: none; }
+        .cable-table tr:hover td { background: var(--surface-hover); }
+        .cable-area { font-weight: 700; color: var(--text-primary); text-align: left !important; }
+
+        @media (max-width: 600px) {
+            .tri-container { gap: 1rem; }
+            .tri-card { min-width: 160px; }
+            .calc-input-row { flex-direction: column; align-items: stretch; }
+            .calc-input { width: 100%; }
+            .mpm-label { min-width: 110px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="container">
+        <h1>⚡ Ellära</h1>
+        <p>Lektion T1 – Ström, spänning, resistans, effekt, frekvens och decibel</p>
+    </div>
+</header>
+
+<main>
+<div class="container">
+
+    <div class="master-progress-multi">
+        <div class="mpm-section"><span class="mpm-label">Ohms lag</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-ohm" id="bar-ohm" style="width:0%"></div></div><span class="mpm-pct" id="pct-ohm">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Effekt</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-effekt" id="bar-effekt" style="width:0%"></div></div><span class="mpm-pct" id="pct-effekt">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Kablar &amp; spänningsfall</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-kablar" id="bar-kablar" style="width:0%"></div></div><span class="mpm-pct" id="pct-kablar">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Energi &amp; Batteri</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-energi" id="bar-energi" style="width:0%"></div></div><span class="mpm-pct" id="pct-energi">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Frekvens &amp; Våglängd</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-freq" id="bar-freq" style="width:0%"></div></div><span class="mpm-pct" id="pct-freq">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Växelström</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-vaxel" id="bar-vaxel" style="width:0%"></div></div><span class="mpm-pct" id="pct-vaxel">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Decibel</span><div class="progress-bar-outer"><div class="progress-bar-inner mpm-bar-db" id="bar-db" style="width:0%"></div></div><span class="mpm-pct" id="pct-db">0%</span></div>
+    </div>
+
+    <nav class="tab-nav">
+        <button class="active" onclick="showTab('lathund',this)">📐 Lathund</button>
+        <button onclick="showTab('ohm-tab',this)">🔢 Ohms lag</button>
+        <button onclick="showTab('effekt-tab',this)">⚡ Effekt</button>
+        <button onclick="showTab('kablar-tab',this)">🔌 Kablar</button>
+        <button onclick="showTab('energi-tab',this)">🔋 Energi</button>
+        <button onclick="showTab('freq-tab',this)">📡 Frekvens</button>
+        <button onclick="showTab('vaxel-tab',this)">〜 Växelström</button>
+        <button onclick="showTab('db-tab',this)">📶 Decibel</button>
+    </nav>
+
+    <!-- LATHUND -->
+    <div id="lathund" class="tab-section active">
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-ohm">Ω</span> Ohms lag — U = R · I</div>
+            <div class="tri-container">
+                <div class="tri-card">
+                    <h4>Klicka på det du söker</h4>
+                    <svg class="tri-svg" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" id="ohm-tri">
+                        <polygon id="tri-U" class="tri-seg" points="70,5 115,65 25,65" fill="#805ad5" onclick="triClick('ohm','U')"/>
+                        <text x="70" y="48" text-anchor="middle" class="tri-label" fill="white">U</text>
+                        <rect id="tri-R" class="tri-seg" x="12" y="68" width="55" height="44" rx="4" fill="#553c9a" onclick="triClick('ohm','R')"/>
+                        <text x="39" y="96" text-anchor="middle" class="tri-label" fill="white">R</text>
+                        <rect id="tri-I" class="tri-seg" x="73" y="68" width="55" height="44" rx="4" fill="#553c9a" onclick="triClick('ohm','I')"/>
+                        <text x="100" y="96" text-anchor="middle" class="tri-label" fill="white">I</text>
+                        <line x1="14" y1="67" x2="126" y2="67" stroke="white" stroke-width="2"/>
+                        <line x1="70" y1="67" x2="70" y2="112" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <div class="tri-formula-display" id="ohm-formula">—</div>
+                    <div class="tri-hint">Täck det du söker</div>
+                </div>
+                <div style="flex:2;min-width:220px">
+                    <div class="ref-table-card"><h3>Sambanden</h3>
+                        <table class="ref-table">
+                            <tr><th>Söker</th><th>Formel</th><th>Enhet</th></tr>
+                            <tr><td class="ref-sym">U</td><td class="ref-formula">U = R · I</td><td>Volt (V)</td></tr>
+                            <tr><td class="ref-sym">R</td><td class="ref-formula">R = U / I</td><td>Ohm (Ω)</td></tr>
+                            <tr><td class="ref-sym">I</td><td class="ref-formula">I = U / R</td><td>Ampere (A)</td></tr>
+                        </table>
+                    </div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);padding:0.4rem 0">
+                        <strong>Kom ihåg:</strong> 1 A = 1 000 mA &nbsp;|&nbsp; 1 mA = 0,001 A
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-eff">P</span> Effekt — P = U · I</div>
+            <div class="tri-container">
+                <div class="tri-card">
+                    <h4>Klicka på det du söker</h4>
+                    <svg class="tri-svg" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" id="eff-tri">
+                        <polygon id="tri-P" class="tri-seg" points="70,5 115,65 25,65" fill="#ed8936" onclick="triClick('eff','P')"/>
+                        <text x="70" y="48" text-anchor="middle" class="tri-label" fill="white">P</text>
+                        <rect id="tri-Ue" class="tri-seg" x="12" y="68" width="55" height="44" rx="4" fill="#c05621" onclick="triClick('eff','Ue')"/>
+                        <text x="39" y="96" text-anchor="middle" class="tri-label" fill="white">U</text>
+                        <rect id="tri-Ie" class="tri-seg" x="73" y="68" width="55" height="44" rx="4" fill="#c05621" onclick="triClick('eff','Ie')"/>
+                        <text x="100" y="96" text-anchor="middle" class="tri-label" fill="white">I</text>
+                        <line x1="14" y1="67" x2="126" y2="67" stroke="white" stroke-width="2"/>
+                        <line x1="70" y1="67" x2="70" y2="112" stroke="white" stroke-width="2"/>
+                    </svg>
+                    <div class="tri-formula-display" id="eff-formula">—</div>
+                    <div class="tri-hint">Täck det du söker</div>
+                </div>
+                <div style="flex:2;min-width:220px">
+                    <div class="ref-table-card"><h3>Sambanden</h3>
+                        <table class="ref-table">
+                            <tr><th>Söker</th><th>Formel</th><th>Enhet</th></tr>
+                            <tr><td class="ref-sym">P</td><td class="ref-formula">P = U · I</td><td>Watt (W)</td></tr>
+                            <tr><td class="ref-sym">U</td><td class="ref-formula">U = P / I</td><td>Volt (V)</td></tr>
+                            <tr><td class="ref-sym">I</td><td class="ref-formula">I = P / U</td><td>Ampere (A)</td></tr>
+                        </table>
+                    </div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);padding:0.4rem 0">
+                        <strong>Energi:</strong> E = P · t &nbsp;|&nbsp; mäts i Wh eller kWh
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-kab">R</span> Kablar &amp; spänningsfall</div>
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:220px">
+                    <div class="ref-table-card"><h3>Resistansen beror på</h3>
+                        <table class="ref-table">
+                            <tr><th>Faktor</th><th>Effekt</th></tr>
+                            <tr><td>Längre kabel</td><td>Högre resistans</td></tr>
+                            <tr><td>Större tvärsnittsarea</td><td>Lägre resistans</td></tr>
+                            <tr><td>Material (koppar/alum.)</td><td>Koppar leder bättre</td></tr>
+                        </table>
+                    </div>
+                    <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:0.75rem 1rem;font-size:0.85rem">
+                        💡 Spänningsfall: <strong>U<sub>fall</sub> = R<sub>kabel</sub> · I</strong><br>
+                        Kabelresistans: <strong>R = U / I</strong> (Ohms lag)
+                    </div>
+                </div>
+                <div style="flex:2;min-width:260px">
+                    <div class="ref-table-card"><h3>Resistans (Ω) för kopparkabel</h3>
+                        <div style="overflow-x:auto">
+                        <table class="cable-table">
+                            <tr><th style="text-align:left">Area (mm²)</th><th>1 m</th><th>3 m</th><th>5 m</th><th>10 m</th></tr>
+                            <tr><td class="cable-area">0,25</td><td>0,072</td><td>0,21</td><td>0,36</td><td>0,72</td></tr>
+                            <tr><td class="cable-area">0,5</td><td>0,036</td><td>0,11</td><td>0,18</td><td>0,36</td></tr>
+                            <tr><td class="cable-area">0,75</td><td>0,021</td><td>0,06</td><td>0,10</td><td>0,21</td></tr>
+                            <tr><td class="cable-area">1,0</td><td>0,018</td><td>0,05</td><td>0,09</td><td>0,18</td></tr>
+                            <tr><td class="cable-area">4,0</td><td>0,005</td><td>0,02</td><td>0,03</td><td>0,05</td></tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-ener">E</span> Energi &amp; Batterikapacitet</div>
+            <div class="ref-table-card"><h3>Samband</h3>
+                <table class="ref-table">
+                    <tr><th>Storhet</th><th>Formel</th><th>Enhet</th></tr>
+                    <tr><td class="ref-sym">E</td><td class="ref-formula">E = P · t</td><td>Wh (eller Ws, kWh)</td></tr>
+                    <tr><td class="ref-sym">P</td><td class="ref-formula">P = E / t</td><td>Watt (W)</td></tr>
+                    <tr><td class="ref-sym">t</td><td class="ref-formula">t = E / P</td><td>Timmar (h)</td></tr>
+                    <tr><td class="ref-sym">Ah → Wh</td><td class="ref-formula">Wh = U · Ah</td><td>Volt × Amperetimmar</td></tr>
+                </table>
+            </div>
+            <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:0.75rem 1rem;font-size:0.85rem;margin-top:0.5rem">
+                💡 Exempel: 12 V batteri, 30 Ah → 12 × 30 = <strong>360 Wh</strong>. Räcker för 100 W i 360/100 = <strong>3,6 h</strong>.
+            </div>
+        </div>
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-freq">λ</span> Frekvens &amp; Våglängd</div>
+            <div class="ref-table-card"><h3>Sambandet — c = 300 000 km/s</h3>
+                <table class="ref-table">
+                    <tr><th>Söker</th><th>Formel</th><th>Praktisk form</th></tr>
+                    <tr><td class="ref-sym">λ (m)</td><td class="ref-formula">λ = c / f</td><td class="ref-formula">λ(m) = 300 / f(MHz)</td></tr>
+                    <tr><td class="ref-sym">f (MHz)</td><td class="ref-formula">f = c / λ</td><td class="ref-formula">f(MHz) = 300 / λ(m)</td></tr>
+                </table>
+            </div>
+            <div class="ref-table-card" style="margin-top:0.75rem"><h3>Frekvensband</h3>
+                <table class="ref-table">
+                    <tr><th>Band</th><th>Frekvens</th><th>Typisk våglängd</th></tr>
+                    <tr><td><strong>HF</strong> – Kortvåg</td><td>2–30 MHz</td><td>10–150 m</td></tr>
+                    <tr><td><strong>VHF</strong> – Ultrakortvåg</td><td>30–300 MHz</td><td>1–10 m</td></tr>
+                    <tr><td><strong>UHF</strong></td><td>300 MHz–1 GHz</td><td>30 cm–1 m</td></tr>
+                    <tr><td><strong>SHF</strong></td><td>1 GHz–</td><td>&lt; 30 cm</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-vax">~</span> Växelström &amp; periodtid</div>
+            <div class="ref-table-card"><h3>Begrepp</h3>
+                <table class="ref-table">
+                    <tr><th>Begrepp</th><th>Symbol</th><th>Formel / Enhet</th></tr>
+                    <tr><td>Frekvens</td><td class="ref-sym">f</td><td class="ref-formula">f = 1 / T &nbsp;(Hz)</td></tr>
+                    <tr><td>Periodtid</td><td class="ref-sym">T</td><td class="ref-formula">T = 1 / f &nbsp;(s)</td></tr>
+                </table>
+            </div>
+            <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:0.75rem 1rem;font-size:0.85rem;margin-top:0.5rem">
+                💡 1 kHz = 1 000 Hz &nbsp;|&nbsp; 1 MHz = 1 000 000 Hz &nbsp;|&nbsp; Elnät: 50 Hz → T = 1/50 = <strong>20 ms</strong>
+            </div>
+        </div>
+
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-db">dB</span> Decibel-tabell</div>
+            <div class="ref-table-card"><h3>Effektförhållanden i dB</h3>
+                <table class="ref-table">
+                    <tr><th>P₁/P₂</th><th>dB</th><th>Trick</th></tr>
+                    <tr><td class="db-highlight">100</td><td class="db-highlight">+20 dB</td><td>10 × 10</td></tr>
+                    <tr><td class="db-highlight">10</td><td class="db-highlight">+10 dB</td><td>Grundvärde</td></tr>
+                    <tr><td class="db-highlight">4</td><td class="db-highlight">+6 dB</td><td>3 + 3 dB = 2 × 2</td></tr>
+                    <tr><td class="db-highlight">2</td><td class="db-highlight">+3 dB</td><td>Grundvärde</td></tr>
+                    <tr><td>1</td><td>0 dB</td><td>Ingen förändring</td></tr>
+                    <tr><td class="db-highlight">0,5 = ½</td><td class="db-highlight">−3 dB</td><td>Halvering</td></tr>
+                    <tr><td class="db-highlight">0,1 = 1/10</td><td class="db-highlight">−10 dB</td><td>Grundvärde</td></tr>
+                    <tr><td class="db-highlight">0,01 = 1/100</td><td class="db-highlight">−20 dB</td><td>−10 + −10 dB</td></tr>
+                </table>
+            </div>
+            <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:0.85rem 1rem;font-size:0.9rem;margin-top:0.5rem">
+                💡 <strong>Räkneknep:</strong> Multiplikation av effekter = addition av dB. Exempel: 20 = 2 × 10 → 3 + 10 = <strong>13 dB</strong>
+            </div>
+        </div>
+
+    </div><!-- /lathund -->
+
+    <div id="ohm-tab"    class="tab-section"><div class="calc-wrap"><div id="ohm-quiz-area"></div></div></div>
+    <div id="effekt-tab" class="tab-section"><div class="calc-wrap"><div id="effekt-quiz-area"></div></div></div>
+    <div id="kablar-tab" class="tab-section"><div class="calc-wrap"><div id="kablar-quiz-area"></div></div></div>
+    <div id="energi-tab" class="tab-section"><div class="calc-wrap"><div id="energi-quiz-area"></div></div></div>
+    <div id="freq-tab"   class="tab-section"><div class="calc-wrap"><div id="freq-quiz-area"></div></div></div>
+    <div id="vaxel-tab"  class="tab-section"><div class="quiz-wrap"><div id="vaxel-quiz-area"></div></div></div>
+    <div id="db-tab"     class="tab-section"><div class="quiz-wrap"><div id="db-quiz-area"></div></div></div>
+
+</div>
+</main>
+
+<script>
+const state = JSON.parse(localStorage.getItem('ellara_state2') || '{}');
+function saveState() { localStorage.setItem('ellara_state2', JSON.stringify(state)); }
+
+function showTab(id, btn) {
+    document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    if (id === 'ohm-tab'    && !calcStates.ohm)    renderCalcQuiz('ohm');
+    if (id === 'effekt-tab' && !calcStates.effekt) renderCalcQuiz('effekt');
+    if (id === 'kablar-tab' && !calcStates.kablar) renderCalcQuiz('kablar');
+    if (id === 'energi-tab' && !calcStates.energi) renderCalcQuiz('energi');
+    if (id === 'freq-tab'   && !calcStates.freq)   renderCalcQuiz('freq');
+    if (id === 'vaxel-tab'  && !mcqStates.vaxel)   renderMcqQuiz('vaxel');
+    if (id === 'db-tab'     && !mcqStates.db)      renderMcqQuiz('db');
+}
+
+const ohmForms = { U: 'U = R · I', R: 'R = U / I', I: 'I = U / R' };
+const effForms  = { P: 'P = U · I', Ue: 'U = P / I', Ie: 'I = P / U' };
+function triClick(tri, seg) {
+    const forms = tri === 'ohm' ? ohmForms : effForms;
+    document.getElementById(tri === 'ohm' ? 'ohm-tri' : 'eff-tri').querySelectorAll('.tri-seg').forEach(el => el.classList.remove('dimmed'));
+    const el = document.getElementById('tri-' + seg);
+    if (el) el.classList.add('dimmed');
+    document.getElementById(tri + '-formula').textContent = forms[seg] || '—';
+}
+
+function shuffle(a) { const b=[...a]; for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];} return b; }
+function round2(n) { return Math.round(n*100)/100; }
+function fmtNum(n) { if(Number.isInteger(n)) return String(n); return String(round2(n)).replace('.',','); }
+
+// --- OHM ---
+function genOhmQ() {
+    const t = Math.floor(Math.random()*3);
+    const R = [1,2,4,5,8,10,20,25,50,100,200,470,1000][Math.floor(Math.random()*13)];
+    const I = [0.1,0.2,0.25,0.5,1,2,5,10][Math.floor(Math.random()*8)];
+    const U = round2(R*I);
+    if(t===0) return { scenario:`En krets har resistansen <strong>${R} Ω</strong> och strömmen <strong>${fmtNum(I)} A</strong>.`, ask:'Vad är spänningen U?', answer:fmtNum(U), unit:'V', solution:`U = R · I = ${R} · ${fmtNum(I)} = <strong>${fmtNum(U)} V</strong>` };
+    if(t===1) return { scenario:`Spänningen är <strong>${fmtNum(U)} V</strong> och strömmen <strong>${fmtNum(I)} A</strong>.`, ask:'Vad är resistansen R?', answer:fmtNum(R), unit:'Ω', solution:`R = U / I = ${fmtNum(U)} / ${fmtNum(I)} = <strong>${R} Ω</strong>` };
+    return { scenario:`Spänningen är <strong>${fmtNum(U)} V</strong> och resistansen <strong>${R} Ω</strong>.`, ask:'Vad är strömmen I?', answer:fmtNum(I), unit:'A', solution:`I = U / R = ${fmtNum(U)} / ${R} = <strong>${fmtNum(I)} A</strong>` };
+}
+
+// --- EFFEKT ---
+function genEffektQ() {
+    const t = Math.floor(Math.random()*3);
+    const U = [3.3,5,6,9,12,13.8,24,230][Math.floor(Math.random()*8)];
+    const I = [0.1,0.2,0.25,0.5,1,2,5,10][Math.floor(Math.random()*8)];
+    const P = round2(U*I);
+    if(t===0) return { scenario:`En radiosändare drivs med <strong>${fmtNum(U)} V</strong> och drar <strong>${fmtNum(I)} A</strong>.`, ask:'Vilken effekt P tillförs?', answer:fmtNum(P), unit:'W', solution:`P = U · I = ${fmtNum(U)} · ${fmtNum(I)} = <strong>${fmtNum(P)} W</strong>` };
+    if(t===1) return { scenario:`En enhet förbrukar <strong>${fmtNum(P)} W</strong> och drar <strong>${fmtNum(I)} A</strong>.`, ask:'Vad är spänningen U?', answer:fmtNum(U), unit:'V', solution:`U = P / I = ${fmtNum(P)} / ${fmtNum(I)} = <strong>${fmtNum(U)} V</strong>` };
+    return { scenario:`Effekten är <strong>${fmtNum(P)} W</strong> vid spänningen <strong>${fmtNum(U)} V</strong>.`, ask:'Vad är strömmen I?', answer:fmtNum(I), unit:'A', solution:`I = P / U = ${fmtNum(P)} / ${fmtNum(U)} = <strong>${fmtNum(I)} A</strong>` };
+}
+
+// --- KABLAR ---
+const cableData = [{area:0.25,rPerM:0.072},{area:0.5,rPerM:0.036},{area:0.75,rPerM:0.021},{area:1.0,rPerM:0.018},{area:4.0,rPerM:0.005}];
+function genKablarQ() {
+    const t = Math.floor(Math.random()*3);
+    const c = cableData[Math.floor(Math.random()*cableData.length)];
+    const len = [1,3,5,10][Math.floor(Math.random()*4)];
+    const I = [0.5,1,2,5,10][Math.floor(Math.random()*5)];
+    const R = round2(c.rPerM*len);
+    const Uf = round2(R*I);
+    const areaStr = fmtNum(c.area).replace('.',',');
+    if(t===0) return { scenario:`En kopparkabel har arean <strong>${areaStr} mm²</strong> och längden <strong>${len} m</strong>.`, ask:'Vad är kabelns resistans? (Se lathunden)', answer:fmtNum(R), unit:'Ω', solution:`Ur tabellen: ${areaStr} mm² × ${len} m → <strong>R = ${fmtNum(R)} Ω</strong>` };
+    if(t===1) return { scenario:`En kopparkabel: area <strong>${areaStr} mm²</strong>, längd <strong>${len} m</strong> (R = ${fmtNum(R)} Ω). Strömmen är <strong>${fmtNum(I)} A</strong>.`, ask:'Vad är spänningsfallet över kabeln?', answer:fmtNum(Uf), unit:'V', solution:`U<sub>fall</sub> = R · I = ${fmtNum(R)} · ${fmtNum(I)} = <strong>${fmtNum(Uf)} V</strong>` };
+    return { scenario:`En radiosändare drar <strong>${fmtNum(I)} A</strong> och spänningsfallet över kabeln är <strong>${fmtNum(Uf)} V</strong>.`, ask:'Vad är kabelns resistans?', answer:fmtNum(R), unit:'Ω', solution:`R = U / I = ${fmtNum(Uf)} / ${fmtNum(I)} = <strong>${fmtNum(R)} Ω</strong>` };
+}
+
+// --- ENERGI ---
+function genEnergiQ() {
+    const t = Math.floor(Math.random()*4);
+    const U = [3.7,6,9,12,24][Math.floor(Math.random()*5)];
+    const Ah = [7,10,20,30,50,100][Math.floor(Math.random()*6)];
+    const Wh = round2(U*Ah);
+    const P = [5,10,25,50,100,200][Math.floor(Math.random()*6)];
+    const t2 = [0.5,1,2,3,5,10][Math.floor(Math.random()*6)];
+    const E = round2(P*t2);
+    if(t===0) return { scenario:`Ett batteri: <strong>${fmtNum(U)} V</strong>, kapacitet <strong>${Ah} Ah</strong>.`, ask:'Hur många Wh lagrar batteriet?', answer:fmtNum(Wh), unit:'Wh', solution:`Wh = U · Ah = ${fmtNum(U)} · ${Ah} = <strong>${fmtNum(Wh)} Wh</strong>` };
+    if(t===1) { const tR=round2(Wh/P); return { scenario:`Batteri med <strong>${fmtNum(Wh)} Wh</strong>. Radiosändaren drar <strong>${P} W</strong>.`, ask:'Hur länge räcker batteriet?', answer:fmtNum(tR), unit:'h', solution:`t = E / P = ${fmtNum(Wh)} / ${P} = <strong>${fmtNum(tR)} h</strong>` }; }
+    if(t===2) return { scenario:`En enhet förbrukar <strong>${P} W</strong> och körs i <strong>${fmtNum(t2)} h</strong>.`, ask:'Hur mycket energi förbrukas?', answer:fmtNum(E), unit:'Wh', solution:`E = P · t = ${P} · ${fmtNum(t2)} = <strong>${fmtNum(E)} Wh</strong>` };
+    return { scenario:`En enhet förbrukar <strong>${fmtNum(E)} Wh</strong> på <strong>${fmtNum(t2)} h</strong>.`, ask:'Vad är den genomsnittliga effekten?', answer:fmtNum(P), unit:'W', solution:`P = E / t = ${fmtNum(E)} / ${fmtNum(t2)} = <strong>${fmtNum(P)} W</strong>` };
+}
+
+// --- FREKVENS ---
+const freqPairs = [{f:3.5,lam:round2(300/3.5)},{f:7,lam:round2(300/7)},{f:14,lam:round2(300/14)},{f:21,lam:round2(300/21)},{f:28,lam:round2(300/28)},{f:50,lam:6},{f:144,lam:round2(300/144)},{f:432,lam:round2(300/432)},{f:10,lam:30},{f:100,lam:3},{f:300,lam:1}];
+function genFreqQ() {
+    const ex = freqPairs[Math.floor(Math.random()*freqPairs.length)];
+    if(Math.random()<0.5) return { scenario:`En antenn matas med frekvensen <strong>${fmtNum(ex.f)} MHz</strong>.`, ask:'Vilken våglängd λ får radiovågorna?', answer:fmtNum(ex.lam), unit:'m', solution:`λ = 300 / f(MHz) = 300 / ${fmtNum(ex.f)} = <strong>${fmtNum(ex.lam)} m</strong>` };
+    return { scenario:`En radiostation sänder med våglängden <strong>${fmtNum(ex.lam)} m</strong>.`, ask:'Vilken frekvens f har signalen?', answer:fmtNum(ex.f), unit:'MHz', solution:`f = 300 / λ(m) = 300 / ${fmtNum(ex.lam)} = <strong>${fmtNum(ex.f)} MHz</strong>` };
+}
+
+// --- MCQ QUESTIONS ---
+const vaxelQuestions = [
+    {q:'Vad är skillnaden mellan likström och växelström?', a:'Växelström byter riktning periodiskt, likström flödar åt ett håll', opts:['De har olika spänning','Växelström byter riktning periodiskt, likström flödar åt ett håll','Likström är farligare','Växelström kan inte lagras i batterier'], explanation:'Grundläggande skillnad: likström = konstant riktning, växelström = byter riktning med frekvensen f.'},
+    {q:'Vad kallas antalet riktningsbyten per sekund hos en växelström?', a:'Frekvensen', opts:['Amplituden','Periodtiden','Frekvensen','Fasförskjutningen'], explanation:'Frekvensen f mäts i Hertz (Hz) och anger hur många perioder per sekund.'},
+    {q:'Elnätet i Sverige har frekvensen 50 Hz. Vad är periodtiden T?', a:'0,02 s (20 ms)', opts:['0,05 s (50 ms)','0,02 s (20 ms)','0,5 s','0,001 s'], explanation:'T = 1/f = 1/50 = 0,02 s = 20 ms.'},
+    {q:'Vilket samband gäller mellan frekvens f och periodtid T?', a:'f = 1/T och T = 1/f', opts:['f = T','f = 1/T och T = 1/f','f × T = 100','f + T = 1'], explanation:'De är varandras reciprokvärden: f = 1/T och T = 1/f.'},
+    {q:'En signal har periodtiden T = 0,001 s. Vad är frekvensen?', a:'1 000 Hz = 1 kHz', opts:['100 Hz','1 000 Hz = 1 kHz','10 000 Hz','0,001 Hz'], explanation:'f = 1/T = 1/0,001 = 1 000 Hz = 1 kHz.'},
+    {q:'Vad är den vanliga kurvaformen hos en växelström?', a:'Sinusformad', opts:['Rektangulär','Triangulär','Sinusformad','Linjär'], explanation:'Generatorer och nät producerar sinusformad växelström — riktningsbyten sker "mjukt".'},
+    {q:'Hur många Hz är 1 MHz?', a:'1 000 000 Hz', opts:['1 000 Hz','100 000 Hz','1 000 000 Hz','1 000 000 000 Hz'], explanation:'1 MHz = 1 000 kHz = 1 000 000 Hz. Prefixet M (Mega) = 10⁶.'},
+    {q:'En radioantenn matas med en växelström. Vad alstras?', a:'Elektromagnetiska vågor', opts:['Ljud','Värme','Elektromagnetiska vågor','Likström'], explanation:'Energin omvandlas till elektromagnetisk strålning (radiovågor) som utbreder sig med ljusets hastighet.'},
+    {q:'Vad är radiovågornas utbredningshastighet?', a:'300 000 km/s', opts:['300 km/s','3 000 km/s','300 000 km/s','3 000 000 km/s'], explanation:'c = 300 000 km/s = 3 × 10⁸ m/s. Används i formeln λ = c/f.'},
+    {q:'En signal på 7 MHz — vilket frekvensband tillhör den?', a:'HF (kortvåg)', opts:['VHF','UHF','HF (kortvåg)','SHF'], explanation:'HF = 2–30 MHz. 7 MHz är 40-metersbandet, populärt bland radioamatörer.'},
+];
+const dbQuestions = [
+    {q:'Vad motsvarar ett effektförhållande på 10 i dB?', a:'+10 dB', opts:['+3 dB','+6 dB','+10 dB','+20 dB'], explanation:'10 är ett grundvärde: 10 dB.'},
+    {q:'Vad motsvarar ett effektförhållande på 2 i dB?', a:'+3 dB', opts:['+1 dB','+3 dB','+6 dB','+10 dB'], explanation:'2 är ett grundvärde: 3 dB.'},
+    {q:'Effekten halveras. Hur många dB är det?', a:'−3 dB', opts:['−1 dB','−3 dB','−6 dB','−10 dB'], explanation:'Halvering = −3 dB.'},
+    {q:'Vad motsvarar kvoten 100 i dB?', a:'+20 dB', opts:['+10 dB','+13 dB','+16 dB','+20 dB'], explanation:'100 = 10 × 10 → 10 + 10 = 20 dB.'},
+    {q:'Vad motsvarar 0 dB?', a:'Kvoten 1 (ingen förändring)', opts:['Kvoten 0','Kvoten 1 (ingen förändring)','Kvoten 10','Kvoten 2'], explanation:'0 dB innebär att effekterna är lika: kvot = 1.'},
+    {q:'Vad motsvarar +13 dB i effektförhållande?', a:'20', opts:['5','13','20','30'], explanation:'13 = 10 + 3 dB → 10 × 2 = 20.'},
+    {q:'Vad är effektförhållandet 4 i dB?', a:'+6 dB', opts:['+4 dB','+6 dB','+8 dB','+12 dB'], explanation:'4 = 2 × 2 → 3 + 3 = 6 dB.'},
+    {q:'Signalstyrkan minskar med 20 dB. Vilken kvot har effekterna?', a:'0,01 (1/100)', opts:['0,2 (1/5)','0,1 (1/10)','0,01 (1/100)','0,5 (1/2)'], explanation:'−20 dB → kvot = 1/100 = 0,01.'},
+    {q:'Vad motsvarar +6 dB?', a:'Effekten är 4 gånger större', opts:['Effekten är 6 gånger större','Effekten är 4 gånger större','Effekten är 2 gånger större','Effekten är 10 gånger större'], explanation:'6 = 3 + 3 dB → 2 × 2 = 4.'},
+    {q:'I dB-räkning ersätts multiplikation av effekter med…?', a:'Addition av dB-värden', opts:['Division av dB-värden','Addition av dB-värden','Multiplikation av dB-värden','Subtraktion av dB-värden'], explanation:'Grundtricket: × → +'},
+    {q:'Vad motsvarar −7 dB i effektförhållande?', a:'0,2', opts:['0,2','0,5','0,1','0,07'], explanation:'−7 = 3 + (−10) → 2 × 0,1 = 0,2.'},
+    {q:'En antennförstärkning ger +3 dB. Vad betyder det praktiskt?', a:'Dubbelt så hög utstrålad effekt', opts:['3 W mer effekt','Dubbelt så hög utstrålad effekt','3 gånger mer effekt','10 gånger mer effekt'], explanation:'+3 dB = faktor 2 = dubbel effekt.'},
+];
+
+// --- STATES ---
+const calcGenFns = { ohm: genOhmQ, effekt: genEffektQ, kablar: genKablarQ, energi: genEnergiQ, freq: genFreqQ };
+const calcStates = { ohm:null, effekt:null, kablar:null, energi:null, freq:null };
+const mcqAllQ    = { vaxel: vaxelQuestions, db: dbQuestions };
+const mcqLabels  = { vaxel: 'Växelström', db: 'Decibel' };
+const mcqStates  = { vaxel:null, db:null };
+
+// --- CALC RENDER ---
+function renderCalcQuiz(topic) {
+    const area = document.getElementById(topic + '-quiz-area');
+    if (!calcStates[topic]) calcStates[topic] = { q:null, correct:0, total:0, answered:false };
+    const s = calcStates[topic];
+    s.q = calcGenFns[topic]();
+    s.answered = false;
+    const pct = s.total > 0 ? Math.round((s.correct/s.total)*100) : 0;
+    area.innerHTML = `
+    <div class="calc-progress-row">
+        <div class="calc-progress-bar-outer"><div class="calc-progress-bar-inner" style="width:${pct}%"></div></div>
+        <span class="calc-stat">${s.correct}/${s.total} rätt (${pct}%)</span>
+    </div>
+    <div class="calc-card">
+        <div class="calc-label">Beräkningsuppgift</div>
+        <div class="calc-scenario">${s.q.scenario}</div>
+        <div class="calc-ask">${s.q.ask}</div>
+        <div class="calc-input-row">
+            <input type="text" class="calc-input" id="${topic}-input" placeholder="Svar…" autocomplete="off"
+                onkeydown="if(event.key==='Enter') checkCalc('${topic}')">
+            <span class="calc-unit">${s.q.unit}</span>
+            <button class="calc-submit" onclick="checkCalc('${topic}')">Kontrollera</button>
+        </div>
+        <div class="calc-feedback" id="${topic}-fb"></div>
+        <div class="calc-solution" id="${topic}-sol">${s.q.solution}</div>
+        <button class="calc-next-btn" id="${topic}-next" onclick="renderCalcQuiz('${topic}')">Nästa uppgift →</button>
+    </div>`;
+    document.getElementById(topic + '-input').focus();
+    updateMasterProgress();
+}
+
+function checkCalc(topic) {
+    const s = calcStates[topic];
+    if (!s || s.answered) return;
+    const input = document.getElementById(topic + '-input');
+    const numVal = parseFloat(input.value.trim().replace(',','.'));
+    const numCorr = parseFloat(s.q.answer.replace(',','.'));
+    const ok = !isNaN(numVal) && !isNaN(numCorr) && Math.abs(numVal - numCorr) <= 0.015*Math.abs(numCorr) + 0.01;
+    s.answered = true; s.total++;
+    if (ok) {
+        s.correct++;
+        input.classList.add('correct-input');
+        document.getElementById(topic+'-fb').innerHTML = '<span style="color:var(--success-color)">✓ Rätt!</span>';
+    } else {
+        input.classList.add('wrong-input');
+        document.getElementById(topic+'-fb').innerHTML = `<span style="color:var(--danger-color)">✗ Fel</span> — rätt svar: <strong>${s.q.answer} ${s.q.unit}</strong>`;
+        document.getElementById(topic+'-sol').style.display = 'block';
+    }
+    input.disabled = true;
+    document.getElementById(topic+'-next').style.display = 'inline-block';
+    state[topic] = { correct:s.correct, total:s.total }; saveState(); updateMasterProgress();
+}
+
+// --- MCQ RENDER ---
+function renderMcqQuiz(topic) {
+    if (!mcqStates[topic] || mcqStates[topic].done) {
+        mcqStates[topic] = { pool: shuffle([...mcqAllQ[topic]]), idx:0, correct:0, total:0, answered:false, done:false };
+    }
+    const s = mcqStates[topic];
+    const area = document.getElementById(topic + '-quiz-area');
+    const { pool, idx, correct } = s;
+    const total = pool.length;
+    if (idx >= total) {
+        s.done = true;
+        const pct = Math.round((correct/total)*100);
+        area.innerHTML = `<div class="score-card">
+            <div class="score-big">${pct>=80?'🏆':pct>=60?'👍':'💪'}</div>
+            <div style="font-size:2rem;font-weight:700;color:#805ad5">${correct}/${total}</div>
+            <p class="score-msg">${pct}% rätt — ${pct>=80?'Utmärkt!':pct>=60?'Bra jobbat!':'Öva mer!'}</p>
+            <button class="btn btn-primary" style="background:linear-gradient(135deg,#805ad5,#6b46c1)"
+                onclick="mcqStates['${topic}']=null;renderMcqQuiz('${topic}')">Försök igen</button>
+        </div>`;
+        state[topic]={correct,total}; saveState(); updateMasterProgress(); return;
+    }
+    const item = pool[idx];
+    const opts = shuffle(item.opts);
+    s.answered = false;
+    const pct = Math.round((idx/total)*100);
+    area.innerHTML = `
+    <div class="quiz-progress-row">
+        <div class="quiz-progress-bar-outer"><div class="quiz-progress-bar-inner" style="width:${pct}%"></div></div>
+        <span class="quiz-stat">${idx}/${total}</span>
+    </div>
+    <div class="quiz-card">
+        <div class="quiz-question-label">${mcqLabels[topic]} — fråga ${idx+1} av ${total}</div>
+        <div style="font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;line-height:1.4;text-align:left">${item.q}</div>
+        <div class="quiz-options">
+            ${opts.map((o,i)=>`<button class="quiz-opt" onclick="checkMcq('${topic}','${o.replace(/'/g,"\\'")}')">
+                <span class="key-hint">${i+1}</span>${o}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback" id="${topic}-fb"></div>
+        <div id="${topic}-explanation" style="display:none;margin-top:0.5rem;font-size:0.9rem;color:var(--text-secondary);background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:0.75rem 1rem;text-align:left"></div>
+        <button class="quiz-next-btn" id="${topic}-next" onclick="mcqStates['${topic}'].idx++;renderMcqQuiz('${topic}')">Nästa →</button>
+    </div>`;
+}
+
+function checkMcq(topic, chosen) {
+    const s = mcqStates[topic];
+    if (!s || s.answered) return;
+    s.answered = true;
+    const item = s.pool[s.idx];
+    const ok = chosen === item.a;
+    if (ok) s.correct++; s.total++;
+    document.querySelectorAll(`#${topic}-quiz-area .quiz-opt`).forEach(b => {
+        b.disabled = true;
+        const txt = b.textContent.replace(b.querySelector('.key-hint').textContent,'').trim();
+        if (txt === item.a) b.classList.add('correct');
+        else if (txt === chosen && !ok) b.classList.add('wrong');
+    });
+    document.getElementById(topic+'-fb').innerHTML = ok ? '<span style="color:var(--success-color)">✓ Rätt!</span>' : `<span style="color:var(--danger-color)">✗ Fel</span> — rätt svar: <strong>${item.a}</strong>`;
+    const exp = document.getElementById(topic+'-explanation');
+    exp.textContent = '💡 ' + item.explanation; exp.style.display = 'block';
+    document.getElementById(topic+'-next').style.display = 'inline-block';
+    state[topic]={correct:s.correct,total:s.total}; saveState(); updateMasterProgress();
+}
+
+// --- PROGRESS ---
+function updateMasterProgress() {
+    [['ohm','calc'],['effekt','calc'],['kablar','calc'],['energi','calc'],['freq','calc'],['vaxel','mcq'],['db','mcq']].forEach(([k,type]) => {
+        const s = type==='calc' ? calcStates[k] : mcqStates[k];
+        let pct = 0;
+        if (s && s.total > 0) pct = Math.round((s.correct/s.total)*100);
+        else if (state[k] && state[k].total > 0) pct = Math.round((state[k].correct/state[k].total)*100);
+        document.getElementById('bar-'+k).style.width = pct+'%';
+        document.getElementById('pct-'+k).textContent = pct+'%';
+    });
+}
+
+// --- KEYBOARD ---
+document.addEventListener('keydown', function(e) {
+    const active = document.querySelector('.tab-section.active');
+    if (!active) return;
+    const id = active.id;
+    const calcMap = {'ohm-tab':'ohm','effekt-tab':'effekt','kablar-tab':'kablar','energi-tab':'energi','freq-tab':'freq'};
+    const mcqMap  = {'vaxel-tab':'vaxel','db-tab':'db'};
+    if (mcqMap[id]) {
+        const t = mcqMap[id], s = mcqStates[t];
+        if (s && !s.answered) {
+            const n = parseInt(e.key);
+            if (n>=1 && n<=4) {
+                const btns = document.querySelectorAll(`#${t}-quiz-area .quiz-opt`);
+                if (btns[n-1]) checkMcq(t, btns[n-1].textContent.replace(btns[n-1].querySelector('.key-hint').textContent,'').trim());
+            }
+        }
+    }
+    if (e.key === 'Enter') {
+        if (calcMap[id]) {
+            const t = calcMap[id], s = calcStates[t];
+            if (s && !s.answered) { checkCalc(t); return; }
+            if (s && s.answered) { const b=document.getElementById(t+'-next'); if(b) b.click(); }
+        }
+        if (mcqMap[id]) {
+            const t = mcqMap[id], s = mcqStates[t];
+            if (s && s.answered) { const b=document.getElementById(t+'-next'); if(b) b.click(); }
+        }
+    }
+});
+
+updateMasterProgress();
+</script>
+</body>
+</html>

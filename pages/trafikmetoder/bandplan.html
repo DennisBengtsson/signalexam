@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandplan – Instegscertifikatet – Radioskola.se</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #2c7a7b 0%, #234e52 100%);
+            color: white;
+            padding: 2.5rem 0 2rem;
+            margin-bottom: 2rem;
+        }
+        .page-header h1 { color: white; font-size: 2rem; margin-bottom: 0.4rem; }
+        .page-header p  { color: rgba(255,255,255,0.85); margin: 0; font-size: 1rem; }
+
+        .master-progress-multi {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+        }
+        .mpm-section { display: flex; align-items: center; gap: 0.75rem; }
+        .mpm-label { font-size: 0.8rem; color: var(--text-secondary); min-width: 200px; white-space: nowrap; }
+        .mpm-pct   { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); min-width: 36px; text-align: right; }
+        .progress-bar-outer { flex: 1; height: 12px; background: var(--bg-light); border-radius: 6px; overflow: hidden; }
+        .progress-bar-inner { height: 100%; border-radius: 6px; transition: width 0.5s ease; }
+        .bar-segment { background: linear-gradient(90deg, #2c7a7b, #234e52); }
+        .bar-bw      { background: linear-gradient(90deg, #805ad5, #6b46c1); }
+        .bar-qrp     { background: linear-gradient(90deg, #ed8936, #dd6b20); }
+        .bar-allowed { background: linear-gradient(90deg, #38a169, #276749); }
+
+        .tab-nav {
+            display: flex; gap: 0.4rem; margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color); flex-wrap: wrap;
+        }
+        .tab-nav button {
+            padding: 0.6rem 1rem; border: none; background: none;
+            color: var(--text-secondary); font-size: 0.88rem; cursor: pointer;
+            border-bottom: 3px solid transparent; margin-bottom: -2px;
+            transition: all 0.2s; font-family: inherit;
+        }
+        .tab-nav button:hover  { color: #2c7a7b; }
+        .tab-nav button.active { color: #2c7a7b; border-bottom-color: #2c7a7b; font-weight: 600; }
+        .tab-section { display: none; }
+        .tab-section.active { display: block; }
+
+        .band-table-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); overflow: hidden;
+            margin-bottom: 1.25rem; box-shadow: var(--shadow-sm);
+        }
+        .band-table-card h3 {
+            padding: 0.75rem 1.2rem; margin: 0; font-size: 1rem;
+            background: var(--bg-light); border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;
+        }
+        .band-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+        .ref-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+        .ref-table th {
+            background: var(--bg-light); color: var(--text-secondary);
+            font-size: 0.73rem; text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 0.5rem 0.85rem; text-align: left; border-bottom: 2px solid var(--border-color);
+        }
+        .ref-table td { padding: 0.5rem 0.85rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+        .ref-table tr:last-child td { border-bottom: none; }
+        .ref-table tr:hover td { background: var(--surface-hover); }
+        .freq-cell  { font-weight: 700; color: #2c7a7b; font-family: 'Courier New', monospace; white-space: nowrap; }
+        .bw-cell    { font-weight: 600; color: #805ad5; white-space: nowrap; }
+        .mode-cell  { color: var(--text-secondary); }
+        .note-cell  { color: #666; font-size: 0.79rem; }
+        .emerg-note { color: #e53e3e; font-weight: 600; font-size: 0.79rem; }
+        .qrp-note   { color: #c05621; font-weight: 600; font-size: 0.79rem; }
+        .band-pill  {
+            display: inline-block; font-size: 0.72rem; font-weight: 700;
+            padding: 2px 7px; border-radius: 10px; margin-right: 3px;
+            background: #e6fffa; color: #234e52;
+        }
+        .pts-note {
+            background: #fffaf0; border: 1px solid #f6ad55;
+            border-radius: var(--radius-md); padding: 0.85rem 1.1rem;
+            font-size: 0.88rem; color: #744210; margin-bottom: 1.25rem; line-height: 1.6;
+        }
+        .advanced-link {
+            background: var(--bg-light); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 0.75rem 1.1rem;
+            font-size: 0.88rem; margin-bottom: 1.25rem;
+            display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+        }
+        .advanced-link a { color: #2c7a7b; font-weight: 600; text-decoration: none; }
+        .advanced-link a:hover { text-decoration: underline; }
+
+        /* Quiz */
+        .quiz-wrap { max-width: 620px; margin: 0 auto; }
+        .quiz-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 2rem 1.5rem;
+            box-shadow: var(--shadow-sm); margin-bottom: 1rem;
+        }
+        .quiz-label { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .quiz-scenario {
+            background: var(--bg-light); border-left: 4px solid #2c7a7b;
+            border-radius: var(--radius-md); padding: 0.9rem 1.1rem;
+            font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem; color: var(--text-primary);
+        }
+        .quiz-question { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; }
+        .quiz-options  { display: grid; gap: 0.65rem; }
+        .quiz-opt {
+            padding: 0.8rem 1rem; border: 2px solid var(--border-color);
+            background: var(--surface); border-radius: var(--radius-md); cursor: pointer;
+            font-size: 0.92rem; font-weight: 500; color: var(--text-primary);
+            transition: all 0.15s; font-family: inherit; text-align: left;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .quiz-opt:hover:not(:disabled) { border-color: #2c7a7b; background: #e6fffa; }
+        .quiz-opt.correct { border-color: var(--success-color); background: var(--success-bg); color: #276749; }
+        .quiz-opt.wrong   { border-color: var(--danger-color);  background: var(--danger-bg);  color: #c53030; }
+        .quiz-opt:disabled { cursor: default; }
+        .key-hint {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--bg-light); border: 1px solid var(--border-color);
+            border-bottom-width: 2px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;
+            padding: 1px 6px; color: var(--text-secondary); min-width: 22px; flex-shrink: 0;
+        }
+        .quiz-feedback { margin-top: 0.9rem; font-size: 0.92rem; min-height: 1.3em; color: var(--text-secondary); }
+        .quiz-explanation {
+            display: none; margin-top: 0.6rem; font-size: 0.88rem;
+            background: var(--info-bg); border: 1px solid var(--info-border);
+            border-radius: var(--radius-md); padding: 0.75rem 1rem;
+            color: var(--text-secondary); line-height: 1.6;
+        }
+        .quiz-next-btn {
+            display: none; margin-top: 1.1rem; padding: 0.65rem 2rem;
+            background: linear-gradient(135deg, #2c7a7b, #234e52); color: white;
+            border: none; border-radius: var(--radius-md); font-size: 0.95rem;
+            font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s;
+        }
+        .quiz-next-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .quiz-progress-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+        .quiz-progress-bar-outer { flex: 1; height: 8px; background: var(--bg-light); border-radius: 4px; overflow: hidden; }
+        .quiz-progress-bar-inner { height: 100%; background: #2c7a7b; border-radius: 4px; transition: width 0.3s; }
+        .quiz-stat { font-size: 0.82rem; color: var(--text-secondary); white-space: nowrap; }
+        .score-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; box-shadow: var(--shadow-sm);
+        }
+        .score-big { font-size: 3rem; }
+        .score-msg { color: var(--text-secondary); margin: 0.5rem 0 1.5rem; }
+
+        @media (max-width: 600px) {
+            .mpm-label { min-width: 130px; }
+            .ref-table { font-size: 0.76rem; }
+            .ref-table td, .ref-table th { padding: 0.4rem 0.55rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="container">
+        <h1>📻 Bandplan – Instegscertifikatet</h1>
+        <p>IARU Reg 1 2020-10-16 · PTS frekvensplan PTSFS 2019:1 · Band för N-certifikat</p>
+    </div>
+</header>
+
+<main>
+<div class="container">
+
+    <div class="master-progress-multi">
+        <div class="mpm-section"><span class="mpm-label">Segment &amp; läge</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-segment" id="bar-segment" style="width:0%"></div></div><span class="mpm-pct" id="pct-segment">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Max bandbredd</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-bw" id="bar-bw" style="width:0%"></div></div><span class="mpm-pct" id="pct-bw">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Aktivitets- &amp; nödfrekvenser</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-qrp" id="bar-qrp" style="width:0%"></div></div><span class="mpm-pct" id="pct-qrp">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Tillåten sändning</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-allowed" id="bar-allowed" style="width:0%"></div></div><span class="mpm-pct" id="pct-allowed">0%</span></div>
+    </div>
+
+    <nav class="tab-nav">
+        <button class="active" onclick="showTab('lathund',this)">📐 Lathund</button>
+        <button onclick="showTab('segment-tab',this)">🎯 Segment &amp; läge</button>
+        <button onclick="showTab('bw-tab',this)">📏 Bandbredd</button>
+        <button onclick="showTab('qrp-tab',this)">⭐ Aktivitet &amp; nöd</button>
+        <button onclick="showTab('allowed-tab',this)">✅ Tillåten sändning</button>
+    </nav>
+
+    <div id="lathund" class="tab-section active">
+
+        <div class="pts-note">
+            ⚠️ <strong>OBS!</strong> Max 200 W p.e.p. För högre effekt (max 1 kW) krävs tillstånd från PTS. Frekvenserna gäller enligt IARU Reg 1 2020-10-16 och PTS frekvensplan PTSFS 2019:1.
+        </div>
+
+        <div class="advanced-link">
+            📖 Har du fullständig licens? Se den kompletta IARU Reg 1 HF-bandplanen:
+            <a href="bandplan-hf.html">Öppna fullständig HF-bandplan →</a>
+        </div>
+
+        <div class="band-table-card">
+            <h3><span class="band-dot" style="background:#ed8936"></span> 40m – 7 MHz</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens (kHz)</th><th>BW max</th><th>Sändningsslag</th><th>Noteringar</th></tr>
+                <tr><td class="freq-cell">7 000 – 7 040</td><td class="bw-cell">200 Hz</td><td class="mode-cell">CW exklusivt</td><td class="qrp-note">CW QRP aktivitetscenter 7030 kHz</td></tr>
+                <tr><td class="freq-cell">7 040 – 7 050</td><td class="bw-cell">500 Hz</td><td class="mode-cell">Smalband, Aut. Digimoder</td><td class="note-cell">Auto. obevakade digimoder inom 7047–7050 kHz</td></tr>
+                <tr><td class="freq-cell">7 050 – 7 060</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag, Digimoder</td><td class="note-cell">Auto. obevakade digimoder inom 7050–7053 kHz</td></tr>
+                <tr><td class="freq-cell">7 060 – 7 100</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">SSB contest i segmentet. DV 7070 kHz, SSB QRP 7090 kHz</td></tr>
+                <tr><td class="freq-cell">7 100 – 7 130</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag</td><td class="emerg-note">🚨 Reg. 1 Katastrofsamband 7110 kHz</td></tr>
+                <tr><td class="freq-cell">7 130 – 7 175</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">Image 7165 kHz</td></tr>
+                <tr><td class="freq-cell">7 175 – 7 200</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">Prioritet för interkontinental SSB DX-trafik</td></tr>
+            </table>
+        </div>
+
+        <div class="band-table-card">
+            <h3><span class="band-dot" style="background:#4299e1"></span> 20m – 14 MHz</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens (kHz)</th><th>BW max</th><th>Sändningsslag</th><th>Noteringar</th></tr>
+                <tr><td class="freq-cell">14 000 – 14 070</td><td class="bw-cell">200 Hz</td><td class="mode-cell">CW exklusivt</td><td class="qrp-note">CW QRS 14055 kHz, CW QRP 14060 kHz</td></tr>
+                <tr><td class="freq-cell">14 070 – 14 099</td><td class="bw-cell">500 Hz</td><td class="mode-cell">Smalband, Digimoder</td><td class="note-cell">Auto. obevakade digimoder 14089–14099 kHz</td></tr>
+                <tr><td class="freq-cell">14 099 – 14 101</td><td class="bw-cell">200 Hz</td><td class="mode-cell">Fyrar</td><td class="note-cell">Exklusivt IBP – världstäckande fyrnät</td></tr>
+                <tr><td class="freq-cell">14 101 – 14 350</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag, Digimoder</td><td class="note-cell">DV 14130, DX-peditioner 14195±5 kHz, Image 14230, SSB QRP 14285 kHz</td></tr>
+                <tr><td class="freq-cell">14 300 – 14 350</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag</td><td class="emerg-note">🚨 Internationellt katastrofsamband 14300 kHz</td></tr>
+            </table>
+        </div>
+
+        <div class="band-table-card">
+            <h3><span class="band-dot" style="background:#f6ad55"></span> 15m – 21 MHz</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens (kHz)</th><th>BW max</th><th>Sändningsslag</th><th>Noteringar</th></tr>
+                <tr><td class="freq-cell">21 000 – 21 070</td><td class="bw-cell">200 Hz</td><td class="mode-cell">CW exklusivt</td><td class="qrp-note">CW QRS 21055 kHz, CW QRP 21060 kHz</td></tr>
+                <tr><td class="freq-cell">21 070 – 21 090</td><td class="bw-cell">500 Hz</td><td class="mode-cell">Smalband, Digimoder</td><td class="note-cell"></td></tr>
+                <tr><td class="freq-cell">21 090 – 21 110</td><td class="bw-cell">500 Hz</td><td class="mode-cell">Smalband, Aut. obev. Digimoder</td><td class="note-cell">OBS! 21090–21110 kHz = automatiska obevakade digimoder</td></tr>
+                <tr><td class="freq-cell">21 110 – 21 120</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag, utom SSB</td><td class="note-cell">Digimoder och auto. obevakade digimoder</td></tr>
+                <tr><td class="freq-cell">21 120 – 21 149</td><td class="bw-cell">500 Hz</td><td class="mode-cell">Smalband</td><td class="note-cell"></td></tr>
+                <tr><td class="freq-cell">21 149 – 21 151</td><td class="bw-cell">200 Hz</td><td class="mode-cell">Fyrar</td><td class="note-cell">Exklusivt IBP – världstäckande fyrnät</td></tr>
+                <tr><td class="freq-cell">21 151 – 21 450</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">DV 21180, SSB QRP 21285, Image 21340</td></tr>
+                <tr><td class="freq-cell">21 360</td><td class="bw-cell">–</td><td class="mode-cell">–</td><td class="emerg-note">🚨 Internationellt katastrofsamband</td></tr>
+            </table>
+        </div>
+
+        <div class="band-table-card">
+            <h3><span class="band-dot" style="background:#f687b3"></span> 10m – 28 MHz</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens (kHz)</th><th>BW max</th><th>Sändningsslag</th><th>Noteringar</th></tr>
+                <tr><td class="freq-cell">28 000 – 28 070</td><td class="bw-cell">200 Hz</td><td class="mode-cell">CW exklusivt</td><td class="qrp-note">CW QRS 28055, CW QRP 28060 kHz</td></tr>
+                <tr><td class="freq-cell">28 070 – 28 190</td><td class="bw-cell">500 Hz</td><td class="mode-cell">Smalband, Digimoder</td><td class="note-cell">28120–28150 = auto. obev. digimoder</td></tr>
+                <tr><td class="freq-cell">28 190 – 28 225</td><td class="bw-cell">200 Hz</td><td class="mode-cell">Fyrar</td><td class="note-cell">IBP regionala och världstäckande fyrar</td></tr>
+                <tr><td class="freq-cell">28 225 – 29 000</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Alla sändningsslag, Fyrar</td><td class="note-cell">DV 28330, SSB QRP 28360, Image 28680 kHz</td></tr>
+                <tr><td class="freq-cell">29 000 – 29 300</td><td class="bw-cell">obegränsad</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">29100–29200: FM simplex 10 kHz kanaler. 29200–29300: digi/auto.</td></tr>
+                <tr><td class="freq-cell">29 300 – 29 510</td><td class="bw-cell">obegränsad</td><td class="mode-cell">Satellitband nerlänk</td><td class="note-cell"></td></tr>
+                <tr><td class="freq-cell">29 510 – 29 520</td><td class="bw-cell">–</td><td class="mode-cell">Skyddsfrekvenser</td><td class="emerg-note">Ingen sändning – skyddsfrekvenser för satelliter</td></tr>
+                <tr><td class="freq-cell">29 520 – 29 590</td><td class="bw-cell">6000 Hz</td><td class="mode-cell">FM Repeater in</td><td class="note-cell">RH1–RH8, 100 kHz duplexskift, 2.5 kHz NBFM</td></tr>
+                <tr><td class="freq-cell">29 600</td><td class="bw-cell">6000 Hz</td><td class="mode-cell">FM simplex</td><td class="qrp-note">FM aktivitetscenter / anropsfrekvens</td></tr>
+                <tr><td class="freq-cell">29 620 – 29 700</td><td class="bw-cell">6000 Hz</td><td class="mode-cell">FM Repeater ut</td><td class="note-cell">RH1–RH8, 100 kHz duplexskift</td></tr>
+            </table>
+        </div>
+
+        <div class="band-table-card">
+            <h3><span class="band-dot" style="background:#48bb78"></span> 6m – 50 MHz</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens (kHz)</th><th>BW max</th><th>Sändningsslag</th><th>Noteringar</th></tr>
+                <tr><td class="freq-cell">50 000 – 50 100</td><td class="bw-cell">500 Hz</td><td class="mode-cell">CW</td><td class="qrp-note">CW aktivitetscenter 50.050 och 50.090 (interkontinentalt)</td></tr>
+                <tr><td class="freq-cell">50 100 – 50 300</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">CW, SSB</td><td class="note-cell">DX 50.110–50.130. 50.110 aktivitetscenter (interkont.). 50.150 och 50.285 crossband</td></tr>
+                <tr><td class="freq-cell">50 300 – 50 400</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">CW, MGM</td><td class="note-cell">PSK 50.305, EME 50.310–50.320, MS 50.320–50.380</td></tr>
+                <tr><td class="freq-cell">50 400 – 50 500</td><td class="bw-cell">1000 Hz</td><td class="mode-cell">CW, MGM</td><td class="qrp-note">50.401 ±500 Hz WSPR-fyrar</td></tr>
+                <tr><td class="freq-cell">50 500 – 52 000</td><td class="bw-cell">12 kHz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">SSTV 50.510, Image 50.550, Digi 50.620–50.750, FM 51.510</td></tr>
+                <tr><td class="freq-cell">51 210 – 51 390</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV repeater in</td><td class="note-cell">Repeater in, 20/10 kHz kanalavstånd, RF81–RF99</td></tr>
+                <tr><td class="freq-cell">51 810 – 51 990</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV repeater ut</td><td class="note-cell">Repeater ut, 20/10 kHz kanalavstånd, RF81–RF99</td></tr>
+            </table>
+        </div>
+
+        <div class="band-table-card">
+            <h3><span class="band-dot" style="background:#9f7aea"></span> 2m – 144 MHz</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens (kHz)</th><th>BW max</th><th>Sändningsslag</th><th>Noteringar</th></tr>
+                <tr><td class="freq-cell">144 000 – 144 025</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">Satelliter</td><td class="note-cell">Endast satelliter. Ingen sändning under 144.025 MHz</td></tr>
+                <tr><td class="freq-cell">144 025 – 144 150</td><td class="bw-cell">500 Hz</td><td class="mode-cell">CW, EME, MGM</td><td class="qrp-note">CW aktivitetscenter 144.050, MS random 144.100, EME MGM 144.110–144.160</td></tr>
+                <tr><td class="freq-cell">144 150 – 144 400</td><td class="bw-cell">2700 Hz</td><td class="mode-cell">CW, SSB, MGM</td><td class="qrp-note">SSB aktivitetscenter 144.300, MS SSB random 144.195–144.205</td></tr>
+                <tr><td class="freq-cell">144 400 – 144 493</td><td class="bw-cell">500 Hz</td><td class="mode-cell">CW, SSB, MGM, EMGM</td><td class="note-cell">Exklusivt för koordinerade fyrar (144.400–144.490)</td></tr>
+                <tr><td class="freq-cell">144 500 – 144 794</td><td class="bw-cell">20 kHz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">RTTY/MGM 144.600, ATV talkback 144.750</td></tr>
+                <tr><td class="freq-cell">144 794 – 144 963</td><td class="bw-cell">12 kHz</td><td class="mode-cell">MGM / Digital komm.</td><td class="note-cell">APRS 144.800, DVoice 144.8125–144.8625</td></tr>
+                <tr><td class="freq-cell">144 975 – 145 194</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV repeater in</td><td class="note-cell">RV46–RV63, 12.5 kHz, 600 kHz skift</td></tr>
+                <tr><td class="freq-cell">145 194 – 145 206</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV rymdkomm.</td><td class="note-cell">145.200 – kommunikation med bemannade rymdfarkostar</td></tr>
+                <tr><td class="freq-cell">145 206 – 145 563</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV simplex</td><td class="qrp-note">FM anropsfrekvens 145.500, DV aktivitetscenter 145.375</td></tr>
+                <tr><td class="freq-cell">145 575 – 145 794</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV repeater ut</td><td class="note-cell">RV46–RV63, 12.5 kHz kanalavstånd</td></tr>
+                <tr><td class="freq-cell">145 794 – 145 806</td><td class="bw-cell">12 kHz</td><td class="mode-cell">FM/DV rymdkomm.</td><td class="note-cell">145.800 split för bemannade rymdfarkostar</td></tr>
+                <tr><td class="freq-cell">145 806 – 146 000</td><td class="bw-cell">12 kHz</td><td class="mode-cell">Alla sändningsslag</td><td class="note-cell">Exklusivt satellitsegment</td></tr>
+            </table>
+        </div>
+
+        <div class="band-table-card">
+            <h3>⭐ Viktiga aktivitets- och nödfrekvenser</h3>
+            <table class="ref-table">
+                <tr><th>Frekvens</th><th>Band</th><th>Typ</th></tr>
+                <tr><td class="freq-cell">7030 kHz</td><td><span class="band-pill">40m</span></td><td class="qrp-note">CW QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">7090 kHz</td><td><span class="band-pill">40m</span></td><td class="qrp-note">SSB QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">7110 kHz</td><td><span class="band-pill">40m</span></td><td class="emerg-note">🚨 Reg. 1 Katastrofsamband</td></tr>
+                <tr><td class="freq-cell">14060 kHz</td><td><span class="band-pill">20m</span></td><td class="qrp-note">CW QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">14285 kHz</td><td><span class="band-pill">20m</span></td><td class="qrp-note">SSB QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">14300 kHz</td><td><span class="band-pill">20m</span></td><td class="emerg-note">🚨 Internationellt katastrofsamband</td></tr>
+                <tr><td class="freq-cell">21060 kHz</td><td><span class="band-pill">15m</span></td><td class="qrp-note">CW QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">21285 kHz</td><td><span class="band-pill">15m</span></td><td class="qrp-note">SSB QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">21360 kHz</td><td><span class="band-pill">15m</span></td><td class="emerg-note">🚨 Internationellt katastrofsamband</td></tr>
+                <tr><td class="freq-cell">28060 kHz</td><td><span class="band-pill">10m</span></td><td class="qrp-note">CW QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">28360 kHz</td><td><span class="band-pill">10m</span></td><td class="qrp-note">SSB QRP aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">29600 kHz</td><td><span class="band-pill">10m</span></td><td class="qrp-note">FM aktivitetscenter / anrop</td></tr>
+                <tr><td class="freq-cell">50050 / 50090 kHz</td><td><span class="band-pill">6m</span></td><td class="qrp-note">CW aktivitetscenter (interkont.)</td></tr>
+                <tr><td class="freq-cell">144300 kHz</td><td><span class="band-pill">2m</span></td><td class="qrp-note">SSB aktivitetscenter</td></tr>
+                <tr><td class="freq-cell">145500 kHz</td><td><span class="band-pill">2m</span></td><td class="qrp-note">FM anropsfrekvens (simplex)</td></tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="segment-tab" class="tab-section"><div class="quiz-wrap"><div id="segment-area"></div></div></div>
+    <div id="bw-tab"      class="tab-section"><div class="quiz-wrap"><div id="bw-area"></div></div></div>
+    <div id="qrp-tab"     class="tab-section"><div class="quiz-wrap"><div id="qrp-area"></div></div></div>
+    <div id="allowed-tab" class="tab-section"><div class="quiz-wrap"><div id="allowed-area"></div></div></div>
+
+</div>
+</main>
+
+<script>
+const state = JSON.parse(localStorage.getItem('bandplan_instegs') || '{}');
+function saveState() { localStorage.setItem('bandplan_instegs', JSON.stringify(state)); }
+function shuffle(a) { const b=[...a]; for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];} return b; }
+
+const segmentQ = [
+    {s:'Du vill sända CW på 40m.',q:'Vilket segment är CW-exklusivt?',a:'7000–7040 kHz',o:['7000–7040 kHz','7040–7060 kHz','7060–7100 kHz','7100–7130 kHz'],e:'7000–7040 kHz är CW-exklusivt med max 200 Hz.'},
+    {s:'Du vill köra SSB på 40m.',q:'Från vilken frekvens tillåts SSB?',a:'7060 kHz',o:['7040 kHz','7050 kHz','7060 kHz','7100 kHz'],e:'7060–7200 kHz är "alla sändningsslag" inkl. SSB.'},
+    {s:'Du hör en station på 14085 kHz.',q:'Vilket segment är det?',a:'Smalband/digi (max 500 Hz)',o:['CW exklusivt (200 Hz)','Smalband/digi (max 500 Hz)','Alla sändningsslag (2700 Hz)','Fyrbåkssegment'],e:'14070–14099 kHz är smalbandssegmentet med max 500 Hz.'},
+    {s:'Du är på 21150 kHz och hör konstanta signaler.',q:'Vad är det troligen?',a:'Internationella fyrbåkar (IBP)',o:['FM-repeater','CW QSO','Internationella fyrbåkar (IBP)','Satellit'],e:'21149–21151 kHz är reserverat exklusivt för IBP.'},
+    {s:'Du vill använda FM-simplex på 2m.',q:'Vilket segment gäller?',a:'145 206–145 563 kHz',o:['144 025–144 100 kHz','144 975–145 194 kHz','145 206–145 563 kHz','145 575–145 794 kHz'],e:'145.206–145.563 MHz är FM/DV simplex-segmentet på 2m.'},
+    {s:'Du vill använda FM-repeater på 2m.',q:'På vilka frekvenser sänder du in?',a:'144 975–145 194 kHz',o:['145 575–145 794 kHz','144 975–145 194 kHz','145 206–145 563 kHz','144 150–144 400 kHz'],e:'144.975–145.194 MHz är repeater-infrekvenserna (RV46–RV63).'},
+    {s:'Du vill sända CW på 20m.',q:'Vilket segment gäller?',a:'14000–14070 kHz',o:['14000–14070 kHz','14070–14099 kHz','14099–14101 kHz','14101–14350 kHz'],e:'14000–14070 kHz är CW-exklusivt på 20m.'},
+    {s:'Du vill sända SSB på 15m.',q:'Från vilken frekvens tillåts SSB?',a:'21151 kHz',o:['21000 kHz','21070 kHz','21120 kHz','21151 kHz'],e:'21151–21450 kHz är "alla sändningsslag" inkl. SSB.'},
+    {s:'Du hör starka signaler på 29525 kHz.',q:'Vad sänds troligen där?',a:'FM-repeater infrekvens (RH1–RH8)',o:['CW fyrbåkar','FM-repeater infrekvens (RH1–RH8)','Satellitnerlänk','SSB DX-trafik'],e:'29520–29590 kHz är FM repeater-infrekvenser på 10m.'},
+    {s:'Du vill sända SSB på 6m.',q:'I vilket segment sänder du?',a:'50100–50300 kHz (CW/SSB)',o:['50000–50100 kHz','50100–50300 kHz (CW/SSB)','51210–51390 kHz','51810–51990 kHz'],e:'50100–50300 kHz innehåller SSB-segmenten på 6m.'},
+];
+
+const bwQ = [
+    {s:'Du sänder CW på 7020 kHz.',q:'Maximal tillåten bandbredd?',a:'200 Hz',o:['200 Hz','500 Hz','2700 Hz','6000 Hz'],e:'CW-segmentet 7000–7040 kHz har max 200 Hz.'},
+    {s:'Du kör RTTY på 14080 kHz.',q:'Maximal tillåten bandbredd?',a:'500 Hz',o:['200 Hz','500 Hz','2700 Hz','12 kHz'],e:'Smalbandssegmentet 14070–14099 kHz har max 500 Hz.'},
+    {s:'Du kör SSB på 21200 kHz.',q:'Maximal tillåten bandbredd?',a:'2700 Hz',o:['200 Hz','500 Hz','2700 Hz','6000 Hz'],e:'21151–21450 kHz (alla sändningsslag) har max 2700 Hz.'},
+    {s:'Du kör FM-simplex på 145500 kHz (2m).',q:'Maximal tillåten bandbredd?',a:'12 kHz',o:['500 Hz','2700 Hz','6000 Hz','12 kHz'],e:'FM simplex-segmentet på 2m har max 12 kHz.'},
+    {s:'Du kör FM på 29600 kHz (10m anrop).',q:'Maximal tillåten bandbredd?',a:'6000 Hz',o:['200 Hz','2700 Hz','6000 Hz','12 kHz'],e:'FM-segmentet vid 29600 kHz har max 6000 Hz.'},
+    {s:'Du sänder CW i EME-segmentet, 144040 kHz (2m).',q:'Maximal tillåten bandbredd?',a:'500 Hz',o:['200 Hz','500 Hz','2700 Hz','12 kHz'],e:'144025–144150 kHz (CW/EME) på 2m har max 500 Hz.'},
+    {s:'Du kör SSB på 50200 kHz (6m).',q:'Maximal tillåten bandbredd?',a:'2700 Hz',o:['500 Hz','1000 Hz','2700 Hz','12 kHz'],e:'50100–50300 kHz (CW/SSB) på 6m har max 2700 Hz.'},
+    {s:'Du kör digi på 28090 kHz (10m).',q:'Maximal tillåten bandbredd?',a:'500 Hz',o:['200 Hz','500 Hz','2700 Hz','6000 Hz'],e:'28070–28190 kHz (smalband/digi) på 10m har max 500 Hz.'},
+    {s:'Du kör MGM på 50420 kHz (6m WSPR).',q:'Maximal tillåten bandbredd?',a:'1000 Hz',o:['200 Hz','500 Hz','1000 Hz','2700 Hz'],e:'50400–50500 kHz (CW/MGM) har max 1000 Hz – anpassat för WSPR.'},
+    {s:'Du kör FM via repeater in på 29550 kHz (10m).',q:'Maximal tillåten bandbredd?',a:'6000 Hz',o:['500 Hz','2700 Hz','6000 Hz','12 kHz'],e:'FM repeater-segmentet 29520–29590 kHz har max 6000 Hz.'},
+];
+
+const qrpQ = [
+    {s:'Du söker CW QRP-aktivitet på 40m.',q:'Vilken frekvens är CW QRP aktivitetscenter?',a:'7030 kHz',o:['7000 kHz','7020 kHz','7030 kHz','7040 kHz'],e:'7030 kHz är CW QRP aktivitetscenter på 40m.'},
+    {s:'Nödläge i Region 1, du är på 40m.',q:'Vilken frekvens är katastrofsamband?',a:'7110 kHz',o:['7090 kHz','7100 kHz','7110 kHz','7130 kHz'],e:'7110 kHz är Reg. 1 Katastrofsamband på 40m.'},
+    {s:'Du söker SSB QRP-aktivitet på 20m.',q:'Vilken frekvens?',a:'14285 kHz',o:['14195 kHz','14230 kHz','14285 kHz','14300 kHz'],e:'14285 kHz är SSB QRP aktivitetscenter på 20m.'},
+    {s:'Internationellt nödläge, du är på 20m.',q:'Vilken frekvens är internationellt katastrofsamband?',a:'14300 kHz',o:['14195 kHz','14285 kHz','14300 kHz','14350 kHz'],e:'14300 kHz är internationellt katastrofsamband på 20m.'},
+    {s:'Du söker FM-anrop på 2m.',q:'Vilken frekvens är FM anropsfrekvens?',a:'145500 kHz',o:['144300 kHz','145200 kHz','145375 kHz','145500 kHz'],e:'145.500 MHz är FM anropsfrekvens (simplex) på 2m.'},
+    {s:'Du söker SSB-aktivitet på 2m.',q:'Vilken frekvens är SSB aktivitetscenter?',a:'144300 kHz',o:['144050 kHz','144150 kHz','144300 kHz','144500 kHz'],e:'144.300 MHz är SSB aktivitetscenter på 2m.'},
+    {s:'Du söker FM-anrop på 10m.',q:'Vilken frekvens är FM aktivitetscenter?',a:'29600 kHz',o:['28360 kHz','29100 kHz','29510 kHz','29600 kHz'],e:'29600 kHz är FM aktivitetscenter/anropsfrekvens på 10m.'},
+    {s:'Du söker CW QRP-aktivitet på 20m.',q:'Vilken frekvens?',a:'14060 kHz',o:['14055 kHz','14060 kHz','14070 kHz','14100 kHz'],e:'14060 kHz är CW QRP aktivitetscenter på 20m.'},
+    {s:'Du söker internationellt katastrofsamband på 15m.',q:'Vilken frekvens?',a:'21360 kHz',o:['21285 kHz','21340 kHz','21360 kHz','21450 kHz'],e:'21360 kHz är internationellt katastrofsamband på 15m.'},
+    {s:'Du söker CW QRP-aktivitet på 15m.',q:'Vilken frekvens?',a:'21060 kHz',o:['21055 kHz','21060 kHz','21070 kHz','21110 kHz'],e:'21060 kHz är CW QRP aktivitetscenter på 15m.'},
+    {s:'Du vill kommunicera med bemannad rymdfarkost på 2m.',q:'Vilka frekvenser används?',a:'145200 och 145800 kHz',o:['144050 kHz','145500 kHz','145200 och 145800 kHz','146000 kHz'],e:'145.200 och 145.800 MHz används för kommunikation med bemannade rymdfarkostar.'},
+    {s:'Du söker CW QRP-aktivitet på 10m.',q:'Vilken frekvens?',a:'28060 kHz',o:['28055 kHz','28060 kHz','28070 kHz','28190 kHz'],e:'28060 kHz är CW QRP aktivitetscenter på 10m.'},
+];
+
+const allowedQ = [
+    {s:'Du vill sända SSB (2700 Hz) på 7020 kHz.',q:'Är det tillåtet?',a:'Nej – 7000–7040 kHz är CW-exklusivt (max 200 Hz)',o:['Ja – SSB tillåts på hela 40m','Nej – 7000–7040 kHz är CW-exklusivt (max 200 Hz)','Ja – om effekten är under 10 W','Nej – 40m är stängt för instegscert.'],e:'7000–7040 kHz är CW-exklusivt. SSB med 2700 Hz är inte tillåtet.'},
+    {s:'Du vill sända CW på 14100 kHz.',q:'Är det tillåtet?',a:'Nej – 14099–14101 kHz är reserverat för IBP-fyrbåkar',o:['Ja – CW tillåts på hela 20m','Nej – 14099–14101 kHz är reserverat för IBP-fyrbåkar','Ja – om bandbredden är under 200 Hz','Nej – det är ett SSB-segment'],e:'14099–14101 kHz är uteslutande för IBP fyrbåkar.'},
+    {s:'Du vill sända PSK31 (500 Hz) på 7045 kHz.',q:'Är det tillåtet?',a:'Ja – 7040–7050 kHz är smalband/digi (max 500 Hz)',o:['Nej – digi är förbjudet på 40m','Ja – 7040–7050 kHz är smalband/digi (max 500 Hz)','Nej – max 200 Hz gäller','Ja – alla lägen tillåtna på 40m'],e:'7040–7050 kHz är smalbandssegmentet med max 500 Hz. PSK31 ryms inom det.'},
+    {s:'Du vill använda FM-repeater in på 145100 kHz (2m).',q:'Är det tillåtet?',a:'Ja – 144975–145194 kHz är repeater-infrekvenser',o:['Nej – FM är förbjudet på 2m','Ja – 144975–145194 kHz är repeater-infrekvenser','Nej – det segmentet är för satelliter','Ja – men bara med speciellt tillstånd'],e:'144.975–145.194 MHz är FM/DV repeater-infrekvenserna på 2m.'},
+    {s:'Du vill använda LSB på 21200 kHz.',q:'Är det rätt sidbandsval?',a:'Nej – över 10 MHz rekommenderas USB',o:['Ja – LSB används alltid på HF','Nej – över 10 MHz rekommenderas USB','Ja – på 15m används alltid LSB','Nej – FM är föreskrivet på 15m'],e:'Över 10 MHz rekommenderas USB. 15m (21 MHz) → USB.'},
+    {s:'Du vill sända SSB på 7035 kHz.',q:'Är det tillåtet?',a:'Nej – 7000–7040 kHz är CW-exklusivt',o:['Ja – SSB tillåts var som helst','Nej – 7000–7040 kHz är CW-exklusivt','Ja – om du använder LSB','Nej – 7035 kHz är ett digi-segment'],e:'7000–7040 kHz är CW-exklusivt. SSB tillåts först från 7060 kHz.'},
+    {s:'Du vill sända på 29515 kHz.',q:'Är det tillåtet?',a:'Nej – 29510–29520 kHz är skyddsfrekvenser (ingen sändning)',o:['Ja – alla lägen tillåtna','Ja – FM tillåtet','Nej – 29510–29520 kHz är skyddsfrekvenser (ingen sändning)','Nej – det är ett CW-segment'],e:'29510–29520 kHz är skyddsfrekvenser för satelliter. Ingen sändning tillåten.'},
+    {s:'Du vill sända CW på 144030 kHz (2m).',q:'Är det tillåtet?',a:'Ja – 144025–144150 kHz är CW/EME-segment',o:['Nej – 2m är bara för FM','Ja – 144025–144150 kHz är CW/EME-segment','Nej – det är ett satellitsegment','Ja – men bara vid EME-trafik'],e:'144.025–144.150 MHz är CW/EME-segmentet på 2m.'},
+    {s:'Du vill använda USB på 7100 kHz.',q:'Är det rätt sidbandsval?',a:'Nej – under 10 MHz rekommenderas LSB',o:['Ja – USB används alltid','Nej – under 10 MHz rekommenderas LSB','Ja – på 40m gäller alltid USB','Nej – AM är föreskrivet på 40m'],e:'Under 10 MHz rekommenderas LSB. 40m (7 MHz) → LSB.'},
+    {s:'Du vill sända på 21110 kHz med SSB.',q:'Är det tillåtet?',a:'Nej – 21110–21120 kHz tillåter alla lägen utom SSB',o:['Ja – SSB är tillåtet på hela 15m','Nej – 21110–21120 kHz tillåter alla lägen utom SSB','Ja – SSB tillåts från 21070 kHz','Nej – 21110 kHz är ett CW-segment'],e:'21110–21120 kHz är "alla sändningsslag utom SSB" – ett ovanligt undantag.'},
+];
+
+const allQ = {segment:segmentQ, bw:bwQ, qrp:qrpQ, allowed:allowedQ};
+const labels = {segment:'Segment & läge', bw:'Max bandbredd', qrp:'Aktivitet & nödfrekvenser', allowed:'Tillåten sändning'};
+const qS = {segment:null, bw:null, qrp:null, allowed:null};
+
+function showTab(id, btn) {
+    document.querySelectorAll('.tab-section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.tab-nav button').forEach(b=>b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    const m={'segment-tab':'segment','bw-tab':'bw','qrp-tab':'qrp','allowed-tab':'allowed'};
+    if(m[id]&&!qS[m[id]]) renderQuiz(m[id]);
+}
+
+function renderQuiz(t) {
+    if(!qS[t]||qS[t].done) qS[t]={pool:shuffle([...allQ[t]]),idx:0,correct:0,total:0,answered:false,done:false};
+    const s=qS[t], area=document.getElementById(t+'-area');
+    if(s.idx>=s.pool.length){
+        s.done=true;
+        const pct=Math.round((s.correct/s.pool.length)*100);
+        area.innerHTML=`<div class="score-card"><div class="score-big">${pct>=80?'🏆':pct>=60?'👍':'💪'}</div>
+            <div style="font-size:2rem;font-weight:700;color:#2c7a7b">${s.correct}/${s.pool.length}</div>
+            <p class="score-msg">${pct}% rätt — ${pct>=80?'Utmärkt!':pct>=60?'Bra jobbat!':'Kika på lathunden!'}</p>
+            <button class="btn btn-primary" style="background:linear-gradient(135deg,#2c7a7b,#234e52)"
+                onclick="qS['${t}']=null;renderQuiz('${t}')">Försök igen</button></div>`;
+        state[t]={correct:s.correct,total:s.pool.length}; saveState(); updateProgress(); return;
+    }
+    const item=s.pool[s.idx], opts=shuffle(item.o);
+    s.answered=false;
+    const pct=Math.round((s.idx/s.pool.length)*100);
+    area.innerHTML=`
+    <div class="quiz-progress-row">
+        <div class="quiz-progress-bar-outer"><div class="quiz-progress-bar-inner" style="width:${pct}%"></div></div>
+        <span class="quiz-stat">${s.idx}/${s.pool.length}</span>
+    </div>
+    <div class="quiz-card">
+        <div class="quiz-label">${labels[t]} — fråga ${s.idx+1} av ${s.pool.length}</div>
+        <div class="quiz-scenario">${item.s}</div>
+        <div class="quiz-question">${item.q}</div>
+        <div class="quiz-options">
+            ${opts.map((o,i)=>`<button class="quiz-opt" onclick="checkQuiz('${t}','${o.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">
+                <span class="key-hint">${i+1}</span>${o}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback" id="${t}-fb"></div>
+        <div class="quiz-explanation" id="${t}-exp"></div>
+        <button class="quiz-next-btn" id="${t}-next" onclick="qS['${t}'].idx++;renderQuiz('${t}')">Nästa →</button>
+    </div>`;
+}
+
+function checkQuiz(t, chosen) {
+    const s=qS[t]; if(!s||s.answered) return;
+    s.answered=true;
+    const item=s.pool[s.idx], ok=chosen===item.a;
+    if(ok) s.correct++; s.total++;
+    document.querySelectorAll(`#${t}-area .quiz-opt`).forEach(b=>{
+        b.disabled=true;
+        const txt=b.textContent.replace(b.querySelector('.key-hint').textContent,'').trim();
+        if(txt===item.a) b.classList.add('correct');
+        else if(txt===chosen&&!ok) b.classList.add('wrong');
+    });
+    document.getElementById(t+'-fb').innerHTML=ok
+        ?'<span style="color:var(--success-color)">✓ Rätt!</span>'
+        :`<span style="color:var(--danger-color)">✗ Fel</span> — rätt svar: <strong>${item.a}</strong>`;
+    const exp=document.getElementById(t+'-exp');
+    exp.textContent='💡 '+item.e; exp.style.display='block';
+    document.getElementById(t+'-next').style.display='inline-block';
+    state[t]={correct:s.correct,total:s.total}; saveState(); updateProgress();
+}
+
+function updateProgress() {
+    ['segment','bw','qrp','allowed'].forEach(k=>{
+        const s=qS[k]; let pct=0;
+        if(s&&s.total>0) pct=Math.round((s.correct/s.total)*100);
+        else if(state[k]&&state[k].total>0) pct=Math.round((state[k].correct/state[k].total)*100);
+        document.getElementById('bar-'+k).style.width=pct+'%';
+        document.getElementById('pct-'+k).textContent=pct+'%';
+    });
+}
+
+document.addEventListener('keydown',function(e){
+    const active=document.querySelector('.tab-section.active'); if(!active) return;
+    const m={'segment-tab':'segment','bw-tab':'bw','qrp-tab':'qrp','allowed-tab':'allowed'};
+    const t=m[active.id]; if(!t) return;
+    const s=qS[t]; if(!s) return;
+    if(!s.answered){const n=parseInt(e.key);if(n>=1&&n<=4){const b=document.querySelectorAll(`#${t}-area .quiz-opt`);if(b[n-1])checkQuiz(t,b[n-1].textContent.replace(b[n-1].querySelector('.key-hint').textContent,'').trim());}}
+    if(e.key==='Enter'&&s.answered){const b=document.getElementById(t+'-next');if(b)b.click();}
+});
+
+updateProgress();
+</script>
+</body>
+</html>

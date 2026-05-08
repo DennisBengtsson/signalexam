@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signaler & Modulation – Radioskola.se</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%);
+            color: white;
+            padding: 2.5rem 0 2rem;
+            margin-bottom: 2rem;
+        }
+        .page-header h1 { color: white; font-size: 2rem; margin-bottom: 0.4rem; }
+        .page-header p  { color: rgba(255,255,255,0.85); margin: 0; font-size: 1rem; }
+
+        .master-progress-multi {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+        }
+        .mpm-section { display: flex; align-items: center; gap: 0.75rem; }
+        .mpm-label { font-size: 0.8rem; color: var(--text-secondary); min-width: 200px; white-space: nowrap; }
+        .mpm-pct   { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); min-width: 36px; text-align: right; }
+        .progress-bar-outer { flex: 1; height: 12px; background: var(--bg-light); border-radius: 6px; overflow: hidden; }
+        .progress-bar-inner { height: 100%; border-radius: 6px; transition: width 0.5s ease; }
+        .bar-brus  { background: linear-gradient(90deg, #e53e3e, #c53030); }
+        .bar-mod   { background: linear-gradient(90deg, #805ad5, #6b46c1); }
+        .bar-dsp   { background: linear-gradient(90deg, #2b6cb0, #1a365d); }
+
+        .tab-nav {
+            display: flex; gap: 0.4rem; margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color); flex-wrap: wrap;
+        }
+        .tab-nav button {
+            padding: 0.6rem 1rem; border: none; background: none;
+            color: var(--text-secondary); font-size: 0.88rem; cursor: pointer;
+            border-bottom: 3px solid transparent; margin-bottom: -2px;
+            transition: all 0.2s; font-family: inherit;
+        }
+        .tab-nav button:hover  { color: #2b6cb0; }
+        .tab-nav button.active { color: #2b6cb0; border-bottom-color: #2b6cb0; font-weight: 600; }
+        .tab-section { display: none; }
+        .tab-section.active { display: block; }
+
+        /* Lathund tabeller */
+        .ref-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); overflow: hidden;
+            margin-bottom: 1.25rem; box-shadow: var(--shadow-sm);
+        }
+        .ref-card h3 {
+            padding: 0.75rem 1.2rem; margin: 0; font-size: 1rem;
+            background: var(--bg-light); border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .ref-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .ref-table th {
+            background: var(--bg-light); color: var(--text-secondary);
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 0.55rem 1rem; text-align: left; border-bottom: 2px solid var(--border-color);
+        }
+        .ref-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        .ref-table tr:last-child td { border-bottom: none; }
+        .ref-table tr:hover td { background: var(--surface-hover); }
+
+        .tag {
+            display: inline-block; font-size: 0.75rem; font-weight: 700;
+            padding: 2px 8px; border-radius: 10px;
+        }
+        .tag-hog    { background: #c6f6d5; color: #276749; }
+        .tag-mktHog { background: #9ae6b4; color: #1a4731; }
+        .tag-extrem { background: #68d391; color: #1a4731; font-weight: 800; }
+        .tag-mattlig{ background: #feebc8; color: #744210; }
+        .tag-lag    { background: #fed7d7; color: #c53030; }
+        .tag-ja     { background: #bee3f8; color: #1a365d; }
+        .tag-nej    { background: #e2e8f0; color: #4a5568; }
+        .tag-myttHog{ background: #b2f5ea; color: #234e52; }
+
+        .bw-val { font-weight: 700; color: #2b6cb0; font-family: 'Courier New', monospace; }
+        .dt-val { font-weight: 700; color: #805ad5; font-family: 'Courier New', monospace; }
+        .mod-name { font-weight: 700; color: var(--text-primary); }
+
+        .info-box {
+            background: var(--info-bg); border: 1px solid var(--info-border);
+            border-radius: var(--radius-md); padding: 0.85rem 1.1rem;
+            font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.7;
+        }
+
+        .two-col {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .compare-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 1rem 1.25rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .compare-card h4 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+        .compare-card ul { padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; }
+        .compare-card.ssb { border-top: 3px solid #805ad5; }
+        .compare-card.fm  { border-top: 3px solid #2b6cb0; }
+
+        /* Quiz */
+        .quiz-wrap { max-width: 640px; margin: 0 auto; }
+        .quiz-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 2rem 1.5rem;
+            box-shadow: var(--shadow-sm); margin-bottom: 1rem;
+        }
+        .quiz-label { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .quiz-scenario {
+            background: var(--bg-light); border-left: 4px solid #2b6cb0;
+            border-radius: var(--radius-md); padding: 0.9rem 1.1rem;
+            font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem; color: var(--text-primary);
+        }
+        .quiz-question { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; }
+        .quiz-options  { display: grid; gap: 0.65rem; }
+        .quiz-opt {
+            padding: 0.8rem 1rem; border: 2px solid var(--border-color);
+            background: var(--surface); border-radius: var(--radius-md); cursor: pointer;
+            font-size: 0.92rem; font-weight: 500; color: var(--text-primary);
+            transition: all 0.15s; font-family: inherit; text-align: left;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .quiz-opt:hover:not(:disabled) { border-color: #2b6cb0; background: #ebf8ff; }
+        .quiz-opt.correct { border-color: var(--success-color); background: var(--success-bg); color: #276749; }
+        .quiz-opt.wrong   { border-color: var(--danger-color);  background: var(--danger-bg);  color: #c53030; }
+        .quiz-opt:disabled { cursor: default; }
+        .key-hint {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--bg-light); border: 1px solid var(--border-color);
+            border-bottom-width: 2px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;
+            padding: 1px 6px; color: var(--text-secondary); min-width: 22px; flex-shrink: 0;
+        }
+        .quiz-feedback { margin-top: 0.9rem; font-size: 0.92rem; min-height: 1.3em; color: var(--text-secondary); }
+        .quiz-explanation {
+            display: none; margin-top: 0.6rem; font-size: 0.88rem;
+            background: var(--info-bg); border: 1px solid var(--info-border);
+            border-radius: var(--radius-md); padding: 0.75rem 1rem;
+            color: var(--text-secondary); line-height: 1.6;
+        }
+        .quiz-next-btn {
+            display: none; margin-top: 1.1rem; padding: 0.65rem 2rem;
+            background: linear-gradient(135deg, #2b6cb0, #1a365d); color: white;
+            border: none; border-radius: var(--radius-md); font-size: 0.95rem;
+            font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s;
+        }
+        .quiz-next-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .quiz-progress-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+        .quiz-progress-bar-outer { flex: 1; height: 8px; background: var(--bg-light); border-radius: 4px; overflow: hidden; }
+        .quiz-progress-bar-inner { height: 100%; background: #2b6cb0; border-radius: 4px; transition: width 0.3s; }
+        .quiz-stat { font-size: 0.82rem; color: var(--text-secondary); white-space: nowrap; }
+        .score-card {
+            background: var(--surface); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; box-shadow: var(--shadow-sm);
+        }
+        .score-big { font-size: 3rem; }
+        .score-msg { color: var(--text-secondary); margin: 0.5rem 0 1.5rem; }
+
+        @media (max-width: 600px) {
+            .two-col { grid-template-columns: 1fr; }
+            .mpm-label { min-width: 130px; }
+            .ref-table { font-size: 0.78rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="container">
+        <h1>📡 Signaler &amp; Modulation</h1>
+        <p>Lektion T2 – Spektrum, brus, digital och analog modulation, SDR</p>
+    </div>
+</header>
+
+<main>
+<div class="container">
+
+    <div class="master-progress-multi">
+        <div class="mpm-section"><span class="mpm-label">Signaler &amp; brus</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-brus" id="bar-brus" style="width:0%"></div></div><span class="mpm-pct" id="pct-brus">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Modulationsmetoder</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-mod" id="bar-mod" style="width:0%"></div></div><span class="mpm-pct" id="pct-mod">0%</span></div>
+        <div class="mpm-section"><span class="mpm-label">Digital signalbehandling</span><div class="progress-bar-outer"><div class="progress-bar-inner bar-dsp" id="bar-dsp" style="width:0%"></div></div><span class="mpm-pct" id="pct-dsp">0%</span></div>
+    </div>
+
+    <nav class="tab-nav">
+        <button class="active" onclick="showTab('lathund',this)">📐 Lathund</button>
+        <button onclick="showTab('brus-tab',this)">🌊 Signaler &amp; brus</button>
+        <button onclick="showTab('mod-tab',this)">📻 Modulationsmetoder</button>
+        <button onclick="showTab('dsp-tab',this)">🖥️ Digital signalbehandling</button>
+    </nav>
+
+    <!-- ==================== LATHUND ==================== -->
+    <div id="lathund" class="tab-section active">
+
+        <div class="info-box">
+            💡 <strong>Kärnprincipen:</strong> Lägre datatakt → smalare bandbredd → smalare filter → mindre brus → bättre SNR → bättre räckvidd. Allt hänger ihop.
+        </div>
+
+        <!-- Digitala modulationsmetoder -->
+        <div class="ref-card">
+            <h3>Digitala modulationsmetoder – jämförelse</h3>
+            <div style="overflow-x:auto">
+            <table class="ref-table">
+                <tr>
+                    <th>Metod</th>
+                    <th>Modulation</th>
+                    <th>Datatakt</th>
+                    <th>Bandbredd</th>
+                    <th>Störtålighet</th>
+                </tr>
+                <tr>
+                    <td class="mod-name">CW (Telegrafi)</td>
+                    <td>OOK</td>
+                    <td class="dt-val">5–15 bit/s</td>
+                    <td class="bw-val">&lt;100 Hz</td>
+                    <td><span class="tag tag-hog">Hög</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">RTTY</td>
+                    <td>FSK</td>
+                    <td class="dt-val">45 bit/s</td>
+                    <td class="bw-val">200 Hz</td>
+                    <td><span class="tag tag-mattlig">Måttlig</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">PSK-31</td>
+                    <td>PSK</td>
+                    <td class="dt-val">31 bit/s</td>
+                    <td class="bw-val">100 Hz</td>
+                    <td><span class="tag tag-mattlig">Måttlig</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">PSK-63</td>
+                    <td>QPSK</td>
+                    <td class="dt-val">63 bit/s</td>
+                    <td class="bw-val">100 Hz</td>
+                    <td><span class="tag tag-lag">Låg</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">FT-4</td>
+                    <td>4-FSK</td>
+                    <td class="dt-val">12 bit/s</td>
+                    <td class="bw-val">100 Hz</td>
+                    <td><span class="tag tag-hog">Hög</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">FT-8</td>
+                    <td>8-FSK</td>
+                    <td class="dt-val">6 bit/s</td>
+                    <td class="bw-val">50 Hz</td>
+                    <td><span class="tag tag-mktHog">Mkt hög</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">WSPR</td>
+                    <td>4-FSK</td>
+                    <td class="dt-val">0,4 bit/s</td>
+                    <td class="bw-val">6 Hz</td>
+                    <td><span class="tag tag-extrem">Extremt hög</span></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+
+        <!-- Analoga modulationsmetoder -->
+        <div class="ref-card">
+            <h3>Analoga modulationsmetoder – jämförelse</h3>
+            <div style="overflow-x:auto">
+            <table class="ref-table">
+                <tr>
+                    <th>Metod</th>
+                    <th>Typisk bandbredd</th>
+                    <th>Ljudkvalitet</th>
+                    <th>Tröskeleffekt</th>
+                </tr>
+                <tr>
+                    <td class="mod-name">AM (amplitudmodulation)</td>
+                    <td class="bw-val">6 kHz</td>
+                    <td><span class="tag tag-mattlig">Måttlig</span></td>
+                    <td><span class="tag tag-nej">Nej</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">SSB (enkelt sidband)</td>
+                    <td class="bw-val">3 kHz</td>
+                    <td><span class="tag tag-mattlig">Måttlig</span></td>
+                    <td><span class="tag tag-nej">Nej</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">NBFM (amatörradio)</td>
+                    <td class="bw-val">12 kHz</td>
+                    <td><span class="tag tag-hog">Hög</span></td>
+                    <td><span class="tag tag-ja">Ja</span></td>
+                </tr>
+                <tr>
+                    <td class="mod-name">WBFM (rundradio)</td>
+                    <td class="bw-val">200 kHz</td>
+                    <td><span class="tag tag-myttHog">Mycket hög</span></td>
+                    <td><span class="tag tag-ja">Ja</span></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+
+        <!-- SSB vs FM -->
+        <div class="two-col">
+            <div class="compare-card ssb">
+                <h4>SSB – när och varför</h4>
+                <ul>
+                    <li>Svaga signaler / kraftiga störningar</li>
+                    <li>Ont om bandbredd</li>
+                    <li>Kortvåg (HF)</li>
+                    <li>Minimerar sändareffekten</li>
+                    <li>Ingen bärvåg sänds i tystnad</li>
+                    <li>Kräver noggrann frekvensinställning</li>
+                    <li>Ingen tröskeleffekt – gradvis förbättring</li>
+                </ul>
+            </div>
+            <div class="compare-card fm">
+                <h4>FM – när och varför</h4>
+                <ul>
+                    <li>Starka signaler / god SNR</li>
+                    <li>Gott om bandbredd</li>
+                    <li>VHF/UHF</li>
+                    <li>Konstant sändareffekt (även i tystnad)</li>
+                    <li>God ljudkvalitet, enkelt handhavande</li>
+                    <li>Tydlig tröskeleffekt (capture)</li>
+                    <li>Under tröskeln – inget ljud alls</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Begrepp -->
+        <div class="ref-card">
+            <h3>Viktiga begrepp</h3>
+            <table class="ref-table">
+                <tr><th>Begrepp</th><th>Förklaring</th></tr>
+                <tr><td><strong>Bärvåg</strong></td><td>Ren sinuston som bestämmer sändningsfrekvensen. Modulatorn lägger information på den.</td></tr>
+                <tr><td><strong>Bandbredd</strong></td><td>Det frekvensområde en signal tar upp. Mer information = bredare signal.</td></tr>
+                <tr><td><strong>SNR</strong></td><td>Signal-Brus-Förhållande. Hur stark signalen är jämfört med bruset. Högt SNR = bra mottagning.</td></tr>
+                <tr><td><strong>Termiskt brus</strong></td><td>"Vitt brus" – finns i all elektronik, beror på värme. Innehåller alla frekvenser.</td></tr>
+                <tr><td><strong>Tröskeleffekt</strong></td><td>FM-fenomen: under tröskeln inget ljud alls, över tröskeln mycket god kvalitet.</td></tr>
+                <tr><td><strong>OOK</strong></td><td>On-Off Keying – CW. Bärvågen slås på/av med telegrafinyckel.</td></tr>
+                <tr><td><strong>FSK</strong></td><td>Frequency Shift Keying – 1:or och 0:or representeras av två olika frekvenser.</td></tr>
+                <tr><td><strong>PSK</strong></td><td>Phase Shift Keying – 1:or och 0:or representeras av fasförskjutning av sinussignalen.</td></tr>
+                <tr><td><strong>SDR</strong></td><td>Software Defined Radio – antennsignalen A/D-omvandlas direkt, all filtrering sker i mjukvara.</td></tr>
+                <tr><td><strong>MGM</strong></td><td>Maskin-Genererad Mode – automatiskt sändningsprotokoll, t.ex. FT8 och WSPR.</td></tr>
+            </table>
+        </div>
+
+    </div><!-- /lathund -->
+
+    <!-- QUIZ-SEKTIONER -->
+    <div id="brus-tab" class="tab-section"><div class="quiz-wrap"><div id="brus-area"></div></div></div>
+    <div id="mod-tab"  class="tab-section"><div class="quiz-wrap"><div id="mod-area"></div></div></div>
+    <div id="dsp-tab"  class="tab-section"><div class="quiz-wrap"><div id="dsp-area"></div></div></div>
+
+</div>
+</main>
+
+<script>
+const state = JSON.parse(localStorage.getItem('signaler_mod_state') || '{}');
+function saveState() { localStorage.setItem('signaler_mod_state', JSON.stringify(state)); }
+function shuffle(a) { const b=[...a]; for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];} return b; }
+
+// ============================================================
+// FRÅGOR – DEL 1: SIGNALER & BRUS
+// ============================================================
+const brusQ = [
+    {
+        s: 'Du lyssnar på en radiostation som plötsligt drunknar i ett jämnt brus som finns på alla frekvenser.',
+        q: 'Vilket typ av brus är det troligen?',
+        a: 'Termiskt brus – finns i all elektronik och innehåller alla frekvenser',
+        o: ['Störning från en annan radiostation','Termiskt brus – finns i all elektronik och innehåller alla frekvenser','Brus från en specifik elektrisk apparat','Atmosfäriskt brus från åska'],
+        e: 'Termiskt brus (vitt brus) uppstår av värme i elektronik och innehåller alla frekvenser. Det är bakgrundsbruset man alltid har i en mottagare – "myrornas krig" på en TV utan antenn.'
+    },
+    {
+        s: 'Du vill förbättra mottagningen av en svag signal utan att öka sändareffekten.',
+        q: 'Vad är den mest effektiva åtgärden?',
+        a: 'Minska mottagarfiltrets bandbredd så att mindre brus släpps igenom',
+        o: ['Byt till en längre antenn','Minska mottagarfiltrets bandbredd så att mindre brus släpps igenom','Öka volymen i mottagaren','Byt sändningsfrekvens'],
+        e: 'Mottagarfiltret bestämmer hur mycket brus som släpps igenom. Smalare filter = mindre brus = bättre SNR, även utan starkare signal. Det är grundprincipen bakom smalbandiga lägen som CW och FT8.'
+    },
+    {
+        s: 'En signal har bandbredden B = 3 kHz.',
+        q: 'Vad händer med SNR om du byter till ett mottagarfilter med B = 300 Hz?',
+        a: 'SNR förbättras – smalare filter släpper in mindre brus',
+        o: ['SNR försämras – smalare filter klipps av signalen','SNR förbättras – smalare filter släpper in mindre brus','SNR förblir oförändrat – filter påverkar inte brus','SNR beror enbart på sändningseffekten'],
+        e: 'Smalare filter = mindre brusinskläpp = bättre SNR. Förutsatt att signalen själv ryms inom det smalare filtret.'
+    },
+    {
+        s: 'Du driver en dator nära din radiostation och märker av störningar.',
+        q: 'Vad kallas denna typ av störning?',
+        a: 'Man-made noise – störningar från elektriska apparater i omgivningen',
+        o: ['Termiskt brus','Kosmisk bakgrundsstrålning','Man-made noise – störningar från elektriska apparater i omgivningen','Fasfluktuationer i bärvågen'],
+        e: 'Elektriska apparater – datorer, laddare, LED-lampor, solcellsinverterare – skapar elektromagnetiska störningar som kallas "man-made noise". Det är en av de vanligaste störkällorna för radioamatörer.'
+    },
+    {
+        s: 'En ren sinuston sänds utan att bära någon information.',
+        q: 'Vilken bandbredd har signalen?',
+        a: 'Noll – en ren sinuston är en enda frekvens utan bandbredd',
+        o: ['200 Hz','Noll – en ren sinuston är en enda frekvens utan bandbredd','3 kHz','Beror på sändningseffekten'],
+        e: 'En perfekt sinuston har ingen bandbredd – den är en enda punkt i frekvensspektrumet. Det är när information läggs på (modulation) som signalen breder ut sig i frekvens.'
+    },
+    {
+        s: 'Du ökar datatakten i en digital sändning.',
+        q: 'Vad händer med bandbredden och SNR?',
+        a: 'Bandbredden ökar och SNR försämras',
+        o: ['Bandbredden minskar och SNR förbättras','Bandbredden ökar och SNR försämras','Bandbredden är oförändrad, bara datatakten ändras','SNR förbättras eftersom signalen är starkare'],
+        e: 'Högre datatakt kräver bredare bandbredd. Bredare filter släpper in mer brus. Mer brus innebär sämre SNR – trots att signalstyrkan är densamma.'
+    },
+    {
+        s: 'Varför kan FT8 kommunicera på extremt svaga signaler som är under brusnivån?',
+        q: 'Välj det bästa svaret.',
+        a: 'Mycket låg datatakt ger extremt smal bandbredd och därmed mycket litet brus i mottagarfiltret',
+        o: ['FT8 använder mycket hög sändareffekt','Mycket låg datatakt ger extremt smal bandbredd och därmed mycket litet brus i mottagarfiltret','FT8 kräver inga antenner','FT8 är immunt mot brus tack vare kryptering'],
+        e: 'FT8 har 50 Hz bandbredd och 6 bit/s datatakt. Det extremt smala filtret i mottagaren utesluter nästan allt brus. Dessutom används felkorrigeringskoder som ytterligare förbättrar mottagningen.'
+    },
+    {
+        s: 'Vad menas med Signal-Brus-Förhållandet (SNR)?',
+        q: 'Välj den bästa beskrivningen.',
+        a: 'Förhållandet mellan signalstyrkan och brusstyrkan i mottagaren',
+        o: ['Förhållandet mellan sändar- och mottagareffekt','Förhållandet mellan signalstyrkan och brusstyrkan i mottagaren','Skillnaden i frekvens mellan signal och brus','Antal decibel som signalen är starkare än maximal tillåten effekt'],
+        e: 'SNR = signalstyrka / brusstyrka. Högt SNR = signalen dominerar över bruset = bra mottagning. Lågt SNR = bruset dominerar = svår eller omöjlig mottagning.'
+    },
+    {
+        s: 'Frekvensmultiplex löste ett tidigt problem i radions historia.',
+        q: 'Vilket problem löste det?',
+        a: 'Problemet att skilja olika radiosändares signaler från varandra',
+        o: ['Problemet med svaga signaler','Problemet att skilja olika radiosändares signaler från varandra','Problemet med för kort räckvidd','Problemet med hög tillverkningskostnad'],
+        e: 'Gnistsändare skapade signaler som spred sig på alla frekvenser. Med frekvensmultiplex tilldelar varje sändare sin egen frekvens och mottagare kan filtrera fram just den frekvensen.'
+    },
+    {
+        s: 'Varför används smalast möjliga mottagarfilter i radiokommunikation?',
+        q: 'Välj rätt svar.',
+        a: 'För att minimera mängden brus som passerar filtret och förbättra SNR',
+        o: ['För att maximera bandbredden','För att minimera mängden brus som passerar filtret och förbättra SNR','För att kunna ta emot fler stationer samtidigt','För att minska sändareffekten'],
+        e: 'Smalt filter = lite brus = bättre SNR. Filtret ska vara precis så brett att den egna signalen passerar utan förvanskning – inte bredare.'
+    },
+];
+
+// ============================================================
+// FRÅGOR – DEL 2: MODULATIONSMETODER
+// ============================================================
+const modQ = [
+    {
+        s: 'Du ska kommunicera på kortvåg under svåra förhållanden med kraftiga störningar och svaga signaler.',
+        q: 'Vilken modulationsmetod är bäst lämpad?',
+        a: 'SSB – minimerar effektanvändning och klarar sig bra vid lågt SNR',
+        o: ['WBFM – ger bäst ljudkvalitet','SSB – minimerar effektanvändning och klarar sig bra vid lågt SNR','AM – enkelt handhavande','NBFM – standard på kortvåg'],
+        e: 'SSB används på kortvåg när SNR är lågt. Ingen bärvåg sänds i onödan, halva bandbredden jämfört med AM, och mottagaren klarar gradvis försämring utan tröskeleffekt.'
+    },
+    {
+        s: 'En lokal FM-repeater på 2m börjar höras sämre och sämre.',
+        q: 'Vad händer med ljudkvaliteten ju svagare signalen blir?',
+        a: 'Ljudkvaliteten är god tills signalen når en tröskel, sedan försvinner den abrupt',
+        o: ['Ljudkvaliteten försämras gradvis hela vägen','Ljudkvaliteten är god tills signalen når en tröskel, sedan försvinner den abrupt','Ljudkvaliteten förbättras när signalen blir svagare','FM är immunt mot signalstyrkeförändringar'],
+        e: 'FM har en tydlig tröskeleffekt ("capture"). Ovanför tröskeln: mycket god kvalitet. Under tröskeln: inget användbart ljud. Det är annorlunda mot SSB som försämras gradvis.'
+    },
+    {
+        s: 'CW (telegrafi) kallas "OOK" – On-Off Keying.',
+        q: 'Vad innebär det?',
+        a: 'Bärvågen slås på och av med en telegrafinyckel för att bilda korta och långa toner',
+        o: ['Bärvågen moduleras med ett digitalt protokoll','Bärvågen slås på och av med en telegrafinyckel för att bilda korta och långa toner','Bärvågens frekvens skiftar mellan två värden','Bärvågens fas förskjuts för varje bit'],
+        e: 'CW = On-Off Keying. Bärvågen är antingen på (ton) eller av (tystnad). Korta och långa toner bildar morsekod. Trots enkelheten ger den låga bandbredden (<100 Hz) hög störtålighet.'
+    },
+    {
+        s: 'Vad är skillnaden mellan FSK och PSK?',
+        q: 'Välj den korrekta beskrivningen.',
+        a: 'FSK skiftar frekvensen, PSK skiftar fasen för att representera 1:or och 0:or',
+        o: ['FSK skiftar amplituden, PSK skiftar frekvensen','FSK skiftar frekvensen, PSK skiftar fasen för att representera 1:or och 0:or','FSK och PSK är samma sak med olika namn','FSK är analogt, PSK är digitalt'],
+        e: 'FSK (Frequency Shift Keying) = 1:or och 0:or representeras av olika frekvenser. PSK (Phase Shift Keying) = 1:or och 0:or representeras av fasförskjutning av samma sinusvåg.'
+    },
+    {
+        s: 'Varför är WSPR extremt störtåligt jämfört med t.ex. SSB?',
+        q: 'Välj det bästa svaret.',
+        a: 'WSPR har bandbredden 6 Hz – det smalaste filtret utesluter nästan allt brus',
+        o: ['WSPR sänder med mycket hög effekt','WSPR har bandbredden 6 Hz – det smalaste filtret utesluter nästan allt brus','WSPR krypterar signalen','WSPR använder speciella antenner'],
+        e: 'WSPR har 0,4 bit/s datatakt och 6 Hz bandbredd. Det är extremt smalt. Mottagarfiltret slipper igenom nästan inget brus, vilket ger extremt hög störtålighet.'
+    },
+    {
+        s: 'Vad är fördelen med SSB jämfört med AM?',
+        q: 'Välj alla korrekta fördelar.',
+        a: 'Halva bandbredden och ingen effekt går åt till bärvågen',
+        o: ['Enklare mottagare krävs','Halva bandbredden och ingen effekt går åt till bärvågen','Bättre ljudkvalitet än AM','SSB kräver ingen frekvensinställning'],
+        e: 'SSB tar bort bärvågen och ett sidband. Resultatet: halva bandbredden (3 kHz vs 6 kHz) och all sändareffekt går till informationssignalen – inte till en "onödig" bärvåg.'
+    },
+    {
+        s: 'RTTY använder FSK med ett frekvensskift på 170 Hz och Baudot-koden.',
+        q: 'Hur många bitar representerar ett tecken i Baudot-koden?',
+        a: '5 bitar',
+        o: ['3 bitar','5 bitar','7 bitar','8 bitar'],
+        e: 'Baudot-koden använder 5 bitar per tecken – vilket ger 32 möjliga kombinationer. Med skifttecken (bokstäver/siffror) kan man hantera alla vanliga tecken.'
+    },
+    {
+        s: 'FT8 kräver att sändare och mottagare är synkroniserade och att sändningar börjar vid exakta klockslag.',
+        q: 'Vad kallas denna typ av automatiserat protokoll?',
+        a: 'MGM – Maskin-Genererad Mode',
+        o: ['CW – Continuous Wave','MGM – Maskin-Genererad Mode','SSB – Single SideBand','SDR – Software Defined Radio'],
+        e: 'MGM (Maskin-Genererad Mode) är automatiserade protokoll som FT8 och WSPR där datorn sköter sändning och mottagning i exakta 15-sekundersintervall. Det möjliggör kommunikation under brusnivån.'
+    },
+    {
+        s: 'Du vill köra FM-trafik på 2m-bandet med en handhållen radio.',
+        q: 'Vilken typisk bandbredd har NBFM som används i amatörradio?',
+        a: 'Cirka 10–12 kHz',
+        o: ['Cirka 200 Hz','Cirka 3 kHz','Cirka 10–12 kHz','Cirka 200 kHz'],
+        e: 'NBFM (Narrowband FM) används i amatörradio och har ca 10–12 kHz bandbredd. WBFM (Wideband FM) som i rundradio har ca 200 kHz men ger också mycket bättre ljudkvalitet.'
+    },
+    {
+        s: 'Varför sänder FM-sändaren alltid full effekt, även när det är tyst?',
+        q: 'Vad är orsaken?',
+        a: 'FM modulerar frekvensen – amplituden är alltid konstant, oavsett om det finns ljud eller ej',
+        o: ['FM-sändare är konstruerade för maximal räckvidd alltid','FM modulerar frekvensen – amplituden är alltid konstant, oavsett om det finns ljud eller ej','FM-mottagare kräver konstant signal för att hålla inställningen','Det beror på en designmiss som aldrig rättats'],
+        e: 'I FM är det frekvensen som moduleras – amplituden förblir konstant hela tiden. Jämför med SSB där ingen signal sänds i tystnad, vilket sparar effekt.'
+    },
+    {
+        s: 'PSK-63 har lägre störtålighet än PSK-31 trots att de har samma bandbredd.',
+        q: 'Varför?',
+        a: 'Dubbel datatakt kräver bredare filter i mottagaren vilket släpper in mer brus',
+        o: ['PSK-63 är en äldre standard med sämre kod','Dubbel datatakt kräver bredare filter i mottagaren vilket släpper in mer brus','PSK-63 använder en sämre antenn','PSK-31 har inbyggd felkorrigering, PSK-63 saknar det'],
+        e: 'PSK-63 har dubbelt så hög datatakt som PSK-31. Bredare signal = bredare filter behövs = mer brus passerar = sämre SNR = sämre störtålighet.'
+    },
+    {
+        s: 'Varför är SSB olämpligt för FM-repeatertrafik på 2m?',
+        q: 'Välj det bästa svaret.',
+        a: 'SSB kräver noggrann frekvensinställning vilket är opraktiskt med handhållna FM-radioapparater',
+        o: ['SSB är förbjudet på VHF','SSB kräver noggrann frekvensinställning vilket är opraktiskt med handhållna FM-radioapparater','SSB är för dyrt att implementera','SSB fungerar bara på kortvåg'],
+        e: 'SSB kräver att mottagarens frekvens är exakt inställd – annars låter rösten förvrängd ("Kalle Anka"). På FM-repeatrar med enkla handhållna apparater är detta opraktiskt. FM är enklare att hantera.'
+    },
+];
+
+// ============================================================
+// FRÅGOR – DEL 3: DIGITAL SIGNALBEHANDLING
+// ============================================================
+const dspQ = [
+    {
+        s: 'En SDR-mottagare (Software Defined Radio) tar emot signaler.',
+        q: 'Vad är grundidén med SDR?',
+        a: 'Antennsignalen A/D-omvandlas direkt och all filtrering sker i mjukvara',
+        o: ['SDR är en extra kraftfull analog mottagare','Antennsignalen A/D-omvandlas direkt och all filtrering sker i mjukvara','SDR kräver speciella antenner','SDR är ett nytt namn för FM-radio'],
+        e: 'SDR digitaliserar antennsignalen direkt med en A/D-omvandlare. Alla filter, demodulatorer och signalbehandling implementeras sedan i mjukvara – ofta i en vanlig dator.'
+    },
+    {
+        s: 'A/D-omvandling sker i två steg.',
+        q: 'Vad heter de två stegen?',
+        a: 'Sampling och kvantisering',
+        o: ['Filtrering och förstärkning','Sampling och kvantisering','Modulation och demodulation','Kodning och avkodning'],
+        e: 'Sampling: signalen avläses vid regelbundna tidpunkter. Kvantisering: varje avläsning avrundas till närmaste av ett begränsat antal nivåer (uttryckt i bitar).'
+    },
+    {
+        s: 'En A/D-omvandlare ska sampla en talsignal med högsta frekvens 3 kHz.',
+        q: 'Vilken är den lägsta tillåtna samplingsfrekvensen enligt Nyquists teorem?',
+        a: '6 kHz (dubbelt så hög som den högsta frekvensen)',
+        o: ['3 kHz (samma som signalens frekvens)','6 kHz (dubbelt så hög som den högsta frekvensen)','12 kHz (fyra gånger signalens frekvens)','1,5 kHz (hälften av signalens frekvens)'],
+        e: 'Nyquists samplingsteorem: samplingsfrekvensen måste vara minst dubbelt så hög som den högsta frekvensen i signalen för att kunna återskapa den perfekt.'
+    },
+    {
+        s: 'En A/D-omvandlare har 8 bitar per sample.',
+        q: 'Hur många olika spänningsnivåer kan den representera?',
+        a: '256 nivåer (2⁸)',
+        o: ['8 nivåer','64 nivåer','256 nivåer (2⁸)','65 536 nivåer'],
+        e: '2⁸ = 256. En 16-bitars omvandlare ger 2¹⁶ = 65 536 nivåer – mycket noggrannare representation av signalen och lägre kvantiseringsbrus.'
+    },
+    {
+        s: 'Varför kan en SDR visa ett "vattenfall" av hela kortvågsbandet samtidigt?',
+        q: 'Vad möjliggör detta?',
+        a: 'Snabb A/D-omvandling (100 Msample/s) digitaliserar ett brett frekvensband som sedan bearbetas i mjukvara',
+        o: ['SDR har tusentals separata mottagare','Snabb A/D-omvandling (100 Msample/s) digitaliserar ett brett frekvensband som sedan bearbetas i mjukvara','SDR använder speciella bredbandsantenner','Vattenfall kräver speciell hårdvara utöver SDR'],
+        e: 'Med 100 Msample/s kan hela kortvågsbandet digitaliseras på en gång. Mjukvaran bearbetar sedan det digitala dataflödet och kan visa alla signaler i bandet samtidigt.'
+    },
+    {
+        s: 'Digitalt tal (DMR, D-Star, C4FM) jämfört med analogt NBFM.',
+        q: 'Vad stämmer om digital talmodulation?',
+        a: 'Samma bandbredd som NBFM men bättre störtålighet',
+        o: ['Halva bandbredden av NBFM','Dubbla bandbredden av NBFM','Samma bandbredd som NBFM men bättre störtålighet','Ingen tröskeleffekt till skillnad från FM'],
+        e: 'Digital talmodulation (DMR, D-Star, C4FM) har 6–12 kHz bandbredd – samma som NBFM. Men tack vare digital kodning och felkorrigering är störtåligheten bättre.'
+    },
+    {
+        s: 'Vad är den stora fördelen med digital signalbehandling (DSP) jämfört med analog?',
+        q: 'Välj det bästa svaret.',
+        a: 'All signalbehandling kan ske i mjukvara som kan uppdateras och anpassas',
+        o: ['Digital signalbehandling är alltid snabbare','All signalbehandling kan ske i mjukvara som kan uppdateras och anpassas','Digital signalbehandling kräver ingen ström','Digital signalbehandling är billigare att tillverka'],
+        e: 'Mjukvara kan uppdateras, bytas ut och anpassas utan att byta hårdvara. Digitala system kan också reproduceras exakt utan intrimning – ett SDR-filter är identiskt i varje exemplar.'
+    },
+    {
+        s: 'Fler bitar per sample i en A/D-omvandlare ger vad?',
+        q: 'Välj rätt svar.',
+        a: 'Noggrannare representation av signalen och lägre kvantiseringsbrus',
+        o: ['Högre samplingsfrekvens','Noggrannare representation av signalen och lägre kvantiseringsbrus','Bredare bandbredd','Kortare fördröjning'],
+        e: 'Fler bitar = fler möjliga nivåer = noggrannare avbildning av signalens amplitud = lägre kvantiseringsbrus. En 16-bitars omvandlare är betydligt noggrannare än en 8-bitars.'
+    },
+];
+
+const allQ    = { brus: brusQ, mod: modQ, dsp: dspQ };
+const labels  = { brus: 'Signaler & brus', mod: 'Modulationsmetoder', dsp: 'Digital signalbehandling' };
+const qS      = { brus: null, mod: null, dsp: null };
+
+function showTab(id, btn) {
+    document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    const m = {'brus-tab':'brus','mod-tab':'mod','dsp-tab':'dsp'};
+    if (m[id] && !qS[m[id]]) renderQuiz(m[id]);
+}
+
+function renderQuiz(t) {
+    if (!qS[t] || qS[t].done) {
+        qS[t] = { pool: shuffle([...allQ[t]]), idx:0, correct:0, total:0, answered:false, done:false };
+    }
+    const s = qS[t];
+    const area = document.getElementById(t+'-area');
+    if (s.idx >= s.pool.length) {
+        s.done = true;
+        const pct = Math.round((s.correct/s.pool.length)*100);
+        area.innerHTML = `<div class="score-card">
+            <div class="score-big">${pct>=80?'🏆':pct>=60?'👍':'💪'}</div>
+            <div style="font-size:2rem;font-weight:700;color:#2b6cb0">${s.correct}/${s.pool.length}</div>
+            <p class="score-msg">${pct}% rätt — ${pct>=80?'Utmärkt!':pct>=60?'Bra jobbat!':'Kika på lathunden och försök igen!'}</p>
+            <button class="btn btn-primary" style="background:linear-gradient(135deg,#2b6cb0,#1a365d)"
+                onclick="qS['${t}']=null;renderQuiz('${t}')">Försök igen</button>
+        </div>`;
+        state[t] = {correct:s.correct,total:s.pool.length}; saveState(); updateProgress(); return;
+    }
+    const item = s.pool[s.idx];
+    const opts = shuffle(item.o);
+    s.answered = false;
+    const pct = Math.round((s.idx/s.pool.length)*100);
+    area.innerHTML = `
+    <div class="quiz-progress-row">
+        <div class="quiz-progress-bar-outer"><div class="quiz-progress-bar-inner" style="width:${pct}%"></div></div>
+        <span class="quiz-stat">${s.idx}/${s.pool.length}</span>
+    </div>
+    <div class="quiz-card">
+        <div class="quiz-label">${labels[t]} — fråga ${s.idx+1} av ${s.pool.length}</div>
+        <div class="quiz-scenario">${item.s}</div>
+        <div class="quiz-question">${item.q}</div>
+        <div class="quiz-options">
+            ${opts.map((o,i) => `<button class="quiz-opt" onclick="checkQuiz('${t}','${o.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">
+                <span class="key-hint">${i+1}</span>${o}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback" id="${t}-fb"></div>
+        <div class="quiz-explanation" id="${t}-exp"></div>
+        <button class="quiz-next-btn" id="${t}-next" onclick="qS['${t}'].idx++;renderQuiz('${t}')">Nästa →</button>
+    </div>`;
+}
+
+function checkQuiz(t, chosen) {
+    const s = qS[t]; if (!s || s.answered) return;
+    s.answered = true;
+    const item = s.pool[s.idx];
+    const ok = chosen === item.a;
+    if (ok) s.correct++;
+    s.total++;
+    document.querySelectorAll(`#${t}-area .quiz-opt`).forEach(b => {
+        b.disabled = true;
+        const txt = b.textContent.replace(b.querySelector('.key-hint').textContent,'').trim();
+        if (txt === item.a) b.classList.add('correct');
+        else if (txt === chosen && !ok) b.classList.add('wrong');
+    });
+    document.getElementById(t+'-fb').innerHTML = ok
+        ? '<span style="color:var(--success-color)">✓ Rätt!</span>'
+        : `<span style="color:var(--danger-color)">✗ Fel</span> — rätt svar: <strong>${item.a}</strong>`;
+    const exp = document.getElementById(t+'-exp');
+    exp.textContent = '💡 ' + item.e;
+    exp.style.display = 'block';
+    document.getElementById(t+'-next').style.display = 'inline-block';
+    state[t] = {correct:s.correct, total:s.total}; saveState(); updateProgress();
+}
+
+function updateProgress() {
+    ['brus','mod','dsp'].forEach(k => {
+        const s = qS[k]; let pct = 0;
+        if (s && s.total > 0) pct = Math.round((s.correct/s.total)*100);
+        else if (state[k] && state[k].total > 0) pct = Math.round((state[k].correct/state[k].total)*100);
+        document.getElementById('bar-'+k).style.width = pct+'%';
+        document.getElementById('pct-'+k).textContent = pct+'%';
+    });
+}
+
+document.addEventListener('keydown', function(e) {
+    const active = document.querySelector('.tab-section.active');
+    if (!active) return;
+    const m = {'brus-tab':'brus','mod-tab':'mod','dsp-tab':'dsp'};
+    const t = m[active.id]; if (!t) return;
+    const s = qS[t]; if (!s) return;
+    if (!s.answered) {
+        const n = parseInt(e.key);
+        if (n >= 1 && n <= 4) {
+            const btns = document.querySelectorAll(`#${t}-area .quiz-opt`);
+            if (btns[n-1]) checkQuiz(t, btns[n-1].textContent.replace(btns[n-1].querySelector('.key-hint').textContent,'').trim());
+        }
+    }
+    if (e.key === 'Enter' && s.answered) {
+        const btn = document.getElementById(t+'-next');
+        if (btn) btn.click();
+    }
+});
+
+updateProgress();
+</script>
+</body>
+</html>

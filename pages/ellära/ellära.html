@@ -137,6 +137,7 @@
         .lathund-section { margin-bottom: 1.5rem; }
         .lathund-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); padding: 0.75rem 1rem; background: var(--bg-light); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
         .formula-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; font-size: 0.9rem; font-weight: 700; font-family: 'Georgia', serif; }
+        .badge-abc  { background: #e2e8f0; color: #2d3748; font-size: 0.65rem; }
         .badge-ohm  { background: #e9d8fd; color: #553c9a; }
         .badge-eff  { background: #feebc8; color: #744210; }
         .badge-kab  { background: #fed7d7; color: #c53030; }
@@ -197,6 +198,39 @@
 
     <!-- LATHUND -->
     <div id="lathund" class="tab-section active">
+
+        <!-- GRUNDBEGREPP – NY SEKTION -->
+        <div class="lathund-section">
+            <div class="lathund-title"><span class="formula-badge badge-abc">ABC</span> Grundbegrepp</div>
+            <div class="ref-table-card"><h3>Elektriska storheter</h3>
+                <table class="ref-table">
+                    <tr><th>Begrepp</th><th>Symbol</th><th>Enhet</th><th>Förkortning</th></tr>
+                    <tr><td><strong>Spänning</strong></td><td class="ref-sym">U</td><td>Volt</td><td class="ref-sym">V</td></tr>
+                    <tr><td><strong>Ström</strong></td><td class="ref-sym">I</td><td>Ampere</td><td class="ref-sym">A</td></tr>
+                    <tr><td><strong>Resistans</strong></td><td class="ref-sym">R</td><td>Ohm</td><td class="ref-sym">Ω</td></tr>
+                    <tr><td><strong>Effekt</strong></td><td class="ref-sym">P</td><td>Watt</td><td class="ref-sym">W</td></tr>
+                    <tr><td><strong>Energi</strong></td><td class="ref-sym">E</td><td>Wattimme / Joule</td><td class="ref-sym">Wh / J</td></tr>
+                    <tr><td><strong>Frekvens</strong></td><td class="ref-sym">f</td><td>Hertz</td><td class="ref-sym">Hz</td></tr>
+                    <tr><td><strong>Våglängd</strong></td><td class="ref-sym">λ</td><td>Meter</td><td class="ref-sym">m</td></tr>
+                    <tr><td><strong>Periodtid</strong></td><td class="ref-sym">T</td><td>Sekund</td><td class="ref-sym">s</td></tr>
+                    <tr><td><strong>Kapacitans</strong></td><td class="ref-sym">C</td><td>Farad</td><td class="ref-sym">F</td></tr>
+                    <tr><td><strong>Induktans</strong></td><td class="ref-sym">L</td><td>Henry</td><td class="ref-sym">H</td></tr>
+                </table>
+            </div>
+            <div class="ref-table-card" style="margin-top:0.75rem"><h3>Prefix – storhetsprefix du måste kunna</h3>
+                <table class="ref-table">
+                    <tr><th>Prefix</th><th>Symbol</th><th>Värde</th><th>Exempel</th></tr>
+                    <tr><td>Mega</td><td class="ref-sym">M</td><td>× 1 000 000</td><td>7 MHz = 7 000 000 Hz</td></tr>
+                    <tr><td>Kilo</td><td class="ref-sym">k</td><td>× 1 000</td><td>1 kΩ = 1 000 Ω</td></tr>
+                    <tr><td>–</td><td>–</td><td>× 1</td><td>grundenhet</td></tr>
+                    <tr><td>Milli</td><td class="ref-sym">m</td><td>× 0,001</td><td>500 mA = 0,5 A</td></tr>
+                    <tr><td>Mikro</td><td class="ref-sym">µ</td><td>× 0,000 001</td><td>100 µF = 0,0001 F</td></tr>
+                </table>
+            </div>
+            <div style="background:var(--info-bg);border:1px solid var(--info-border);border-radius:var(--radius-md);padding:0.85rem 1rem;font-size:0.9rem;margin-top:0.75rem;line-height:1.7">
+                💡 <strong>Kom ihåg:</strong> U = spänning (inte V, det är enheten) &nbsp;|&nbsp; I = ström (av franskans <em>intensité</em>) &nbsp;|&nbsp; R = resistans &nbsp;|&nbsp; Ω = omega, resistansens enhet
+            </div>
+        </div>
 
         <div class="lathund-section">
             <div class="lathund-title"><span class="formula-badge badge-ohm">Ω</span> Ohms lag — U = R · I</div>
@@ -415,7 +449,6 @@ function shuffle(a) { const b=[...a]; for(let i=b.length-1;i>0;i--){const j=Math
 function round2(n) { return Math.round(n*100)/100; }
 function fmtNum(n) { if(Number.isInteger(n)) return String(n); return String(round2(n)).replace('.',','); }
 
-// --- OHM ---
 function genOhmQ() {
     const t = Math.floor(Math.random()*3);
     const R = [1,2,4,5,8,10,20,25,50,100,200,470,1000][Math.floor(Math.random()*13)];
@@ -426,7 +459,6 @@ function genOhmQ() {
     return { scenario:`Spänningen är <strong>${fmtNum(U)} V</strong> och resistansen <strong>${R} Ω</strong>.`, ask:'Vad är strömmen I?', answer:fmtNum(I), unit:'A', solution:`I = U / R = ${fmtNum(U)} / ${R} = <strong>${fmtNum(I)} A</strong>` };
 }
 
-// --- EFFEKT ---
 function genEffektQ() {
     const t = Math.floor(Math.random()*3);
     const U = [3.3,5,6,9,12,13.8,24,230][Math.floor(Math.random()*8)];
@@ -437,7 +469,6 @@ function genEffektQ() {
     return { scenario:`Effekten är <strong>${fmtNum(P)} W</strong> vid spänningen <strong>${fmtNum(U)} V</strong>.`, ask:'Vad är strömmen I?', answer:fmtNum(I), unit:'A', solution:`I = P / U = ${fmtNum(P)} / ${fmtNum(U)} = <strong>${fmtNum(I)} A</strong>` };
 }
 
-// --- KABLAR ---
 const cableData = [{area:0.25,rPerM:0.072},{area:0.5,rPerM:0.036},{area:0.75,rPerM:0.021},{area:1.0,rPerM:0.018},{area:4.0,rPerM:0.005}];
 function genKablarQ() {
     const t = Math.floor(Math.random()*3);
@@ -452,7 +483,6 @@ function genKablarQ() {
     return { scenario:`En radiosändare drar <strong>${fmtNum(I)} A</strong> och spänningsfallet över kabeln är <strong>${fmtNum(Uf)} V</strong>.`, ask:'Vad är kabelns resistans?', answer:fmtNum(R), unit:'Ω', solution:`R = U / I = ${fmtNum(Uf)} / ${fmtNum(I)} = <strong>${fmtNum(R)} Ω</strong>` };
 }
 
-// --- ENERGI ---
 function genEnergiQ() {
     const t = Math.floor(Math.random()*4);
     const U = [3.7,6,9,12,24][Math.floor(Math.random()*5)];
@@ -467,7 +497,6 @@ function genEnergiQ() {
     return { scenario:`En enhet förbrukar <strong>${fmtNum(E)} Wh</strong> på <strong>${fmtNum(t2)} h</strong>.`, ask:'Vad är den genomsnittliga effekten?', answer:fmtNum(P), unit:'W', solution:`P = E / t = ${fmtNum(E)} / ${fmtNum(t2)} = <strong>${fmtNum(P)} W</strong>` };
 }
 
-// --- FREKVENS ---
 const freqPairs = [{f:3.5,lam:round2(300/3.5)},{f:7,lam:round2(300/7)},{f:14,lam:round2(300/14)},{f:21,lam:round2(300/21)},{f:28,lam:round2(300/28)},{f:50,lam:6},{f:144,lam:round2(300/144)},{f:432,lam:round2(300/432)},{f:10,lam:30},{f:100,lam:3},{f:300,lam:1}];
 function genFreqQ() {
     const ex = freqPairs[Math.floor(Math.random()*freqPairs.length)];
@@ -475,7 +504,6 @@ function genFreqQ() {
     return { scenario:`En radiostation sänder med våglängden <strong>${fmtNum(ex.lam)} m</strong>.`, ask:'Vilken frekvens f har signalen?', answer:fmtNum(ex.f), unit:'MHz', solution:`f = 300 / λ(m) = 300 / ${fmtNum(ex.lam)} = <strong>${fmtNum(ex.f)} MHz</strong>` };
 }
 
-// --- MCQ QUESTIONS ---
 const vaxelQuestions = [
     {q:'Vad är skillnaden mellan likström och växelström?', a:'Växelström byter riktning periodiskt, likström flödar åt ett håll', opts:['De har olika spänning','Växelström byter riktning periodiskt, likström flödar åt ett håll','Likström är farligare','Växelström kan inte lagras i batterier'], explanation:'Grundläggande skillnad: likström = konstant riktning, växelström = byter riktning med frekvensen f.'},
     {q:'Vad kallas antalet riktningsbyten per sekund hos en växelström?', a:'Frekvensen', opts:['Amplituden','Periodtiden','Frekvensen','Fasförskjutningen'], explanation:'Frekvensen f mäts i Hertz (Hz) och anger hur många perioder per sekund.'},
@@ -503,14 +531,12 @@ const dbQuestions = [
     {q:'En antennförstärkning ger +3 dB. Vad betyder det praktiskt?', a:'Dubbelt så hög utstrålad effekt', opts:['3 W mer effekt','Dubbelt så hög utstrålad effekt','3 gånger mer effekt','10 gånger mer effekt'], explanation:'+3 dB = faktor 2 = dubbel effekt.'},
 ];
 
-// --- STATES ---
 const calcGenFns = { ohm: genOhmQ, effekt: genEffektQ, kablar: genKablarQ, energi: genEnergiQ, freq: genFreqQ };
 const calcStates = { ohm:null, effekt:null, kablar:null, energi:null, freq:null };
 const mcqAllQ    = { vaxel: vaxelQuestions, db: dbQuestions };
 const mcqLabels  = { vaxel: 'Växelström', db: 'Decibel' };
 const mcqStates  = { vaxel:null, db:null };
 
-// --- CALC RENDER ---
 function renderCalcQuiz(topic) {
     const area = document.getElementById(topic + '-quiz-area');
     if (!calcStates[topic]) calcStates[topic] = { q:null, correct:0, total:0, answered:false };
@@ -563,7 +589,6 @@ function checkCalc(topic) {
     state[topic] = { correct:s.correct, total:s.total }; saveState(); updateMasterProgress();
 }
 
-// --- MCQ RENDER ---
 function renderMcqQuiz(topic) {
     if (!mcqStates[topic] || mcqStates[topic].done) {
         mcqStates[topic] = { pool: shuffle([...mcqAllQ[topic]]), idx:0, correct:0, total:0, answered:false, done:false };
@@ -626,7 +651,6 @@ function checkMcq(topic, chosen) {
     state[topic]={correct:s.correct,total:s.total}; saveState(); updateMasterProgress();
 }
 
-// --- PROGRESS ---
 function updateMasterProgress() {
     [['ohm','calc'],['effekt','calc'],['kablar','calc'],['energi','calc'],['freq','calc'],['vaxel','mcq'],['db','mcq']].forEach(([k,type]) => {
         const s = type==='calc' ? calcStates[k] : mcqStates[k];
@@ -638,7 +662,6 @@ function updateMasterProgress() {
     });
 }
 
-// --- KEYBOARD ---
 document.addEventListener('keydown', function(e) {
     const active = document.querySelector('.tab-section.active');
     if (!active) return;

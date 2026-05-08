@@ -1,0 +1,1630 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{paracol}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+
+\geometry{left=1.5cm, right=1.5cm, top=2cm, bottom=2cm}
+\setlength{\columnsep}{1cm}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\columnratio{0.5}
+\begin{paracol}{2}
+
+%% ============================================================
+%% ENGLISH
+%% ============================================================
+
+\noindent\textbf{19 Taking control of conditioning}
+
+\medskip
+
+\noindent\textit{Hall and Hall, 1988, Routledge Human relations in education}
+
+\medskip
+
+This chapter may seem a stark contrast to the earlier discussion of phenomenology, experiential learning and humanistic education, all of which have a great deal to do with increasing the choices available to the individual. However, notions of conditioning give an indication of the extent to which our choices are limited. It is difficult to explore your choices until you have developed some awareness of what you are already doing.
+
+Humanistic considerations and conditioning are often presented as conflicting sets of ideas. The real differences are in the technologies for behaviour change which have grown out of them. Experiments on conditioning have been developed into behaviour modification, which involves the manipulation of rewards and punishments to encourage desirable behaviour. As we shall argue later in this chapter, behaviour modifications can be humanized if the control of the situation is given to the person whose behaviour is being modified.
+
+Most of our behaviour is controlled by the rewards and punishments provided by other people and the environment. Many of these patterns of behaviour are run off with little awareness and become habits which continue to be run off even though the original rewards and punishments no longer arrive. The reward for the behaviour seems to have something to do with the fact that it is familiar and therefore not threatening.
+
+Conditioning is a technical psychological term which is normally associated with animal behaviour, such as dogs salivating, rats pressing bars to obtain food and a large number of variations on these themes. These notions have often been dealt with in educational textbooks, and have been criticized for having little relevance to human learning. This may be correct in relation to the cognitive processes involved
+
+\switchcolumn
+
+%% ============================================================
+%% SWEDISH
+%% ============================================================
+
+\noindent\textbf{19 Att ta kontroll över betingning}
+
+\medskip
+
+\noindent\textit{Hall och Hall, 1988, Routledge Human relations in education}
+
+\medskip
+
+Det här kapitlet kan verka som en skarp kontrast mot den tidigare diskussionen om fenomenologi, erfarenhetsbaserat lärande och humanistisk pedagogik, som alla i hög grad handlar om att utöka de valmöjligheter som individen har tillgång till. Begreppet betingning ger dock en indikation på i vilken utsträckning våra val är begränsade. Det är svårt att utforska sina valmöjligheter förrän man har utvecklat en viss medvetenhet om vad man redan gör.
+
+Humanistiska överväganden och betingning presenteras ofta som motstridiga idékomplex. De verkliga skillnaderna ligger i de tekniker för beteendeförändring som vuxit fram ur dem. Experiment om betingning har utvecklats till beteendemodifikation, vilket innebär manipulation av belöningar och straff för att uppmuntra önskvärt beteende. Som vi kommer att hävda senare i detta kapitel kan beteendemodifikation humaniseras om kontrollen över situationen ges till den person vars beteende modifieras.
+
+Merparten av vårt beteende styrs av de belöningar och straff som andra människor och miljön ger oss. Många av dessa beteendemönster utförs med liten medvetenhet och blir vanor som fortsätter att upprepas även om de ursprungliga belöningarna och straffen inte längre kommer. Belöningen för beteendet verkar ha att göra med det faktum att det är bekant och därmed inte hotfullt.
+
+Betingning är en teknisk psykologisk term som normalt förknippas med djurbeteende, såsom hundar som saliverar, råttor som trycker på spakar för att få mat och ett stort antal variationer på dessa teman. Dessa föreställningar har ofta behandlats i pedagogiska läroböcker och har kritiserats för att ha liten relevans för mänskligt lärande. Detta kan stämma i förhållande till de kognitiva processer som är inblandade
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 20 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{20 Taking control of conditioning}
+
+\medskip
+
+in learning normal school subjects. We will argue, however, that conditioning processes play an important part in the way people relate to each other and in what are often seen as discipline problems.
+
+We will take a simple view of conditioning processes describing the two main forms of conditioning and then relating these processes to human relations in educational settings.
+
+Classical conditioning is the term which is normally applied to the processes originally researched by the Russian physiologist, Ivan Pavlov. Initially, Pavlov was concerned with the digestive system, but he discovered, by chance, that if something happened while a dog was salivating as a result of a stimulus that normally produces saliva, such as dried meat, the dog might salivate when that `something' occurred at a later time. This simple observation changed the course of Pavlov's life and he devoted a large part of his life to the study of simple learned associations of this nature.
+
+A typical experiment would involve a dog strapped in a harness in a room where every other possible distracting stimulus was reduced to a minimum. Dried meat, which normally produces salivation, would be puffed into the dog's mouth at the same time as a stimulus such as a bell, flash of light or a buzzer. It would only take a few such pairings for bell, flash or buzzer to produce salivation without the dried meat. In effect, the dog had learned something new, namely, to salivate to a stimulus which didn't previously produce salivation.
+
+If the dog learns to salivate to the sound of a buzzer and then hears a buzzer of a slightly different tone, the dog will usually still salivate, but not to the same extent. This is described as generalization. The dog does not have to have an identical stimulus to produce the conditioned response. However, if the dog always gets meat when it hears one tone of buzzer, but never for the other tone, it learns to respond with salivation to one tone and not to the other. The dog can learn to discriminate between two similar stimuli. If the dog hears the buzzer over a long period of time without ever getting dried meat, the salivation response will eventually disappear. The term used to describe this process is extinction; the response has been extinguished.
+
+This is clearly a very primitive form of learning, but it occurs in a wide range of organisms from the lowly flatworm to human beings. Pavlov repeated these experiments with adolescents from a local orphanage, even to the extent of attaching a phial to the cheek to catch the drops of saliva as they flowed. Any natural autonomic response made by the organism can be conditioned in this way. This
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 20 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{20 Att ta kontroll över betingning}
+
+\medskip
+
+i lärandet av normala skolämnen. Vi hävdar dock att betingningsprocesser spelar en viktig roll i hur människor förhåller sig till varandra och i det som ofta ses som disciplinproblem.
+
+Vi kommer att ta en enkel syn på betingningsprocesser, beskriva de två huvudformerna av betingning och sedan relatera dessa processer till mänskliga relationer i pedagogiska sammanhang.
+
+Klassisk betingning är den term som normalt tillämpas på de processer som ursprungligen undersöktes av den ryske fysiologen Ivan Pavlov. Inledningsvis var Pavlov intresserad av matsmältningssystemet, men han upptäckte av en slump att om något hände medan en hund saliverade till följd av ett stimulus som normalt framkallar saliv, som torkat kött, kunde hunden salivera när detta ``något'' inträffade vid ett senare tillfälle. Denna enkla observation förändrade riktningen på Pavlovs liv och han ägnade en stor del av sitt liv åt att studera enkla inlärda associationer av detta slag.
+
+Ett typiskt experiment skulle innebära en hund fastspänd i ett sele i ett rum där alla andra möjliga störande stimuli reducerades till ett minimum. Torkat kött, som normalt framkallar salivering, pumpades in i hundens mun samtidigt som ett stimulus som en klocka, ett ljusblixt eller en summer. Det krävdes bara ett fåtal sådana parningar för att klockan, ljuset eller summern skulle framkalla salivering utan det torkade köttet. I praktiken hade hunden lärt sig något nytt, nämligen att salivera till ett stimulus som tidigare inte framkallat salivering.
+
+Om hunden lär sig att salivera vid ljudet av en summer och sedan hör en summer med något annorlunda ton, kommer hunden vanligtvis fortfarande att salivera, men inte i lika hög grad. Detta beskrivs som generalisering. Hunden behöver inte ha ett identiskt stimulus för att producera det betingade svaret. Om hunden däremot alltid får kött när den hör en viss summerton, men aldrig för den andra tonen, lär den sig att reagera med salivering på den ena tonen men inte den andra. Hunden kan lära sig att skilja mellan två liknande stimuli. Om hunden hör summern under en lång tidsperiod utan att någonsin få torkat kött, försvinner så småningom saliveringsresponsen. Den term som används för att beskriva denna process är utsläckning; responsen har släckts ut.
+
+Detta är tydligt en mycket primitiv form av inlärning, men den förekommer hos ett brett spektrum av organismer, från den enkla plattmasken till människan. Pavlov upprepade dessa experiment med ungdomar från ett lokalt barnhem och gick till och med så långt att han fäste en liten ampull vid kinden för att fånga upp saliven när den rann. Vilken som helst naturlig autonom respons hos organismen kan betingas på detta sätt. Detta
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 21 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 21}
+
+\medskip
+
+is important from our point of view, because it applies to the bodily responses that are associated with emotions and, in particular, fear.
+
+Emotions play a central part in the way we relate to ourselves and other people. Generally, these inner emotional responses are beyond our control, unless we are familiar with bio-feedback techniques, or are yoga adepts. You may be certain that you will not fall off the `Big Wheel' and yet to ride on it is still a terrifying experience.
+
+Classical conditioning is a passive form of learning. Events happen to the human or animal and something new is learned. However, before we apply these notions on the importance of classical conditioning to the way we relate to each other, we will compare this form of learning to the other main form of conditioning, namely operant conditioning.
+
+This form of learning has been described under different names, but it has been developed most comprehensively by Skinner (1974), so we will use his term. A typical example of operant conditioning involves a rat in a cage. The cage has a lever which can be pressed to obtain a pellet of food. The rat is starved for a period of time and placed in the cage. Being hungry, the rat thrashes around and may eventually, by chance, press the lever and obtain a pellet of food. If the process is repeated, the rat thrashes around in a similar way, until it again, by chance, presses the lever. This contrasts with the behaviour of an adult human, who would remember the previous experience and go straight to the lever to obtain the food reward. What tends to happen with the rat is that the time taken to press the lever gradually reduces until, eventually, it is able to go straight to the lever to obtain the food. If it is a hoarding species, it will go on pressing the lever and heap up food pellets in the corner of a cage.
+
+The same learning process occurs in relation to a punishing experience. If the lever cuts off an electric current passing through the floor of the cage, the rat learns to press the lever in the same way.
+
+The processes of generalization, discrimination and extinction also apply to this form of learning. The response might generalize to any protruding object in the cage; the rat might learn to discriminate between a round lever and a square lever and if the pellet of food stopped coming, the rat might stop pressing it altogether. The effects of punishment are not that easy to extinguish, but that is an issue we will deal with later in the section.
+
+Operant conditioning is a more active form of learning. The rat has to do something to obtain the reward or avoid the punishment.
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 21 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 21}
+
+\medskip
+
+är viktigt ur vårt perspektiv, eftersom det gäller de kroppsliga reaktioner som är förknippade med känslor och i synnerhet rädsla.
+
+Känslor spelar en central roll i hur vi förhåller oss till oss själva och till andra människor. Generellt sett ligger dessa inre emotionella reaktioner utanför vår kontroll, om vi inte är förtrogna med biofeedback-tekniker eller är skickliga yogautövare. Du kan vara säker på att du inte kommer att falla av ``Pariserhjulet'' och ändå är det fortfarande en skrämmande upplevelse att åka på det.
+
+Klassisk betingning är en passiv form av inlärning. Händelser sker med människan eller djuret och något nytt lärs in. Innan vi tillämpar dessa tankar om den klassiska betingningens betydelse för hur vi förhåller oss till varandra, kommer vi dock att jämföra denna form av inlärning med den andra huvudformen av betingning, nämligen operant betingning.
+
+Denna inlärningsform har beskrivits under olika namn, men den har utvecklats mest heltäckande av Skinner (1974), så vi kommer att använda hans term. Ett typiskt exempel på operant betingning inbegriper en råtta i en bur. Buren har en spak som kan tryckas ner för att ge en matbit. Råttan svälts under en period och placeras i buren. Eftersom den är hungrig kastar den sig runt och kan till slut råka trycka ner spaken och få en matbit. Om processen upprepas kastar råttan sig runt på liknande sätt tills den återigen, av en slump, trycker ner spaken. Detta skiljer sig från beteendet hos en vuxen människa, som skulle minnas den tidigare erfarenheten och gå rakt till spaken för att få matbelöningen. Det som tenderar att hända med råttan är att tiden det tar att trycka på spaken gradvis minskar tills den till slut kan gå rakt till spaken för att få maten. Om det är en hamsrande art kommer den att fortsätta trycka på spaken och hopa upp matbitar i ett hörn av buren.
+
+Samma inlärningsprocess äger rum i relation till en bestraffande upplevelse. Om spaken bryter en elektrisk ström som går genom burens golv lär sig råttan att trycka på spaken på samma sätt.
+
+Processerna generalisering, diskriminering och utsläckning gäller också för denna form av inlärning. Responsen kan generalisera till vilket utskjutande föremål som helst i buren; råttan kan lära sig att skilja mellan en rund spak och en kvadratisk spak, och om matbitarna slutar komma kan råttan sluta trycka på spaken helt och hållet. Effekterna av bestraffning är inte lika lätta att släcka ut, men det är ett ämne vi återkommer till senare i avsnittet.
+
+Operant betingning är en mer aktiv form av inlärning. Råttan måste göra något för att erhålla belöningen eller undvika bestraffningen.
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 22 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{22 Taking control of conditioning}
+
+\medskip
+
+Classical and operant conditioning are interconnected processes. If there is a reward or a punishment in a situation, it is reasonable to suppose that the reward will be associated with good feelings and the punishment will be associated with bad feelings, so any example of operant conditioning will include elements of classical conditioning.
+
+So, let us return to classical conditioning and make a large inferential leap from the experimental evidence and suggest that each of us has a unique repertoire of emotional responses to specific situations, people and events which we have learned as a result of past experience. The most dramatic of these responses are called phobias. Fear of heights, dogs, snakes, enclosed spaces, water, spiders, and so on. Just to say the word `spider' will have an effect on some individuals. They might be able to control the external expression of the feeling of fear, but they are unable to stop the internal feelings.
+
+Some of these phobias can be related to early experiences. One of the writers was bitten and snapped at by a dog at the age of four and always feels a little uneasy with dogs around forty years later. A man we knew trod on a live electrified rail and though knocked unconscious, miraculously survived. However, whenever he treads on cold steel, even through shoes, a spasm of fear goes through him. He will probably retain this response for the rest of his life.
+
+Some phobias are not so easily explained and seem to develop for no apparent reason. Vertigo is an example, and may be to do with problems of orientation and balance, and naturally generates anxiety if there is a chance of falling.
+
+Some emotional responses seem to be passed on from our parents, particularly mothers. Perhaps, for most of us it is rewarding to be like our mothers and so feel good if we take on their characteristics, even if these are not to our advantage.
+
+Some phobias are extremely inconvenient and other people are often intolerant of them. If the person you are with is unable to use lifts or escalators, it can be extremely inconvenient in places like airports and shopping centres. It is easy to suggest that the phobic person pulls herself together. However, this is underestimating the power of the conditioned emotional response. An examination of the life of the intolerant person would show that there are many situations that make him anxious, but he never permits himself to get into the position of making the anxiety public. Crying in public, saying something loving, expressing anger to a colleague might be examples of fear experienced by an otherwise competent adult. Most of us have an Achilles heel somewhere.
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 22 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{22 Att ta kontroll över betingning}
+
+\medskip
+
+Klassisk och operant betingning är sammankopplade processer. Om det finns en belöning eller ett straff i en situation är det rimligt att anta att belöningen förknippas med goda känslor och bestraffningen med dåliga känslor, varför alla exempel på operant betingning kommer att innehålla inslag av klassisk betingning.
+
+Låt oss alltså återvända till den klassiska betingningen och göra ett stort inferentiellt språng från de experimentella bevisen och föreslå att var och en av oss har ett unikt repertoar av emotionella reaktioner på specifika situationer, människor och händelser som vi har lärt oss till följd av tidigare erfarenheter. De mest dramatiska av dessa reaktioner kallas fobier. Rädsla för höjder, hundar, ormar, slutna utrymmen, vatten, spindlar och så vidare. Bara att säga ordet ``spindel'' kan påverka vissa individer. De kanske kan kontrollera det yttre uttrycket för känslan av rädsla, men de är oförmögna att stoppa de inre känslorna.
+
+Några av dessa fobier kan kopplas till tidiga erfarenheter. En av författarna bets och nöps av en hund vid fyra års ålder och känner alltid en liten obehagskänsla inför hundar ungefär fyrtio år senare. En man vi kände trampade på en strömförande järnvägsskena och överlevde mirakulöst trots att han slogs medvetslös. Men varje gång han trampar på kallt stål, till och med genom skor, genomfars han av ett krampaktigt rädselkänslor. Han kommer förmodligen att behålla denna reaktion för resten av sitt liv.
+
+Vissa fobier är inte lika lätta att förklara och verkar utvecklas utan någon uppenbar anledning. Vertigo är ett exempel och kan ha att göra med problem med orientering och balans, och framkallar naturligtvis ångest om det finns risk för att falla.
+
+Vissa emotionella reaktioner verkar ha förts vidare från våra föräldrar, särskilt mödrar. För de flesta av oss är det kanske belönande att vara som våra mödrar och därför känna oss bra om vi tar på oss deras egenskaper, även om dessa inte är till vår fördel.
+
+Vissa fobier är extremt opraktiska och andra människor är ofta intoleranta mot dem. Om personen du är med inte kan använda hissar eller rulltrappor kan det vara extremt besvärligt på platser som flygplatser och köpcentrum. Det är lätt att föreslå att den fobiska personen tar sig samman. Detta underskattar dock kraften hos den betingade emotionella reaktionen. En granskning av den intolerante personens liv skulle visa att det finns många situationer som gör honom ångestfylld, men han tillåter aldrig sig själv att hamna i en position där ångesten görs offentlig. Att gråta offentligt, säga något kärleksfullt, uttrycka ilska mot en kollega kan vara exempel på rädsla som upplevs av en annars kompetent vuxen. De flesta av oss har en akilleshäl någonstans.
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 23 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 23}
+
+\medskip
+
+A discussion of `the things that make me afraid' always generates a great deal of involvement with groups of any age and ability. Having established the individual fears in a group, a useful technique is to split up into smaller groups of individuals who share the same fears. Later, a spokesperson can report back to the whole group.
+
+Some classical experiments carried out under the supervision of American psychologist John Watson, who is often described as the founder of behaviourism, provided demonstrations of these conditioned fearful reactions being established. One of his most notorious experiments involved eleven-month-old Albert, who was placed with a white rat. A loud noise was made as Albert reached for the rat and he reacted with obvious fright. The pairing of the noise with the white rat was enough to establish a fearful reaction, not only to the white rat, but to anything white and furry. The response had generalized. Later experiments were designed to demonstrate the removal of fear developed in this way. The infant would be fed chocolate as the feared animal was slowly brought nearer. But the outcome of these experiments demonstrates how difficult it is to control this form of learning. Sometimes the child learned not to be afraid of the rat, sometimes the child learned to dislike chocolate.
+
+Some emotional reactions appear to have been passed on from our parents even though we have not had the appropriate experiences. It is impossible to explain how any particular emotional reaction has developed, but perhaps the process goes something like this. Our parents, particularly mothers, are usually the source of most of the good things in life -- food, warmth, shelter, affection, entertainment and so on. Thus, most of us associate good feelings with our parents. To be like them might also produce good feelings, so we take on the actions, the opinions and perhaps even the feelings of our parents. To do so makes us feel good, which is rewarding, even though the behaviour, opinion or feeling may not be very helpful. These emotional reactions which we have taken from our parents probably play an important part in our religious beliefs, our political opinions and our feelings towards people of different races. The suggestion is being made here that our emotional reaction to these important issues is of the same order as one of Pavlov's dogs salivating to the taste of dried meat.
+
+This suggestion is not unreasonable if we also accept that much of
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 23 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 23}
+
+\medskip
+
+En diskussion om ``de saker som gör mig rädd'' väcker alltid stort engagemang i grupper av alla åldrar och förmågor. När de individuella rädslorna har kartlagts i en grupp är en användbar teknik att dela upp i mindre grupper av individer som delar samma rädslor. Senare kan en talesperson rapportera tillbaka till hela gruppen.
+
+Några klassiska experiment som utfördes under ledning av den amerikanske psykologen John Watson, som ofta beskrivs som behaviorismens grundare, gav demonstrationer av hur dessa betingade rädselreaktioner etablerades. Ett av hans mest ökända experiment inbegrep den elva månader gamla Albert, som placerades med en vit råtta. Ett högt ljud framkallades när Albert sträckte sig efter råttan och han reagerade med uppenbar skräck. Parkopplingen av ljudet med den vita råttan räckte för att etablera en rädselreaktion, inte bara mot den vita råttan, utan mot allt som var vitt och lurvet. Responsen hade generaliserats. Senare experiment utformades för att demonstrera borttagandet av rädsla som utvecklats på detta sätt. Barnet matades med choklad medan det fruktade djuret sakta fördes närmare. Men resultatet av dessa experiment visar hur svårt det är att kontrollera denna form av inlärning. Ibland lärde sig barnet att inte vara rädd för råttan, ibland lärde sig barnet att ogillar choklad.
+
+Vissa emotionella reaktioner verkar ha förts vidare från våra föräldrar även om vi inte haft de lämpliga erfarenheterna. Det är omöjligt att förklara hur en viss emotionell reaktion har utvecklats, men kanske ser processen ut ungefär så här. Våra föräldrar, särskilt mödrar, är vanligtvis källan till det mesta som är bra i livet -- mat, värme, skydd, tillgivenhet, underhållning och så vidare. Därför förknippar de flesta av oss goda känslor med våra föräldrar. Att vara som dem kan också ge goda känslor, varför vi tar på oss föräldrarnas handlingar, åsikter och kanske till och med känslor. Att göra det får oss att må bra, vilket är belönande, även om beteendet, åsikten eller känslan kanske inte är särskilt hjälpsam. Dessa emotionella reaktioner som vi tagit över från våra föräldrar spelar förmodligen en viktig roll i våra religiösa övertygelser, våra politiska åsikter och våra känslor gentemot människor av andra raser. Förslaget som görs här är att vår emotionella reaktion på dessa viktiga frågor är av samma ordning som en av Pavlovs hundar som saliverar vid smaken av torkat kött.
+
+Detta förslag är inte orimligt om vi också accepterar att mycket av
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 24 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{24 Taking control of conditioning}
+
+\medskip
+
+what we do is at a low level of awareness. There are many subtle aspects of our behaviour which may be controlled by these learned emotional reactions and which also have a marked effect on the way we relate to ourselves and other people.
+
+What we call conscience usually has a strong emotional component. If we do something which we feel is right, we experience good feelings. If we do something which we think is bad, we experience bad feelings which we might choose to label guilt.
+
+In the days when there were conductors to collect the fares on buses, one of the writers carried out an experiment into his emotional reactions to deliberately not paying the fare. It was not difficult to dodge the conductor, but at the first attempt, there was a grip of panic in the stomach which worsened as he approached the door. Walking away from the bus, there was a tense feeling between the shoulder blades, which seemed to be anticipating an angry shout. The second and third attempts were not much better, though the emotional reactions did seem marginally less. He was never able to avoid paying the fare without feeling uncomfortable. Once the experiment was over, he was relieved to go back to paying the fare. On a rational level, the writer is convinced of the importance of public transport and that passengers should pay their fares. It is a matter of opinion as to whether it is rational processes or the emotional reactions that are exerting the most control.
+
+Some readers might have had the same experience regarding paying fares. Others may find it difficult to understand because they do not have the same emotional conditioning. Presumably, their learned emotional reactions are different.
+
+Here are some examples of differences in behaviour between the two writers. The examples may seem trivial, but the habits are strong and at least one of each pair of examples is maintained by the avoidance of negative emotional reactions.
+
+\medskip
+
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+\textbf{A} & \textbf{B} \\
+\midrule
+Has to scrape the margarine off the lid of the plastic tub. & Would happily throw away the lid with the margarine on it. \\
+\addlinespace
+Has to carefully unwrap a parcel to save the paper for later use. & Tears open parcels and destroys paper. \\
+\bottomrule
+\end{tabular}
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 24 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{24 Att ta kontroll över betingning}
+
+\medskip
+
+det vi gör sker på en låg medvetenhetsnivå. Det finns många subtila aspekter av vårt beteende som kan styras av dessa inlärda emotionella reaktioner och som också har en markant inverkan på hur vi förhåller oss till oss själva och till andra människor.
+
+Det vi kallar samvete har vanligtvis en stark emotionell komponent. Om vi gör något som vi anser vara rätt upplever vi goda känslor. Om vi gör något som vi anser vara dåligt upplever vi dåliga känslor som vi kan välja att kalla skuld.
+
+Under den tid då det fanns konduktörer som samlade in biljettpengarna på bussarna genomförde en av författarna ett experiment om sina emotionella reaktioner på att medvetet inte betala biljettpriset. Det var inte svårt att undvika konduktören, men vid det första försöket kom ett grepp av panik i magen som förvärrades när han närmade sig dörren. När han gick bort från bussen kände han en spänd känsla mellan skulderbladen, som om den väntade sig ett argt rop. Det andra och tredje försöket var inte mycket bättre, även om de emotionella reaktionerna verkade marginellt svagare. Han lyckades aldrig undvika att betala biljettpriset utan att känna sig obekväm. När experimentet var slut kände han lättnad över att återgå till att betala. På ett rationellt plan är författaren övertygad om vikten av kollektivtrafik och att passagerarna bör betala sina biljetter. Det är en åsiktsfråga huruvida det är rationella processer eller de emotionella reaktionerna som utövar mest kontroll.
+
+Vissa läsare kanske har haft samma erfarenhet vad gäller att betala biljetter. Andra kanske har svårt att förstå eftersom de inte har samma emotionella betingning. Förmodligen är deras inlärda emotionella reaktioner annorlunda.
+
+Här är några exempel på beteendeskillnader mellan de två författarna. Exemplen kan verka triviala, men vanorna är starka och minst ett av varje par exempel upprätthålls av undvikandet av negativa emotionella reaktioner.
+
+\medskip
+
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+\textbf{A} & \textbf{B} \\
+\midrule
+Måste skrapa av margarinet från locket på plastburken. & Skulle gladeligen kasta bort locket med margarinet på. \\
+\addlinespace
+Måste försiktigt packa upp ett paket för att spara papperet till senare. & River upp paket och förstör papperet. \\
+\bottomrule
+\end{tabular}
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 25 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 25}
+
+\medskip
+
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+Squeezes toothpaste from the bottom to avoid waste. & Squeezes toothpaste in the middle. \\
+\addlinespace
+Wears clothes for days on end. & Washes clothes after one day. \\
+\addlinespace
+Never locks the door at night. & Always locks door. \\
+\addlinespace
+Doesn't want to spend money on Xmas cards. & Has to send Xmas cards. \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+Appropriate sex-role behaviour is probably controlled in the same way. Most of us feel embarrassed or ashamed when we behave in a manner which doesn't fit the conventions for our sex. Despite a breakdown in some of the conventional attitudes towards sex-roles, it would still be difficult for most men to go to work in a skirt.
+
+This form of emotional control extends into virtually every aspect of our lives, in particular the way we relate to other people. Some of us have difficulty in expressing negative feeling, in expressing warm feeling, in saying `no' to people. Student teachers have often reported being disgusted with themselves for shouting at their pupils. Perhaps they ought to be grateful to the children concerned for helping them to try out a new pattern of behaviour and to change an aspect of their conditioning.
+
+Many of these limitations on the range of behaviour available to us are not even the result of social pressures. Giving a spontaneous compliment is a perfectly acceptable form of behaviour, but some of us find it extremely difficult to permit a compliment to pass our lips. Emotional reactions do appear to be controlling our behaviour in situations such as this. Often the behaviour established by our fears is particularly unhelpful. If, as a teacher, you find it difficult to make eye contact with your class, there is evidence (Rogers, 1983) that you will be less efficient than a teacher who makes eye contact with ease.
+
+Ask the individual members of a group of students to circle one of the letters E (easy), A (average), D (difficult) for each of the following statements:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item Paying a compliment --- E A D
+  \item Expressing anger to a colleague --- E A D
+  \item Telling a joke --- E A D
+  \item Initiating conversation --- E A D
+  \item Telling someone you like them --- E A D
+  \item Complaining in a restaurant --- E A D
+\end{enumerate}
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 25 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 25}
+
+\medskip
+
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+Klämmer tandkräm från botten för att undvika svinn. & Klämmer tandkräm i mitten. \\
+\addlinespace
+Bär kläder i dagar i sträck. & Tvättar kläder efter en dags användning. \\
+\addlinespace
+Låser aldrig dörren på natten. & Låser alltid dörren. \\
+\addlinespace
+Vill inte lägga pengar på julkort. & Måste skicka julkort. \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+Lämpligt könsrollsbeteende styrs förmodligen på samma sätt. De flesta av oss känner skam eller förlägenhet när vi beter oss på ett sätt som inte passar konventionerna för vårt kön. Trots att en del av de konventionella attityderna till könsroller har brutit samman, skulle det fortfarande vara svårt för de flesta män att gå till arbetet i en kjol.
+
+Denna form av emotionell kontroll sträcker sig in i nästan alla aspekter av våra liv, i synnerhet hur vi förhåller oss till andra människor. Några av oss har svårt att uttrycka negativa känslor, att uttrycka varma känslor, att säga ``nej'' till människor. Lärarstuderande har ofta rapporterat att de avskyr sig själva för att ha skrikit på sina elever. Kanske borde de vara tacksamma mot de berörda barnen för att ha hjälpt dem att prova ett nytt beteendemönster och förändra en aspekt av sin betingning.
+
+Många av dessa begränsningar i det beteenderepertoar som är tillgängligt för oss är inte ens ett resultat av sociala påtryckningar. Att ge ett spontant komplimang är ett fullt acceptabelt beteende, men några av oss tycker det är extremt svårt att låta ett komplimang passera läpparna. Emotionella reaktioner verkar faktiskt styra vårt beteende i sådana situationer. Ofta är det beteende som etablerats av våra rädslor särskilt ohjälpsamt. Om du som lärare har svårt att hålla ögonkontakt med din klass finns det bevis (Rogers, 1983) för att du kommer att vara mindre effektiv än en lärare som håller ögonkontakt med lätthet.
+
+Be de enskilda medlemmarna i en studentgrupp att ringa in ett av bokstäverna L (lätt), M (medel), S (svårt) för vart och ett av följande påståenden:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item Ge ett komplimang --- L M S
+  \item Uttrycka ilska mot en kollega --- L M S
+  \item Berätta ett skämt --- L M S
+  \item Ta initiativ till ett samtal --- L M S
+  \item Berätta för någon att du tycker om dem --- L M S
+  \item Klaga på en restaurang --- L M S
+\end{enumerate}
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 26 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{26 Taking control of conditioning}
+
+\medskip
+
+\begin{enumerate}[leftmargin=*, label=\arabic*., start=7]
+  \item Being late for an appointment --- E A D
+  \item Taking goods back to a shop --- E A D
+  \item Stealing a book from a library --- E A D
+  \item Going shoplifting --- E A D
+\end{enumerate}
+
+Then ask the students to form groups of four or five and share how they have responded and to share how they would feel if they tried some of the items they found difficult.
+
+There are several ways in which our behaviour is controlled. More extreme forms of anti-social behaviour are controlled by law. A much more restricting control is imposed by social convention. The man who goes to work in a skirt is not breaking the law, but social pressures can be so strong that he may even lose his job if he doesn't conform. This still leaves a wide range of possible behaviours open to us, but our emotional conditioning provides an even more severely restricting form of control, which reduces our potential repertoire of ways of relating to others to almost pitiful proportions. Often we have rational explanations for the limitations we put on our behaviour, but these are probably `rationalizations' in the sense used in the later section on defence mechanisms.
+
+It is operant conditioning which is usually discussed in relation to education because it seems to be closely related to rewards and punishments. Students in school responding to traditional rewards and punishments, however, are not behaving like one of Skinner's rats. Unlike the rat, they have insight into the situations that relate to rewards and punishments. They know that if they behave in certain ways they will be rewarded or punished, even if they have not had the appropriate experience.
+
+The notion of operant conditioning does apply to humans when they are not aware of what is going on. This is also true of infants who, it is assumed, do not have any rational insight into what is happening around them and have their behaviour manipulated by trial and error responses to the rewards and punishments in their environment. This is also true of adult behaviour when the adult is unaware of what is going on. A strong theme of this book is that both pupils and teachers are not aware of much of what they do, particularly when relating to other people. These processes are beautifully illustrated in John Holt's (1964) anthropological studies of schools in the United States. He describes how subtle forms of reward
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 26 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{26 Att ta kontroll över betingning}
+
+\medskip
+
+\begin{enumerate}[leftmargin=*, label=\arabic*., start=7]
+  \item Komma försent till ett möte --- L M S
+  \item Lämna tillbaka varor till en butik --- L M S
+  \item Stjäla en bok från ett bibliotek --- L M S
+  \item Snatteri i en butik --- L M S
+\end{enumerate}
+
+Be sedan studenterna att bilda grupper om fyra eller fem och dela med sig av hur de svarat och hur de skulle känna sig om de provade några av de saker de tyckte var svåra.
+
+Det finns flera sätt på vilka vårt beteende kontrolleras. Mer extrema former av asocialt beteende kontrolleras av lagen. En mycket mer begränsande kontroll utövas av sociala konventioner. Mannen som går till arbetet i en kjol bryter inte mot lagen, men sociala påtryckningar kan vara så starka att han till och med kan förlora sitt jobb om han inte anpassar sig. Detta lämnar fortfarande ett brett spektrum av möjliga beteenden öppna för oss, men vår emotionella betingning ger en ännu strängare begränsande form av kontroll, vilket reducerar vårt potentiella repertoar av sätt att relatera till andra till nästan ömkliga proportioner. Ofta har vi rationella förklaringar till de begränsningar vi sätter på vårt beteende, men dessa är förmodligen ``rationaliseringar'' i den mening som används i det senare avsnittet om försvarsmekanismer.
+
+Det är operant betingning som vanligtvis diskuteras i förhållande till utbildning eftersom den verkar vara nära knuten till belöningar och straff. Elever i skolan som reagerar på traditionella belöningar och straff beter sig dock inte som en av Skinners råttor. Till skillnad från råttan har de insikt i de situationer som rör belöningar och straff. De vet att om de beter sig på ett visst sätt kommer de att bli belönade eller bestraffade, även om de inte har haft den lämpliga erfarenheten.
+
+Begreppet operant betingning gäller dock för människor när de inte är medvetna om vad som pågår. Detta gäller även spädbarn som, antas det, inte har någon rationell insikt i vad som händer runt omkring dem och vars beteende manipuleras av försök-och-fel-reaktioner på belöningar och straff i deras omgivning. Detta gäller också vuxnas beteende när den vuxne inte är medveten om vad som pågår. Ett starkt tema i denna bok är att både elever och lärare inte är medvetna om mycket av det de gör, i synnerhet när det gäller att relatera till andra människor. Dessa processer illustreras vackert i John Holts (1964) antropologiska studier av skolor i USA. Han beskriver hur subtila former av belöning
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 27 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 27}
+
+\medskip
+
+and punishment manipulate the pupils into providing what the teacher wants. Adult students often report the same process going on at college or university.
+
+The subtle nature of these processes is dramatically illustrated by some early experiments by Greenspoon (1962). In a typical experiment, the experimenter sits opposite a subject and conducts a normal conversation. Every time the subject produces a plural noun, the experimenter says `uhhum' in a pleasant manner and smiles. As a result of this procedure, the incidence of plural nouns can be increased. The same effects can be produced with nervous habits. If the experimenter smiles every time the subject strokes his nose, the incidence of nose stroking will increase. If the results of these simple experiments generalize to everyday behaviour, which seems likely, then we are influencing each other in our interactions all of the time, encouraging some aspects of behaviour, and discouraging others.
+
+There is an apocryphal story of students in a psychology class who were being lectured on these processes. The lecturer tended to wander around the podium, so the class colluded in smiling when he was on one side and not to smile when he was on the other side. He began to spend more and more time on the smiling side and eventually gave the last part of his lecture in the corner!
+
+This type of evidence suggests that it is possible for an individual to have a powerful effect on another person's behaviour. Imagine a complete school staff deciding to consistently reward every positive act performed by a pupil who was having serious problems of social adjustment in the school. An ongoing experience of punishment is changed to a continuous experience of reward. It seems inevitable that the pupil concerned would change in some way. Unfortunately, it is rare for a staff group to work together so effectively. It is probably more common for patterns of relationships to be established without either pupils or teachers being aware of the rewards and punishments involved.
+
+Indeed, the rewards and punishments in a given situation may work to produce the opposite of what is wanted, because of lack of insight into what is rewarding in a given situation. Consider the following domestic example. Sara, at nearly three years old, usually went through the night without wetting the bed, but occasionally had an accident. She also liked to come into the warm, comforting parental bed. If she woke up in the night and was dry, it was a simple matter to put her back into her bed. If she was wet there would be a lot of
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 27 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 27}
+
+\medskip
+
+och straff manipulerar eleverna till att ge läraren vad denne vill ha. Vuxna studenter rapporterar ofta att samma process pågår på college eller universitet.
+
+Den subtila karaktären hos dessa processer illustreras dramatiskt av några tidiga experiment av Greenspoon (1962). I ett typiskt experiment sitter experimentledaren mittemot en försöksperson och för ett normalt samtal. Varje gång försökspersonen använder ett pluralt substantiv säger experimentledaren ``uhhum'' på ett trevligt sätt och ler. Till följd av detta förfarande kan frekvensen av plurala substantiv ökas. Samma effekter kan produceras med nervösa vanor. Om experimentledaren ler varje gång försökspersonen stryker sig på näsan kommer frekvensen av nässtrykningar att öka. Om resultaten av dessa enkla experiment generaliserar till vardagligt beteende, vilket verkar troligt, påverkar vi varandra i våra interaktioner hela tiden, uppmuntrar vissa aspekter av beteendet och avskräcker andra.
+
+Det finns en apokryfisk berättelse om studenter i en psykologiklass som förelästes om dessa processer. Föreläsaren tenderade att vandra runt på podiet, så klassen konspirerade i att le när han befann sig på en sida och att inte le när han befann sig på den andra sidan. Han började spendera allt mer tid på le-sidan och höll till slut den sista delen av sin föreläsning i hörnet!
+
+Denna typ av bevis tyder på att det är möjligt för en individ att ha en kraftfull effekt på en annan persons beteende. Föreställ dig en hel skolpersonal som beslutar att konsekvent belöna varje positiv handling som utförs av en elev som har allvarliga problem med social anpassning i skolan. En pågående upplevelse av bestraffning förändras till en kontinuerlig upplevelse av belöning. Det verkar oundvikligt att den berörda eleven skulle förändras på något sätt. Tyvärr är det sällsynt att en personalgrupp arbetar tillsammans så effektivt. Det är förmodligen vanligare att relationsmönster etableras utan att varken elever eller lärare är medvetna om de inblandade belöningarna och straffen.
+
+Faktum är att belöningarna och straffen i en given situation kan fungera för att producera motsatsen till det som önskas, på grund av bristande insikt i vad som är belönande i en given situation. Betrakta följande hushållsexempel. Sara, knappt tre år gammal, gick vanligtvis igenom natten utan att väta ner sängen, men hade ibland en olycka. Hon tyckte också om att krypa ner i den varma, trygga föräldrasängen. Om hon vaknade på natten och var torr var det enkelt att lägga henne tillbaka i hennes säng. Om hon var blöt skulle det bli mycket
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 28 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{28 Taking control of conditioning}
+
+\medskip
+
+trouble changing her clothes and sheets and then getting her back to sleep after all the disturbance. A pattern was set up that every time she was dry, she was put back to bed. Every time she was wet, she was allowed to stay in the parental bed. In effect, wetting the bed was being rewarded and being dry was being punished. One of the parents decided he was going to be consistent and that he would always put her back when she was wet. Unfortunately, Sara quickly learned that if she went to her father's side of the bed, she was punished and if she went round to her mother's side she was rewarded. Dad never had the chance to find out if his theory was correct.
+
+Self-defeating patterns of behaviour are often set up because the individual is responding to a short-term reward rather than a long-term reward. The research into conditioning demonstrated clearly that an immediate reward was far more effective in developing learned conditioned responses than long-term rewards. This may explain a great deal of defensive behaviour. The shy person is rewarded by escaping from a source of anxiety, even though the long-term effects are deeply disturbing. The shy person comes into a social situation and experiences anxiety. By withdrawing, he gets relief from the anxiety and is rewarded. If he then worries about the long-term effects on his life, he will probably experience more anxiety the next time, thus increasing the chance that he will withdraw again. Because of the increased anxiety the sense of relief and reward will increase. Thus a vicious circle is set up, establishing the shy behaviour very effectively.
+
+It is hard to know which specific aspects of behaviour are rewarding for individual teachers, students or children. Certainly, some teachers repeat the same behaviour over and over again, even though it does not appear to produce the desired results. In his first year of teaching, one of the writers developed the habit of shouting when the pupils became unruly and though it had no more than a brief impact on the class, the habit soon became established. Again, the sudden but brief reduction of noise probably played an important part in reinforcing the shouting. There was also an immediate release of tension, which may also have had a reinforcing effect.
+
+Another feature of operant conditioning described by Skinner is that the effects of a reward appear to be much more potent if the reward is not given every time the appropriate behaviour is produced. If Skinner's rats were rewarded every so often, rather than every time they pressed the bar, they may have taken a little longer to learn to press the bar, but the bar pressing went on long after the reward
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 28 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{28 Att ta kontroll över betingning}
+
+\medskip
+
+besvär med att byta hennes kläder och lakan och sedan få henne att somna om efter all uppståndelse. Ett mönster etablerades där hon varje gång hon var torr lades tillbaka i sin säng. Varje gång hon var blöt fick hon stanna i föräldrasängen. I praktiken belönades sängvätning och det var ett straff att vara torr. En av föräldrarna bestämde sig för att vara konsekvent och alltid lägga tillbaka henne när hon var blöt. Tyvärr lärde sig Sara snabbt att om hon gick till sin fars sida av sängen bestraffades hon och om hon gick runt till sin mors sida belönades hon. Pappa fick aldrig chansen att ta reda på om hans teori var korrekt.
+
+Självdestructiva beteendemönster etableras ofta för att individen reagerar på en kortsiktig belöning snarare än en långsiktig belöning. Forskningen om betingning visade tydligt att en omedelbar belöning var mycket mer effektiv för att utveckla inlärda betingade reaktioner än långsiktiga belöningar. Detta kan förklara en hel del defensivt beteende. Den blyga personen belönas genom att undfly en källa till ångest, även om de långsiktiga effekterna är djupt störande. Den blyga personen kommer in i en social situation och upplever ångest. Genom att dra sig tillbaka får han lindring från ångesten och belönas. Om han sedan oroar sig för de långsiktiga effekterna på sitt liv, kommer han förmodligen att uppleva mer ångest nästa gång, vilket ökar chansen att han drar sig tillbaka igen. På grund av den ökade ångesten kommer känslan av lättnad och belöning att öka. Därmed etableras en ond cirkel som mycket effektivt befäster det blyga beteendet.
+
+Det är svårt att veta vilka specifika aspekter av beteendet som är belönande för enskilda lärare, studenter eller barn. Visst upprepar vissa lärare samma beteende om och om igen, även om det inte verkar producera önskade resultat. Under sitt första undervisningsår utvecklade en av författarna vanan att skrika när eleverna blev oroliga, och även om det inte hade mer än en kortvarig effekt på klassen etablerades vanan snart. Återigen spelade den plötsliga men kortvariga minskningen av buller förmodligen en viktig roll i förstärkningen av skrikandet. Det fanns också en omedelbar spänningslösning, vilket också kan ha haft en förstärkande effekt.
+
+En annan egenskap hos operant betingning som beskrivs av Skinner är att effekterna av en belöning verkar vara mycket kraftfullare om belöningen inte ges varje gång det lämpliga beteendet produceras. Om Skinners råttor belönades då och då, snarare än varje gång de tryckte på spaken, kan det ha tagit lite längre tid att lära sig trycka på spaken, men spaktryckandet fortsatte länge efter att belöningen
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 29 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 29}
+
+\medskip
+
+stopped altogether. Presumably, the aim of most rewards and punishments is to establish patterns of behaviour which will continue after the administration of the rewards and punishments has ceased. This would suggest that a `partial schedule of reinforcement' (to use Skinner's term) would be the most effective way of achieving this aim.
+
+This highly efficient form of learning can also work to the teacher's disadvantage. You might decide that a difficult member of your class is shouting out in order to get attention and that any response on your part is rewarding. So you make a determined effort not to respond to any shouting out behaviour. After a period of being consistent, you might respond without thinking and so you resolve to be consistent from then on. Periodic lapses of this nature are only natural, but unfortunately, they are reinforcing shouting out behaviour in the worst possible way. The unwanted behaviour is firmly fixed.
+
+A common piece of advice given to teachers is to ignore the unwanted behaviour so that it is never rewarded. But, as we have seen, just one or two lapses can produce an even greater problem. Try and assess for yourself if, realistically, in a busy classroom, you can be consistent. Alternative solutions may lie outside the classroom. One idea may be to try to establish a special relationship with the child in another situation, such as a school disco or club.
+
+We have had the experience of teaching our children to whine for sweets. Having decided that a continuous supply of sweets was bad for them, demands would be met with a pompous statement about their health. Of course there would be periodic lapses and the whining for sweets behaviour was being reinforced in the worst possible way. There is a slight whine in their voices now they are young adults.
+
+It is these unplanned patterns of reward and punishment that cause most of the trouble preventing teachers and pupils from establishing productive patterns of behaviour. Because they are often out of our awareness, then our behaviour is of the same order as one of Skinner's rats and it may need careful observation and planning in order to change these patterns. In the hurly-burly of a working school there is rarely time to examine ongoing processes of this nature.
+
+\textbf{Learned helplessness}
+
+One aspect of conditioning research which has received a great deal of attention in recent years is the work on learned helplessness. The
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 29 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 29}
+
+\medskip
+
+upphörde helt. Förmodligen är syftet med de flesta belöningar och straff att etablera beteendemönster som kommer att fortsätta efter att belöningarna och straffen har upphört. Detta tyder på att ett ``partiellt förstärkningsschema'' (för att använda Skinners term) skulle vara det mest effektiva sättet att uppnå detta mål.
+
+Denna mycket effektiva form av inlärning kan också fungera till lärarens nackdel. Du kanske beslutar att en svår elev i din klass ropar ut för att få uppmärksamhet och att varje reaktion från din sida är belönande. Så du gör en bestämd ansträngning att inte reagera på något utropsbeteende. Efter en period av konsekvens kan du reagera utan att tänka och beslutar dig därför för att vara konsekvent från den tidpunkten. Periodiska tillbakasteg av detta slag är bara naturliga, men tyvärr förstärker de utropsbeteendet på värsta möjliga sätt. Det oönskade beteendet är fast förankrat.
+
+Ett vanligt råd till lärare är att ignorera det oönskade beteendet så att det aldrig belönas. Men som vi har sett kan redan ett eller två tillbakasteg skapa ett ännu större problem. Försök att bedöma för dig själv om du realistiskt sett, i ett hektiskt klassrum, kan vara konsekvent. Alternativa lösningar kan ligga utanför klassrummet. En idé kan vara att försöka etablera en speciell relation med barnet i en annan situation, till exempel en skoldisco eller klubb.
+
+Vi har haft erfarenheten av att lära våra barn att gnälla efter godis. Sedan vi beslutade att en kontinuerlig tillgång på godis var dålig för dem, skulle krav mötas med ett pompöst uttalande om deras hälsa. Naturligtvis förekommer det periodiska tillbakasteg och gnällbeteendet för godis förstärktes på värsta möjliga sätt. Det finns ett svagt gnäll i deras röster nu när de är unga vuxna.
+
+Det är dessa oplanerade mönster av belöning och straff som orsakar de flesta problem och hindrar lärare och elever från att etablera produktiva beteendemönster. Eftersom de ofta ligger utanför vår medvetenhet är vårt beteende av samma ordning som en av Skinners råttor, och det kan krävas noggrann observation och planering för att förändra dessa mönster. I en arbetsam skola finns det sällan tid att undersöka pågående processer av detta slag.
+
+\textbf{Inlärd hjälplöshet}
+
+En aspekt av betingningsforskning som har fått stor uppmärksamhet under de senaste åren är arbetet med inlärd hjälplöshet.
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 30 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{30 Taking control of conditioning}
+
+\medskip
+
+notion developed out of work reported by Seligman (1973) whose co-workers gave painful electric shocks to dogs who were restrained so that there was nothing they could do to avoid the shock. The dogs were then placed in a shuttle box. A shuttle box is a piece of apparatus in which an animal learns to avoid an electric shock by jumping over a barrier into a different part of the box. The dogs who had been traumatized by their earlier painful experience were unable to learn this avoidance task, which normal dogs learn quickly and easily. They appear to have learned helplessness.
+
+This concept has been applied to human behaviour, suggesting that prolonged experiences of failure, punishment or pain can produce apathy, depression and even speed up the onset of death in the individual. This generalization has an immediate appeal and we can all think of individuals in educational settings who appear to fit this model, such as teachers who are having trouble with their classes and children who are having difficulties with their social relations or their academic work.
+
+However, humans are different from animals in that some of us respond to life experience with learned helplessness, whereas others rise above difficulties such as illness, failure, disadvantaged background and so on, and use those experiences as a spur to even greater effort. These differences have been explained (Garber and Seligman, 1980) in terms of what the individual perceives to be the cause of the failure or difficulty. The individual's perception of the causation of events is usually called `attribution' in the psychological literature, and attribution theory has become very complex, suggesting that several variables can contribute to a specific attribution. Another complication is the fact that it is impossible to unravel the years of experience that go towards the formulation of a specific attribution. For the moment, we will examine three dimensions of attribution and illustrate them with two practical examples. Firstly, a teacher who is having problems in controlling classes and secondly, a child who is having difficulty making new friends having moved to a new school.
+
+\textit{(a)} The problem might be seen as due to factors within the individual, or due to factors inherent in the situation. The attributions are varying along a dimension of `internal', that is, the cause is seen to lie within the individual, to `external', that is, the cause is seen to be outside the individual.
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 30 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{30 Att ta kontroll över betingning}
+
+\medskip
+
+Begreppet utvecklades ur arbete som rapporterades av Seligman (1973), vars medarbetare gav smärtsamma elektriska stötar till hundar som hölls fast så att de inte kunde göra något för att undvika stöten. Hundarna placerades sedan i en skyttelbox. En skyttelbox är ett apparatstycke där ett djur lär sig att undvika en elektrisk stöt genom att hoppa över en barriär till en annan del av boxen. Hundarna som hade traumatiserats av sin tidigare smärtsamma upplevelse var oförmögna att lära sig denna undvikningsuppgift, som normala hundar lär sig snabbt och lätt. De verkar ha lärt sig hjälplöshet.
+
+Detta begrepp har tillämpats på mänskligt beteende och tyder på att långvariga upplevelser av misslyckande, bestraffning eller smärta kan producera apati, depression och till och med påskynda dödsinsjuknandet hos individen. Denna generalisering har ett omedelbart tilltalet och vi kan alla tänka på individer i pedagogiska miljöer som verkar passa in i denna modell, som lärare som har problem med sina klasser och barn som har svårigheter med sina sociala relationer eller sitt akademiska arbete.
+
+Människor skiljer sig dock från djur i det avseendet att vissa av oss reagerar på livsupplevelsen med inlärd hjälplöshet, medan andra reser sig över svårigheter som sjukdom, misslyckande, missgynnad bakgrund och så vidare, och använder dessa upplevelser som en sporre till ännu större ansträngning. Dessa skillnader har förklarats (Garber och Seligman, 1980) i termer av vad individen uppfattar som orsaken till misslyckandet eller svårigheten. Individens uppfattning om orsakssamband för händelser kallas vanligtvis ``attribution'' i den psykologiska litteraturen, och attributionsteorin har blivit mycket komplex och tyder på att flera variabler kan bidra till en specifik attribution. En annan komplikation är det faktum att det är omöjligt att reda ut de år av erfarenhet som går mot formuleringen av en specifik attribution. För tillfället ska vi undersöka tre dimensioner av attribution och illustrera dem med två praktiska exempel. För det första en lärare som har problem med att kontrollera klasser och för det andra ett barn som har svårt att skaffa nya vänner efter att ha bytt skola.
+
+\textit{(a)} Problemet kan ses som beroende av faktorer inom individen, eller beroende av faktorer som är inneboende i situationen. Attributionerna varierar längs en dimension från ``intern'', det vill säga att orsaken ses ligga inom individen, till ``extern'', det vill säga att orsaken ses ligga utanför individen.
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 31 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 31}
+
+\medskip
+
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+  \item The teacher might blame his own qualities, or he may blame his head of department for giving him all the worst classes.
+  \item The child might perceive himself as being too shy or he may blame the other children for what he sees as ganging up against him.
+\end{enumerate}
+
+\textit{(b)} The problem might be seen as `global'; applying to all situations, or it may be seen as `specific'; limited to this particular situation. Global attributions represent a very pessimistic view of an issue.
+
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+  \item The problem might be seen as applying to all teachers, and as insoluble, that is ``No one can effectively teach inner-city children (even though there might be plenty of evidence to the contrary)''. Alternatively, he might see himself as having difficulties in this particular school, whereas he was successful in his previous school.
+  \item The child might persuade himself that no one can break into established cliques in the school. Alternatively, he might see himself as getting on badly with the children in his class, but relating well to other groups in the playground.
+\end{enumerate}
+
+\textit{(c)} The problem might be seen in terms of whether the situation is `stable' or `unstable'.
+
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+  \item The teacher may have had bad experiences with his classes ever since he started teaching and feel that things are unlikely to ever change. On the other hand, he might think he is going through a bad patch because of personal problems and when these have been cleared up, the problems of class management will disappear.
+  \item The child may feel that he will never make friends with the children in his class, because he is the only person of a different group. On the other hand he might be aware that it will take time for him to settle down in the class and for the class to get used to him.
+\end{enumerate}
+
+These dimensions can help us to describe attributions and give some indication of to what extent a person is in control of his life. An internal, specific, unstable attribution leaves scope for potential change, whereas an external, global, stable attribution implies a fixed view of the world.
+
+Thus, some attributions leave the individual thinking that there is nothing that can be done to alter the situation. Sometimes this generalizes to a wide variety of situations and persists over a long period of
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 31 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 31}
+
+\medskip
+
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+  \item Läraren kan skylla på sina egna egenskaper, eller han kan skylla på sin ämnesföreståndare för att ha gett honom alla de sämsta klasserna.
+  \item Barnet kan uppfatta sig själv som alltför blygt eller skylla på de andra barnen för vad han ser som att de gängar ihop sig mot honom.
+\end{enumerate}
+
+\textit{(b)} Problemet kan ses som ``globalt'', gällande alla situationer, eller det kan ses som ``specifikt'', begränsat till denna särskilda situation. Globala attributioner representerar en mycket pessimistisk syn på en fråga.
+
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+  \item Problemet kan ses som gällande alla lärare och som olösligt, det vill säga ``Ingen kan effektivt undervisa barn i utsatta stadsdelar (även om det kan finnas gott om bevis för motsatsen)''. Alternativt kan han se sig själv som att ha svårigheter på denna specifika skola, medan han lyckades på sin tidigare skola.
+  \item Barnet kan övertyga sig själv om att ingen kan bryta sig in i etablerade kotterier i skolan. Alternativt kan han se sig själv som att komma dåligt överens med barnen i sin klass, men relatera väl till andra grupper på skolgården.
+\end{enumerate}
+
+\textit{(c)} Problemet kan ses i termer av om situationen är ``stabil'' eller ``instabil''.
+
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+  \item Läraren kan ha haft dåliga erfarenheter med sina klasser ända sedan han började undervisa och känna att det är osannolikt att saker och ting någonsin kommer att förändras. Å andra sidan kanske han tror att han går igenom en dålig period på grund av personliga problem och när dessa har lösts kommer problemen med klasshantering att försvinna.
+  \item Barnet kan känna att han aldrig kommer att bli vän med barnen i sin klass, eftersom han är den enda personen av en annan grupp. Å andra sidan kan han vara medveten om att det kommer att ta tid för honom att slå sig ner i klassen och för klassen att vänja sig vid honom.
+\end{enumerate}
+
+Dessa dimensioner kan hjälpa oss att beskriva attributioner och ge en indikation på i vilken utsträckning en person har kontroll över sitt liv. En intern, specifik, instabil attribution lämnar utrymme för potentiell förändring, medan en extern, global, stabil attribution innebär en fast syn på världen.
+
+Således lämnar vissa attributioner individen med uppfattningen att det inte finns något som kan göras för att förändra situationen. Ibland generaliserar detta till ett brett spektrum av situationer och kvarstår under en lång period
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 32 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{32 Taking control of conditioning}
+
+\medskip
+
+time. If you perceive yourself as not being very bright, as not being particularly good at anything, and have experienced many years of failure, then it seems reasonable not to have any high expectations in the future, irrespective of any potential ability. Perhaps a high proportion of children in our schools go through this sort of experience and that learned helplessness is epidemic. It is not relevant that these attributions do not match those of other people. The way a situation is perceived is `reality' for that person.
+
+Dweck and Licht (Garber and Seligman, 1980) draw some interesting conclusions about the differences in the development of learned helplessness between boys and girls and how this relates to performance in different academic subjects. Their evidence suggests that even though boys receive more negative feedback than girls, a high proportion of it is about non-intellectual aspects of their behaviour in class. For girls, on the other hand, virtually all of the negative feedback they receive does relate to the specific intellectual task. Thus the criticisms directed at girls are a reflection of their intellectual ability whereas the criticisms directed at boys are much more ambiguous, so that it is not altogether clear that negative criticism is a reflection of lack of intellectual ability or about bad behaviour. Also, teachers ascribed academic failure to lack of motivation eight times more often with boys than with girls. They use this data to explain the findings that girls appear to present more learned helplessness than boys. The girls explained their academic failure as being the result of lack of ability. Boys, on the other hand, were much more likely to explain their failures as being due to lack of motivation. They go on to develop this argument and explain why boys are generally better at maths and girls are better at verbal skills. Since maths usually involves specific solutions and failure is clear cut, it is here that the unambiguous message contained in the feedback for girls will be most precise. The boys who receive much more ambiguous feedback will be more resilient to the criticisms because they don't see it as a direct comment on their ability, and if the teacher ascribes their failure to lack of motivation, then it might even be a spur to greater effort.
+
+In the subjects involving verbal skills, there is not the same emphasis on right and wrong answers, which may explain why girls appear to do better in these areas.
+
+There are other explanations for the differences between the sexes in these subjects, such as differences in the development of later-
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 32 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{32 Att ta kontroll över betingning}
+
+\medskip
+
+av tid. Om du uppfattar dig själv som inte särskilt begåvad, som inte särskilt bra på något, och har upplevt många år av misslyckanden, verkar det rimligt att inte ha några höga förväntningar i framtiden, oavsett eventuell förmåga. Kanske genomgår en hög andel av barnen i våra skolor denna typ av upplevelse och att inlärd hjälplöshet är epidemisk. Det är inte relevant att dessa attributioner inte stämmer överens med andra människors. Det sätt på vilket en situation uppfattas är ``verkligheten'' för den personen.
+
+Dweck och Licht (Garber och Seligman, 1980) drar några intressanta slutsatser om skillnaderna i utvecklingen av inlärd hjälplöshet mellan pojkar och flickor och hur detta relaterar till prestationer i olika akademiska ämnen. Deras bevis tyder på att även om pojkar får mer negativ feedback än flickor, handlar en hög andel av den om icke-intellektuella aspekter av deras beteende i klassen. För flickor, å andra sidan, relaterar nästan all negativ feedback de får till den specifika intellektuella uppgiften. Således är de kritiker som riktas mot flickor en återspegling av deras intellektuella förmåga, medan de kritiker som riktas mot pojkar är mycket mer tvetydiga, så att det inte är helt klart att negativ kritik är en återspegling av bristande intellektuell förmåga eller handlar om dåligt beteende. Dessutom tillskrev lärare akademiskt misslyckande brist på motivation åtta gånger oftare hos pojkar än hos flickor. De använder dessa uppgifter för att förklara fynden att flickor verkar uppvisa mer inlärd hjälplöshet än pojkar. Flickorna förklarade sitt akademiska misslyckande som ett resultat av bristande förmåga. Pojkar, å andra sidan, var mycket mer benägna att förklara sina misslyckanden som beroende av bristande motivation. De fortsätter att utveckla detta argument och förklara varför pojkar generellt är bättre på matematik och flickor är bättre på verbala färdigheter. Eftersom matematik vanligtvis innebär specifika lösningar och misslyckande är tydligt, är det här som det otvetydiga budskapet i feedbacken för flickor kommer att vara mest precist. Pojkarna som får mycket mer tvetydig feedback kommer att vara mer motståndskraftiga mot kritiken eftersom de inte ser det som en direkt kommentar till deras förmåga, och om läraren tillskriver deras misslyckande brist på motivation kan det till och med vara en sporre till större ansträngning.
+
+I ämnen som involverar verbala färdigheter finns det inte samma betoning på rätta och felaktiga svar, vilket kan förklara varför flickor verkar klara sig bättre inom dessa områden.
+
+Det finns andra förklaringar till skillnaderna mellan könen i dessa ämnen, till exempel skillnader i utvecklingen av
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 33 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 33}
+
+\medskip
+
+alization of the brain. Probably no single explanation is adequate. However, the research into helplessness does suggest strongly that some individuals respond to failure with a helpless reaction, blaming stable factors such as their lack of ability, whereas others respond with what has been described as a `mastery orientation' blaming less stable factors, such as lack of motivation. This has profound implications for education and the ways in which feedback is given to children. Dweck (1975) showed that children improved in their reactions to failure when they were taught to attribute it to lack of effort rather than lack of ability.
+
+In spite of success in some areas of life, most of us can find examples of helplessness which have grown out of earlier experiences of failure. Repairing cars, singing in tune, telling jokes in public and expressing anger are a few examples we can offer from our own experience.
+
+Try to think of some examples of learned helplessness from your own experience and then enter them into the following sheet with the additional information asked for.
+
+\medskip
+
+\begin{tabular}{p{0.3\columnwidth} p{0.3\columnwidth} p{0.3\columnwidth}}
+\toprule
+\textbf{Example of learned helplessness} & \textbf{What experiences brought this about?} & \textbf{What could you do about it?} \\
+\midrule
+ & & \\[1.5em]
+ & & \\[1.5em]
+ & & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+Counsel a partner for twenty minutes on what they have written. Then change roles for a further twenty minutes.
+
+A further difficulty with the notion of helplessness is the possibility that the individual is pretending to be helpless. This could well be a common reaction in secondary schools in the UK. With little hope of a qualification or a job, there is no incentive to work at tasks which are not intrinsically interesting. `I can't do it Miss,' is a stock response, which is often given even before the task has been seen. This is not,
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 33 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 33}
+
+\medskip
+
+lateralisering av hjärnan. Förmodligen är ingen enskild förklaring tillräcklig. Forskningen om hjälplöshet tyder dock starkt på att vissa individer reagerar på misslyckande med en hjälplös reaktion och skyller på stabila faktorer som deras bristande förmåga, medan andra reagerar med vad som har beskrivits som en ``behärskningsteknik'' och skyller på mindre stabila faktorer, som bristande motivation. Detta har djupgående konsekvenser för utbildning och de sätt på vilka feedback ges till barn. Dweck (1975) visade att barn förbättrade sina reaktioner på misslyckande när de lärdes att tillskriva det brist på ansträngning snarare än brist på förmåga.
+
+Trots framgång på vissa livsområden kan de flesta av oss hitta exempel på hjälplöshet som har vuxit fram ur tidigare upplevelser av misslyckande. Att reparera bilar, sjunga rent, berätta skämt offentligt och uttrycka ilska är några exempel vi kan erbjuda från vår egen erfarenhet.
+
+Försök att tänka på några exempel på inlärd hjälplöshet från din egen erfarenhet och ange dem sedan i följande blad med den ytterligare information som efterfrågas.
+
+\medskip
+
+\begin{tabular}{p{0.3\columnwidth} p{0.3\columnwidth} p{0.3\columnwidth}}
+\toprule
+\textbf{Exempel på inlärd hjälplöshet} & \textbf{Vilka erfarenheter ledde till detta?} & \textbf{Vad kan du göra åt det?} \\
+\midrule
+ & & \\[1.5em]
+ & & \\[1.5em]
+ & & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+Ge råd till en partner i tjugo minuter om vad de har skrivit. Byt sedan roller under ytterligare tjugo minuter.
+
+En ytterligare svårighet med begreppet hjälplöshet är möjligheten att individen låtsas vara hjälplös. Detta kan mycket väl vara en vanlig reaktion i gymnasieskolor i Storbritannien. Med liten förhoppning om en examen eller ett jobb finns det inget incitament att arbeta med uppgifter som inte är intrinsikalt intressanta. ``Jag kan inte göra det, fröken'' är ett standardsvar som ofta ges även innan uppgiften har setts. Detta är inte,
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 34 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{34 Taking control of conditioning}
+
+\medskip
+
+however, just a response from recalcitrant adolescents. One of the writers had long experience of changing nappies and, being faced with the same task several years later, soon found that if he stood by looking helpless, the job would be done for him. Similarly, in a team teaching situation with a large number of pupils, it is easy to stand back and allow the teacher with the strongest reputation for maintaining order to do all the work. If this type of behaviour becomes a habit, there is a danger that the person concerned may eventually become convinced that he cannot perform the task of maintaining discipline, thus acquiring a form of learned helplessness which is different from the notion we have been discussing.
+
+\textbf{Locus of control}
+
+In the previous section, it was suggested that an important dimension of learned helplessness was the attribution made by the individual as to what was responsible for success or failure in a given situation. Individuals who perceived themselves as responsible for their success or failure were less likely to experience helplessness. These types of attribution are clearly related to the idea of locus of control. This notion grew out of a simple experiment by Phares (1957) who showed that subjects changed their expectations about how well they would do in a simple task significantly if they believed that their performance was due to skill rather than chance. Research into this area was given a boost by the development of a questionnaire to measure locus of control by Rotter (1966) and his associates. This I-E Scale places the respondent on a continuum from `internality' to `externality'. A person who scores high on `internality' takes responsibility for what happens in life. The person who scores high on `externality' perceives more of life's happenings as the result of luck, chance, fate, as under the control of powerful others, or as unpredictable because of the great complexity of the forces surrounding him, to use Rotter's words.
+
+When things go wrong in school, do you find yourself blaming the headteacher, or the fact that you happen to have been given the worst classes, or the chaos of working in a large institution? On the other hand, do you look to your own behaviour to see if there are changes you can make to produce the results that you want? In your studies, did you blame poor teaching, or bad luck in question spotting, or the
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 34 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{34 Att ta kontroll över betingning}
+
+\medskip
+
+dock bara ett svar från motspänstiga ungdomar. En av författarna hade lång erfarenhet av att byta blöjor och när han ställdes inför samma uppgift flera år senare, fann han snart att om han stod bredvid och såg hjälplös ut, skulle jobbet göras åt honom. På samma sätt är det i en samundervisningssituation med ett stort antal elever lätt att stå tillbaka och låta läraren med det starkaste ryktet för att upprätthålla ordning göra allt arbete. Om denna typ av beteende blir en vana finns det en risk att den berörde personen så småningom kan bli övertygad om att han inte kan utföra uppgiften att upprätthålla disciplin, och därigenom förvärvar en form av inlärd hjälplöshet som skiljer sig från det begrepp vi har diskuterat.
+
+\textbf{Kontrollokus}
+
+I föregående avsnitt föreslogs att en viktig dimension av inlärd hjälplöshet var den attribution som individen gör om vad som är ansvarigt för framgång eller misslyckande i en given situation. Individer som uppfattade sig själva som ansvariga för sin framgång eller sitt misslyckande var mindre benägna att uppleva hjälplöshet. Dessa typer av attributioner är tydligt relaterade till idén om kontrollokus. Detta begrepp växte fram ur ett enkelt experiment av Phares (1957) som visade att försökspersoner förändrade sina förväntningar om hur bra de skulle klara sig på en enkel uppgift avsevärt om de trodde att deras prestanda berodde på skicklighet snarare än slump. Forskning inom detta område fick ett lyft med utvecklingen av ett frågeformulär för att mäta kontrollokus av Rotter (1966) och hans medarbetare. Denna I-E-skala placerar respondenten på ett kontinuum från ``internalitet'' till ``externalitet''. En person som poängsätter högt på ``internalitet'' tar ansvar för vad som händer i livet. Den person som poängsätter högt på ``externalitet'' uppfattar mer av livets händelser som ett resultat av tur, slump, öde, som under kontroll av mäktiga andra, eller som oförutsägbart på grund av den stora komplexiteten hos de krafter som omger honom, för att använda Rotters ord.
+
+När saker går fel i skolan, finner du dig själv skylla på rektorn, eller det faktum att du råkar ha fått de sämsta klasserna, eller kaoset med att arbeta i en stor institution? Å andra sidan tittar du på ditt eget beteende för att se om det finns förändringar du kan göra för att producera de resultat du vill ha? I dina studier, skyllde du på dålig undervisning, eller otur vid val av frågor, eller
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 35 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 35}
+
+\medskip
+
+scarcity of books for lack of success? In the next exercise, try some of the questions which have been designed to resemble the I-E Scale, but have been modified to apply to teaching situations.
+
+For each of the following pairs of statements, circle either (a) or (b) according to which most matches your experience of teaching:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item (a) My lack of success has been largely due to bad luck.\par (b) The development of my teaching has been the result of my own actions and decisions.
+  \item (a) I try to make the best use of my day, in spite of organizational problems.\par (b) The timetable is so badly planned, it is impossible to teach a meaningful sequence of lessons.
+  \item (a) The exam results of the classes I teach depend on how hard they have worked.\par (b) I modify what I do to meet the individual needs and abilities of my students.
+  \item (a) No one can effectively teach inner-city children.\par (b) The skilful teacher can produce good results from children of any social background.
+  \item (a) My head of department blocks all of my creative ideas.\par (b) I must try to work at the part I play in the failures of communication in my department.
+\end{enumerate}
+
+Pair off with another person and discuss the extent to which you feel you are in control of the events that happen to you in teaching situations.
+
+Later, change the discussion to consider to what extent a questionnaire of this nature can provide a score which makes a meaningful statement about your personality.
+
+A number of questionnaires have been designed to measure locus of control; these have played a central part in a large number of research studies. Some questionnaires have been designed to investigate particular areas, such as responsibility for academic success (Crandall, Katkovsky and Crandall, 1965) and many of the questionnaires distinguish between taking responsibility for the good and bad things that happen. A scale has been developed at the Child Health Research Unit at Bristol called the Children's Attribution of Responsibility and
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 35 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 35}
+
+\medskip
+
+bristen på böcker som orsak till bristande framgång? I nästa övning, prova några av de frågor som har utformats för att likna I-E-skalan, men som har modifierats för att gälla undervisningssituationer.
+
+För vart och ett av följande par av påståenden, ringa in antingen (a) eller (b) beroende på vilket som bäst stämmer överens med din erfarenhet av undervisning:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item (a) Min bristande framgång har till stor del berott på otur.\par (b) Utvecklingen av min undervisning har varit ett resultat av mina egna handlingar och beslut.
+  \item (a) Jag försöker utnyttja min dag bäst möjligt, trots organisatoriska problem.\par (b) Schemat är så dåligt planerat att det är omöjligt att undervisa en meningsfull sekvens av lektioner.
+  \item (a) Tentamensresultaten för de klasser jag undervisar beror på hur hårt de har arbetat.\par (b) Jag anpassar vad jag gör för att möta de individuella behoven och förmågorna hos mina studenter.
+  \item (a) Ingen kan effektivt undervisa barn i utsatta stadsdelar.\par (b) Den skicklige läraren kan producera goda resultat från barn av vilken social bakgrund som helst.
+  \item (a) Min ämnesföreståndare blockerar alla mina kreativa idéer.\par (b) Jag måste försöka arbeta med den roll jag spelar i kommunikationsmisslyckandena i min avdelning.
+\end{enumerate}
+
+Para ihop dig med en annan person och diskutera i vilken utsträckning du känner att du har kontroll över de händelser som händer dig i undervisningssituationer.
+
+Ändra sedan diskussionen för att överväga i vilken utsträckning ett frågeformulär av detta slag kan ge ett poäng som gör ett meningsfullt uttalande om din personlighet.
+
+Ett antal frågeformulär har utformats för att mäta kontrollokus; dessa har spelat en central roll i ett stort antal forskningsstudier. Vissa frågeformulär har utformats för att undersöka särskilda områden, till exempel ansvar för akademisk framgång (Crandall, Katkovsky och Crandall, 1965) och många av frågeformulären skiljer mellan att ta ansvar för de bra och dåliga saker som händer. En skala har utvecklats vid Child Health Research Unit i Bristol som kallas Children's Attribution of Responsibility and
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 36 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{36 Taking control of conditioning}
+
+\medskip
+
+Locus of Control Scale (see Gammage, 1982) for use with English school children.
+
+We are not happy about the validity of the scores obtained by self-report questionnaires. Responses are easily distorted by the need to produce an answer that will please the investigator. Respondents may have a grandiose opinion of the extent to which they are in control of their lives. An accurate external view is probably far healthier than a deluded internal view. In any society there are groups, like the ethnic minorities in this country, who have the odds stacked against them in terms of acquiring wealth and opportunities available to the majority group.
+
+However, in spite of the potential limitations of the measures, the research has come up with some fairly consistent findings. These are summed up by Phares (1984). From the point of view of human relations in education, the most important of these are:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item Externals tend to be more conforming, compliant and more easily persuadable individuals. They are the people in staff meetings who are happy to go along with the wishes of the majority or an authoritarian leader. On the other hand, a person with an internal orientation may find it hard to fit into an authoritarian regime because they prefer to be independent and self-reliant.
+  \item Internals and externals tend to see other people as having the same views about responsibility as themselves. Thus, a person with an internal orientation will be more willing to delegate authority because she believes colleagues can be trusted. This approach provides, in our view, a more efficient working climate. The same may be true about permitting students to take responsibility for their own learning.
+  \item Internals tend to be better adjusted, less anxious and have fewer psychiatric symptoms. It seems reasonable to assume that these characteristics, or rather the lack of them, will contribute to improved human relations.
+\end{enumerate}
+
+The assumptions made in relation to each of these three findings probably reflect the writers' own presumed internal orientation. It could be argued by a person with an external viewpoint that it is good to have a firm chain of command and that authority should not be questioned. This applies to the relations between staff and children and between superior and subordinate within the staff hierarchy. You
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 36 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{36 Att ta kontroll över betingning}
+
+\medskip
+
+Locus of Control Scale (se Gammage, 1982) för användning med engelska skolbarn.
+
+Vi är inte nöjda med validiteten hos de poäng som erhålls genom självrapporteringsfrågeformulär. Svar förvrängs lätt av behovet av att producera ett svar som kommer att tillfredställa undersökaren. Respondenter kan ha en grandios uppfattning om i vilken utsträckning de har kontroll över sina liv. En korrekt extern syn är förmodligen långt mycket hälsosammare än en vilseledande intern syn. I varje samhälle finns det grupper, som etniska minoriteter i detta land, som har oddsen mot sig när det gäller att förvärva rikedom och möjligheter som är tillgängliga för majoritetsgruppen.
+
+Trots de potentiella begränsningarna hos måtten har forskningen kommit fram till några ganska konsekventa fynd. Dessa sammanfattas av Phares (1984). Ur perspektivet av mänskliga relationer i utbildning är de viktigaste av dessa:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item Externa individer tenderar att vara mer konforma, fogliga och mer lätförmådda. De är de personer i personalmöten som gärna följer önskemålen från majoriteten eller en auktoritär ledare. Å andra sidan kan en person med en intern orientering ha svårt att passa in i ett auktoritärt regelverk eftersom de föredrar att vara oberoende och självförsörjande.
+  \item Interna och externa individer tenderar att se andra människor som att ha samma syn på ansvar som de själva. Således kommer en person med en intern orientering att vara mer villig att delegera auktoritet eftersom hon tror att kollegor kan litas på. Detta tillvägagångssätt ger, enligt vår uppfattning, ett effektivare arbetsklimat. Detsamma kan gälla om man tillåter studenter att ta ansvar för sitt eget lärande.
+  \item Interna individer tenderar att vara bättre anpassade, mindre ångestfyllda och ha färre psykiatriska symtom. Det verkar rimligt att anta att dessa egenskaper, eller snarare bristen på dem, kommer att bidra till förbättrade mänskliga relationer.
+\end{enumerate}
+
+De antaganden som görs i förhållande till vart och ett av dessa tre fynd återspeglar förmodligen författarnas egna presumtiva interna orientering. Det kan hävdas av en person med en extern synvinkel att det är bra att ha en fast befälsordning och att auktoritet inte bör ifrågasättas. Detta gäller relationerna mellan personal och barn och mellan överordnad och underordnad inom personalhierarkin. Du
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 37 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 37}
+
+\medskip
+
+will have to make decisions on these issues for yourself, but the results of Milgram's (1974) research and the lessons of history suggest that most individuals will perform horrific acts if given an order by a powerful other -- demonstrating a high degree of externality.
+
+These processes may begin in infancy. It was once fashionable not to go to a baby when he cried. When this happens, he is likely to learn that he is not in control of the attention given to him by his parents; a pattern which may continue into adult life. It may be worth putting up with the difficulties created by going to a baby when he cries, in order to develop an internal locus of control.
+
+Summaries of the research on the relationship between scores on tests of locus of control and academic achievement (Stipek and Weisz, 1981) show a consistent relationship between internality and high achievement. This is not to say that one in some way causes the other, and research which merely correlates the results of tests is usually not very helpful. However, interest in the notion of locus of control is maintained partly because there are several well-developed tests which give a score, providing a quick and efficient research tool.
+
+A much more complex, and in our view more appropriate model of the way a person perceives himself to be in control of his life, is provided by psychologists in the general area of attribution theory. This has already been related to the notion of learned helplessness. Their writing is very complex and justifiably so, since the everyday events of our life are also complex and the extent to which we perceive ourselves to be in control of these events will vary from situation to situation. To avoid the maze of terminology, we will consider one approach, namely De Charms' (1981) ideas on personal causation.
+
+\textbf{Personal causation}
+
+De Charms rightly points out that locus of control theory refers to the extent that an individual perceives himself to be responsible for successes and failures, and rewards and punishments in his life. But this ignores the fact that the parameters are often set by outside agencies.
+
+Let us take the example of John who knows that if he makes careful notes in his lessons, reads the required textbooks and plans a careful programme of revision at home, he is certain to earn a good set of grades at the end of the year. In this situation John sees himself as
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 37 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 37}
+
+\medskip
+
+måste fatta beslut i dessa frågor själv, men resultaten av Milgrams (1974) forskning och historiens lärdomar tyder på att de flesta individer kommer att utföra fruktansvärda handlingar om de får en order av en mäktig annan -- vilket demonstrerar en hög grad av externalitet.
+
+Dessa processer kan börja i spädbarnsåldern. Det var en gång modernt att inte gå till ett spädbarn när det grät. När detta händer, lär han sig sannolikt att han inte är i kontroll över den uppmärksamhet som ges till honom av hans föräldrar; ett mönster som kan fortsätta in i vuxenlivet. Det kan vara värt att uthärda de svårigheter som skapas av att gå till ett spädbarn när det gråter, för att utveckla ett internt kontrollokus.
+
+Sammanfattningar av forskning om förhållandet mellan poäng på tester av kontrollokus och akademiska prestationer (Stipek och Weisz, 1981) visar ett konsekvent förhållande mellan internalitet och höga prestationer. Det är inte att säga att det ena på något sätt orsakar det andra, och forskning som enbart korrelerar resultaten av tester är vanligtvis inte särskilt användbar. Intresset för begreppet kontrollokus upprätthålls dock delvis eftersom det finns flera välutvecklade tester som ger ett poäng och ger ett snabbt och effektivt forskningsverktyg.
+
+En mycket mer komplex, och enligt vår uppfattning mer lämplig, modell för det sätt på vilket en person uppfattar sig själv vara i kontroll över sitt liv, tillhandahålls av psykologer inom det allmänna området attributionsteori. Detta har redan relaterats till begreppet inlärd hjälplöshet. Deras skrivande är mycket komplext och med rätta, eftersom de vardagliga händelserna i vårt liv också är komplexa och i vilken utsträckning vi uppfattar oss vara i kontroll över dessa händelser kommer att variera från situation till situation. För att undvika terminologins labyrint, ska vi överväga en metod, nämligen De Charms' (1981) idéer om personlig kausalitet.
+
+\textbf{Personlig kausalitet}
+
+De Charms påpekar med rätta att teorin om kontrollokus avser i vilken utsträckning en individ uppfattar sig själv som ansvarig för framgångar och misslyckanden, och belöningar och straff i sitt liv. Men detta ignorerar det faktum att parametrarna ofta sätts av externa instanser.
+
+Låt oss ta exemplet med Johan som vet att om han gör noggranna anteckningar på sina lektioner, läser de obligatoriska läroböckerna och planerar ett noggrant repetitionsschema hemma, är han säker på att tjäna ett bra betygsresultat i slutet av året. I denna situation ser Johan sig själv som
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 38 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{38 Taking control of conditioning}
+
+\medskip
+
+being in control of, or responsible for, the rewards he gets from his educational experience, but he is not in control of the lessons he attends and the subjects he studies. De Charms' notion of personal causation refers to situations where the person not only controls the rewards and punishments, but also controls the parameters. Take the example of Susan. Susan is not so keen on the work she is being asked to do at school. She is fascinated by the electric synthesizer, and this interest has taken her deeply into the theory of harmonics and composition. She plays in a semi-professional band and earns good money playing in local clubs. At the age of eighteen, after two years of self-directed study, she has become an expert in programming computerized music and lands a plum job with a recording company. She never attended a music lesson at school. This is an extreme example of a person who is in control of what she does as well as the rewards she earns. De Charms refers to being in control of what you do as `personal causation', which he suggests is different from `locus of control'. We would argue that personal causation subsumes locus of control. If you make an active choice in what you do, then you are also responsible for the outcomes or rewards for that behaviour. De Charms uses the term `origin' for a person who is in control of what he does and the term `pawn' for a person who does not have this experience. These are colourful terms, and most of us would place ourselves somewhere on a continuum between these two extremes. Our experience of being `origins' or `pawns' will probably vary from situation to situation. See how you respond to the exercise on page 39. In order to permit the exercise of personal causation, a classroom would have to be organized in a manner that allows students to be directly involved in the decision-making process. The case histories included by Rogers (1983) are of this nature, and range from working with a class of difficult sixth graders to a neurophysiology class at a university. In these situations, the students were not allowed total freedom of choice, but the teacher was used as a resource in the process of negotiating the content of the curriculum. This is not a common event in English schools.
+
+However, personal causation may not be so much to do with what is actually happening in schools, but the extent to which the pupils perceive themselves to be in control of what they do. De Charms (1972) involved students in grades 6--8 in programmes which gave
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 38 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{38 Att ta kontroll över betingning}
+
+\medskip
+
+att ha kontroll över, eller ansvar för, de belöningar han får från sin utbildningsupplevelse, men han har inte kontroll över de lektioner han deltar i och de ämnen han studerar. De Charms' begrepp om personlig kausalitet hänvisar till situationer där personen inte bara kontrollerar belöningarna och straffen, utan också kontrollerar parametrarna. Ta exemplet med Susanne. Susanne är inte särskilt intresserad av det arbete hon ombeds göra i skolan. Hon är fascinerad av den elektriska synthesizern, och detta intresse har tagit henne djupt in i teorin om harmonik och komposition. Hon spelar i ett halvprofessionellt band och tjänar bra pengar på att spela på lokala klubbar. Vid arton års ålder, efter två års självstyrda studier, har hon blivit expert på att programmera datoriserad musik och landar ett drömjobb på ett skivbolag. Hon deltog aldrig i en musiklektion i skolan. Detta är ett extremt exempel på en person som har kontroll över vad hon gör samt de belöningar hon tjänar. De Charms hänvisar till att ha kontroll över vad du gör som ``personlig kausalitet'', vilket han menar skiljer sig från ``kontrollokus''. Vi skulle hävda att personlig kausalitet inbegriper kontrollokus. Om du gör ett aktivt val i vad du gör är du också ansvarig för resultaten eller belöningarna för det beteendet. De Charms använder termen ``ursprung'' för en person som har kontroll över vad han gör och termen ``bricka'' för en person som inte har denna upplevelse. Dessa är färgstarka termer, och de flesta av oss skulle placera oss någonstans på ett kontinuum mellan dessa två ytterligheter. Vår upplevelse av att vara ``ursprung'' eller ``brickor'' kommer förmodligen att variera från situation till situation. Se hur du reagerar på övningen på sidan 39. För att tillåta utövandet av personlig kausalitet, måste ett klassrum organiseras på ett sätt som gör att studenter direkt kan delta i beslutsfattandeprocessen. De fallhistorier som ingår av Rogers (1983) är av detta slag och sträcker sig från att arbeta med en klass av svåra sjätteklassare till en neurofysiologiklass vid ett universitet. I dessa situationer fick studenterna inte total valfrihet, men läraren användes som en resurs i processen att förhandla om läroplansinnehållet. Detta är inte ett vanligt event i engelska skolor.
+
+Personlig kausalitet kanske inte så mycket handlar om vad som faktiskt händer i skolor, utan i vilken utsträckning eleverna uppfattar sig vara i kontroll över vad de gör. De Charms (1972) involverade elever i årskurs 6--8 i program som gav
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 39 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 39}
+
+\medskip
+
+Write down what you consider to be three important achievements in your life and then rate each one on the three scales provided.
+
+\medskip
+
+\begin{tabular}{p{0.25\columnwidth} p{0.08\columnwidth} p{0.08\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.1\columnwidth}}
+\toprule
+ & \textbf{Not at all} & \textbf{A little} & \textbf{Half and half} & \textbf{A great deal} & \textbf{Totally} \\
+\midrule
+\textbf{Achievement 1} & & & & & \\
+Other people & 1 & 2 & 3 & 4 & 5 \\
+A tangible reward & & & & & \\
+For myself & & & & & \\
+\addlinespace
+\textbf{Achievement 2} & & & & & \\
+Other people & & & & & \\
+A tangible reward & & & & & \\
+For myself & & & & & \\
+\addlinespace
+\textbf{Achievement 3} & & & & & \\
+Other people & & & & & \\
+A tangible reward & & & & & \\
+For myself & & & & & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+them greater responsibility and control over what they did in the classroom. These students changed their attributions to those of greater control and also made gains in academic achievement.
+
+The same issues are relevant to decision-making in the school within the staff group. The headteacher can take an authoritarian role and dictate policy to the staff. Alternatively she can use decision-making structures that permit power to be shared. Lloyd (1984) provides a fascinating case-history of taking over the headship of a secondary school and changing from an autocratic to a democratic style of leadership. As with most forms of change, she met with initial resistance, but does appear to have succeeded in the long term. She took a pragmatic stance and chose to be autocratic when it appeared to be appropriate. The overall effect, however, was to give the class a greater sense of control over what was happening in the school.
+
+She uses the term self-empowerment to describe this sense of increased control. This notion is developed strongly by Hopson and
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 39 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 39}
+
+\medskip
+
+Skriv ner vad du anser vara tre viktiga prestationer i ditt liv och betygsätt sedan var och en av dem på de tre skalorna som tillhandahålls.
+
+\medskip
+
+\begin{tabular}{p{0.25\columnwidth} p{0.08\columnwidth} p{0.08\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.1\columnwidth}}
+\toprule
+ & \textbf{Inte alls} & \textbf{Lite} & \textbf{Hälften} & \textbf{Mycket} & \textbf{Helt} \\
+\midrule
+\textbf{Prestation 1} & & & & & \\
+Andra människor & 1 & 2 & 3 & 4 & 5 \\
+En konkret belöning & & & & & \\
+För mig själv & & & & & \\
+\addlinespace
+\textbf{Prestation 2} & & & & & \\
+Andra människor & & & & & \\
+En konkret belöning & & & & & \\
+För mig själv & & & & & \\
+\addlinespace
+\textbf{Prestation 3} & & & & & \\
+Andra människor & & & & & \\
+En konkret belöning & & & & & \\
+För mig själv & & & & & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+dem ett större ansvar och kontroll över vad de gjorde i klassrummet. Dessa elever förändrade sina attributioner till sådana med större kontroll och gjorde också framsteg i akademiska prestationer.
+
+Samma frågor är relevanta för beslutsfattande i skolan inom personalgruppen. Rektorn kan ta en auktoritär roll och diktera policy till personalen. Alternativt kan hon använda beslutsfattandestrukturer som tillåter att makt delas. Lloyd (1984) ger en fascinerande fallhistoria om att ta över som rektor på en gymnasieskola och förändra från ett autokratiskt till ett demokratiskt ledarstil. Liksom de flesta former av förändring mötte hon initialt motstånd, men verkar ha lyckats på lång sikt. Hon intog en pragmatisk hållning och valde att vara autokratisk när det verkade lämpligt. Den övergripande effekten var dock att ge klassen en starkare känsla av kontroll över vad som hände i skolan.
+
+Hon använder termen självstärkande för att beskriva denna känsla av ökad kontroll. Detta begrepp utvecklas starkt av Hopson och
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 40 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{40 Taking control of conditioning}
+
+\medskip
+
+Scally (1981), who suggest that a great deal of what happens in society, and in particular in education, is a `depowering' process. They argue the need for reversing these processes, which is one of the aims of their Lifeskills programmes. These are designed to empower the individual, and make considerable use of experiential learning. This discussion begs the philosophical question as to whether or not we have any control over our lives at all. This is not an issue we can resolve here, or that we are aiming to deal with. However, most people lead their lives, talk and behave as if they do have choices, however real they may be.
+
+\textbf{Training for greater control}
+
+The issues of learned helplessness, locus of control and personal causation are important to the practising teacher because a series of studies have shown that it is possible to change children's perception of their degree of control in each of these areas. In several of these studies, the sense of greater control was accompanied by an increase in academic achievement. Work by De Charms and Dweck has already been mentioned. Similar results were obtained in three studies reviewed by Stipek and Weisz (1981).
+
+The notion of permitting pupils to have a choice in what and how they study is not one which would be readily accepted in many secondary schools in this country. Apart from the constraints of the examination system, most of us have been brought up in, and are used to, a highly authoritarian regime. This is just as true for the relationships between staff as for the relations between teachers and students. An experimenter can work with a class of children and give them a greater sense of personal control over their educational experience. This does not, however, do much to change the education system, and an experimental class will quickly change its behaviour with a change of teacher. A more potent source of change is in in-service training or initial training, where teachers could be given the experience of taking control of their own learning. This requires finding a way out of the paradox of telling people to take responsibility for their own learning.
+
+If you tell people to take responsibility for their own learning, they can either refuse to do it, or agree to do it, in which case they are doing what you say and hence not taking responsibility for their
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 40 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{40 Att ta kontroll över betingning}
+
+\medskip
+
+Scally (1981), som menar att mycket av det som händer i samhället, och i synnerhet inom utbildning, är en ``avmaktsprocess''. De argumenterar för behovet av att vända dessa processer, vilket är ett av syftena med deras Lifeskills-program. Dessa är utformade för att stärka individen och gör betydande användning av erfarenhetsbaserat lärande. Denna diskussion väcker den filosofiska frågan om huruvida vi har någon kontroll över våra liv överhuvudtaget. Det är inte en fråga vi kan lösa här, eller som vi syftar till att hantera. De flesta människor lever dock sina liv, talar och beter sig som om de har val, hur verkliga de än må vara.
+
+\textbf{Träning för större kontroll}
+
+Frågorna om inlärd hjälplöshet, kontrollokus och personlig kausalitet är viktiga för den praktiserande läraren eftersom en serie studier har visat att det är möjligt att förändra barns uppfattning om deras grad av kontroll inom vart och ett av dessa områden. I flera av dessa studier åtföljdes känslan av större kontroll av en ökning av akademiska prestationer. Arbete av De Charms och Dweck har redan nämnts. Liknande resultat erhölls i tre studier som granskades av Stipek och Weisz (1981).
+
+Tanken att tillåta elever att ha ett val i vad och hur de studerar är inte en tanke som lätt skulle accepteras i många gymnasieskolor i detta land. Förutom begränsningarna i examinationssystemet har de flesta av oss vuxit upp i, och är vana vid, ett mycket auktoritärt regelverk. Detta gäller lika mycket för relationerna mellan personal som för relationerna mellan lärare och studenter. En experimentledare kan arbeta med en klass barn och ge dem en starkare känsla av personlig kontroll över sin utbildningsupplevelse. Detta gör dock inte mycket för att förändra utbildningssystemet, och en experimentklass ändrar snabbt sitt beteende med ett lärarbyte. En mer potent källa till förändring är i fortbildning eller grundutbildning, där lärare kan ges upplevelsen av att ta kontroll över sitt eget lärande. Detta kräver att man hittar en väg ur paradoxen med att säga till människor att ta ansvar för sitt eget lärande.
+
+Om du säger till människor att ta ansvar för sitt eget lärande kan de antingen vägra att göra det, eller gå med på att göra det, i vilket fall de gör vad du säger och därmed inte tar ansvar för sitt
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 41 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 41}
+
+\medskip
+
+own learning. One way out of this paradox in teacher training is through the use of experiential learning. Setting up learning structures like the exercises in this book, and not providing the `right' answers, seems to set up a sense of frustration, which forces individuals to draw conclusions for themselves. A more intense form of experiential learning involves a group sitting in a circle who are invited to explore inter-personal relations using the behaviour generated by the group itself. Carl Rogers (1969) calls this type of learning situation an encounter group, though it goes by many other names. Hall, Woodhouse and Wooster (1984) evaluated the effects of six days intensive training for teachers using a combination of these two forms of experiential learning and found many examples of an increased sense of responsibility both during the course and at work a term later.
+
+Unfortunately, in our view, a majority of people involved in the teaching profession would not agree with the idea that there should be more sharing of responsibility in educational settings. They may agree with our views in a statement of their aims of education, but their actual behaviour involves a reinforcement of existing patterns of authority. By their deeds shall ye know them. Rogers (1983) and Curle (1973) provide similar explanations as to why individuals are not given responsibility for their own learning. Simply put, a person in a teaching situation who gives students responsibility for their own learning, or an administrator who gives staff greater responsibility for running the institution, is giving away power. Giving away power seems to cause a great deal of disturbance in the wider institution and forces are mobilized to destroy those situations which may be genuinely empowering for the individual.
+
+\textbf{From the management of behaviour to self-control}
+
+In the first part of this chapter, we considered the way in which random rewards and punishments can affect our behaviour in everyday life, and how events established patterns of good and bad feelings. We went on to see how we learned ways of behaving which enabled us to produce the good feelings and avoid the bad. In this section we will consider the deliberate manipulation of the environment in order to get what we want or to get other people to do what we want.
+
+The question of control is a prime concern not only for teachers working in difficult schools, but also experienced teachers who often
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 41 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 41}
+
+\medskip
+
+eget lärande. En väg ut ur denna paradox i lärarutbildning är genom användning av erfarenhetsbaserat lärande. Att sätta upp inlärningsstrukturer som övningarna i denna bok, och inte tillhandahålla de ``rätta'' svaren, verkar skapa en känsla av frustration, som tvingar individer att dra egna slutsatser. En mer intensiv form av erfarenhetsbaserat lärande inbegriper en grupp som sitter i en cirkel och bjuds in att utforska interpersonella relationer med hjälp av det beteende som genereras av gruppen själv. Carl Rogers (1969) kallar denna typ av inlärningssituation för en mötesgrupp, även om den går under många andra namn. Hall, Woodhouse och Wooster (1984) utvärderade effekterna av sex dagars intensiv utbildning för lärare med en kombination av dessa två former av erfarenhetsbaserat lärande och fann många exempel på en ökad känsla av ansvar både under kursen och på arbetet en termin senare.
+
+Tyvärr är vår uppfattning att en majoritet av de som är verksamma inom undervisningsyrket inte skulle hålla med om idén att det borde finnas mer ansvarssdelning i pedagogiska miljöer. De kan hålla med om våra synpunkter i ett uttalande om sina utbildningsmål, men deras faktiska beteende innebär en förstärkning av befintliga auktoritetsmönster. På deras gärningar ska ni känna dem. Rogers (1983) och Curle (1973) ger liknande förklaringar till varför individer inte ges ansvar för sitt eget lärande. Enkelt uttryckt ger en person i en undervisningssituation som ger studenter ansvar för sitt eget lärande, eller en administratör som ger personal större ansvar för att driva institutionen, bort makt. Att ge bort makt verkar orsaka stor störning i den bredare institutionen och krafter mobiliseras för att förstöra de situationer som kan vara genuint stärkande för individen.
+
+\textbf{Från beteendestyrning till självkontroll}
+
+I den första delen av detta kapitel betraktade vi det sätt på vilket slumpmässiga belöningar och straff kan påverka vårt beteende i vardagslivet, och hur händelser etablerade mönster av goda och dåliga känslor. Vi gick vidare för att se hur vi lärde oss sätt att bete oss som gjorde det möjligt för oss att producera de goda känslorna och undvika de dåliga. I det här avsnittet ska vi överväga den avsiktliga manipulationen av miljön för att få vad vi vill ha eller för att få andra människor att göra vad vi vill.
+
+Frågan om kontroll är en grundläggande angelägenhet inte bara för lärare som arbetar i svåra skolor, utan också erfarna lärare som ofta
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 42 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{42 Taking control of conditioning}
+
+\medskip
+
+report that they still have terrifying dreams about their classes getting out of control.
+
+First we will consider techniques which have been developed for controlling behaviour by the teacher directly manipulating rewards and punishments. Later we will describe how the management of these techniques can be passed on to the pupils themselves, thus changing a behaviouristic approach into a humanistic one. As an extreme example of control by the teacher, imagine a class of pupils, each of whom is wired to a control panel on the teacher's desk. Every time a pupil steps out of line, he receives a sharp but safe electric shock. There is no doubt that this will be a very well-behaved class, apart from the occasional students who will compete to see how much shock they can take. There would probably be an outcry against such an inhuman system, even though it would probably be physically less dangerous than the cane or the tawse.
+
+When presented with a fantasy of this nature, a wistful glaze often passes over the faces of teachers, which does suggest that they would like to be more in control of their classes. The technology for the management of rewards and punishments in classroom settings has been around for some time (Skinner, 1968; Axelrod, 1983), but the practical implementation of the techniques has been largely limited to very young children, or children with special needs such as severely subnormal or disruptive students. Wheldall (1981) explains the slow development of behavioural techniques in the UK as being partly due to ignorance, and partly due to ethical considerations. Should a human being be treated in the same way as a rat or a pigeon? If a child is unable to keep his tongue in his mouth, it may be possible to `shape' his behaviour using a food reward, so that the tongue stays in. Does the end justify the means? If the pupils involved decide for themselves the changes they would like to make in their behaviour and also decide what the rewards will be, then most of these ethical considerations melt away. Aside from the ethical considerations, Thorenson and Mahoney (1974) provide some evidence to show that if you are in control of your own behaviour management programme, then the learning is more effective. Most programmes which are deliberately designed to modify behaviour involve giving a reward in order to increase the probability of the desired behaviour. There are other possibilities, such as punishing undesirable behaviour, ending a punishment when the desired behaviour is produced and removing a reward for undesirable behaviour.
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 42 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{42 Att ta kontroll över betingning}
+
+\medskip
+
+rapporterar att de fortfarande har skrämmande drömmar om att deras klasser tappar kontrollen.
+
+Först ska vi överväga tekniker som har utvecklats för att kontrollera beteende genom att läraren direkt manipulerar belöningar och straff. Senare kommer vi att beskriva hur hanteringen av dessa tekniker kan föras vidare till eleverna själva, och därmed förändra en beteendemässig metod till en humanistisk. Som ett extremt exempel på kontroll av läraren, föreställ dig en klass elever, var och en ansluten till en kontrollpanel på lärarens skrivbord. Varje gång en elev stiger ur ledet får han en skarp men säker elektrisk stöt. Det råder inget tvivel om att detta kommer att vara en mycket väluppfostrad klass, förutom de enstaka elever som tävlar om att se hur mycket stöt de kan ta. Det skulle förmodligen bli ett ramaskri mot ett sådant omänskligt system, även om det förmodligen skulle vara fysiskt mindre farligt än käppen eller läderremmen.
+
+När man ställs inför en fantasi av detta slag, passerar ofta ett vemodigt uttryck över lärares ansikten, vilket tyder på att de gärna skulle vilja ha mer kontroll över sina klasser. Tekniken för hantering av belöningar och straff i klassrumsmiljöer har funnits ett tag (Skinner, 1968; Axelrod, 1983), men den praktiska implementeringen av teknikerna har i stor utsträckning begränsats till mycket unga barn, eller barn med särskilda behov som gravt efterblivna eller störande elever. Wheldall (1981) förklarar den långsamma utvecklingen av beteendetekniker i Storbritannien som delvis beror på okunnighet och delvis på etiska överväganden. Bör en människa behandlas på samma sätt som en råtta eller en duva? Om ett barn inte kan hålla tungan i munnen, kan det vara möjligt att ``forma'' hans beteende med hjälp av en matbelöning, så att tungan stannar inne. Motiverar målet medlen? Om de inblandade eleverna själva bestämmer de förändringar de vill göra i sitt beteende och också bestämmer vad belöningarna ska vara, smälter de flesta av dessa etiska överväganden bort. Bortsett från de etiska övervägandena ger Thorenson och Mahoney (1974) vissa bevis för att om du har kontroll över ditt eget beteendehanteringsprogram är inlärningen effektivare. De flesta program som är avsiktligt utformade för att modifiera beteende inbegriper att ge en belöning för att öka sannolikheten för det önskade beteendet. Det finns andra möjligheter, till exempel att bestraffa oönskat beteende, avsluta en bestraffning när det önskade beteendet produceras och ta bort en belöning för oönskat beteende.
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 43 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 43}
+
+\medskip
+
+Behaviour modification programmes using punishments tend not to be suggested by educational psychologists for use in schools. Although there is no reason why punishment should not be effective for eliminating specific undesirable behaviour, there is a good chance that a programme of this nature would establish a negative conditioned emotional response to the teacher involved and to the whole process of schooling.
+
+The technology was originally developed as a form of treatment in the psychiatric clinic. Methods were developed to `cure' patients of patterns of behaviour that were seen as unhelpful to them. These could be habits which are immediately gratifying, such as drinking, taking drugs and indulging in sexually deviant behaviour. This is behaviour which is difficult to eliminate, because of the immediate reward; the punishment, that is a hangover or social stigma, comes some time later. Changes have been attempted by inserting a punishment between the activity and the reward. The alcoholic is made to vomit as soon as drink touches his lips. A person who wishes to change his sexual preferences is given a sharp electric shock as he looks at a picture depicting this preference.
+
+Aversion therapy is not used by behaviour modifiers in educational settings for the reasons given. It is, however, attempted inefficiently by teachers who use punishment but have no evidence for its long-term success. This inefficient behaviour is probably maintained because of the immediate short-term gratification provided by the infliction of physical or emotional pain on a person who is making life difficult. Indeed, Rutter et al (1979) found that in schools where punishment was having an effect, the effect was to make the situation worse.
+
+\begin{itemize}
+  \item Invite a group of students to divide into fours. Suggest that they range over the whole of their school experience and recall specific incidents when they were punished by teachers and discuss:
+  \begin{enumerate}[label=(\alph*)]
+    \item How they felt at the time
+    \item What were the long-term effects.
+  \end{enumerate}
+  Spend 20 minutes on this part of the exercise and then ask them to discuss for ten minutes what it felt like to reminisce in this way.
+\end{itemize}
+
+A second set of undesirable behaviours involves having an intense emotional reaction which makes it difficult to cope with a situation. A phobia is a good example of this. As we suggested earlier in this
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 43 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 43}
+
+\medskip
+
+Beteendemodifikationsprogram som använder straff brukar inte föreslås av pedagogiska psykologer för användning i skolor. Även om det inte finns någon anledning till varför bestraffning inte ska vara effektiv för att eliminera specifikt oönskat beteende, finns det en god chans att ett program av detta slag skulle etablera en negativ betingad emotionell reaktion mot den inblandade läraren och mot hela skolprocessen.
+
+Tekniken utvecklades ursprungligen som en form av behandling på psykiatrisk klinik. Metoder utvecklades för att ``bota'' patienter från beteendemönster som ansågs vara ohjälpsamma för dem. Dessa kan vara vanor som är omedelbart tillfredsställande, som att dricka, ta droger och ägna sig åt sexuellt avvikande beteende. Detta är beteende som är svårt att eliminera, på grund av den omedelbara belöningen; straffet, det vill säga en baksmälla eller social stigmatisering, kommer en tid senare. Förändringar har försökts genom att infoga ett straff mellan aktiviteten och belöningen. Alkoholisten tvingas kräkas så snart dryck rör vid hans läppar. En person som vill förändra sina sexuella preferenser får en skarp elektrisk stöt när han tittar på en bild som skildrar denna preferens.
+
+Aversionsterapi används inte av beteendemodifierare i pedagogiska miljöer av de angivna skälen. Det försöks dock ineffektivt av lärare som använder bestraffning men inte har några bevis för dess långsiktiga framgång. Detta ineffektiva beteende upprätthålls förmodligen på grund av den omedelbara kortsiktiga tillfredsställelse som ges av infliktningen av fysisk eller emotionell smärta på en person som gör livet svårt. Rutter et al (1979) fann faktiskt att i skolor där bestraffning hade en effekt var effekten att göra situationen värre.
+
+\begin{itemize}
+  \item Bjud in en grupp studenter att dela upp sig i grupper om fyra. Föreslå att de täcker hela sin skolgång och minns specifika händelser när de bestraffades av lärare och diskuterar:
+  \begin{enumerate}[label=(\alph*)]
+    \item Hur de kände sig vid tillfället
+    \item Vad var de långsiktiga effekterna.
+  \end{enumerate}
+  Tillbringa 20 minuter på denna del av övningen och be dem sedan diskutera i tio minuter hur det kändes att minnas på detta sätt.
+\end{itemize}
+
+En andra uppsättning oönskade beteenden inbegriper att ha en intensiv emotionell reaktion som gör det svårt att hantera en situation. En fobi är ett bra exempel på detta. Som vi föreslog tidigare i detta
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 44 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{44 Taking control of conditioning}
+
+\medskip
+
+chapter it is not just the popular phobias such as fear of heights, water, enclosed spaces and so on that affect our behaviour. Most of us can think of forms of inter-personal situations where the emotions involved are debilitating. Some children become too emotional even to go to school. Most of us developed aversions to particular teachers and lessons. At the age of eight, one of the writers was caned for getting a sum wrong three times. From then on, that teacher produced a fearful response and there has continued to be an uneasiness about maths, which may be related to that incident. Children are frightened of exams, of talking in front of the whole class, of speaking to teachers, of getting undressed for PE and many other situations which might surprise adults who did not share the same experiences as children. Desensitization is the name given to the clinical technique used to attempt to remove these unwanted fears by the use of fantasy. A patient negotiates with his therapist a graduated series of imaginary scenes which are likely to generate an increasing amount of anxiety. The patient is taught to relax and in the relaxed state he is invited to imagine the least stressful scene. If there is no experience of anxiety, he moves on to the next scene, and so on, and the session is ended as soon as there is the slightest indication of anxiety. Another technique, flooding, involves forcing the person to stay in the anxiety provoking situation until the fear subsides. Techniques of this nature are not normally easy to slot into the busy timetable of a pastoral care Head of Year in a comprehensive school.
+
+Unintentional flooding may take place in the most unfortunate ways, such as the PE teacher holding a child under a shower or an English teacher who makes a shy child talk or read to the whole class. However, there are many other ways in which desensitization processes can be helped to take place. Just to sit and talk gently to a pupil who is clearly scared of you is a mild form of flooding. Many of the experiential exercises described in this book are designed to provide a safe environment for trying out ways of behaving which might be too scary in a real-life situation. If a child is shy of social contacts, it might be possible to negotiate a series of tasks to work through, ranging from very simple to difficult. One of the writers managed to dive off the three metre board, but never made it from the five metre. One of his fantasies was of having a series of boards between three and five, each one an inch higher than the first. Unfortunately this was never tested out in reality.
+
+Some complex forms of changing emotional associations are
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 44 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{44 Att ta kontroll över betingning}
+
+\medskip
+
+kapitlet är det inte bara de populära fobierna som rädsla för höjder, vatten, slutna utrymmen och så vidare som påverkar vårt beteende. De flesta av oss kan tänka på former av interpersonella situationer där de inblandade känslorna är försvagande. Vissa barn blir för känslosamma för att ens gå till skolan. De flesta av oss utvecklade aversioner mot vissa lärare och lektioner. Vid åtta års ålder kördes en av författarna med käppen för att ha fått ett räkneexempel fel tre gånger. Från den stunden producerade den läraren en rädsloreaktion och det har fortsatt att finnas en obehagskänsla inför matematik, vilket kan vara relaterat till den händelsen. Barn är rädda för prov, för att tala inför hela klassen, för att tala med lärare, för att klä av sig för idrotten och många andra situationer som kan förvåna vuxna som inte delade samma upplevelser som barn. Desensibilisering är namnet på den kliniska teknik som används för att försöka ta bort dessa oönskade rädslor med hjälp av fantasi. En patient förhandlar med sin terapeut om en graderad serie imaginära scener som sannolikt genererar en ökande mängd ångest. Patienten lär sig att slappna av och i det avslappnade tillståndet bjuds han in att föreställa sig den minst stressande scenen. Om det inte finns någon ångestupplevelse, går han vidare till nästa scen, och så vidare, och sessionen avslutas så snart det finns den minsta indikationen på ångest. En annan teknik, översvämning, innebär att tvinga personen att stanna i den ångestframkallande situationen tills rädslan avtar. Tekniker av detta slag är normalt inte lätta att passa in i det hektiska schemat för en mentor i en gymnasieskola.
+
+Oavsiktlig översvämning kan äga rum på de mest olyckliga sätt, till exempel idrottsläraren som håller ett barn under duschen eller en engelsklärare som får ett blygt barn att tala eller läsa för hela klassen. Det finns dock många andra sätt på vilka desensibiliseringsprocesser kan hjälpas att äga rum. Att bara sitta och prata lugnt med en elev som är tydligt rädd för dig är en mild form av översvämning. Många av de erfarenhetsbaserade övningarna som beskrivs i denna bok är utformade för att ge en säker miljö för att prova beteendesätt som kan vara för skrämmande i en verklig situation. Om ett barn är skygg inför sociala kontakter kan det vara möjligt att förhandla fram en serie uppgifter att arbeta igenom, från mycket enkla till svåra. En av författarna lyckades hoppa från tremetersbrädan, men klarade aldrig femetersbrädan. En av hans fantasier var att ha en serie brädor mellan tre och fem, var och en en centimeter högre än den föregående. Tyvärr testades detta aldrig i verkligheten.
+
+Några komplexa former av att förändra emotionella associationer
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 45 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 45}
+
+\medskip
+
+described by Bandler and Grinder (1979) as part of a system they call neuro-linguistic programming. They use hypnotic techniques to help a person to relax and then associate the relaxed state with a simple physical response. It may be that the wrist is squeezed at the same time that a phrase is used in the relaxation procedure, such as `relax and let go'. The person whose eyes are closed is asked to imagine a situation in which an unwanted emotion is invariably generated. As the scene is imagined, the wrist is again gently squeezed, assuming that an association between the squeeze and relaxation will inhibit the unwanted emotional reaction. The process may have to be repeated several times before emotion is inhibited in the real situation by a squeeze of the wrist. Some people, however, report a definite change after one training session. It may be that paying attention to the task interferes with the habitual routine.
+
+\begin{itemize}
+  \item Try the following exercise with another person.
+\end{itemize}
+
+Decide who is A and who is B. A chooses a situation which occurs fairly frequently with a pupil or colleague which produces unwanted feelings.
+
+B helps A, who is seated on a chair, to relax, using one of the procedures described in the later section on relaxation. As he says the phrase `relax and let go', he gently squeezes A on the left wrist. Repeat the squeeze each of the three times the phrase is used.
+
+After a pause, B asks A to close his eyes and gently hold the left wrist with the right hand. B then reads the following script:
+
+`I want you to summon up a mental image of the situation you have chosen. Do not see yourself in the image, but be in the image. Be aware of what you can see. (pause) Be aware of what you can hear. (pause) Be aware of what you are feeling. Now gently squeeze your left wrist.'
+
+After a pause, A repeats the process with B.
+
+When, in future, the situation occurs in real life they may choose to gently squeeze the left wrist while the interaction is taking place. At a later date, A and B could get together to share their experience.
+
+A similar sense of relaxation can be learned simply by slowing and deepening the breathing. By deepening the breathing in a situation that normally induces unpleasant emotions, a sense of relaxation may come to be associated with that situation. Unfortunately, it is often
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 45 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 45}
+
+\medskip
+
+beskrivs av Bandler och Grinder (1979) som en del av ett system de kallar neurolinguistisk programmering. De använder hypnotiska tekniker för att hjälpa en person att slappna av och sedan förknippa det avslappnade tillståndet med en enkel fysisk reaktion. Det kan vara att handleden klämmas åt samtidigt som en fras används i avslappningsproceduren, till exempel ``slappna av och släpp taget''. Personen vars ögon är stängda ombeds föreställa sig en situation där en oönskad känsla alltid genereras. När scenen föreställs, klämms handleden åter försiktigt åt, i antagandet att en association mellan klämmandet och avslappning kommer att hämma den oönskade emotionella reaktionen. Processen kan behöva upprepas flera gånger innan känslan hämmas i den verkliga situationen av ett klämm på handleden. Vissa människor rapporterar dock en definitiv förändring efter en träningssession. Det kan vara så att uppmärksamhet på uppgiften stör den invanda rutinen.
+
+\begin{itemize}
+  \item Prova följande övning med en annan person.
+\end{itemize}
+
+Bestäm vem som är A och vem som är B. A väljer en situation som förekommer ganska ofta med en elev eller kollega och som ger oönskade känslor.
+
+B hjälper A, som sitter på en stol, att slappna av med hjälp av ett av de förfaranden som beskrivs i det senare avsnittet om avslappning. När han säger frasen ``slappna av och släpp taget'' klämmer han försiktigt A på den vänstra handleden. Upprepa klämmandet var och en av de tre gångerna som frasen används.
+
+Efter en paus ber B A att stänga ögonen och försiktigt hålla den vänstra handleden med den högra handen. B läser sedan följande manus:
+
+``Jag vill att du kallar fram en mental bild av den situation du har valt. Se inte dig själv i bilden, utan var i bilden. Var medveten om vad du kan se. (paus) Var medveten om vad du kan höra. (paus) Var medveten om vad du känner. Kläm nu försiktigt din vänstra handled.''
+
+Efter en paus upprepar A processen med B.
+
+När situationen i framtiden inträffar i verkliga livet kan de välja att försiktigt klämma den vänstra handleden medan interaktionen pågår. Vid ett senare tillfälle kan A och B träffas för att dela sina erfarenheter.
+
+En liknande känsla av avslappning kan läras in helt enkelt genom att sakta ner och fördjupa andningen. Genom att fördjupa andningen i en situation som normalt framkallar obehagliga känslor kan en känsla av avslappning komma att förknippas med den situationen. Tyvärr är det ofta
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 46 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{46 Taking control of conditioning}
+
+\medskip
+
+difficult to think of using a simple technique when you are angry or afraid.
+
+A unique application of conditioning procedures to remove an unwanted spontaneous activity is the use of the `bell and blanket' technique to cure enuresis. Some children find it difficult to acquire bladder control through the night; a problem which is embarrassing for the child and highly inconvenient for the parents. To deal with this problem, a device is placed under the sheet, which, if soaked with liquid, completes a circuit and makes a disturbing noise which is fairly certain to wake the child. Invariably, there is an initial emission of urine or the flow stops on awakening. When the child wakes, there is still a feeling of having a full bladder. Thus the child learns to associate a full bladder with waking up, and by the process of generalization, will wake up with the early feeling of pressure on the bladder, hopefully, before the bed gets wet. This is a likely explanation, but whether it is true or not, the apparatus does have a high success rate.
+
+By far the most common techniques applied in school settings are those that involve giving a reward for behaviour that you specifically want to increase, or in order to encourage activity which prohibits the possibility of undesirable activity. Simply, you might reward a child with praise every time he gets a sum right. More deviously, you might reward a child for spending time in his seat when you are trying to stop him from wandering around the class. It is not, however, an easy task to establish what is rewarding for another person. To be praised by a teacher might be a punishing event in an anti-social peer group. Similarly, to be told off in the same group might result in an increase in status. The effects of rewards may change over time. A class may be highly enthusiastic about being given merit marks when the scheme is first set up, but later treat the system with disdain. If the reward is an experience that the child often receives in other situations, then the reward value will be low. A general principle which is often suggested is that an effective reward is something that a person normally chooses to do a great deal (high-frequency behaviour). This can be used as a reward for something that the person rarely does (low-frequency behaviour). A child may spend all her break times in the biology lab watching the fish in their tanks, but never completes her biology homework assignments. To become an effective reward, the fish-watching has to be reduced considerably, so there is a sense in which the child is being punished for not doing her homework. The business of identifying
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 46 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{46 Att ta kontroll över betingning}
+
+\medskip
+
+svårt att tänka på att använda en enkel teknik när man är arg eller rädd.
+
+En unik tillämpning av betingningsprocedurer för att ta bort en oönskad spontan aktivitet är användningen av ``klocka och filt''-tekniken för att bota enures. Vissa barn har svårt att förvärva blåskontroll under natten; ett problem som är pinsamt för barnet och mycket opraktiskt för föräldrarna. För att hantera detta problem placeras en anordning under lakanet, som, om den blöts med vätska, slutar en krets och gör ett störande ljud som med stor sannolikhet väcker barnet. Invariabelt förekommer en inledande utsöndring av urin eller flödet stannar vid uppvaknandet. När barnet vaknar finns det fortfarande en känsla av att ha en full blåsa. Barnet lär sig alltså att förknippa en full blåsa med att vakna upp, och genom generaliseringsprocessen kommer det att vakna med den tidiga känslan av tryck på blåsan, förhoppningsvis innan sängen blir blöt. Detta är en trolig förklaring, men oavsett om det är sant eller inte, har apparaten en hög framgångskvot.
+
+De överlägset vanligaste teknikerna som tillämpas i skolmiljöer är de som innebär att ge en belöning för beteende som du specifikt vill öka, eller för att uppmuntra aktivitet som förhindrar möjligheten till oönskad aktivitet. Enkelt uttryckt kan du belöna ett barn med beröm varje gång det får ett räkneexempel rätt. Mer listigt kan du belöna ett barn för att sitta kvar på sin plats när du försöker stoppa det från att vandra runt i klassen. Det är dock inte en lätt uppgift att fastställa vad som är belönande för en annan person. Att bli berömd av en lärare kan vara en bestraffande händelse i en asocial kamratgrupp. På samma sätt kan att bli utskälld i samma grupp resultera i en ökning av status. Effekterna av belöningar kan förändras över tid. En klass kan vara mycket entusiastisk över att få meritmärken när systemet först är inrättat, men senare behandla systemet med förakt. Om belöningen är en upplevelse som barnet ofta får i andra situationer, kommer belöningsvärdet att vara lågt. En allmän princip som ofta föreslås är att en effektiv belöning är något som en person normalt väljer att göra i stor utsträckning (högfrekvent beteende). Detta kan användas som en belöning för något som personen sällan gör (lågfrekvent beteende). Ett barn kan tillbringa alla sina raster i biologilaboratoriet och titta på fiskarna i sina tankar, men aldrig fullborda sina biologiläxor. För att bli en effektiv belöning måste fisktittandet reduceras avsevärt, så det finns en mening i vilken barnet straffas för att inte göra sina läxor. Uppgiften att identifiera
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 47 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 47}
+
+\medskip
+
+activities which will act as a reward for a low-frequency, but desirable behaviour is not easy, but see how you get on with the following exercise.
+
+\begin{itemize}
+  \item Complete two lists, one of low-frequency behaviours you would like to increase, and another of high-frequency behaviours that could be used as a reward.
+\end{itemize}
+
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+\textbf{Low-frequency behaviour} & \textbf{High-frequency behaviour} \\
+\midrule
+1. Completing biology homework. & Watching fish. \\
+2. Taking exercise. & Eating chocolate. \\
+3. & \\
+4. & \\
+5. & \\
+6. & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+Pair off with another person and share:
+
+\begin{enumerate}[label=(\alph*)]
+  \item What you have written on your list.
+  \item Which pairings of low-frequency and high-frequency behaviours would you be willing to use to modify your behaviour.
+  \item Which high-frequency behaviours do you see as undesirable and feel that to use them as rewards might create further problems.
+\end{enumerate}
+
+The suggestion at the end of the last exercise that some high-frequency behaviours can also be seen as problems, adds to the complexity of deciding on appropriate rewards. Sweets are not necessarily the best form of reward to give to children, and in one study, adolescents were given cigarettes for co-operative behaviour in a youth club.
+
+It is a difficult enough task to identify appropriate rewards for individuals, but it is even more so for a group such as a class of children. An alternative procedure with such groups is the token system. Here, individuals within the group are given a token immediately the target behaviour is produced and the accumulated tokens can be cashed in at the end of the day or week for a more tangible reward.
+
+The application of token economies to classes in schools is well documented (O'Leary and O'Leary, 1977; Axelrod, 1983) and does seem to be effective in changing specific target behaviours in a group,
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 47 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 47}
+
+\medskip
+
+aktiviteter som fungerar som en belöning för ett lågfrekvent men önskvärt beteende är inte lätt, men se hur du klarar dig med följande övning.
+
+\begin{itemize}
+  \item Fyll i två listor, en med lågfrekventa beteenden du vill öka och en annan med högfrekventa beteenden som kan användas som belöning.
+\end{itemize}
+
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+\textbf{Lågfrekvent beteende} & \textbf{Högfrekvent beteende} \\
+\midrule
+1. Att fullfölja biologiläxor. & Att titta på fiskar. \\
+2. Att motionera. & Att äta choklad. \\
+3. & \\
+4. & \\
+5. & \\
+6. & \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+Para ihop dig med en annan person och dela med dig av:
+
+\begin{enumerate}[label=(\alph*)]
+  \item Vad du har skrivit på din lista.
+  \item Vilka parningar av lågfrekventa och högfrekventa beteenden du skulle vara villig att använda för att modifiera ditt beteende.
+  \item Vilka högfrekventa beteenden ser du som oönskade och känner att användning av dem som belöningar kan skapa ytterligare problem.
+\end{enumerate}
+
+Förslaget i slutet av den senaste övningen att vissa högfrekventa beteenden också kan ses som problem tillför komplexiteten vid beslutet om lämpliga belöningar. Godis är inte nödvändigtvis den bästa formen av belöning att ge till barn, och i en studie fick ungdomar cigaretter för kooperativt beteende i en ungdomsklubb.
+
+Det är en tillräckligt svår uppgift att identifiera lämpliga belöningar för individer, men det är ännu svårare för en grupp som en klass barn. Ett alternativt förfarande med sådana grupper är tokensystemet. Här ges individer inom gruppen en token omedelbart när målbeteendet produceras och de ackumulerade tokenerna kan lösas in i slutet av dagen eller veckan för en mer påtaglig belöning.
+
+Tillämpningen av tokenekonomier på klasser i skolor är väl dokumenterad (O'Leary och O'Leary, 1977; Axelrod, 1983) och verkar faktiskt vara effektiv för att förändra specifika målbeteenden i en grupp,
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 48 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{48 Taking control of conditioning}
+
+\medskip
+
+even though it may fail for some individuals. Giving a token provides the minimum disruption to the ongoing activities of the class and the token can be cashed in at a later date for a reward specifically chosen by the individual child. It is curious that there are rarely references to tokens being stolen.
+
+The extensive application of behaviour modification techniques is largely an American phenomenon. Wheldall (1981) provided a useful survey of the use of these approaches in this country. He suggested that the teaching profession in this country is dragging its feet in the development of behavioural approaches and blamed the current state of teacher training for maintaining ignorance among teachers on these techniques. Behavioural modification is often seen as having opposite aims to humanistic education as described in the first chapter, because the behaviour modifier is in control of the learning and decides what the learning outcomes should be. Some behaviour modifiers take total control of the situation and may not even explain to the children what they are doing. This is the tone of books by Herbert (1981) and Westmacott and Cameron (1981) which are excellent manuals but barely mention involving the children in the decision-making. Others are willing to hand over the technology to their clients or students, acting more as consultants than as experts. Thorenson and Mahoney (1974) used the term `behavioural humanism' to describe the processes whereby the control of a behaviour modification programme is put into the hands of the person whose behaviour is being modified.
+
+\textbf{Self-management}
+
+We will now examine the procedures necessary for implementing an effective self-managed behaviour modification programme. The same principles apply to a programme that is being imposed on an individual or a group. The procedures can be applied to the teacher's behaviour, as well as the child's. If you are experiencing difficulties with a particular class, it may be preferable for you to change your behaviour. Indeed, your responses may be the main source of difficulty.
+
+Whether you are working with a child, or on your own behaviour, the first stage is to make a thorough analysis of the situation. Try to make a clear description of the behaviour that is the target for change. What are the resources available to you in the situation and what
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 48 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{48 Att ta kontroll över betingning}
+
+\medskip
+
+även om det kan misslyckas för vissa individer. Att ge en token ger minimal störning av klassens pågående aktiviteter och token kan lösas in vid ett senare tillfälle för en belöning som specifikt valts av det enskilda barnet. Det är märkligt att det sällan finns hänvisningar till att tokens stjäls.
+
+Den omfattande tillämpningen av beteendemodifikationstekniker är till stor del ett amerikanskt fenomen. Wheldall (1981) gav en användbar översikt över användningen av dessa metoder i detta land. Han föreslog att undervisningsyrket i detta land dröjer med utvecklingen av beteendemässiga metoder och klandrade det nuvarande tillståndet för lärarutbildning för att upprätthålla okunnighet bland lärare om dessa tekniker. Beteendemodifikation ses ofta som att ha motsatta mål till humanistisk utbildning som beskrivs i det första kapitlet, eftersom beteendemodifieraren har kontroll över lärandet och beslutar om inlärningsmålen. Vissa beteendemodifierare tar total kontroll över situationen och kan till och med inte förklara för barnen vad de gör. Detta är tonen i böcker av Herbert (1981) och Westmacott och Cameron (1981) som är utmärkta handböcker men knappt nämner att involvera barnen i beslutsfattandet. Andra är villiga att överlämna tekniken till sina klienter eller studenter och agera mer som konsulter än som experter. Thorenson och Mahoney (1974) använde termen ``beteendehumanism'' för att beskriva de processer varigenom kontrollen av ett beteendemodifikationsprogram sätts i händerna på den person vars beteende modifieras.
+
+\textbf{Självstyrning}
+
+Vi ska nu undersöka de förfaranden som är nödvändiga för att genomföra ett effektivt självstyrande beteendemodifikationsprogram. Samma principer gäller för ett program som påtvingas en individ eller en grupp. Förfarandena kan tillämpas på lärarens beteende, liksom på barnets. Om du har svårigheter med en viss klass kan det vara att föredra att du förändrar ditt beteende. Faktum är att dina reaktioner kan vara den viktigaste svårighetskällan.
+
+Oavsett om du arbetar med ett barn eller med ditt eget beteende är det första steget att göra en grundlig analys av situationen. Försök att göra en tydlig beskrivning av det beteende som är målet för förändringen. Vilka resurser har du tillgängliga i situationen och vad
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 49 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 49}
+
+\medskip
+
+would be appropriate rewards for the individuals concerned?
+
+Next, simply observe the incidence of the target behaviour. This might be done using a simple counting procedure. As a teacher, you might be concerned about the number of times you raise your voice in lessons and may wish to reduce the incidence of shouting behaviour. Identifying a shout may be an arbitrary decision, but having made the decision, the incidences can be counted unobtrusively on a counting counter, which can be held in the hand. If you have a good relationship with the class, the children could make the observations for you. Or, you might be concerned that you are paying more attention to the boys than the girls. By raising these issues with the class, you are adding a new dimension to the learning process, and by making the project public may increase your own commitment to change.
+
+When the data has been collected it can be presented in a simple visual form such as a graph. You may wish to display it publicly. Going through this procedure can have an effect on the target behaviour and may even eliminate it altogether. There may be an aversive quality to having clear information about aspects of your behaviour that you do not like. This is similar to the processes involved in some forms of meditation; when unwanted thoughts and images emerge, merely noting them helps them to disappear. There may be a distinct pattern in the data. Your shouting might increase at certain times of the day with a particular class, or for some women just before they menstruate. This sort of information will be useful in the next stage of planning a course of action.
+
+It is possible to work out a plan of action on your own, but from personal experience it is easy to set up a project which is bound to fail. Probably because the behaviour you are trying to eliminate has an important pay-off. Negotiating with another person, or better still with a group who are all involved in some form of behaviour change, makes the process public and less easy to abandon. The proposed behaviour change needs to be defined precisely and not be too ambitious. Success with simple changes can be built upon.
+
+Having defined the target behaviour to be achieved or avoided and an appropriate pattern of reward established, it is useful to formalize the programme into a contract, which is signed and countersigned by a witness. Again, a public commitment. Some adults are very resistant to signing a contract, objecting to its formal, legalistic nature. They seem to be unwilling to put their money where their mouths are as it were. This sort of objection is usually a precursor to failure.
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 49 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 49}
+
+\medskip
+
+skulle vara lämpliga belöningar för de berörda individerna?
+
+Observera därefter helt enkelt förekomsten av målbeteendet. Detta kan göras med hjälp av ett enkelt räkneförfarande. Som lärare kanske du är orolig över hur många gånger du höjer rösten på lektionerna och vill minska förekomsten av skrikbeteende. Att identifiera ett skrik kan vara ett godtyckligt beslut, men efter att ha fattat beslutet kan förekomsterna räknas diskret på en räknare, som kan hållas i handen. Om du har en god relation med klassen kan barnen göra observationerna åt dig. Eller så kanske du är orolig för att du ägnar mer uppmärksamhet åt pojkarna än åt flickorna. Genom att lyfta upp dessa frågor med klassen lägger du till en ny dimension i inlärningsprocessen, och genom att göra projektet offentligt kan du öka ditt eget åtagande till förändring.
+
+När uppgifterna har samlats in kan de presenteras i en enkel visuell form, till exempel ett diagram. Du kanske vill visa det offentligt. Att gå igenom detta förfarande kan ha en effekt på målbeteendet och kan till och med eliminera det helt. Det kan finnas en aversiv kvalitet i att ha tydlig information om aspekter av ditt beteende som du inte gillar. Detta liknar de processer som är involverade i vissa former av meditation; när oönskade tankar och bilder uppstår hjälper det att bara notera dem att de försvinner. Det kan finnas ett distinkt mönster i uppgifterna. Ditt skrikande kan öka vid vissa tider på dagen med en viss klass, eller för vissa kvinnor strax innan de menstruerar. Denna typ av information kommer att vara användbar i nästa skede av planeringen av en handlingsplan.
+
+Det är möjligt att arbeta ut en handlingsplan på egen hand, men av personlig erfarenhet är det lätt att sätta upp ett projekt som är dömt att misslyckas. Förmodligen för att det beteende du försöker eliminera har en viktig utdelning. Att förhandla med en annan person, eller ännu bättre med en grupp som alla är involverade i någon form av beteendeförändring, gör processen offentlig och svårare att överge. Den föreslagna beteendeförändringen måste definieras precist och inte vara för ambitiös. Framgång med enkla förändringar kan byggas vidare på.
+
+Efter att ha definierat målbeteendet som ska uppnås eller undvikas och ett lämpligt belöningsmönster har etablerats är det användbart att formalisera programmet i ett kontrakt, som undertecknas och kontrasigneras av ett vittne. Återigen ett offentligt åtagande. Vissa vuxna är mycket motsträviga till att underteckna ett kontrakt och invänder mot dess formella, juridiska karaktär. De verkar vara ovilliga att sätta ord i handling. Denna typ av invändning är vanligtvis ett förebud om misslyckande.
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 50 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{50 Taking control of conditioning}
+
+\medskip
+
+Once the programme is under way, the recording process needs to continue. Apart from any tangible reward you may be giving yourself, success is a reward in its own right. Again the recordings can be displayed visually and publicly. The public display of failure probably has a strong punishing effect. After a period of time the programme can be assessed. The project might be abandoned, because new successful behaviour has been established. Alternatively, the programme might be developed to enlarge the repertoire of new skills.
+
+It is important to remember that changes in behaviour produced in this way may not always be welcomed either by family or colleagues. Try to be aware of this and be sensitive to the issues as they arise. These same procedures for self-management can be worked through with a group of student teachers, or with a group of students. By taking part in the negotiating process, the students may develop an increased sense of control over their lives.
+
+\textbf{Summary}
+
+In this chapter, we have taken the notions of classical and operant conditioning and have shown how they can be used to explain some of the processes that are going on in inter-personal situations. We suggest that classical conditioning processes explain how we develop a repertoire of emotional responses to situations. It is claimed that these emotional responses are not under our control and affect our behaviour, even though we may control the outward expression of these emotions. In terms of the bodily experience of emotion, our responses can be likened to the responses of animals, such as Pavlov's dogs.
+
+Regarding operant conditioning, that is working to obtain rewards and avoid punishments, our behaviour is different from that of animals, unless we are at a low level of cognitive development or, as adults, not aware of what we are doing. Often we have insight into what behaviour will produce a reward or avoid a punishment. In inter-personal situations, rewards and punishments are often meted out with little awareness by either participant. By developing some minimal awareness of these processes, it is possible to exert considerable influence over the other person.
+
+The issue of control over your own life is dealt with in relation to
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 50 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{50 Att ta kontroll över betingning}
+
+\medskip
+
+När programmet väl är igång måste registreringsprocessen fortsätta. Förutom eventuell påtaglig belöning du kan ge dig själv är framgång en belöning i sig. Återigen kan inspelningarna visas visuellt och offentligt. Den offentliga visningen av misslyckande har förmodligen en stark bestraffande effekt. Efter en tidsperiod kan programmet utvärderas. Projektet kan överges, eftersom nytt framgångsrikt beteende har etablerats. Alternativt kan programmet utvecklas för att utöka repertoaren av nya färdigheter.
+
+Det är viktigt att komma ihåg att förändringar i beteende som produceras på detta sätt kanske inte alltid välkomnas av vare sig familj eller kollegor. Försök att vara medveten om detta och vara känslig för frågorna när de uppstår. Samma förfaranden för självstyrning kan arbetas igenom med en grupp lärarstudenter, eller med en grupp studenter. Genom att delta i förhandlingsprocessen kan studenterna utveckla en ökad känsla av kontroll över sina liv.
+
+\textbf{Sammanfattning}
+
+I detta kapitel har vi tagit begreppen klassisk och operant betingning och visat hur de kan användas för att förklara några av de processer som pågår i interpersonella situationer. Vi föreslår att klassiska betingningsprocesser förklarar hur vi utvecklar ett repertoar av emotionella reaktioner på situationer. Det hävdas att dessa emotionella reaktioner inte är under vår kontroll och påverkar vårt beteende, även om vi kan kontrollera det yttre uttrycket för dessa känslor. I termer av den kroppsliga upplevelsen av känsla kan våra reaktioner liknas vid djurens reaktioner, som Pavlovs hundar.
+
+Vad gäller operant betingning, det vill säga att arbeta för att erhålla belöningar och undvika straff, skiljer sig vårt beteende från djurens, om vi inte befinner oss på en låg kognitiv utvecklingsnivå eller, som vuxna, inte är medvetna om vad vi gör. Ofta har vi insikt i vilket beteende som kommer att producera en belöning eller undvika ett straff. I interpersonella situationer mäts belöningar och straff ofta ut med liten medvetenhet av någon av deltagarna. Genom att utveckla en viss minimal medvetenhet om dessa processer är det möjligt att utöva ett avsevärt inflytande över den andra personen.
+
+Frågan om kontroll över ditt eget liv behandlas i förhållande till
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 51 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{Taking control of conditioning 51}
+
+\medskip
+
+learned helplessness, locus of control and locus of causality. Research in these areas deals with the extent to which an individual sees himself as being in control of the rewards and punishments he gains in life, or in control of what he does. Generally, it would seem to be a good thing to have this control. Also, it is possible to learn to believe that you have more control and that this change will have a positive effect on academic outcomes. To be able to change your own behaviour will give you an increased sense of control over your life. This is also true for a group such as a class of children. This would support the idea of passing the decision-making in behaviour modification programmes over to the client group.
+
+\textbf{Connections}
+
+In the introduction, there was an emphasis on humanistic approaches in education, whereas this chapter has focused on conditioning processes. Behavioural and humanistic thinking are often seen as contradictory. However, being able to transcend your conditioning and habits is in the best of humanistic traditions. Before you can develop as a person, it is important to become aware of old, unhelpful patterns. Learned emotional associations probably play an important part in the development of `intentionality' which helped to determine our perception of reality. This is particularly true of our perception of ourselves, which is developed in the next chapter. Good feelings and bad feelings about ourselves appear to have a significant effect on the things we try to do, particularly academic achievement. The same seems to be true of our performance as teachers. Learned emotional responses and habits play an important part in the way that we defend ourselves from threat. This notion is developed at the end of the next chapter. These defence mechanisms interfere with effective communication. Working through the anxiety generated in experiential learning situations can help to reduce these anxious reactions in the future, thus increasing the number of choices we have available to us in interpersonal situations. This in turn leads to a sense of greater control over our lives and a reduction of stress in inter-personal situations, particularly in teaching. If we can become more relaxed in the ways suggested in chapter six, then unwanted anxiety reactions are likely
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 51 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{Att ta kontroll över betingning 51}
+
+\medskip
+
+inlärd hjälplöshet, kontrollokus och kausalitetslokus. Forskning inom dessa områden handlar om i vilken utsträckning en individ ser sig själv som att vara i kontroll över de belöningar och straff han erhåller i livet, eller i kontroll över vad han gör. Generellt sett verkar det vara bra att ha denna kontroll. Det är också möjligt att lära sig tro att man har mer kontroll och att denna förändring kommer att ha en positiv effekt på akademiska resultat. Att kunna förändra ditt eget beteende ger dig en ökad känsla av kontroll över ditt liv. Detta gäller också för en grupp som en klass barn. Detta stöder idén om att överlämna beslutsfattandet i beteendemodifikationsprogram till klientgruppen.
+
+\textbf{Kopplingar}
+
+I introduktionen låg betoningen på humanistiska metoder inom utbildning, medan detta kapitel har fokuserat på betingningsprocesser. Beteendemässigt och humanistiskt tänkande ses ofta som motsägelsefulla. Att kunna transcendera din betingning och dina vanor är dock i den bästa humanistiska traditionen. Innan du kan utvecklas som person är det viktigt att bli medveten om gamla, ohälsosamma mönster. Inlärda emotionella associationer spelar förmodligen en viktig roll i utvecklingen av ``intentionalitet'' som hjälpte till att bestämma vår uppfattning av verkligheten. Detta är särskilt sant för vår uppfattning om oss själva, vilket utvecklas i nästa kapitel. Goda känslor och dåliga känslor om oss själva verkar ha en betydande effekt på de saker vi försöker göra, särskilt akademiska prestationer. Detsamma verkar gälla för vår prestation som lärare. Inlärda emotionella reaktioner och vanor spelar en viktig roll i det sätt på vilket vi försvarar oss mot hot. Detta begrepp utvecklas i slutet av nästa kapitel. Dessa försvarsmekanismer stör effektiv kommunikation. Att arbeta igenom den ångest som genereras i erfarenhetsbaserade inlärningssituationer kan bidra till att minska dessa ångestreaktion i framtiden, och därigenom öka antalet val vi har tillgängliga för oss i interpersonella situationer. Detta leder i sin tur till en känsla av större kontroll över våra liv och en minskning av stress i interpersonella situationer, särskilt inom undervisning. Om vi kan bli mer avslappnade på de sätt som föreslås i kapitel sex, är det troligt att oönskade ångestreaktioner
+
+\switchcolumn*
+
+%% ============================================================
+%% PAGE 52 — ENGLISH
+%% ============================================================
+
+\noindent\textbf{52 Taking control of conditioning}
+
+\medskip
+
+to be inhibited. This can result in an improvement in the way we relate to other people.
+
+We have used the word `self' several times in this connecting section. In the next section, notions about the self are developed and related to problems of human relations.
+
+\switchcolumn
+
+%% ============================================================
+%% PAGE 52 — SWEDISH
+%% ============================================================
+
+\noindent\textbf{52 Att ta kontroll över betingning}
+
+\medskip
+
+hämmas. Detta kan resultera i en förbättring av det sätt på vilket vi förhåller oss till andra människor.
+
+Vi har använt ordet ``själv'' flera gånger i detta kopplingsavsnitt. I nästa avsnitt utvecklas föreställningar om självet och relateras till problem med mänskliga relationer.
+
+\end{paracol}
+
+\end{document}
